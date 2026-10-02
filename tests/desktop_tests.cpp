@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QComboBox>
+#include <QDoubleSpinBox>
 #include <QtTest/QTest>
 #include <iostream>
 #include <stdexcept>
@@ -89,7 +90,54 @@ int main(int argc, char* argv[]) {
             require(!window.findChild<QPushButton*>(QStringLiteral("drawLine"))->isEnabled(),"Counting controls enabled without detection");
             detect->setChecked(true);
             window.open_file(root+QStringLiteral("/variable.mkv"));
-            QTest::qWait(30);
+            wait_for([&]{return window.displayed_sequence().value_or(0)>=2 && window.playing();});
+            QTest::mouseClick(stop,Qt::LeftButton);
+            const auto position=window.displayed_sequence();
+            const auto timestamp=window.displayed_timestamp();
+            auto* draw=window.findChild<QPushButton*>(QStringLiteral("drawLine"));
+            auto* video_canvas=window.findChild<QWidget*>(QStringLiteral("frameCanvas"));
+            auto* track=window.findChild<QCheckBox*>(QStringLiteral("trackObjects"));
+            auto* classes=window.findChild<QComboBox*>(QStringLiteral("trackingClasses"));
+            auto* direction=window.findChild<QComboBox*>(QStringLiteral("crossingDirection"));
+            const auto point=[&](double x,double y) {
+                const auto scaled=window.preview_image().size().scaled(video_canvas->size(),Qt::KeepAspectRatio);
+                return QPoint((video_canvas->width()-scaled.width())/2+int(x*scaled.width()),
+                    (video_canvas->height()-scaled.height())/2+int(y*scaled.height()));
+            };
+            const auto applied=[&] {
+                wait_for([&]{return state->text()==QStringLiteral("Paused") && play->isEnabled();});
+                require(window.displayed_sequence()==position && window.displayed_timestamp()==timestamp && !window.playing(),
+                    "Settings restarted or advanced paused playback");
+            };
+            QTest::mouseClick(draw,Qt::LeftButton);
+            QTest::mouseClick(video_canvas,Qt::LeftButton,{},point(.2,.4));
+            QTest::mouseClick(video_canvas,Qt::LeftButton,{},point(.8,.6));
+            applied();
+            classes->setCurrentIndex(1);applied();
+            direction->setCurrentIndex(1);applied();
+            track->setChecked(false);applied();
+            require(window.tracks().empty(),"Tracking toggle retained obsolete IDs");
+            track->setChecked(true);applied();
+            detect->setChecked(false);applied();
+            require(window.detections().empty(),"Detection toggle retained obsolete boxes");
+            detect->setChecked(true);applied();
+            window.findChild<QDoubleSpinBox*>(QStringLiteral("confidence"))->setValue(.45);applied();
+            QTest::mouseClick(play,Qt::LeftButton);
+            QTest::mouseClick(draw,Qt::LeftButton);
+            const auto editing_position=window.displayed_sequence();
+            QTest::qWait(120);
+            require(!window.playing() && window.displayed_sequence()==editing_position,"Line selection did not freeze the frame");
+            QTest::mouseClick(video_canvas,Qt::RightButton,{},point(.5,.5));
+            require(window.playing() && window.displayed_sequence()==editing_position,"Cancelling line selection did not resume at held frame");
+            QTest::mouseClick(draw,Qt::LeftButton);
+            const auto line_position=window.displayed_sequence();
+            QTest::mouseClick(video_canvas,Qt::LeftButton,{},point(.2,.6));
+            QTest::mouseClick(video_canvas,Qt::LeftButton,{},point(.8,.4));
+            wait_for([&]{return window.playing();});
+            require(window.displayed_sequence()==line_position,"Applying line restarted playing video");
+            track->setChecked(false);track->setChecked(true);direction->setCurrentIndex(2);
+            wait_for([&]{return window.playing();});
+            require(window.displayed_sequence().value_or(0)>=*line_position,"Rapid settings reset playback");
             window.close();
             wait_for([&]{return !window.isVisible();});
             PreviewWindow missing(root+QStringLiteral("/missing-model.onnx"));
@@ -116,11 +164,20 @@ int main(int argc, char* argv[]) {
         require(state->text() == QStringLiteral("Finished"), "EOF was not shown");
 
         QTest::mouseClick(replay, Qt::LeftButton);
-        wait_for([&] { return window.displayed_sequence().has_value(); });
+        wait_for([&] { return window.displayed_sequence().value_or(0)>=2; });
         QTest::mouseClick(stop, Qt::LeftButton);
         const auto stopped_sequence = window.displayed_sequence();
         QTest::qWait(100);
         require(window.displayed_sequence() == stopped_sequence && !window.playing(), "Stop left presentation active");
+        require(play->isEnabled() && play->text()==QStringLiteral("Play"),"Stop disabled resume");
+        const auto stopped_timestamp=window.displayed_timestamp();
+        window.findChild<QDoubleSpinBox*>(QStringLiteral("confidence"))->setValue(.45);
+        wait_for([&]{return play->isEnabled() && state->text()==QStringLiteral("Paused");});
+        require(window.displayed_sequence()==stopped_sequence && window.displayed_timestamp()==stopped_timestamp,
+            "Paused settings lost the exact source position");
+        QTest::mouseClick(play,Qt::LeftButton);
+        wait_for([&]{return window.displayed_sequence()>stopped_sequence;});
+        require(window.displayed_sequence().value_or(0)>0,"Stop/resume replayed from frame zero");
 
         window.open_file(root + QStringLiteral("/invalid.txt"));
         wait_for([&] { return state->text().startsWith(QStringLiteral("Could not read:")); });

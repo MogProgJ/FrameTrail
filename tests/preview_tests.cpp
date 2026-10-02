@@ -66,11 +66,64 @@ void run(const std::filesystem::path& root) {
         wait_for([&] { return closing.snapshot().queued_frames == closing.capacity; });
     }
 }
+void reconfiguration(const std::filesystem::path& root) {
+    frametrail::PreviewSession session;
+    session.start(root/"variable.mkv");
+    const auto generation=session.snapshot().generation;
+    wait_for([&]{return session.snapshot().queued_frames==session.capacity;});
+    auto displayed=session.try_pop(); auto pending=session.try_pop();
+    require(displayed && pending,"Missing retained playback frames");
+    std::uint64_t revision{};
+    for(int i=0;i<30;++i) {
+        revision=session.reconfigure({},{},{displayed->frame,pending->frame});
+        require(session.snapshot().generation==generation,"Settings changed source generation");
+        if(i%3==0) std::this_thread::sleep_for(2ms);
+    }
+    std::vector<frametrail::PreviewFrame> frames;
+    wait_for([&]{
+        while(auto frame=session.try_pop()) frames.push_back(std::move(*frame));
+        const auto status=session.snapshot();
+        return !status.worker_active && status.queued_frames==0;
+    });
+    require(session.snapshot().state==frametrail::PreviewState::completed && frames.size()==10,
+        "Reconfiguration lost or duplicated buffered frames");
+    require(session.snapshot().decoded_frames==10,"Settings re-decoded the source");
+    frametrail::MediaReader baseline(root/"variable.mkv");
+    for(std::size_t i=0;i<frames.size();++i) {
+        const auto reference=baseline.read();
+        require(reference && frames[i].frame.sequence==i && frames[i].frame.timestamp==reference->timestamp &&
+            frames[i].frame.pixels==reference->pixels && frames[i].analysis_revision==revision,
+            "New settings lost original frame identity/pixels or exposed obsolete analysis");
+    }
+    auto last=frames.back().frame;
+    revision=session.reconfigure({},{},{last});
+    wait_for([&]{return !session.snapshot().worker_active;});
+    auto refreshed=session.try_pop();
+    require(refreshed && refreshed->frame.sequence==9 && refreshed->frame.timestamp==last.timestamp &&
+        refreshed->analysis_revision==revision && !session.try_pop(),"EOF refresh changed playback position");
+    require(session.snapshot().decoded_frames==10,"EOF refresh reopened or re-decoded the source");
+    session.stop();
+    wait_for([&]{return !session.snapshot().worker_active;});
+    session.start(root/"still.png");
+    wait_for([&]{return !session.snapshot().worker_active;});
+    const auto image=session.try_pop();
+    require(image.has_value(),"Still image missing");
+    session.reconfigure({},{},{image->frame});
+    wait_for([&]{return !session.snapshot().worker_active;});
+    const auto refreshed_image=session.try_pop();
+    require(refreshed_image && refreshed_image->frame.pixels==image->frame.pixels,"Still-image refresh lost pixels");
+}
 } // namespace
 
 int main(int argc, char* argv[]) {
     try {
-        require(argc == 2 || argc == 4, "Expected fixture directory and optional model/sample");
+        require(argc == 2 || argc == 3 || argc == 4, "Expected fixture directory and optional model/sample or reconfiguration mode");
+        if(argc==3) {
+            require(std::string_view(argv[2])=="--reconfigure","Unknown test mode");
+            reconfiguration(std::filesystem::path(argv[1]));
+            std::cout<<"Reconfiguration passed: coalescing, bounded buffers, frame identity, no re-decoding, EOF, still images\n";
+            return 0;
+        }
         if (argc == 4) {
             frametrail::PreviewSession session;
             frametrail::DetectorOptions detector{std::filesystem::path(argv[2])};

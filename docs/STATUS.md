@@ -12,6 +12,7 @@ Updated: 2 October 2026.
 - A C++20 media library using FFmpeg's native C APIs.
 - A command-line inspector for local images and recordings, with optional frame CSV and first-frame PPM exports.
 - A Qt desktop preview with Open media, Play/Pause, Stop, Replay, source details, and file errors.
+- Stop/Play resumes at the held position. Settings and line edits preserve sequence/timestamp, re-analyse a bounded backlog, and restore the previous playing/paused state.
 - A cancellable decoding worker, a two-frame queue with backpressure, and generation IDs for source changes.
 - YOLOX-Nano CPU inference through ONNX Runtime, frame-aligned boxes/labels, a confidence control, and CLI detection CSV exports.
 - A native motion-association tracker with confirmation/expiry, selected people/vehicle classes, observed IDs and bounded trails.
@@ -27,7 +28,7 @@ Inspected hardware: Intel Core i7-10750H, approximately 15.8 GiB reported RAM, I
 
 Tools used: Visual Studio 2022 MSVC 19.44, bundled CMake 3.31.6, the checksum-pinned FFmpeg 8.1 branch SDK, Qt 6.11.3 base SDK, ONNX Runtime 1.30.0 CPU SDK, and YOLOX-Nano 0.1.1rc0. Manifests are under `dependencies/`. No system-wide dependency installation was performed.
 
-Fourteen CTest checks pass in Release and Debug with the model and optional reference sample. They cover media/CLI behaviour, queues/cancellation, preprocessing, box decoding, NMS, real inference, matched frame identity, tracking/crossing contracts, exports, and desktop controls/overlays. A controlled translated reference photo produces one correctly timestamped event through the full native pipeline; it is not a natural-video accuracy measurement. Offscreen renderings have been inspected. The user also confirmed native playback of a large movie in 0.2. Representative labelled people/vehicle clips, event/identity accuracy, long-running memory behaviour, and native counting interaction still need evaluation. No leak detector or live-input test has been run.
+Fifteen CTest checks pass in Release and Debug with the model and optional reference sample. They cover media/CLI behaviour, queues/cancellation, preprocessing, box decoding, NMS, real inference, matched frame identity, tracking/crossing contracts, exports, and desktop controls/overlays. Reconfiguration checks verify exact frame pixels/sequence/timestamps, rapid edits, EOF/still refreshes without re-decoding, Stop/Play continuity, and paused/playing line/settings edits. A controlled translated reference photo produces one correctly timestamped event through the full native pipeline; it is not a natural-video accuracy measurement. Offscreen renderings have been inspected. The user also confirmed native playback of a large movie in 0.2. Representative labelled people/vehicle clips, event/identity accuracy, long-running memory behaviour, and native counting interaction still need evaluation. No leak detector or live-input test has been run.
 
 ## Repository publication
 

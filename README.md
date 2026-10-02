@@ -41,7 +41,7 @@ With Visual Studio 2022 C++ tools and CMake installed, run these from the reposi
 .\build\windows-msvc\Release\frametrail.exe inspect .\build\windows-msvc\fixtures\variable.mkv
 ```
 
-The dependency script downloads checksum-pinned FFmpeg, Qt, ONNX Runtime, and YOLOX-Nano artifacts into ignored local folders. Use **Open media** with **Detect objects (CPU)** and **Track & count** checked. Adjust Confidence to filter predictions. Click **Draw counting line**, select A then B, and choose a direction. Changing analysis settings restarts the run and resets counts. Playback remains silent; CPU analysis can slow playback. See [CPU detection](docs/DETECTION.md) and [tracking](docs/TRACKING.md) for contracts, exports, and validation limits.
+The dependency script downloads checksum-pinned FFmpeg, Qt, ONNX Runtime, and YOLOX-Nano artifacts into ignored local folders. Use **Open media** with **Detect objects (CPU)** and **Track & count** checked. Adjust Confidence to filter predictions. Click **Draw counting line**, select A then B, and choose a direction. Settings apply at the current position and reset analysis IDs/counts there; playback resumes if it was playing and stays paused if it was paused. **Stop** preserves your position for **Play**, while **Replay** returns to the beginning. Playback remains silent; CPU analysis can slow playback. See [CPU detection](docs/DETECTION.md) and [tracking](docs/TRACKING.md) for contracts, exports, and validation limits.
 
 ## Implementation
 

@@ -20,6 +20,7 @@ struct PreviewSnapshot {
     std::optional<MediaInfo> info;
     std::string error;
     bool worker_active{};
+    std::uint64_t analysis_revision{};
 };
 
 struct PreviewFrame {
@@ -27,6 +28,7 @@ struct PreviewFrame {
     Frame frame;
     std::optional<DetectionResult> detection;
     std::optional<TrackingResult> tracking;
+    std::uint64_t analysis_revision{};
 };
 
 // Main-thread controller with a single decoding worker and bounded handoff.
@@ -37,15 +39,28 @@ public:
     ~PreviewSession();
     void start(const std::filesystem::path& source, std::optional<DetectorOptions> detection = {},
         std::optional<TrackingOptions> tracking = {});
+    // Keep decoder position; re-analyse retained frames and the bounded queue.
+    std::uint64_t reconfigure(std::optional<DetectorOptions> detection,
+        std::optional<TrackingOptions> tracking, std::vector<Frame> retained = {});
     void stop();
     [[nodiscard]] PreviewSnapshot snapshot() const;
     [[nodiscard]] std::optional<PreviewFrame> try_pop();
 
 private:
+    void launch_worker();
+    void retain_frame(Frame frame); // mutex_ held; ordered and de-duplicated.
     mutable std::mutex mutex_;
     std::condition_variable_any available_;
     std::deque<PreviewFrame> frames_;
     PreviewSnapshot status_;
+    std::filesystem::path source_;
+    std::optional<DetectorOptions> detection_;
+    std::optional<TrackingOptions> tracking_;
+    std::deque<Frame> pending_frames_;
+    std::stop_source source_stop_;
+    // Only sequential workers access this; retained at EOF for setting refreshes.
+    std::unique_ptr<MediaReader> reader_;
+    bool eof_{};
     // Last member: join happens before queue/synchronization objects disappear.
     std::jthread worker_;
 };

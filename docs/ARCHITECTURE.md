@@ -72,7 +72,7 @@ Every queue has a fixed capacity and a documented overload policy:
 
 Live dropped frames reduce temporal evidence and can reduce counting accuracy. Tracking uses elapsed timestamps and tolerates gaps within configured limits; performance reporting must include drops.
 
-The display matches results by run/generation/frame identity. It never paints detections for a different frame. Cancel/restart invalidates old results. Analysis runs in source order; review playback and seeking are a separate session.
+The display matches results by source generation, analysis revision, and frame identity. Settings edits preserve the decoder position, re-analyse the held/buffered pixels in source order, and reset track/rule state at the current position. Older revisions cannot overwrite the refreshed frame. The player Stop is a resumable pause; source replacement and close use cancellation. Persistent review playback and seeking remain a later separate session.
 
 ## Initial crossing rule
 

@@ -61,10 +61,15 @@ void FrameCanvas::begin_line_selection() {
     if (image_.isNull()) return;
     selecting_line_ = true; first_point_.reset(); setCursor(Qt::CrossCursor); update();
 }
+void FrameCanvas::cancel_line_selection(bool notify) {
+    if (!selecting_line_) return;
+    selecting_line_ = false; first_point_.reset(); unsetCursor(); update();
+    if (notify && line_cancelled) line_cancelled();
+}
 void FrameCanvas::mousePressEvent(QMouseEvent* event) {
     if (!selecting_line_ || image_.isNull()) return;
     if (event->button() == Qt::RightButton) {
-        selecting_line_ = false; first_point_.reset(); unsetCursor(); update(); return;
+        cancel_line_selection(); return;
     }
     const auto target = image_rect();
     if (event->button() != Qt::LeftButton || !target.contains(event->position().toPoint())) return;
@@ -191,7 +196,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     detect_box_=new QCheckBox(QStringLiteral("Detect objects (CPU)"));
     detect_box_->setObjectName(QStringLiteral("detectObjects"));
     detect_box_->setChecked(QFileInfo::exists(model_path_));
-    detect_box_->setToolTip(QStringLiteral("YOLOX-Nano: 80 classes. Changing settings restarts the current file."));
+    detect_box_->setToolTip(QStringLiteral("YOLOX-Nano: 80 classes. Settings apply at the current position; analysis counts reset."));
     analysis_controls->addWidget(detect_box_);
     analysis_controls->addWidget(new QLabel(QStringLiteral("Confidence")));
     confidence_box_=new QDoubleSpinBox;
@@ -207,7 +212,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     analysis_controls->addWidget(model_label);
     layout->addLayout(analysis_controls);
     auto* tracking_controls = new QHBoxLayout;
-    track_box_ = new QCheckBox(QStringLiteral("Track & count"));
+    track_box_ = new QCheckBox(QStringLiteral("Track && count"));
     track_box_->setObjectName(QStringLiteral("trackObjects")); track_box_->setChecked(true);
     track_box_->setEnabled(detect_box_->isChecked());
     tracking_controls->addWidget(track_box_);
@@ -217,7 +222,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     tracking_controls->addWidget(classes_box_);
     line_button_ = new QPushButton(QStringLiteral("Draw counting line"));
     line_button_->setObjectName(QStringLiteral("drawLine"));
-    line_button_->setToolTip(QStringLiteral("Click A then B on the video. The run restarts with the new line. Right-click cancels."));
+    line_button_->setToolTip(QStringLiteral("Pause here, click A then B, and continue from this position. Right-click cancels."));
     tracking_controls->addWidget(line_button_);
     direction_box_ = new QComboBox;
     direction_box_->setObjectName(QStringLiteral("crossingDirection"));
@@ -262,29 +267,29 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     connect(play_button_, &QPushButton::clicked, this, [this] { toggle_playback(); });
     connect(stop_button_, &QPushButton::clicked, this, [this] { stop_playback(); });
     connect(replay_button_, &QPushButton::clicked, this, [this] { open_file(source_); });
-    const auto restart=[this] {
-        const auto current=pending_source_.isEmpty() ? source_ : pending_source_;
-        if (!current.isEmpty()) open_file(current);
-    };
-    connect(detect_box_,&QCheckBox::toggled,this,[restart](bool){restart();});
-    connect(confidence_box_,&QDoubleSpinBox::valueChanged,this,[restart](double){restart();});
-    const auto tracking_enabled = [this] {
-        const bool enabled = detect_box_->isChecked() && track_box_->isChecked();
-        track_box_->setEnabled(detect_box_->isChecked());
-        classes_box_->setEnabled(enabled); direction_box_->setEnabled(enabled); line_button_->setEnabled(enabled);
-    };
-    tracking_enabled();
-    connect(detect_box_,&QCheckBox::toggled,this,[tracking_enabled](bool){tracking_enabled();});
-    connect(track_box_,&QCheckBox::toggled,this,[restart,tracking_enabled](bool){tracking_enabled();restart();});
-    connect(classes_box_,&QComboBox::currentIndexChanged,this,[restart](int){restart();});
-    connect(direction_box_,&QComboBox::currentIndexChanged,this,[restart](int){restart();});
+    connect(detect_box_,&QCheckBox::toggled,this,[this](bool){reconfigure_analysis();});
+    connect(confidence_box_,&QDoubleSpinBox::valueChanged,this,[this](double){reconfigure_analysis();});
+    connect(track_box_,&QCheckBox::toggled,this,[this](bool){reconfigure_analysis();});
+    connect(classes_box_,&QComboBox::currentIndexChanged,this,[this](int){reconfigure_analysis();});
+    connect(direction_box_,&QComboBox::currentIndexChanged,this,[this](int){reconfigure_analysis();});
     connect(line_button_,&QPushButton::clicked,this,[this] {
         if (!canvas_->image().isNull()) {
+            if (!line_editing_) resume_after_line_ = playing_;
             if (playing_) toggle_playback();
+            line_editing_ = true;
             canvas_->begin_line_selection();
+            state_label_->setText(QStringLiteral("Select line endpoints A and B"));
+            update_controls();
         }
     });
-    canvas_->line_selected = [this,restart](frametrail::CountingLine line) { counting_line_ = line; restart(); };
+    canvas_->line_selected = [this](frametrail::CountingLine line) { counting_line_ = line; reconfigure_analysis(); };
+    canvas_->line_cancelled = [this] {
+        line_editing_ = false;
+        if (resume_after_line_ && !stopped_) toggle_playback();
+        else state_label_->setText(QStringLiteral("Paused"));
+        update_controls();
+    };
+    update_controls();
     connect(&timer_, &QTimer::timeout, this, [this] { tick(); });
     timer_.start(10);
 }
@@ -295,6 +300,8 @@ void PreviewWindow::open_file(const QString& path) {
     session_.stop();
     next_.reset();
     displayed_sequence_.reset();
+    displayed_frame_.reset();
+    updating_ = false; line_editing_ = false;
     canvas_->set_image({});
     stopped_ = true;
     playing_ = false;
@@ -308,31 +315,71 @@ void PreviewWindow::open_file(const QString& path) {
     counts_label_->setText(QStringLiteral("Video counts: − → +  0    |    + → −  0"));
 }
 
+std::pair<std::optional<frametrail::DetectorOptions>,std::optional<frametrail::TrackingOptions>> PreviewWindow::analysis_options() {
+    std::optional<frametrail::DetectorOptions> detection;
+    if (detect_box_->isChecked()) detection=frametrail::DetectorOptions{
+        native_path(model_path_),float(confidence_box_->value()),0.45f};
+    std::optional<frametrail::TrackingOptions> tracking;
+    if (detection && track_box_->isChecked()) {
+        tracking = frametrail::TrackingOptions{};
+        if (classes_box_->currentIndex() == 1) tracking->classes = {0};
+        if (classes_box_->currentIndex() == 2) tracking->classes = {1,2,3,5,7};
+        counting_line_.direction = direction_box_->currentIndex() == 1 ? frametrail::CrossingDirection::negative_to_positive :
+            direction_box_->currentIndex() == 2 ? frametrail::CrossingDirection::positive_to_negative : frametrail::CrossingDirection::both;
+        tracking->line = counting_line_;
+    }
+    return {std::move(detection),std::move(tracking)};
+}
+
+void PreviewWindow::update_controls() {
+    const bool ready = !stopped_ && !updating_ && !line_editing_ && pending_source_.isEmpty();
+    play_button_->setEnabled(ready);
+    stop_button_->setEnabled(ready && playing_);
+    replay_button_->setEnabled(!source_.isEmpty() && pending_source_.isEmpty() && !closing_);
+    play_button_->setText(playing_ ? QStringLiteral("Pause") : QStringLiteral("Play"));
+    const bool tracking = detect_box_->isChecked() && track_box_->isChecked();
+    track_box_->setEnabled(detect_box_->isChecked());
+    classes_box_->setEnabled(tracking); direction_box_->setEnabled(tracking);
+    line_button_->setEnabled(tracking && displayed_frame_.has_value() && !updating_);
+}
+
+void PreviewWindow::reconfigure_analysis() {
+    if (closing_) return;
+    if (source_.isEmpty() || !pending_source_.isEmpty()) { update_controls(); return; }
+    const bool resume = updating_ ? resume_after_update_ : line_editing_ ? resume_after_line_ : playing_;
+    if (playing_) toggle_playback();
+    canvas_->cancel_line_selection(false);
+    line_editing_ = false;
+    resume_after_update_ = resume;
+    std::vector<frametrail::Frame> retained;
+    if (displayed_frame_) retained.push_back(*displayed_frame_);
+    if (next_) { retained.push_back(std::move(next_->frame)); next_.reset(); }
+    try {
+        auto [detection,tracking] = analysis_options();
+        analysis_revision_ = session_.reconfigure(std::move(detection),std::move(tracking),std::move(retained));
+        updating_ = true; stopped_ = false; playing_ = false;
+        canvas_->set_image(canvas_->image()); // Keep pixels, clear obsolete overlays.
+        counts_label_->setText(QStringLiteral("Counts reset at this position — applying settings…"));
+        state_label_->setText(QStringLiteral("Applying settings…"));
+    } catch (const std::exception& error) {
+        updating_ = false; stopped_ = true; playing_ = false;
+        state_label_->setText(QStringLiteral("Could not apply settings: ")+QString::fromUtf8(error.what()));
+    }
+    update_controls();
+}
+
 void PreviewWindow::begin_pending_source() {
     source_ = pending_source_;
     pending_source_.clear();
     try {
-        std::optional<frametrail::DetectorOptions> detection;
-        if (detect_box_->isChecked()) detection=frametrail::DetectorOptions{
-            native_path(model_path_),float(confidence_box_->value()),0.45f};
-        std::optional<frametrail::TrackingOptions> tracking;
-        if (detection && track_box_->isChecked()) {
-            tracking = frametrail::TrackingOptions{};
-            if (classes_box_->currentIndex() == 1) tracking->classes = {0};
-            if (classes_box_->currentIndex() == 2) tracking->classes = {1,2,3,5,7};
-            counting_line_.direction = direction_box_->currentIndex() == 1 ? frametrail::CrossingDirection::negative_to_positive :
-                direction_box_->currentIndex() == 2 ? frametrail::CrossingDirection::positive_to_negative : frametrail::CrossingDirection::both;
-            tracking->line = counting_line_;
-        }
-        session_.start(native_path(source_),detection,tracking);
+        auto [detection,tracking] = analysis_options();
+        session_.start(native_path(source_),std::move(detection),std::move(tracking));
         generation_ = session_.snapshot().generation;
+        analysis_revision_ = session_.snapshot().analysis_revision;
         playing_ = true;
         stopped_ = false;
         clock_started_ = false;
-        play_button_->setText(QStringLiteral("Pause"));
-        play_button_->setEnabled(true);
-        stop_button_->setEnabled(true);
-        replay_button_->setEnabled(true);
+        update_controls();
     } catch (const std::exception& error) {
         state_label_->setText(QStringLiteral("Could not open: ") + QString::fromUtf8(error.what()));
         replay_button_->setEnabled(true);
@@ -340,28 +387,22 @@ void PreviewWindow::begin_pending_source() {
 }
 
 void PreviewWindow::toggle_playback() {
-    if (stopped_ || !pending_source_.isEmpty()) return;
+    if (stopped_ || updating_ || line_editing_ || !pending_source_.isEmpty()) return;
     const auto now = std::chrono::steady_clock::now();
     playing_ = !playing_;
     if (!playing_) pause_start_ = now;
     else if (clock_started_) playback_start_ += now - pause_start_;
-    play_button_->setText(playing_ ? QStringLiteral("Pause") : QStringLiteral("Play"));
+    update_controls();
     state_label_->setText(playing_ ? QStringLiteral("Playing") : QStringLiteral("Paused"));
 }
 
 void PreviewWindow::stop_playback() {
-    pending_source_.clear();
-    session_.stop();
-    next_.reset();
-    playing_ = false;
-    stopped_ = true;
-    play_button_->setEnabled(false);
-    stop_button_->setEnabled(false);
-    state_label_->setText(QStringLiteral("Stopped"));
+    if (playing_) toggle_playback();
+    state_label_->setText(QStringLiteral("Stopped — press Play to continue"));
 }
 
 void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
-    if (wrapped.generation != generation_) return;
+    if (wrapped.generation != generation_ || wrapped.analysis_revision != analysis_revision_) return;
     const auto& frame = wrapped.frame;
     const QImage borrowed(frame.pixels.data(), frame.width, frame.height, frame.stride, QImage::Format_RGB888);
     canvas_->set_image(borrowed.copy(),wrapped.detection ? wrapped.detection->objects : std::vector<frametrail::Detection>{},
@@ -380,7 +421,9 @@ void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
             .arg(wrapped.tracking->negative_to_positive).arg(wrapped.tracking->positive_to_negative)
             .arg(wrapped.tracking->objects.size()).arg(wrapped.tracking->elapsed_ms,0,'f',2));
     }
-    state_label_->setText(QStringLiteral("Playing"));
+    displayed_frame_ = std::move(wrapped.frame);
+    state_label_->setText(playing_ ? QStringLiteral("Playing") : QStringLiteral("Paused"));
+    update_controls();
 }
 
 void PreviewWindow::tick() {
@@ -401,9 +444,24 @@ void PreviewWindow::tick() {
         next_.reset();
         stopped_ = true;
         playing_ = false;
-        play_button_->setEnabled(false);
-        stop_button_->setEnabled(false);
+        updating_ = false;
+        update_controls();
         state_label_->setText(QStringLiteral("Could not read: ") + QString::fromStdString(status.error));
+        return;
+    }
+    if (updating_) {
+        auto refreshed = session_.try_pop();
+        if (refreshed && refreshed->generation == generation_ && refreshed->analysis_revision == analysis_revision_) {
+            display(std::move(*refreshed));
+            updating_ = false;
+            playing_ = resume_after_update_;
+            const auto now = std::chrono::steady_clock::now();
+            first_timestamp_ = displayed_frame_->timestamp.value_or(std::chrono::microseconds{});
+            first_sequence_ = displayed_frame_->sequence;
+            playback_start_ = now; pause_start_ = now; clock_started_ = true;
+            state_label_->setText(playing_ ? QStringLiteral("Playing") : QStringLiteral("Paused"));
+            update_controls();
+        }
         return;
     }
     if (!playing_) return;
@@ -412,11 +470,12 @@ void PreviewWindow::tick() {
         const auto now = std::chrono::steady_clock::now();
         if (!clock_started_) {
             first_timestamp_ = next_->frame.timestamp.value_or(std::chrono::microseconds{});
+            first_sequence_ = next_->frame.sequence;
             playback_start_ = now;
             clock_started_ = true;
         }
         const auto timestamp = next_->frame.timestamp.value_or(
-            first_timestamp_ + std::chrono::microseconds(next_->frame.sequence * 33333));
+            first_timestamp_ + std::chrono::microseconds((next_->frame.sequence-first_sequence_) * 33333));
         if (now - playback_start_ >= timestamp - first_timestamp_) {
             display(std::move(*next_));
             next_.reset();
@@ -424,8 +483,7 @@ void PreviewWindow::tick() {
     } else if (!status.worker_active && status.queued_frames == 0) {
         playing_ = false;
         stopped_ = true;
-        play_button_->setEnabled(false);
-        stop_button_->setEnabled(false);
+        update_controls();
         state_label_->setText(displayed_sequence_ ? QStringLiteral("Finished") : QStringLiteral("No frames decoded"));
     }
 }

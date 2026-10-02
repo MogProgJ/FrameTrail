@@ -7,13 +7,13 @@ Detection answers "what is visible in this frame?" Tracking connects selected de
 Build with `./scripts/build.ps1`, then launch `build/windows-msvc/Release/frametrail-desktop.exe` from the repository directory. Open a short recording with **Detect objects (CPU)** and **Track & count** checked.
 
 1. Choose **People & vehicles**, **People**, or **Vehicles**. The default tracks COCO IDs 0, 1, 2, 3, 5, and 7: person, bicycle, car, motorcycle, bus, and truck. Other detections remain visible without track IDs.
-2. The default line spans 10% to 90% of the frame width at half its height. Click **Draw counting line** to pause, then click endpoint A and endpoint B on the image. Right-click cancels. Clicks outside the image and lines shorter than 5% of normalized frame size are ignored.
+2. The default line spans 10% to 90% of the frame width at half its height. Click **Draw counting line** to freeze the current frame, then click endpoint A and endpoint B on the image. Confirming the line applies it at that position and restores whether playback was playing or paused. Right-click cancels and restores that same playback state without changing the rule. Clicks outside the image and lines shorter than 5% of normalized frame size are ignored.
 3. Choose both directions, negative to positive, or positive to negative. The line displays A, B, and side markers. For a left-to-right horizontal line, negative is above and positive is below. Reversing the endpoints reverses the meaning.
-4. Changing the line, classes, direction, detection confidence, or tracking setting restarts the source and resets IDs/counts. Replay starts a fresh run as well. The line remains selected when opening another file, scaled to that file's dimensions.
+4. Changing the line, classes, direction, detection confidence, or tracking setting briefly pauses processing and re-analyses the held frame and bounded buffered frames. It preserves the exact source sequence/timestamp and resumes if previously playing. IDs, trails, and counts reset at that position, so the counters describe the new analysis segment rather than the full recording under mixed settings. Replay starts a fresh source from the beginning. The line remains selected when opening another file, scaled to that file's dimensions.
 
 Boxes show IDs such as `#7`. A question mark marks a tentative track; three matched observations confirm it. Trails contain at most the last 20 observed bottom-center positions. Counters show accepted crossings in each direction; they are counts of crossing events, not unique people. A person can cross repeatedly after re-arming.
 
-Temporal output starts on the second decoded frame. Frame zero seeds the tracker internally, so a one-frame image shows detections only. Predicted-only boxes are never drawn. Processing follows source timestamps and sequence order; playback can slow under CPU inference. Pause preserves state and bounded backpressure; Stop cancels, and Replay starts fresh.
+Temporal output starts on the second decoded frame. Frame zero seeds the tracker internally, so a one-frame image shows detections only. Predicted-only boxes are never drawn. Processing follows source timestamps and sequence order; playback can slow under CPU inference. Pause and Stop both preserve position and analysis state for Play. Replay starts fresh. Opening another source or closing the window cancels processing.
 
 ## CLI analysis and exports
 
@@ -63,7 +63,7 @@ flowchart LR
     P --> CSV[CLI streaming CSV]
 ```
 
-The desktop snapshots configuration when starting the worker. Each source owns a new tracker; the queue carries tracking results with that frame's generation and sequence. The UI counters use the displayed frame's results, rather than future worker state. PreviewSession retains its two-frame backpressure and cancellation behavior.
+The desktop snapshots configuration on each analysis revision. Source changes increment the source generation; settings changes increment the analysis revision. Buffered pixels keep their original sequence/timestamp and are re-analysed in order, without seeking or re-decoding from the beginning. Obsolete inference results are rejected. The tracker resets per revision to avoid crossings across different rules. The UI counters use the displayed frame's results, rather than future worker state. PreviewSession retains two-frame result backpressure and a bounded raw-frame backlog for refreshes; see [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ## Evidence and remaining work
 

@@ -19,7 +19,9 @@ public:
     void set_image(QImage image, std::vector<frametrail::Detection> objects = {},
         std::vector<frametrail::TrackedObject> tracks = {}, std::optional<frametrail::CountingLine> line = {});
     void begin_line_selection();
+    void cancel_line_selection(bool notify = true);
     std::function<void(frametrail::CountingLine)> line_selected;
+    std::function<void()> line_cancelled;
     [[nodiscard]] const QImage& image() const { return image_; }
     [[nodiscard]] const auto& detections() const { return objects_; }
     [[nodiscard]] const auto& tracks() const { return tracks_; }
@@ -42,6 +44,9 @@ public:
     explicit PreviewWindow(const QString& model_path = {});
     void open_file(const QString& path);
     [[nodiscard]] std::optional<std::uint64_t> displayed_sequence() const { return displayed_sequence_; }
+    [[nodiscard]] std::optional<std::chrono::microseconds> displayed_timestamp() const {
+        return displayed_frame_ ? displayed_frame_->timestamp : std::nullopt;
+    }
     [[nodiscard]] const QImage& preview_image() const { return canvas_->image(); }
     [[nodiscard]] bool playing() const { return playing_; }
     [[nodiscard]] const auto& detections() const { return canvas_->detections(); }
@@ -54,6 +59,9 @@ private:
     void stop_playback();
     void display(frametrail::PreviewFrame frame);
     void begin_pending_source();
+    void reconfigure_analysis();
+    void update_controls();
+    std::pair<std::optional<frametrail::DetectorOptions>, std::optional<frametrail::TrackingOptions>> analysis_options();
 
     frametrail::PreviewSession session_;
     QTimer timer_;
@@ -77,7 +85,14 @@ private:
     QString pending_source_;
     std::optional<frametrail::PreviewFrame> next_;
     std::optional<std::uint64_t> displayed_sequence_;
+    std::optional<frametrail::Frame> displayed_frame_;
     std::uint64_t generation_{};
+    std::uint64_t analysis_revision_{};
+    std::uint64_t first_sequence_{};
+    bool updating_{};
+    bool resume_after_update_{};
+    bool line_editing_{};
+    bool resume_after_line_{};
     bool playing_{};
     bool stopped_{true};
     bool closing_{};

@@ -18,7 +18,7 @@ From the FrameTrail repository directory:
 .\build\windows-msvc\Release\frametrail-desktop.exe
 ```
 
-Fetching downloads approximately 81 MB of FFmpeg and 40 MB of Qt base into `.deps/`, verifies SHA-256 hashes against the committed manifests, and extracts the SDKs. CMake's archive utility handles Qt's 7z archive, so no separate 7-Zip installation is needed. It also fetches ONNX Runtime (about 83 MB) and YOLOX-Nano (about 3.6 MB). Nothing is installed system-wide. Building configures x64, compiles Release, copies runtime DLLs and Qt platform plugins beside the executables, and runs CTest checks (nine with the model, fourteen after fetching the optional detection sample).
+Fetching downloads approximately 81 MB of FFmpeg and 40 MB of Qt base into `.deps/`, verifies SHA-256 hashes against the committed manifests, and extracts the SDKs. CMake's archive utility handles Qt's 7z archive, so no separate 7-Zip installation is needed. It also fetches ONNX Runtime (about 83 MB) and YOLOX-Nano (about 3.6 MB). Nothing is installed system-wide. Building configures x64, compiles Release, copies runtime DLLs and Qt platform plugins beside the executables, and runs CTest checks (ten with the model, fifteen after fetching the optional detection sample).
 
 For Debug:
 
@@ -55,7 +55,7 @@ Custom compatible SDKs can be specified through `-DFFMPEG_ROOT=<ffmpeg-directory
 
 ## Using the desktop
 
-Use **Open media** to select a local file. Videos start automatically. **Pause** holds the frame, **Play** resumes, **Stop** cancels decoding and leaves the last image visible, and **Replay** starts the same source from the beginning. Opening another file cancels the old worker before starting the new source. Closing requests cancellation and waits for the worker without blocking the UI event thread.
+Use **Open media** to select a local file. Videos start automatically. **Pause** and **Stop** hold the current position; **Play** resumes from there with the same analysis state. **Replay** starts the same source from the beginning. Settings changes re-analyse the held frame and buffered backlog at the same sequence/timestamp, then restore whether playback was playing or paused. Counts and IDs start a new analysis segment at that point. Line drawing holds the frame until you confirm A/B or right-click to cancel. Opening another file cancels the old worker before starting the new source. Closing requests cancellation and waits for the worker without blocking the UI event thread.
 
 The window shows dimensions, codec, zero-based frame number, and source-relative timestamp. A synthetic example is available after tests generate the fixtures:
 
@@ -108,21 +108,23 @@ flowchart LR
     QUEUE --> TIMER[UI timer and playback clock]
     TIMER --> IMAGE[Copy pixels into owned QImage]
     IMAGE --> CANVAS[Paint aspect-preserving preview]
-    UI --> CANCEL[Stop token wakes blocked queue]
+    UI --> CANCEL[Source replacement or close wakes blocked queue]
     CANCEL --> WORKER
 ```
 
-With detection enabled, the same worker runs inference after decoding. With tracking enabled, it then updates the source's tracker and crossing rules, and enqueues the frame with detections/tracks/events/counters. The worker never touches Qt widgets. A mutex protects status and the queue. A stop-aware condition variable waits when the queue is full; the UI polls without waiting for frames. Pause leaves a bounded backlog instead of decoding the entire recording into memory. Counts shown by the UI belong to the displayed frame. A restart creates a new tracker and captures the new rule settings.
+With detection enabled, the same worker runs inference after decoding. With tracking enabled, it then updates the source's tracker and crossing rules, and enqueues the frame with detections/tracks/events/counters. The worker never touches Qt widgets. A mutex protects status and the queue. A stop-aware condition variable waits when the queue is full; the UI polls without waiting for frames. Pause and the player Stop leave a bounded backlog instead of decoding the entire recording into memory. Counts shown by the UI belong to the displayed frame.
 
-Each start increments a generation ID. The display rejects frames from earlier sources. Replacement waits for the previous worker to become inactive and joins it before starting another. Stop clears queued frames and wakes the producer. `std::jthread` is the last session member so destruction joins before synchronization objects disappear. Decoding can finish before playback: the UI reaches Finished only after the accepted frames are displayed.
+Each source start increments a generation ID. Each settings change increments an analysis revision. The UI returns its displayed/pending raw frames; the controller merges them with queued raw pixels in source order, de-duplicates sequences, and rejects obsolete results. The worker applies the latest settings before processing that backlog, resets tracking, and retains the decoder's current position. Rapid changes coalesce into the latest revision. The detector is reused when its settings are unchanged. At EOF a later revision can refresh the held frame using a successor worker and the retained reader, without re-opening the source.
 
-Application frame storage includes at most two queued frames, one pending presentation frame, and the displayed QImage, plus decoder/conversion buffers and temporary copies. The deliberate QImage copy prevents dangling pixels. This bounds frame count, not bytes: larger resolutions use more memory. Profiling may justify reducing copies later.
+Source replacement waits for the previous worker to become inactive and joins it before starting another. `PreviewSession::stop()` is internal cancellation for replacement/close, not the player's Stop button. It requests the source and worker stop tokens, clears queued frames, and wakes the producer. `std::jthread` is the last session member so destruction joins before reader/synchronization objects disappear. The reader retains the source handle at EOF until replacement/close. Decoding can finish before playback: the UI reaches Finished only after the accepted frames are displayed.
+
+The result queue holds at most two frames. Normal playback also holds one pending presentation frame, one displayed raw RGB frame for refreshes, and its QImage. During reconfiguration the ordered raw backlog is capped at five frames (displayed, pending presentation, two queued, and one in-flight); results and in-flight work move through that backlog rather than accumulate a recording. A retained displayed copy, inference/model buffers, decoder/conversion buffers, and temporary copies add memory. This bounds frame count, not bytes: larger resolutions use more memory. The deliberate QImage copy prevents dangling pixels. Profiling may justify reducing copies later.
 
 Source presentation timestamps govern playback; a steady clock measures elapsed playback time. Pause shifts the playback clock's anchor. The reader is sequential and must not be read concurrently. Its stop token interrupts FFmpeg I/O; the CLI currently relies on OS process interruption rather than a graceful interactive cancel command.
 
 ## Checks and limitations
 
-The original six checks cover fixture generation, media contracts, CLI help, CLI exports, preview lifecycle, and desktop controls. Detection adds contract and real-model checks, plus three optional reference-sample checks described in [DETECTION.md](DETECTION.md). Media checks verify colour/layout, retained ownership, delayed EOF, variable timing, cancellation, invalid/audio-only inputs, Unicode paths, and padded export. CLI checks cover CSV rows, limits, and output protection. Worker checks cover queue bounds, blocked-producer cancellation, generations, ordered EOF, failure recovery, and shutdown. Desktop checks exercise pixels, pause/resume, stop, replay, replacement, errors, and closing with an active worker.
+The original six checks cover fixture generation, media contracts, CLI help, CLI exports, preview lifecycle, and desktop controls. Detection and tracking add the contracts/integration described in their guides. Media checks verify colour/layout, retained ownership, delayed EOF, variable timing, cancellation, invalid/audio-only inputs, Unicode paths, and padded export. Worker checks cover bounds, blocked-producer cancellation, generation/revision identity, repeated reconfiguration, exact sequence/timestamp/pixels, no re-decoding, EOF/still refreshes, failure recovery, and shutdown. Desktop checks exercise Stop/Play continuity, paused/playing settings, line apply/cancel, confidence/classes/direction/detection/tracking toggles, rapid changes, replay, source replacement, errors, and closing during work.
 
 Desktop checks use Qt's offscreen platform and load the installed Windows Segoe UI font for readable screenshots. The rendered window was inspected, but native file-dialog interaction and representative long recordings still need manual checks. No leak detector or sustained live-input test has been run. Windows x64 is the verified platform.
 
