@@ -20,7 +20,7 @@ KIT's bwUniCluster 3.0 is a strong later training target, with documented A100/H
 
 ## Proposed tools and dependencies
 
-The project now uses C++20/MSVC, CMake, pinned FFmpeg, Qt 6.11.3 Widgets, ONNX Runtime 1.30.0 CPU, and YOLOX-Nano. Qt and inference SDKs are local dependencies. Preprocessing is native C++, so OpenCV is not currently needed; SQLite remains planned. See the [development guide](DEVELOPMENT.md) and [detection guide](DETECTION.md) for setup and model details.
+The project now uses C++20/MSVC, CMake, pinned FFmpeg, Qt 6.11.3 Widgets, ONNX Runtime 1.30.0 CPU, YOLOX-Nano, and SQLite 3.53.4 compiled as C. SDKs/source are local dependencies. Preprocessing is native C++, so OpenCV is not currently needed. SQLite needs no database server. See the [development guide](DEVELOPMENT.md), [detection guide](DETECTION.md), and [saved runs](SAVED_RUNS.md).
 
 | Tool/dependency | Role | Official reference |
 | --- | --- | --- |

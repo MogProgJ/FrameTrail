@@ -13,6 +13,8 @@ CMakeUserPresets.json
 /output/
 *.sqlite
 *.sqlite3
+*.frametrail
+*.frametrail-journal
 *.sqlite-wal
 *.sqlite-shm
 *.db-wal

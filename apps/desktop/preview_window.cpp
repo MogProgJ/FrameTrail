@@ -1,4 +1,5 @@
 #include "preview_window.hpp"
+#include "saved_run_window.hpp"
 
 #include <QCloseEvent>
 #include <QCoreApplication>
@@ -187,6 +188,19 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     auto* open = new QPushButton(QStringLiteral("Open media"));
     open->setObjectName(QStringLiteral("open"));
     header->addWidget(open);
+    auto* saved=new QPushButton(QStringLiteral("Saved analysis…"));
+    saved->setObjectName(QStringLiteral("savedAnalysis"));header->addWidget(saved);
+    connect(saved,&QPushButton::clicked,this,[this,saved] {
+        if(playing_)toggle_playback();
+        const auto [detector,tracking]=analysis_options();
+        std::optional<frametrail::RunConfiguration> configuration;
+        if(!source_.isEmpty() && detector && tracking && tracking->line)
+            configuration=frametrail::RunConfiguration{native_path(source_),*detector,*tracking};
+        auto* window=new SavedRunWindow(std::move(configuration));
+        saved->setEnabled(false);
+        connect(window,&QObject::destroyed,this,[saved]{saved->setEnabled(true);});
+        window->setAttribute(Qt::WA_DeleteOnClose);window->show();
+    });
     layout->addLayout(header);
     source_label_ = new QLabel(QStringLiteral("No file selected"));
     source_label_->setObjectName(QStringLiteral("source"));

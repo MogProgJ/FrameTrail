@@ -2,9 +2,9 @@
 
 ## What runs today
 
-FrameTrail 0.4 has a desktop preview and a command-line media inspector backed by a reusable C++ library. Both open local images and recordings, decode the visual stream, and produce owned RGB24 pixels with source timestamps. The desktop displays frames; the CLI exports metadata to CSV and the first frame to a lossless PPM image.
+FrameTrail 0.5 has a desktop preview, saved-analysis review window, and command-line inspector backed by a reusable C++ library. They open local images/recordings and produce owned RGB24 pixels with source timestamps. Whole-file analysis stores configuration, events, thumbnails, and progress in SQLite; review plays the source without inference.
 
-The preview has Open media, Play/Pause, Stop, and Replay. CPU detection adds boxes, labels, confidence filtering, and detection CSV exports; see [the detection guide](DETECTION.md). Tracking adds people/vehicle IDs, trails, a two-click finite counting line, direction filtering, counters, and CLI track/event CSV; see [the tracking guide](TRACKING.md). Audio playback, seeking, persistent event storage, live input, and agents remain planned. CLI throughput includes the enabled processing stages and reports detection/tracking time separately; it is not a live-performance promise.
+The preview has Open media, Play/Pause, Stop, Replay, and Saved analysis. CPU detection adds boxes, labels, confidence filtering, and CSV; see [detection](DETECTION.md). Tracking adds IDs, trails, line rules, and counters; see [tracking](TRACKING.md). Saved analysis adds immutable run files, event thumbnails/markers, review seeking, and CSV; see [saved runs](SAVED_RUNS.md). Audio playback, live input, and agents remain planned. CLI throughput includes enabled stages; it is not a live-performance promise.
 
 ## Windows setup
 
@@ -18,7 +18,7 @@ From the FrameTrail repository directory:
 .\build\windows-msvc\Release\frametrail-desktop.exe
 ```
 
-Fetching downloads approximately 81 MB of FFmpeg and 40 MB of Qt base into `.deps/`, verifies SHA-256 hashes against the committed manifests, and extracts the SDKs. CMake's archive utility handles Qt's 7z archive, so no separate 7-Zip installation is needed. It also fetches ONNX Runtime (about 83 MB) and YOLOX-Nano (about 3.6 MB). Nothing is installed system-wide. Building configures x64, compiles Release, copies runtime DLLs and Qt platform plugins beside the executables, and runs CTest checks (ten with the model, fifteen after fetching the optional detection sample).
+Fetching downloads approximately 81 MB of FFmpeg and 40 MB of Qt base into `.deps/`, verifies SHA-256 hashes, and extracts the SDKs. CMake handles Qt's 7z archive. It also fetches ONNX Runtime (about 83 MB), YOLOX-Nano (about 3.6 MB), and SQLite source (about 3 MB). Nothing is installed system-wide. Building configures x64, compiles Release, copies runtime DLLs/plugins, and runs CTest. With the model and optional detection sample, twenty checks are available. Existing checkouts can fetch only the new source with `.\scripts\fetch-storage.ps1`.
 
 For Debug:
 
@@ -91,9 +91,12 @@ Without `--max-frames`, inspection reads to EOF. `timestamp_us` is source-relati
 | `apps/cli/main.cpp` | Arguments, export validation, frame loop, CSV, summary |
 | `include/frametrail/detector.hpp`, `src/detector.cpp` | Model session, preprocessing, grid decoding, NMS, labels, and CPU timings |
 | `include/frametrail/tracker.hpp`, `src/tracker.cpp` | Motion/overlap association, confirmation/expiry, bounded trails, finite-line crossing state and counters |
+| `include/frametrail/run_store.hpp`, `src/run_store.cpp` | SQLite C API ownership, frozen run schema, transactional events/progress, read-only pages/CSV |
+| `include/frametrail/analysis_job.hpp`, `src/analysis_job.cpp` | Whole-file decode/detect/track/persist worker, progress and partial cancellation/failure |
+| `apps/desktop/saved_run_window.cpp` | Saved run workflow, thumbnails/pages/markers, asynchronous decode-only event review |
 | `tests/` | Synthetic fixtures, media/CLI/worker/desktop behaviour checks |
 | `scripts/` | Explicit dependency acquisition and build/check commands |
-| `dependencies/` | Pinned FFmpeg, Qt, ONNX Runtime, and model artifacts |
+| `dependencies/` | Pinned FFmpeg, Qt, ONNX Runtime, model, and SQLite source artifacts |
 
 FFmpeg is a C library called directly from our C++ code. RAII wrappers release native contexts, packets, frames, and conversion resources even when an operation fails. Returned frames own their pixels and remain valid when the reader advances. At EOF the reader flushes delayed decoder output, which matters for codecs that reorder frames internally.
 
@@ -128,7 +131,7 @@ The original six checks cover fixture generation, media contracts, CLI help, CLI
 
 Desktop checks use Qt's offscreen platform and load the installed Windows Segoe UI font for readable screenshots. The rendered window was inspected, but native file-dialog interaction and representative long recordings still need manual checks. No leak detector or sustained live-input test has been run. Windows x64 is the verified platform.
 
-Audio, seeking, rotation metadata, and non-square sample aspect-ratio correction are not implemented. The canvas preserves pixel-dimension aspect ratio. Supported codecs depend on the FFmpeg build; every possible format has not been verified. Memory growth and representative performance still need measurement.
+Event review seeking is implemented, with sequence fallback when timestamps/indexes are unsuitable. Audio, general player scrubbing, rotation metadata, and non-square sample aspect-ratio correction remain unimplemented. The canvas preserves pixel-dimension aspect ratio. Supported codecs depend on FFmpeg; every format has not been verified. Memory growth and representative performance still need measurement.
 
 ## Dependency provenance
 
@@ -138,4 +141,4 @@ Licenses/notices remain inside `.deps`. Local development builds do not complete
 
 ## Next slice
 
-Evaluate detection, track identities, and crossing events on short labelled people/vehicle clips, using the cases listed in [TRACKING.md](TRACKING.md). Persistent runs, event review, and seeking follow after event semantics are stable. Optional AI perception and an agent-driven service remain deferred.
+Evaluate detection, track identities, crossing events, and the saved recorded-file workflow on short labelled people/vehicle clips, using [TRACKING.md](TRACKING.md) and [SAVED_RUNS.md](SAVED_RUNS.md). First live input follows after that workflow is reliable. Optional AI perception and an agent-driven service remain deferred.

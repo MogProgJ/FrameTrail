@@ -31,6 +31,11 @@ struct PreviewFrame {
     std::uint64_t analysis_revision{};
 };
 
+struct ReviewPosition {
+    std::optional<std::chrono::microseconds> timestamp;
+    std::uint64_t source_sequence{}; // Fallback if timestamps/seeking are unavailable.
+};
+
 // Main-thread controller with a single decoding worker and bounded handoff.
 // UI code polls; the worker never touches Qt or invokes application callbacks.
 class PreviewSession {
@@ -38,7 +43,7 @@ public:
     static constexpr std::size_t capacity = 2;
     ~PreviewSession();
     void start(const std::filesystem::path& source, std::optional<DetectorOptions> detection = {},
-        std::optional<TrackingOptions> tracking = {});
+        std::optional<TrackingOptions> tracking = {}, std::optional<ReviewPosition> review = {});
     // Keep decoder position; re-analyse retained frames and the bounded queue.
     std::uint64_t reconfigure(std::optional<DetectorOptions> detection,
         std::optional<TrackingOptions> tracking, std::vector<Frame> retained = {});
@@ -56,6 +61,7 @@ private:
     std::filesystem::path source_;
     std::optional<DetectorOptions> detection_;
     std::optional<TrackingOptions> tracking_;
+    std::optional<ReviewPosition> review_;
     std::deque<Frame> pending_frames_;
     std::stop_source source_stop_;
     // Only sequential workers access this; retained at EOF for setting refreshes.

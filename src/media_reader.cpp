@@ -242,4 +242,27 @@ std::optional<Frame> MediaReader::read() {
     return impl_->read();
 }
 
+std::optional<Frame> MediaReader::seek(std::chrono::microseconds target) {
+    if (!impl_) throw std::logic_error("MediaReader was moved from");
+    if (target.count()<0) throw std::invalid_argument("Review timestamp must be nonnegative");
+    impl_->check_cancelled();
+    if (!impl_->origin) {
+        const auto first=impl_->read();
+        if (!first || !first->timestamp) throw std::runtime_error("Source has no seekable presentation timestamps");
+    }
+    const auto offset=av_rescale_q(target.count(),AVRational{1,1000000},impl_->time_base);
+    if (offset>std::numeric_limits<std::int64_t>::max()-std::max<std::int64_t>(0,*impl_->origin))
+        throw std::invalid_argument("Review timestamp exceeds the source time range");
+    check(av_seek_frame(impl_->format.get(),impl_->stream_index,*impl_->origin+offset,AVSEEK_FLAG_BACKWARD),"Seek recording");
+    impl_->check_cancelled();
+    avcodec_flush_buffers(impl_->codec.get());
+    av_packet_unref(impl_->packet.get());av_frame_unref(impl_->decoded.get());
+    impl_->draining=false;impl_->ended=false;impl_->sequence=0;
+    while(auto frame=impl_->read()) {
+        if(!frame->timestamp) throw std::runtime_error("Source has no seekable presentation timestamps");
+        if(*frame->timestamp>=target)return frame;
+    }
+    return {};
+}
+
 } // namespace frametrail

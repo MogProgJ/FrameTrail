@@ -9,7 +9,7 @@ These milestones are ordered by dependencies, not estimated calendar dates. Impl
 | 0–2 | Project definition and native media foundation | Implemented; representative-media validation remains |
 | 3 | CPU object detection | Implemented; evaluate on labelled people/vehicle footage |
 | 4 | Tracking and line-crossing events | Baseline implemented; labelled event/identity evaluation remains |
-| 5 | Persist and review events | Next implementation phase, after event semantics are evaluated |
+| 5 | Persist and review events | Baseline implemented; representative workflow/resource evaluation remains |
 | 6 | One live input | After the recorded-file workflow is reliable |
 | 7 | Profile, optimize, and package | After the complete native workflow is measurable |
 | 8 | Conditional compute and model expansion | Enter individual gates only when measured limits justify them |
@@ -58,6 +58,8 @@ Completion evidence: compare output with manually labelled clips for single cros
 ## 5. Review and persistence
 
 Persist run configuration and events. Add event thumbnails, timeline markers, review seeking, CSV export, and reopening saved results.
+
+Progress: one SQLite file per frozen whole-file run, committed event/progress transactions, bounded thumbnail pages, page timeline markers, native seeking with source-sequence fallback, silent review playback without inference, reopening without a model, and CSV export are implemented. Cancellation/failure retain clearly labelled partial results. Contract and real-model/desktop integration checks cover these paths; see [saved runs](SAVED_RUNS.md). Representative people/vehicle recordings, event accuracy, native file dialogs, and sustained resource behaviour remain to be evaluated before calling this product workflow reliable.
 
 Completion evidence: a user completes the full recorded-video workflow; replay seeking does not modify analysis; event writes are idempotent; missing source files and failed exports produce useful errors. Verify CSV quoting and timestamp consistency.
 

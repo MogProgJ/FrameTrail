@@ -4,7 +4,7 @@
 
 Open an image or recording with **Detect objects (CPU)** checked. FrameTrail draws boxes, class names, and confidence scores for the displayed frame. Detection is enabled by default when the local model exists. Unchecking it restores preview-only playback. Changing detection settings restarts the current source from the beginning.
 
-The confidence control defaults to 0.35. Raising it hides weaker predictions; lowering it shows more candidates and can introduce false positives. A score is not a calibrated probability that a label is correct. The initial detector recognizes the 80 COCO categories, including people, bicycles, cars, motorcycles, buses, and trucks. Version 0.4 adds selected tracking classes, run-scoped IDs, and crossing counts; see [TRACKING.md](TRACKING.md). Persisting/reopening results remains later work.
+The confidence control defaults to 0.35. Raising it hides weaker predictions; lowering it shows more candidates and can introduce false positives. A score is not a calibrated probability that a label is correct. The initial detector recognizes the 80 COCO categories, including people, bicycles, cars, motorcycles, buses, and trucks. Tracking adds selected classes, IDs, and crossing counts; see [TRACKING.md](TRACKING.md). Version 0.5 persists whole-file crossing analyses and reopens evidence without inference; see [SAVED_RUNS.md](SAVED_RUNS.md).
 
 The status line reports detections on the current frame and CPU milliseconds for preprocessing, inference, and postprocessing. Model loading and file decoding are outside that per-frame number. CPU analysis may make playback slower than the recording's original speed. Every decoded frame is processed in order; this offline mode does not drop frames to meet a playback deadline.
 

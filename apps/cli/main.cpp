@@ -2,6 +2,7 @@
 #include "frametrail/media_reader.hpp"
 #include "frametrail/detector.hpp"
 #include "frametrail/tracker.hpp"
+#include "frametrail/run_store.hpp"
 
 #include <charconv>
 #include <chrono>
@@ -20,7 +21,7 @@
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.4 - CPU detection, tracking and crossing events\n\n"
+    std::cout << "FrameTrail 0.5 - CPU analysis, saved runs and event review\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
@@ -33,9 +34,12 @@ void help() {
                  "  --line x1,y1,x2,y2 Normalized endpoints [0,1]; default 0.1,0.5,0.9,0.5\n"
                  "  --direction <d>    both, forward (- to +), or reverse (+ to -)\n"
                  "  --classes <ids>    COCO IDs; default 0,1,2,3,5,7\n"
+                 "  --save-run <path>  Save a whole-file run (requires --detect and --track)\n"
                  "  --help             Show this help\n\n"
                  "Use frametrail-desktop for the preview window.\n"
-                 "One-frame images have detections only. Live input and saved review are planned.\n";
+                 "Usage: frametrail run <saved-run> [--export <new-csv>]\n"
+                 "Saved run inspection/export needs no model or source file.\n"
+                 "One-frame images have detections only. Live input remains planned.\n";
 }
 
 std::vector<std::string_view> split(const std::string& value) {
@@ -87,6 +91,14 @@ int run(const std::vector<std::string>& args) {
         help();
         return 0;
     }
+    if(args.size()>=2 && args[0]=="run") {
+        if(args.size()!=2 && (args.size()!=4 || args[2]!="--export"))throw std::runtime_error("Use run <saved-run> [--export <new-csv>]");
+        const frametrail::RunStore saved(path_from_utf8(args[1]));const auto summary=saved.summary();
+        std::cout<<"Run status: "<<summary.status<<"\nFrames analysed: "<<summary.processed_frames<<"\nEvents saved: "<<summary.event_count
+            <<"\nCrossings (- to +): "<<summary.forward<<"\nCrossings (+ to -): "<<summary.reverse<<'\n';
+        if(!summary.error.empty())std::cout<<"Run error: "<<summary.error<<'\n';
+        if(args.size()==4)saved.export_csv(path_from_utf8(args[3]));return 0;
+    }
     if (args.size() < 2 || args[0] != "inspect") {
         help();
         return 2;
@@ -96,6 +108,7 @@ int run(const std::vector<std::string>& args) {
     std::optional<std::filesystem::path> preview_path;
     std::optional<std::filesystem::path> model_path, detections_path;
     std::optional<std::filesystem::path> tracks_path, events_path;
+    std::optional<std::filesystem::path> saved_path;
     bool tracking = false;
     frametrail::TrackingOptions tracking_options;
     std::set<std::string> seen;
@@ -105,7 +118,7 @@ int run(const std::vector<std::string>& args) {
         if (!seen.insert(option).second) throw std::runtime_error("Duplicate option: " + option);
         if (option == "--track") { tracking = true; continue; }
         if (option != "--csv" && option != "--preview" && option != "--max-frames" && option != "--detect" && option != "--detections" &&
-            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes") {
+            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run") {
             throw std::runtime_error("Unknown option: " + option);
         }
         if (++i == args.size()) {
@@ -127,6 +140,8 @@ int run(const std::vector<std::string>& args) {
             tracks_path = path_from_utf8(args[i]);
         } else if (option == "--events") {
             events_path = path_from_utf8(args[i]);
+        } else if (option == "--save-run") {
+            saved_path = path_from_utf8(args[i]);
         } else if (option == "--line") {
             const auto parts = split(args[i]);
             if (parts.size() != 4) throw std::runtime_error("--line needs x1,y1,x2,y2");
@@ -154,11 +169,12 @@ int run(const std::vector<std::string>& args) {
         }
     }
     if (tracking && !model_path) throw std::runtime_error("--track requires --detect <model>");
+    if(saved_path && (!tracking || maximum))throw std::runtime_error("--save-run requires --track and whole-file analysis (no --max-frames)");
     if (!tracking && (tracks_path || events_path || seen.contains("--line") || seen.contains("--direction") || seen.contains("--classes")))
         throw std::runtime_error("Track exports and rule settings require --track");
     std::unique_ptr<frametrail::Tracker> tracker;
     if (tracking) tracker = std::make_unique<frametrail::Tracker>(tracking_options);
-    const std::vector<std::optional<std::filesystem::path>> outputs{csv_path,preview_path,detections_path,tracks_path,events_path};
+    const std::vector<std::optional<std::filesystem::path>> outputs{csv_path,preview_path,detections_path,tracks_path,events_path,saved_path};
     std::set<std::filesystem::path> output_names;
     for (const auto& path : outputs) if (path) {
         check_output_path(*path,input);
@@ -171,6 +187,12 @@ int run(const std::vector<std::string>& args) {
     frametrail::MediaReader reader(input);
     std::unique_ptr<frametrail::Detector> detector;
     if (model_path) detector=std::make_unique<frametrail::Detector>(frametrail::DetectorOptions{*model_path});
+    struct SavedRunGuard {
+        std::optional<frametrail::RunStore> value;
+        bool finished{};
+        ~SavedRunGuard() {if(value && !finished){try{value->finish("failed","CLI did not finish; see its error output");}catch(...){}}}
+    } saved;
+    if(saved_path)saved.value.emplace(frametrail::RunStore::create(*saved_path,{input,{*model_path},tracking_options},reader.info()));
     std::ofstream detections_csv;
     std::ofstream tracks_csv, events_csv;
     if (tracks_path) {
@@ -218,6 +240,7 @@ int run(const std::vector<std::string>& args) {
             if (tracker) {
                 const auto temporal = tracker->update(result.objects,frame->sequence,frame->timestamp,frame->width,frame->height);
                 tracking_ms += temporal.elapsed_ms;
+                if(saved.value)saved.value->record_frame(*frame,temporal.events);
                 if (frame->sequence > 0) {
                     forward = temporal.negative_to_positive; reverse = temporal.positive_to_negative;
                     for (const auto& object : temporal.objects) if (tracks_path) {
@@ -273,6 +296,12 @@ int run(const std::vector<std::string>& args) {
     }
     if (tracker) std::cout << "Crossings (- to +): " << forward << "\nCrossings (+ to -): " << reverse
         << "\nAverage tracking/rules (ms/frame): " << tracking_ms/count << '\n';
+    if(saved.value) {
+        const auto info=saved.value->summary();
+        if(!saved.value->source_available() || frametrail::file_stamp(*model_path)!=info.model_stamp)
+            throw std::runtime_error("Source or model changed during analysis; saved results are partial");
+        saved.value->finish("completed");saved.finished=true;
+    }
     const double elapsed = std::chrono::duration<double>(
         std::chrono::steady_clock::now() - start).count();
     std::cout << "Frames decoded: " << count << "\nFirst timestamp (us): ";

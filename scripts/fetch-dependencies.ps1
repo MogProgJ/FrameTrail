@@ -35,3 +35,4 @@ if ((Test-Path -LiteralPath $taskMarker) -and
 if (-not $MediaOnly) { & (Join-Path $PSScriptRoot 'fetch-qt.ps1') }
 & (Join-Path $PSScriptRoot 'fetch-inference.ps1')
 & (Join-Path $PSScriptRoot 'fetch-model.ps1')
+& (Join-Path $PSScriptRoot 'fetch-storage.ps1')

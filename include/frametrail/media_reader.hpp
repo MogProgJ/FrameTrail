@@ -30,6 +30,10 @@ public:
 
     [[nodiscard]] const MediaInfo& info() const;
     [[nodiscard]] std::optional<Frame> read();
+    // Seek backward to a keyframe, then decode to the first timestamp >= target.
+    // Sequence restarts at zero and is a decode ordinal after seeking, not a
+    // global source index. Presentation timestamps retain their source origin.
+    [[nodiscard]] std::optional<Frame> seek(std::chrono::microseconds target);
 
 private:
     struct Impl;

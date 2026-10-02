@@ -2,7 +2,7 @@
 
 A native desktop application being built to turn images and video into detections, object tracks, and reviewable events.
 
-**Status: tracking and counting-line baseline implemented (0.4).** Open a recording to see YOLOX-Nano detections, people/vehicle track IDs, trails, and directional crossing counts. Draw a finite counting line and choose the tracked classes. The CLI exports detections, tracks, and events as CSV. Saved event review and live input remain planned; counting accuracy still needs evaluation on labelled footage.
+**Status: saved analysis and event review implemented (0.5).** Open a recording to see CPU detections, track IDs, and line-crossing counts. Save a whole-file analysis, browse event thumbnails/timeline markers, replay the source at an event, reopen results, and export CSV. Live input remains planned; counting accuracy still needs evaluation on labelled footage.
 
 FrameTrail will begin with local images and prerecorded video. A later release will accept a live camera feed through the same processing core. The initial use case is counting people or vehicles crossing a user-defined line in footage from a fixed camera.
 
@@ -29,6 +29,7 @@ Still images support detections and an annotated preview. They do not support mo
 | [Glossary](docs/GLOSSARY.md) | Plain-language definitions of the technical terms |
 | [Build and development guide](docs/DEVELOPMENT.md) | How to run the desktop/CLI, read the source, and understand its checks |
 | [Tracking and counting lines](docs/TRACKING.md) | Desktop controls, CSV commands, association rules, crossing semantics, and accuracy limits |
+| [Saved analysis and review](docs/SAVED_RUNS.md) | Saving whole-file runs, event thumbnails, review playback, CSV, and partial results |
 
 ## Build and try it (Windows x64)
 
@@ -41,11 +42,11 @@ With Visual Studio 2022 C++ tools and CMake installed, run these from the reposi
 .\build\windows-msvc\Release\frametrail.exe inspect .\build\windows-msvc\fixtures\variable.mkv
 ```
 
-The dependency script downloads checksum-pinned FFmpeg, Qt, ONNX Runtime, and YOLOX-Nano artifacts into ignored local folders. Use **Open media** with **Detect objects (CPU)** and **Track & count** checked. Adjust Confidence to filter predictions. Click **Draw counting line**, select A then B, and choose a direction. Settings apply at the current position and reset analysis IDs/counts there; playback resumes if it was playing and stays paused if it was paused. **Stop** preserves your position for **Play**, while **Replay** returns to the beginning. Playback remains silent; CPU analysis can slow playback. See [CPU detection](docs/DETECTION.md) and [tracking](docs/TRACKING.md) for contracts, exports, and validation limits.
+The dependency script downloads checksum-pinned FFmpeg, Qt, ONNX Runtime, YOLOX-Nano, and SQLite artifacts into ignored local folders. Use **Open media** with **Detect objects (CPU)** and **Track & count** checked. Adjust confidence, draw the line, and choose a direction. Player edits preserve your position and reset temporary analysis counts there. **Stop** preserves your position for **Play**, while **Replay** returns to the beginning. Click **Saved analysis… → Analyse entire recording…** to save a run with fixed settings, then click an event to review it. Playback remains silent; CPU analysis can slow playback. See [saved runs](docs/SAVED_RUNS.md), [CPU detection](docs/DETECTION.md), and [tracking](docs/TRACKING.md).
 
 ## Implementation
 
-C++20, CMake, FFmpeg, Qt Widgets, and ONNX Runtime form the current implementation. Preprocessing and box decoding are native C++; OpenCV is not required. SQLite remains planned. See [equipment and setup](docs/EQUIPMENT_AND_SETUP.md) for official references and pending decisions.
+C++20, CMake, FFmpeg, Qt Widgets, ONNX Runtime, and SQLite form the current implementation. Preprocessing and box decoding are native C++; OpenCV is not required. SQLite's C source is compiled locally into the core. See [equipment and setup](docs/EQUIPMENT_AND_SETUP.md) for official references and pending decisions.
 
 C++ will own the application and resource lifetimes. Native C APIs, particularly video decoding and storage, provide direct exposure to buffers, memory layout, and explicit resource management. Custom C components will be introduced only where a concrete interface or performance requirement justifies them.
 

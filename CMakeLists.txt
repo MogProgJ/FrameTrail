@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(FrameTrail VERSION 0.4.0 LANGUAGES CXX)
+project(FrameTrail VERSION 0.5.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -43,7 +43,18 @@ set_target_properties(ONNXRuntime PROPERTIES
     IMPORTED_LOCATION "${ONNXRUNTIME_ROOT}/lib/onnxruntime.dll"
     INTERFACE_INCLUDE_DIRECTORIES "${ONNXRUNTIME_ROOT}/include")
 set(_detector_model "${CMAKE_CURRENT_SOURCE_DIR}/models/yolox_nano.onnx")
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/sqlite.json" _sqlite_manifest)
+string(JSON _sqlite_directory GET "${_sqlite_manifest}" archiveRoot)
+set(SQLITE_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/.deps/${_sqlite_directory}" CACHE PATH "SQLite amalgamation root")
+if(NOT EXISTS "${SQLITE_ROOT}/sqlite3.c")
+    message(FATAL_ERROR "SQLite source missing. Run scripts/fetch-storage.ps1 and configure again.")
+endif()
+add_library(frametrail_sqlite STATIC "${SQLITE_ROOT}/sqlite3.c")
+target_include_directories(frametrail_sqlite PUBLIC "${SQLITE_ROOT}")
+target_compile_definitions(frametrail_sqlite PRIVATE SQLITE_THREADSAFE=1 SQLITE_OMIT_LOAD_EXTENSION)
 add_library(frametrail_core
+    src/run_store.cpp
+    src/analysis_job.cpp
     src/tracker.cpp
     src/detector.cpp
     src/media_reader.cpp
@@ -51,7 +62,7 @@ add_library(frametrail_core
     src/preview_session.cpp)
 target_include_directories(frametrail_core PUBLIC include)
 target_link_libraries(frametrail_core PRIVATE
-    FFmpeg::avformat FFmpeg::avcodec FFmpeg::avutil FFmpeg::swscale Threads::Threads ONNXRuntime)
+    FFmpeg::avformat FFmpeg::avcodec FFmpeg::avutil FFmpeg::swscale Threads::Threads ONNXRuntime frametrail_sqlite)
 if(MSVC)
     target_compile_options(frametrail_core PRIVATE /W4 /permissive- /utf-8)
 else()
@@ -110,7 +121,7 @@ if(FRAMETRAIL_BUILD_GUI)
                 VERBATIM)
         endif()
     endfunction()
-    add_library(frametrail_preview_ui apps/desktop/preview_window.cpp)
+    add_library(frametrail_preview_ui apps/desktop/preview_window.cpp apps/desktop/saved_run_window.cpp)
     target_include_directories(frametrail_preview_ui PUBLIC apps/desktop)
     target_link_libraries(frametrail_preview_ui PUBLIC frametrail_core Qt6::Widgets)
     if(MSVC)
@@ -150,10 +161,28 @@ if(BUILD_TESTING)
         "-DFFMPEG=${_ffmpeg_executable}" "-DOUTPUT=${_fixtures}"
         -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/generate_fixtures.cmake")
     set_tests_properties(generate_media_fixtures PROPERTIES FIXTURES_SETUP media TIMEOUT 60)
+    add_executable(frametrail_run_tests tests/run_tests.cpp)
+    target_link_libraries(frametrail_run_tests PRIVATE frametrail_core)
+    if(MSVC)
+        target_compile_options(frametrail_run_tests PRIVATE /W4 /permissive- /utf-8)
+    endif()
+    frametrail_runtime(frametrail_run_tests)
+    add_test(NAME saved_run_contract COMMAND frametrail_run_tests "${_fixtures}")
+    set_tests_properties(saved_run_contract PROPERTIES FIXTURES_REQUIRED media TIMEOUT 30)
     if(EXISTS "${_detector_model}")
         add_test(NAME detection_inference COMMAND frametrail_detection_tests --inference "${_detector_model}" "${_fixtures}")
         set_tests_properties(detection_inference PROPERTIES FIXTURES_REQUIRED media TIMEOUT 60)
         if(EXISTS "${_detection_sample}")
+            add_test(NAME generate_analysis_fixture COMMAND ${CMAKE_COMMAND}
+                "-DFFMPEG=${_ffmpeg_executable}" "-DSAMPLE=${_detection_sample}" "-DOUTPUT=${_fixtures}/review.mkv"
+                -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/generate_analysis_fixture.cmake")
+            set_tests_properties(generate_analysis_fixture PROPERTIES FIXTURES_REQUIRED media FIXTURES_SETUP analysis TIMEOUT 30)
+            add_test(NAME saved_analysis_inference COMMAND frametrail_run_tests "${_fixtures}/review.mkv" "${_detector_model}")
+            set_tests_properties(saved_analysis_inference PROPERTIES FIXTURES_REQUIRED analysis TIMEOUT 60)
+            add_test(NAME cli_saved_run COMMAND ${CMAKE_COMMAND}
+                "-DCLI=$<TARGET_FILE:frametrail>" "-DMODEL=${_detector_model}" "-DSOURCE=${_fixtures}/review.mkv" "-DFIXTURES=${_fixtures}"
+                -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/check_saved_cli.cmake")
+            set_tests_properties(cli_saved_run PROPERTIES FIXTURES_REQUIRED analysis TIMEOUT 60)
             add_test(NAME detection_sample COMMAND frametrail_detection_tests --sample "${_detector_model}" "${_detection_sample}")
             set_tests_properties(detection_sample PROPERTIES TIMEOUT 60)
             add_test(NAME cli_detection COMMAND ${CMAKE_COMMAND}
@@ -188,6 +217,19 @@ if(BUILD_TESTING)
     endif()
     if(FRAMETRAIL_BUILD_GUI)
         find_package(Qt6 REQUIRED COMPONENTS Test)
+        if(EXISTS "${_detector_model}" AND EXISTS "${_detection_sample}")
+            add_executable(frametrail_saved_desktop_tests tests/saved_desktop_tests.cpp)
+            target_link_libraries(frametrail_saved_desktop_tests PRIVATE frametrail_preview_ui Qt6::Test)
+            frametrail_qt_runtime(frametrail_saved_desktop_tests)
+            if(MSVC)
+                target_compile_options(frametrail_saved_desktop_tests PRIVATE /W4 /permissive- /utf-8)
+            endif()
+            add_custom_command(TARGET frametrail_saved_desktop_tests POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:Qt6::Test>"
+                    "$<TARGET_FILE_DIR:frametrail_saved_desktop_tests>" VERBATIM)
+            add_test(NAME desktop_saved_review COMMAND frametrail_saved_desktop_tests "${_fixtures}" "${_fixtures}/review.mkv" "${_detector_model}")
+            set_tests_properties(desktop_saved_review PROPERTIES FIXTURES_REQUIRED analysis TIMEOUT 60 ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
+        endif()
         add_executable(frametrail_desktop_tests tests/desktop_tests.cpp)
         target_link_libraries(frametrail_desktop_tests PRIVATE frametrail_preview_ui Qt6::Test)
         frametrail_qt_runtime(frametrail_desktop_tests)

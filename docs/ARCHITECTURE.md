@@ -2,7 +2,7 @@
 
 ## Overall structure
 
-Implementation snapshot: `MediaReader`, owned RGB `Frame` values, exports, CLI, `PreviewSession`, Qt preview, and `Tracker` exist. PreviewSession owns one ordered worker and a two-frame queue; source generations reject stale frames. YOLOX-Nano CPU detection, tracking, and finite-line rules run sequentially on that worker; each queued frame carries its own optional detection/tracking result. The tracker keeps per-track crossing state, bounded trails, and cumulative counters. Persistent storage and the full analysis-job contract below remain target architecture. See [development](DEVELOPMENT.md) and [tracking](TRACKING.md).
+Implementation snapshot: `MediaReader`, owned RGB `Frame` values, exports, CLI, `PreviewSession`, Qt preview, `Tracker`, `AnalysisJob`, and `RunStore` exist. PreviewSession owns one ordered worker and a two-frame queue; source generations reject stale frames. YOLOX-Nano CPU detection, tracking, and finite-line rules run sequentially. A separate AnalysisJob analyses a full file with frozen settings and commits progress/events to SQLite. SavedRunWindow pages stored evidence and uses a decode-only PreviewSession for source review. See [development](DEVELOPMENT.md), [tracking](TRACKING.md), and [saved runs](SAVED_RUNS.md).
 
 Separate the processing core from the desktop interface. The interface configures jobs and displays results; decoding and inference run off its event thread. The CLI uses the same media core for repeatable inspection.
 
@@ -44,7 +44,7 @@ flowchart TD
 
 ## Proposed data contracts
 
-These describe the full target, not a final database schema. The implemented `Frame` contains sequence, optional timestamp, dimensions, stride, and owned RGB pixels; `PreviewFrame` adds a generation ID. Source/run identities and analysis result contracts will be introduced with analysis jobs.
+The list below describes the wider target. Implemented `Frame` contains sequence, optional timestamp, dimensions, stride, and owned RGB pixels; `PreviewFrame` adds generation/revision IDs. One saved-run file currently supplies the run namespace. Its configuration and crossing events use schema version 1, described in [saved runs](SAVED_RUNS.md).
 
 - **Frame:** source ID, run ID, generation ID, frame sequence, source-relative timestamp, dimensions, pixel format, row stride, and owned pixel storage. For live input also record monotonic arrival time and optional wall-clock time.
 - **Detection:** frame identity, class, confidence, and bounding box in original-frame coordinates.
@@ -56,7 +56,7 @@ A timestamp says when a frame belongs in the source; a processing timer says how
 
 ## Frame ownership and concurrency
 
-Begin with a small number of workers: decoding, sequential analysis, and persistence, alongside the UI thread. Detection, tracking, and event evaluation initially remain in one ordered analysis worker. Add parallel inference only if profiling justifies it, with an explicit ordering mechanism before tracking.
+Use a small number of workers alongside the UI thread. Detection, tracking, event evaluation, and persistence remain in one ordered AnalysisJob worker. The UI polls compact progress rather than receiving an accumulating frame/event log. Source review uses the existing bounded PreviewSession with inference disabled. Add parallel inference only if profiling justifies it, with explicit ordering before tracking.
 
 Decoded frames have a clear owner and remain valid until their consumers finish. Prefer moving ownership or sharing read-only storage where appropriate. Do not promise zero copies: colour conversion and model tensor preparation may need additional buffers. FFmpeg-owned memory must not be freed while another stage still references it.
 
@@ -72,17 +72,17 @@ Every queue has a fixed capacity and a documented overload policy:
 
 Live dropped frames reduce temporal evidence and can reduce counting accuracy. Tracking uses elapsed timestamps and tolerates gaps within configured limits; performance reporting must include drops.
 
-The display matches results by source generation, analysis revision, and frame identity. Settings edits preserve the decoder position, re-analyse the held/buffered pixels in source order, and reset track/rule state at the current position. Older revisions cannot overwrite the refreshed frame. The player Stop is a resumable pause; source replacement and close use cancellation. Persistent review playback and seeking remain a later separate session.
+The display matches results by source generation, analysis revision, and frame identity. Player settings edits preserve the decoder position, re-analyse held/buffered pixels in order, and reset temporary track/rule state. Older revisions cannot overwrite the refreshed frame. Stop is a resumable pause; source replacement and close use cancellation. Saved source review is a separate decode-only session that cannot reconfigure analysis or obtain a SQLite writer.
 
 ## Initial crossing rule
 
 Use a configurable line with two endpoints normalized to the original frame dimensions. The box bottom-center is the baseline anchor. A candidate crossing must intersect the finite line segment, pass direction filtering, and satisfy a small deadband/hysteresis around the boundary to avoid jitter-driven counts. The implemented rules require three observations for confirmation and invalidate crossing history across long gaps; exact defaults are in [TRACKING.md](TRACKING.md).
 
-Repeat crossings are allowed after a later same-side observation moves beyond the re-arm distance. Current event IDs increase within one run; Phase 5 must add persistent run identity and idempotent event writes. Track loss and identity switches can still create missed or duplicate counts; evaluate those cases rather than assuming IDs are perfect.
+Repeat crossings are allowed after a later same-side observation moves beyond the re-arm distance. Event IDs increase within one run. Each saved file namespaces those IDs; identical repeated writes are ignored and conflicting IDs fail transactionally. This prevents storage duplicates; track loss and identity switches can still create incorrect counting events and require labelled evaluation.
 
 ## Persistence and review
 
-Plan for runs, rule snapshots, events, and optional thumbnail files. SQLite holds structured metadata; keep large images outside database rows initially. Use a single writer and transactions, and introduce schema versioning with the first schema.
+RunStore saves one run/configuration snapshot and crossing events in a SQLite file. A single worker writes events plus progress in transactions. The first schema has an application ID and version guard. Small thumbnails (at most 160×90 RGB PPM) are embedded for portable evidence; full frames/video stay outside the database. Review/export open the database read-only and page at most 100 events. Completed, cancelled, failed, and unfinished runs remain distinct.
 
 Persist source-relative timestamps and the original source reference. If the source file has moved or disappeared, review should explain that it cannot open the footage. Saving events does not copy the source video. Live replay requires a later recording/retention design.
 
@@ -94,7 +94,7 @@ Useful errors distinguish unsupported media, missing model, malformed model outp
 
 C++20 is the proposed application language. Use RAII wrappers for C resources: destruction releases handles and memory automatically, including on early returns. Keep model-specific and library-specific structures inside adapters where practical. Do not force a custom C layer before there is a demonstrated requirement.
 
-FFmpeg decodes, Qt presents the interface, and ONNX Runtime runs YOLOX-Nano on the CPU. Native C++ handles preprocessing and postprocessing. OpenCV is not needed for the current adapter; SQLite remains planned. Avoid implementing overlapping playback stacks until there is a reason to do so.
+FFmpeg decodes, Qt presents the interface, ONNX Runtime runs YOLOX-Nano on the CPU, and SQLite stores run/event evidence. SQLite's pinned amalgamation is compiled as C and wrapped with C++ ownership. Native C++ handles preprocessing, postprocessing, and small thumbnails. OpenCV is not needed for the current adapter. Preview and review share the bounded decoder controller.
 
 ## Optional training and service boundary
 
