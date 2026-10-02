@@ -108,6 +108,8 @@ int main(int argc, char* argv[]) {
                 wait_for([&]{return state->text()==QStringLiteral("Paused") && play->isEnabled();});
                 require(window.displayed_sequence()==position && window.displayed_timestamp()==timestamp && !window.playing(),
                     "Settings restarted or advanced paused playback");
+                require(!window.findChild<QLabel*>(QStringLiteral("crossingCounts"))->text().contains(QStringLiteral("applying")),
+                    "Completed settings change retained its loading message");
             };
             QTest::mouseClick(draw,Qt::LeftButton);
             QTest::mouseClick(video_canvas,Qt::LeftButton,{},point(.2,.4));

@@ -420,7 +420,7 @@ void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
         counts_label_->setText(QStringLiteral("Video counts: − → +  %1    |    + → −  %2    •    %3 observed tracks    •    Rules %4 ms")
             .arg(wrapped.tracking->negative_to_positive).arg(wrapped.tracking->positive_to_negative)
             .arg(wrapped.tracking->objects.size()).arg(wrapped.tracking->elapsed_ms,0,'f',2));
-    }
+    } else counts_label_->setText(QStringLiteral("Video counts: − → +  0    |    + → −  0"));
     displayed_frame_ = std::move(wrapped.frame);
     state_label_->setText(playing_ ? QStringLiteral("Playing") : QStringLiteral("Paused"));
     update_controls();
