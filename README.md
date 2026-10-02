@@ -2,7 +2,7 @@
 
 A native desktop application being built to turn images and video into detections, object tracks, and reviewable events.
 
-**Status: CPU object detection implemented (0.3).** Open an image or recorded video to see YOLOX-Nano boxes, labels, and confidence scores. Detection runs on a cancellable background worker and stays paired with its source frame. The CLI exports detections as CSV. Tracking, event review, and live input remain planned.
+**Status: tracking and counting-line baseline implemented (0.4).** Open a recording to see YOLOX-Nano detections, people/vehicle track IDs, trails, and directional crossing counts. Draw a finite counting line and choose the tracked classes. The CLI exports detections, tracks, and events as CSV. Saved event review and live input remain planned; counting accuracy still needs evaluation on labelled footage.
 
 FrameTrail will begin with local images and prerecorded video. A later release will accept a live camera feed through the same processing core. The initial use case is counting people or vehicles crossing a user-defined line in footage from a fixed camera.
 
@@ -28,6 +28,7 @@ Still images support detections and an annotated preview. They do not support mo
 | [Current status](docs/STATUS.md) | What exists now, open decisions, and the next work |
 | [Glossary](docs/GLOSSARY.md) | Plain-language definitions of the technical terms |
 | [Build and development guide](docs/DEVELOPMENT.md) | How to run the desktop/CLI, read the source, and understand its checks |
+| [Tracking and counting lines](docs/TRACKING.md) | Desktop controls, CSV commands, association rules, crossing semantics, and accuracy limits |
 
 ## Build and try it (Windows x64)
 
@@ -40,7 +41,7 @@ With Visual Studio 2022 C++ tools and CMake installed, run these from the reposi
 .\build\windows-msvc\Release\frametrail.exe inspect .\build\windows-msvc\fixtures\variable.mkv
 ```
 
-The dependency script downloads checksum-pinned FFmpeg, Qt, ONNX Runtime, and YOLOX-Nano artifacts into ignored local folders. Use **Open media** with **Detect objects (CPU)** checked. Adjust Confidence to filter predictions. Playback remains silent; CPU analysis can slow playback. See the [CPU detection guide](docs/DETECTION.md) for the model contract, export commands, and validation limits.
+The dependency script downloads checksum-pinned FFmpeg, Qt, ONNX Runtime, and YOLOX-Nano artifacts into ignored local folders. Use **Open media** with **Detect objects (CPU)** and **Track & count** checked. Adjust Confidence to filter predictions. Click **Draw counting line**, select A then B, and choose a direction. Changing analysis settings restarts the run and resets counts. Playback remains silent; CPU analysis can slow playback. See [CPU detection](docs/DETECTION.md) and [tracking](docs/TRACKING.md) for contracts, exports, and validation limits.
 
 ## Implementation
 

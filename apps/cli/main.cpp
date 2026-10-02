@@ -1,6 +1,7 @@
 #include "frametrail/frame_export.hpp"
 #include "frametrail/media_reader.hpp"
 #include "frametrail/detector.hpp"
+#include "frametrail/tracker.hpp"
 
 #include <charconv>
 #include <chrono>
@@ -12,20 +13,47 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <set>
+#include <algorithm>
+#include <cwctype>
 
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.3 - native media and CPU detection\n\n"
+    std::cout << "FrameTrail 0.4 - CPU detection, tracking and crossing events\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
                  "  --max-frames <n>   Stop after n frames (positive integer)\n"
                  "  --detect <model>   Run the pinned YOLOX-Nano ONNX model on the CPU\n"
                  "  --detections <csv> Export detections (requires --detect)\n"
+                 "  --track            Track people/vehicles (requires --detect)\n"
+                 "  --tracks <csv>     Export observed track boxes (requires --track)\n"
+                 "  --events <csv>     Export line crossings (requires --track)\n"
+                 "  --line x1,y1,x2,y2 Normalized endpoints [0,1]; default 0.1,0.5,0.9,0.5\n"
+                 "  --direction <d>    both, forward (- to +), or reverse (+ to -)\n"
+                 "  --classes <ids>    COCO IDs; default 0,1,2,3,5,7\n"
                  "  --help             Show this help\n\n"
                  "Use frametrail-desktop for the preview window.\n"
-                 "Tracking and live input are still planned.\n";
+                 "One-frame images have detections only. Live input and saved review are planned.\n";
+}
+
+std::vector<std::string_view> split(const std::string& value) {
+    std::vector<std::string_view> parts;
+    std::string_view remaining(value);
+    for (;;) {
+        const auto comma = remaining.find(',');
+        parts.push_back(remaining.substr(0,comma));
+        if (comma == std::string_view::npos) return parts;
+        remaining.remove_prefix(comma+1);
+    }
+}
+template<class T> T number(std::string_view value) {
+    T result{};
+    const auto parsed = std::from_chars(value.data(),value.data()+value.size(),result);
+    if (parsed.ec != std::errc{} || parsed.ptr != value.data()+value.size())
+        throw std::runtime_error("Invalid numeric option value");
+    return result;
 }
 
 std::filesystem::path path_from_utf8(const std::string& value) {
@@ -44,6 +72,16 @@ void check_output_path(const std::filesystem::path& path,
     }
 }
 
+std::filesystem::path output_key(const std::filesystem::path& path) {
+    auto key = std::filesystem::weakly_canonical(std::filesystem::absolute(path));
+#ifdef _WIN32
+    auto native = key.native();
+    std::ranges::transform(native,native.begin(),[](wchar_t c) { return wchar_t(std::towlower(c)); });
+    key = native;
+#endif
+    return key;
+}
+
 int run(const std::vector<std::string>& args) {
     if (args.size() == 1 && args[0] == "--help") {
         help();
@@ -57,10 +95,17 @@ int run(const std::vector<std::string>& args) {
     std::optional<std::filesystem::path> csv_path;
     std::optional<std::filesystem::path> preview_path;
     std::optional<std::filesystem::path> model_path, detections_path;
+    std::optional<std::filesystem::path> tracks_path, events_path;
+    bool tracking = false;
+    frametrail::TrackingOptions tracking_options;
+    std::set<std::string> seen;
     std::optional<std::uint64_t> maximum;
     for (std::size_t i = 2; i < args.size(); ++i) {
         const auto& option = args[i];
-        if (option != "--csv" && option != "--preview" && option != "--max-frames" && option != "--detect" && option != "--detections") {
+        if (!seen.insert(option).second) throw std::runtime_error("Duplicate option: " + option);
+        if (option == "--track") { tracking = true; continue; }
+        if (option != "--csv" && option != "--preview" && option != "--max-frames" && option != "--detect" && option != "--detections" &&
+            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes") {
             throw std::runtime_error("Unknown option: " + option);
         }
         if (++i == args.size()) {
@@ -78,6 +123,24 @@ int run(const std::vector<std::string>& args) {
         } else if (option == "--detections") {
             if (detections_path) throw std::runtime_error("Duplicate --detections option");
             detections_path=path_from_utf8(args[i]);
+        } else if (option == "--tracks") {
+            tracks_path = path_from_utf8(args[i]);
+        } else if (option == "--events") {
+            events_path = path_from_utf8(args[i]);
+        } else if (option == "--line") {
+            const auto parts = split(args[i]);
+            if (parts.size() != 4) throw std::runtime_error("--line needs x1,y1,x2,y2");
+            tracking_options.line->a = {number<double>(parts[0]),number<double>(parts[1])};
+            tracking_options.line->b = {number<double>(parts[2]),number<double>(parts[3])};
+        } else if (option == "--direction") {
+            const auto& d = args[i];
+            if (d == "both") tracking_options.line->direction = frametrail::CrossingDirection::both;
+            else if (d == "forward") tracking_options.line->direction = frametrail::CrossingDirection::negative_to_positive;
+            else if (d == "reverse") tracking_options.line->direction = frametrail::CrossingDirection::positive_to_negative;
+            else throw std::runtime_error("--direction must be both, forward, or reverse");
+        } else if (option == "--classes") {
+            tracking_options.classes.clear();
+            for (const auto& part : split(args[i])) tracking_options.classes.push_back(number<int>(part));
         } else {
             if (maximum) throw std::runtime_error("Duplicate --max-frames option");
             std::uint64_t value{};
@@ -90,27 +153,38 @@ int run(const std::vector<std::string>& args) {
             maximum = value;
         }
     }
-    if (csv_path) check_output_path(*csv_path, input);
-    if (preview_path) check_output_path(*preview_path, input);
-    if (detections_path) {
-        if (!model_path) throw std::runtime_error("--detections requires --detect <model>");
-        check_output_path(*detections_path,input);
-        for (const auto& other:{csv_path,preview_path}) {
-            if (other && std::filesystem::absolute(*other).lexically_normal()==std::filesystem::absolute(*detections_path).lexically_normal())
-                throw std::runtime_error("Each export needs a different output path");
-        }
+    if (tracking && !model_path) throw std::runtime_error("--track requires --detect <model>");
+    if (!tracking && (tracks_path || events_path || seen.contains("--line") || seen.contains("--direction") || seen.contains("--classes")))
+        throw std::runtime_error("Track exports and rule settings require --track");
+    std::unique_ptr<frametrail::Tracker> tracker;
+    if (tracking) tracker = std::make_unique<frametrail::Tracker>(tracking_options);
+    const std::vector<std::optional<std::filesystem::path>> outputs{csv_path,preview_path,detections_path,tracks_path,events_path};
+    std::set<std::filesystem::path> output_names;
+    for (const auto& path : outputs) if (path) {
+        check_output_path(*path,input);
+        if (!output_names.insert(output_key(*path)).second)
+            throw std::runtime_error("Each export needs a different output path");
     }
-    if (csv_path && preview_path &&
-        std::filesystem::absolute(*csv_path).lexically_normal() ==
-            std::filesystem::absolute(*preview_path).lexically_normal()) {
-        throw std::runtime_error("CSV and preview need different output paths");
-    }
+    if (detections_path && !model_path) throw std::runtime_error("--detections requires --detect <model>");
 
     const auto start = std::chrono::steady_clock::now();
     frametrail::MediaReader reader(input);
     std::unique_ptr<frametrail::Detector> detector;
     if (model_path) detector=std::make_unique<frametrail::Detector>(frametrail::DetectorOptions{*model_path});
     std::ofstream detections_csv;
+    std::ofstream tracks_csv, events_csv;
+    if (tracks_path) {
+        tracks_csv.open(*tracks_path,std::ios::binary);
+        if (!tracks_csv) throw std::runtime_error("Cannot open track CSV");
+        tracks_csv << "sequence,timestamp_us,track_id,class_id,label,confirmed,confidence,left,top,right,bottom\n";
+    }
+    if (events_path) {
+        events_csv.open(*events_path,std::ios::binary);
+        if (!events_csv) throw std::runtime_error("Cannot open event CSV");
+        events_csv << "event_id,sequence,timestamp_us,track_id,class_id,label,direction,x_normalized,y_normalized\n";
+    }
+    std::uint64_t forward = 0, reverse = 0;
+    double tracking_ms = 0;
     if (detections_path) {
         detections_csv.open(*detections_path,std::ios::binary);
         if (!detections_csv) throw std::runtime_error("Cannot open detection CSV");
@@ -141,6 +215,27 @@ int run(const std::vector<std::string>& args) {
             const auto result=detector->detect(*frame);
             object_count+=result.objects.size();
             detection_ms+=result.elapsed_ms;
+            if (tracker) {
+                const auto temporal = tracker->update(result.objects,frame->sequence,frame->timestamp,frame->width,frame->height);
+                tracking_ms += temporal.elapsed_ms;
+                if (frame->sequence > 0) {
+                    forward = temporal.negative_to_positive; reverse = temporal.positive_to_negative;
+                    for (const auto& object : temporal.objects) if (tracks_path) {
+                        const auto& d = object.detection;
+                        tracks_csv << frame->sequence << ',';
+                        if (frame->timestamp) tracks_csv << frame->timestamp->count();
+                        tracks_csv << ',' << object.id << ',' << d.class_id << ',' << frametrail::class_name(d.class_id) << ','
+                            << object.confirmed << ',' << d.confidence << ',' << d.left << ',' << d.top << ',' << d.right << ',' << d.bottom << '\n';
+                    }
+                    for (const auto& event : temporal.events) if (events_path) {
+                        events_csv << event.id << ',' << event.sequence << ',';
+                        if (event.timestamp) events_csv << event.timestamp->count();
+                        events_csv << ',' << event.track_id << ',' << event.class_id << ',' << frametrail::class_name(event.class_id) << ','
+                            << frametrail::direction_name(event.direction) << ',' << event.position.x << ',' << event.position.y << '\n';
+                    }
+                }
+                if ((tracks_path && !tracks_csv) || (events_path && !events_csv)) throw std::runtime_error("Failed writing tracking exports");
+            }
             for (const auto& object:result.objects) {
                 if (detections_path) {
                     detections_csv << frame->sequence << ',';
@@ -172,6 +267,12 @@ int run(const std::vector<std::string>& args) {
     }
     if (detector) std::cout << "Detections across frames: " << object_count
         << "\nAverage CPU detection (ms/frame): " << detection_ms/count << '\n';
+    for (auto* stream : {&tracks_csv,&events_csv}) if (stream->is_open()) {
+        stream->close();
+        if (!*stream) throw std::runtime_error("Failed to finish tracking export");
+    }
+    if (tracker) std::cout << "Crossings (- to +): " << forward << "\nCrossings (+ to -): " << reverse
+        << "\nAverage tracking/rules (ms/frame): " << tracking_ms/count << '\n';
     const double elapsed = std::chrono::duration<double>(
         std::chrono::steady_clock::now() - start).count();
     std::cout << "Frames decoded: " << count << "\nFirst timestamp (us): ";
@@ -179,7 +280,8 @@ int run(const std::vector<std::string>& args) {
     std::cout << "\nLast timestamp (us): ";
     if (last) std::cout << last->count(); else std::cout << "unavailable";
     std::cout << std::fixed << std::setprecision(3) << "\nElapsed (s): " << elapsed
-              << (detector ? "\nDecode/detect/export throughput (fps): " : "\nDecode/export throughput (fps): ") << (elapsed > 0 ? count / elapsed : 0)
+              << (tracker ? "\nDecode/detect/track/export throughput (fps): " :
+                  detector ? "\nDecode/detect/export throughput (fps): " : "\nDecode/export throughput (fps): ") << (elapsed > 0 ? count / elapsed : 0)
               << "\nStop condition: "
               << ((maximum && count == *maximum) ? "frame limit" : "end of file") << '\n';
     return 0;

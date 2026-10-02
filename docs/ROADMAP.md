@@ -8,8 +8,8 @@ These milestones are ordered by dependencies, not estimated calendar dates. Impl
 | --- | --- | --- |
 | 0–2 | Project definition and native media foundation | Implemented; representative-media validation remains |
 | 3 | CPU object detection | Implemented; evaluate on labelled people/vehicle footage |
-| 4 | Tracking and line-crossing events | Next core product phase |
-| 5 | Persist and review events | After event semantics are stable |
+| 4 | Tracking and line-crossing events | Baseline implemented; labelled event/identity evaluation remains |
+| 5 | Persist and review events | Next implementation phase, after event semantics are evaluated |
 | 6 | One live input | After the recorded-file workflow is reliable |
 | 7 | Profile, optimize, and package | After the complete native workflow is measurable |
 | 8 | Conditional compute and model expansion | Enter individual gates only when measured limits justify them |
@@ -48,6 +48,8 @@ Add preprocessing and CPU inference for one model. Render boxes in original-fram
 Completion evidence: results align with the correct frame and coordinates; preprocessing agrees with the model specification; inference timing and peak memory are recorded on the target machine. No temporal events are generated for images.
 
 ## 4. Tracking and crossing events
+
+Progress: native class-gated greedy motion association, confirmed IDs, expiry, finite-line crossings, direction filtering, deadband/re-arming, short-gap handling, trails, desktop line drawing/counters, and CLI track/event CSV are implemented. Synthetic rules and reference-model integration checks pass. Representative labelled footage, event accuracy, and identity-switch measurements remain open. See [TRACKING.md](TRACKING.md); this is not completion of the accuracy acceptance criteria below.
 
 Add an explicit initial association strategy, track expiry, one finite counting line, direction filtering, hysteresis, and event re-arming. A basic tracker is a baseline, not an accuracy guarantee.
 

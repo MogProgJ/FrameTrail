@@ -2,9 +2,9 @@
 
 ## What runs today
 
-FrameTrail 0.3 has a desktop preview and a command-line media inspector backed by a reusable C++ library. Both open local images and recordings, decode the visual stream, and produce owned RGB24 pixels with source timestamps. The desktop displays frames; the CLI exports metadata to CSV and the first frame to a lossless PPM image.
+FrameTrail 0.4 has a desktop preview and a command-line media inspector backed by a reusable C++ library. Both open local images and recordings, decode the visual stream, and produce owned RGB24 pixels with source timestamps. The desktop displays frames; the CLI exports metadata to CSV and the first frame to a lossless PPM image.
 
-The preview has Open media, Play/Pause, Stop, and Replay. CPU detection now adds boxes, labels, confidence filtering, and detection CSV exports; see [the detection guide](DETECTION.md). Audio playback, seeking, tracking, event storage, live input, and agents remain planned. Without detection, CLI throughput measures decoding/export. With `--detect`, it includes inference and reports detection timing separately. Neither is a live-performance promise.
+The preview has Open media, Play/Pause, Stop, and Replay. CPU detection adds boxes, labels, confidence filtering, and detection CSV exports; see [the detection guide](DETECTION.md). Tracking adds people/vehicle IDs, trails, a two-click finite counting line, direction filtering, counters, and CLI track/event CSV; see [the tracking guide](TRACKING.md). Audio playback, seeking, persistent event storage, live input, and agents remain planned. CLI throughput includes the enabled processing stages and reports detection/tracking time separately; it is not a live-performance promise.
 
 ## Windows setup
 
@@ -18,7 +18,7 @@ From the FrameTrail repository directory:
 .\build\windows-msvc\Release\frametrail-desktop.exe
 ```
 
-Fetching downloads approximately 81 MB of FFmpeg and 40 MB of Qt base into `.deps/`, verifies SHA-256 hashes against the committed manifests, and extracts the SDKs. CMake's archive utility handles Qt's 7z archive, so no separate 7-Zip installation is needed. It also fetches ONNX Runtime (about 83 MB) and YOLOX-Nano (about 3.6 MB). Nothing is installed system-wide. Building configures x64, compiles Release, copies runtime DLLs and Qt platform plugins beside the executables, and runs CTest checks (eight with the model, eleven after fetching the optional detection sample).
+Fetching downloads approximately 81 MB of FFmpeg and 40 MB of Qt base into `.deps/`, verifies SHA-256 hashes against the committed manifests, and extracts the SDKs. CMake's archive utility handles Qt's 7z archive, so no separate 7-Zip installation is needed. It also fetches ONNX Runtime (about 83 MB) and YOLOX-Nano (about 3.6 MB). Nothing is installed system-wide. Building configures x64, compiles Release, copies runtime DLLs and Qt platform plugins beside the executables, and runs CTest checks (nine with the model, fourteen after fetching the optional detection sample).
 
 For Debug:
 
@@ -90,6 +90,7 @@ Without `--max-frames`, inspection reads to EOF. `timestamp_us` is source-relati
 | `apps/desktop/main.cpp` | Qt entry point and optional initial file argument |
 | `apps/cli/main.cpp` | Arguments, export validation, frame loop, CSV, summary |
 | `include/frametrail/detector.hpp`, `src/detector.cpp` | Model session, preprocessing, grid decoding, NMS, labels, and CPU timings |
+| `include/frametrail/tracker.hpp`, `src/tracker.cpp` | Motion/overlap association, confirmation/expiry, bounded trails, finite-line crossing state and counters |
 | `tests/` | Synthetic fixtures, media/CLI/worker/desktop behaviour checks |
 | `scripts/` | Explicit dependency acquisition and build/check commands |
 | `dependencies/` | Pinned FFmpeg, Qt, ONNX Runtime, and model artifacts |
@@ -111,7 +112,7 @@ flowchart LR
     CANCEL --> WORKER
 ```
 
-With detection enabled, the same worker runs inference after decoding, then enqueues the frame and its detections together. The worker never touches Qt widgets. A mutex protects status and the queue. A stop-aware condition variable waits when the queue is full; the UI polls without waiting for frames. Pause leaves a bounded backlog instead of decoding the entire recording into memory.
+With detection enabled, the same worker runs inference after decoding. With tracking enabled, it then updates the source's tracker and crossing rules, and enqueues the frame with detections/tracks/events/counters. The worker never touches Qt widgets. A mutex protects status and the queue. A stop-aware condition variable waits when the queue is full; the UI polls without waiting for frames. Pause leaves a bounded backlog instead of decoding the entire recording into memory. Counts shown by the UI belong to the displayed frame. A restart creates a new tracker and captures the new rule settings.
 
 Each start increments a generation ID. The display rejects frames from earlier sources. Replacement waits for the previous worker to become inactive and joins it before starting another. Stop clears queued frames and wakes the producer. `std::jthread` is the last session member so destruction joins before synchronization objects disappear. Decoding can finish before playback: the UI reaches Finished only after the accepted frames are displayed.
 
@@ -135,4 +136,4 @@ Licenses/notices remain inside `.deps`. Local development builds do not complete
 
 ## Next slice
 
-Evaluate the implemented CPU detector on representative people/vehicle clips, then build tracking and crossing rules from those observations. Event review and seeking follow later. Optional AI perception and an agent-driven service remain deferred.
+Evaluate detection, track identities, and crossing events on short labelled people/vehicle clips, using the cases listed in [TRACKING.md](TRACKING.md). Persistent runs, event review, and seeking follow after event semantics are stable. Optional AI perception and an agent-driven service remain deferred.

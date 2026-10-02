@@ -5,23 +5,36 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <chrono>
+#include <functional>
 
 class QLabel;
 class QPushButton;
 class QCheckBox;
 class QDoubleSpinBox;
+class QComboBox;
 
 class FrameCanvas : public QWidget {
 public:
     explicit FrameCanvas(QWidget* parent = nullptr);
-    void set_image(QImage image, std::vector<frametrail::Detection> objects = {});
+    void set_image(QImage image, std::vector<frametrail::Detection> objects = {},
+        std::vector<frametrail::TrackedObject> tracks = {}, std::optional<frametrail::CountingLine> line = {});
+    void begin_line_selection();
+    std::function<void(frametrail::CountingLine)> line_selected;
     [[nodiscard]] const QImage& image() const { return image_; }
     [[nodiscard]] const auto& detections() const { return objects_; }
+    [[nodiscard]] const auto& tracks() const { return tracks_; }
+    [[nodiscard]] const auto& counting_line() const { return line_; }
 protected:
     void paintEvent(QPaintEvent*) override;
+    void mousePressEvent(QMouseEvent*) override;
 private:
+    QRect image_rect() const;
     QImage image_;
     std::vector<frametrail::Detection> objects_;
+    std::vector<frametrail::TrackedObject> tracks_;
+    std::optional<frametrail::CountingLine> line_;
+    bool selecting_line_{};
+    std::optional<frametrail::Point> first_point_;
 };
 
 class PreviewWindow : public QMainWindow {
@@ -32,6 +45,7 @@ public:
     [[nodiscard]] const QImage& preview_image() const { return canvas_->image(); }
     [[nodiscard]] bool playing() const { return playing_; }
     [[nodiscard]] const auto& detections() const { return canvas_->detections(); }
+    [[nodiscard]] const auto& tracks() const { return canvas_->tracks(); }
 protected:
     void closeEvent(QCloseEvent* event) override;
 private:
@@ -52,6 +66,12 @@ private:
     QPushButton* replay_button_{};
     QCheckBox* detect_box_{};
     QDoubleSpinBox* confidence_box_{};
+    QCheckBox* track_box_{};
+    QComboBox* direction_box_{};
+    QComboBox* classes_box_{};
+    QPushButton* line_button_{};
+    QLabel* counts_label_{};
+    frametrail::CountingLine counting_line_;
     QString model_path_;
     QString source_;
     QString pending_source_;

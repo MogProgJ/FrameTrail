@@ -5,7 +5,9 @@ namespace frametrail {
 
 PreviewSession::~PreviewSession() { stop(); }
 
-void PreviewSession::start(const std::filesystem::path& source, std::optional<DetectorOptions> detection) {
+void PreviewSession::start(const std::filesystem::path& source, std::optional<DetectorOptions> detection,
+    std::optional<TrackingOptions> tracking) {
+    if (tracking && !detection) throw std::invalid_argument("Tracking requires detection");
     {
         std::lock_guard lock(mutex_);
         if (status_.worker_active) {
@@ -24,13 +26,15 @@ void PreviewSession::start(const std::filesystem::path& source, std::optional<De
         status_.worker_active = true;
     }
     try {
-        worker_ = std::jthread([this, source, generation, detection](std::stop_token stop) {
+        worker_ = std::jthread([this, source, generation, detection, tracking](std::stop_token stop) {
             PreviewState outcome = PreviewState::completed;
             std::string error;
             try {
                 MediaReader reader(source, stop);
                 std::unique_ptr<Detector> detector;
                 if (detection && !stop.stop_requested()) detector = std::make_unique<Detector>(*detection);
+                std::unique_ptr<Tracker> tracker;
+                if (tracking) tracker = std::make_unique<Tracker>(*tracking);
                 {
                     std::lock_guard lock(mutex_);
                     status_.info = reader.info();
@@ -46,9 +50,16 @@ void PreviewSession::start(const std::filesystem::path& source, std::optional<De
                     if (!frame) break;
                     std::optional<DetectionResult> result;
                     if (detector) result = detector->detect(*frame, stop);
+                    std::optional<TrackingResult> tracks;
+                    if (tracker && !stop.stop_requested()) {
+                        auto temporal = tracker->update(result->objects,frame->sequence,frame->timestamp,frame->width,frame->height);
+                        // Seed on frame zero, expose temporal results only once motion evidence exists.
+                        // A one-frame image never presents track IDs or crossing events.
+                        if (frame->sequence > 0) tracks = std::move(temporal);
+                    }
                     lock.lock();
                     if (stop.stop_requested()) break;
-                    frames_.push_back({generation, std::move(*frame), std::move(result)});
+                    frames_.push_back({generation, std::move(*frame), std::move(result), std::move(tracks)});
                     ++status_.decoded_frames;
                 }
                 if (stop.stop_requested()) outcome = PreviewState::cancelled;

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(FrameTrail VERSION 0.3.0 LANGUAGES CXX)
+project(FrameTrail VERSION 0.4.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -44,6 +44,7 @@ set_target_properties(ONNXRuntime PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "${ONNXRUNTIME_ROOT}/include")
 set(_detector_model "${CMAKE_CURRENT_SOURCE_DIR}/models/yolox_nano.onnx")
 add_library(frametrail_core
+    src/tracker.cpp
     src/detector.cpp
     src/media_reader.cpp
     src/frame_export.cpp
@@ -121,6 +122,13 @@ if(FRAMETRAIL_BUILD_GUI)
 endif()
 
 if(BUILD_TESTING)
+    add_executable(frametrail_tracking_tests tests/tracking_tests.cpp)
+    target_link_libraries(frametrail_tracking_tests PRIVATE frametrail_core)
+    if(MSVC)
+        target_compile_options(frametrail_tracking_tests PRIVATE /W4 /permissive- /utf-8)
+    endif()
+    frametrail_runtime(frametrail_tracking_tests)
+    add_test(NAME tracking_contract COMMAND frametrail_tracking_tests)
     add_executable(frametrail_detection_tests tests/detection_tests.cpp)
     target_link_libraries(frametrail_detection_tests PRIVATE frametrail_core)
     if(WIN32)
@@ -153,6 +161,11 @@ if(BUILD_TESTING)
                 "-DSAMPLE=${_detection_sample}" "-DFIXTURES=${_fixtures}"
                 -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/check_detection_cli.cmake")
             set_tests_properties(cli_detection PROPERTIES FIXTURES_REQUIRED media TIMEOUT 60)
+            add_test(NAME cli_tracking COMMAND ${CMAKE_COMMAND}
+                "-DCLI=$<TARGET_FILE:frametrail>" "-DMODEL=${_detector_model}"
+                "-DSAMPLE=${_detection_sample}" "-DFIXTURES=${_fixtures}" "-DFFMPEG=${_ffmpeg_executable}"
+                -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/check_tracking_cli.cmake")
+            set_tests_properties(cli_tracking PROPERTIES FIXTURES_REQUIRED media TIMEOUT 60)
         endif()
     endif()
     add_test(NAME media_contract COMMAND frametrail_media_tests "${_fixtures}")
@@ -167,6 +180,10 @@ if(BUILD_TESTING)
     frametrail_runtime(frametrail_preview_tests)
     add_test(NAME preview_lifecycle COMMAND frametrail_preview_tests "${_fixtures}")
     set_tests_properties(preview_lifecycle PROPERTIES FIXTURES_REQUIRED media TIMEOUT 30)
+    if(EXISTS "${_detector_model}" AND EXISTS "${_detection_sample}")
+        add_test(NAME preview_tracking COMMAND frametrail_preview_tests "${_fixtures}" "${_detector_model}" "${_detection_sample}")
+        set_tests_properties(preview_tracking PROPERTIES FIXTURES_REQUIRED media TIMEOUT 60)
+    endif()
     if(FRAMETRAIL_BUILD_GUI)
         find_package(Qt6 REQUIRED COMPONENTS Test)
         add_executable(frametrail_desktop_tests tests/desktop_tests.cpp)

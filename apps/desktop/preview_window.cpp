@@ -4,6 +4,8 @@
 #include <QCoreApplication>
 #include <QCheckBox>
 #include <QDoubleSpinBox>
+#include <QComboBox>
+#include <QMouseEvent>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QHBoxLayout>
@@ -12,6 +14,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <algorithm>
+#include <cmath>
 
 namespace {
 std::filesystem::path native_path(const QString& value) {
@@ -40,10 +43,39 @@ FrameCanvas::FrameCanvas(QWidget* parent) : QWidget(parent) {
     setObjectName(QStringLiteral("frameCanvas"));
 }
 
-void FrameCanvas::set_image(QImage image, std::vector<frametrail::Detection> objects) {
+void FrameCanvas::set_image(QImage image, std::vector<frametrail::Detection> objects,
+    std::vector<frametrail::TrackedObject> tracks, std::optional<frametrail::CountingLine> line) {
     image_ = std::move(image);
     objects_ = std::move(objects);
+    tracks_ = std::move(tracks);
+    line_ = std::move(line);
+    if (image_.isNull()) { selecting_line_ = false; first_point_.reset(); unsetCursor(); }
     update();
+}
+
+QRect FrameCanvas::image_rect() const {
+    const auto scaled = image_.size().scaled(size(), Qt::KeepAspectRatio);
+    return {(width()-scaled.width())/2,(height()-scaled.height())/2,scaled.width(),scaled.height()};
+}
+void FrameCanvas::begin_line_selection() {
+    if (image_.isNull()) return;
+    selecting_line_ = true; first_point_.reset(); setCursor(Qt::CrossCursor); update();
+}
+void FrameCanvas::mousePressEvent(QMouseEvent* event) {
+    if (!selecting_line_ || image_.isNull()) return;
+    if (event->button() == Qt::RightButton) {
+        selecting_line_ = false; first_point_.reset(); unsetCursor(); update(); return;
+    }
+    const auto target = image_rect();
+    if (event->button() != Qt::LeftButton || !target.contains(event->position().toPoint())) return;
+    frametrail::Point p{(event->position().x()-target.left())/target.width(),
+        (event->position().y()-target.top())/target.height()};
+    if (!first_point_) { first_point_ = p; update(); return; }
+    if (std::hypot(p.x-first_point_->x,p.y-first_point_->y) < 0.05) return;
+    auto line = line_.value_or(frametrail::CountingLine{});
+    line.a = *first_point_; line.b = p;
+    selecting_line_ = false; first_point_.reset(); unsetCursor(); line_ = line; update();
+    if (line_selected) line_selected(line);
 }
 
 void FrameCanvas::paintEvent(QPaintEvent*) {
@@ -54,9 +86,7 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
         painter.drawText(rect(), Qt::AlignCenter, QStringLiteral("Open an image or video to begin"));
         return;
     }
-    const auto scaled = image_.size().scaled(size(), Qt::KeepAspectRatio);
-    const QRect target((width() - scaled.width()) / 2, (height() - scaled.height()) / 2,
-        scaled.width(), scaled.height());
+    const QRect target = image_rect();
     painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.drawImage(target, image_);
     painter.setClipRect(target);
@@ -67,9 +97,15 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
             (object.right-object.left)*sx, (object.bottom-object.top)*sy);
         painter.setPen(QPen(color,2));
         painter.drawRect(box);
-        const auto label=QStringLiteral("%1 %2%")
+        auto label=QStringLiteral("%1 %2%")
             .arg(QString::fromUtf8(frametrail::class_name(object.class_id).data()))
             .arg(qRound(object.confidence*100));
+        for (const auto& track : tracks_) if (track.detection.class_id == object.class_id &&
+            track.detection.left == object.left && track.detection.top == object.top &&
+            track.detection.right == object.right && track.detection.bottom == object.bottom) {
+            label += QStringLiteral(" #%1%2").arg(track.id).arg(track.confirmed ? QString{} : QStringLiteral("?"));
+            break;
+        }
         const auto text_size=painter.fontMetrics().size(Qt::TextSingleLine,label);
         const double label_x=std::clamp(box.left(),double(target.left()),
             std::max(double(target.left()),double(target.right()-text_size.width()-8)));
@@ -79,11 +115,37 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
         painter.setPen(QColor("#09131a"));
         painter.drawText(label_box,Qt::AlignCenter,label);
     }
+    const auto screen = [&](frametrail::Point p) {
+        return QPointF(target.left()+p.x*target.width(),target.top()+p.y*target.height());
+    };
+    painter.setRenderHint(QPainter::Antialiasing);
+    for (const auto& track : tracks_) {
+        painter.setPen(QPen(QColor::fromHsv(int((track.id*67)%360),150,230),2));
+        for (std::size_t i=1;i<track.trail.size();++i) painter.drawLine(screen(track.trail[i-1]),screen(track.trail[i]));
+    }
+    if (line_) {
+        painter.setPen(QPen(QColor("#ffce63"),3));
+        painter.drawLine(screen(line_->a),screen(line_->b));
+        painter.drawEllipse(screen(line_->a),4,4); painter.drawEllipse(screen(line_->b),4,4);
+        painter.drawText(screen(line_->a)+QPointF(8,-8),QStringLiteral("A"));
+        painter.drawText(screen(line_->b)+QPointF(8,-8),QStringLiteral("B"));
+        const auto dx=line_->b.x-line_->a.x,dy=line_->b.y-line_->a.y;
+        const auto norm=std::hypot(dx,dy);
+        const frametrail::Point middle{(line_->a.x+line_->b.x)/2,(line_->a.y+line_->b.y)/2};
+        painter.drawText(screen({middle.x-dy/norm*0.05,middle.y+dx/norm*0.05}),QStringLiteral("+"));
+        painter.drawText(screen({middle.x+dy/norm*0.05,middle.y-dx/norm*0.05}),QStringLiteral("−"));
+    }
+    if (selecting_line_) {
+        painter.setPen(QPen(QColor("#ffce63"),2));
+        if (first_point_) painter.drawEllipse(screen(*first_point_),6,6);
+        painter.drawText(target.adjusted(12,12,-12,-12),Qt::AlignTop|Qt::AlignLeft,
+            first_point_ ? QStringLiteral("Click endpoint B • Right-click to cancel") : QStringLiteral("Click endpoint A • Right-click to cancel"));
+    }
 }
 
 PreviewWindow::PreviewWindow(const QString& model_path) {
     model_path_=model_path.isEmpty() ? QCoreApplication::applicationDirPath()+QStringLiteral("/models/yolox_nano.onnx") : model_path;
-    setWindowTitle(QStringLiteral("FrameTrail — CPU object detection"));
+    setWindowTitle(QStringLiteral("FrameTrail — tracking and line crossings"));
     resize(1080, 720);
     setMinimumSize(680, 480);
     setStyleSheet(QStringLiteral(
@@ -94,6 +156,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
         "QLabel#state { color: #73dfc3; }"
         "QCheckBox { color: #e4edf7; font-size: 13px; }"
         "QDoubleSpinBox { background: #263448; color: #e4edf7; padding: 5px; }"
+        "QComboBox { background: #263448; color: #e4edf7; padding: 5px; }"
         "QPushButton { color: #e4edf7; background: #263448; border: 1px solid #394b62;"
         " border-radius: 6px; padding: 9px 18px; font-size: 13px; }"
         "QPushButton:hover { background: #33465f; }"
@@ -110,7 +173,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     auto* branding = new QVBoxLayout;
     auto* title = new QLabel(QStringLiteral("FrameTrail"));
     title->setObjectName(QStringLiteral("title"));
-    auto* subtitle = new QLabel(QStringLiteral("Images, video and CPU object detection"));
+    auto* subtitle = new QLabel(QStringLiteral("CPU detection • Object IDs • Line crossings"));
     subtitle->setObjectName(QStringLiteral("subtitle"));
     branding->addWidget(title);
     branding->addWidget(subtitle);
@@ -143,6 +206,29 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     model_label->setObjectName(QStringLiteral("subtitle"));
     analysis_controls->addWidget(model_label);
     layout->addLayout(analysis_controls);
+    auto* tracking_controls = new QHBoxLayout;
+    track_box_ = new QCheckBox(QStringLiteral("Track & count"));
+    track_box_->setObjectName(QStringLiteral("trackObjects")); track_box_->setChecked(true);
+    track_box_->setEnabled(detect_box_->isChecked());
+    tracking_controls->addWidget(track_box_);
+    classes_box_ = new QComboBox;
+    classes_box_->setObjectName(QStringLiteral("trackingClasses"));
+    classes_box_->addItems({QStringLiteral("People & vehicles"),QStringLiteral("People"),QStringLiteral("Vehicles")});
+    tracking_controls->addWidget(classes_box_);
+    line_button_ = new QPushButton(QStringLiteral("Draw counting line"));
+    line_button_->setObjectName(QStringLiteral("drawLine"));
+    line_button_->setToolTip(QStringLiteral("Click A then B on the video. The run restarts with the new line. Right-click cancels."));
+    tracking_controls->addWidget(line_button_);
+    direction_box_ = new QComboBox;
+    direction_box_->setObjectName(QStringLiteral("crossingDirection"));
+    direction_box_->addItems({QStringLiteral("Both directions"),QStringLiteral("− → +"),QStringLiteral("+ → −")});
+    direction_box_->setToolTip(QStringLiteral("Sides refer to the A→B line shown on the frame. For the default left-to-right line, + is below."));
+    tracking_controls->addWidget(direction_box_);
+    tracking_controls->addStretch();
+    layout->addLayout(tracking_controls);
+    counts_label_ = new QLabel(QStringLiteral("Video counts: − → +  0    |    + → −  0"));
+    counts_label_->setObjectName(QStringLiteral("crossingCounts"));
+    layout->addWidget(counts_label_);
     canvas_ = new FrameCanvas;
     layout->addWidget(canvas_, 1);
     auto* controls = new QHBoxLayout;
@@ -182,6 +268,23 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     };
     connect(detect_box_,&QCheckBox::toggled,this,[restart](bool){restart();});
     connect(confidence_box_,&QDoubleSpinBox::valueChanged,this,[restart](double){restart();});
+    const auto tracking_enabled = [this] {
+        const bool enabled = detect_box_->isChecked() && track_box_->isChecked();
+        track_box_->setEnabled(detect_box_->isChecked());
+        classes_box_->setEnabled(enabled); direction_box_->setEnabled(enabled); line_button_->setEnabled(enabled);
+    };
+    tracking_enabled();
+    connect(detect_box_,&QCheckBox::toggled,this,[tracking_enabled](bool){tracking_enabled();});
+    connect(track_box_,&QCheckBox::toggled,this,[restart,tracking_enabled](bool){tracking_enabled();restart();});
+    connect(classes_box_,&QComboBox::currentIndexChanged,this,[restart](int){restart();});
+    connect(direction_box_,&QComboBox::currentIndexChanged,this,[restart](int){restart();});
+    connect(line_button_,&QPushButton::clicked,this,[this] {
+        if (!canvas_->image().isNull()) {
+            if (playing_) toggle_playback();
+            canvas_->begin_line_selection();
+        }
+    });
+    canvas_->line_selected = [this,restart](frametrail::CountingLine line) { counting_line_ = line; restart(); };
     connect(&timer_, &QTimer::timeout, this, [this] { tick(); });
     timer_.start(10);
 }
@@ -202,6 +305,7 @@ void PreviewWindow::open_file(const QString& path) {
     source_label_->setText(QFileInfo(path).fileName());
     source_label_->setToolTip(path);
     details_label_->setText(QStringLiteral("Reading media…"));
+    counts_label_->setText(QStringLiteral("Video counts: − → +  0    |    + → −  0"));
 }
 
 void PreviewWindow::begin_pending_source() {
@@ -211,7 +315,16 @@ void PreviewWindow::begin_pending_source() {
         std::optional<frametrail::DetectorOptions> detection;
         if (detect_box_->isChecked()) detection=frametrail::DetectorOptions{
             native_path(model_path_),float(confidence_box_->value()),0.45f};
-        session_.start(native_path(source_),detection);
+        std::optional<frametrail::TrackingOptions> tracking;
+        if (detection && track_box_->isChecked()) {
+            tracking = frametrail::TrackingOptions{};
+            if (classes_box_->currentIndex() == 1) tracking->classes = {0};
+            if (classes_box_->currentIndex() == 2) tracking->classes = {1,2,3,5,7};
+            counting_line_.direction = direction_box_->currentIndex() == 1 ? frametrail::CrossingDirection::negative_to_positive :
+                direction_box_->currentIndex() == 2 ? frametrail::CrossingDirection::positive_to_negative : frametrail::CrossingDirection::both;
+            tracking->line = counting_line_;
+        }
+        session_.start(native_path(source_),detection,tracking);
         generation_ = session_.snapshot().generation;
         playing_ = true;
         stopped_ = false;
@@ -251,7 +364,9 @@ void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
     if (wrapped.generation != generation_) return;
     const auto& frame = wrapped.frame;
     const QImage borrowed(frame.pixels.data(), frame.width, frame.height, frame.stride, QImage::Format_RGB888);
-    canvas_->set_image(borrowed.copy(),wrapped.detection ? wrapped.detection->objects : std::vector<frametrail::Detection>{});
+    canvas_->set_image(borrowed.copy(),wrapped.detection ? wrapped.detection->objects : std::vector<frametrail::Detection>{},
+        wrapped.tracking ? wrapped.tracking->objects : std::vector<frametrail::TrackedObject>{},
+        wrapped.tracking ? std::optional<frametrail::CountingLine>(counting_line_) : std::nullopt);
     displayed_sequence_ = frame.sequence;
     const auto info = session_.snapshot().info;
     details_label_->setText(QStringLiteral("%1 × %2    •    %3    •    Frame %4    •    %5")
@@ -260,6 +375,11 @@ void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
         .arg(frame.sequence).arg(timestamp_text(frame.timestamp)));
     if (wrapped.detection) details_label_->setText(details_label_->text()+QStringLiteral("    •    %1 objects    •    CPU %2 ms/frame")
         .arg(wrapped.detection->objects.size()).arg(wrapped.detection->elapsed_ms,0,'f',1));
+    if (wrapped.tracking) {
+        counts_label_->setText(QStringLiteral("Video counts: − → +  %1    |    + → −  %2    •    %3 observed tracks    •    Rules %4 ms")
+            .arg(wrapped.tracking->negative_to_positive).arg(wrapped.tracking->positive_to_negative)
+            .arg(wrapped.tracking->objects.size()).arg(wrapped.tracking->elapsed_ms,0,'f',2));
+    }
     state_label_->setText(QStringLiteral("Playing"));
 }
 

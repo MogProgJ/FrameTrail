@@ -70,7 +70,37 @@ void run(const std::filesystem::path& root) {
 
 int main(int argc, char* argv[]) {
     try {
-        require(argc == 2, "Expected fixture directory");
+        require(argc == 2 || argc == 4, "Expected fixture directory and optional model/sample");
+        if (argc == 4) {
+            frametrail::PreviewSession session;
+            frametrail::DetectorOptions detector{std::filesystem::path(argv[2])};
+            frametrail::TrackingOptions tracker;
+            tracker.classes={16};
+            session.start(std::filesystem::path(argv[3]),detector,tracker);
+            wait_for([&]{return !session.snapshot().worker_active;});
+            const auto image=session.try_pop();
+            require(image && image->detection && !image->detection->objects.empty() && !image->tracking,
+                "Still-image detection lost or acquired temporal state");
+            session.start(std::filesystem::path(argv[1])/"variable.mkv",detector,tracker);
+            std::vector<frametrail::PreviewFrame> frames;
+            wait_for([&]{
+                while(auto frame=session.try_pop()) frames.push_back(std::move(*frame));
+                const auto status=session.snapshot();
+                return !status.worker_active && status.queued_frames==0;
+            });
+            require(session.snapshot().state==frametrail::PreviewState::completed && frames.size()==10,"Tracking pipeline failed or dropped frames");
+            require(!frames[0].tracking,"Temporal output was exposed before frame two");
+            for(std::size_t i=1;i<frames.size();++i) require(frames[i].tracking && frames[i].frame.sequence==i &&
+                frames[i].generation==session.snapshot().generation,"Tracking detached from frame/source identity");
+            session.start(std::filesystem::path(argv[1])/"variable.mkv",detector,tracker);
+            wait_for([&]{return session.snapshot().queued_frames==session.capacity;});
+            session.stop();
+            wait_for([&]{return !session.snapshot().worker_active;});
+            require(!session.try_pop(),"Stopped tracking left stale state");
+            require(session.snapshot().state==frametrail::PreviewState::cancelled,"Blocked tracking producer did not cancel");
+            std::cout<<"Preview tracking passed: still-image boundary, ordered frame pairing, generation and cancellation\n";
+            return 0;
+        }
         run(std::filesystem::path(argv[1]));
         std::cout << "Preview lifecycle passed: bounds, cancellation, generations, EOF, restart, shutdown\n";
         return 0;

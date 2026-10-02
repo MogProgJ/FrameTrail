@@ -2,7 +2,7 @@
 
 ## Overall structure
 
-Implementation snapshot: `MediaReader`, owned RGB `Frame` values, exports, CLI, `PreviewSession`, and the Qt preview exist. PreviewSession owns one decoding worker and a two-frame queue; source generations reject stale frames. YOLOX-Nano CPU detection now runs sequentially on that worker; each queued frame carries its own optional detection result. The tracker, event/storage modules, and full analysis-job contract below remain the target architecture. See [development](DEVELOPMENT.md) for current source and concurrency details.
+Implementation snapshot: `MediaReader`, owned RGB `Frame` values, exports, CLI, `PreviewSession`, Qt preview, and `Tracker` exist. PreviewSession owns one ordered worker and a two-frame queue; source generations reject stale frames. YOLOX-Nano CPU detection, tracking, and finite-line rules run sequentially on that worker; each queued frame carries its own optional detection/tracking result. The tracker keeps per-track crossing state, bounded trails, and cumulative counters. Persistent storage and the full analysis-job contract below remain target architecture. See [development](DEVELOPMENT.md) and [tracking](TRACKING.md).
 
 Separate the processing core from the desktop interface. The interface configures jobs and displays results; decoding and inference run off its event thread. The CLI uses the same media core for repeatable inspection.
 
@@ -76,9 +76,9 @@ The display matches results by run/generation/frame identity. It never paints de
 
 ## Initial crossing rule
 
-Use a configurable line with two endpoints in original-frame coordinates. A track's anchor point changes from one side of the line to the other. A candidate crossing must intersect the finite line segment, pass direction filtering, and satisfy a small deadband/hysteresis around the boundary to avoid jitter-driven counts.
+Use a configurable line with two endpoints normalized to the original frame dimensions. The box bottom-center is the baseline anchor. A candidate crossing must intersect the finite line segment, pass direction filtering, and satisfy a small deadband/hysteresis around the boundary to avoid jitter-driven counts. The implemented rules require three observations for confirmation and invalidate crossing history across long gaps; exact defaults are in [TRACKING.md](TRACKING.md).
 
-Specify repeat-crossing behaviour explicitly: the initial rule allows a new crossing after the track has clearly moved away and re-armed. Persist a unique event ID so retries do not insert the same event twice. Track loss and identity switches can still create missed or duplicate counts; evaluate those cases rather than assuming IDs are perfect.
+Repeat crossings are allowed after a later same-side observation moves beyond the re-arm distance. Current event IDs increase within one run; Phase 5 must add persistent run identity and idempotent event writes. Track loss and identity switches can still create missed or duplicate counts; evaluate those cases rather than assuming IDs are perfect.
 
 ## Persistence and review
 
