@@ -2,6 +2,8 @@
 
 ## Overall structure
 
+Implementation snapshot: `MediaReader`, owned RGB `Frame` values, preview export, and the headless inspector exist. The asynchronous job controller, queues, UI, detector, tracker, and event/storage modules below remain the target architecture. See [development](DEVELOPMENT.md) for the current source map.
+
 Separate the processing core from the desktop interface. The interface configures jobs and displays results; it does not perform expensive decoding or inference on its event thread. A later command-line runner can use the same core for repeatable benchmarks.
 
 ```mermaid

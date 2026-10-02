@@ -2,7 +2,7 @@
 
 ## Equipment
 
-No hardware purchase is required to begin the offline prototype. Actual feasibility and processing speed still need measurement on the development machine.
+No hardware purchase is required to begin the offline prototype. The inspected machine has an i7-10750H CPU, approximately 15.8 GiB RAM, and a GTX 1650 Ti. The native media inspector has been built and checked; representative processing speed and model feasibility still need measurement.
 
 | Item | Initial requirement | Later use |
 | --- | --- | --- |
@@ -17,7 +17,7 @@ RAM, storage, and GPU requirements are not established yet. We will document mea
 
 ## Proposed tools and dependencies
 
-Do not install these as part of this documentation milestone. Before installation choose mutually compatible versions, one compiler/architecture configuration, and reproducible dependency acquisition.
+The media foundation now uses C++20/MSVC, CMake, and a pinned FFmpeg SDK. The other candidates remain uninstalled for this project. Choose mutually compatible versions and reproducible acquisition before adding them. See the [development guide](DEVELOPMENT.md) for the working build commands.
 
 | Candidate | Role | Official reference |
 | --- | --- | --- |

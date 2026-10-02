@@ -9,8 +9,20 @@ Updated: 2 October 2026.
 - Proposed module responsibilities and data contracts.
 - Equipment/dependency planning, milestones, and a glossary.
 - Git ignore and text-formatting configuration.
+- A C++20 media library using FFmpeg's native C APIs.
+- A command-line inspector for local images and recordings, with optional frame CSV and first-frame PPM exports.
+- CMake presets, PowerShell dependency/build scripts, and CTest checks using generated synthetic media.
+- A development guide explaining commands, ownership, timing, and current limitations.
 
-There is no source code, build definition, executable, selected model, or installed project dependency. No benchmark or accuracy result has been produced.
+The first media foundation builds and runs on Windows x64. It is sequential and has no UI, detector, tracker, event storage, or live input yet. No model has been selected, and no detection/event accuracy or representative footage benchmark has been produced.
+
+## Development baseline and validation
+
+Inspected hardware: Intel Core i7-10750H, approximately 15.8 GiB reported RAM, Intel UHD Graphics, and NVIDIA GeForce GTX 1650 Ti. CPU execution remains the initial analysis target.
+
+Tools used: Visual Studio 2022 MSVC 19.44, bundled CMake 3.31.6, and the checksum-pinned FFmpeg 8.1 branch SDK in `dependencies/windows-ffmpeg.json`. No system-wide dependency installation was performed.
+
+Local CTest checks cover RGB layout, buffer ownership, delayed-frame flushing, variable timestamps, cancellation, invalid/audio-only files, Unicode paths, padded exports, and CLI output behaviour. Repeated opening is tested, but no leak detector or long-running live test has been run.
 
 ## Repository publication
 
@@ -38,7 +50,7 @@ GitHub CLI authentication was verified outside the sandbox for the intended acco
 
 - Confirm or rename FrameTrail.
 - Initial repository visibility is private because no publication preference was specified; it can be changed later.
-- Exact compiler/dependency versions and acquisition method.
+- Versions/acquisition for the future UI, inference, image-processing, and storage dependencies.
 - Detection model, weights license, and sample sources.
 - Hardware-dependent targets and initial supported file formats.
 - Tracker choice and rule parameters.
@@ -46,6 +58,6 @@ GitHub CLI authentication was verified outside the sandbox for the intended acco
 
 ## Immediate next work
 
-Inspect hardware, choose the model and sample footage, and pin the implementation environment before beginning the media foundation milestone.
+Extend the media foundation with a desktop preview and cancellable worker handoff. Select the detector and representative sample footage before the inference milestone. The current CLI is also available for inspecting user-provided recordings.
 
-No application coding is authorized by this documentation milestone alone; the next implementation step should follow the user's direction.
+Application implementation has begun following the user's instruction on 2 October 2026. Optional agent orchestration and hosted AI services remain deferred.

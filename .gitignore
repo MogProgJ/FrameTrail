@@ -1,6 +1,7 @@
 # Build and editor outputs
 /build/
 /out/
+/.deps/
 /.vs/
 /.idea/
 /.vscode/
@@ -12,6 +13,8 @@ CMakeUserPresets.json
 /output/
 *.sqlite
 *.sqlite3
+*.sqlite-wal
+*.sqlite-shm
 *.db-wal
 *.db-shm
 

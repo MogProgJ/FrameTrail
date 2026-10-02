@@ -1,20 +1,24 @@
 # Roadmap and acceptance evidence
 
-These milestones are ordered by dependencies, not estimated calendar dates. No executable implementation has started.
+These milestones are ordered by dependencies, not estimated calendar dates. Implementation has begun with the native media library and CLI; see [current status](STATUS.md) and the [development guide](DEVELOPMENT.md).
 
-## 0. Project sketch — current milestone
+## 0. Project sketch — complete
 
 Deliver the product brief, interface sketch, architecture, equipment plan, roadmap, and glossary in a standalone Git repository.
 
-Completion evidence: documentation links resolve, diagrams are present, repository content accurately says that there is no runnable application. Remote publication is tracked separately in the status document.
+Completion evidence: documentation links resolve, diagrams are present, and the sketch was published in the standalone repository. Documentation now reflects the initial runnable media foundation.
 
 ## 1. Confirm the implementation baseline
+
+Progress: hardware and C++ tools inspected; FFmpeg acquisition is pinned and validated. Selection of model, samples, and later dependencies remains open.
 
 Inspect hardware and compiler availability. Choose dependency versions and acquisition strategy. Select an appropriately licensed detection model and permissioned samples. Specify exact initial formats after checking decoder support.
 
 Completion evidence: reproducible environment specification, model metadata, and sample manifest with manually labelled expected detections/events. Choose measurable accuracy and performance targets after the baseline measurements, not before.
 
 ## 2. Media foundation
+
+Progress: local image/video decoding, timestamped owned RGB frames, library cancellation, CLI exports, and synthetic checks are implemented. Desktop playback/seeking, asynchronous cancellation, and memory-growth measurements remain to be done.
 
 Implement image loading and video decoding/playback with timestamped frames, source metadata, cancellation, and explicit ownership.
 
@@ -72,7 +76,7 @@ Compare the extension with the native baseline on the same inputs. Measure wheth
 
 Only after the product is established, explore autonomous investigations: selecting recordings, running analyses, reviewing evidence, and assembling timestamped reports. Service operation, deployment, provider choice, data access, permissions, and cost would need a separate design. A service need not imply sending all footage to a cloud provider.
 
-Neither future direction changes the first-release scope or authorizes application implementation in this documentation step.
+Neither future direction changes the first-release scope or adds agent integration to the current implementation work.
 
 ## Deferred projects
 
