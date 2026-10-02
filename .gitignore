@@ -1,0 +1,24 @@
+# Build and editor outputs
+/build/
+/out/
+/.vs/
+/.idea/
+/.vscode/
+CMakeUserPresets.json
+
+# Local models, footage, and analysis artifacts
+/models/
+/samples/
+/output/
+*.sqlite
+*.sqlite3
+*.db-wal
+*.db-shm
+
+# Local environment settings
+.env
+.env.*
+
+# Operating-system files
+Thumbs.db
+.DS_Store
