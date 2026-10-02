@@ -15,13 +15,14 @@
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.1 - native media foundation\n\n"
+    std::cout << "FrameTrail 0.2 - native media inspector\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
                  "  --max-frames <n>   Stop after n frames (positive integer)\n"
                  "  --help             Show this help\n\n"
-                 "No object detection, tracking, GUI, or live input is implemented yet.\n";
+                 "Use frametrail-desktop for the preview window.\n"
+                 "Object detection, tracking, and live input are still planned.\n";
 }
 
 std::filesystem::path path_from_utf8(const std::string& value) {

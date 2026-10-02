@@ -2,29 +2,25 @@
 param(
     [ValidateSet('Release', 'Debug')]
     [string]$Configuration = 'Release',
-    [switch]$SkipTests
+    [switch]$SkipTests,
+    [switch]$MediaOnly
 )
 
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path -Parent $PSScriptRoot
-$taskCmakeCommand = Get-Command cmake -ErrorAction SilentlyContinue
-$taskCmake = if ($taskCmakeCommand) { $taskCmakeCommand.Source } else { $null }
-if (-not $taskCmake) {
-    $taskVswhere = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio/Installer/vswhere.exe'
-    if (Test-Path -LiteralPath $taskVswhere) {
-        $taskCandidates = @(& $taskVswhere -latest -products '*' -requires Microsoft.VisualStudio.Component.VC.CMake.Project -find '**/cmake.exe')
-        if ($taskCandidates.Count -gt 0) { $taskCmake = $taskCandidates[0] }
-    }
-}
-if (-not $taskCmake) {
-    throw 'CMake not found. Install Visual Studio 2022 Desktop development with C++ (including CMake), or add CMake 3.25+ to PATH.'
-}
+. (Join-Path $PSScriptRoot 'find-cmake.ps1')
+$taskCmake = Find-FrameTrailCMake
 $taskCtest = Join-Path (Split-Path -Parent $taskCmake) 'ctest.exe'
 $taskManifest = Get-Content -LiteralPath (Join-Path $taskRoot 'dependencies/windows-ffmpeg.json') -Raw | ConvertFrom-Json
 $taskFfmpegRoot = Join-Path (Join-Path $taskRoot '.deps') $taskManifest.archiveRoot
+$taskQtManifest = Get-Content -LiteralPath (Join-Path $taskRoot 'dependencies/windows-qt.json') -Raw | ConvertFrom-Json
+$taskQtRoot = Join-Path (Join-Path $taskRoot '.deps') $taskQtManifest.directory
 Push-Location -LiteralPath $taskRoot
 try {
-    & $taskCmake --preset windows-msvc "-DFFMPEG_ROOT=$taskFfmpegRoot"
+    $taskGui = if ($MediaOnly) { 'OFF' } else { 'ON' }
+    $taskConfigureArgs = @('--preset', 'windows-msvc', "-DFFMPEG_ROOT=$taskFfmpegRoot", "-DFRAMETRAIL_BUILD_GUI=$taskGui")
+    if (-not $MediaOnly) { $taskConfigureArgs += "-DFRAMETRAIL_QT_ROOT=$taskQtRoot" }
+    & $taskCmake @taskConfigureArgs
     if ($LASTEXITCODE -ne 0) { throw 'CMake configuration failed. Check the diagnostics above and ensure dependencies were fetched.' }
     & $taskCmake --build --preset $Configuration.ToLowerInvariant()
     if ($LASTEXITCODE -ne 0) { throw 'C++ build failed.' }

@@ -1,43 +1,49 @@
-# Build and understand the first codebase
+# Build and understand FrameTrail
 
 ## What runs today
 
-FrameTrail 0.1 is a command-line media inspector backed by a reusable C++ library. It opens a local image or recording, decodes its visual stream, converts frames to RGB24, and reports their timestamps. It can export frame metadata to CSV and the first frame to a lossless PPM image.
+FrameTrail 0.2 has a desktop preview and a command-line media inspector backed by a reusable C++ library. Both open local images and recordings, decode the visual stream, and produce owned RGB24 pixels with source timestamps. The desktop displays frames; the CLI exports metadata to CSV and the first frame to a lossless PPM image.
 
-This establishes the media foundation. There is no desktop window, object detector, tracker, event database, live camera, or agent yet. The current throughput number measures decoding and optional export; it is not an AI benchmark or a promise about live video performance.
+The preview has Open media, Play/Pause, Stop, and Replay. Audio playback, seeking, object detection, tracking, event storage, live input, and agents are still planned. The CLI throughput number measures decoding and optional export; it is not an inference benchmark or a live-performance promise.
 
 ## Windows setup
 
-Requirements: Windows x64, Visual Studio 2022 with Desktop development with C++ and its Windows SDK, CMake 3.25 or newer, and PowerShell. CMake bundled with Visual Studio can be used without changing PATH.
+Requirements: Windows x64, Visual Studio 2022 with Desktop development with C++ and its Windows SDK, CMake 3.25 or newer, and PowerShell. The scripts discover Visual Studio's bundled CMake without changing PATH.
 
 From the FrameTrail repository directory:
 
 ```powershell
 .\scripts\fetch-dependencies.ps1
 .\scripts\build.ps1
+.\build\windows-msvc\Release\frametrail-desktop.exe
 ```
 
-The first command downloads approximately 81 MB into `.deps/`, checks the SHA-256 against the committed dependency manifest, and extracts the SDK. It performs no system installation. The second discovers CMake, configures an x64 Visual Studio build, compiles Release, and runs CTest. It copies the SDK's DLLs beside the development executables.
+Fetching downloads approximately 81 MB of FFmpeg and 40 MB of Qt base into `.deps/`, verifies SHA-256 hashes against the committed manifests, and extracts the SDKs. CMake's archive utility handles Qt's 7z archive, so no separate 7-Zip installation is needed. Nothing is installed system-wide. Building configures x64, compiles Release, copies runtime DLLs and Qt platform plugins beside the executables, and runs six CTest checks.
 
-For a Debug build:
+For Debug:
 
 ```powershell
 .\scripts\build.ps1 -Configuration Debug
 ```
 
+To build only the core and CLI without acquiring Qt:
+
+```powershell
+.\scripts\fetch-dependencies.ps1 -MediaOnly
+.\scripts\build.ps1 -MediaOnly
+```
+
 ## Opening a fresh copy in VS Code
 
-Each clone needs its own local SDK: `.deps/` is ignored by Git. Selecting a compiler or CMake preset does not download dependencies. Before the first configure, run `./scripts/fetch-dependencies.ps1` in the VS Code terminal with the FrameTrail repository as the working directory.
+Each clone needs its own SDKs: `.deps/` is ignored by Git. Selecting a compiler/preset does not download dependencies. Run `./scripts/fetch-dependencies.ps1` before the first configure.
 
-Use the existing **Windows x64 (Visual Studio 2022)** configure preset (`windows-msvc`); Visual Studio is the compiler/build toolchain, while VS Code is the editor. Run **CMake: Configure**, select the `release` or `debug` build preset, and run **CMake: Build**. CMake Tools documents these commands in its [preset guide](https://github.com/microsoft/vscode-cmake-tools/blob/main/docs/cmake-presets.md).
+Choose **Windows x64 (Visual Studio 2022)** (`windows-msvc`). Visual Studio supplies the compiler; VS Code is the editor. Run **CMake: Configure**, choose the `release` or `debug` build preset, and run **CMake: Build**. Select `frametrail-desktop` as the launch target. The [CMake Tools preset guide](https://github.com/microsoft/vscode-cmake-tools/blob/main/docs/cmake-presets.md) explains these commands.
 
-If the editor is paused inside `CMakeLists.txt` with a `find_path` error, it is debugging CMake configuration rather than the FrameTrail executable. Stop that debugging session, fetch the dependency if missing, and configure again normally. A missing `libavcodec/avcodec.h` means the development SDK is absent or `FFMPEG_ROOT` points to the wrong folder. Installing only the `ffmpeg.exe` command-line tool does not provide the required headers and import libraries.
+If paused inside `CMakeLists.txt` on a `find_path` error, stop the CMake debugging session, fetch dependencies, and configure normally. Missing `libavcodec/avcodec.h` means the FFmpeg development SDK is absent or `FFMPEG_ROOT` is wrong. Installing only `ffmpeg.exe` does not provide development headers/libraries. Missing `Qt6Config.cmake` requires the Qt SDK too.
 
-The script `./scripts/build.ps1` is an alternative that performs configure, build, and checks together. Stop any active CMake configuration/debugging session before running it against the same build directory.
+The build script performs configure/build/checks together. Stop any active CMake session before running it against the same build directory.
 
-## Manual CMake commands
-
-If CMake is already on PATH, equivalent manual commands are:
+If CMake is on PATH, manual equivalents are:
 
 ```powershell
 cmake --preset windows-msvc
@@ -45,74 +51,87 @@ cmake --build --preset release
 ctest --preset release
 ```
 
-For an independently provisioned compatible FFmpeg SDK, configure with `-DFFMPEG_ROOT=<sdk-directory>` using CMake directly. The convenience build script intentionally uses the committed manifest's SDK. If the manifest changes, use the build script to update the configured SDK path.
+Custom compatible SDKs can be specified through `-DFFMPEG_ROOT=<ffmpeg-directory>` and `-DFRAMETRAIL_QT_ROOT=<qt-directory>`. CLI-only configuration uses `-DFRAMETRAIL_BUILD_GUI=OFF`. The convenience build script intentionally uses the manifests' SDK paths and refreshes both root paths on each configure.
 
-## Try the inspector
+## Using the desktop
 
-After the build, tests have generated tiny synthetic media under `build/windows-msvc/fixtures/`. They require no external footage and are not committed.
+Use **Open media** to select a local file. Videos start automatically. **Pause** holds the frame, **Play** resumes, **Stop** cancels decoding and leaves the last image visible, and **Replay** starts the same source from the beginning. Opening another file cancels the old worker before starting the new source. Closing requests cancellation and waits for the worker without blocking the UI event thread.
+
+The window shows dimensions, codec, zero-based frame number, and source-relative timestamp. A synthetic example is available after tests generate the fixtures:
+
+```powershell
+.\build\windows-msvc\Release\frametrail-desktop.exe .\build\windows-msvc\fixtures\variable.mkv
+```
+
+This test pattern is deliberately tiny (64x48, ten frames), so enlarging it looks pixelated. Try a real recording for a useful preview. Playback uses decoded presentation timestamps and preserves order. If decoding falls behind, playback slows instead of dropping frames. Unknown timestamps use an approximately 30 FPS display fallback but remain unknown in the frame contract and CSV. Still images remain displayed after the source finishes.
+
+## Using the inspector
 
 ```powershell
 .\build\windows-msvc\Release\frametrail.exe --help
-.\build\windows-msvc\Release\frametrail.exe inspect .\build\windows-msvc\fixtures\still.png
 .\build\windows-msvc\Release\frametrail.exe inspect .\build\windows-msvc\fixtures\variable.mkv
-```
-
-For your own media and exports:
-
-```powershell
 New-Item -ItemType Directory -Path output -Force
 .\build\windows-msvc\Release\frametrail.exe inspect "C:\Videos\entrance.mp4" --csv output\frames.csv --preview output\first-frame.ppm --max-frames 100
 ```
 
-Replace the example input with a real file. Existing output files are refused: choose fresh names for another run. The source is never intentionally overwritten. Export directories must already exist. Files can remain partially written if processing or disk writes fail; a nonzero exit status indicates failure rather than a complete export.
+Replace the example input with your recording. Output directories must exist; existing output files are refused. Choose fresh names for subsequent exports. A failed decode/write may leave partial output, and a nonzero exit status indicates failure.
 
-`--max-frames` limits how much work to perform. With no limit the inspector reads to EOF. It prints whether it stopped at the frame limit or EOF. Frames are numbered from zero. `timestamp_us` is source-relative presentation time in microseconds (one million microseconds per second). Missing timing stays blank in CSV instead of being invented from an FPS estimate. Duration and codec dimensions are initial metadata; actual dimensions are recorded on each frame.
+Without `--max-frames`, inspection reads to EOF. `timestamp_us` is source-relative presentation time in microseconds (one million per second); unknown timing stays blank. Initial metadata dimensions may differ from individual frames. The desktop can open the exported PPM image.
 
-PPM is a simple RGB image format used here to verify pixels. It is not the planned final thumbnail format. To view the generated preview in a PNG-only viewer, use the SDK's FFmpeg tool to convert it; future UI work will display frames directly.
-
-## How the code works
-
-```mermaid
-flowchart LR
-    CLI[CLI parses local path and export options] --> READER[MediaReader opens the visual stream]
-    READER --> PACKETS[FFmpeg reads compressed packets]
-    PACKETS --> DECODE[Decoder outputs frames in presentation order]
-    DECODE --> RGB[Convert to owned RGB pixels and preserve timestamps]
-    RGB --> CSV[Optional metadata CSV]
-    RGB --> PPM[Optional first-frame preview]
-    RGB --> NEXT[Next frame until EOF or limit]
-    NEXT --> READER
-```
+## Source map
 
 | Location | Responsibility |
 | --- | --- |
-| `include/frametrail/frame.hpp` | The frame contract: sequence, optional timestamp, dimensions, stride, and pixels |
-| `include/frametrail/media_reader.hpp` | Public reader interface and metadata; hides FFmpeg implementation details |
-| `src/media_reader.cpp` | File validation, native C APIs, handle ownership, decode/flush loop, timing, RGB conversion |
-| `src/frame_export.cpp` | PPM writing, including correct handling of row padding |
-| `apps/cli/main.cpp` | CLI arguments, output validation, frame loop, metadata export, and summary |
-| `tests/` | Synthetic input generation and behaviour checks |
-| `scripts/` | Explicit dependency acquisition and build/test commands |
-| `dependencies/windows-ffmpeg.json` | SDK version, provider, dated URL, checksum, and archive layout |
+| `include/frametrail/frame.hpp` | Sequence, optional timestamp, dimensions, stride, owned pixels |
+| `include/frametrail/media_reader.hpp`, `src/media_reader.cpp` | Local file validation, FFmpeg ownership, decoding/flushing, timing, RGB conversion |
+| `src/frame_export.cpp` | PPM writing with row padding |
+| `include/frametrail/preview_session.hpp`, `src/preview_session.cpp` | Worker lifecycle, cancellation, bounded queue, status, source generations |
+| `apps/desktop/preview_window.cpp` | Controls, playback clock, generation checks, image ownership, painting |
+| `apps/desktop/main.cpp` | Qt entry point and optional initial file argument |
+| `apps/cli/main.cpp` | Arguments, export validation, frame loop, CSV, summary |
+| `tests/` | Synthetic fixtures, media/CLI/worker/desktop behaviour checks |
+| `scripts/` | Explicit dependency acquisition and build/check commands |
+| `dependencies/` | Pinned FFmpeg/Qt sources, checksums, and local layout |
 
-FFmpeg is a C library; our code calls its native APIs directly. Small C++ ownership wrappers release its contexts, packets, frames, and conversion resources. Each returned frame owns its RGB buffer, so retaining it remains safe when the reader advances. The inspector holds only the current frame unless a caller explicitly retains more.
+FFmpeg is a C library called directly from our C++ code. RAII wrappers release native contexts, packets, frames, and conversion resources even when an operation fails. Returned frames own their pixels and remain valid when the reader advances. At EOF the reader flushes delayed decoder output, which matters for codecs that reorder frames internally.
 
-The reader first drains available decoder output. When it needs input it sends another packet from the selected visual stream. At file EOF it sends a flush signal and continues receiving delayed frames. This matters for codecs that reorder frames internally.
+## Worker, timing, and ownership
 
-A `std::stop_token` lets a future job controller cancel reads and interrupt FFmpeg I/O. The current CLI has no graceful interactive cancel command; OS process interruption remains available. The library is sequential and not safe for concurrent reads on the same instance. Worker queues, run IDs, and generation IDs belong to the next asynchronous stage.
+```mermaid
+flowchart LR
+    UI[Qt controls on UI thread] --> SESSION[PreviewSession start / stop]
+    SESSION --> WORKER[One C++ jthread]
+    WORKER --> READER[MediaReader / FFmpeg]
+    READER --> QUEUE[Owned frames: capacity 2]
+    QUEUE --> TIMER[UI timer and playback clock]
+    TIMER --> IMAGE[Copy pixels into owned QImage]
+    IMAGE --> CANVAS[Paint aspect-preserving preview]
+    UI --> CANCEL[Stop token wakes blocked queue]
+    CANCEL --> WORKER
+```
 
-## Checks and their limits
+The worker never touches Qt widgets. A mutex protects status and the queue. A stop-aware condition variable waits when the queue is full; the UI polls without waiting for frames. Pause leaves a bounded backlog instead of decoding the entire recording into memory.
 
-CTest verifies RGB layout/colour, retained-frame ownership, delayed-frame EOF flushing, variable presentation timing, repeated opening, cancellation before opening/between reads, invalid and audio-only inputs, Unicode paths, padded-frame export, CSV rows, frame limits, and refusal to replace existing output.
+Each start increments a generation ID. The display rejects frames from earlier sources. Replacement waits for the previous worker to become inactive and joins it before starting another. Stop clears queued frames and wakes the producer. `std::jthread` is the last session member so destruction joins before synchronization objects disappear. Decoding can finish before playback: the UI reaches Finished only after the accepted frames are displayed.
 
-These checks are not a leak-detector run or a sustained live-input test. Initial build scripts and runtime layout are validated on Windows x64; other operating systems are not verified. The reader ignores audio, does not seek or play at wall-clock speed, and does not apply orientation metadata or aspect-ratio display correction. Supported codecs come from the chosen FFmpeg build; we have not verified every possible media format.
+Application frame storage includes at most two queued frames, one pending presentation frame, and the displayed QImage, plus decoder/conversion buffers and temporary copies. The deliberate QImage copy prevents dangling pixels. This bounds frame count, not bytes: larger resolutions use more memory. Profiling may justify reducing copies later.
+
+Source presentation timestamps govern playback; a steady clock measures elapsed playback time. Pause shifts the playback clock's anchor. The reader is sequential and must not be read concurrently. Its stop token interrupts FFmpeg I/O; the CLI currently relies on OS process interruption rather than a graceful interactive cancel command.
+
+## Checks and limitations
+
+Six CTest checks cover fixture generation, media contracts, CLI help, CLI exports, preview lifecycle, and desktop controls. Media checks verify colour/layout, retained ownership, delayed EOF, variable timing, cancellation, invalid/audio-only inputs, Unicode paths, and padded export. CLI checks cover CSV rows, limits, and output protection. Worker checks cover queue bounds, blocked-producer cancellation, generations, ordered EOF, failure recovery, and shutdown. Desktop checks exercise pixels, pause/resume, stop, replay, replacement, errors, and closing with an active worker.
+
+Desktop checks use Qt's offscreen platform and load the installed Windows Segoe UI font for readable screenshots. The rendered window was inspected, but native file-dialog interaction and representative long recordings still need manual checks. No leak detector or sustained live-input test has been run. Windows x64 is the verified platform.
+
+Audio, seeking, rotation metadata, and non-square sample aspect-ratio correction are not implemented. The canvas preserves pixel-dimension aspect ratio. Supported codecs depend on the FFmpeg build; every possible format has not been verified. Memory growth and representative performance still need measurement.
 
 ## Dependency provenance
 
-The development SDK is an LGPL-shared FFmpeg 8.1 branch build from [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds). We selected the September 2026 monthly build because the provider documents longer retention for month-end builds. Its availability still has a finite lifetime; a future dependency update must verify a new checksum or provision an equivalent SDK. The fetch script never silently falls back to an unpinned latest build.
+FFmpeg is an LGPL-shared 8.1 branch build from [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds). The pinned September 2026 monthly build has longer retention than daily archives, but availability is finite. Qt 6.11.3 base comes from the [official SDK repository](https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt6_6113/). Neither script silently falls back to an unpinned latest archive.
 
-The archive's licenses and notices remain inside `.deps`. Compiling a local development executable does not finish the distribution/licensing milestone. Do not package or publish the bundled DLLs until that review is complete. See [FFmpeg licensing](https://ffmpeg.org/legal.html) and the [equipment plan](EQUIPMENT_AND_SETUP.md).
+Licenses/notices remain inside `.deps`. Local development builds do not complete the distribution milestone; packaging needs the selected binaries' notices and licensing review. See [equipment and setup](EQUIPMENT_AND_SETUP.md).
 
-## Next implementation slice
+## Next slice
 
-Add a desktop preview with a cancellable background job, bounded frame handoff, and frame-aligned display. Then select and integrate one pretrained detector using measured sample footage. Keep the native media core reusable; optional AI perception and an agent-driven service remain deferred.
+Select one pretrained detector and representative footage, document preprocessing/output contracts, then add CPU inference and boxes aligned to the correct displayed frame. Event review and seeking follow later. Optional AI perception and an agent-driven service remain deferred.

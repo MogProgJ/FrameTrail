@@ -2,7 +2,7 @@
 
 ## Equipment
 
-No hardware purchase is required to begin the offline prototype. The inspected machine has an i7-10750H CPU, approximately 15.8 GiB RAM, and a GTX 1650 Ti. The native media inspector has been built and checked; representative processing speed and model feasibility still need measurement.
+No hardware purchase is required to begin the offline prototype. The inspected machine has an i7-10750H CPU, approximately 15.8 GiB RAM, and a GTX 1650 Ti. The native media inspector and desktop preview have been built and checked; representative processing speed and model feasibility still need measurement.
 
 | Item | Initial requirement | Later use |
 | --- | --- | --- |
@@ -17,9 +17,9 @@ RAM, storage, and GPU requirements are not established yet. We will document mea
 
 ## Proposed tools and dependencies
 
-The media foundation now uses C++20/MSVC, CMake, and a pinned FFmpeg SDK. The other candidates remain uninstalled for this project. Choose mutually compatible versions and reproducible acquisition before adding them. See the [development guide](DEVELOPMENT.md) for the working build commands.
+The project now uses C++20/MSVC, CMake, pinned FFmpeg, and Qt 6.11.3 Widgets. The other candidates remain uninstalled for this project. Qt's base SDK comes from the official repository and includes the controls, rendering, and test modules used here. Choose mutually compatible versions and reproducible acquisition before adding the remaining dependencies. See the [development guide](DEVELOPMENT.md) for the working build commands.
 
-| Candidate | Role | Official reference |
+| Tool/dependency | Role | Official reference |
 | --- | --- | --- |
 | C++20 compiler | Compile application code; MSVC is the proposed Windows baseline | [MSVC support](https://learn.microsoft.com/en-us/cpp/overview/visual-cpp-language-conformance) |
 | CMake | Define and generate builds | [CMake documentation](https://cmake.org/documentation/) |
@@ -45,7 +45,7 @@ An ONNX file format does not grant redistribution rights. Keep model metadata se
 
 ## Dependency and distribution decisions
 
-Project license, exact dependency versions, packaging method, and model distribution remain open. Review the chosen Qt modules and the actual FFmpeg build configuration before distributing an executable. FFmpeg licensing depends on enabled components. [FFmpeg licensing](https://ffmpeg.org/legal.html).
+Project license, versions for remaining dependencies, packaging method, and model distribution remain open. Review the chosen Qt modules and the actual FFmpeg build configuration before distributing an executable. FFmpeg licensing depends on enabled components. [FFmpeg licensing](https://ffmpeg.org/legal.html).
 
 Record library notices and model/footage permissions with the selected artifacts. Useful starting references are [Qt licensing](https://www.qt.io/licensing/), [OpenCV licensing](https://opencv.org/license/), and [SQLite copyright](https://sqlite.org/copyright.html). These links are references, not a completed licensing review.
 

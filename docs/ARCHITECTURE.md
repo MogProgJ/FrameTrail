@@ -2,9 +2,9 @@
 
 ## Overall structure
 
-Implementation snapshot: `MediaReader`, owned RGB `Frame` values, preview export, and the headless inspector exist. The asynchronous job controller, queues, UI, detector, tracker, and event/storage modules below remain the target architecture. See [development](DEVELOPMENT.md) for the current source map.
+Implementation snapshot: `MediaReader`, owned RGB `Frame` values, exports, CLI, `PreviewSession`, and the Qt preview exist. PreviewSession owns one decoding worker and a two-frame queue; source generations reject stale frames. The detector, tracker, event/storage modules, and full analysis-job contract below remain the target architecture. See [development](DEVELOPMENT.md) for current source and concurrency details.
 
-Separate the processing core from the desktop interface. The interface configures jobs and displays results; it does not perform expensive decoding or inference on its event thread. A later command-line runner can use the same core for repeatable benchmarks.
+Separate the processing core from the desktop interface. The interface configures jobs and displays results; decoding runs off its event thread, and future inference will too. The CLI uses the same media core for repeatable inspection.
 
 ```mermaid
 flowchart TD
@@ -44,7 +44,7 @@ flowchart TD
 
 ## Proposed data contracts
 
-These describe information, not implemented classes or a final database schema.
+These describe the full target, not a final database schema. The implemented `Frame` contains sequence, optional timestamp, dimensions, stride, and owned RGB pixels; `PreviewFrame` adds a generation ID. Source/run identities and analysis result contracts will be introduced with analysis jobs.
 
 - **Frame:** source ID, run ID, generation ID, frame sequence, source-relative timestamp, dimensions, pixel format, row stride, and owned pixel storage. For live input also record monotonic arrival time and optional wall-clock time.
 - **Detection:** frame identity, class, confidence, and bounding box in original-frame coordinates.
@@ -66,7 +66,8 @@ Every queue has a fixed capacity and a documented overload policy:
 | --- | --- |
 | Offline analysis | Apply backpressure; preserve frames even if analysis is slower than playback |
 | Live analysis | Discard stale queued frames to bound latency; record the drops |
-| Preview | Prefer a recent frame; previews may skip independently of offline analysis |
+| Current file preview | Apply backpressure and preserve decoded order in a two-frame queue |
+| Future analysis preview | Prefer a recent frame; previews may skip independently of offline analysis |
 | Event persistence | Preserve events; report storage failure explicitly instead of silently losing them |
 
 Live dropped frames reduce temporal evidence and can reduce counting accuracy. Tracking uses elapsed timestamps and tolerates gaps within configured limits; performance reporting must include drops.
@@ -93,4 +94,4 @@ Useful errors distinguish unsupported media, missing model, malformed model outp
 
 C++20 is the proposed application language. Use RAII wrappers for C resources: destruction releases handles and memory automatically, including on early returns. Keep model-specific and library-specific structures inside adapters where practical. Do not force a custom C layer before there is a demonstrated requirement.
 
-FFmpeg decodes; OpenCV handles selected image operations; ONNX Runtime runs the model; Qt presents the interface; SQLite persists results. Avoid implementing overlapping playback stacks until there is a reason to do so.
+FFmpeg currently decodes and Qt presents the interface. OpenCV, ONNX Runtime, and SQLite are proposed for selected image operations, inference, and persistence respectively; they are not installed yet. Avoid implementing overlapping playback stacks until there is a reason to do so.

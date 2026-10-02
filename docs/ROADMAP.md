@@ -18,7 +18,7 @@ Completion evidence: reproducible environment specification, model metadata, and
 
 ## 2. Media foundation
 
-Progress: local image/video decoding, timestamped owned RGB frames, library cancellation, CLI exports, and synthetic checks are implemented. Desktop playback/seeking, asynchronous cancellation, and memory-growth measurements remain to be done.
+Progress: local image/video decoding, timestamped owned RGB frames, CLI exports, Qt desktop playback, asynchronous cancellation, bounded handoff, and synthetic checks are implemented. Seeking, representative-media checks, and memory-growth measurements remain to be done. Seeking is developed further with event review.
 
 Implement image loading and video decoding/playback with timestamped frames, source metadata, cancellation, and explicit ownership.
 
