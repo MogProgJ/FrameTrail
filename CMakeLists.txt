@@ -10,6 +10,14 @@ include(CTest)
 file(READ "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/windows-ffmpeg.json" _manifest)
 string(JSON _package GET "${_manifest}" archiveRoot)
 set(FFMPEG_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/.deps/${_package}" CACHE PATH "FFmpeg SDK root")
+if(NOT EXISTS "${FFMPEG_ROOT}/include/libavcodec/avcodec.h")
+    message(FATAL_ERROR
+        "FFmpeg development SDK is missing at: ${FFMPEG_ROOT}\n"
+        "The .deps directory is local and is not included in Git clones.\n"
+        "From the FrameTrail folder, run:\n"
+        "  powershell -NoProfile -File ./scripts/fetch-dependencies.ps1\n"
+        "Then configure again. If using your own SDK, set FFMPEG_ROOT to its root directory.")
+endif()
 find_path(_ffmpeg_headers libavcodec/avcodec.h HINTS "${FFMPEG_ROOT}/include"
     NO_DEFAULT_PATH NO_CACHE REQUIRED)
 foreach(_component avformat avcodec avutil swscale)

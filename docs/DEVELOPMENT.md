@@ -25,6 +25,18 @@ For a Debug build:
 .\scripts\build.ps1 -Configuration Debug
 ```
 
+## Opening a fresh copy in VS Code
+
+Each clone needs its own local SDK: `.deps/` is ignored by Git. Selecting a compiler or CMake preset does not download dependencies. Before the first configure, run `./scripts/fetch-dependencies.ps1` in the VS Code terminal with the FrameTrail repository as the working directory.
+
+Use the existing **Windows x64 (Visual Studio 2022)** configure preset (`windows-msvc`); Visual Studio is the compiler/build toolchain, while VS Code is the editor. Run **CMake: Configure**, select the `release` or `debug` build preset, and run **CMake: Build**. CMake Tools documents these commands in its [preset guide](https://github.com/microsoft/vscode-cmake-tools/blob/main/docs/cmake-presets.md).
+
+If the editor is paused inside `CMakeLists.txt` with a `find_path` error, it is debugging CMake configuration rather than the FrameTrail executable. Stop that debugging session, fetch the dependency if missing, and configure again normally. A missing `libavcodec/avcodec.h` means the development SDK is absent or `FFMPEG_ROOT` points to the wrong folder. Installing only the `ffmpeg.exe` command-line tool does not provide the required headers and import libraries.
+
+The script `./scripts/build.ps1` is an alternative that performs configure, build, and checks together. Stop any active CMake configuration/debugging session before running it against the same build directory.
+
+## Manual CMake commands
+
 If CMake is already on PATH, equivalent manual commands are:
 
 ```powershell
