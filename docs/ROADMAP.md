@@ -2,6 +2,21 @@
 
 These milestones are ordered by dependencies, not estimated calendar dates. Implementation has begun with the native media library and CLI; see [current status](STATUS.md) and the [development guide](DEVELOPMENT.md).
 
+## Phase map
+
+| Phase | Purpose | Status / entry rule |
+| --- | --- | --- |
+| 0–2 | Project definition and native media foundation | Implemented; representative-media validation remains |
+| 3 | CPU object detection | Implemented; evaluate on labelled people/vehicle footage |
+| 4 | Tracking and line-crossing events | Next core product phase |
+| 5 | Persist and review events | After event semantics are stable |
+| 6 | One live input | After the recorded-file workflow is reliable |
+| 7 | Profile, optimize, and package | After the complete native workflow is measurable |
+| 8 | Conditional compute and model expansion | Enter individual gates only when measured limits justify them |
+| 9 | Optional advanced perception and agents | After the native product proves useful |
+
+Phases 0–7 are the core product path. Phase 8 is a set of optional branches, not a promise to add every technology. A branch may be pulled forward after Phase 3 or 4 if a measured detector or throughput failure blocks the next core phase. Otherwise it stays deferred.
+
 ## 0. Project sketch — complete
 
 Deliver the product brief, interface sketch, architecture, equipment plan, roadmap, and glossary in a standalone Git repository.
@@ -52,15 +67,25 @@ Completion evidence: latency and queue capacity stay bounded under deliberately 
 
 ## 7. Optimize and package
 
-Profile stage timings and copies. Try hardware acceleration if supported and justified. Package the first Windows release with documented dependencies and artifact notices.
+Profile stage timings and copies. If measurements trigger the Phase 8 acceleration gate, evaluate a GPU backend against the CPU baseline. Package the first Windows release with documented dependencies and artifact notices.
 
 Completion evidence: results and timing measurements state hardware, model, input resolution, settings, and backend. Verify installation on a machine without the development setup.
+
+## 8. Conditional compute and model expansion
+
+This phase covers four independent gates: local GPU inference, Python-based model training, an optional Python inference worker, and a commercial cloud service. Detailed triggers, stop conditions, and the bwUniCluster execution plan are in [Compute, training, and bwUniCluster](COMPUTE_AND_TRAINING.md).
+
+No Phase 8 branch is selected now. **Custom training on bwUniCluster** becomes a plausible first branch only if labelled evaluation shows that YOLOX-Nano errors materially limit tracking or crossing accuracy. KIT documents a shared Slurm system with modern A100/H100 accelerators, which is ample for a compact detector. Shared hardware does not mean guaranteed or immediate GPU access; account entitlement, queue access, fair-share priority, and dataset permission must be verified first.
+
+Local GPU inference is considered separately and only after end-to-end profiling. A Python training environment may produce an ONNX artifact while the shipped application remains C++. A Python inference worker is reserved for valuable models that cannot fit the native adapter. Commercial cloud serving remains last because bwUniCluster can cover scheduled training, while the current product does not require a remote always-on API.
+
+Completion evidence for any adopted branch: compare it with the unchanged CPU/model baseline on held-out inputs; record accuracy, end-to-end latency, throughput, resource use, reproducibility, operational burden, and failure behavior. Reject or remove the branch if the benefit does not justify the added system.
 
 ## Measurement vocabulary
 
 Report processing FPS separately from preview FPS. Measure processing latency by stage; for live mode also measure arrival-to-result latency (not true sensor-to-result latency unless capture timing is available). Report queue high-water marks, drops, peak memory, run failures, and event accuracy. Preserve the test inputs and settings so comparisons are repeatable.
 
-## Future AI direction
+## 9. Future AI direction
 
 The agreed sequence is native product first, optional AI perception later, and a possible agent-driven service at the end. These are deferred directions, not required implementation milestones or commitments to a provider.
 
@@ -78,10 +103,10 @@ Compare the extension with the native baseline on the same inputs. Measure wheth
 
 Only after the product is established, explore autonomous investigations: selecting recordings, running analyses, reviewing evidence, and assembling timestamped reports. Service operation, deployment, provider choice, data access, permissions, and cost would need a separate design. A service need not imply sending all footage to a cloud provider.
 
-Neither future direction changes the first-release scope or adds agent integration to the current implementation work.
+Neither future direction changes the first-release scope or adds agent integration to the current implementation work. A Python worker from Phase 8 is an execution adapter; it does not by itself make the product agent-driven.
 
 ## Deferred projects
 
 Preview Fit/100% zoom and rendering-quality refinements are deferred while CPU analysis is the focus.
 
-Robotics navigation is shelved as a separate future project. Multi-camera processing, network input, recording/retention, region rules, and custom model training are extensions requiring their own scope decisions.
+Robotics navigation is shelved as a separate future project. Multi-camera processing, network input, recording/retention, and region rules require their own scope decisions. Custom model training now has a conditional Phase 8 gate rather than being an assumed deliverable.

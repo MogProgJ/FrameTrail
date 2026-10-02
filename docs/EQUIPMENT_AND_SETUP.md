@@ -12,8 +12,11 @@ No hardware purchase is required to begin the offline prototype. The inspected m
 | Webcam | Not needed for offline milestones | First live-input source |
 | Network camera | Not needed initially | Network and reconnection testing |
 | Storage | Space for dependencies, models, samples, and temporary outputs | Recording capacity if live replay is added |
+| bwUniCluster 3.0 access | Verify entitlement, GPU partitions, and retention before use | Conditional model training and batch evaluation |
 
 RAM, storage, and GPU requirements are not established yet. We will document measured peak memory and model requirements before specifying minimum hardware. Model input size, original video resolution, codec, and number of sources all influence resource use.
+
+KIT's bwUniCluster 3.0 is a strong later training target, with documented A100/H100 partitions, high-core-count CPU nodes, Slurm scheduling, and temporary workspaces. It is shared batch infrastructure rather than an interactive application server. The full role, access caveats, storage policy, and adoption gates are documented in [Compute, training, and bwUniCluster](COMPUTE_AND_TRAINING.md).
 
 ## Proposed tools and dependencies
 

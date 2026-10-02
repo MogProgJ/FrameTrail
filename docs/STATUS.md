@@ -46,6 +46,7 @@ The user-facing checkout is `C:\Users\nazee\Documents\All Modules\FrameTrail`. A
 - Establish and validate the native application before experimenting with an embedded AI perception pipeline.
 - Keep an agent-driven investigation service as a final, longer-term direction, after the application and any optional perception extension have been evaluated.
 - Pretrained detection remains part of the native baseline; agent orchestration, a Python AI worker, and hosted AI services are deferred.
+- Optional GPU inference, Python training, bwUniCluster use, a Python inference worker, and commercial cloud serving are governed by separate measurement gates; adopting one does not require the others.
 
 ## Decisions still open
 
@@ -56,9 +57,12 @@ The user-facing checkout is `C:\Users\nazee\Documents\All Modules\FrameTrail`. A
 - Hardware-dependent targets and initial supported file formats.
 - Tracker choice and rule parameters.
 - Project license and distribution model.
+- Confirm the user's current bwUniCluster account lifetime, GPU partition access, project/account association, and permitted footage before preparing jobs.
 
 ## Immediate next work
 
 Evaluate detection on short people/vehicle clips, then implement tracking and line-crossing events. Preview Fit/100% zoom and quality refinements are explicitly deferred at the user's request. Seeking and event navigation remain later review work.
+
+The [compute and training plan](COMPUTE_AND_TRAINING.md) is integrated as conditional Phase 8. No cluster environment or cloud service will be added until evaluation identifies a concrete accuracy, throughput, or scale constraint.
 
 Application implementation has begun following the user's instruction on 2 October 2026. Optional agent orchestration and hosted AI services remain deferred.

@@ -24,6 +24,7 @@ Still images support detections and an annotated preview. They do not support mo
 | [Architecture](docs/ARCHITECTURE.md) | How frames move through the system and why the modules exist |
 | [Equipment and setup](docs/EQUIPMENT_AND_SETUP.md) | Hardware, proposed dependencies, and what to inspect before installing anything |
 | [Roadmap](docs/ROADMAP.md) | Implementation milestones and evidence needed to complete them |
+| [Compute, training, and bwUniCluster](docs/COMPUTE_AND_TRAINING.md) | Realistic gates for GPU inference, Python training, KIT cluster use, and cloud services |
 | [Current status](docs/STATUS.md) | What exists now, open decisions, and the next work |
 | [Glossary](docs/GLOSSARY.md) | Plain-language definitions of the technical terms |
 | [Build and development guide](docs/DEVELOPMENT.md) | How to run the desktop/CLI, read the source, and understand its checks |
@@ -58,7 +59,7 @@ C++ will own the application and resource lifetimes. Native C APIs, particularly
 
 ## Longer-term direction
 
-Build and validate the native application first. The baseline includes pretrained object detection but no agent orchestration. After the core workflow proves useful and reliable, evaluate an optional prompt-driven AI perception pipeline. An agent-driven investigation service is a final, longer-term possibility. See the [roadmap](docs/ROADMAP.md#future-ai-direction) for the staged decisions; neither extension is a first-release dependency.
+Build and validate the native application first. Measured limits can later trigger local GPU inference, Python model training on bwUniCluster, or an optional Python worker; each has an explicit stop condition. Commercial cloud serving and agent-driven investigations remain later possibilities. See the [roadmap](docs/ROADMAP.md) and [compute/training plan](docs/COMPUTE_AND_TRAINING.md); none is a first-release dependency.
 
 ## Repository contents
 

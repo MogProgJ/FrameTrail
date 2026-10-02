@@ -95,3 +95,9 @@ Useful errors distinguish unsupported media, missing model, malformed model outp
 C++20 is the proposed application language. Use RAII wrappers for C resources: destruction releases handles and memory automatically, including on early returns. Keep model-specific and library-specific structures inside adapters where practical. Do not force a custom C layer before there is a demonstrated requirement.
 
 FFmpeg decodes, Qt presents the interface, and ONNX Runtime runs YOLOX-Nano on the CPU. Native C++ handles preprocessing and postprocessing. OpenCV is not needed for the current adapter; SQLite remains planned. Avoid implementing overlapping playback stacks until there is a reason to do so.
+
+## Optional training and service boundary
+
+Training is an offline artifact-production workflow, not part of the desktop process. A future Python tool may train on a workstation or bwUniCluster and export a versioned ONNX model plus labels, preprocessing metadata, checksum, metrics, and provenance. The C++ application accepts that artifact only through a matching detector adapter and local validation.
+
+A future GPU execution provider remains inside the native detector boundary. A future Python inference worker, if justified, implements the same frame/result identity contract across a versioned process boundary. The native CPU detector remains the fallback. bwUniCluster is a scheduled batch target and is not part of the interactive runtime topology. See [Compute, training, and bwUniCluster](COMPUTE_AND_TRAINING.md).
