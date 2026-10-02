@@ -16,12 +16,19 @@ struct MediaInfo {
     int height{};
     std::optional<std::chrono::microseconds> duration;
 };
+struct CameraDevice { std::string id, name; };
+struct CameraInput {
+    std::string device;
+    int width{}, height{}, fps{}; // Zero selects the driver's default format.
+};
+std::vector<CameraDevice> list_cameras();
 
 // Sequential, local-file reader. One reader is used by one thread at a time.
 // EOF returns nullopt; failures and cancellation throw std::runtime_error.
 class MediaReader {
 public:
     explicit MediaReader(const std::filesystem::path& path, std::stop_token stop = {});
+    explicit MediaReader(const CameraInput& camera, std::stop_token stop = {});
     ~MediaReader();
     MediaReader(const MediaReader&) = delete;
     MediaReader& operator=(const MediaReader&) = delete;

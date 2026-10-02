@@ -20,6 +20,7 @@ public:
         std::vector<frametrail::TrackedObject> tracks = {}, std::optional<frametrail::CountingLine> line = {});
     void begin_line_selection();
     void cancel_line_selection(bool notify = true);
+    void set_empty_text(QString text) {empty_text_=std::move(text);update();}
     std::function<void(frametrail::CountingLine)> line_selected;
     std::function<void()> line_cancelled;
     [[nodiscard]] const QImage& image() const { return image_; }
@@ -36,6 +37,7 @@ private:
     std::vector<frametrail::TrackedObject> tracks_;
     std::optional<frametrail::CountingLine> line_;
     bool selecting_line_{};
+    QString empty_text_{QStringLiteral("Open an image or video to begin")};
     std::optional<frametrail::Point> first_point_;
 };
 

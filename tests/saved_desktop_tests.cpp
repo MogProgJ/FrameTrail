@@ -59,6 +59,24 @@ int main(int argc,char* argv[]) {
         wait([&]{return reopened.displayed_timestamp()==std::chrono::microseconds(400000);});
         require(bytes(database)==unchanged,"Desktop seek/play/reopen modified analysis database");
         reopened.close();wait([&]{return !reopened.isVisible();});
+        // 60 FPS must follow presentation time, not the old one-frame/20 ms ceiling.
+        const auto smooth=std::filesystem::path(argv[1])/"smooth.mkv",smooth_run=root/"smooth.frametrail";
+        {
+            frametrail::MediaReader reader(smooth);auto frame=reader.read();auto timing_config=config;timing_config.source=smooth;
+            auto saved=frametrail::RunStore::create(smooth_run,timing_config,reader.info());
+            const std::vector<frametrail::CrossingEvent> marker{{1,1,frame->sequence,frame->timestamp,0,frametrail::CrossingDirection::negative_to_positive,{.5,.5}}};
+            saved.record_frame(*frame,marker);saved.finish("completed");
+        }
+        SavedRunWindow timing;timing.show();timing.open_run(text(smooth_run));timing.review_event(0);
+        wait([&]{return timing.displayed_timestamp()==std::chrono::microseconds(0);});
+        auto* timing_play=timing.findChild<QPushButton*>(QStringLiteral("reviewPlay"));timing_play->click();
+        QTest::qWait(1000);
+        require(timing.displayed_timestamp() && timing.displayed_timestamp()->count()>=900000,"60 FPS review fell behind its presentation clock");
+        QTest::qSleep(200);QTest::qWait(120);
+        require(timing.displayed_timestamp()->count()>=1200000,"Review did not catch up after a delayed UI tick");
+        timing_play->click();const auto paused=timing.displayed_timestamp();QTest::qWait(100);
+        require(timing.displayed_timestamp()==paused,"Review pause advanced the source");
+        timing.close();wait([&]{return !timing.isVisible();});
         std::cout<<"Desktop saved review passed\n";return 0;
     }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}
 }

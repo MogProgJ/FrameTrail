@@ -15,4 +15,5 @@ make_fixture(-f lavfi -i "testsrc=size=64x48:rate=10:duration=1"
     -vf "setpts=if(lt(N\,3)\,N\,2*N-2)/(10*TB)"
     -fps_mode vfr -c:v ffv1 "${OUTPUT}/variable.mkv")
 make_fixture(-f lavfi -i "sine=frequency=440:duration=0.1" "${OUTPUT}/audio.wav")
+make_fixture(-f lavfi -i "testsrc=size=64x48:rate=60:duration=2" -c:v ffv1 "${OUTPUT}/smooth.mkv")
 file(WRITE "${OUTPUT}/invalid.txt" "This is not media.\n")

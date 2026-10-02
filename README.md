@@ -2,9 +2,9 @@
 
 A native desktop application being built to turn images and video into detections, object tracks, and reviewable events.
 
-**Status: saved analysis and event review implemented (0.5).** Open a recording to see CPU detections, track IDs, and line-crossing counts. Save a whole-file analysis, browse event thumbnails/timeline markers, replay the source at an event, reopen results, and export CSV. Live input remains planned; counting accuracy still needs evaluation on labelled footage.
+**Status: first live-webcam baseline implemented (0.6).** Use a Windows webcam for CPU detection, IDs, and line-crossing counts, with bounded queues and visible frame-skip/latency metrics. Recorded-file analysis, saved event review, and CSV remain available. Counting accuracy and sustained camera performance still need evaluation.
 
-FrameTrail will begin with local images and prerecorded video. A later release will accept a live camera feed through the same processing core. The initial use case is counting people or vehicles crossing a user-defined line in footage from a fixed camera.
+FrameTrail accepts local images, prerecorded video, and one Windows webcam through the native processing core. The initial use case is counting people or vehicles crossing a user-defined line in footage from a fixed camera.
 
 ## What a user will do
 
@@ -30,6 +30,7 @@ Still images support detections and an annotated preview. They do not support mo
 | [Build and development guide](docs/DEVELOPMENT.md) | How to run the desktop/CLI, read the source, and understand its checks |
 | [Tracking and counting lines](docs/TRACKING.md) | Desktop controls, CSV commands, association rules, crossing semantics, and accuracy limits |
 | [Saved analysis and review](docs/SAVED_RUNS.md) | Saving whole-file runs, event thumbnails, review playback, CSV, and partial results |
+| [Live camera](docs/LIVE_CAMERA.md) | Webcam controls, bounded capture/analysis, skip metrics, and stop/restart |
 
 ## Build and try it (Windows x64)
 

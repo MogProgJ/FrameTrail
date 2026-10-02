@@ -36,6 +36,8 @@ Review opens SQLite read-only. Missing models do not prevent browsing/export. Mi
 
 Native seeking goes backward to a keyframe, flushes decoder state, and decodes forward to the saved timestamp. If seeking is unsupported or the recording has unknown/repeated/non-increasing timestamps, review decodes from the beginning to the saved frame sequence. This preserves identity but may take time for late events. After a fast seek, decoder sequences are local decode ordinals, so review shows source timestamps rather than presenting them as original frame numbers. The event list retains the original analysis sequence.
 
+Version 0.6 improves review playback timing: a precise 5 ms timer replaces the previous 20 ms polling ceiling, and a delayed UI tick selects the newest due frame instead of slowly presenting every overdue frame. The selected event still opens on its exact frame. Only presentation frames may be skipped; stored analysis stays unchanged. A 60 FPS regression test covers clock progress, catching up after a blocked UI tick, and pause continuity. Large-video decoding/rendering limits can still cause uneven playback.
+
 Exports preserve unknown timestamps as empty fields, quote text fields, and preserve UTF-8 paths. Existing output files are refused. Failed writes remove the new partial CSV when possible and report the failure. The saved run is unchanged by export.
 
 ## CLI equivalent

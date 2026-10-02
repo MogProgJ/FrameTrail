@@ -132,7 +132,7 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     });
     connect(play_,&QPushButton::clicked,this,[this]{toggle_playback();});
     connect(back,&QPushButton::clicked,this,[this]{review_event(events_->currentRow());});
-    connect(&timer_,&QTimer::timeout,this,[this]{tick();});timer_.start(20);
+    connect(&timer_,&QTimer::timeout,this,[this]{tick();});timer_.setTimerType(Qt::PreciseTimer);timer_.start(5);
 }
 void SavedRunWindow::show_error(const std::exception& error) {status_->setText(QStringLiteral("Could not complete: ")+QString::fromUtf8(error.what()));}
 void SavedRunWindow::start_analysis(const QString& database,frametrail::RunConfiguration configuration) {
@@ -228,12 +228,22 @@ void SavedRunWindow::tick() {
             first_timestamp_=next_->frame.timestamp.value_or(std::chrono::microseconds{});first_sequence_=next_->frame.sequence;
             clock_=now;paused_=now;clock_started_=true;
         }
-        const auto time=next_->frame.timestamp.value_or(first_timestamp_+std::chrono::microseconds((next_->frame.sequence-first_sequence_)*33333));
-        if(awaiting_frame_ || now-clock_>=time-first_timestamp_) {
-            const auto& f=next_->frame;QImage pixels(f.pixels.data(),f.width,f.height,f.stride,QImage::Format_RGB888);
+        // Present the latest due frame, retaining a future frame. A delayed UI
+        // tick must not replay a backlog one frame at a time. Saved data is read-only.
+        std::optional<frametrail::PreviewFrame> present;
+        std::chrono::microseconds time{};
+        for(int budget=0;next_ && budget<4;++budget) {
+            const auto candidate_time=next_->frame.timestamp.value_or(first_timestamp_+std::chrono::microseconds((next_->frame.sequence-first_sequence_)*33333));
+            if(!awaiting_frame_ && now-clock_<candidate_time-first_timestamp_)break;
+            time=candidate_time;present=std::move(next_);next_.reset();
+            if(awaiting_frame_)break;
+            next_=review_.try_pop();
+        }
+        if(present) {
+            const auto& f=present->frame;QImage pixels(f.pixels.data(),f.width,f.height,f.stride,QImage::Format_RGB888);
             canvas_->set_image(pixels.copy(),{},{},summary_->configuration.tracking.line);displayed_timestamp_=time;
             review_status_->setText(QStringLiteral("Review • %1 • saved counts unchanged • no inference").arg(time_text(f.timestamp)));
-            next_.reset();if(awaiting_frame_) {awaiting_frame_=false;paused_=now;play_->setEnabled(true);}
+            if(awaiting_frame_) {awaiting_frame_=false;paused_=now;play_->setEnabled(true);}
         }
     }else if(!state.worker_active) {
         playing_=false;awaiting_frame_=false;play_->setEnabled(false);play_->setText(QStringLiteral("Finished"));

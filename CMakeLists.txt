@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(FrameTrail VERSION 0.5.0 LANGUAGES C CXX)
+project(FrameTrail VERSION 0.6.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -22,7 +22,7 @@ if(NOT EXISTS "${FFMPEG_ROOT}/include/libavcodec/avcodec.h")
 endif()
 find_path(_ffmpeg_headers libavcodec/avcodec.h HINTS "${FFMPEG_ROOT}/include"
     NO_DEFAULT_PATH NO_CACHE REQUIRED)
-foreach(_component avformat avcodec avutil swscale)
+foreach(_component avdevice avformat avcodec avutil swscale)
     find_library(_ffmpeg_${_component}_library NAMES ${_component}
         HINTS "${FFMPEG_ROOT}/lib" NO_DEFAULT_PATH NO_CACHE REQUIRED)
     add_library(FFmpeg::${_component} UNKNOWN IMPORTED)
@@ -53,6 +53,7 @@ add_library(frametrail_sqlite STATIC "${SQLITE_ROOT}/sqlite3.c")
 target_include_directories(frametrail_sqlite PUBLIC "${SQLITE_ROOT}")
 target_compile_definitions(frametrail_sqlite PRIVATE SQLITE_THREADSAFE=1 SQLITE_OMIT_LOAD_EXTENSION)
 add_library(frametrail_core
+    src/live_session.cpp
     src/run_store.cpp
     src/analysis_job.cpp
     src/tracker.cpp
@@ -62,7 +63,7 @@ add_library(frametrail_core
     src/preview_session.cpp)
 target_include_directories(frametrail_core PUBLIC include)
 target_link_libraries(frametrail_core PRIVATE
-    FFmpeg::avformat FFmpeg::avcodec FFmpeg::avutil FFmpeg::swscale Threads::Threads ONNXRuntime frametrail_sqlite)
+    FFmpeg::avdevice FFmpeg::avformat FFmpeg::avcodec FFmpeg::avutil FFmpeg::swscale Threads::Threads ONNXRuntime frametrail_sqlite)
 if(MSVC)
     target_compile_options(frametrail_core PRIVATE /W4 /permissive- /utf-8)
 else()
@@ -121,7 +122,7 @@ if(FRAMETRAIL_BUILD_GUI)
                 VERBATIM)
         endif()
     endfunction()
-    add_library(frametrail_preview_ui apps/desktop/preview_window.cpp apps/desktop/saved_run_window.cpp)
+    add_library(frametrail_preview_ui apps/desktop/preview_window.cpp apps/desktop/saved_run_window.cpp apps/desktop/live_window.cpp)
     target_include_directories(frametrail_preview_ui PUBLIC apps/desktop)
     target_link_libraries(frametrail_preview_ui PUBLIC frametrail_core Qt6::Widgets)
     if(MSVC)
@@ -133,6 +134,11 @@ if(FRAMETRAIL_BUILD_GUI)
 endif()
 
 if(BUILD_TESTING)
+    add_executable(frametrail_live_tests tests/live_tests.cpp)
+    target_link_libraries(frametrail_live_tests PRIVATE frametrail_core)
+    frametrail_runtime(frametrail_live_tests)
+    add_test(NAME live_lifecycle COMMAND frametrail_live_tests)
+    set_tests_properties(live_lifecycle PROPERTIES TIMEOUT 20)
     add_executable(frametrail_tracking_tests tests/tracking_tests.cpp)
     target_link_libraries(frametrail_tracking_tests PRIVATE frametrail_core)
     if(MSVC)

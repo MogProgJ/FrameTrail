@@ -2,9 +2,9 @@
 
 ## What runs today
 
-FrameTrail 0.5 has a desktop preview, saved-analysis review window, and command-line inspector backed by a reusable C++ library. They open local images/recordings and produce owned RGB24 pixels with source timestamps. Whole-file analysis stores configuration, events, thumbnails, and progress in SQLite; review plays the source without inference.
+FrameTrail 0.6 has a desktop preview, live camera window, saved-analysis review, and command-line inspector backed by a reusable C++ library. Local files and one Windows webcam produce owned RGB24 pixels. Whole-file analysis stores settings/events in SQLite; saved review plays the source without inference. See [live camera](LIVE_CAMERA.md) for device controls and bounded live processing.
 
-The preview has Open media, Play/Pause, Stop, Replay, and Saved analysis. CPU detection adds boxes, labels, confidence filtering, and CSV; see [detection](DETECTION.md). Tracking adds IDs, trails, line rules, and counters; see [tracking](TRACKING.md). Saved analysis adds immutable run files, event thumbnails/markers, review seeking, and CSV; see [saved runs](SAVED_RUNS.md). Audio playback, live input, and agents remain planned. CLI throughput includes enabled stages; it is not a live-performance promise.
+The preview has Open media, Play/Pause, Stop, Replay, Saved analysis, and Live camera. CPU detection adds boxes/labels; [tracking](TRACKING.md) adds IDs and crossings; [saved runs](SAVED_RUNS.md) adds persistent evidence and review. Audio playback, live recording, and agents remain planned. CLI throughput includes enabled stages; it is not a live-performance promise.
 
 ## Windows setup
 
@@ -94,6 +94,8 @@ Without `--max-frames`, inspection reads to EOF. `timestamp_us` is source-relati
 | `include/frametrail/run_store.hpp`, `src/run_store.cpp` | SQLite C API ownership, frozen run schema, transactional events/progress, read-only pages/CSV |
 | `include/frametrail/analysis_job.hpp`, `src/analysis_job.cpp` | Whole-file decode/detect/track/persist worker, progress and partial cancellation/failure |
 | `apps/desktop/saved_run_window.cpp` | Saved run workflow, thumbnails/pages/markers, asynchronous decode-only event review |
+| `include/frametrail/live_session.hpp`, `src/live_session.cpp` | Independent capture/analysis, latest-frame handoff, arrival timing, skip metrics, lifecycle |
+| `apps/desktop/live_window.cpp` | Camera selection, live overlays/counts, stop/draw/restart and diagnostics |
 | `tests/` | Synthetic fixtures, media/CLI/worker/desktop behaviour checks |
 | `scripts/` | Explicit dependency acquisition and build/check commands |
 | `dependencies/` | Pinned FFmpeg, Qt, ONNX Runtime, model, and SQLite source artifacts |
@@ -141,4 +143,4 @@ Licenses/notices remain inside `.deps`. Local development builds do not complete
 
 ## Next slice
 
-Evaluate detection, track identities, crossing events, and the saved recorded-file workflow on short labelled people/vehicle clips, using [TRACKING.md](TRACKING.md) and [SAVED_RUNS.md](SAVED_RUNS.md). First live input follows after that workflow is reliable. Optional AI perception and an agent-driven service remain deferred.
+Evaluate recorded/live detection and crossings using [TRACKING.md](TRACKING.md), [SAVED_RUNS.md](SAVED_RUNS.md), and [LIVE_CAMERA.md](LIVE_CAMERA.md). Profile sustained resource use before optimization/packaging. Optional AI perception and an agent-driven service remain deferred.

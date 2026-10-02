@@ -19,10 +19,12 @@ Updated: 2 October 2026.
 - Finite counting-line rules with direction filtering, deadband, re-arming, gap handling, desktop line drawing/counters, and streaming CLI track/event CSV.
 - Frozen whole-file analysis jobs, SQLite saved runs, embedded event thumbnails, paged event lists/timeline markers, source review seeking/playback, reopening without inference, and saved CSV exports.
 - Committed progress/events, idempotent event IDs, partial cancellation/failure status, and missing/changed-source checks.
+- Windows webcam selection/capture, independent live capture and CPU analysis, capacity-one queues, skip/latency metrics, and stop/restart.
+- Improved saved-review timing with a precise timer, overdue-frame catch-up, and a 60 FPS regression check.
 - CMake presets, PowerShell dependency/build scripts, and CTest checks using generated synthetic media.
 - A development guide explaining commands, ownership, timing, and current limitations.
 
-Version 0.5 builds and runs on Windows x64. Decoding, CPU detection, tracking, and crossing rules execute sequentially on background workers. Original-resolution frames/results travel together to the preview. A separate whole-file job saves immutable analysis settings and crossing evidence; saved review seeks/plays the source without inference. Audio playback and live input remain deferred. Representative detection/counting accuracy and sustained movie/storage benchmarks remain open. See [CPU detection](DETECTION.md), [tracking](TRACKING.md), and [saved runs](SAVED_RUNS.md).
+Version 0.6 builds and runs on Windows x64. Recorded-file analysis and saved event review are joined by one live webcam. Live capture continues independently of CPU analysis and replaces pending frames when inference falls behind. Audio playback, live recording, and network cameras remain deferred. Representative accuracy and sustained resource measurements remain open. See [live camera](LIVE_CAMERA.md), [tracking](TRACKING.md), and [saved runs](SAVED_RUNS.md).
 
 ## Development baseline and validation
 
@@ -30,7 +32,7 @@ Inspected hardware: Intel Core i7-10750H, approximately 15.8 GiB reported RAM, I
 
 Tools used: Visual Studio 2022 MSVC 19.44, bundled CMake 3.31.6, checksum-pinned FFmpeg 8.1 branch, Qt 6.11.3 base, ONNX Runtime 1.30.0 CPU, YOLOX-Nano 0.1.1rc0, and SQLite 3.53.4 C amalgamation. Manifests are under `dependencies/`. No system-wide dependency installation was performed.
 
-Twenty CTest checks pass in Release and Debug with the model and optional reference sample. They cover media/CLI behaviour, queues/cancellation, detection/tracking contracts, real inference, player continuity, SQLite transactions/idempotency/pagination, settings round trips, partial results, exports, VFR/delayed-frame seeking, and desktop saved review. A controlled translated reference photo produces one saved event at frame 4 / 400,000 µs. Review seeking/playback/reopening leave the database byte-for-byte unchanged. Offscreen renderings have been inspected. These are integration checks, not natural-video accuracy measurements. The user confirmed large-movie playback in 0.2. Representative labelled footage, event/identity accuracy, native file dialogs, and sustained memory/disk behaviour remain open. No leak detector or live-input test has been run.
+The suite now contains 21 checks, including live overload/lifecycle and 60 FPS review timing alongside the existing media, inference, tracking, storage, and desktop checks. The integrated webcam also passed two short capture/detect/track/stop cycles at 1280×720 with clean device release; see [live camera evidence](LIVE_CAMERA.md). Stored review continues to leave the database unchanged. These are integration checks, not natural-video counting-accuracy measurements. Representative labelled footage, unplug/reconnect behaviour, native dialogs, and sustained memory/disk/latency measurements remain open. No leak detector has been run.
 
 ## Repository publication
 
@@ -67,7 +69,7 @@ The user-facing checkout is `C:\Users\nazee\Documents\All Modules\FrameTrail`. A
 
 ## Immediate next work
 
-Exercise the saved-analysis workflow on short stationary-camera people/vehicle recordings, label the expected events, and evaluate detection, identities, counts, source review, disk growth, and responsiveness. One live input is the next planned implementation phase after the recorded-file workflow proves reliable. Preview Fit/100% zoom and quality refinements remain deferred at the user's request.
+Evaluate short labelled recorded/live people or vehicle crossings and run a sustained webcam test, including unplug/reconnect. The next implementation phase is profiling, optimization, and packaging, guided by measured failures rather than adding more features. Preview Fit/100% zoom and broader quality refinements remain deferred; the reported saved-review timing issue received a focused fix in 0.6.
 
 The [compute and training plan](COMPUTE_AND_TRAINING.md) is integrated as conditional Phase 8. No cluster environment or cloud service will be added until evaluation identifies a concrete accuracy, throughput, or scale constraint.
 

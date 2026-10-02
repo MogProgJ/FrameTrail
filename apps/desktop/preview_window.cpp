@@ -1,5 +1,6 @@
 #include "preview_window.hpp"
 #include "saved_run_window.hpp"
+#include "live_window.hpp"
 
 #include <QCloseEvent>
 #include <QCoreApplication>
@@ -89,7 +90,7 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
     painter.fillRect(rect(), QColor("#0c1118"));
     if (image_.isNull()) {
         painter.setPen(QColor("#8796a8"));
-        painter.drawText(rect(), Qt::AlignCenter, QStringLiteral("Open an image or video to begin"));
+        painter.drawText(rect(), Qt::AlignCenter, empty_text_);
         return;
     }
     const QRect target = image_rect();
@@ -188,6 +189,12 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     auto* open = new QPushButton(QStringLiteral("Open media"));
     open->setObjectName(QStringLiteral("open"));
     header->addWidget(open);
+    auto* live=new QPushButton(QStringLiteral("Live camera…"));live->setObjectName(QStringLiteral("liveCamera"));header->addWidget(live);
+    connect(live,&QPushButton::clicked,this,[this,live] {
+        if(playing_)toggle_playback();
+        auto* window=new LiveWindow(model_path_);window->setAttribute(Qt::WA_DeleteOnClose);
+        live->setEnabled(false);connect(window,&QObject::destroyed,this,[live]{live->setEnabled(true);});window->show();
+    });
     auto* saved=new QPushButton(QStringLiteral("Saved analysis…"));
     saved->setObjectName(QStringLiteral("savedAnalysis"));header->addWidget(saved);
     connect(saved,&QPushButton::clicked,this,[this,saved] {

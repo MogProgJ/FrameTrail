@@ -21,7 +21,7 @@
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.5 - CPU analysis, saved runs and event review\n\n"
+    std::cout << "FrameTrail 0.6 - CPU analysis, saved review and live webcam\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
@@ -39,7 +39,7 @@ void help() {
                  "Use frametrail-desktop for the preview window.\n"
                  "Usage: frametrail run <saved-run> [--export <new-csv>]\n"
                  "Saved run inspection/export needs no model or source file.\n"
-                 "One-frame images have detections only. Live input remains planned.\n";
+                 "One-frame images have detections only. Use the desktop Live camera window for a webcam.\n";
 }
 
 std::vector<std::string_view> split(const std::string& value) {

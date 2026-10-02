@@ -1,4 +1,5 @@
 #include "preview_window.hpp"
+#include "live_window.hpp"
 #include <QApplication>
 #include <QFontDatabase>
 #include <QCheckBox>
@@ -39,6 +40,14 @@ int main(int argc, char* argv[]) {
 #endif
         require(app.arguments().size() == 2 || app.arguments().size() == 3, "Expected fixture directory and optional detection sample");
         const auto root = app.arguments()[1];
+        if(app.arguments().size()==2) {
+            LiveWindow live(QString{});live.show();
+            require(!live.findChild<QPushButton*>(QStringLiteral("stopCamera"))->isEnabled(),"Idle camera has enabled Stop");
+            require(live.findChild<QLabel*>(QStringLiteral("liveStatus")) &&
+                live.findChild<QComboBox*>(QStringLiteral("cameraDevices")),"Live controls are missing");
+            require(live.grab().save(root+QStringLiteral("/desktop-live.png")),"Live controls screenshot failed");
+            live.close();
+        }
         PreviewWindow window;
         window.findChild<QCheckBox*>(QStringLiteral("detectObjects"))->setChecked(false);
         window.show();

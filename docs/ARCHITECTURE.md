@@ -10,7 +10,8 @@ Separate the processing core from the desktop interface. The interface configure
 flowchart TD
     UI[Desktop interface] --> JOB[Analysis job controller]
     JOB --> SRC[Image or video source]
-    LIVE[Future camera source] -.-> SRC
+    LIVE[Windows webcam] --> CAP[Independent capture worker / latest frame]
+    CAP --> PRE
     SRC --> DEC[Decode and timestamp]
     DEC --> PRE[Prepare model input]
     PRE --> DET[Object detector]
@@ -69,6 +70,8 @@ Every queue has a fixed capacity and a documented overload policy:
 | Current file preview | Apply backpressure and preserve decoded order in a two-frame queue |
 | Future analysis preview | Prefer a recent frame; previews may skip independently of offline analysis |
 | Event persistence | Preserve events; report storage failure explicitly instead of silently losing them |
+
+The implemented live path uses `LiveSession`: capture feeds a capacity-one latest-frame slot, and ordered CPU analysis feeds a capacity-one latest-result slot. Both replacements are counted. Frames retain monotonic application-arrival gaps for tracking; stop/error shuts down both workers and releases the source. See [live camera](LIVE_CAMERA.md). Driver buffers and in-flight processing add memory beyond these slots.
 
 Live dropped frames reduce temporal evidence and can reduce counting accuracy. Tracking uses elapsed timestamps and tolerates gaps within configured limits; performance reporting must include drops.
 

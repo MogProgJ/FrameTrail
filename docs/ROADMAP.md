@@ -10,7 +10,7 @@ These milestones are ordered by dependencies, not estimated calendar dates. Impl
 | 3 | CPU object detection | Implemented; evaluate on labelled people/vehicle footage |
 | 4 | Tracking and line-crossing events | Baseline implemented; labelled event/identity evaluation remains |
 | 5 | Persist and review events | Baseline implemented; representative workflow/resource evaluation remains |
-| 6 | One live input | After the recorded-file workflow is reliable |
+| 6 | One live input | Windows webcam baseline implemented; sustained hardware and accuracy validation remains |
 | 7 | Profile, optimize, and package | After the complete native workflow is measurable |
 | 8 | Conditional compute and model expansion | Enter individual gates only when measured limits justify them |
 | 9 | Optional advanced perception and agents | After the native product proves useful |
@@ -66,6 +66,8 @@ Completion evidence: a user completes the full recorded-video workflow; replay s
 ## 6. First live input
 
 Add one webcam adapter, bounded live queues, drop metrics, gap-aware tracking, disconnection handling, and clean stop/restart. Live event replay remains unavailable unless a recording feature is explicitly added.
+
+Progress: Windows DirectShow capture, device/default-format selection, independent capture and analysis, capacity-one frame/result slots, application skip/latency counters, timeout/error reporting, and stop/restart are implemented. Synthetic overload/lifecycle checks exercise ordering, replacement, bounded observed latency, and source release. Hardware soak/disconnect tests and labelled accuracy remain open. See [live camera](LIVE_CAMERA.md). Recorded-file acceptance work continues alongside this baseline; saved review now uses a finer precise timer and skips overdue presentation frames after UI stalls.
 
 Completion evidence: latency and queue capacity stay bounded under deliberately slow inference; dropped frames are reported; cancellation unblocks workers; run a documented sustained-input test and check memory growth and event reliability.
 
