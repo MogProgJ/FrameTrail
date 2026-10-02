@@ -27,7 +27,7 @@ private:
     QPushButton *start_{},*stop_{},*refresh_{},*draw_{};
     QCheckBox *detect_{},*track_{};
     QDoubleSpinBox* confidence_{};
-    QLabel *status_{},*metrics_{},*counts_{};
+    QLabel *status_{},*metrics_{},*counts_{},*camera_indicator_{};
     FrameCanvas* canvas_{};
     std::vector<frametrail::CameraDevice> devices_;
     bool closing_{},editing_{},pending_edit_{};

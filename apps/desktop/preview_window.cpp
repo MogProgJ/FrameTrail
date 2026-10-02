@@ -1,6 +1,8 @@
 #include "preview_window.hpp"
 #include "saved_run_window.hpp"
 #include "live_window.hpp"
+#include "theme.hpp"
+#include "ui_preview_layout.h"
 
 #include <QCloseEvent>
 #include <QCoreApplication>
@@ -152,51 +154,39 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
 
 PreviewWindow::PreviewWindow(const QString& model_path) {
     model_path_=model_path.isEmpty() ? QCoreApplication::applicationDirPath()+QStringLiteral("/models/yolox_nano.onnx") : model_path;
-    setWindowTitle(QStringLiteral("FrameTrail — tracking and line crossings"));
-    resize(1080, 720);
-    setMinimumSize(680, 480);
-    setStyleSheet(QStringLiteral(
-        "QMainWindow, QWidget#shell { background: #151d28; color: #e4edf7; }"
-        "QLabel { color: #e4edf7; font-family: 'Segoe UI'; font-size: 13px; }"
-        "QLabel#title { font-size: 24px; font-weight: 600; }"
-        "QLabel#subtitle, QLabel#source { color: #92a5bc; }"
-        "QLabel#state { color: #73dfc3; }"
-        "QCheckBox { color: #e4edf7; font-size: 13px; }"
-        "QDoubleSpinBox { background: #263448; color: #e4edf7; padding: 5px; }"
-        "QComboBox { background: #263448; color: #e4edf7; padding: 5px; }"
-        "QPushButton { color: #e4edf7; background: #263448; border: 1px solid #394b62;"
-        " border-radius: 6px; padding: 9px 18px; font-size: 13px; }"
-        "QPushButton:hover { background: #33465f; }"
-        "QPushButton:disabled { color: #60738a; background: #1b2635; border-color: #263448; }"
-        "QPushButton#open { background: #187f6a; border-color: #239c82; }"
-        "QPushButton#open:hover { background: #209b81; }"));
-
-    auto* shell = new QWidget;
-    shell->setObjectName(QStringLiteral("shell"));
-    auto* layout = new QVBoxLayout(shell);
-    layout->setContentsMargins(24, 22, 24, 22);
-    layout->setSpacing(16);
-    auto* header = new QHBoxLayout;
-    auto* branding = new QVBoxLayout;
-    auto* title = new QLabel(QStringLiteral("FrameTrail"));
-    title->setObjectName(QStringLiteral("title"));
-    auto* subtitle = new QLabel(QStringLiteral("CPU detection • Object IDs • Line crossings"));
-    subtitle->setObjectName(QStringLiteral("subtitle"));
-    branding->addWidget(title);
-    branding->addWidget(subtitle);
-    header->addLayout(branding);
-    header->addStretch();
-    auto* open = new QPushButton(QStringLiteral("Open media"));
-    open->setObjectName(QStringLiteral("open"));
-    header->addWidget(open);
-    auto* live=new QPushButton(QStringLiteral("Live camera…"));live->setObjectName(QStringLiteral("liveCamera"));header->addWidget(live);
+    Ui::PreviewLayout ui;
+    ui.setupUi(this);
+    setWindowTitle(QStringLiteral("FrameTrail — Video workspace"));
+    setMinimumSize(900, 600);
+    setStyleSheet(frametrail_theme());
+    ui.rootLayout->setContentsMargins(24, 22, 24, 22); ui.rootLayout->setSpacing(22);
+    ui.header->setStretch(0, 1);
+    ui.playback->setStretch(3, 1);
+    for (auto* button : {ui.open, ui.liveCamera, ui.savedAnalysis, ui.play, ui.stop, ui.replay}) button->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Fixed);
+    ui.workspace->setStretch(0, 1); ui.videoColumn->setStretch(1, 1);
+    ui.inspectorLayout->setContentsMargins(18, 20, 18, 20);
+    canvas_ = ui.frameCanvas; source_label_ = ui.source;
+    source_label_->setTextFormat(Qt::PlainText);
+    source_label_->setMinimumWidth(0); source_label_->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
+    state_label_ = ui.state; state_label_->setTextFormat(Qt::PlainText);
+    details_label_ = ui.details;
+    play_button_ = ui.play; stop_button_ = ui.stop; replay_button_ = ui.replay;
+    for (auto* button : {play_button_, stop_button_, replay_button_}) button->setEnabled(false);
+    detect_box_ = ui.detectObjects; detect_box_->setChecked(QFileInfo::exists(model_path_));
+    confidence_box_ = ui.confidence; track_box_ = ui.trackObjects;
+    classes_box_ = ui.trackingClasses; direction_box_ = ui.crossingDirection;
+    line_button_ = ui.drawLine; counts_label_ = ui.crossingCounts;
+    ui.modelLabel->setText(QFileInfo::exists(model_path_) ? QStringLiteral("YOLOX-Nano · 80 classes") : QStringLiteral("Model missing — run fetch-model.ps1"));
+    ui.confidenceLabel->setBuddy(confidence_box_); ui.classesLabel->setBuddy(classes_box_); ui.directionLabel->setBuddy(direction_box_);
+    line_button_->setToolTip(QStringLiteral("Click A then B. Right-click cancels. Playback stays at this position."));
+    direction_box_->setToolTip(QStringLiteral("Sides refer to the A→B line. For a left-to-right line, + is below."));
+    auto* open = ui.open; auto* live = ui.liveCamera;
     connect(live,&QPushButton::clicked,this,[this,live] {
         if(playing_)toggle_playback();
         auto* window=new LiveWindow(model_path_);window->setAttribute(Qt::WA_DeleteOnClose);
         live->setEnabled(false);connect(window,&QObject::destroyed,this,[live]{live->setEnabled(true);});window->show();
     });
-    auto* saved=new QPushButton(QStringLiteral("Saved analysis…"));
-    saved->setObjectName(QStringLiteral("savedAnalysis"));header->addWidget(saved);
+    auto* saved = ui.savedAnalysis;
     connect(saved,&QPushButton::clicked,this,[this,saved] {
         if(playing_)toggle_playback();
         const auto [detector,tracking]=analysis_options();
@@ -208,77 +198,6 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
         connect(window,&QObject::destroyed,this,[saved]{saved->setEnabled(true);});
         window->setAttribute(Qt::WA_DeleteOnClose);window->show();
     });
-    layout->addLayout(header);
-    source_label_ = new QLabel(QStringLiteral("No file selected"));
-    source_label_->setObjectName(QStringLiteral("source"));
-    source_label_->setTextFormat(Qt::PlainText);
-    layout->addWidget(source_label_);
-    auto* analysis_controls=new QHBoxLayout;
-    detect_box_=new QCheckBox(QStringLiteral("Detect objects (CPU)"));
-    detect_box_->setObjectName(QStringLiteral("detectObjects"));
-    detect_box_->setChecked(QFileInfo::exists(model_path_));
-    detect_box_->setToolTip(QStringLiteral("YOLOX-Nano: 80 classes. Settings apply at the current position; analysis counts reset."));
-    analysis_controls->addWidget(detect_box_);
-    analysis_controls->addWidget(new QLabel(QStringLiteral("Confidence")));
-    confidence_box_=new QDoubleSpinBox;
-    confidence_box_->setObjectName(QStringLiteral("confidence"));
-    confidence_box_->setRange(0.05,0.95);
-    confidence_box_->setSingleStep(0.05);
-    confidence_box_->setValue(0.35);
-    analysis_controls->addWidget(confidence_box_);
-    analysis_controls->addStretch();
-    auto* model_label=new QLabel(QFileInfo::exists(model_path_) ? QStringLiteral("YOLOX-Nano • 80 classes") :
-        QStringLiteral("Model missing — run fetch-model.ps1 and rebuild"));
-    model_label->setObjectName(QStringLiteral("subtitle"));
-    analysis_controls->addWidget(model_label);
-    layout->addLayout(analysis_controls);
-    auto* tracking_controls = new QHBoxLayout;
-    track_box_ = new QCheckBox(QStringLiteral("Track && count"));
-    track_box_->setObjectName(QStringLiteral("trackObjects")); track_box_->setChecked(true);
-    track_box_->setEnabled(detect_box_->isChecked());
-    tracking_controls->addWidget(track_box_);
-    classes_box_ = new QComboBox;
-    classes_box_->setObjectName(QStringLiteral("trackingClasses"));
-    classes_box_->addItems({QStringLiteral("People & vehicles"),QStringLiteral("People"),QStringLiteral("Vehicles")});
-    tracking_controls->addWidget(classes_box_);
-    line_button_ = new QPushButton(QStringLiteral("Draw counting line"));
-    line_button_->setObjectName(QStringLiteral("drawLine"));
-    line_button_->setToolTip(QStringLiteral("Pause here, click A then B, and continue from this position. Right-click cancels."));
-    tracking_controls->addWidget(line_button_);
-    direction_box_ = new QComboBox;
-    direction_box_->setObjectName(QStringLiteral("crossingDirection"));
-    direction_box_->addItems({QStringLiteral("Both directions"),QStringLiteral("− → +"),QStringLiteral("+ → −")});
-    direction_box_->setToolTip(QStringLiteral("Sides refer to the A→B line shown on the frame. For the default left-to-right line, + is below."));
-    tracking_controls->addWidget(direction_box_);
-    tracking_controls->addStretch();
-    layout->addLayout(tracking_controls);
-    counts_label_ = new QLabel(QStringLiteral("Video counts: − → +  0    |    + → −  0"));
-    counts_label_->setObjectName(QStringLiteral("crossingCounts"));
-    layout->addWidget(counts_label_);
-    canvas_ = new FrameCanvas;
-    layout->addWidget(canvas_, 1);
-    auto* controls = new QHBoxLayout;
-    play_button_ = new QPushButton(QStringLiteral("Pause"));
-    play_button_->setObjectName(QStringLiteral("play"));
-    stop_button_ = new QPushButton(QStringLiteral("Stop"));
-    stop_button_->setObjectName(QStringLiteral("stop"));
-    replay_button_ = new QPushButton(QStringLiteral("Replay"));
-    replay_button_->setObjectName(QStringLiteral("replay"));
-    for (auto* button : {play_button_, stop_button_, replay_button_}) {
-        controls->addWidget(button);
-        button->setEnabled(false);
-    }
-    controls->addStretch();
-    state_label_ = new QLabel(QStringLiteral("Ready"));
-    state_label_->setObjectName(QStringLiteral("state"));
-    state_label_->setTextFormat(Qt::PlainText);
-    state_label_->setWordWrap(true);
-    controls->addWidget(state_label_, 1);
-    layout->addLayout(controls);
-    details_label_ = new QLabel(QStringLiteral("Local files • Image or silent video playback"));
-    details_label_->setObjectName(QStringLiteral("subtitle"));
-    layout->addWidget(details_label_);
-    setCentralWidget(shell);
 
     connect(open, &QPushButton::clicked, this, [this] {
         const auto path = QFileDialog::getOpenFileName(this, QStringLiteral("Open image or video"), {},

@@ -15,6 +15,7 @@ struct Detection {
 struct DetectionResult {
     std::vector<Detection> objects;
     double elapsed_ms{}; // Preprocessing + inference + postprocessing, excludes model load.
+    double preprocess_ms{}, inference_ms{}, postprocess_ms{};
 };
 struct DetectorOptions {
     std::filesystem::path model;

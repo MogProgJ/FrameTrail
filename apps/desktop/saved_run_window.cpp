@@ -1,5 +1,6 @@
 #include "saved_run_window.hpp"
 #include "preview_window.hpp"
+#include "theme.hpp"
 #include <QCloseEvent>
 #include <QFileDialog>
 #include <QFileInfo>
@@ -74,11 +75,11 @@ private:
 
 SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> configuration):configuration_(std::move(configuration)) {
     setWindowTitle(QStringLiteral("FrameTrail — Saved analysis"));resize(1200,820);
-    setStyleSheet(QStringLiteral("QMainWindow,QWidget{background:#171f2a;color:#e3eaf2;} QPushButton{background:#29394c;padding:8px;border:1px solid #43556a;border-radius:4px;} QPushButton:disabled{color:#738397;} QListWidget{background:#101720;} QListWidget::item{padding:8px;} QListWidget::item:selected{background:#30465e;} QLabel{background:transparent;}"));
-    auto* shell=new QWidget;auto* layout=new QVBoxLayout(shell);layout->setContentsMargins(20,18,20,18);
-    auto* title=new QLabel(QStringLiteral("Saved analysis & event review"));title->setStyleSheet(QStringLiteral("font-size:22px;font-weight:600;"));layout->addWidget(title);
+    setStyleSheet(frametrail_theme());
+    auto* shell=new QWidget; shell->setObjectName(QStringLiteral("shell"));auto* layout=new QVBoxLayout(shell);layout->setContentsMargins(20,18,20,18);
+    auto* title=new QLabel(QStringLiteral("Saved analysis & event review"));title->setObjectName(QStringLiteral("title"));layout->addWidget(title);
     auto* actions=new QHBoxLayout;
-    analyse_=new QPushButton(QStringLiteral("Analyse entire recording…"));analyse_->setObjectName(QStringLiteral("saveAnalysis"));
+    analyse_=new QPushButton(QStringLiteral("Analyse entire recording…"));analyse_->setObjectName(QStringLiteral("saveAnalysis")); analyse_->setProperty("role","primary");
     analyse_->setEnabled(configuration_.has_value());
     analyse_->setToolTip(QStringLiteral("Analyse from the start with the settings captured when this window opened. Preview edits do not change this run."));
     open_=new QPushButton(QStringLiteral("Open saved run…"));open_->setObjectName(QStringLiteral("openRun"));

@@ -141,6 +141,7 @@ DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     cancelled(stop);
     const auto started=std::chrono::steady_clock::now();
     auto input=yolox::preprocess(frame);
+    const auto prepared=std::chrono::steady_clock::now();
     cancelled(stop);
     const std::array<int64_t,4> shape{1,3,416,416};
     const auto memory=Ort::MemoryInfo::CreateCpu(OrtArenaAllocator,OrtMemTypeDefault);
@@ -150,6 +151,7 @@ DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     Ort::RunOptions run;
     std::stop_callback interrupt(stop,[&run]() noexcept { try { run.SetTerminate(); } catch (...) {} });
     auto values=impl_->session.Run(run,inputs,&tensor,1,outputs,1);
+    const auto inferred=std::chrono::steady_clock::now();
     cancelled(stop);
     const auto info=values[0].GetTensorTypeAndShapeInfo();
     if (info.GetShape()!=std::vector<int64_t>{1,3549,85}) throw std::runtime_error("Unexpected detection result shape");
@@ -157,7 +159,11 @@ DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     result.objects=yolox::postprocess({values[0].GetTensorData<float>(),info.GetElementCount()},
         input.ratio,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou);
     cancelled(stop);
-    result.elapsed_ms=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-started).count();
+    const auto finished=std::chrono::steady_clock::now();
+    result.elapsed_ms=std::chrono::duration<double,std::milli>(finished-started).count();
+    result.preprocess_ms=std::chrono::duration<double,std::milli>(prepared-started).count();
+    result.inference_ms=std::chrono::duration<double,std::milli>(inferred-prepared).count();
+    result.postprocess_ms=std::chrono::duration<double,std::milli>(finished-inferred).count();
     return result;
 }
 }

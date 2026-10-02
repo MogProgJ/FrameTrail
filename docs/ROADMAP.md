@@ -73,6 +73,14 @@ Completion evidence: latency and queue capacity stay bounded under deliberately 
 
 ## 7. Optimize and package
 
+Progress: per-frame decode/RGB, preprocessing, inference, postprocessing, tracking
+and pipeline profiling, reproducible hardware/settings/hash summaries, a frame-copy
+audit and a private Windows package builder are implemented. The Qt desktop layout
+now has a video-first workspace and shared styling. Local package verification covers
+hashes and file-based CLI/GUI with SDK PATH removed; clean-machine validation,
+public-distribution readiness and representative sustained benchmarks remain open.
+See [performance](PERFORMANCE.md), [packaging](PACKAGING.md), and [design](DESIGN.md).
+
 Profile stage timings and copies. If measurements trigger the Phase 8 acceleration gate, evaluate a GPU backend against the CPU baseline. Package the first Windows release with documented dependencies and artifact notices.
 
 Completion evidence: results and timing measurements state hardware, model, input resolution, settings, and backend. Verify installation on a machine without the development setup.

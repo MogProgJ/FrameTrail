@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(FrameTrail VERSION 0.6.0 LANGUAGES C CXX)
+project(FrameTrail VERSION 0.7.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -122,7 +122,8 @@ if(FRAMETRAIL_BUILD_GUI)
                 VERBATIM)
         endif()
     endfunction()
-    add_library(frametrail_preview_ui apps/desktop/preview_window.cpp apps/desktop/saved_run_window.cpp apps/desktop/live_window.cpp)
+    add_library(frametrail_preview_ui apps/desktop/preview_layout.ui apps/desktop/preview_window.cpp apps/desktop/saved_run_window.cpp apps/desktop/live_window.cpp)
+    set_target_properties(frametrail_preview_ui PROPERTIES AUTOUIC ON)
     target_include_directories(frametrail_preview_ui PUBLIC apps/desktop)
     target_link_libraries(frametrail_preview_ui PUBLIC frametrail_core Qt6::Widgets)
     if(MSVC)
@@ -206,6 +207,12 @@ if(BUILD_TESTING)
     add_test(NAME media_contract COMMAND frametrail_media_tests "${_fixtures}")
     set_tests_properties(media_contract PROPERTIES FIXTURES_REQUIRED media TIMEOUT 30)
     add_test(NAME cli_help COMMAND frametrail --help)
+    if(EXISTS "${_detector_model}")
+        add_test(NAME cli_profile COMMAND ${CMAKE_COMMAND}
+            "-DCLI=$<TARGET_FILE:frametrail>" "-DFIXTURES=${_fixtures}" "-DMODEL=${_detector_model}"
+            -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/check_profile.cmake")
+        set_tests_properties(cli_profile PROPERTIES FIXTURES_REQUIRED media TIMEOUT 30)
+    endif()
     add_test(NAME cli_exports COMMAND ${CMAKE_COMMAND}
         "-DCLI=$<TARGET_FILE:frametrail>" "-DFIXTURES=${_fixtures}"
         -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/check_cli.cmake")

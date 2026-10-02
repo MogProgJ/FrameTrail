@@ -1,5 +1,8 @@
 #include "live_window.hpp"
 #include "preview_window.hpp"
+#include "theme.hpp"
+#include <QFrame>
+#include <QScrollArea>
 #include <QCheckBox>
 #include <QCloseEvent>
 #include <QComboBox>
@@ -11,27 +14,42 @@
 #include <QVBoxLayout>
 
 LiveWindow::LiveWindow(QString model):model_(std::move(model)) {
-    setWindowTitle(QStringLiteral("FrameTrail — Live camera"));resize(1100,760);
-    setStyleSheet(QStringLiteral("QWidget{background:#171f2a;color:#e3eaf2;} QPushButton,QComboBox,QDoubleSpinBox{background:#29394c;padding:7px;} QPushButton:disabled{color:#758699;} QLabel{background:transparent;}"));
-    auto* body=new QWidget;auto* layout=new QVBoxLayout(body);
-    auto* title=new QLabel(QStringLiteral("Live camera • CPU detection & counting"));title->setStyleSheet(QStringLiteral("font-size:22px;"));layout->addWidget(title);
-    auto* sources=new QHBoxLayout;cameras_=new QComboBox;cameras_->setObjectName(QStringLiteral("cameraDevices"));sources->addWidget(cameras_,1);
-    format_=new QComboBox;format_->addItems({QStringLiteral("Camera default format"),QStringLiteral("640 × 480 / 30 fps"),QStringLiteral("1280 × 720 / 30 fps")});sources->addWidget(format_);
-    refresh_=new QPushButton(QStringLiteral("Refresh cameras"));sources->addWidget(refresh_);
-    start_=new QPushButton(QStringLiteral("Start camera"));start_->setObjectName(QStringLiteral("startCamera"));sources->addWidget(start_);
-    stop_=new QPushButton(QStringLiteral("Stop camera"));stop_->setObjectName(QStringLiteral("stopCamera"));sources->addWidget(stop_);layout->addLayout(sources);
-    auto* options=new QHBoxLayout;
-    detect_=new QCheckBox(QStringLiteral("Detect objects (CPU)"));detect_->setChecked(QFileInfo::exists(model_));options->addWidget(detect_);
-    confidence_=new QDoubleSpinBox;confidence_->setRange(.05,.95);confidence_->setSingleStep(.05);confidence_->setValue(.35);options->addWidget(new QLabel(QStringLiteral("Confidence")));options->addWidget(confidence_);
-    track_=new QCheckBox(QStringLiteral("Track & count"));track_->setChecked(true);options->addWidget(track_);
-    classes_=new QComboBox;classes_->addItems({QStringLiteral("People & vehicles"),QStringLiteral("People"),QStringLiteral("Vehicles")});options->addWidget(classes_);
-    direction_=new QComboBox;direction_->addItems({QStringLiteral("Both directions"),QStringLiteral("− → +"),QStringLiteral("+ → −")});options->addWidget(direction_);
-    draw_=new QPushButton(QStringLiteral("Stop & draw line"));draw_->setObjectName(QStringLiteral("drawLiveLine"));options->addWidget(draw_);layout->addLayout(options);
-    auto* hint=new QLabel(QStringLiteral("Choose settings before Start. Stop releases the camera; restarting begins new counts. No recording or saved replay."));hint->setWordWrap(true);layout->addWidget(hint);
-    counts_=new QLabel(QStringLiteral("Crossings: − → + 0  |  + → − 0"));counts_->setObjectName(QStringLiteral("liveCounts"));layout->addWidget(counts_);
-    canvas_=new FrameCanvas;canvas_->set_empty_text(QStringLiteral("Choose a camera, then click Start camera"));layout->addWidget(canvas_,1);
-    metrics_=new QLabel(QStringLiteral("Capture and analysis metrics appear after Start."));metrics_->setWordWrap(true);layout->addWidget(metrics_);
-    status_=new QLabel;status_->setObjectName(QStringLiteral("liveStatus"));status_->setWordWrap(true);status_->setTextFormat(Qt::PlainText);layout->addWidget(status_);setCentralWidget(body);
+    setWindowTitle(QStringLiteral("FrameTrail — Live camera")); resize(1280, 820); setMinimumSize(980, 640);
+    setStyleSheet(frametrail_theme());
+    auto* body = new QWidget; body->setObjectName(QStringLiteral("shell"));
+    auto* layout = new QVBoxLayout(body); layout->setContentsMargins(24,22,24,22); layout->setSpacing(18);
+    auto* header = new QHBoxLayout;
+    auto* title = new QLabel(QStringLiteral("Live camera")); title->setObjectName(QStringLiteral("title")); header->addWidget(title);
+    header->addStretch(); camera_indicator_ = new QLabel(QStringLiteral("Camera off"));
+    camera_indicator_->setObjectName(QStringLiteral("cameraIndicator")); camera_indicator_->setProperty("role", "badge"); header->addWidget(camera_indicator_); layout->addLayout(header);
+    auto* hint = new QLabel(QStringLiteral("Start camera activates your webcam. Frames stay on this device; no audio, recording, or upload."));
+    hint->setWordWrap(true); hint->setProperty("role", "muted"); layout->addWidget(hint);
+    auto* workspace = new QHBoxLayout; workspace->setSpacing(20);
+    auto* video = new QVBoxLayout;
+    canvas_ = new FrameCanvas; canvas_->set_empty_text(QStringLiteral("Your camera is off\nChoose a device, then click Start camera")); video->addWidget(canvas_,1);
+    auto* transport = new QHBoxLayout;
+    start_ = new QPushButton(QStringLiteral("Start camera")); start_->setObjectName(QStringLiteral("startCamera")); start_->setProperty("role", "primary"); transport->addWidget(start_);
+    stop_ = new QPushButton(QStringLiteral("Stop camera")); stop_->setObjectName(QStringLiteral("stopCamera")); transport->addWidget(stop_);
+    status_ = new QLabel; status_->setObjectName(QStringLiteral("liveStatus")); status_->setTextFormat(Qt::PlainText); status_->setWordWrap(true); transport->addWidget(status_,1); video->addLayout(transport);
+    metrics_ = new QLabel(QStringLiteral("Capture and analysis metrics appear after Start.")); metrics_->setWordWrap(true); metrics_->setProperty("role", "muted"); video->addWidget(metrics_); workspace->addLayout(video,1);
+    auto* panel = new QFrame; panel->setObjectName(QStringLiteral("inspector"));
+    auto* options = new QVBoxLayout(panel); options->setContentsMargins(18,20,18,20); options->setSpacing(9);
+    const auto caption = [&](const QString& text) {auto* label = new QLabel(text); label->setProperty("role","section"); options->addWidget(label);};
+    caption(QStringLiteral("CAMERA SOURCE"));
+    cameras_ = new QComboBox; cameras_->setObjectName(QStringLiteral("cameraDevices")); cameras_->setAccessibleName(QStringLiteral("Camera device")); cameras_->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon); cameras_->setMinimumContentsLength(12); options->addWidget(cameras_);
+    format_ = new QComboBox; format_->setAccessibleName(QStringLiteral("Capture format")); format_->addItems({QStringLiteral("Camera default format"),QStringLiteral("640 × 480 / 30 fps"),QStringLiteral("1280 × 720 / 30 fps")}); options->addWidget(format_);
+    refresh_ = new QPushButton(QStringLiteral("Refresh cameras")); options->addWidget(refresh_);
+    caption(QStringLiteral("ANALYSIS"));
+    detect_ = new QCheckBox(QStringLiteral("Detect objects (CPU)")); detect_->setChecked(QFileInfo::exists(model_)); options->addWidget(detect_);
+    auto* confidenceLabel = new QLabel(QStringLiteral("Confidence threshold")); options->addWidget(confidenceLabel);
+    confidence_ = new QDoubleSpinBox; confidence_->setRange(.05,.95); confidence_->setSingleStep(.05); confidence_->setValue(.35); confidenceLabel->setBuddy(confidence_); confidence_->setAccessibleName(QStringLiteral("Confidence threshold")); options->addWidget(confidence_);
+    track_ = new QCheckBox(QStringLiteral("Track && count")); track_->setChecked(true); options->addWidget(track_);
+    classes_ = new QComboBox; classes_->setAccessibleName(QStringLiteral("Objects to count")); classes_->addItems({QStringLiteral("People & vehicles"),QStringLiteral("People"),QStringLiteral("Vehicles")}); options->addWidget(classes_);
+    direction_ = new QComboBox; direction_->setAccessibleName(QStringLiteral("Crossing direction")); direction_->addItems({QStringLiteral("Both directions"),QStringLiteral("− → +"),QStringLiteral("+ → −")}); options->addWidget(direction_);
+    draw_ = new QPushButton(QStringLiteral("Stop && draw line")); draw_->setObjectName(QStringLiteral("drawLiveLine")); options->addWidget(draw_);
+    auto* settingsHint = new QLabel(QStringLiteral("Change settings while stopped. Restarting begins fresh IDs and counts.")); settingsHint->setWordWrap(true); settingsHint->setProperty("role","muted"); options->addWidget(settingsHint); options->addStretch();
+    caption(QStringLiteral("THIS SESSION")); counts_ = new QLabel(QStringLiteral("Crossings: − → + 0  |  + → − 0")); counts_->setWordWrap(true); counts_->setObjectName(QStringLiteral("liveCounts")); options->addWidget(counts_);
+    auto* scroll = new QScrollArea; scroll->setWidgetResizable(true); scroll->setFixedWidth(320); scroll->setWidget(panel); workspace->addWidget(scroll); layout->addLayout(workspace,1); setCentralWidget(body);
     connect(refresh_,&QPushButton::clicked,this,[this]{refresh();});
     connect(start_,&QPushButton::clicked,this,[this]{start();});
     connect(stop_,&QPushButton::clicked,this,[this]{session_.stop();status_->setText(QStringLiteral("Stopping camera…"));});
@@ -80,6 +98,7 @@ void LiveWindow::start() {
 }
 void LiveWindow::tick() {
     const auto state=session_.snapshot();
+    camera_indicator_->setText(state.active ? QStringLiteral("Camera requested / in use") : QStringLiteral("Camera off"));
     if(closing_){if(!state.active)close();return;}
     if(auto frame=session_.try_pop()) {
         const auto& f=frame->frame;QImage borrowed(f.pixels.data(),f.width,f.height,f.stride,QImage::Format_RGB888);
@@ -91,7 +110,7 @@ void LiveWindow::tick() {
         if(frame->tracking)counts_->setText(QStringLiteral("Crossings: − → + %1  |  + → − %2").arg(frame->tracking->negative_to_positive).arg(frame->tracking->positive_to_negative));
     }
     if(pending_edit_ && !state.active) {pending_edit_=false;editing_=true;canvas_->begin_line_selection();status_->setText(QStringLiteral("Select A then B. Right-click cancels. Start camera afterwards."));}
-    else if(!editing_)status_->setText(state.error.empty() ? QString::fromStdString(state.state) : QStringLiteral("Camera stopped: ")+QString::fromStdString(state.error));
+    else if(!editing_ && (state.state!="idle" || !state.error.empty()))status_->setText(state.error.empty() ? QString::fromStdString(state.state) : QStringLiteral("Camera stopped: ")+QString::fromStdString(state.error));
     update_controls();
 }
 void LiveWindow::closeEvent(QCloseEvent* event) {

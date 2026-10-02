@@ -2,6 +2,18 @@
 
 FrameTrail can now use one Windows DirectShow webcam with the existing CPU detector, tracker, and counting line. Open **Live camera…** from the main window, choose a camera, then **Start camera**. Opening the window lists devices; capture starts only after pressing Start.
 
+## Windows permissions and explicit activation
+
+The live window states that **Start camera** activates the webcam and displays
+**Camera off** while idle. FrameTrail does not change Windows privacy settings.
+Traditional desktop apps may not get an individual camera permission prompt when
+Windows desktop camera access is already enabled. See [Microsoft's explanation](https://support.microsoft.com/en-us/windows/privacy/manage-app-permissions-for-a-camera-in-windows).
+
+The prior hardware smoke check was invoked manually during development; it does
+not run at app startup or in CTest. Future real-camera validation requires an
+explicit user request/consent before activating capture. Use the synthetic live
+tests and local media for routine validation.
+
 ## Controls
 
 - **Refresh cameras** updates the device list while stopped. Connect a webcam if the list is empty.

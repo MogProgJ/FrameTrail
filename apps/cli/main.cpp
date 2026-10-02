@@ -21,7 +21,7 @@
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.6 - CPU analysis, saved review and live webcam\n\n"
+    std::cout << "FrameTrail 0.7 - CPU analysis, saved review and live webcam\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
@@ -35,6 +35,7 @@ void help() {
                  "  --direction <d>    both, forward (- to +), or reverse (+ to -)\n"
                  "  --classes <ids>    COCO IDs; default 0,1,2,3,5,7\n"
                  "  --save-run <path>  Save a whole-file run (requires --detect and --track)\n"
+                 "  --profile <csv>    Export per-frame CPU stage timings and RGB bytes\n"
                  "  --help             Show this help\n\n"
                  "Use frametrail-desktop for the preview window.\n"
                  "Usage: frametrail run <saved-run> [--export <new-csv>]\n"
@@ -108,7 +109,7 @@ int run(const std::vector<std::string>& args) {
     std::optional<std::filesystem::path> preview_path;
     std::optional<std::filesystem::path> model_path, detections_path;
     std::optional<std::filesystem::path> tracks_path, events_path;
-    std::optional<std::filesystem::path> saved_path;
+    std::optional<std::filesystem::path> saved_path, profile_path;
     bool tracking = false;
     frametrail::TrackingOptions tracking_options;
     std::set<std::string> seen;
@@ -118,7 +119,7 @@ int run(const std::vector<std::string>& args) {
         if (!seen.insert(option).second) throw std::runtime_error("Duplicate option: " + option);
         if (option == "--track") { tracking = true; continue; }
         if (option != "--csv" && option != "--preview" && option != "--max-frames" && option != "--detect" && option != "--detections" &&
-            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run") {
+            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run" && option != "--profile") {
             throw std::runtime_error("Unknown option: " + option);
         }
         if (++i == args.size()) {
@@ -140,6 +141,8 @@ int run(const std::vector<std::string>& args) {
             tracks_path = path_from_utf8(args[i]);
         } else if (option == "--events") {
             events_path = path_from_utf8(args[i]);
+        } else if (option == "--profile") {
+            profile_path = path_from_utf8(args[i]);
         } else if (option == "--save-run") {
             saved_path = path_from_utf8(args[i]);
         } else if (option == "--line") {
@@ -174,7 +177,7 @@ int run(const std::vector<std::string>& args) {
         throw std::runtime_error("Track exports and rule settings require --track");
     std::unique_ptr<frametrail::Tracker> tracker;
     if (tracking) tracker = std::make_unique<frametrail::Tracker>(tracking_options);
-    const std::vector<std::optional<std::filesystem::path>> outputs{csv_path,preview_path,detections_path,tracks_path,events_path,saved_path};
+    const std::vector<std::optional<std::filesystem::path>> outputs{csv_path,preview_path,detections_path,tracks_path,events_path,saved_path,profile_path};
     std::set<std::filesystem::path> output_names;
     for (const auto& path : outputs) if (path) {
         check_output_path(*path,input);
@@ -193,6 +196,13 @@ int run(const std::vector<std::string>& args) {
         ~SavedRunGuard() {if(value && !finished){try{value->finish("failed","CLI did not finish; see its error output");}catch(...){}}}
     } saved;
     if(saved_path)saved.value.emplace(frametrail::RunStore::create(*saved_path,{input,{*model_path},tracking_options},reader.info()));
+    std::ofstream profile_csv;
+    if (profile_path) {
+        profile_csv.open(*profile_path, std::ios::binary);
+        if (!profile_csv) throw std::runtime_error("Cannot open profile CSV");
+        profile_csv << "sequence,timestamp_us,width,height,rgb_bytes,decode_rgb_ms,preprocess_ms,inference_ms,postprocess_ms,tracking_ms,pipeline_ms\n";
+        profile_csv << std::fixed << std::setprecision(6);
+    }
     std::ofstream detections_csv;
     std::ofstream tracks_csv, events_csv;
     if (tracks_path) {
@@ -226,7 +236,10 @@ int run(const std::vector<std::string>& args) {
     std::optional<std::chrono::microseconds> first;
     std::optional<std::chrono::microseconds> last;
     while (!maximum || count < *maximum) {
+        const auto frame_started = std::chrono::steady_clock::now();
         auto frame = reader.read();
+        const auto decoded = std::chrono::steady_clock::now();
+        double prepare_ms=0, infer_ms=0, post_ms=0, rules_ms=0;
         if (!frame) break;
         if (count == 0) {
             first = frame->timestamp;
@@ -235,11 +248,12 @@ int run(const std::vector<std::string>& args) {
         last = frame->timestamp;
         if (detector) {
             const auto result=detector->detect(*frame);
+            prepare_ms=result.preprocess_ms; infer_ms=result.inference_ms; post_ms=result.postprocess_ms;
             object_count+=result.objects.size();
             detection_ms+=result.elapsed_ms;
             if (tracker) {
                 const auto temporal = tracker->update(result.objects,frame->sequence,frame->timestamp,frame->width,frame->height);
-                tracking_ms += temporal.elapsed_ms;
+                tracking_ms += temporal.elapsed_ms; rules_ms=temporal.elapsed_ms;
                 if(saved.value)saved.value->record_frame(*frame,temporal.events);
                 if (frame->sequence > 0) {
                     forward = temporal.negative_to_positive; reverse = temporal.positive_to_negative;
@@ -277,11 +291,24 @@ int run(const std::vector<std::string>& args) {
                 << frame->stride << ',' << frame->pixels.size() << '\n';
             if (!csv) throw std::runtime_error("Failed while writing frame CSV");
         }
+        if (profile_path) {
+            const double decode_ms=std::chrono::duration<double,std::milli>(decoded-frame_started).count();
+            const double pipeline_ms=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-frame_started).count();
+            profile_csv << frame->sequence << ',';
+            if (frame->timestamp) profile_csv << frame->timestamp->count();
+            profile_csv << ',' << frame->width << ',' << frame->height << ',' << frame->pixels.size() << ','
+                << decode_ms << ',' << prepare_ms << ',' << infer_ms << ',' << post_ms << ',' << rules_ms << ',' << pipeline_ms << '\n';
+            if (!profile_csv) throw std::runtime_error("Failed writing profile CSV");
+        }
         ++count;
     }
     if (csv_path) {
         csv.close();
         if (!csv) throw std::runtime_error("Failed to finish frame CSV");
+    }
+    if (profile_path) {
+        profile_csv.close();
+        if (!profile_csv) throw std::runtime_error("Failed to finish profile CSV");
     }
     if (count == 0) throw std::runtime_error("No visual frames could be decoded");
     if (detections_path) {

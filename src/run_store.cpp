@@ -159,7 +159,7 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
         "deadband REAL NOT NULL,rearm REAL NOT NULL,codec TEXT NOT NULL,width INTEGER NOT NULL,height INTEGER NOT NULL,"
         "duration_us INTEGER,processed_frames INTEGER NOT NULL DEFAULT 0,last_timestamp_us INTEGER,timestamp_seekable INTEGER NOT NULL DEFAULT 1,"
         "run_id TEXT NOT NULL DEFAULT(lower(hex(randomblob(16)))),"
-        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.6 / YOLOX-Nano 0.1.1rc0 / ORT 1.30.0 CPU / tracker-v1');"
+        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.7 / YOLOX-Nano 0.1.1rc0 / ORT 1.30.0 CPU / tracker-v1');"
         "CREATE TABLE events(id INTEGER PRIMARY KEY CHECK(id>0),track_id INTEGER NOT NULL,sequence INTEGER NOT NULL,"
         "timestamp_us INTEGER,class_id INTEGER NOT NULL,direction INTEGER NOT NULL CHECK(direction IN(1,2)),"
         "x REAL NOT NULL,y REAL NOT NULL,thumbnail BLOB NOT NULL);" );

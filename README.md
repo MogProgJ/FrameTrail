@@ -2,7 +2,7 @@
 
 A native desktop application being built to turn images and video into detections, object tracks, and reviewable events.
 
-**Status: first live-webcam baseline implemented (0.6).** Use a Windows webcam for CPU detection, IDs, and line-crossing counts, with bounded queues and visible frame-skip/latency metrics. Recorded-file analysis, saved event review, and CSV remain available. Counting accuracy and sustained camera performance still need evaluation.
+**Status: desktop refresh, CPU profiling and private Windows packaging implemented (0.7).** Use a Windows webcam for CPU detection, IDs, and line-crossing counts, with bounded queues and visible frame-skip/latency metrics. Recorded-file analysis, saved event review, and CSV remain available. Counting accuracy and sustained camera performance still need evaluation.
 
 FrameTrail accepts local images, prerecorded video, and one Windows webcam through the native processing core. The initial use case is counting people or vehicles crossing a user-defined line in footage from a fixed camera.
 
@@ -69,3 +69,7 @@ Build and validate the native application first. Measured limits can later trigg
 This repository contains a reusable media library, background preview controller, desktop window, CLI, CMake build, dependency/build scripts, behaviour checks, and documentation. Local SDKs, build products, generated test footage, and exports are ignored by Git. YOLOX-Nano is downloaded separately and copied beside local development executables; weights are not committed.
 
 Project licensing is undecided. Third-party binaries are acquired locally by the dependency script and are not committed or published as release artifacts. Synthetic test footage is generated locally. An optional upstream demonstration photo is downloaded separately for detection validation.
+
+## Performance and Windows preview package
+
+The 0.7 desktop refresh adds a video-first workspace and shared styling. See [design](docs/DESIGN.md). Use `scripts/profile.ps1 -InputFile <local-video>` for stage timings and `scripts/package.ps1` after a Release build for a private portable ZIP. See [performance](docs/PERFORMANCE.md) and [packaging](docs/PACKAGING.md) for commands, measurement limits and remaining release checks.

@@ -46,11 +46,15 @@ int main(int argc, char* argv[]) {
             require(live.findChild<QLabel*>(QStringLiteral("liveStatus")) &&
                 live.findChild<QComboBox*>(QStringLiteral("cameraDevices")),"Live controls are missing");
             require(live.grab().save(root+QStringLiteral("/desktop-live.png")),"Live controls screenshot failed");
+            live.resize(980,640); QTest::qWait(20);
+            require(live.findChild<QLabel*>(QStringLiteral("cameraIndicator"))->text()==QStringLiteral("Camera off"), "Idle window requested a camera");
+            require(live.grab().save(root+QStringLiteral("/desktop-live-compact.png")),"Compact live screenshot failed");
             live.close();
         }
         PreviewWindow window;
         window.findChild<QCheckBox*>(QStringLiteral("detectObjects"))->setChecked(false);
         window.show();
+        require(window.grab().save(root+QStringLiteral("/desktop-empty.png")),"Empty workspace screenshot failed");
         auto* play = window.findChild<QPushButton*>(QStringLiteral("play"));
         auto* stop = window.findChild<QPushButton*>(QStringLiteral("stop"));
         auto* replay = window.findChild<QPushButton*>(QStringLiteral("replay"));
@@ -91,6 +95,9 @@ int main(int argc, char* argv[]) {
             require(window.preview_image().width()==768 && window.preview_image().height()==576,
                 "Detector reduced display resolution to its model input");
             require(window.grab().save(root+QStringLiteral("/desktop-detection.png")),"Detection screenshot failed");
+            window.resize(900,600); QTest::qWait(20);
+            require(window.grab().save(root+QStringLiteral("/desktop-compact.png")),"Compact workspace screenshot failed");
+            window.resize(1280,820);
             detect->setChecked(false);
             window.open_file(root+QStringLiteral("/still.png"));
             wait_for([&]{return window.displayed_sequence()==0 && !window.playing();});

@@ -18,7 +18,7 @@ From the FrameTrail repository directory:
 .\build\windows-msvc\Release\frametrail-desktop.exe
 ```
 
-Fetching downloads approximately 81 MB of FFmpeg and 40 MB of Qt base into `.deps/`, verifies SHA-256 hashes, and extracts the SDKs. CMake handles Qt's 7z archive. It also fetches ONNX Runtime (about 83 MB), YOLOX-Nano (about 3.6 MB), and SQLite source (about 3 MB). Nothing is installed system-wide. Building configures x64, compiles Release, copies runtime DLLs/plugins, and runs CTest. With the model and optional detection sample, twenty checks are available. Existing checkouts can fetch only the new source with `.\scripts\fetch-storage.ps1`.
+Fetching downloads approximately 81 MB of FFmpeg and 40 MB of Qt base into `.deps/`, verifies SHA-256 hashes, and extracts the SDKs. CMake handles Qt's 7z archive. It also fetches ONNX Runtime (about 83 MB), YOLOX-Nano (about 3.6 MB), and SQLite source (about 3 MB). Nothing is installed system-wide. Building configures x64, compiles Release, copies runtime DLLs/plugins, and runs CTest. With the model and optional detection sample, twenty-two checks are available. Existing checkouts can fetch only the new source with `.\scripts\fetch-storage.ps1`.
 
 For Debug:
 
@@ -144,3 +144,5 @@ Licenses/notices remain inside `.deps`. Local development builds do not complete
 ## Next slice
 
 Evaluate recorded/live detection and crossings using [TRACKING.md](TRACKING.md), [SAVED_RUNS.md](SAVED_RUNS.md), and [LIVE_CAMERA.md](LIVE_CAMERA.md). Profile sustained resource use before optimization/packaging. Optional AI perception and an agent-driven service remain deferred.
+
+The main layout is `apps/desktop/preview_layout.ui` (Qt Designer), compiled by CMake AUTOUIC. All desktop windows share `theme.hpp`. Use `scripts/profile.ps1` for file-only stage measurements and `scripts/package.ps1` / `scripts/check-package.ps1` for private Windows deployment checks. Never invoke `--camera-smoke` without explicit user consent to activate the camera.

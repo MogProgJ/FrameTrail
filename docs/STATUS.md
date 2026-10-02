@@ -1,6 +1,6 @@
 # Current status
 
-Updated: 2 October 2026.
+Updated: 3 October 2026.
 
 ## What exists
 
@@ -24,7 +24,7 @@ Updated: 2 October 2026.
 - CMake presets, PowerShell dependency/build scripts, and CTest checks using generated synthetic media.
 - A development guide explaining commands, ownership, timing, and current limitations.
 
-Version 0.6 builds and runs on Windows x64. Recorded-file analysis and saved event review are joined by one live webcam. Live capture continues independently of CPU analysis and replaces pending frames when inference falls behind. Audio playback, live recording, and network cameras remain deferred. Representative accuracy and sustained resource measurements remain open. See [live camera](LIVE_CAMERA.md), [tracking](TRACKING.md), and [saved runs](SAVED_RUNS.md).
+Version 0.7 builds and runs on Windows x64. Recorded-file analysis and saved event review are joined by one live webcam. Live capture continues independently of CPU analysis and replaces pending frames when inference falls behind. Audio playback, live recording, and network cameras remain deferred. Representative accuracy and sustained resource measurements remain open. See [live camera](LIVE_CAMERA.md), [tracking](TRACKING.md), and [saved runs](SAVED_RUNS.md).
 
 ## Development baseline and validation
 
@@ -32,7 +32,7 @@ Inspected hardware: Intel Core i7-10750H, approximately 15.8 GiB reported RAM, I
 
 Tools used: Visual Studio 2022 MSVC 19.44, bundled CMake 3.31.6, checksum-pinned FFmpeg 8.1 branch, Qt 6.11.3 base, ONNX Runtime 1.30.0 CPU, YOLOX-Nano 0.1.1rc0, and SQLite 3.53.4 C amalgamation. Manifests are under `dependencies/`. No system-wide dependency installation was performed.
 
-The suite now contains 21 checks, including live overload/lifecycle and 60 FPS review timing alongside the existing media, inference, tracking, storage, and desktop checks. The integrated webcam also passed two short capture/detect/track/stop cycles at 1280×720 with clean device release; see [live camera evidence](LIVE_CAMERA.md). Stored review continues to leave the database unchanged. These are integration checks, not natural-video counting-accuracy measurements. Representative labelled footage, unplug/reconnect behaviour, native dialogs, and sustained memory/disk/latency measurements remain open. No leak detector has been run.
+The suite now contains 22 checks, including live overload/lifecycle and 60 FPS review timing alongside the existing media, inference, tracking, storage, and desktop checks. The integrated webcam also passed two short capture/detect/track/stop cycles at 1280×720 with clean device release; see [live camera evidence](LIVE_CAMERA.md). Stored review continues to leave the database unchanged. These are integration checks, not natural-video counting-accuracy measurements. Representative labelled footage, unplug/reconnect behaviour, native dialogs, and sustained memory/disk/latency measurements remain open. No leak detector has been run.
 
 ## Repository publication
 
@@ -67,9 +67,17 @@ The user-facing checkout is `C:\Users\nazee\Documents\All Modules\FrameTrail`. A
 - Project license and distribution model.
 - Confirm the user's current bwUniCluster account lifetime, GPU partition access, project/account association, and permitted footage before preparing jobs.
 
+## Phase 7 additions
+
+Stage-separated CPU profiling and a private portable Windows packaging workflow
+are available. The desktop uses a Qt Designer form and shared visual theme with
+a right-hand settings inspector, more space for video, and explicit idle camera
+messaging. See [performance](PERFORMANCE.md), [packaging](PACKAGING.md), and
+[design](DESIGN.md). No new real-camera test was performed for this update.
+
 ## Immediate next work
 
-Evaluate short labelled recorded/live people or vehicle crossings and run a sustained webcam test, including unplug/reconnect. The next implementation phase is profiling, optimization, and packaging, guided by measured failures rather than adding more features. Preview Fit/100% zoom and broader quality refinements remain deferred; the reported saved-review timing issue received a focused fix in 0.6.
+Evaluate short labelled recorded/live people or vehicle crossings and run a sustained webcam test, including unplug/reconnect. Profiling and private packaging are now implemented; use their measurements to guide optimization and validate the package on a clean Windows machine. Preview Fit/100% zoom and broader quality refinements remain deferred; the reported saved-review timing issue received a focused fix in 0.6.
 
 The [compute and training plan](COMPUTE_AND_TRAINING.md) is integrated as conditional Phase 8. No cluster environment or cloud service will be added until evaluation identifies a concrete accuracy, throughput, or scale constraint.
 
