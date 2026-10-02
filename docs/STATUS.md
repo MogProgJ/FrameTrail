@@ -30,6 +30,9 @@ GitHub CLI authentication was verified outside the sandbox for the intended acco
 - CPU baseline before deciding on acceleration.
 - C++ application with native C API integration; custom C modules only for a justified need.
 - Robotics remains a separate shelved idea.
+- Establish and validate the native application before experimenting with an embedded AI perception pipeline.
+- Keep an agent-driven investigation service as a final, longer-term direction, after the application and any optional perception extension have been evaluated.
+- Pretrained detection remains part of the native baseline; agent orchestration, a Python AI worker, and hosted AI services are deferred.
 
 ## Decisions still open
 

@@ -42,6 +42,10 @@ C++ will own the application and resource lifetimes. Native C APIs, particularly
 - Event accuracy and performance must be measured on representative footage.
 - No fixed real-time frame-rate promise before benchmarking.
 
+## Longer-term direction
+
+Build and validate the native application first. The baseline includes pretrained object detection but no agent orchestration. After the core workflow proves useful and reliable, evaluate an optional prompt-driven AI perception pipeline. An agent-driven investigation service is a final, longer-term possibility. See the [roadmap](docs/ROADMAP.md#future-ai-direction) for the staged decisions; neither extension is a first-release dependency.
+
 ## Repository contents
 
 This repository currently contains documentation and Git housekeeping only. Source directories, build configuration, dependencies, models, and executable code will be added during implementation.

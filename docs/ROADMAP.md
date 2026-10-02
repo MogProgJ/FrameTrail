@@ -54,6 +54,26 @@ Completion evidence: results and timing measurements state hardware, model, inpu
 
 Report processing FPS separately from preview FPS. Measure processing latency by stage; for live mode also measure arrival-to-result latency (not true sensor-to-result latency unless capture timing is available). Report queue high-water marks, drops, peak memory, run failures, and event accuracy. Preserve the test inputs and settings so comparisons are repeatable.
 
+## Future AI direction
+
+The agreed sequence is native product first, optional AI perception later, and a possible agent-driven service at the end. These are deferred directions, not required implementation milestones or commitments to a provider.
+
+### A. Prove the native product
+
+Complete and evaluate the recorded-file workflow, followed by live input and packaging. Pretrained object detection remains in the baseline. Establish event accuracy, responsiveness, resource use, and usefulness on representative footage before adding agent orchestration.
+
+### B. Evaluate embedded AI perception
+
+Investigate prompt-driven detection/segmentation and optional reasoning on ambiguous visual cases. Candidate models discussed include the SAM family; no model, runtime, framework, or hardware purchase is selected. A separate local AI worker is one possible integration, not a current dependency.
+
+Compare the extension with the native baseline on the same inputs. Measure whether it expands useful object selection or improves accuracy, together with latency, memory, integration effort, hardware requirements, and artifact licensing. Keep it optional if it does not justify those costs. Preserve a stable result contract so the application does not depend on a specific model or agent framework.
+
+### C. Consider an agent-driven service
+
+Only after the product is established, explore autonomous investigations: selecting recordings, running analyses, reviewing evidence, and assembling timestamped reports. Service operation, deployment, provider choice, data access, permissions, and cost would need a separate design. A service need not imply sending all footage to a cloud provider.
+
+Neither future direction changes the first-release scope or authorizes application implementation in this documentation step.
+
 ## Deferred projects
 
 Robotics navigation is shelved as a separate future project. Multi-camera processing, network input, recording/retention, region rules, and custom model training are extensions requiring their own scope decisions.
