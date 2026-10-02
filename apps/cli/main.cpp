@@ -1,5 +1,6 @@
 #include "frametrail/frame_export.hpp"
 #include "frametrail/media_reader.hpp"
+#include "frametrail/detector.hpp"
 
 #include <charconv>
 #include <chrono>
@@ -15,14 +16,16 @@
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.2 - native media inspector\n\n"
+    std::cout << "FrameTrail 0.3 - native media and CPU detection\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
                  "  --max-frames <n>   Stop after n frames (positive integer)\n"
+                 "  --detect <model>   Run the pinned YOLOX-Nano ONNX model on the CPU\n"
+                 "  --detections <csv> Export detections (requires --detect)\n"
                  "  --help             Show this help\n\n"
                  "Use frametrail-desktop for the preview window.\n"
-                 "Object detection, tracking, and live input are still planned.\n";
+                 "Tracking and live input are still planned.\n";
 }
 
 std::filesystem::path path_from_utf8(const std::string& value) {
@@ -53,10 +56,11 @@ int run(const std::vector<std::string>& args) {
     const auto input = path_from_utf8(args[1]);
     std::optional<std::filesystem::path> csv_path;
     std::optional<std::filesystem::path> preview_path;
+    std::optional<std::filesystem::path> model_path, detections_path;
     std::optional<std::uint64_t> maximum;
     for (std::size_t i = 2; i < args.size(); ++i) {
         const auto& option = args[i];
-        if (option != "--csv" && option != "--preview" && option != "--max-frames") {
+        if (option != "--csv" && option != "--preview" && option != "--max-frames" && option != "--detect" && option != "--detections") {
             throw std::runtime_error("Unknown option: " + option);
         }
         if (++i == args.size()) {
@@ -68,6 +72,12 @@ int run(const std::vector<std::string>& args) {
         } else if (option == "--preview") {
             if (preview_path) throw std::runtime_error("Duplicate --preview option");
             preview_path = path_from_utf8(args[i]);
+        } else if (option == "--detect") {
+            if (model_path) throw std::runtime_error("Duplicate --detect option");
+            model_path=path_from_utf8(args[i]);
+        } else if (option == "--detections") {
+            if (detections_path) throw std::runtime_error("Duplicate --detections option");
+            detections_path=path_from_utf8(args[i]);
         } else {
             if (maximum) throw std::runtime_error("Duplicate --max-frames option");
             std::uint64_t value{};
@@ -82,6 +92,14 @@ int run(const std::vector<std::string>& args) {
     }
     if (csv_path) check_output_path(*csv_path, input);
     if (preview_path) check_output_path(*preview_path, input);
+    if (detections_path) {
+        if (!model_path) throw std::runtime_error("--detections requires --detect <model>");
+        check_output_path(*detections_path,input);
+        for (const auto& other:{csv_path,preview_path}) {
+            if (other && std::filesystem::absolute(*other).lexically_normal()==std::filesystem::absolute(*detections_path).lexically_normal())
+                throw std::runtime_error("Each export needs a different output path");
+        }
+    }
     if (csv_path && preview_path &&
         std::filesystem::absolute(*csv_path).lexically_normal() ==
             std::filesystem::absolute(*preview_path).lexically_normal()) {
@@ -90,6 +108,14 @@ int run(const std::vector<std::string>& args) {
 
     const auto start = std::chrono::steady_clock::now();
     frametrail::MediaReader reader(input);
+    std::unique_ptr<frametrail::Detector> detector;
+    if (model_path) detector=std::make_unique<frametrail::Detector>(frametrail::DetectorOptions{*model_path});
+    std::ofstream detections_csv;
+    if (detections_path) {
+        detections_csv.open(*detections_path,std::ios::binary);
+        if (!detections_csv) throw std::runtime_error("Cannot open detection CSV");
+        detections_csv << "sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms\n";
+    }
     std::cout << "Codec: " << reader.info().codec << "\nInitial dimensions: "
               << reader.info().width << 'x' << reader.info().height << '\n';
     std::ofstream csv;
@@ -99,6 +125,8 @@ int run(const std::vector<std::string>& args) {
         csv << "sequence,timestamp_us,width,height,stride,bytes\n";
     }
     std::uint64_t count = 0;
+    std::uint64_t object_count=0;
+    double detection_ms=0;
     std::optional<std::chrono::microseconds> first;
     std::optional<std::chrono::microseconds> last;
     while (!maximum || count < *maximum) {
@@ -109,6 +137,21 @@ int run(const std::vector<std::string>& args) {
             if (preview_path) frametrail::write_ppm(*frame, *preview_path);
         }
         last = frame->timestamp;
+        if (detector) {
+            const auto result=detector->detect(*frame);
+            object_count+=result.objects.size();
+            detection_ms+=result.elapsed_ms;
+            for (const auto& object:result.objects) {
+                if (detections_path) {
+                    detections_csv << frame->sequence << ',';
+                    if (frame->timestamp) detections_csv << frame->timestamp->count();
+                    detections_csv << ',' << object.class_id << ',' << frametrail::class_name(object.class_id) << ','
+                        << object.confidence << ',' << object.left << ',' << object.top << ',' << object.right << ','
+                        << object.bottom << ',' << result.elapsed_ms << '\n';
+                }
+            }
+            if (detections_path && !detections_csv) throw std::runtime_error("Failed writing detection CSV");
+        }
         if (csv_path) {
             csv << frame->sequence << ',';
             if (frame->timestamp) csv << frame->timestamp->count();
@@ -123,6 +166,12 @@ int run(const std::vector<std::string>& args) {
         if (!csv) throw std::runtime_error("Failed to finish frame CSV");
     }
     if (count == 0) throw std::runtime_error("No visual frames could be decoded");
+    if (detections_path) {
+        detections_csv.close();
+        if (!detections_csv) throw std::runtime_error("Failed to finish detection CSV");
+    }
+    if (detector) std::cout << "Detections across frames: " << object_count
+        << "\nAverage CPU detection (ms/frame): " << detection_ms/count << '\n';
     const double elapsed = std::chrono::duration<double>(
         std::chrono::steady_clock::now() - start).count();
     std::cout << "Frames decoded: " << count << "\nFirst timestamp (us): ";
@@ -130,7 +179,7 @@ int run(const std::vector<std::string>& args) {
     std::cout << "\nLast timestamp (us): ";
     if (last) std::cout << last->count(); else std::cout << "unavailable";
     std::cout << std::fixed << std::setprecision(3) << "\nElapsed (s): " << elapsed
-              << "\nDecode/export throughput (fps): " << (elapsed > 0 ? count / elapsed : 0)
+              << (detector ? "\nDecode/detect/export throughput (fps): " : "\nDecode/export throughput (fps): ") << (elapsed > 0 ? count / elapsed : 0)
               << "\nStop condition: "
               << ((maximum && count == *maximum) ? "frame limit" : "end of file") << '\n';
     return 0;

@@ -5,7 +5,7 @@ namespace frametrail {
 
 PreviewSession::~PreviewSession() { stop(); }
 
-void PreviewSession::start(const std::filesystem::path& source) {
+void PreviewSession::start(const std::filesystem::path& source, std::optional<DetectorOptions> detection) {
     {
         std::lock_guard lock(mutex_);
         if (status_.worker_active) {
@@ -24,11 +24,13 @@ void PreviewSession::start(const std::filesystem::path& source) {
         status_.worker_active = true;
     }
     try {
-        worker_ = std::jthread([this, source, generation](std::stop_token stop) {
+        worker_ = std::jthread([this, source, generation, detection](std::stop_token stop) {
             PreviewState outcome = PreviewState::completed;
             std::string error;
             try {
                 MediaReader reader(source, stop);
+                std::unique_ptr<Detector> detector;
+                if (detection && !stop.stop_requested()) detector = std::make_unique<Detector>(*detection);
                 {
                     std::lock_guard lock(mutex_);
                     status_.info = reader.info();
@@ -42,9 +44,11 @@ void PreviewSession::start(const std::filesystem::path& source) {
                     lock.unlock();
                     auto frame = reader.read();
                     if (!frame) break;
+                    std::optional<DetectionResult> result;
+                    if (detector) result = detector->detect(*frame, stop);
                     lock.lock();
                     if (stop.stop_requested()) break;
-                    frames_.push_back({generation, std::move(*frame)});
+                    frames_.push_back({generation, std::move(*frame), std::move(result)});
                     ++status_.decoded_frames;
                 }
                 if (stop.stop_requested()) outcome = PreviewState::cancelled;

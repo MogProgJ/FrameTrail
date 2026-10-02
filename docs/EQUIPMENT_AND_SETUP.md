@@ -17,7 +17,7 @@ RAM, storage, and GPU requirements are not established yet. We will document mea
 
 ## Proposed tools and dependencies
 
-The project now uses C++20/MSVC, CMake, pinned FFmpeg, and Qt 6.11.3 Widgets. The other candidates remain uninstalled for this project. Qt's base SDK comes from the official repository and includes the controls, rendering, and test modules used here. Choose mutually compatible versions and reproducible acquisition before adding the remaining dependencies. See the [development guide](DEVELOPMENT.md) for the working build commands.
+The project now uses C++20/MSVC, CMake, pinned FFmpeg, Qt 6.11.3 Widgets, ONNX Runtime 1.30.0 CPU, and YOLOX-Nano. Qt and inference SDKs are local dependencies. Preprocessing is native C++, so OpenCV is not currently needed; SQLite remains planned. See the [development guide](DEVELOPMENT.md) and [detection guide](DETECTION.md) for setup and model details.
 
 | Tool/dependency | Role | Official reference |
 | --- | --- | --- |
@@ -33,7 +33,7 @@ The ONNX Runtime C++ interface wraps its C API. Its execution-provider system of
 
 ## Model selection gate
 
-No model or weights have been chosen or downloaded. Compare a small set of object detectors with ONNX-compatible exports and suitable person/vehicle classes. Record:
+The initial selected model is the official YOLOX-Nano 0.1.1rc0 ONNX export, acquired separately with a pinned checksum. The adapter's tensor contract and a reference-image check are documented in [DETECTION.md](DETECTION.md). Future model changes should record:
 
 1. Original model and weight source, version, checksum, and redistribution license.
 2. Input size, tensor layout, colour order, scaling, padding, and normalisation.

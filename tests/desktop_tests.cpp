@@ -1,6 +1,7 @@
 #include "preview_window.hpp"
 #include <QApplication>
 #include <QFontDatabase>
+#include <QCheckBox>
 #include <QLabel>
 #include <QPushButton>
 #include <QtTest/QTest>
@@ -34,15 +35,44 @@ int main(int argc, char* argv[]) {
         QFontDatabase::addApplicationFont(fonts + QStringLiteral("seguisb.ttf"));
         app.setFont(QFont(QStringLiteral("Segoe UI"), 10));
 #endif
-        require(app.arguments().size() == 2, "Expected fixture directory");
+        require(app.arguments().size() == 2 || app.arguments().size() == 3, "Expected fixture directory and optional detection sample");
         const auto root = app.arguments()[1];
         PreviewWindow window;
+        window.findChild<QCheckBox*>(QStringLiteral("detectObjects"))->setChecked(false);
         window.show();
         auto* play = window.findChild<QPushButton*>(QStringLiteral("play"));
         auto* stop = window.findChild<QPushButton*>(QStringLiteral("stop"));
         auto* replay = window.findChild<QPushButton*>(QStringLiteral("replay"));
         auto* state = window.findChild<QLabel*>(QStringLiteral("state"));
         require(play && stop && replay && state, "Preview controls are missing");
+        if (app.arguments().size()==3) {
+            auto* detect=window.findChild<QCheckBox*>(QStringLiteral("detectObjects"));
+            detect->setChecked(true);
+            window.open_file(app.arguments()[2]);
+            wait_for([&]{return window.displayed_sequence()==0 && !window.playing();});
+            require(window.detections().size()>=2,"Desktop lost model detections");
+            require(window.preview_image().width()==768 && window.preview_image().height()==576,
+                "Detector reduced display resolution to its model input");
+            require(window.grab().save(root+QStringLiteral("/desktop-detection.png")),"Detection screenshot failed");
+            detect->setChecked(false);
+            window.open_file(root+QStringLiteral("/still.png"));
+            wait_for([&]{return window.displayed_sequence()==0 && !window.playing();});
+            require(window.detections().empty(),"Disabling detection left stale boxes");
+            detect->setChecked(true);
+            window.open_file(root+QStringLiteral("/variable.mkv"));
+            QTest::qWait(30);
+            window.close();
+            wait_for([&]{return !window.isVisible();});
+            PreviewWindow missing(root+QStringLiteral("/missing-model.onnx"));
+            missing.findChild<QCheckBox*>(QStringLiteral("detectObjects"))->setChecked(true);
+            missing.open_file(root+QStringLiteral("/still.png"));
+            auto* error=missing.findChild<QLabel*>(QStringLiteral("state"));
+            wait_for([&]{return error->text().startsWith(QStringLiteral("Could not read:"));});
+            missing.findChild<QCheckBox*>(QStringLiteral("detectObjects"))->setChecked(false);
+            wait_for([&]{return missing.displayed_sequence()==0 && !missing.playing();});
+            std::cout << "Desktop detection checks passed: overlays, native resolution, toggle, cancellation, missing model recovery\n";
+            return 0;
+        }
 
         window.open_file(root + QStringLiteral("/variable.mkv"));
         wait_for([&] { return window.displayed_sequence().has_value(); });

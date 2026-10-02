@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(FrameTrail VERSION 0.2.0 LANGUAGES CXX)
+project(FrameTrail VERSION 0.3.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -31,13 +31,26 @@ foreach(_component avformat avcodec avutil swscale)
         INTERFACE_INCLUDE_DIRECTORIES "${_ffmpeg_headers}")
 endforeach()
 
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/windows-onnxruntime.json" _ort_manifest)
+string(JSON _ort_directory GET "${_ort_manifest}" archiveRoot)
+set(ONNXRUNTIME_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/.deps/${_ort_directory}" CACHE PATH "ONNX Runtime CPU SDK")
+if(NOT EXISTS "${ONNXRUNTIME_ROOT}/include/onnxruntime_cxx_api.h")
+    message(FATAL_ERROR "ONNX Runtime SDK missing. Run scripts/fetch-dependencies.ps1 and configure again.")
+endif()
+add_library(ONNXRuntime SHARED IMPORTED)
+set_target_properties(ONNXRuntime PROPERTIES
+    IMPORTED_IMPLIB "${ONNXRUNTIME_ROOT}/lib/onnxruntime.lib"
+    IMPORTED_LOCATION "${ONNXRUNTIME_ROOT}/lib/onnxruntime.dll"
+    INTERFACE_INCLUDE_DIRECTORIES "${ONNXRUNTIME_ROOT}/include")
+set(_detector_model "${CMAKE_CURRENT_SOURCE_DIR}/models/yolox_nano.onnx")
 add_library(frametrail_core
+    src/detector.cpp
     src/media_reader.cpp
     src/frame_export.cpp
     src/preview_session.cpp)
 target_include_directories(frametrail_core PUBLIC include)
 target_link_libraries(frametrail_core PRIVATE
-    FFmpeg::avformat FFmpeg::avcodec FFmpeg::avutil FFmpeg::swscale Threads::Threads)
+    FFmpeg::avformat FFmpeg::avcodec FFmpeg::avutil FFmpeg::swscale Threads::Threads ONNXRuntime)
 if(MSVC)
     target_compile_options(frametrail_core PRIVATE /W4 /permissive- /utf-8)
 else()
@@ -53,7 +66,14 @@ function(frametrail_runtime target)
         add_custom_command(TARGET ${target} POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_if_different
                 ${_runtime_dlls} "$<TARGET_FILE_DIR:${target}>"
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:ONNXRuntime>" "$<TARGET_FILE_DIR:${target}>"
             VERBATIM)
+        if(EXISTS "${_detector_model}")
+            add_custom_command(TARGET ${target} POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${target}>/models"
+                COMMAND ${CMAKE_COMMAND} -E copy_if_different "${_detector_model}" "$<TARGET_FILE_DIR:${target}>/models/yolox_nano.onnx"
+                VERBATIM)
+        endif()
     endif()
 endfunction()
 
@@ -101,6 +121,14 @@ if(FRAMETRAIL_BUILD_GUI)
 endif()
 
 if(BUILD_TESTING)
+    add_executable(frametrail_detection_tests tests/detection_tests.cpp)
+    target_link_libraries(frametrail_detection_tests PRIVATE frametrail_core)
+    if(WIN32)
+        target_link_libraries(frametrail_detection_tests PRIVATE Psapi)
+    endif()
+    frametrail_runtime(frametrail_detection_tests)
+    add_test(NAME detection_contract COMMAND frametrail_detection_tests)
+    set(_detection_sample "${CMAKE_CURRENT_SOURCE_DIR}/.deps/detection-samples/dog.jpg")
     add_executable(frametrail_media_tests tests/media_tests.cpp)
     target_link_libraries(frametrail_media_tests PRIVATE frametrail_core)
     if(MSVC)
@@ -114,6 +142,19 @@ if(BUILD_TESTING)
         "-DFFMPEG=${_ffmpeg_executable}" "-DOUTPUT=${_fixtures}"
         -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/generate_fixtures.cmake")
     set_tests_properties(generate_media_fixtures PROPERTIES FIXTURES_SETUP media TIMEOUT 60)
+    if(EXISTS "${_detector_model}")
+        add_test(NAME detection_inference COMMAND frametrail_detection_tests --inference "${_detector_model}" "${_fixtures}")
+        set_tests_properties(detection_inference PROPERTIES FIXTURES_REQUIRED media TIMEOUT 60)
+        if(EXISTS "${_detection_sample}")
+            add_test(NAME detection_sample COMMAND frametrail_detection_tests --sample "${_detector_model}" "${_detection_sample}")
+            set_tests_properties(detection_sample PROPERTIES TIMEOUT 60)
+            add_test(NAME cli_detection COMMAND ${CMAKE_COMMAND}
+                "-DCLI=$<TARGET_FILE:frametrail>" "-DMODEL=${_detector_model}"
+                "-DSAMPLE=${_detection_sample}" "-DFIXTURES=${_fixtures}"
+                -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/check_detection_cli.cmake")
+            set_tests_properties(cli_detection PROPERTIES FIXTURES_REQUIRED media TIMEOUT 60)
+        endif()
+    endif()
     add_test(NAME media_contract COMMAND frametrail_media_tests "${_fixtures}")
     set_tests_properties(media_contract PROPERTIES FIXTURES_REQUIRED media TIMEOUT 30)
     add_test(NAME cli_help COMMAND frametrail --help)
@@ -138,6 +179,11 @@ if(BUILD_TESTING)
             COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:Qt6::Test>"
                 "$<TARGET_FILE_DIR:frametrail_desktop_tests>" VERBATIM)
         add_test(NAME desktop_controls COMMAND frametrail_desktop_tests "${_fixtures}")
+        if(EXISTS "${_detector_model}" AND EXISTS "${_detection_sample}")
+            add_test(NAME desktop_detection COMMAND frametrail_desktop_tests "${_fixtures}" "${_detection_sample}")
+            set_tests_properties(desktop_detection PROPERTIES FIXTURES_REQUIRED media TIMEOUT 60
+                ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
+        endif()
         set_tests_properties(desktop_controls PROPERTIES FIXTURES_REQUIRED media TIMEOUT 30
             ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
     endif()

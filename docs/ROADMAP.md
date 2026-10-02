@@ -10,7 +10,7 @@ Completion evidence: documentation links resolve, diagrams are present, and the 
 
 ## 1. Confirm the implementation baseline
 
-Progress: hardware and C++ tools inspected; FFmpeg acquisition is pinned and validated. Selection of model, samples, and later dependencies remains open.
+Progress: hardware and C++ tools inspected; FFmpeg acquisition is pinned and validated. YOLOX-Nano and ONNX Runtime are pinned. A reference-image smoke test exists; representative evaluation footage and later dependencies remain open.
 
 Inspect hardware and compiler availability. Choose dependency versions and acquisition strategy. Select an appropriately licensed detection model and permissioned samples. Specify exact initial formats after checking decoder support.
 
@@ -25,6 +25,8 @@ Implement image loading and video decoding/playback with timestamped frames, sou
 Completion evidence: representative images and recordings display correctly; timestamps survive variable-frame-rate input; invalid files produce useful errors; opening/closing and cancellation release resources. Track a repeated-open memory baseline.
 
 ## 3. Object detection
+
+Progress: YOLOX-Nano CPU inference, documented preprocessing/output contracts, original-frame overlays, confidence filtering, ordered video analysis, and detection CSV exports are implemented. Contract, real-model, and reference-image checks pass. A warm CPU timing baseline is recorded; representative accuracy and sustained resource measurements remain open. See [DETECTION.md](DETECTION.md).
 
 Add preprocessing and CPU inference for one model. Render boxes in original-frame coordinates. Support image detection export and ordered offline video detections.
 
@@ -79,5 +81,7 @@ Only after the product is established, explore autonomous investigations: select
 Neither future direction changes the first-release scope or adds agent integration to the current implementation work.
 
 ## Deferred projects
+
+Preview Fit/100% zoom and rendering-quality refinements are deferred while CPU analysis is the focus.
 
 Robotics navigation is shelved as a separate future project. Multi-camera processing, network input, recording/retention, region rules, and custom model training are extensions requiring their own scope decisions.

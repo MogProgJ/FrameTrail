@@ -12,6 +12,8 @@
 | Bounding box | Rectangle describing an object's predicted location |
 | Confidence | A model score used to filter predictions; it is not automatically a calibrated probability |
 | Non-maximum suppression | A method for removing overlapping duplicate detections |
+| Letterboxing | Resize an image while preserving its shape, then pad unused space to fit a model's fixed input size |
+| Tensor | A multidimensional array of numbers, such as an image arranged by batch, colour channel, height, and width |
 | Tracking | Associating observations across frames to maintain an object's temporary identity |
 | Identity switch | A tracker incorrectly assigning or changing an object's identity |
 | Event | A rule-triggered observation, such as a tracked object crossing a line |

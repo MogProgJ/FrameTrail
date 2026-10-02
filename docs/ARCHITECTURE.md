@@ -2,9 +2,9 @@
 
 ## Overall structure
 
-Implementation snapshot: `MediaReader`, owned RGB `Frame` values, exports, CLI, `PreviewSession`, and the Qt preview exist. PreviewSession owns one decoding worker and a two-frame queue; source generations reject stale frames. The detector, tracker, event/storage modules, and full analysis-job contract below remain the target architecture. See [development](DEVELOPMENT.md) for current source and concurrency details.
+Implementation snapshot: `MediaReader`, owned RGB `Frame` values, exports, CLI, `PreviewSession`, and the Qt preview exist. PreviewSession owns one decoding worker and a two-frame queue; source generations reject stale frames. YOLOX-Nano CPU detection now runs sequentially on that worker; each queued frame carries its own optional detection result. The tracker, event/storage modules, and full analysis-job contract below remain the target architecture. See [development](DEVELOPMENT.md) for current source and concurrency details.
 
-Separate the processing core from the desktop interface. The interface configures jobs and displays results; decoding runs off its event thread, and future inference will too. The CLI uses the same media core for repeatable inspection.
+Separate the processing core from the desktop interface. The interface configures jobs and displays results; decoding and inference run off its event thread. The CLI uses the same media core for repeatable inspection.
 
 ```mermaid
 flowchart TD
@@ -94,4 +94,4 @@ Useful errors distinguish unsupported media, missing model, malformed model outp
 
 C++20 is the proposed application language. Use RAII wrappers for C resources: destruction releases handles and memory automatically, including on early returns. Keep model-specific and library-specific structures inside adapters where practical. Do not force a custom C layer before there is a demonstrated requirement.
 
-FFmpeg currently decodes and Qt presents the interface. OpenCV, ONNX Runtime, and SQLite are proposed for selected image operations, inference, and persistence respectively; they are not installed yet. Avoid implementing overlapping playback stacks until there is a reason to do so.
+FFmpeg decodes, Qt presents the interface, and ONNX Runtime runs YOLOX-Nano on the CPU. Native C++ handles preprocessing and postprocessing. OpenCV is not needed for the current adapter; SQLite remains planned. Avoid implementing overlapping playback stacks until there is a reason to do so.

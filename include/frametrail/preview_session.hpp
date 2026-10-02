@@ -1,6 +1,7 @@
 #pragma once
 
 #include "frametrail/media_reader.hpp"
+#include "frametrail/detector.hpp"
 #include <condition_variable>
 #include <deque>
 #include <mutex>
@@ -23,6 +24,7 @@ struct PreviewSnapshot {
 struct PreviewFrame {
     std::uint64_t generation{};
     Frame frame;
+    std::optional<DetectionResult> detection;
 };
 
 // Main-thread controller with a single decoding worker and bounded handoff.
@@ -31,7 +33,7 @@ class PreviewSession {
 public:
     static constexpr std::size_t capacity = 2;
     ~PreviewSession();
-    void start(const std::filesystem::path& source);
+    void start(const std::filesystem::path& source, std::optional<DetectorOptions> detection = {});
     void stop();
     [[nodiscard]] PreviewSnapshot snapshot() const;
     [[nodiscard]] std::optional<PreviewFrame> try_pop();

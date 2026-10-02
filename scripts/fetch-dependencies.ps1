@@ -33,3 +33,5 @@ if ((Test-Path -LiteralPath $taskMarker) -and
     Write-Host 'This local development dependency is ignored by Git; its bundled license files remain in .deps.'
 }
 if (-not $MediaOnly) { & (Join-Path $PSScriptRoot 'fetch-qt.ps1') }
+& (Join-Path $PSScriptRoot 'fetch-inference.ps1')
+& (Join-Path $PSScriptRoot 'fetch-model.ps1')

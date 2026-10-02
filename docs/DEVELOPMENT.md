@@ -2,9 +2,9 @@
 
 ## What runs today
 
-FrameTrail 0.2 has a desktop preview and a command-line media inspector backed by a reusable C++ library. Both open local images and recordings, decode the visual stream, and produce owned RGB24 pixels with source timestamps. The desktop displays frames; the CLI exports metadata to CSV and the first frame to a lossless PPM image.
+FrameTrail 0.3 has a desktop preview and a command-line media inspector backed by a reusable C++ library. Both open local images and recordings, decode the visual stream, and produce owned RGB24 pixels with source timestamps. The desktop displays frames; the CLI exports metadata to CSV and the first frame to a lossless PPM image.
 
-The preview has Open media, Play/Pause, Stop, and Replay. Audio playback, seeking, object detection, tracking, event storage, live input, and agents are still planned. The CLI throughput number measures decoding and optional export; it is not an inference benchmark or a live-performance promise.
+The preview has Open media, Play/Pause, Stop, and Replay. CPU detection now adds boxes, labels, confidence filtering, and detection CSV exports; see [the detection guide](DETECTION.md). Audio playback, seeking, tracking, event storage, live input, and agents remain planned. Without detection, CLI throughput measures decoding/export. With `--detect`, it includes inference and reports detection timing separately. Neither is a live-performance promise.
 
 ## Windows setup
 
@@ -18,7 +18,7 @@ From the FrameTrail repository directory:
 .\build\windows-msvc\Release\frametrail-desktop.exe
 ```
 
-Fetching downloads approximately 81 MB of FFmpeg and 40 MB of Qt base into `.deps/`, verifies SHA-256 hashes against the committed manifests, and extracts the SDKs. CMake's archive utility handles Qt's 7z archive, so no separate 7-Zip installation is needed. Nothing is installed system-wide. Building configures x64, compiles Release, copies runtime DLLs and Qt platform plugins beside the executables, and runs six CTest checks.
+Fetching downloads approximately 81 MB of FFmpeg and 40 MB of Qt base into `.deps/`, verifies SHA-256 hashes against the committed manifests, and extracts the SDKs. CMake's archive utility handles Qt's 7z archive, so no separate 7-Zip installation is needed. It also fetches ONNX Runtime (about 83 MB) and YOLOX-Nano (about 3.6 MB). Nothing is installed system-wide. Building configures x64, compiles Release, copies runtime DLLs and Qt platform plugins beside the executables, and runs CTest checks (eight with the model, eleven after fetching the optional detection sample).
 
 For Debug:
 
@@ -26,7 +26,7 @@ For Debug:
 .\scripts\build.ps1 -Configuration Debug
 ```
 
-To build only the core and CLI without acquiring Qt:
+To build only the core and CLI without acquiring Qt (CPU detection remains included):
 
 ```powershell
 .\scripts\fetch-dependencies.ps1 -MediaOnly
@@ -89,9 +89,10 @@ Without `--max-frames`, inspection reads to EOF. `timestamp_us` is source-relati
 | `apps/desktop/preview_window.cpp` | Controls, playback clock, generation checks, image ownership, painting |
 | `apps/desktop/main.cpp` | Qt entry point and optional initial file argument |
 | `apps/cli/main.cpp` | Arguments, export validation, frame loop, CSV, summary |
+| `include/frametrail/detector.hpp`, `src/detector.cpp` | Model session, preprocessing, grid decoding, NMS, labels, and CPU timings |
 | `tests/` | Synthetic fixtures, media/CLI/worker/desktop behaviour checks |
 | `scripts/` | Explicit dependency acquisition and build/check commands |
-| `dependencies/` | Pinned FFmpeg/Qt sources, checksums, and local layout |
+| `dependencies/` | Pinned FFmpeg, Qt, ONNX Runtime, and model artifacts |
 
 FFmpeg is a C library called directly from our C++ code. RAII wrappers release native contexts, packets, frames, and conversion resources even when an operation fails. Returned frames own their pixels and remain valid when the reader advances. At EOF the reader flushes delayed decoder output, which matters for codecs that reorder frames internally.
 
@@ -110,7 +111,7 @@ flowchart LR
     CANCEL --> WORKER
 ```
 
-The worker never touches Qt widgets. A mutex protects status and the queue. A stop-aware condition variable waits when the queue is full; the UI polls without waiting for frames. Pause leaves a bounded backlog instead of decoding the entire recording into memory.
+With detection enabled, the same worker runs inference after decoding, then enqueues the frame and its detections together. The worker never touches Qt widgets. A mutex protects status and the queue. A stop-aware condition variable waits when the queue is full; the UI polls without waiting for frames. Pause leaves a bounded backlog instead of decoding the entire recording into memory.
 
 Each start increments a generation ID. The display rejects frames from earlier sources. Replacement waits for the previous worker to become inactive and joins it before starting another. Stop clears queued frames and wakes the producer. `std::jthread` is the last session member so destruction joins before synchronization objects disappear. Decoding can finish before playback: the UI reaches Finished only after the accepted frames are displayed.
 
@@ -120,7 +121,7 @@ Source presentation timestamps govern playback; a steady clock measures elapsed 
 
 ## Checks and limitations
 
-Six CTest checks cover fixture generation, media contracts, CLI help, CLI exports, preview lifecycle, and desktop controls. Media checks verify colour/layout, retained ownership, delayed EOF, variable timing, cancellation, invalid/audio-only inputs, Unicode paths, and padded export. CLI checks cover CSV rows, limits, and output protection. Worker checks cover queue bounds, blocked-producer cancellation, generations, ordered EOF, failure recovery, and shutdown. Desktop checks exercise pixels, pause/resume, stop, replay, replacement, errors, and closing with an active worker.
+The original six checks cover fixture generation, media contracts, CLI help, CLI exports, preview lifecycle, and desktop controls. Detection adds contract and real-model checks, plus three optional reference-sample checks described in [DETECTION.md](DETECTION.md). Media checks verify colour/layout, retained ownership, delayed EOF, variable timing, cancellation, invalid/audio-only inputs, Unicode paths, and padded export. CLI checks cover CSV rows, limits, and output protection. Worker checks cover queue bounds, blocked-producer cancellation, generations, ordered EOF, failure recovery, and shutdown. Desktop checks exercise pixels, pause/resume, stop, replay, replacement, errors, and closing with an active worker.
 
 Desktop checks use Qt's offscreen platform and load the installed Windows Segoe UI font for readable screenshots. The rendered window was inspected, but native file-dialog interaction and representative long recordings still need manual checks. No leak detector or sustained live-input test has been run. Windows x64 is the verified platform.
 
@@ -134,4 +135,4 @@ Licenses/notices remain inside `.deps`. Local development builds do not complete
 
 ## Next slice
 
-Select one pretrained detector and representative footage, document preprocessing/output contracts, then add CPU inference and boxes aligned to the correct displayed frame. Event review and seeking follow later. Optional AI perception and an agent-driven service remain deferred.
+Evaluate the implemented CPU detector on representative people/vehicle clips, then build tracking and crossing rules from those observations. Event review and seeking follow later. Optional AI perception and an agent-driven service remain deferred.

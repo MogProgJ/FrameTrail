@@ -1,6 +1,9 @@
 #include "preview_window.hpp"
 
 #include <QCloseEvent>
+#include <QCoreApplication>
+#include <QCheckBox>
+#include <QDoubleSpinBox>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QHBoxLayout>
@@ -37,8 +40,9 @@ FrameCanvas::FrameCanvas(QWidget* parent) : QWidget(parent) {
     setObjectName(QStringLiteral("frameCanvas"));
 }
 
-void FrameCanvas::set_image(QImage image) {
+void FrameCanvas::set_image(QImage image, std::vector<frametrail::Detection> objects) {
     image_ = std::move(image);
+    objects_ = std::move(objects);
     update();
 }
 
@@ -55,10 +59,31 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
         scaled.width(), scaled.height());
     painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.drawImage(target, image_);
+    painter.setClipRect(target);
+    const double sx=double(target.width())/image_.width(), sy=double(target.height())/image_.height();
+    for (const auto& object:objects_) {
+        const QColor color=QColor::fromHsv((object.class_id*47+150)%360,180,245);
+        const QRectF box(target.left()+object.left*sx, target.top()+object.top*sy,
+            (object.right-object.left)*sx, (object.bottom-object.top)*sy);
+        painter.setPen(QPen(color,2));
+        painter.drawRect(box);
+        const auto label=QStringLiteral("%1 %2%")
+            .arg(QString::fromUtf8(frametrail::class_name(object.class_id).data()))
+            .arg(qRound(object.confidence*100));
+        const auto text_size=painter.fontMetrics().size(Qt::TextSingleLine,label);
+        const double label_x=std::clamp(box.left(),double(target.left()),
+            std::max(double(target.left()),double(target.right()-text_size.width()-8)));
+        const double label_y=std::max(double(target.top()),box.top()-text_size.height()-6);
+        const QRectF label_box(label_x,label_y,text_size.width()+8,text_size.height()+6);
+        painter.fillRect(label_box,color);
+        painter.setPen(QColor("#09131a"));
+        painter.drawText(label_box,Qt::AlignCenter,label);
+    }
 }
 
-PreviewWindow::PreviewWindow() {
-    setWindowTitle(QStringLiteral("FrameTrail — Media preview"));
+PreviewWindow::PreviewWindow(const QString& model_path) {
+    model_path_=model_path.isEmpty() ? QCoreApplication::applicationDirPath()+QStringLiteral("/models/yolox_nano.onnx") : model_path;
+    setWindowTitle(QStringLiteral("FrameTrail — CPU object detection"));
     resize(1080, 720);
     setMinimumSize(680, 480);
     setStyleSheet(QStringLiteral(
@@ -67,6 +92,8 @@ PreviewWindow::PreviewWindow() {
         "QLabel#title { font-size: 24px; font-weight: 600; }"
         "QLabel#subtitle, QLabel#source { color: #92a5bc; }"
         "QLabel#state { color: #73dfc3; }"
+        "QCheckBox { color: #e4edf7; font-size: 13px; }"
+        "QDoubleSpinBox { background: #263448; color: #e4edf7; padding: 5px; }"
         "QPushButton { color: #e4edf7; background: #263448; border: 1px solid #394b62;"
         " border-radius: 6px; padding: 9px 18px; font-size: 13px; }"
         "QPushButton:hover { background: #33465f; }"
@@ -83,7 +110,7 @@ PreviewWindow::PreviewWindow() {
     auto* branding = new QVBoxLayout;
     auto* title = new QLabel(QStringLiteral("FrameTrail"));
     title->setObjectName(QStringLiteral("title"));
-    auto* subtitle = new QLabel(QStringLiteral("Image and video preview"));
+    auto* subtitle = new QLabel(QStringLiteral("Images, video and CPU object detection"));
     subtitle->setObjectName(QStringLiteral("subtitle"));
     branding->addWidget(title);
     branding->addWidget(subtitle);
@@ -97,6 +124,25 @@ PreviewWindow::PreviewWindow() {
     source_label_->setObjectName(QStringLiteral("source"));
     source_label_->setTextFormat(Qt::PlainText);
     layout->addWidget(source_label_);
+    auto* analysis_controls=new QHBoxLayout;
+    detect_box_=new QCheckBox(QStringLiteral("Detect objects (CPU)"));
+    detect_box_->setObjectName(QStringLiteral("detectObjects"));
+    detect_box_->setChecked(QFileInfo::exists(model_path_));
+    detect_box_->setToolTip(QStringLiteral("YOLOX-Nano: 80 classes. Changing settings restarts the current file."));
+    analysis_controls->addWidget(detect_box_);
+    analysis_controls->addWidget(new QLabel(QStringLiteral("Confidence")));
+    confidence_box_=new QDoubleSpinBox;
+    confidence_box_->setObjectName(QStringLiteral("confidence"));
+    confidence_box_->setRange(0.05,0.95);
+    confidence_box_->setSingleStep(0.05);
+    confidence_box_->setValue(0.35);
+    analysis_controls->addWidget(confidence_box_);
+    analysis_controls->addStretch();
+    auto* model_label=new QLabel(QFileInfo::exists(model_path_) ? QStringLiteral("YOLOX-Nano • 80 classes") :
+        QStringLiteral("Model missing — run fetch-model.ps1 and rebuild"));
+    model_label->setObjectName(QStringLiteral("subtitle"));
+    analysis_controls->addWidget(model_label);
+    layout->addLayout(analysis_controls);
     canvas_ = new FrameCanvas;
     layout->addWidget(canvas_, 1);
     auto* controls = new QHBoxLayout;
@@ -130,6 +176,12 @@ PreviewWindow::PreviewWindow() {
     connect(play_button_, &QPushButton::clicked, this, [this] { toggle_playback(); });
     connect(stop_button_, &QPushButton::clicked, this, [this] { stop_playback(); });
     connect(replay_button_, &QPushButton::clicked, this, [this] { open_file(source_); });
+    const auto restart=[this] {
+        const auto current=pending_source_.isEmpty() ? source_ : pending_source_;
+        if (!current.isEmpty()) open_file(current);
+    };
+    connect(detect_box_,&QCheckBox::toggled,this,[restart](bool){restart();});
+    connect(confidence_box_,&QDoubleSpinBox::valueChanged,this,[restart](double){restart();});
     connect(&timer_, &QTimer::timeout, this, [this] { tick(); });
     timer_.start(10);
 }
@@ -156,7 +208,10 @@ void PreviewWindow::begin_pending_source() {
     source_ = pending_source_;
     pending_source_.clear();
     try {
-        session_.start(native_path(source_));
+        std::optional<frametrail::DetectorOptions> detection;
+        if (detect_box_->isChecked()) detection=frametrail::DetectorOptions{
+            native_path(model_path_),float(confidence_box_->value()),0.45f};
+        session_.start(native_path(source_),detection);
         generation_ = session_.snapshot().generation;
         playing_ = true;
         stopped_ = false;
@@ -196,13 +251,15 @@ void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
     if (wrapped.generation != generation_) return;
     const auto& frame = wrapped.frame;
     const QImage borrowed(frame.pixels.data(), frame.width, frame.height, frame.stride, QImage::Format_RGB888);
-    canvas_->set_image(borrowed.copy()); // UI retains pixels after the frame leaves scope.
+    canvas_->set_image(borrowed.copy(),wrapped.detection ? wrapped.detection->objects : std::vector<frametrail::Detection>{});
     displayed_sequence_ = frame.sequence;
     const auto info = session_.snapshot().info;
     details_label_->setText(QStringLiteral("%1 × %2    •    %3    •    Frame %4    •    %5")
         .arg(frame.width).arg(frame.height)
         .arg(info ? QString::fromStdString(info->codec) : QStringLiteral("Unknown codec"))
         .arg(frame.sequence).arg(timestamp_text(frame.timestamp)));
+    if (wrapped.detection) details_label_->setText(details_label_->text()+QStringLiteral("    •    %1 objects    •    CPU %2 ms/frame")
+        .arg(wrapped.detection->objects.size()).arg(wrapped.detection->elapsed_ms,0,'f',1));
     state_label_->setText(QStringLiteral("Playing"));
 }
 
@@ -217,6 +274,9 @@ void PreviewWindow::tick() {
         return;
     }
     if (stopped_) return;
+    if (status.state==frametrail::PreviewState::opening) {
+        state_label_->setText(detect_box_->isChecked() ? QStringLiteral("Loading model…") : QStringLiteral("Opening…"));
+    }
     if (status.state == frametrail::PreviewState::failed) {
         next_.reset();
         stopped_ = true;
