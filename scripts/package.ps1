@@ -47,6 +47,7 @@ $taskGuideText = (Get-Content -LiteralPath $taskGuide -Raw).Replace('](SAVED_RUN
 Set-Content -LiteralPath $taskGuide -Value $taskGuideText -Encoding utf8
 $taskDocs = New-Item -ItemType Directory -Path (Join-Path $taskStage 'docs')
 Get-ChildItem -LiteralPath (Join-Path $taskRoot 'docs') -Filter '*.md' | Copy-Item -Destination $taskDocs.FullName
+Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/benchmarks') -Destination $taskDocs.FullName -Recurse
 Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/THIRD_PARTY_NOTICES.md') -Destination (Join-Path $taskStage 'notices')
 Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/notices') -Destination (Join-Path $taskStage 'notices/upstream') -Recurse
 Copy-Item -LiteralPath (Join-Path $taskFfmpeg 'LICENSE.txt') -Destination (Join-Path $taskStage 'notices/FFmpeg-LICENSE.txt')
