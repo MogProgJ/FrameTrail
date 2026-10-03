@@ -21,15 +21,15 @@
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.10 - CPU analysis, saved review and live webcam\n\n"
+    std::cout << "FrameTrail 0.10 - Native analysis, saved review and live webcam\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
                  "  --max-frames <n>   Stop after n frames (positive integer)\n"
-                 "  --detect <model>   Run a supported YOLOX ONNX model on the CPU\n"
+                 "  --detect <model>   Run a supported YOLOX ONNX model\n"
                  "  --model-type <id>  nano (default) or small; must match the export\n"
                  "  --backend <id>     cpu (default), auto (GPU/CPU), or directml (strict GPU)\n"
-                 "  --gpu-device <n>   Optional DXGI adapter index; default selects dedicated GPU\n"
+                 "  --gpu-device <n>   Optional DXGI adapter index; default selects capable GPU\n"
                  "  --confidence <n>   Confidence in (0,1], default 0.35\n"
                  "  --detections <csv> Export detections (requires --detect)\n"
                  "  --track            Track people/vehicles (requires --detect)\n"
@@ -39,7 +39,7 @@ void help() {
                  "  --direction <d>    both, forward (- to +), or reverse (+ to -)\n"
                  "  --classes <ids>    COCO IDs; default 0,1,2,3,5,7\n"
                  "  --save-run <path>  Save a whole-file run (requires --detect and --track)\n"
-                 "  --profile <csv>    Export per-frame CPU stage timings and RGB bytes\n"
+                 "  --profile <csv>    Export per-frame pipeline timings and RGB bytes\n"
                  "  --help             Show this help\n\n"
                  "Use frametrail-desktop for the preview window.\n"
                  "Usage: frametrail run <saved-run> [--export <new-csv>]\n"
