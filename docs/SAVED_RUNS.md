@@ -81,3 +81,7 @@ The 0.9 native/desktop suite has 26 checks. Coverage includes real-model ordered
 ## Optional execution backend in 0.10
 
 The workflow and layout above remain unchanged. The main player's Processing device preference is captured when this window opens. Choose GPU there before opening Video analysis to accelerate its native jobs; model/confidence continue to work in this window. CPU remains the default/fallback. Saved results store the requested backend and actual provider, runtime, device and any fallback reason. CSV appends the actual execution metadata. The CSV's final-provider fields describe the last execution path; earlier frames may have used GPU before a fallback. Existing schema-1/2/3 files are read without migration, leaving unavailable execution metadata blank. See [GPU inference](GPU_INFERENCE.md).
+
+## Continuity evidence in 0.11
+
+The layout and choose/drop → analyse → review → save/export flow stay unchanged. Native jobs now reset active tracker continuity at conservatively detected scene boundaries and reconfirm retained IDs after long gaps. This can split new appearances at detected cuts; old stored evidence is never recomputed. New runs retain their association policy in an optional schema-3 column, with historical greedy semantics for files lacking it. The GUI keeps greedy association; experimental repair is a CLI/developer option. See [tracking evidence](TRACKING_EVALUATION.md).

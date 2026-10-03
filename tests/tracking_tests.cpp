@@ -119,6 +119,8 @@ void run() {
     rejects([]{TrackingOptions o;o.line->b=o.line->a;Tracker t(o);},"Zero-length line accepted");
     rejects([]{TrackingOptions o;o.line->a.x=-.1;Tracker t(o);},"Out-of-frame line accepted");
     rejects([]{TrackingOptions o;o.classes={80};Tracker t(o);},"Invalid class accepted");
+    rejects([]{TrackingOptions o;o.association=static_cast<AssociationPolicy>(100);Tracker t(o);},"Invalid association policy accepted");
+    rejects([]{parse_association("unknown");},"Unknown association name accepted");
 }
 }
 int main() {

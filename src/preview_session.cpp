@@ -1,4 +1,5 @@
 #include "frametrail/preview_session.hpp"
+#include "frametrail/frame_tracker.hpp"
 #include <algorithm>
 #include <stdexcept>
 
@@ -102,7 +103,7 @@ void PreviewSession::launch_worker() {
                     }
                 }
                 std::unique_ptr<Detector> detector;
-                std::unique_ptr<Tracker> tracker;
+                std::unique_ptr<FrameTracker> tracker;
                 std::optional<DetectorOptions> applied_detection;
                 std::uint64_t applied_revision{};
                 {
@@ -123,7 +124,7 @@ void PreviewSession::launch_worker() {
                                 else detector.reset();
                                 applied_detection = detection;
                             }
-                            tracker = tracking ? std::make_unique<Tracker>(*tracking) : nullptr;
+                            tracker = tracking ? std::make_unique<FrameTracker>(*tracking) : nullptr;
                         } catch (...) {
                             lock.lock();
                             if (revision != status_.analysis_revision && !stop.stop_requested()) continue;
@@ -165,8 +166,7 @@ void PreviewSession::launch_worker() {
                     if (detector) result = detector->detect(*in_flight,stop);
                     std::optional<TrackingResult> tracks;
                     if (tracker && !stop.stop_requested()) {
-                        auto temporal = tracker->update(result->objects,in_flight->sequence,in_flight->timestamp,
-                            in_flight->width,in_flight->height);
+                        auto temporal = tracker->update(result->objects,*in_flight);
                         if (in_flight->sequence > 0) tracks = std::move(temporal);
                     }
                     lock.lock();

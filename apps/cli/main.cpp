@@ -2,6 +2,7 @@
 #include "frametrail/media_reader.hpp"
 #include "frametrail/detector.hpp"
 #include "frametrail/tracker.hpp"
+#include "frametrail/frame_tracker.hpp"
 #include "frametrail/run_store.hpp"
 
 #include <charconv>
@@ -21,7 +22,7 @@
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.10 - Native analysis, saved review and live webcam\n\n"
+    std::cout << "FrameTrail 0.11 - Native analysis, saved review and live webcam\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
@@ -33,6 +34,7 @@ void help() {
                  "  --confidence <n>   Confidence in (0,1], default 0.35\n"
                  "  --detections <csv> Export detections (requires --detect)\n"
                  "  --track            Track people/vehicles (requires --detect)\n"
+                 "  --association <id> greedy (default), repair (experimental global repair)\n"
                  "  --tracks <csv>     Export observed track boxes (requires --track)\n"
                  "  --events <csv>     Export line crossings (requires --track)\n"
                  "  --line x1,y1,x2,y2 Normalized endpoints [0,1]; default 0.1,0.5,0.9,0.5\n"
@@ -133,7 +135,7 @@ int run(const std::vector<std::string>& args) {
         if (!seen.insert(option).second) throw std::runtime_error("Duplicate option: " + option);
         if (option == "--track") { tracking = true; continue; }
         if (option != "--csv" && option != "--preview" && option != "--max-frames" && option != "--detect" && option != "--detections" &&
-            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run" && option != "--profile" && option != "--model-type" && option != "--confidence" && option != "--backend" && option != "--gpu-device") {
+            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run" && option != "--profile" && option != "--model-type" && option != "--confidence" && option != "--backend" && option != "--gpu-device" && option != "--association") {
             throw std::runtime_error("Unknown option: " + option);
         }
         if (++i == args.size()) {
@@ -152,6 +154,8 @@ int run(const std::vector<std::string>& args) {
             detector_options.variant=frametrail::parse_model(args[i]);
         } else if (option == "--backend") {
             detector_options.backend=frametrail::parse_backend(args[i]);
+        } else if (option == "--association") {
+            tracking_options.association=frametrail::parse_association(args[i]);
         } else if (option == "--gpu-device") {
             detector_options.gpu_device=number<int>(args[i]);
         } else if (option == "--confidence") {
@@ -198,10 +202,10 @@ int run(const std::vector<std::string>& args) {
     if (model_path) detector_options.model=*model_path;
     if (tracking && !model_path) throw std::runtime_error("--track requires --detect <model>");
     if(saved_path && (!tracking || maximum))throw std::runtime_error("--save-run requires --track and whole-file analysis (no --max-frames)");
-    if (!tracking && (tracks_path || events_path || seen.contains("--line") || seen.contains("--direction") || seen.contains("--classes")))
+    if (!tracking && (tracks_path || events_path || seen.contains("--line") || seen.contains("--direction") || seen.contains("--classes") || seen.contains("--association")))
         throw std::runtime_error("Track exports and rule settings require --track");
-    std::unique_ptr<frametrail::Tracker> tracker;
-    if (tracking) tracker = std::make_unique<frametrail::Tracker>(tracking_options);
+    std::unique_ptr<frametrail::FrameTracker> tracker;
+    if (tracking) tracker = std::make_unique<frametrail::FrameTracker>(tracking_options);
     const std::vector<std::optional<std::filesystem::path>> outputs{csv_path,preview_path,detections_path,tracks_path,events_path,saved_path,profile_path};
     std::set<std::filesystem::path> output_names;
     for (const auto& path : outputs) if (path) {
@@ -225,7 +229,7 @@ int run(const std::vector<std::string>& args) {
     if (profile_path) {
         profile_csv.open(*profile_path, std::ios::binary);
         if (!profile_csv) throw std::runtime_error("Cannot open profile CSV");
-        profile_csv << "sequence,timestamp_us,width,height,rgb_bytes,decode_rgb_ms,preprocess_ms,inference_ms,postprocess_ms,tracking_ms,pipeline_ms\n";
+        profile_csv << "sequence,timestamp_us,width,height,rgb_bytes,decode_rgb_ms,preprocess_ms,inference_ms,postprocess_ms,tracking_ms,pipeline_ms,scene_boundary,scene_difference,scene_histogram_distance\n";
         profile_csv << std::fixed << std::setprecision(6);
     }
     std::ofstream detections_csv;
@@ -240,7 +244,7 @@ int run(const std::vector<std::string>& args) {
         if (!events_csv) throw std::runtime_error("Cannot open event CSV");
         events_csv << "event_id,sequence,timestamp_us,track_id,class_id,label,direction,x_normalized,y_normalized\n";
     }
-    std::uint64_t forward = 0, reverse = 0;
+    std::uint64_t forward = 0, reverse = 0, scene_boundaries=0;
     double tracking_ms = 0;
     if (detections_path) {
         detections_csv.open(*detections_path,std::ios::binary);
@@ -265,6 +269,7 @@ int run(const std::vector<std::string>& args) {
         auto frame = reader.read();
         const auto decoded = std::chrono::steady_clock::now();
         double prepare_ms=0, infer_ms=0, post_ms=0, rules_ms=0;
+        bool scene_boundary=false;double scene_difference=0,scene_histogram=0;
         if (!frame) break;
         if (count == 0) {
             first = frame->timestamp;
@@ -278,7 +283,9 @@ int run(const std::vector<std::string>& args) {
             object_count+=result.objects.size();
             detection_ms+=result.elapsed_ms;
             if (tracker) {
-                const auto temporal = tracker->update(result.objects,frame->sequence,frame->timestamp,frame->width,frame->height);
+                const auto temporal = tracker->update(result.objects,*frame);
+                scene_boundary=temporal.scene_boundary;scene_difference=temporal.scene_difference;scene_histogram=temporal.scene_histogram_distance;
+                if(scene_boundary)++scene_boundaries;
                 tracking_ms += temporal.elapsed_ms; rules_ms=temporal.elapsed_ms;
                 if(saved.value)saved.value->record_frame(*frame,temporal.events);
                 if (frame->sequence > 0) {
@@ -323,7 +330,8 @@ int run(const std::vector<std::string>& args) {
             profile_csv << frame->sequence << ',';
             if (frame->timestamp) profile_csv << frame->timestamp->count();
             profile_csv << ',' << frame->width << ',' << frame->height << ',' << frame->pixels.size() << ','
-                << decode_ms << ',' << prepare_ms << ',' << infer_ms << ',' << post_ms << ',' << rules_ms << ',' << pipeline_ms << '\n';
+                << decode_ms << ',' << prepare_ms << ',' << infer_ms << ',' << post_ms << ',' << rules_ms << ',' << pipeline_ms
+                << ',' << scene_boundary << ',' << scene_difference << ',' << scene_histogram << '\n';
             if (!profile_csv) throw std::runtime_error("Failed writing profile CSV");
         }
         ++count;
@@ -348,7 +356,8 @@ int run(const std::vector<std::string>& args) {
         if (!*stream) throw std::runtime_error("Failed to finish tracking export");
     }
     if (tracker) std::cout << "Crossings (- to +): " << forward << "\nCrossings (+ to -): " << reverse
-        << "\nAverage tracking/rules (ms/frame): " << tracking_ms/count << '\n';
+        << "\nAssociation: " << frametrail::association_name(tracking_options.association)
+        << "\nScene boundary resets: " << scene_boundaries << "\nAverage tracking/rules (ms/frame): " << tracking_ms/count << '\n';
     if(saved.value) {
         const auto info=saved.value->summary();
         if(!saved.value->source_available() || frametrail::file_stamp(*model_path)!=info.model_stamp)

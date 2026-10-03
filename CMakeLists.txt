@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(FrameTrail VERSION 0.10.0 LANGUAGES C CXX)
+project(FrameTrail VERSION 0.11.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -59,6 +59,8 @@ add_library(frametrail_core
     src/run_store.cpp
     src/analysis_job.cpp
     src/tracker.cpp
+    src/assignment.cpp
+    src/frame_tracker.cpp
     src/detector.cpp
     src/dml_inference.cpp
     src/media_reader.cpp
@@ -190,6 +192,17 @@ if(BUILD_TESTING)
     endif()
     frametrail_runtime(frametrail_tracking_tests)
     add_test(NAME tracking_contract COMMAND frametrail_tracking_tests)
+    add_executable(frametrail_tracking_regression tests/tracking_regression.cpp)
+    target_link_libraries(frametrail_tracking_regression PRIVATE frametrail_core)
+    frametrail_runtime(frametrail_tracking_regression)
+    add_test(NAME tracking_regression COMMAND frametrail_tracking_regression)
+    add_executable(frametrail_association_tests tests/association_tests.cpp src/assignment.cpp)
+    target_include_directories(frametrail_association_tests PRIVATE src)
+    add_test(NAME global_assignment_contract COMMAND frametrail_association_tests)
+    add_executable(frametrail_frame_tracker_tests tests/frame_tracker_tests.cpp)
+    target_link_libraries(frametrail_frame_tracker_tests PRIVATE frametrail_core)
+    frametrail_runtime(frametrail_frame_tracker_tests)
+    add_test(NAME scene_tracking_contract COMMAND frametrail_frame_tracker_tests)
     add_executable(frametrail_detection_tests tests/detection_tests.cpp)
     target_link_libraries(frametrail_detection_tests PRIVATE frametrail_core)
     if(WIN32)

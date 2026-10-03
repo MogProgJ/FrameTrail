@@ -1,4 +1,5 @@
 #include "frametrail/analysis_job.hpp"
+#include "frametrail/frame_tracker.hpp"
 #include <stdexcept>
 #include <array>
 #include <algorithm>
@@ -19,7 +20,7 @@ void AnalysisJob::start(const std::filesystem::path& database,RunConfiguration c
                 const auto source_stamp=file_stamp(configuration.source),model_stamp=file_stamp(configuration.detector.model);
                 MediaReader reader(configuration.source,stop);
                 Detector detector(configuration.detector);
-                Tracker tracker(configuration.tracking);
+                FrameTracker tracker(configuration.tracking);
                 if(stop.stop_requested())throw std::runtime_error("Analysis cancelled before creating output");
                 store.emplace(RunStore::create(database,configuration,reader.info()));
                 store->record_execution(detector.execution_info());
@@ -32,7 +33,7 @@ void AnalysisJob::start(const std::filesystem::path& database,RunConfiguration c
                     auto frame=reader.read();if(!frame)break;
                     const auto detection=detector.detect(*frame,stop);
                     store->record_execution(detection.execution);
-                    const auto tracking=tracker.update(detection.objects,frame->sequence,frame->timestamp,frame->width,frame->height);
+                    const auto tracking=tracker.update(detection.objects,*frame);
                     store->record_frame(*frame,tracking.events,
                         configuration.kind==RunKind::appearances ? std::span<const TrackedObject>(tracking.objects) : std::span<const TrackedObject>{});
                     const auto now=std::chrono::steady_clock::now();

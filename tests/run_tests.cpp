@@ -32,6 +32,7 @@ void storage(const std::filesystem::path& fixtures) {
     require(bool(first),"Fixture missing");
     auto config=frametrail::RunConfiguration{source,{model,.55f,.4f,frametrail::DetectorModel::yolox_s},{}};
     config.tracking.line->a={.2,.3};config.tracking.line->b={.8,.7};config.tracking.classes={0,2};
+    config.tracking.association=frametrail::AssociationPolicy::repair;
     const auto path=root/std::filesystem::path(u8"résultats 空.frametrail");
     {
         auto store=frametrail::RunStore::create(path,config,media);
@@ -53,7 +54,7 @@ void storage(const std::filesystem::path& fixtures) {
     }
     const auto unchanged=bytes(path);frametrail::RunStore reopened(path);const auto summary=reopened.summary();
     require(summary.id.size()==32 && summary.status=="completed" && summary.configuration.tracking.classes==config.tracking.classes &&
-        summary.configuration.detector.variant==frametrail::DetectorModel::yolox_s && summary.configuration.detector.confidence==config.detector.confidence && summary.configuration.tracking.line->b.y==.7,
+        summary.configuration.detector.variant==frametrail::DetectorModel::yolox_s && summary.configuration.detector.confidence==config.detector.confidence && summary.configuration.tracking.line->b.y==.7 && summary.configuration.tracking.association==frametrail::AssociationPolicy::repair,
         "Frozen run settings failed round trip");
     const auto one=reopened.events(),two=reopened.events(one.back().event.id),three=reopened.events(two.back().event.id);
     require(one.size()==100 && two.size()==100 && three.size()==5 && two.front().event.id==101 && three.back().event.id==205,

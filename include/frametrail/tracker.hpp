@@ -13,10 +13,14 @@ struct CountingLine {
     double deadband{0.015};
     double rearm_distance{0.04};
 };
+enum class AssociationPolicy {greedy,repair};
+std::string_view association_name(AssociationPolicy policy);
+AssociationPolicy parse_association(std::string_view name);
 struct TrackingOptions {
     // COCO people and road vehicles; other detections still render without IDs.
     std::vector<int> classes{0, 1, 2, 3, 5, 7};
     std::optional<CountingLine> line{CountingLine{}};
+    AssociationPolicy association{AssociationPolicy::greedy}; // Repair stays opt-in until broader identity validation.
 };
 struct TrackedObject {
     std::uint64_t id{};
@@ -36,6 +40,8 @@ struct TrackingResult {
     std::vector<CrossingEvent> events; // This frame only, not an accumulating log.
     std::uint64_t negative_to_positive{}, positive_to_negative{};
     double elapsed_ms{};
+    bool scene_boundary{};
+    double scene_difference{},scene_histogram_distance{};
 };
 
 // One ordered source/run per instance. No Qt, model, pixel, or storage ownership.
@@ -43,6 +49,8 @@ class Tracker {
 public:
     explicit Tracker(TrackingOptions options = {});
     ~Tracker();
+    // Forget association/crossing continuity, retaining run IDs and cumulative counts.
+    void reset_continuity();
     Tracker(const Tracker&) = delete;
     Tracker& operator=(const Tracker&) = delete;
     TrackingResult update(std::span<const Detection> detections, std::uint64_t sequence,

@@ -49,3 +49,7 @@ This is implemented in native Qt Widgets in `saved_run_window.cpp`, using the sh
 The player/live settings gain one Processing device selector. The existing frame-detail line reports the actual CPU/GPU path; runtime/device/fallback detail stays in a tooltip. A muted blue accent on main-player details and a 160 ms source-label fade provide subtle colour/motion without animating video or blocking analysis. CPU-specific checkbox/timing wording is neutral when either backend is available.
 
 The saved-analysis layout, theme, intake and review controls remain as shipped in 0.9. It inherits the player preference when opened. Real Qt captures and an opt-in GPU desktop test check switching without a timestamp/resolution reset and saved-analysis save/export on the same flow. Camera testing remains file/synthetic or idle enumeration; no capture was started.
+
+## Main-player track styling (0.11)
+
+Confirmed main-player boxes share their ID colour with their fading trails; tentative outlines are muted and dashed. No additional control or panel is introduced. Saved analysis retains its layout, workflow and existing overlay style.

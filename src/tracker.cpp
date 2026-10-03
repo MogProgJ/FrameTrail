@@ -1,4 +1,5 @@
 #include "frametrail/tracker.hpp"
+#include "assignment.hpp"
 #include <algorithm>
 #include <cmath>
 #include <stdexcept>
@@ -45,6 +46,16 @@ std::string_view direction_name(CrossingDirection direction) {
     case CrossingDirection::positive_to_negative: return "positive_to_negative";
     default: return "both";
     }
+}
+std::string_view association_name(AssociationPolicy policy) {
+    if(policy==AssociationPolicy::greedy)return "greedy";
+    if(policy==AssociationPolicy::repair)return "repair";
+    throw std::invalid_argument("Invalid association policy");
+}
+AssociationPolicy parse_association(std::string_view name) {
+    if(name=="greedy")return AssociationPolicy::greedy;
+    if(name=="repair")return AssociationPolicy::repair;
+    throw std::invalid_argument("Association must be greedy or repair");
 }
 
 struct Tracker::Impl {
@@ -98,6 +109,7 @@ struct Tracker::Impl {
 };
 
 Tracker::Tracker(TrackingOptions options) : impl_(std::make_unique<Impl>()) {
+    association_name(options.association);
     if (options.classes.empty()) throw std::invalid_argument("Tracking needs at least one class");
     for (int id : options.classes) if (id < 0 || id >= 80) throw std::invalid_argument("Tracking class must be a COCO ID in [0,79]");
     if (options.line) {
@@ -110,6 +122,7 @@ Tracker::Tracker(TrackingOptions options) : impl_(std::make_unique<Impl>()) {
     impl_->options = std::move(options);
 }
 Tracker::~Tracker() = default;
+void Tracker::reset_continuity(){impl_->tracks.clear();}
 
 TrackingResult Tracker::update(std::span<const Detection> detections, std::uint64_t sequence,
     std::optional<std::chrono::microseconds> timestamp, int width, int height) {
@@ -129,8 +142,7 @@ TrackingResult Tracker::update(std::span<const Detection> detections, std::uint6
     if (s.width != width || s.height != height) s.tracks.clear(); // Do not bridge coordinate changes.
     std::erase_if(s.tracks,[&](const auto& t) { return Impl::gap_exceeds(t,sequence,timestamp,750000,15); });
 
-    struct Candidate { double cost{}; std::size_t track{}, detection{}; };
-    std::vector<Candidate> candidates;
+    std::vector<association::Edge> candidates;
     for (std::size_t i = 0; i < s.tracks.size(); ++i) {
         const auto& track = s.tracks[i];
         auto predicted = track.box;
@@ -153,16 +165,21 @@ TrackingResult Tracker::update(std::span<const Detection> detections, std::uint6
             const double overlap = std::max(iou(predicted,d),iou(track.box,d));
             // Reject distant pairs, even when a large box overlaps by accident.
             if (distance <= 0.15 && (overlap >= 0.05 || distance <= scale))
-                candidates.push_back({scored_distance / scale + (1-overlap)*0.25,i,j});
+                candidates.push_back({j,i,scored_distance / scale + (1-overlap)*0.25});
         }
     }
-    std::ranges::sort(candidates,[](const auto& a,const auto& b) {
-        return std::tie(a.cost,a.track,a.detection) < std::tie(b.cost,b.track,b.detection);
-    });
-    std::vector<bool> used(s.tracks.size());
-    std::vector<std::optional<std::size_t>> matches(selected.size());
-    for (const auto& c : candidates) if (!used[c.track] && !matches[c.detection]) {
-        used[c.track] = true; matches[c.detection] = c.track;
+    // Preserve the established baseline when it already achieves maximum possible
+    // coverage. Global reassignment is a repair for avoidable fragmentation, not
+    // a reason to reshuffle every ambiguous same-class crowd on each frame.
+    std::ranges::sort(candidates,[](const auto& a,const auto& b){return std::tie(a.cost,a.track,a.observation)<std::tie(b.cost,b.track,b.observation);});
+    std::vector<std::optional<std::size_t>> matches(selected.size());std::vector<bool> used(s.tracks.size());std::size_t assigned{};
+    for(const auto& edge:candidates)if(!matches[edge.observation] && !used[edge.track]) {
+        matches[edge.observation]=edge.track;used[edge.track]=true;++assigned;
+    }
+    if(s.options.association==AssociationPolicy::repair && assigned<std::min(selected.size(),s.tracks.size())) {
+        auto repaired=association::assign(selected.size(),s.tracks.size(),candidates);
+        const auto count=std::ranges::count_if(repaired,[](const auto& value){return value.has_value();});
+        if(std::size_t(count)>assigned)matches=std::move(repaired);
     }
     TrackingResult result;
     for (std::size_t j = 0; j < selected.size(); ++j) {
@@ -184,7 +201,7 @@ TrackingResult Tracker::update(std::span<const Detection> detections, std::uint6
                 const auto seconds = std::chrono::duration<double>(*timestamp-*track.timestamp).count();
                 track.time_velocity = {(p.x-previous.x)/seconds,(p.y-previous.y)/seconds};
             } else track.time_velocity = {};
-            if (gap) { track.side = 0; track.armed = false; track.trail.clear(); }
+            if (gap) { track.side = 0; track.armed = false; track.trail.clear(); track.hits=0; }
             track.box = selected[j]; track.sequence = sequence; track.timestamp = timestamp; ++track.hits;
         }
         auto& track = s.tracks[*matches[j]];

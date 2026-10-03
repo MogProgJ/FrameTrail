@@ -104,20 +104,19 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
     painter.setClipRect(target);
     const double sx=double(target.width())/image_.width(), sy=double(target.height())/image_.height();
     for (const auto& object:objects_) {
-        const QColor color=QColor::fromHsv((object.class_id*47+150)%360,180,245);
+        const frametrail::TrackedObject* matched{};
+        for(const auto& track:tracks_)if(track.detection.class_id==object.class_id && track.detection.left==object.left &&
+            track.detection.top==object.top && track.detection.right==object.right && track.detection.bottom==object.bottom){matched=&track;break;}
+        const QColor color=temporal_style_ && matched ? (matched->confirmed ? QColor::fromHsv(int((matched->id*67)%360),150,230):QColor("#a0adbf")):
+            QColor::fromHsv((object.class_id*47+150)%360,180,245);
         const QRectF box(target.left()+object.left*sx, target.top()+object.top*sy,
             (object.right-object.left)*sx, (object.bottom-object.top)*sy);
-        painter.setPen(QPen(color,2));
+        painter.setPen(QPen(color,2,temporal_style_ && matched && !matched->confirmed ? Qt::DashLine:Qt::SolidLine));
         painter.drawRect(box);
         auto label=QStringLiteral("%1 %2%")
             .arg(QString::fromUtf8(frametrail::class_name(object.class_id).data()))
             .arg(qRound(object.confidence*100));
-        for (const auto& track : tracks_) if (track.detection.class_id == object.class_id &&
-            track.detection.left == object.left && track.detection.top == object.top &&
-            track.detection.right == object.right && track.detection.bottom == object.bottom) {
-            label += QStringLiteral(" #%1%2").arg(track.id).arg(track.confirmed ? QString{} : QStringLiteral("?"));
-            break;
-        }
+        if(matched)label += QStringLiteral(" #%1%2").arg(matched->id).arg(matched->confirmed ? QString{} : QStringLiteral("?"));
         const auto text_size=painter.fontMetrics().size(Qt::TextSingleLine,label);
         const double label_x=std::clamp(box.left(),double(target.left()),
             std::max(double(target.left()),double(target.right()-text_size.width()-8)));
@@ -132,8 +131,11 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
     };
     painter.setRenderHint(QPainter::Antialiasing);
     for (const auto& track : tracks_) {
-        painter.setPen(QPen(QColor::fromHsv(int((track.id*67)%360),150,230),2));
-        for (std::size_t i=1;i<track.trail.size();++i) painter.drawLine(screen(track.trail[i-1]),screen(track.trail[i]));
+        auto color=QColor::fromHsv(int((track.id*67)%360),150,230);
+        for (std::size_t i=1;i<track.trail.size();++i) {
+            if(temporal_style_)color.setAlpha(50+int(180*i/(track.trail.size()-1)));
+            painter.setPen(QPen(color,2));painter.drawLine(screen(track.trail[i-1]),screen(track.trail[i]));
+        }
     }
     if (line_) {
         painter.setPen(QPen(QColor("#ffce63"),3));
@@ -168,7 +170,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     for (auto* button : {ui.open, ui.liveCamera, ui.savedAnalysis, ui.play, ui.stop, ui.replay}) button->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Fixed);
     ui.workspace->setStretch(0, 1); ui.videoColumn->setStretch(1, 1);
     ui.inspectorLayout->setContentsMargins(18, 20, 18, 20);
-    canvas_ = ui.frameCanvas; source_label_ = ui.source;
+    canvas_ = ui.frameCanvas;canvas_->set_temporal_style(true);source_label_ = ui.source;
     source_label_->setTextFormat(Qt::PlainText);
     source_label_->setMinimumWidth(0); source_label_->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
     auto* source_effect=new QGraphicsOpacityEffect(source_label_);source_label_->setGraphicsEffect(source_effect);source_effect->setOpacity(1.);

@@ -7,6 +7,15 @@ execute_process(COMMAND "${FFMPEG}" -v error -loop 1 -framerate 10 -i "${SAMPLE}
 if(NOT result EQUAL 0)
     message(FATAL_ERROR "Tracking sample generation failed: ${error}")
 endif()
+execute_process(COMMAND "${CLI}" inspect "${SAMPLE}" --detect "${MODEL}" --track --association repair
+    RESULT_VARIABLE repair_result OUTPUT_VARIABLE repair_log ERROR_VARIABLE repair_error TIMEOUT 30)
+if(NOT repair_result EQUAL 0 OR NOT repair_log MATCHES "Association: repair")
+    message(FATAL_ERROR "Experimental association CLI failed: ${repair_error}")
+endif()
+execute_process(COMMAND "${CLI}" inspect "${SAMPLE}" --association repair RESULT_VARIABLE invalid_repair OUTPUT_QUIET ERROR_QUIET)
+if(invalid_repair EQUAL 0)
+    message(FATAL_ERROR "Association accepted without tracking")
+endif()
 execute_process(COMMAND "${CLI}" inspect "${video}" --detect "${MODEL}" --track --classes 16
     --tracks "${tracks}" --events "${events}" --line 0.1,0.5,0.9,0.5 --direction both
     RESULT_VARIABLE result OUTPUT_VARIABLE output ERROR_VARIABLE error TIMEOUT 30)

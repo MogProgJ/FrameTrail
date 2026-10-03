@@ -109,6 +109,7 @@ struct RunStore::Impl {
     bool writable{};
     int schema_version{3};
     bool execution_metadata{};
+    bool association_metadata{};
     std::optional<ExecutionInfo> last_execution;
     explicit Impl(const std::filesystem::path& path,bool write) : writable(write) {
         const auto name=utf8(std::filesystem::absolute(path));
@@ -167,7 +168,8 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
         "run_id TEXT NOT NULL DEFAULT(lower(hex(randomblob(16)))),"
         "model_type TEXT NOT NULL CHECK(model_type IN('nano','small')),"
         "run_kind TEXT NOT NULL CHECK(run_kind IN('crossings','appearances')),"
-        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.10 / YOLOX 0.1.1rc0 / tracker-v1',"
+        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.11 / YOLOX 0.1.1rc0 / tracker-v2 / scene-guard-v1',"
+        "association_policy TEXT NOT NULL DEFAULT 'greedy',"
         "requested_backend TEXT NOT NULL DEFAULT 'cpu',gpu_device INTEGER NOT NULL DEFAULT -1,"
         "execution_backend TEXT NOT NULL DEFAULT 'CPU',execution_runtime TEXT NOT NULL DEFAULT '',"
         "execution_device TEXT NOT NULL DEFAULT '',execution_fallback TEXT NOT NULL DEFAULT '');"
@@ -192,9 +194,9 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
     insert.text(21,std::string(model_id(config.detector.variant)));
     insert.text(22,config.kind==RunKind::appearances ? "appearances" : "crossings");
     insert.row();
-    Statement backend(impl->database,"UPDATE run SET requested_backend=?,gpu_device=? WHERE id=1");
-    backend.text(1,backend_id(config.detector.backend));backend.number(2,config.detector.gpu_device);backend.row();
-    impl->execute("COMMIT");impl->execution_metadata=true;guard.ready=true;return RunStore(std::move(impl));
+    Statement backend(impl->database,"UPDATE run SET requested_backend=?,gpu_device=?,association_policy=? WHERE id=1");
+    backend.text(1,backend_id(config.detector.backend));backend.number(2,config.detector.gpu_device);backend.text(3,association_name(config.tracking.association));backend.row();
+    impl->execute("COMMIT");impl->execution_metadata=true;impl->association_metadata=true;guard.ready=true;return RunStore(std::move(impl));
 }
 RunStore::RunStore(const std::filesystem::path& database):impl_(std::make_unique<Impl>(database,false)) {
     impl_->execute("PRAGMA trusted_schema=OFF");
@@ -204,6 +206,8 @@ RunStore::RunStore(const std::filesystem::path& database):impl_(std::make_unique
     impl_->schema_version=int(version.number(0));
     Statement columns(impl_->database,"SELECT COUNT(*) FROM pragma_table_info('run') WHERE name='execution_backend'");
     columns.row();impl_->execution_metadata=columns.number(0)!=0;
+    Statement association(impl_->database,"SELECT COUNT(*) FROM pragma_table_info('run') WHERE name='association_policy'");
+    association.row();impl_->association_metadata=association.number(0)!=0;
     summary();
 }
 RunSummary RunStore::summary() const {
@@ -242,6 +246,10 @@ RunSummary RunStore::summary() const {
         out.execution={execution.text(2),execution.text(3),execution.text(4),execution.text(5)};
     }
     Statement counts(impl_->database,"SELECT COUNT(*),COALESCE(SUM(direction=1),0),COALESCE(SUM(direction=2),0) FROM events");
+    if(impl_->association_metadata) {
+        Statement association(impl_->database,"SELECT association_policy FROM run WHERE id=1");association.row();
+        out.configuration.tracking.association=parse_association(association.text(0));
+    }
     counts.row();out.event_count=counts.number(0);out.forward=counts.number(1);out.reverse=counts.number(2);
     if(impl_->schema_version>=3) {
         Statement appearances(impl_->database,"SELECT COUNT(*),COUNT(DISTINCT class_id) FROM appearances");

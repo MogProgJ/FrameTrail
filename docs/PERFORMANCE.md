@@ -44,7 +44,7 @@ through its bounded queue; Qt copies the selected RGB frame into an owned QImage
 to keep its lifetime independent of the worker. The player also retains the source
 frame needed to re-analyse settings at the held timestamp. Live processing uses
 capacity-one pending input/results and an owned display image. Saved review uses
-its own bounded reader. A 1280Ã—720 RGB24 image alone occupies 2,764,800 bytes.
+its own bounded reader. A 1280×720 RGB24 image alone occupies 2,764,800 bytes.
 
 Removing these ownership boundaries without a measured benefit risks stale images
 or data races. No zero-copy claim is made. Record stage timings first; optimize the
@@ -94,3 +94,7 @@ ffmpeg -hide_banner -loglevel error -n -f lavfi -i "testsrc2=size=1280x720:rate=
 
 The generated container may have a different file hash on regeneration; keep the
 input used for each run with its reported hash when making precise comparisons.
+
+## Scene and association profiling in 0.11
+
+Profile CSV appends `scene_boundary`, `scene_difference` and `scene_histogram_distance`; existing timing columns remain in place. Tracking time includes the bounded scene sampler. Experimental repair calls a bounded global assignment solver only when greedy coverage may be improved. The dense maximum-size solver stress case is deliberately more expensive than normal scenes; no blanket real-time or crowd-performance guarantee is made. See [tracking evaluation](TRACKING_EVALUATION.md).

@@ -2,7 +2,7 @@
 
 ## Use the stronger option
 
-Open the desktop application and choose **YOLOX-S · more detail** under **Detection model**. Keep **Detect objects (CPU)** enabled. Nano stays the default for faster playback. S requires more CPU, so recorded playback can run slower than real time. The live window offers the same choice while stopped and continues to report skipped frames when analysis falls behind.
+Open the desktop application and choose **YOLOX-S · more detail** under **Detection model**. Keep **Detect objects** enabled. CPU is the default; [optional GPU inference](GPU_INFERENCE.md) is now available. Nano stays the default for faster playback. S requires more CPU, so recorded playback can run slower than real time. The live window offers the same choice while stopped and continues to report skipped frames when analysis falls behind.
 
 Model changes preserve the displayed file frame and previous paused/playing state. Temporary tracking IDs and counters restart at that position. Saved analysis captures the selected model and thresholds for the entire run; changing the player afterwards does not alter that run.
 
@@ -97,4 +97,4 @@ The report preserves image/model/executable/manifest hashes, fixed thresholds, m
 
 Version 0.8 introduced schema 2 with `model_type`, reading schema 1 as Nano without modifying it. Version 0.9 adds schema 3 for appearance analysis while retaining read-only support for schemas 1/2; see [video analysis](SAVED_RUNS.md). Older apps cannot open newer schemas. The 0.8 validation passed 25 native/desktop CTest checks and six evaluation scorer checks. Its private ZIP passed manifest hashing, Nano/S CLI inference and offscreen GUI startup with development PATH removed; clean-machine validation remains open. Both variants are checked through native inference, coordinate contracts, cancellation, reference images, paused desktop switching and model metadata round trips. Camera testing for the 0.8 update used synthetic lifecycle tests and idle device enumeration only.
 
-Next: evaluate an optional local GPU execution provider against these CPU baselines and more representative recordings. Keep CPU available. Real-world full annotations, false-positive inspection, tracking identity/crossing evaluation, camera soak tests and clean-machine package checks remain open. Cluster training, Python workers, cloud hosting and agents retain their separate roadmap gates.
+Next: broaden held-out detection and identity/crossing labels. Optional GPU inference is implemented; [tracking evaluation](TRACKING_EVALUATION.md) records the next gate. Keep CPU available. Real-world full annotations, false-positive inspection, tracking identity/crossing evaluation, camera soak tests and clean-machine package checks remain open. Cluster training, Python workers, cloud hosting and agents retain their separate roadmap gates.

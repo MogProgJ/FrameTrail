@@ -160,3 +160,7 @@ Run `scripts/build.ps1` for the 26-check native/desktop suite. `desktop_analysis
 `DetectorOptions` adds backend preference and an optional DXGI adapter index. `DmlInference` binds the separately loaded runtime's C API and RAII resources; the existing linked CPU C++ adapter retains its original ownership. Per-frame `ExecutionInfo` propagates through preview/live results and optional run metadata. Geometry, tracker, queue limits and saved-analysis interaction remain shared.
 
 Fetch with `scripts/fetch-gpu.ps1`, then `scripts/build.ps1 -GpuChecks` for all 31 native/desktop checks on capable hardware. The ordinary build has 27 checks and can omit GPU dependencies; `FRAMETRAIL_ENABLE_DIRECTML=OFF` tests a CPU-only build. Run `scripts/compare-backends.ps1` for serial, hash-checked local measurements. See [GPU inference](GPU_INFERENCE.md).
+
+## Tracking evaluation in 0.11
+
+`frame_tracker.hpp` composes scene continuity with the pixel-independent tracker. `src/assignment.*` isolates the bounded experimental assignment solver. `scripts/evaluate-tracking.py` scores original-frame reviewed labels against native temporal CSV exports; Python is development tooling only. Profile CSV appends three scene fields. Run the 34-check native/GPU suite with `scripts/build.ps1 -GpuChecks` and the 16 Python scorer checks with `python -B -m unittest discover -s tests -p "test*evaluation.py"`. See [labels, evidence and limits](TRACKING_EVALUATION.md).

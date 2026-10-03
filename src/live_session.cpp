@@ -1,4 +1,5 @@
 #include "frametrail/live_session.hpp"
+#include "frametrail/frame_tracker.hpp"
 #include <stdexcept>
 
 namespace frametrail {
@@ -35,7 +36,7 @@ void LiveSession::start_source(SourceFactory source,Processor processor,std::opt
         worker_=std::jthread([this,source=std::move(source),processor=std::move(processor),tracking=std::move(tracking),halt=halt_]() mutable {
             const auto stop=halt.get_token();
             try {
-                std::unique_ptr<Tracker> tracker=tracking ? std::make_unique<Tracker>(*tracking) : nullptr;
+                std::unique_ptr<FrameTracker> tracker=tracking ? std::make_unique<FrameTracker>(*tracking) : nullptr;
                 std::jthread capture([this,source=std::move(source),stop] {
                     try {
                         auto camera=source(stop);if(!camera)throw std::runtime_error("Live source could not open");
@@ -59,7 +60,7 @@ void LiveSession::start_source(SourceFactory source,Processor processor,std::opt
                         auto raw=std::move(*latest_);latest_.reset();lock.unlock();
                         const auto begin=std::chrono::steady_clock::now();LiveFrame result;
                         if(processor)result.detection=processor(raw.frame,stop);
-                        if(tracker && !stop.stop_requested())result.tracking=tracker->update(result.detection->objects,raw.frame.sequence,raw.frame.timestamp,raw.frame.width,raw.frame.height);
+                        if(tracker && !stop.stop_requested())result.tracking=tracker->update(result.detection->objects,raw.frame);
                         result.frame=std::move(raw.frame);result.arrived=raw.arrived;
                         result.processing_ms=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-begin).count();
                         lock.lock();if(stop.stop_requested())break;

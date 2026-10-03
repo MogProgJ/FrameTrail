@@ -1,4 +1,4 @@
-# Windows preview package (0.10)
+# Windows preview package (0.11)
 
 Extract the whole ZIP to a writable folder, then open **frametrail-desktop.exe**.
 Keep the DLLs, `platforms`, `models`, and `qt.conf` beside the executable.
@@ -12,7 +12,7 @@ Use the **Detection model** selector to choose faster Nano or more detailed, slo
 
 ## Optional GPU processing
 
-The tested 0.10 preview includes DirectML under `backends/directml`; keep that folder with the app. Choose **Processing device → GPU · CPU fallback** in the main player before opening Video analysis. Its layout and flow remain unchanged. CPU stays the default and also handles unavailable GPU/runtime cases. No CUDA toolkit or global installation is needed. See [GPU setup and evidence](GPU_INFERENCE.md).
+The tested 0.11 preview includes DirectML under `backends/directml`; keep that folder with the app. Choose **Processing device → GPU · CPU fallback** in the main player before opening Video analysis. Its layout and flow remain unchanged. CPU stays the default and also handles unavailable GPU/runtime cases. No CUDA toolkit or global installation is needed. See [GPU setup and evidence](GPU_INFERENCE.md).
 
 `package.ps1` includes the optional runtime and its notices only if the current build enabled it. For a strict local hardware check use `check-package.ps1 -GpuChecks`; the ordinary package check remains CPU-compatible.
 
@@ -67,3 +67,7 @@ saved review and camera permissions on a Windows machine without the SDKs. Sourc
 availability/notices for all distributed components, FrameTrail's own license,
 signing and installer policy also remain release gates. This package is for the
 current private project's local evaluation; no public binary release is published.
+
+## Tracking continuity
+
+The 0.11 pipeline adds conservative scene-boundary resets and long-gap reconfirmation, while preserving the saved-analysis workflow. The GUI keeps greedy association; experimental global repair is an explicit CLI option until broader labels justify it. See [tracking evidence and limits](TRACKING_EVALUATION.md).

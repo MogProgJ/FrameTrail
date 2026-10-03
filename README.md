@@ -2,7 +2,7 @@
 
 A native desktop application being built to turn images and video into detections, object tracks, and reviewable events.
 
-**Status: optional native GPU inference implemented (0.10).** YOLOX-S measured about 4.2× faster through the GPU pipeline on this laptop; CPU remains the default and fallback. See [GPU setup, measurements and limits](docs/GPU_INFERENCE.md). The 0.9 choose/drop → analyse → review → save/CSV workflow keeps its layout and controls. Live webcam detection, IDs and line counts remain available. Accuracy and sustained resource behaviour still need evaluation.
+**Status: tracking reliability stage implemented (0.11).** Native scene-boundary guards and long-gap reconfirmation protect continuity; experimental global repair remains opt-in after a crowd regression. See [tracking evidence and evaluation](docs/TRACKING_EVALUATION.md). Optional GPU inference remains available, and saved-analysis layout/flow stay unchanged. Broader accuracy and sustained validation remain open.
 
 FrameTrail accepts local images, prerecorded video, and one Windows webcam through the native processing core. The initial use case is counting people or vehicles crossing a user-defined line in footage from a fixed camera.
 
@@ -47,7 +47,7 @@ With Visual Studio 2022 C++ tools and CMake installed, run these from the reposi
 .\build\windows-msvc\Release\frametrail.exe inspect .\build\windows-msvc\fixtures\variable.mkv
 ```
 
-For optional GPU inference, run `scripts/fetch-gpu.ps1`, rebuild, then select **Processing device → GPU · CPU fallback** in the player. That preference carries into Video analysis when you open its window. CPU is the default; the portable 0.10 preview includes GPU support.
+For optional GPU inference, run `scripts/fetch-gpu.ps1`, rebuild, then select **Processing device → GPU · CPU fallback** in the player. That preference carries into Video analysis when you open its window. CPU is the default; the portable 0.11 preview includes GPU support.
 
 For the optional stronger detector, also run `scripts/fetch-model.ps1 -Model all` **before building** and select **YOLOX-S · more detail** in the app.
 
@@ -64,7 +64,7 @@ C++ will own the application and resource lifetimes. Native C APIs, particularly
 - Local processing; no cloud account required by the proposed design.
 - One source at a time in the first release.
 - An existing detection model; custom model training is outside the first release.
-- CPU execution first; GPU acceleration follows measurement of actual hardware.
+- CPU is the default; optional GPU acceleration has been measured on the target hardware.
 - Event accuracy and performance must be measured on representative footage.
 - No fixed real-time frame-rate promise before benchmarking.
 

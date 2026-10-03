@@ -26,7 +26,7 @@ Updated: 3 October 2026.
 - CMake presets, PowerShell dependency/build scripts, and CTest checks using generated synthetic media.
 - A development guide explaining commands, ownership, timing, and current limitations.
 
-Version 0.10 builds and runs on Windows x64. Recorded-file appearance analysis and saved review are joined by one live webcam. Live capture continues independently of CPU analysis and replaces pending frames when inference falls behind. Audio playback, live recording, and network cameras remain deferred. Representative accuracy and sustained resource measurements remain open. See [live camera](LIVE_CAMERA.md), [tracking](TRACKING.md), and [saved runs](SAVED_RUNS.md).
+Version 0.11 builds and runs on Windows x64. Recorded-file appearance analysis and saved review are joined by one live webcam. Live capture continues independently of CPU analysis and replaces pending frames when inference falls behind. Audio playback, live recording, and network cameras remain deferred. Representative accuracy and sustained resource measurements remain open. See [live camera](LIVE_CAMERA.md), [tracking](TRACKING.md), and [saved runs](SAVED_RUNS.md).
 
 ## Model upgrade and evaluation (0.8)
 
@@ -38,7 +38,7 @@ Inspected hardware: Intel Core i7-10750H, approximately 15.8 GiB reported RAM, I
 
 Tools used: Visual Studio 2022 MSVC 19.44, bundled CMake 3.31.6, checksum-pinned FFmpeg 8.1 branch, Qt 6.11.3 base, ONNX Runtime 1.30.0 CPU, YOLOX-Nano 0.1.1rc0, and SQLite 3.53.4 C amalgamation. Manifests are under `dependencies/`. No system-wide dependency installation was performed.
 
-The standard 0.10 suite has 27 checks; all 31 native/desktop checks pass with four opt-in GPU hardware tests, alongside the six Python scorer checks. A separate CPU-only build passes its dependency/fallback check. The 0.9 suite passed 26 native/desktop CTest checks, including the rebuilt appearance intake, persistence, CSV and partial-result paths. Six standard-library Python evaluation checks remain part of the 0.8 model tooling. The new intake/save/export/reopen flow also passed on the supplied local recording; this is workflow evidence, not accuracy evaluation. The 0.7 baseline contained 22 checks, including live overload/lifecycle and 60 FPS review timing alongside the existing media, inference, tracking, storage, and desktop checks. The integrated webcam also passed two short capture/detect/track/stop cycles at 1280×720 with clean device release; see [live camera evidence](LIVE_CAMERA.md). Stored review continues to leave the database unchanged. These are integration checks, not natural-video counting-accuracy measurements. Representative labelled footage, unplug/reconnect behaviour, native dialogs, and sustained memory/disk/latency measurements remain open. No leak detector has been run.
+The 0.11 suite has 30 standard checks and four opt-in GPU checks, all passing, alongside 16 Python scorer checks. The standard 0.10 suite had 27 checks; all 31 native/desktop checks pass with four opt-in GPU hardware tests, alongside the six Python scorer checks. A separate CPU-only build passes its dependency/fallback check. The 0.9 suite passed 26 native/desktop CTest checks, including the rebuilt appearance intake, persistence, CSV and partial-result paths. Six standard-library Python evaluation checks remain part of the 0.8 model tooling. The new intake/save/export/reopen flow also passed on the supplied local recording; this is workflow evidence, not accuracy evaluation. The 0.7 baseline contained 22 checks, including live overload/lifecycle and 60 FPS review timing alongside the existing media, inference, tracking, storage, and desktop checks. The integrated webcam also passed two short capture/detect/track/stop cycles at 1280×720 with clean device release; see [live camera evidence](LIVE_CAMERA.md). Stored review continues to leave the database unchanged. These are integration checks, not natural-video counting-accuracy measurements. Representative labelled footage, unplug/reconnect behaviour, native dialogs, and sustained memory/disk/latency measurements remain open. No leak detector has been run.
 
 ## Repository publication
 
@@ -88,6 +88,10 @@ Video analysis accepts a recording directly without a counting line, displays ti
 ## Optional GPU branch (0.10)
 
 A native DirectML adapter uses a separately pinned 1.24.4 runtime without replacing CPU ONNX Runtime 1.30.0. CPU remains the default; automatic mode reports failures and falls back, while strict GPU mode validates benchmarks. On this GTX 1650 Ti the warm S pipeline improved from 6.12 to 25.51 FPS (4.17×), with higher memory use and loading cost. Nano's short overall run was slower despite a modest warm gain. Frozen selected-target recovery stayed 18/24 for Nano and 24/24 for S. Saved-analysis layout/flow remain unchanged; its preference is inherited from the player, and runtime evidence is stored/exported. See [GPU inference](GPU_INFERENCE.md).
+
+## Tracking reliability stage (0.11)
+
+Native scene-boundary resets and long-gap reconfirmation are shared by all analysis workers. The saved-analysis layout and flow remain intact; main-player IDs/trails receive subdued styling. The bounded global repair module fixes a controlled starvation case but increases sampled crowd ID changes, so it remains explicitly experimental and the GUI keeps greedy association. New identity/event scoring tooling and supplied generated-clip evidence are in [tracking evaluation](TRACKING_EVALUATION.md). The suite now has 30 standard checks plus four opt-in GPU checks and 16 Python scorer checks.
 
 ## Immediate next work
 
