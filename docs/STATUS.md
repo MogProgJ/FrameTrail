@@ -97,7 +97,7 @@ Native scene-boundary resets and long-gap reconfirmation are shared by all analy
 
 Validate the new video-analysis workflow through native File Explorer/dialogs and representative longer recordings. Broaden real-footage annotations and assess detection, tracking identities and event reliability before further model changes or training. Evaluate short labelled recorded/live people or vehicle crossings; schedule a sustained webcam test, including unplug/reconnect, only with explicit camera authorization. Profiling and private packaging are now implemented; use their measurements to guide optimization and validate the package on a clean Windows machine. Preview Fit/100% zoom and broader quality refinements remain deferred; the reported saved-review timing issue received a focused fix in 0.6.
 
-The [compute and training plan](COMPUTE_AND_TRAINING.md) is integrated as conditional Phase 8. No cluster environment or cloud service will be added until evaluation identifies a concrete accuracy, throughput, or scale constraint.
+The [compute and training plan](COMPUTE_AND_TRAINING.md) is integrated as conditional Phase 8. Following the 0.12 audit, the next scoped module is dataset inventory and independent evaluation for the user-selected low-light fox/dog pilot, followed by custom-model registration and a bounded cluster setup test. Substantial training remains conditional on a measured domain gap; cloud services remain deferred. See [training readiness](TRAINING_READINESS.md).
 
 Application implementation has begun following the user's instruction on 2 October 2026. Optional agent orchestration and hosted AI services remain deferred.
 
@@ -109,3 +109,9 @@ Native Open Images recognition supports 601 trained labels grouped into 597 appl
 At confidence 0.35, native broad recognition recovered 16/21 selected public-reference targets, including 3/4 foxes, compared with YOLOX-S's 6/21 and World S/M's 10/21 and 8/21. Broader models regress on the earlier selected recording (18/24 for Open Images versus 24/24 for S), so S stays the default when installed. The dark generated fox remains unresolved. Partial labels cannot establish precision or general accuracy. See [recognition](RECOGNITION.md) for contracts, acquisition, licensing, reference checks and the next labelled-domain gate.
 
 The 0.12 suite passes 45 native/desktop checks (36 standard and nine opt-in GPU) plus 18 Python scorer/registry checks. Same-shaped models with incorrect vocabularies are rejected on CPU and GPU; the official preprocessing/reference comparison covers 15 strong targets. On a short paired 720p run, broad recognition achieved 4.59 warm pipeline FPS on CPU and 15.50 on this GTX 1650 Ti, compared with S's 7.58/27.58. These are bounded integration/performance checks, not sustained or general-accuracy guarantees.
+
+## Training-readiness audit (3 October 2026)
+
+The user selected fox/dog and related animals in low light as a narrow pilot. The native application is ready for preparation, but independent fully labelled evaluation, custom model/profile registration and a reproducible Linux CUDA cluster path are missing. Public dataset candidates were checked for box coverage, modality and terms; no dataset was downloaded and no training was started. The accepted saved-analysis UI and current models remain unchanged.
+
+The [audit](TRAINING_READINESS.md) records required evidence and separates it from unrelated deferred work. A future trained model starts as an optional wildlife profile, with validation-based selection, a locked real-world test, native export checks and recorded-analysis resource measurements before adoption.

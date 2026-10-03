@@ -12,7 +12,7 @@ These milestones are ordered by dependencies, not estimated calendar dates. Impl
 | 5 | Analyse, persist and review recordings | 0.9 appearance intake/save/export revamp implemented; representative workflow/resource evaluation remains |
 | 6 | One live input | Windows webcam baseline implemented; sustained hardware and accuracy validation remains |
 | 7 | Profile, optimize, and package | Baseline implemented; clean-machine and sustained validation remain |
-| 8 | Conditional compute and model expansion | 0.12 broader recognition / experimental YOLO-World, YOLOX-S and optional GPU branch implemented; sustained validation / labelled accuracy gates remain |
+| 8 | Conditional compute and model expansion | 0.12 recognition/GPU branches implemented; low-light fox/dog training preparation selected after audit; data, custom-model and cluster gates remain |
 | 9 | Optional advanced perception and agents | After the native product proves useful |
 
 Phases 0–7 are the core product path. Phase 8 is a set of optional branches, not a promise to add every technology. A branch may be pulled forward after Phase 3 or 4 if a measured detector or throughput failure blocks the next core phase. Otherwise it stays deferred.
@@ -91,7 +91,7 @@ A native pretrained-model comparison is now implemented in 0.8: selectable YOLOX
 
 This phase covers four independent gates: local GPU inference, Python-based model training, an optional Python inference worker, and a commercial cloud service. Detailed triggers, stop conditions, and the bwUniCluster execution plan are in [Compute, training, and bwUniCluster](COMPUTE_AND_TRAINING.md).
 
-**Custom training on bwUniCluster** remains conditional: first evaluate the stronger pretrained model and acceleration; training becomes justified only if labelled evaluation still shows domain-specific errors materially limiting tracking or crossing accuracy. KIT documents a shared Slurm system with modern A100/H100 accelerators, which is ample for a compact detector. Shared hardware does not mean guaranteed or immediate GPU access; account entitlement, queue access, fair-share priority, and dataset permission must be verified first.
+**Custom training on bwUniCluster** remains conditional: first evaluate the stronger pretrained models and acceleration; training becomes justified only if labelled evaluation still shows domain-specific errors materially limiting recognition, appearance review, tracking or crossing accuracy. KIT documents a shared Slurm system with modern A100/H100 accelerators, which is ample for a compact detector. Shared hardware does not mean guaranteed or immediate GPU access; account entitlement, queue access, fair-share priority, and dataset permission must be verified first.
 
 Local GPU inference is considered separately and only after end-to-end profiling. A Python training environment may produce an ONNX artifact while the shipped application remains C++. A Python inference worker is reserved for valuable models that cannot fit the native adapter. Commercial cloud serving remains last because bwUniCluster can cover scheduled training, while the current product does not require a remote always-on API.
 
@@ -101,7 +101,9 @@ Completion evidence for any adopted branch: compare it with the unchanged CPU/mo
 
 Implemented: native Open Images (597 canonical categories), experimental World S/M (100), strict embedded label-map checks, CPU/GPU execution and schema-4 vocabulary persistence through the unchanged saved-analysis workflow. Fixed small reference sets show a fox improvement but a people/vehicle regression; YOLOX-S therefore stays the default. See [recognition evidence](RECOGNITION.md).
 
-Next: define a permissioned real-world wildlife/night dataset and useful classes, fully annotate boxes and false detections, then compare confidence settings and models on separate tuning/test partitions. The supplied dark AI-generated clip is still a known failure. Trigger the existing bwUniCluster fine-tuning branch only if that labelled comparison shows a worthwhile domain-specific gap; do not add cloud/agents or another runtime to compensate for an unevaluated model. Multi-camera and deployment expansion remain behind their existing gates.
+Next: prepare the user-selected **fox/dog and related animals in low light** pilot. The [training-readiness audit](TRAINING_READINESS.md) identifies four ordered modules: reviewed dataset and independent evaluation; custom-model registration/export through the native saved-analysis pipeline; a reproducible single-GPU bwUniCluster setup test; then conditional fine-tuning and measured adoption. The current profiles do not accept an arbitrary smaller class head. The supplied dark AI-generated clip is still a known failure and stays a stress example rather than primary evaluation truth.
+
+Training preparation can proceed without completing unrelated live-camera, audio, multi-camera or public-release work. Keep the accepted saved-analysis UI and existing model choices intact; any trained wildlife model starts as an optional profile. Substantial training and adoption remain gated by the audit's evidence requirements.
 
 ## Measurement vocabulary
 

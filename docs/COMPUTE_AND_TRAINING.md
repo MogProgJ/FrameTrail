@@ -1,6 +1,6 @@
 # Compute, training, and bwUniCluster plan
 
-Updated: 2 October 2026.
+Updated: 3 October 2026.
 
 ## Decision
 
@@ -64,7 +64,7 @@ Stop condition: CPU already meets the target, deployment burden outweighs the ga
 
 ### Gate 2: custom model training
 
-Trigger: a labelled evaluation set shows that detector errors materially limit tracking or crossing-event accuracy. Examples include systematic misses of small people, unusual vehicle angles, night footage, or domain-specific classes.
+Trigger: a labelled evaluation set shows that detector errors materially limit recognition, appearance review, tracking or crossing-event accuracy. Examples include systematic misses of small people, unusual vehicle angles, night footage, or domain-specific classes.
 
 Action: create a separate Python training toolchain, fine-tune a documented model, evaluate it against the unchanged baseline, export ONNX, and load it through a model-specific C++ adapter. Use one bwUniCluster NVIDIA GPU initially. Distributed training is out of scope until a single-GPU run is measured and demonstrably too slow.
 
@@ -105,3 +105,11 @@ A stronger pretrained CPU model (YOLOX-S) and local comparison tooling are imple
 The local GPU gate now has a measured implementation: isolated DirectML inference with CPU fallback, strict benchmarking and unchanged saved-analysis workflow. YOLOX-S's warm pipeline improved roughly 4.2× on the GTX 1650 Ti; Nano's short run was slower after loading. CPU stays the default. The frozen partially annotated targets kept the CPU recovery counts. See [GPU evidence and limits](GPU_INFERENCE.md).
 
 This justifies keeping acceleration optional for the stronger model. It does not justify cluster training, a Python inference service or cloud hosting. Broader labelled accuracy, tracking/event evaluation and sustained resource behaviour remain the next gates; no cluster job or cloud resource was created.
+
+## 0.12 readiness audit — 3 October 2026
+
+Broader native recognition and GPU execution are implemented. The user selected a narrow **low-light fox/dog and related-animal** training pilot. Preparation is now the next Phase 8 module; a full run remains conditional on reviewed real-world labels and a measured domain gap. The small partial-label comparisons cannot establish precision or general accuracy.
+
+Follow the [training-readiness audit](TRAINING_READINESS.md): inventory and evaluate scoped data, prove custom-model registration/export and saved-analysis compatibility, establish a pinned Linux single-GPU setup test, then assess one limited fine-tuning run. Fixed native profiles and the publisher-checkpoint exporter currently require extension for a small custom class head. The optional Windows CPU export environment is not a CUDA training environment.
+
+A trained wildlife profile will remain optional while YOLOX-S and broad recognition remain available. The accepted saved-analysis layout/flow is preserved. Unrelated live-camera, audio, multi-camera and public-release work need not block preparation. No dataset, cluster login, job, Python inference worker or cloud service was added by this audit.

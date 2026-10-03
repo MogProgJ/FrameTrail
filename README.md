@@ -27,6 +27,7 @@ Still images support detections and an annotated preview. They do not support mo
 | [Equipment and setup](docs/EQUIPMENT_AND_SETUP.md) | Hardware, proposed dependencies, and what to inspect before installing anything |
 | [Roadmap](docs/ROADMAP.md) | Implementation milestones and evidence needed to complete them |
 | [Compute, training, and bwUniCluster](docs/COMPUTE_AND_TRAINING.md) | Realistic gates for GPU inference, Python training, KIT cluster use, and cloud services |
+| [Training-readiness audit](docs/TRAINING_READINESS.md) | Low-light fox/dog pilot: current evidence, suitable data, missing prerequisites and ordered preparation gates |
 | [Current status](docs/STATUS.md) | What exists now, open decisions, and the next work |
 | [Glossary](docs/GLOSSARY.md) | Plain-language definitions of the technical terms |
 | [Build and development guide](docs/DEVELOPMENT.md) | How to run the desktop/CLI, read the source, and understand its checks |
