@@ -137,7 +137,7 @@ void appearance_storage(const std::filesystem::path& fixtures) {
     require(bytes(legacy)==legacy_before,"Schema2 review wrote a migration");
     const auto previous=root/"schema3-before-gpu.frametrail";std::filesystem::copy_file(path,previous);
     const auto previous_name=previous.u8string();require(sqlite3_open(reinterpret_cast<const char*>(previous_name.c_str()),&db)==SQLITE_OK,"Previous schema3 fixture open failed");
-    const auto removed=sqlite3_exec(db,"ALTER TABLE run DROP COLUMN requested_backend; ALTER TABLE run DROP COLUMN gpu_device; ALTER TABLE run DROP COLUMN execution_backend; ALTER TABLE run DROP COLUMN execution_runtime; ALTER TABLE run DROP COLUMN execution_device; ALTER TABLE run DROP COLUMN execution_fallback;",nullptr,nullptr,nullptr);
+    const auto removed=sqlite3_exec(db,"ALTER TABLE run DROP COLUMN requested_backend; ALTER TABLE run DROP COLUMN gpu_device; ALTER TABLE run DROP COLUMN execution_backend; ALTER TABLE run DROP COLUMN execution_runtime; ALTER TABLE run DROP COLUMN execution_device; ALTER TABLE run DROP COLUMN execution_fallback; PRAGMA user_version=3;",nullptr,nullptr,nullptr);
     sqlite3_close(db);require(removed==SQLITE_OK,"Previous schema3 fixture conversion failed");
     const auto previous_bytes=bytes(previous);
     {frametrail::RunStore old(previous);require(old.summary().appearance_count==2 && old.summary().execution.runtime.empty(),"0.9 appearance analysis lost compatibility or acquired invented runtime identity");}
@@ -145,6 +145,29 @@ void appearance_storage(const std::filesystem::path& fixtures) {
     const auto missing=root/"unknown-times.frametrail";
     {auto writer=frametrail::RunStore::create(missing,config,reader.info());frame.sequence=0;frame.timestamp.reset();writer.record_frame(frame,{},std::vector{frametrail::TrackedObject{1,{0,.8f,10,5,25,30},true,{}}});writer.finish("cancelled");}
     require(!frametrail::RunStore(missing).summary().timestamp_seekable && !frametrail::RunStore(missing).appearances()[0].first_timestamp,"Unknown timestamp was invented");
+}
+void expanded_storage(const std::filesystem::path& fixtures,frametrail::DetectorModel variant,int category) {
+    const auto root=output_root(fixtures),source=fixtures/"variable.mkv",model=root/"world.onnx";
+    {std::ofstream file(model);file<<"world storage fixture";}
+    frametrail::MediaReader reader(source);auto frame=*reader.read();
+    frametrail::RunConfiguration config{source,{model,.35f,.45f,variant},{},frametrail::RunKind::appearances};
+    config.tracking.line.reset();config.tracking.classes={0,category};const auto path=root/"world.frametrail";
+    {
+        auto store=frametrail::RunStore::create(path,config,reader.info());
+        const frametrail::TrackedObject fox{1,{category,.85f,2,3,20,25},false,{}};
+        store.record_frame(frame,{},std::vector{fox});store.finish("completed");
+    }
+    const auto before=bytes(path);frametrail::RunStore store(path);store.export_appearances_csv(root/"world.csv");
+    require(store.appearances().front().first_detection.class_id==category &&
+        store.summary().configuration.detector.variant==variant &&
+        bytes(root/"world.csv").find(std::string(frametrail::class_name(category)))!=std::string::npos && bytes(path)==before,"World save/reopen/CSV vocabulary failed");
+    auto legacy=config;legacy.detector.variant=frametrail::DetectorModel::nano;
+    fails([&]{frametrail::RunStore::create(root/"invalid.frametrail",legacy,reader.info());},"Legacy model accepted fox categories");
+    require(!std::filesystem::exists(root/"invalid.frametrail"),"Invalid model classes created output");
+    const auto tampered=root/"tampered.frametrail";std::filesystem::copy_file(path,tampered);
+    sqlite3* db{};const auto name=tampered.u8string();require(sqlite3_open(reinterpret_cast<const char*>(name.c_str()),&db)==SQLITE_OK,"Tamper fixture open failed");
+    const auto result=sqlite3_exec(db,"UPDATE run SET vocabulary='wrong labels';",nullptr,nullptr,nullptr);sqlite3_close(db);
+    require(result==SQLITE_OK,"Tamper fixture write failed");fails([&]{frametrail::RunStore bad(tampered);},"Mismatched stored vocabulary accepted");
 }
 void seeking(const std::filesystem::path& root) {
     for(const auto* name:{"variable.mkv","delayed.mkv"}) {
@@ -209,7 +232,7 @@ void analysis(const std::filesystem::path& source,const std::filesystem::path& m
 }
 int main(int argc,char* argv[]) {
     try {
-        if(argc==2){storage(argv[1]);appearance_storage(argv[1]);seeking(argv[1]);}
+        if(argc==2){storage(argv[1]);expanded_storage(argv[1],frametrail::DetectorModel::world_m,80);expanded_storage(argv[1],frametrail::DetectorModel::openimages,614);appearance_storage(argv[1]);seeking(argv[1]);}
         else if(argc==3)analysis(argv[1],argv[2]);else throw std::runtime_error("Expected fixtures, or source/model");
         std::cout<<"Saved-run contracts passed\n";return 0;
     }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}

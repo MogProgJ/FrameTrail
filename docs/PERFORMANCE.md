@@ -98,3 +98,8 @@ input used for each run with its reported hash when making precise comparisons.
 ## Scene and association profiling in 0.11
 
 Profile CSV appends `scene_boundary`, `scene_difference` and `scene_histogram_distance`; existing timing columns remain in place. Tracking time includes the bounded scene sampler. Experimental repair calls a bounded global assignment solver only when greedy coverage may be improved. The dense maximum-size solver stress case is deliberately more expensive than normal scenes; no blanket real-time or crowd-performance guarantee is made. See [tracking evaluation](TRACKING_EVALUATION.md).
+
+
+## Broader recognition comparison (0.12)
+
+The same short 720p, 60-frame CPU/DirectML comparison gives warm pipeline FPS of 7.58/27.58 for S, 5.03/16.31 for World S, 2.21/10.84 for World M, and 4.59/15.50 for Open Images. Five warmup frames are excluded. See [recognition](RECOGNITION.md) and [raw summary evidence](benchmarks/recognition-0.12.json) for settings, sampled process memory, model hashes and limitations. `profile.ps1 -Model` accepts `world-s`, `world-m` and `openimages` alongside the baseline. A larger vocabulary does not guarantee a faster or more accurate model.

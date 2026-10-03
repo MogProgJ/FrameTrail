@@ -1,4 +1,4 @@
-# Windows preview package (0.11)
+# Windows preview package (0.12)
 
 Extract the whole ZIP to a writable folder, then open **frametrail-desktop.exe**.
 Keep the DLLs, `platforms`, `models`, and `qt.conf` beside the executable.
@@ -8,11 +8,13 @@ are not implemented. The application is unsigned.
 
 ## Detection models
 
-Use the **Detection model** selector to choose faster Nano or more detailed, slower YOLOX-S. Both recognize 80 categories. S is included when `scripts/fetch-model.ps1 -Model all` was run before building/packaging. On one local 720p clip Nano processed about 27.5 FPS and S about 5 FPS; this varies with hardware and footage. Model changes preserve your playback position. New schema-3 saved runs require FrameTrail 0.9; older crossing runs remain readable. Open **Video analysis…**, choose/drop a video, analyse, review appearances, then save/export. See [the workflow](SAVED_RUNS.md).
+Choose **YOLOX-S** for the existing 80-category people/vehicle baseline, **Broad recognition · 597 categories** for the Open Images model (including fox), or experimental **YOLO-World S/M** for the 100-category export. Nano remains the faster CPU option. The private 0.12 preview includes these installed, checksum-verified models. Broader vocabulary has accuracy and speed tradeoffs; it does not fix the dark generated fox. S stays the default after comparison. See [recognition](RECOGNITION.md).
+
+Model changes preserve playback position. New schema-4 analyses require 0.12; schemas 1–3 remain readable. Open **Video analysis…**, choose/drop a video, analyse, review appearances, then save/export. See [the workflow](SAVED_RUNS.md).
 
 ## Optional GPU processing
 
-The tested 0.11 preview includes DirectML under `backends/directml`; keep that folder with the app. Choose **Processing device → GPU · CPU fallback** in the main player before opening Video analysis. Its layout and flow remain unchanged. CPU stays the default and also handles unavailable GPU/runtime cases. No CUDA toolkit or global installation is needed. See [GPU setup and evidence](GPU_INFERENCE.md).
+The tested 0.12 preview includes DirectML under `backends/directml`; keep that folder with the app. Choose **Processing device → GPU · CPU fallback** in the main player before opening Video analysis. Its layout and flow remain unchanged. CPU stays the default and also handles unavailable GPU/runtime cases. No CUDA toolkit or global installation is needed. See [GPU setup and evidence](GPU_INFERENCE.md).
 
 `package.ps1` includes the optional runtime and its notices only if the current build enabled it. For a strict local hardware check use `check-package.ps1 -GpuChecks`; the ordinary package check remains CPU-compatible.
 
@@ -39,7 +41,7 @@ From the repository, after fetching dependencies and the model:
 
 The script creates a new folder and ZIP under `out`, plus a ZIP SHA-256 file.
 It refuses existing destinations and never deletes earlier builds. It includes
-Release CLI/GUI executables, FFmpeg and ONNX Runtime DLLs, pinned Nano and optional S weights (when installed),
+Release CLI/GUI executables, FFmpeg and ONNX Runtime DLLs, pinned Nano and optional S, World S/M and Open Images weights (when installed),
 Qt libraries/plugins selected by `windeployqt`, app-local MSVC release runtime,
 dependency manifests, upstream notices and Qt's supplied SBOM. `manifest.json`
 records each staged file's size and SHA-256. Workflow guides are included under `docs`. No footage, saved runs, test

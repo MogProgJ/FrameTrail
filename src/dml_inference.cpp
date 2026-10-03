@@ -81,6 +81,7 @@ struct DmlInference::Impl {
     Owned<OrtSession> session{nullptr,api->ReleaseSession};
     std::string input_name,output_name;
     int size{};
+    DetectorModel variant;
     ExecutionInfo execution;
     void check(OrtStatus* status) const {owner->check(status);}
     void shape(const OrtTensorTypeAndShapeInfo* info,const std::vector<int64_t>& expected) const {
@@ -88,9 +89,9 @@ struct DmlInference::Impl {
         check(api->GetTensorElementType(info,&type));check(api->GetDimensionsCount(info,&count));
         std::vector<int64_t> dimensions(count);check(api->GetDimensions(info,dimensions.data(),count));
         if(type!=ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT || dimensions!=expected)
-            throw std::runtime_error("DirectML model tensor contract differs from the selected YOLOX profile");
+            throw std::runtime_error("DirectML model tensor contract differs from the selected detector profile");
     }
-    Impl(const DetectorOptions& options):size(model_input_size(options.variant)) {
+    Impl(const DetectorOptions& options):size(model_input_size(options.variant)),variant(options.variant) {
         const auto [index,name]=adapter(options.gpu_device);execution={"DirectML",owner->version,name,{}};
         OrtEnv* raw_env{};check(api->CreateEnv(ORT_LOGGING_LEVEL_WARNING,"FrameTrail GPU",&raw_env));env.reset(raw_env);
         check(api->DisableTelemetryEvents(env.get()));
@@ -102,16 +103,28 @@ struct DmlInference::Impl {
         check(owner->dml->SessionOptionsAppendExecutionProvider_DML(settings.get(),index));
         OrtSession* raw_session{};check(api->CreateSession(env.get(),options.model.c_str(),settings.get(),&raw_session));session.reset(raw_session);
         std::size_t inputs{},outputs{};check(api->SessionGetInputCount(session.get(),&inputs));check(api->SessionGetOutputCount(session.get(),&outputs));
-        if(inputs!=1 || outputs!=1)throw std::runtime_error("Expected one YOLOX input and output");
+        if(inputs!=1 || outputs!=1)throw std::runtime_error("Expected one detector input and output");
         for(bool input:{true,false}) {
             OrtTypeInfo* raw_type{};
             check(input ? api->SessionGetInputTypeInfo(session.get(),0,&raw_type):api->SessionGetOutputTypeInfo(session.get(),0,&raw_type));
             Owned<OrtTypeInfo> type(raw_type,api->ReleaseTypeInfo);const OrtTensorTypeAndShapeInfo* tensor{};
             check(api->CastTypeInfoToTensorInfo(type.get(),&tensor));
-            if(!tensor)throw std::runtime_error("YOLOX input/output must be tensors");
-            shape(tensor,input ? std::vector<int64_t>{1,3,size,size}:std::vector<int64_t>{1,yolox::candidate_count(size),85});
+            if(!tensor)throw std::runtime_error("detector input/output must be tensors");
+            shape(tensor,input ? std::vector<int64_t>{1,3,size,size}:model_output_shape(variant));
         }
         OrtAllocator* allocator{};check(api->GetAllocatorWithDefaultOptions(&allocator));
+        if(model_class_count(variant)>80) {
+            OrtModelMetadata* raw_metadata{};check(api->SessionGetModelMetadata(session.get(),&raw_metadata));
+            Owned<OrtModelMetadata> metadata(raw_metadata,api->ReleaseModelMetadata);
+            for(const auto* key:{"frametrail.profile","frametrail.vocabulary"}) {
+                char* raw{};check(api->ModelMetadataLookupCustomMetadataMap(metadata.get(),allocator,key,&raw));
+                std::string text;
+                try{if(raw)text=raw;}catch(...){if(raw)allocator->Free(allocator,raw);throw;}
+                if(raw)allocator->Free(allocator,raw);
+                const auto expected=std::string_view(key)=="frametrail.profile" ? std::string(model_id(variant)):model_vocabulary(variant);
+                if(text!=expected)throw std::runtime_error("DirectML recognition profile/vocabulary mismatch");
+            }
+        }
         for(bool input:{true,false}) {
             char* raw_name{};
             check(input ? api->SessionGetInputName(session.get(),0,allocator,&raw_name):api->SessionGetOutputName(session.get(),0,allocator,&raw_name));
@@ -135,7 +148,7 @@ struct DmlInference::Impl {
         if(stop.stop_requested())throw std::runtime_error("Detection cancelled");
         OrtTensorTypeAndShapeInfo* raw_shape{};check(api->GetTensorTypeAndShape(output.get(),&raw_shape));
         Owned<OrtTensorTypeAndShapeInfo> type(raw_shape,api->ReleaseTensorTypeAndShapeInfo);
-        shape(type.get(),{1,yolox::candidate_count(size),85});std::size_t count{};check(api->GetTensorShapeElementCount(type.get(),&count));
+        shape(type.get(),model_output_shape(variant));std::size_t count{};check(api->GetTensorShapeElementCount(type.get(),&count));
         float* values{};check(api->GetTensorMutableData(output.get(),reinterpret_cast<void**>(&values)));
         return {values,values+count}; // Owned CPU copy; synchronous Run includes transfers.
     }

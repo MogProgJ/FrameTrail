@@ -1,0 +1,1369 @@
+{
+  "schema": 1,
+  "date": "2026-10-03",
+  "confidence": 0.35,
+  "match_iou": 0.5,
+  "nms_iou": 0.45,
+  "sets": {
+    "reference": {
+      "images": 16,
+      "models": {
+        "small": {
+          "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+          "targets": 21,
+          "matched": 6,
+          "per_class": {
+            "80": {
+              "targets": 4,
+              "matched": 0
+            },
+            "16": {
+              "targets": 4,
+              "matched": 4
+            },
+            "86": {
+              "targets": 9,
+              "matched": 0
+            },
+            "14": {
+              "targets": 4,
+              "matched": 2
+            }
+          },
+          "cli_sha256": "1d93cf2a8391019f5b011c6fc3beadc4d49cec23120eccfa6499638ca10ff15f"
+        },
+        "world-s": {
+          "sha256": "131b48674fce59558d28772b87800455718283423146c8c27ad8d5070272714f",
+          "targets": 21,
+          "matched": 10,
+          "per_class": {
+            "80": {
+              "targets": 4,
+              "matched": 0
+            },
+            "16": {
+              "targets": 4,
+              "matched": 4
+            },
+            "86": {
+              "targets": 9,
+              "matched": 3
+            },
+            "14": {
+              "targets": 4,
+              "matched": 3
+            }
+          },
+          "cli_sha256": "1d93cf2a8391019f5b011c6fc3beadc4d49cec23120eccfa6499638ca10ff15f"
+        },
+        "world-m": {
+          "sha256": "014360ea645b65794c0fb00f46cda38f822d724965b95366efcb7d8ca688e292",
+          "targets": 21,
+          "matched": 8,
+          "per_class": {
+            "80": {
+              "targets": 4,
+              "matched": 0
+            },
+            "16": {
+              "targets": 4,
+              "matched": 4
+            },
+            "86": {
+              "targets": 9,
+              "matched": 2
+            },
+            "14": {
+              "targets": 4,
+              "matched": 2
+            }
+          },
+          "cli_sha256": "1d93cf2a8391019f5b011c6fc3beadc4d49cec23120eccfa6499638ca10ff15f"
+        },
+        "openimages": {
+          "sha256": "02d86542101dafe75d593287d6c814d9cc95c595c172a7c5a743ec5719a79cf1",
+          "targets": 21,
+          "matched": 16,
+          "per_class": {
+            "80": {
+              "targets": 4,
+              "matched": 3
+            },
+            "16": {
+              "targets": 4,
+              "matched": 4
+            },
+            "86": {
+              "targets": 9,
+              "matched": 5
+            },
+            "14": {
+              "targets": 4,
+              "matched": 4
+            }
+          },
+          "cli_sha256": "35e10ccb6e81b5074802ea0ff7362ce74a2c77eeefdb5467c680751b16107a44"
+        }
+      }
+    },
+    "clips": {
+      "images": 4,
+      "models": {
+        "small": {
+          "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+          "targets": 12,
+          "matched": 3,
+          "per_class": {
+            "80": {
+              "targets": 2,
+              "matched": 0
+            },
+            "0": {
+              "targets": 5,
+              "matched": 3
+            },
+            "86": {
+              "targets": 1,
+              "matched": 0
+            },
+            "96": {
+              "targets": 1,
+              "matched": 0
+            },
+            "87": {
+              "targets": 3,
+              "matched": 0
+            }
+          },
+          "cli_sha256": "2f2f1db569ddc7c4269e86571ec3aaae3e0be310cce88cfa636c4c9f5fc62a82"
+        },
+        "world-s": {
+          "sha256": "131b48674fce59558d28772b87800455718283423146c8c27ad8d5070272714f",
+          "targets": 12,
+          "matched": 4,
+          "per_class": {
+            "80": {
+              "targets": 2,
+              "matched": 0
+            },
+            "0": {
+              "targets": 5,
+              "matched": 3
+            },
+            "86": {
+              "targets": 1,
+              "matched": 0
+            },
+            "96": {
+              "targets": 1,
+              "matched": 1
+            },
+            "87": {
+              "targets": 3,
+              "matched": 0
+            }
+          },
+          "cli_sha256": "2f2f1db569ddc7c4269e86571ec3aaae3e0be310cce88cfa636c4c9f5fc62a82"
+        },
+        "world-m": {
+          "sha256": "014360ea645b65794c0fb00f46cda38f822d724965b95366efcb7d8ca688e292",
+          "targets": 12,
+          "matched": 5,
+          "per_class": {
+            "80": {
+              "targets": 2,
+              "matched": 0
+            },
+            "0": {
+              "targets": 5,
+              "matched": 3
+            },
+            "86": {
+              "targets": 1,
+              "matched": 1
+            },
+            "96": {
+              "targets": 1,
+              "matched": 1
+            },
+            "87": {
+              "targets": 3,
+              "matched": 0
+            }
+          },
+          "cli_sha256": "2f2f1db569ddc7c4269e86571ec3aaae3e0be310cce88cfa636c4c9f5fc62a82"
+        },
+        "openimages": {
+          "sha256": "02d86542101dafe75d593287d6c814d9cc95c595c172a7c5a743ec5719a79cf1",
+          "targets": 12,
+          "matched": 3,
+          "per_class": {
+            "80": {
+              "targets": 2,
+              "matched": 0
+            },
+            "0": {
+              "targets": 5,
+              "matched": 3
+            },
+            "86": {
+              "targets": 1,
+              "matched": 0
+            },
+            "96": {
+              "targets": 1,
+              "matched": 0
+            },
+            "87": {
+              "targets": 3,
+              "matched": 0
+            }
+          },
+          "cli_sha256": "35e10ccb6e81b5074802ea0ff7362ce74a2c77eeefdb5467c680751b16107a44"
+        }
+      }
+    },
+    "park": {
+      "images": 5,
+      "models": {
+        "small": {
+          "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+          "targets": 24,
+          "matched": 24,
+          "per_class": {
+            "0": {
+              "targets": 11,
+              "matched": 11
+            },
+            "16": {
+              "targets": 2,
+              "matched": 2
+            },
+            "2": {
+              "targets": 3,
+              "matched": 3
+            },
+            "5": {
+              "targets": 1,
+              "matched": 1
+            },
+            "29": {
+              "targets": 2,
+              "matched": 2
+            },
+            "14": {
+              "targets": 5,
+              "matched": 5
+            }
+          },
+          "cli_sha256": "2f2f1db569ddc7c4269e86571ec3aaae3e0be310cce88cfa636c4c9f5fc62a82"
+        },
+        "world-s": {
+          "sha256": "131b48674fce59558d28772b87800455718283423146c8c27ad8d5070272714f",
+          "targets": 24,
+          "matched": 22,
+          "per_class": {
+            "0": {
+              "targets": 11,
+              "matched": 11
+            },
+            "16": {
+              "targets": 2,
+              "matched": 2
+            },
+            "2": {
+              "targets": 3,
+              "matched": 3
+            },
+            "5": {
+              "targets": 1,
+              "matched": 1
+            },
+            "29": {
+              "targets": 2,
+              "matched": 2
+            },
+            "14": {
+              "targets": 5,
+              "matched": 3
+            }
+          },
+          "cli_sha256": "2f2f1db569ddc7c4269e86571ec3aaae3e0be310cce88cfa636c4c9f5fc62a82"
+        },
+        "world-m": {
+          "sha256": "014360ea645b65794c0fb00f46cda38f822d724965b95366efcb7d8ca688e292",
+          "targets": 24,
+          "matched": 20,
+          "per_class": {
+            "0": {
+              "targets": 11,
+              "matched": 11
+            },
+            "16": {
+              "targets": 2,
+              "matched": 2
+            },
+            "2": {
+              "targets": 3,
+              "matched": 3
+            },
+            "5": {
+              "targets": 1,
+              "matched": 1
+            },
+            "29": {
+              "targets": 2,
+              "matched": 2
+            },
+            "14": {
+              "targets": 5,
+              "matched": 1
+            }
+          },
+          "cli_sha256": "2f2f1db569ddc7c4269e86571ec3aaae3e0be310cce88cfa636c4c9f5fc62a82"
+        },
+        "openimages": {
+          "sha256": "02d86542101dafe75d593287d6c814d9cc95c595c172a7c5a743ec5719a79cf1",
+          "targets": 24,
+          "matched": 18,
+          "per_class": {
+            "0": {
+              "targets": 11,
+              "matched": 10
+            },
+            "16": {
+              "targets": 2,
+              "matched": 1
+            },
+            "2": {
+              "targets": 3,
+              "matched": 3
+            },
+            "5": {
+              "targets": 1,
+              "matched": 0
+            },
+            "29": {
+              "targets": 2,
+              "matched": 0
+            },
+            "14": {
+              "targets": 5,
+              "matched": 4
+            }
+          },
+          "cli_sha256": "35e10ccb6e81b5074802ea0ff7362ce74a2c77eeefdb5467c680751b16107a44"
+        }
+      }
+    }
+  },
+  "limits": [
+    "Selected small regression sets, partial annotation; false positives, precision and mAP are not measured.",
+    "Public examples use Open Images validation annotations, not an independent unseen field test.",
+    "The Balloon references include one ambiguous ball-like scene; results retain the fixed selection rather than removing difficult cases.",
+    "User clips are AI-generated and only sparsely labelled. No footage is committed or uploaded.",
+    "CLI hashes identify the individual measured builds; final UI/progress changes do not alter inference."
+  ],
+  "reference_parity": {
+    "schema": 1,
+    "reference_runtime": "1.23.2",
+    "checks": {
+      "world-s": {
+        "strong_targets": 4,
+        "min_iou": 0.9991614541403451,
+        "max_score_delta": 0.0018218740768433106,
+        "cpu_gpu_wrong_labels_rejected": true
+      },
+      "world-m": {
+        "strong_targets": 4,
+        "min_iou": 0.9992423208863048,
+        "max_score_delta": 0.0011129985694885436,
+        "cpu_gpu_wrong_labels_rejected": true
+      },
+      "openimages": {
+        "strong_targets": 7,
+        "min_iou": 0.9978503917605244,
+        "max_score_delta": 0.001201149757385278,
+        "cpu_gpu_wrong_labels_rejected": true
+      }
+    },
+    "limits": "Native bilinear rounding may differ by one intensity unit from OpenCV. Strong targets: >=0.55, IoU >0.98, score delta <0.03. This checks integration, not model accuracy."
+  },
+  "reference_selection": {
+    "schema": 1,
+    "selection": "First four eligible validation images per class, lexicographic image ID; fixed before inference",
+    "annotation_urls": {
+      "classes": "https://storage.googleapis.com/openimages/v5/class-descriptions-boxable.csv",
+      "boxes": "https://storage.googleapis.com/openimages/v5/validation-annotations-bbox.csv"
+    },
+    "images": [
+      {
+        "path": "0104146c74de8719.jpg",
+        "width": 1024,
+        "height": 683,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/0104146c74de8719.jpg",
+        "reference_class": "Fox",
+        "objects": [
+          {
+            "class_id": 80,
+            "box": [
+              217.48672512,
+              225.14823166,
+              694.7492864,
+              492.6061687
+            ]
+          }
+        ]
+      },
+      {
+        "path": "037f9ee89944439f.jpg",
+        "width": 1024,
+        "height": 768,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/037f9ee89944439f.jpg",
+        "reference_class": "Fox",
+        "objects": [
+          {
+            "class_id": 80,
+            "box": [
+              260.8,
+              22.400000256,
+              825.6,
+              768.0
+            ]
+          }
+        ]
+      },
+      {
+        "path": "03a860a903b04a3b.jpg",
+        "width": 1024,
+        "height": 940,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/03a860a903b04a3b.jpg",
+        "reference_class": "Fox",
+        "objects": [
+          {
+            "class_id": 80,
+            "box": [
+              226.7681792,
+              159.6226408,
+              696.2491392,
+              734.264174
+            ]
+          }
+        ]
+      },
+      {
+        "path": "0f58ef7a6b7c2d90.jpg",
+        "width": 1024,
+        "height": 986,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/0f58ef7a6b7c2d90.jpg",
+        "reference_class": "Fox",
+        "objects": [
+          {
+            "class_id": 80,
+            "box": [
+              9.078013952,
+              76.26519702,
+              998.5815552,
+              980.5524485999999
+            ]
+          }
+        ]
+      },
+      {
+        "path": "0007cebe1b2ba653.jpg",
+        "width": 1024,
+        "height": 683,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/0007cebe1b2ba653.jpg",
+        "reference_class": "Dog",
+        "objects": [
+          {
+            "class_id": 16,
+            "box": [
+              430.44247552,
+              123.90708019,
+              812.5545472,
+              492.6061687
+            ]
+          }
+        ]
+      },
+      {
+        "path": "0007d6cf88afaa4a.jpg",
+        "width": 1024,
+        "height": 614,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/0007d6cf88afaa4a.jpg",
+        "reference_class": "Dog",
+        "objects": [
+          {
+            "class_id": 16,
+            "box": [
+              177.58880768,
+              133.10489094,
+              923.7482496,
+              578.2191254400001
+            ]
+          }
+        ]
+      },
+      {
+        "path": "0008e425fb49a2bf.jpg",
+        "width": 987,
+        "height": 1024,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/0008e425fb49a2bf.jpg",
+        "reference_class": "Dog",
+        "objects": [
+          {
+            "class_id": 16,
+            "box": [
+              223.16361165,
+              114.38298112,
+              705.7775445,
+              956.82269184
+            ]
+          }
+        ]
+      },
+      {
+        "path": "000c4d66ce89aa69.jpg",
+        "width": 1024,
+        "height": 1024,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/000c4d66ce89aa69.jpg",
+        "reference_class": "Dog",
+        "objects": [
+          {
+            "class_id": 16,
+            "box": [
+              225.5017984,
+              85.02526976,
+              885.3718016,
+              946.3682048
+            ]
+          }
+        ]
+      },
+      {
+        "path": "00b585e025287555.jpg",
+        "width": 1024,
+        "height": 683,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/00b585e025287555.jpg",
+        "reference_class": "Balloon",
+        "objects": [
+          {
+            "class_id": 86,
+            "box": [
+              204.8,
+              160.078125,
+              219.73334016,
+              177.15312500000002
+            ]
+          },
+          {
+            "class_id": 86,
+            "box": [
+              552.5332992,
+              130.196875,
+              601.6,
+              181.421875
+            ]
+          }
+        ]
+      },
+      {
+        "path": "0d80e9ef29a2fffe.jpg",
+        "width": 768,
+        "height": 961,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/0d80e9ef29a2fffe.jpg",
+        "reference_class": "Balloon",
+        "objects": [
+          {
+            "class_id": 86,
+            "box": [
+              0.0,
+              178.53796272,
+              274.61816832,
+              503.01129046
+            ]
+          },
+          {
+            "class_id": 86,
+            "box": [
+              175.32120576,
+              537.1664221,
+              305.6484864,
+              697.0743235
+            ]
+          },
+          {
+            "class_id": 86,
+            "box": [
+              277.72121088,
+              32.602584246,
+              617.50305024,
+              442.46365843999996
+            ]
+          },
+          {
+            "class_id": 86,
+            "box": [
+              448.3878912,
+              234.42810824,
+              764.8969728,
+              695.52179917
+            ]
+          }
+        ]
+      },
+      {
+        "path": "0da036e3b54d7edd.jpg",
+        "width": 1024,
+        "height": 695,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/0da036e3b54d7edd.jpg",
+        "reference_class": "Balloon",
+        "objects": [
+          {
+            "class_id": 86,
+            "box": [
+              169.14285568,
+              85.3508789,
+              719.23810304,
+              623.366211
+            ]
+          }
+        ]
+      },
+      {
+        "path": "1a3e5ded7c79131c.jpg",
+        "width": 1024,
+        "height": 768,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/1a3e5ded7c79131c.jpg",
+        "reference_class": "Balloon",
+        "objects": [
+          {
+            "class_id": 86,
+            "box": [
+              0.0,
+              531.19999488,
+              115.2,
+              734.4000000000001
+            ]
+          },
+          {
+            "class_id": 86,
+            "box": [
+              796.8,
+              436.79999999999995,
+              1022.4,
+              766.39997952
+            ]
+          }
+        ]
+      },
+      {
+        "path": "01bbd516e7a1f404.jpg",
+        "width": 1024,
+        "height": 681,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/01bbd516e7a1f404.jpg",
+        "reference_class": "Bird",
+        "objects": [
+          {
+            "class_id": 14,
+            "box": [
+              0.0,
+              31.709534433,
+              1020.983808,
+              681.0
+            ]
+          }
+        ]
+      },
+      {
+        "path": "0237469006b0f3f4.jpg",
+        "width": 1024,
+        "height": 768,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/0237469006b0f3f4.jpg",
+        "reference_class": "Bird",
+        "objects": [
+          {
+            "class_id": 14,
+            "box": [
+              403.2,
+              17.600000256,
+              731.2,
+              748.8
+            ]
+          }
+        ]
+      },
+      {
+        "path": "0274c6ca36923bbf.jpg",
+        "width": 1024,
+        "height": 799,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/0274c6ca36923bbf.jpg",
+        "reference_class": "Bird",
+        "objects": [
+          {
+            "class_id": 14,
+            "box": [
+              181.282304,
+              258.16359561999997,
+              824.75280384,
+              575.1492836
+            ]
+          }
+        ]
+      },
+      {
+        "path": "02d7a944ef014462.jpg",
+        "width": 1024,
+        "height": 683,
+        "complete": false,
+        "source_url": "https://open-images-dataset.s3.amazonaws.com/validation/02d7a944ef014462.jpg",
+        "reference_class": "Bird",
+        "objects": [
+          {
+            "class_id": 14,
+            "box": [
+              434.97345024,
+              191.90487318,
+              770.2654976,
+              486.5619602
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "performance": {
+    "small": {
+      "cpu": {
+        "schema": 1,
+        "created_utc": "2026-10-03T17:31:37.9128438Z",
+        "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+        "logical_processors": 12,
+        "os": "Microsoft Windows NT 10.0.26200.0",
+        "requested_backend": "cpu",
+        "backend": "CPU",
+        "runtime_version": "1.30.0",
+        "device": "Processor",
+        "fallback": "",
+        "input_name": "gemini_generated_video_6341cdc1.mp4",
+        "input_sha256": "08709471A2C6C9E06AED633341A8E6168099F8E715F283A278EB645382E399EE",
+        "model_type": "small",
+        "model_sha256": "C5C2D13E59AE883E6AF3B45DAEA64AF4833A4951C92D116EC270D9DDBE998063",
+        "executable_sha256": "77ADDAD368679CAC623993316B2D621066AF2B608FDA9E4DE1B72F906E77CDFA",
+        "confidence": 0.35,
+        "nms_iou": 0.45,
+        "tracking_classes": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "counting_line": [
+          0.1,
+          0.5,
+          0.9,
+          0.5
+        ],
+        "direction": "both",
+        "frame_limit": 60,
+        "decoded_frames": 60,
+        "excluded_warmup_frames": 5,
+        "dimensions": [
+          "1280x720"
+        ],
+        "observed_peak_working_set_bytes": 165232640,
+        "process_wall_seconds": 8.1860678,
+        "stages_ms": {
+          "decode_rgb_ms": {
+            "mean": 7.1334763636363645,
+            "p50": 7.1128,
+            "p95": 11.5276
+          },
+          "preprocess_ms": {
+            "mean": 9.057385454545454,
+            "p50": 8.5046,
+            "p95": 10.9938
+          },
+          "inference_ms": {
+            "mean": 113.41125818181818,
+            "p50": 112.4796,
+            "p95": 135.4059
+          },
+          "postprocess_ms": {
+            "mean": 1.9172927272727278,
+            "p50": 1.7033,
+            "p95": 2.4835
+          },
+          "tracking_ms": {
+            "mean": 0.053474545454545455,
+            "p50": 0.046,
+            "p95": 0.0947
+          },
+          "pipeline_ms": {
+            "mean": 131.89680181818184,
+            "p50": 131.3955,
+            "p95": 156.0059
+          }
+        },
+        "notes": "File-based sequential CLI, no GUI or camera. Pipeline includes optional export work except the profile row itself. Decode includes RGB conversion/allocation. Inference includes tensor setup. Memory peak sampled from OS process counters; startup/exit may escape polling. No accuracy claim.",
+        "warm_pipeline_fps": 7.581684970485395
+      },
+      "directml": {
+        "schema": 1,
+        "created_utc": "2026-10-03T17:31:43.4670863Z",
+        "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+        "logical_processors": 12,
+        "os": "Microsoft Windows NT 10.0.26200.0",
+        "requested_backend": "directml",
+        "backend": "DirectML",
+        "runtime_version": "1.24.4",
+        "device": "NVIDIA GeForce GTX 1650 Ti",
+        "fallback": "",
+        "input_name": "gemini_generated_video_6341cdc1.mp4",
+        "input_sha256": "08709471A2C6C9E06AED633341A8E6168099F8E715F283A278EB645382E399EE",
+        "model_type": "small",
+        "model_sha256": "C5C2D13E59AE883E6AF3B45DAEA64AF4833A4951C92D116EC270D9DDBE998063",
+        "executable_sha256": "77ADDAD368679CAC623993316B2D621066AF2B608FDA9E4DE1B72F906E77CDFA",
+        "confidence": 0.35,
+        "nms_iou": 0.45,
+        "tracking_classes": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "counting_line": [
+          0.1,
+          0.5,
+          0.9,
+          0.5
+        ],
+        "direction": "both",
+        "frame_limit": 60,
+        "decoded_frames": 60,
+        "excluded_warmup_frames": 5,
+        "dimensions": [
+          "1280x720"
+        ],
+        "observed_peak_working_set_bytes": 337285120,
+        "process_wall_seconds": 4.2442423,
+        "stages_ms": {
+          "decode_rgb_ms": {
+            "mean": 7.030565454545454,
+            "p50": 6.4452,
+            "p95": 11.6699
+          },
+          "preprocess_ms": {
+            "mean": 8.872330909090907,
+            "p50": 8.6023,
+            "p95": 11.6886
+          },
+          "inference_ms": {
+            "mean": 17.88687272727272,
+            "p50": 17.8769,
+            "p95": 19.9122
+          },
+          "postprocess_ms": {
+            "mean": 1.8414363636363635,
+            "p50": 1.6418,
+            "p95": 2.5392
+          },
+          "tracking_ms": {
+            "mean": 0.04315272727272729,
+            "p50": 0.0412,
+            "p95": 0.0674
+          },
+          "pipeline_ms": {
+            "mean": 36.26410545454545,
+            "p50": 35.6088,
+            "p95": 43.5838
+          }
+        },
+        "notes": "File-based sequential CLI, no GUI or camera. Pipeline includes optional export work except the profile row itself. Decode includes RGB conversion/allocation. Inference includes tensor setup. Memory peak sampled from OS process counters; startup/exit may escape polling. No accuracy claim.",
+        "warm_pipeline_fps": 27.575476837652342
+      }
+    },
+    "world-s": {
+      "cpu": {
+        "schema": 1,
+        "created_utc": "2026-10-03T17:31:57.0038907Z",
+        "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+        "logical_processors": 12,
+        "os": "Microsoft Windows NT 10.0.26200.0",
+        "requested_backend": "cpu",
+        "backend": "CPU",
+        "runtime_version": "1.30.0",
+        "device": "Processor",
+        "fallback": "",
+        "input_name": "gemini_generated_video_6341cdc1.mp4",
+        "input_sha256": "08709471A2C6C9E06AED633341A8E6168099F8E715F283A278EB645382E399EE",
+        "model_type": "world-s",
+        "model_sha256": "131B48674FCE59558D28772B87800455718283423146C8C27AD8D5070272714F",
+        "executable_sha256": "77ADDAD368679CAC623993316B2D621066AF2B608FDA9E4DE1B72F906E77CDFA",
+        "confidence": 0.35,
+        "nms_iou": 0.45,
+        "tracking_classes": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "counting_line": [
+          0.1,
+          0.5,
+          0.9,
+          0.5
+        ],
+        "direction": "both",
+        "frame_limit": 60,
+        "decoded_frames": 60,
+        "excluded_warmup_frames": 5,
+        "dimensions": [
+          "1280x720"
+        ],
+        "observed_peak_working_set_bytes": 242995200,
+        "process_wall_seconds": 12.3248025,
+        "stages_ms": {
+          "decode_rgb_ms": {
+            "mean": 7.066983636363639,
+            "p50": 6.6402,
+            "p95": 12.0431
+          },
+          "preprocess_ms": {
+            "mean": 9.502900000000004,
+            "p50": 8.7427,
+            "p95": 12.2121
+          },
+          "inference_ms": {
+            "mean": 177.68904727272732,
+            "p50": 177.3133,
+            "p95": 207.8659
+          },
+          "postprocess_ms": {
+            "mean": 4.314347272727273,
+            "p50": 4.1,
+            "p95": 5.5595
+          },
+          "tracking_ms": {
+            "mean": 0.0656,
+            "p50": 0.0648,
+            "p95": 0.0954
+          },
+          "pipeline_ms": {
+            "mean": 198.9478654545454,
+            "p50": 200.1104,
+            "p95": 230.9259
+          }
+        },
+        "notes": "File-based sequential CLI, no GUI or camera. Pipeline includes optional export work except the profile row itself. Decode includes RGB conversion/allocation. Inference includes tensor setup. Memory peak sampled from OS process counters; startup/exit may escape polling. No accuracy claim.",
+        "warm_pipeline_fps": 5.02644246881088
+      },
+      "directml": {
+        "schema": 1,
+        "created_utc": "2026-10-03T17:32:03.9837937Z",
+        "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+        "logical_processors": 12,
+        "os": "Microsoft Windows NT 10.0.26200.0",
+        "requested_backend": "directml",
+        "backend": "DirectML",
+        "runtime_version": "1.24.4",
+        "device": "NVIDIA GeForce GTX 1650 Ti",
+        "fallback": "",
+        "input_name": "gemini_generated_video_6341cdc1.mp4",
+        "input_sha256": "08709471A2C6C9E06AED633341A8E6168099F8E715F283A278EB645382E399EE",
+        "model_type": "world-s",
+        "model_sha256": "131B48674FCE59558D28772B87800455718283423146C8C27AD8D5070272714F",
+        "executable_sha256": "77ADDAD368679CAC623993316B2D621066AF2B608FDA9E4DE1B72F906E77CDFA",
+        "confidence": 0.35,
+        "nms_iou": 0.45,
+        "tracking_classes": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "counting_line": [
+          0.1,
+          0.5,
+          0.9,
+          0.5
+        ],
+        "direction": "both",
+        "frame_limit": 60,
+        "decoded_frames": 60,
+        "excluded_warmup_frames": 5,
+        "dimensions": [
+          "1280x720"
+        ],
+        "observed_peak_working_set_bytes": 356339712,
+        "process_wall_seconds": 5.7217276,
+        "stages_ms": {
+          "decode_rgb_ms": {
+            "mean": 7.064774545454543,
+            "p50": 6.6801,
+            "p95": 12.2186
+          },
+          "preprocess_ms": {
+            "mean": 8.772381818181819,
+            "p50": 8.4305,
+            "p95": 11.4391
+          },
+          "inference_ms": {
+            "mean": 41.54876181818181,
+            "p50": 40.9405,
+            "p95": 44.8896
+          },
+          "postprocess_ms": {
+            "mean": 3.3060145454545458,
+            "p50": 2.8981,
+            "p95": 6.3485
+          },
+          "tracking_ms": {
+            "mean": 0.03600363636363635,
+            "p50": 0.0337,
+            "p95": 0.0534
+          },
+          "pipeline_ms": {
+            "mean": 61.32082000000002,
+            "p50": 60.6552,
+            "p95": 69.7546
+          }
+        },
+        "notes": "File-based sequential CLI, no GUI or camera. Pipeline includes optional export work except the profile row itself. Decode includes RGB conversion/allocation. Inference includes tensor setup. Memory peak sampled from OS process counters; startup/exit may escape polling. No accuracy claim.",
+        "warm_pipeline_fps": 16.307674946290668
+      }
+    },
+    "world-m": {
+      "cpu": {
+        "schema": 1,
+        "created_utc": "2026-10-03T17:32:32.6933267Z",
+        "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+        "logical_processors": 12,
+        "os": "Microsoft Windows NT 10.0.26200.0",
+        "requested_backend": "cpu",
+        "backend": "CPU",
+        "runtime_version": "1.30.0",
+        "device": "Processor",
+        "fallback": "",
+        "input_name": "gemini_generated_video_6341cdc1.mp4",
+        "input_sha256": "08709471A2C6C9E06AED633341A8E6168099F8E715F283A278EB645382E399EE",
+        "model_type": "world-m",
+        "model_sha256": "014360EA645B65794C0FB00F46CDA38F822D724965B95366EFCB7D8CA688E292",
+        "executable_sha256": "77ADDAD368679CAC623993316B2D621066AF2B608FDA9E4DE1B72F906E77CDFA",
+        "confidence": 0.35,
+        "nms_iou": 0.45,
+        "tracking_classes": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "counting_line": [
+          0.1,
+          0.5,
+          0.9,
+          0.5
+        ],
+        "direction": "both",
+        "frame_limit": 60,
+        "decoded_frames": 60,
+        "excluded_warmup_frames": 5,
+        "dimensions": [
+          "1280x720"
+        ],
+        "observed_peak_working_set_bytes": 371847168,
+        "process_wall_seconds": 27.4659706,
+        "stages_ms": {
+          "decode_rgb_ms": {
+            "mean": 7.638998181818182,
+            "p50": 7.5857,
+            "p95": 12.6606
+          },
+          "preprocess_ms": {
+            "mean": 10.507763636363634,
+            "p50": 10.3976,
+            "p95": 13.1587
+          },
+          "inference_ms": {
+            "mean": 428.8332563636364,
+            "p50": 429.6452,
+            "p95": 489.7851
+          },
+          "postprocess_ms": {
+            "mean": 4.643798181818181,
+            "p50": 4.5668,
+            "p95": 6.1691
+          },
+          "tracking_ms": {
+            "mean": 0.05312545454545455,
+            "p50": 0.0457,
+            "p95": 0.1058
+          },
+          "pipeline_ms": {
+            "mean": 452.1038472727273,
+            "p50": 453.3002,
+            "p95": 515.1336
+          }
+        },
+        "notes": "File-based sequential CLI, no GUI or camera. Pipeline includes optional export work except the profile row itself. Decode includes RGB conversion/allocation. Inference includes tensor setup. Memory peak sampled from OS process counters; startup/exit may escape polling. No accuracy claim.",
+        "warm_pipeline_fps": 2.211881199490788
+      },
+      "directml": {
+        "schema": 1,
+        "created_utc": "2026-10-03T17:32:42.0398608Z",
+        "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+        "logical_processors": 12,
+        "os": "Microsoft Windows NT 10.0.26200.0",
+        "requested_backend": "directml",
+        "backend": "DirectML",
+        "runtime_version": "1.24.4",
+        "device": "NVIDIA GeForce GTX 1650 Ti",
+        "fallback": "",
+        "input_name": "gemini_generated_video_6341cdc1.mp4",
+        "input_sha256": "08709471A2C6C9E06AED633341A8E6168099F8E715F283A278EB645382E399EE",
+        "model_type": "world-m",
+        "model_sha256": "014360EA645B65794C0FB00F46CDA38F822D724965B95366EFCB7D8CA688E292",
+        "executable_sha256": "77ADDAD368679CAC623993316B2D621066AF2B608FDA9E4DE1B72F906E77CDFA",
+        "confidence": 0.35,
+        "nms_iou": 0.45,
+        "tracking_classes": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "counting_line": [
+          0.1,
+          0.5,
+          0.9,
+          0.5
+        ],
+        "direction": "both",
+        "frame_limit": 60,
+        "decoded_frames": 60,
+        "excluded_warmup_frames": 5,
+        "dimensions": [
+          "1280x720"
+        ],
+        "observed_peak_working_set_bytes": 424042496,
+        "process_wall_seconds": 7.6769041,
+        "stages_ms": {
+          "decode_rgb_ms": {
+            "mean": 7.102556363636364,
+            "p50": 6.6699,
+            "p95": 12.3206
+          },
+          "preprocess_ms": {
+            "mean": 9.250181818181819,
+            "p50": 8.3188,
+            "p95": 14.0114
+          },
+          "inference_ms": {
+            "mean": 71.58698727272726,
+            "p50": 68.9249,
+            "p95": 78.4943
+          },
+          "postprocess_ms": {
+            "mean": 3.790696363636363,
+            "p50": 3.4966,
+            "p95": 6.1852
+          },
+          "tracking_ms": {
+            "mean": 0.07722181818181817,
+            "p50": 0.0768,
+            "p95": 0.1242
+          },
+          "pipeline_ms": {
+            "mean": 92.27340000000002,
+            "p50": 93.7138,
+            "p95": 101.326
+          }
+        },
+        "notes": "File-based sequential CLI, no GUI or camera. Pipeline includes optional export work except the profile row itself. Decode includes RGB conversion/allocation. Inference includes tensor setup. Memory peak sampled from OS process counters; startup/exit may escape polling. No accuracy claim.",
+        "warm_pipeline_fps": 10.83735941235502
+      }
+    },
+    "openimages": {
+      "cpu": {
+        "schema": 1,
+        "created_utc": "2026-10-03T17:32:56.8537258Z",
+        "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+        "logical_processors": 12,
+        "os": "Microsoft Windows NT 10.0.26200.0",
+        "requested_backend": "cpu",
+        "backend": "CPU",
+        "runtime_version": "1.30.0",
+        "device": "Processor",
+        "fallback": "",
+        "input_name": "gemini_generated_video_6341cdc1.mp4",
+        "input_sha256": "08709471A2C6C9E06AED633341A8E6168099F8E715F283A278EB645382E399EE",
+        "model_type": "openimages",
+        "model_sha256": "02D86542101DAFE75D593287D6C814D9CC95C595C172A7C5A743EC5719A79CF1",
+        "executable_sha256": "77ADDAD368679CAC623993316B2D621066AF2B608FDA9E4DE1B72F906E77CDFA",
+        "confidence": 0.35,
+        "nms_iou": 0.45,
+        "tracking_classes": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "counting_line": [
+          0.1,
+          0.5,
+          0.9,
+          0.5
+        ],
+        "direction": "both",
+        "frame_limit": 60,
+        "decoded_frames": 60,
+        "excluded_warmup_frames": 5,
+        "dimensions": [
+          "1280x720"
+        ],
+        "observed_peak_working_set_bytes": 235102208,
+        "process_wall_seconds": 13.3234144,
+        "stages_ms": {
+          "decode_rgb_ms": {
+            "mean": 7.436020000000002,
+            "p50": 7.7542,
+            "p95": 11.1703
+          },
+          "preprocess_ms": {
+            "mean": 10.469472727272732,
+            "p50": 10.8669,
+            "p95": 12.7644
+          },
+          "inference_ms": {
+            "mean": 162.72862,
+            "p50": 165.629,
+            "p95": 182.9731
+          },
+          "postprocess_ms": {
+            "mean": 36.81503636363637,
+            "p50": 36.301,
+            "p95": 43.5318
+          },
+          "tracking_ms": {
+            "mean": 0.07171454545454548,
+            "p50": 0.0736,
+            "p95": 0.1037
+          },
+          "pipeline_ms": {
+            "mean": 217.81058545454547,
+            "p50": 222.1712,
+            "p95": 240.8095
+          }
+        },
+        "notes": "File-based sequential CLI, no GUI or camera. Pipeline includes optional export work except the profile row itself. Decode includes RGB conversion/allocation. Inference includes tensor setup. Memory peak sampled from OS process counters; startup/exit may escape polling. No accuracy claim.",
+        "warm_pipeline_fps": 4.591145090185198
+      },
+      "directml": {
+        "schema": 1,
+        "created_utc": "2026-10-03T17:33:03.9125269Z",
+        "cpu": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+        "logical_processors": 12,
+        "os": "Microsoft Windows NT 10.0.26200.0",
+        "requested_backend": "directml",
+        "backend": "DirectML",
+        "runtime_version": "1.24.4",
+        "device": "NVIDIA GeForce GTX 1650 Ti",
+        "fallback": "",
+        "input_name": "gemini_generated_video_6341cdc1.mp4",
+        "input_sha256": "08709471A2C6C9E06AED633341A8E6168099F8E715F283A278EB645382E399EE",
+        "model_type": "openimages",
+        "model_sha256": "02D86542101DAFE75D593287D6C814D9CC95C595C172A7C5A743EC5719A79CF1",
+        "executable_sha256": "77ADDAD368679CAC623993316B2D621066AF2B608FDA9E4DE1B72F906E77CDFA",
+        "confidence": 0.35,
+        "nms_iou": 0.45,
+        "tracking_classes": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "counting_line": [
+          0.1,
+          0.5,
+          0.9,
+          0.5
+        ],
+        "direction": "both",
+        "frame_limit": 60,
+        "decoded_frames": 60,
+        "excluded_warmup_frames": 5,
+        "dimensions": [
+          "1280x720"
+        ],
+        "observed_peak_working_set_bytes": 411463680,
+        "process_wall_seconds": 5.8219246,
+        "stages_ms": {
+          "decode_rgb_ms": {
+            "mean": 6.400656363636366,
+            "p50": 6.151,
+            "p95": 10.6785
+          },
+          "preprocess_ms": {
+            "mean": 8.517814545454545,
+            "p50": 8.2056,
+            "p95": 10.5986
+          },
+          "inference_ms": {
+            "mean": 31.73088545454546,
+            "p50": 30.6403,
+            "p95": 41.6199
+          },
+          "postprocess_ms": {
+            "mean": 16.757852727272727,
+            "p50": 15.7916,
+            "p95": 22.9566
+          },
+          "tracking_ms": {
+            "mean": 0.0738690909090909,
+            "p50": 0.0717,
+            "p95": 0.0874
+          },
+          "pipeline_ms": {
+            "mean": 64.53054727272729,
+            "p50": 63.5247,
+            "p95": 76.6672
+          }
+        },
+        "notes": "File-based sequential CLI, no GUI or camera. Pipeline includes optional export work except the profile row itself. Decode includes RGB conversion/allocation. Inference includes tensor setup. Memory peak sampled from OS process counters; startup/exit may escape polling. No accuracy claim.",
+        "warm_pipeline_fps": 15.496536791694506
+      }
+    }
+  }
+}

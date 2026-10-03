@@ -164,3 +164,10 @@ Fetch with `scripts/fetch-gpu.ps1`, then `scripts/build.ps1 -GpuChecks` for all 
 ## Tracking evaluation in 0.11
 
 `frame_tracker.hpp` composes scene continuity with the pixel-independent tracker. `src/assignment.*` isolates the bounded experimental assignment solver. `scripts/evaluate-tracking.py` scores original-frame reviewed labels against native temporal CSV exports; Python is development tooling only. Profile CSV appends three scene fields. Run the 34-check native/GPU suite with `scripts/build.ps1 -GpuChecks` and the 16 Python scorer checks with `python -B -m unittest discover -s tests -p "test*evaluation.py"`. See [labels, evidence and limits](TRACKING_EVALUATION.md).
+
+
+## Expanded recognition adapters (0.12)
+
+The source/CLI supports `--model-type world-s`, `world-m` and `openimages`. Use the pinned optional export environment and commands in [RECOGNITION.md](RECOGNITION.md), then rebuild. The shipped app remains C++ and needs no Python service. New contracts use RGB/255 and centered letterboxing rather than YOLOX's BGR/grid convention. Stable canonical IDs are defined by `dependencies/recognition-vocabulary.json` and checked against `src/recognition_vocabulary.hpp` by the registry test. New saved runs use schema 4; do not relabel legacy evidence.
+
+With all five models and the optional runtime installed, `scripts/build.ps1 -GpuChecks` passes 45 native/desktop checks; Python standard-library scorer/registry discovery passes 18. `scripts/check-recognition.py` is an optional developer reference/metadata-rejection check and uses the export environment. Hardware tests and public reference data remain opt-in; a clean checkout's base suite does not require all expanded models.

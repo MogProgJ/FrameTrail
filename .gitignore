@@ -27,3 +27,6 @@ CMakeUserPresets.json
 # Operating-system files
 Thumbs.db
 .DS_Store
+
+# Optional exporter local settings
+/Ultralytics/

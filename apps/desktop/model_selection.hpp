@@ -12,16 +12,18 @@ inline QComboBox* model_selector(const QString& nano_path, QWidget* parent = nul
     box->addItem(QStringLiteral("YOLOX-Nano · faster"),nano_path);
     const auto small=QFileInfo(nano_path).dir().filePath(QStringLiteral("yolox_s.onnx"));
     box->addItem(QStringLiteral("YOLOX-S · more detail"),small);
-    box->setToolTip(QStringLiteral("Both recognize 80 categories. S uses more CPU and may slow playback. Install with scripts/fetch-model.ps1 -Model all, rebuild, then reopen."));
-    if(!QFileInfo::exists(small)) {
-        auto* items=qobject_cast<QStandardItemModel*>(box->model());
-        items->item(1)->setEnabled(false);
-        box->setItemText(1,QStringLiteral("YOLOX-S · not installed"));
+    box->addItem(QStringLiteral("YOLO-World S · experimental"),QFileInfo(nano_path).dir().filePath(QStringLiteral("yolo_world_s.onnx")));
+    box->addItem(QStringLiteral("YOLO-World M · experimental"),QFileInfo(nano_path).dir().filePath(QStringLiteral("yolo_world_m.onnx")));
+    box->addItem(QStringLiteral("Broad recognition · 597 categories"),QFileInfo(nano_path).dir().filePath(QStringLiteral("yolo_openimages.onnx")));
+    box->setToolTip(QStringLiteral("YOLOX: 80 categories. YOLO-World: 100, including fox, balloon and lantern. Open Images: 601 trained labels grouped into 597 categories, explicitly trained for foxes and many more types. World is experimental. All processing stays on this device. World M needs more compute. Broader vocabulary does not guarantee correct labels."));
+    auto* items=qobject_cast<QStandardItemModel*>(box->model());
+    for(int index=0;index<box->count();++index)if(!QFileInfo::exists(box->itemData(index).toString())) {
+        items->item(index)->setEnabled(false);box->setItemText(index,box->itemText(index)+QStringLiteral(" · not installed"));
     }
     return box;
 }
 inline frametrail::DetectorModel selected_model(const QComboBox* box) {
-    return box->currentIndex()==1 ? frametrail::DetectorModel::yolox_s : frametrail::DetectorModel::nano;
+    return static_cast<frametrail::DetectorModel>(box->currentIndex());
 }
 inline QComboBox* backend_selector(QWidget* parent=nullptr) {
     auto* box=new QComboBox(parent);box->setObjectName(QStringLiteral("backendSelection"));

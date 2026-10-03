@@ -184,8 +184,13 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     confidence_box_ = ui.confidence; track_box_ = ui.trackObjects;
     classes_box_ = ui.trackingClasses; direction_box_ = ui.crossingDirection;
     line_button_ = ui.drawLine; counts_label_ = ui.crossingCounts;
-    ui.modelLabel->setText(QStringLiteral("Detection model · 80 categories"));
+
     model_box_=model_selector(model_path_,this);
+    if(model_path.isEmpty()) {
+        if(QFileInfo::exists(model_box_->itemData(1).toString()))model_box_->setCurrentIndex(1);
+        model_path_=model_box_->currentData().toString();
+    }
+    ui.modelLabel->setText(QStringLiteral("Detection model · %1 categories").arg(frametrail::model_category_count(selected_model(model_box_))));
     ui.inspectorLayout->insertWidget(ui.inspectorLayout->indexOf(ui.modelLabel)+1,model_box_);
     auto* backend_label=new QLabel(QStringLiteral("PROCESSING DEVICE"));backend_label->setProperty("role","section");
     backend_box_=backend_selector(this);backend_label->setBuddy(backend_box_);
@@ -224,7 +229,8 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     connect(stop_button_, &QPushButton::clicked, this, [this] { stop_playback(); });
     connect(replay_button_, &QPushButton::clicked, this, [this] { open_file(source_); });
     connect(detect_box_,&QCheckBox::toggled,this,[this](bool){reconfigure_analysis();});
-    connect(model_box_,&QComboBox::currentIndexChanged,this,[this]{
+    connect(model_box_,&QComboBox::currentIndexChanged,this,[this,label=ui.modelLabel]{
+        label->setText(QStringLiteral("Detection model · %1 categories").arg(frametrail::model_category_count(selected_model(model_box_))));
         model_path_=model_box_->currentData().toString();
         reconfigure_analysis();
     });

@@ -2,7 +2,7 @@
 
 ## What you can do
 
-Open an image or recording with **Detect objects (CPU)** checked. FrameTrail draws boxes, class names, and confidence scores for the displayed frame. Detection is enabled by default when the local model exists. Unchecking it restores preview-only playback. Changing detection settings preserves the current frame and prior playing/paused state; temporary tracking counts restart there. The model selector offers Nano and the optional stronger YOLOX-S; see [model evaluation](MODEL_EVALUATION.md).
+Open an image or recording with **Detect objects** checked. FrameTrail draws boxes, class names, and confidence scores for the displayed frame. Detection is enabled by default when the local model exists. Unchecking it restores preview-only playback. Changing detection settings preserves the current frame and prior playing/paused state; temporary tracking counts restart there. The model selector offers Nano, YOLOX-S and the optional broader recognition models; see [model evaluation](MODEL_EVALUATION.md).
 
 The confidence control defaults to 0.35. Raising it hides weaker predictions; lowering it shows more candidates and can introduce false positives. A score is not a calibrated probability that a label is correct. The initial detector recognizes the 80 COCO categories, including people, bicycles, cars, motorcycles, buses, and trucks. Tracking adds selected classes, IDs, and crossing counts; see [TRACKING.md](TRACKING.md). Version 0.5 persists whole-file crossing analyses and reopens evidence without inference; see [SAVED_RUNS.md](SAVED_RUNS.md).
 
@@ -83,3 +83,8 @@ The 0.8 update adds a partial-label selected-target comparison on user-supplied 
 ## Notices
 
 ONNX Runtime's SDK contains its MIT license and third-party notices. YOLOX's upstream repository declares Apache-2.0; its model remains a separately acquired local artifact. Preserve the selected artifacts' notices and complete the existing distribution review before packaging. The reference photo has separate provenance and is used only as an optional local validation input.
+
+
+## Expanded decoded-YOLO adapter (0.12)
+
+Open Images and World models have their own native RGB/255 centered-letterbox adapter and decoded channel-first tensors. Their exact profile/vocabulary is checked before inference. They do not use the YOLOX input/output contract above. The 597-category broad model, fixed 100-category experimental World exports, measured gains/regressions, pinned export setup and remaining dark-fox failure are documented in [RECOGNITION.md](RECOGNITION.md). The existing CPU/GPU execution preference, tracking and appearance workflow remain shared.

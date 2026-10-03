@@ -10,6 +10,8 @@ These identify artifacts; this inventory is not a completed public-distribution 
 | ONNX Runtime | CPU 1.30.0 | Original MIT LICENSE and ThirdPartyNotices.txt |
 | Optional DirectML backend | ONNX Runtime DirectML 1.24.4 and Microsoft.AI.DirectML 1.15.4 | Original runtime MIT/privacy texts and DirectML redistribution/license texts; native artifacts pinned in windows-directml.json |
 | YOLOX-Nano / YOLOX-S | 0.1.1rc0 ONNX export | Apache-2.0 text from reference commit `6ddff4824372906469a7fae2dc3206c7aa4bbaee`; model manifest/hash |
+| YOLO-World-v2 S/M exports | Official Ultralytics v8.3.0 checkpoints, exported with 8.3.228 | Ultralytics AGPL-3.0 notice and upstream World GPL-3.0 text; checkpoint/export hashes and frozen vocabulary |
+| YOLOv8s Open Images V7 | Official Ultralytics v8.3.0 checkpoint, exported with 8.3.228 | Ultralytics AGPL-3.0 text; checkpoint/export hashes and canonical label map |
 | SQLite | 3.53.4 amalgamation | Public-domain dedication in source header; artifact manifest |
 | Microsoft C++ runtime | App-local x64 Microsoft.VC143.CRT from installed Visual Studio | DLL versions and file hashes in package manifest; governed by Visual Studio redistributable terms |
 
@@ -23,6 +25,11 @@ License text provenance:
 - [Qt LGPL-3.0](https://raw.githubusercontent.com/qt/qtbase/5a1194b2d368e2d72c230205c464b04a2f23eccd/LICENSES/LGPL-3.0-only.txt)
 - [Qt GPL-3.0](https://raw.githubusercontent.com/qt/qtbase/5a1194b2d368e2d72c230205c464b04a2f23eccd/LICENSES/GPL-3.0-only.txt)
 - [YOLOX license](https://raw.githubusercontent.com/Megvii-BaseDetection/YOLOX/6ddff4824372906469a7fae2dc3206c7aa4bbaee/LICENSE)
+
+- [Ultralytics AGPL-3.0](https://raw.githubusercontent.com/ultralytics/ultralytics/v8.3.228/LICENSE)
+- [YOLO-World GPL-3.0](https://raw.githubusercontent.com/AILab-CVC/YOLO-World/master/LICENSE)
+
+Optional Python export libraries and CLIP are developer tools, not packaged runtimes. Expanded model licences differ from the YOLOX baseline and are included in the existing distribution review.
 
 Before sharing binaries publicly, complete the transitive notice/source review
 (including bundled FFmpeg codecs and Qt third-party libraries), provide required

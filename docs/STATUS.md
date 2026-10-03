@@ -26,7 +26,7 @@ Updated: 3 October 2026.
 - CMake presets, PowerShell dependency/build scripts, and CTest checks using generated synthetic media.
 - A development guide explaining commands, ownership, timing, and current limitations.
 
-Version 0.11 builds and runs on Windows x64. Recorded-file appearance analysis and saved review are joined by one live webcam. Live capture continues independently of CPU analysis and replaces pending frames when inference falls behind. Audio playback, live recording, and network cameras remain deferred. Representative accuracy and sustained resource measurements remain open. See [live camera](LIVE_CAMERA.md), [tracking](TRACKING.md), and [saved runs](SAVED_RUNS.md).
+Version 0.12 builds and runs on Windows x64. Recorded-file appearance analysis and saved review are joined by one live webcam. Live capture continues independently of CPU analysis and replaces pending frames when inference falls behind. Audio playback, live recording, and network cameras remain deferred. Representative accuracy and sustained resource measurements remain open. See [live camera](LIVE_CAMERA.md), [tracking](TRACKING.md), and [saved runs](SAVED_RUNS.md).
 
 ## Model upgrade and evaluation (0.8)
 
@@ -52,7 +52,7 @@ The user-facing checkout is `C:\Users\nazee\Documents\All Modules\FrameTrail`. A
 
 - Recorded files and images before live input.
 - Stationary-camera person/vehicle crossing events as the first video use case.
-- One source and one selected detector per workspace; Nano and S are supported.
+- One source and one selected detector per workspace; Nano, S, World S/M and Open Images are supported.
 - CPU baseline before deciding on acceleration.
 - C++ application with native C API integration; custom C modules only for a justified need.
 - Robotics remains a separate shelved idea.
@@ -95,8 +95,17 @@ Native scene-boundary resets and long-gap reconfirmation are shared by all analy
 
 ## Immediate next work
 
-Validate the new video-analysis workflow through native File Explorer/dialogs and representative longer recordings. Broaden real-footage annotations and assess tracking identities/event reliability before selecting another model or training branch. Evaluate short labelled recorded/live people or vehicle crossings; schedule a sustained webcam test, including unplug/reconnect, only with explicit camera authorization. Profiling and private packaging are now implemented; use their measurements to guide optimization and validate the package on a clean Windows machine. Preview Fit/100% zoom and broader quality refinements remain deferred; the reported saved-review timing issue received a focused fix in 0.6.
+Validate the new video-analysis workflow through native File Explorer/dialogs and representative longer recordings. Broaden real-footage annotations and assess detection, tracking identities and event reliability before further model changes or training. Evaluate short labelled recorded/live people or vehicle crossings; schedule a sustained webcam test, including unplug/reconnect, only with explicit camera authorization. Profiling and private packaging are now implemented; use their measurements to guide optimization and validate the package on a clean Windows machine. Preview Fit/100% zoom and broader quality refinements remain deferred; the reported saved-review timing issue received a focused fix in 0.6.
 
 The [compute and training plan](COMPUTE_AND_TRAINING.md) is integrated as conditional Phase 8. No cluster environment or cloud service will be added until evaluation identifies a concrete accuracy, throughput, or scale constraint.
 
 Application implementation has begun following the user's instruction on 2 October 2026. Optional agent orchestration and hosted AI services remain deferred.
+
+
+## Recognition expansion (0.12)
+
+Native Open Images recognition supports 601 trained labels grouped into 597 application categories, including fox. Experimental World S/M exports use a fixed 100-category vocabulary; no runtime text encoder or Python service is needed. New schema-4 analyses freeze their vocabulary; schemas 1–3 remain read-only compatible. Player/live choices and saved appearance/CSV pipelines use the same canonical IDs. Saved-analysis layout and flow remain unchanged.
+
+At confidence 0.35, native broad recognition recovered 16/21 selected public-reference targets, including 3/4 foxes, compared with YOLOX-S's 6/21 and World S/M's 10/21 and 8/21. Broader models regress on the earlier selected recording (18/24 for Open Images versus 24/24 for S), so S stays the default when installed. The dark generated fox remains unresolved. Partial labels cannot establish precision or general accuracy. See [recognition](RECOGNITION.md) for contracts, acquisition, licensing, reference checks and the next labelled-domain gate.
+
+The 0.12 suite passes 45 native/desktop checks (36 standard and nine opt-in GPU) plus 18 Python scorer/registry checks. Same-shaped models with incorrect vocabularies are rejected on CPU and GPU; the official preprocessing/reference comparison covers 15 strong targets. On a short paired 720p run, broad recognition achieved 4.59 warm pipeline FPS on CPU and 15.50 on this GTX 1650 Ti, compared with S's 7.58/27.58. These are bounded integration/performance checks, not sustained or general-accuracy guarantees.

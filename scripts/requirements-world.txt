@@ -1,0 +1,13 @@
+# Optional developer export environment, Python 3.12. Not an application dependency.
+# Install CPU PyTorch from https://download.pytorch.org/whl/cpu first.
+torch==2.8.0
+torchvision==0.23.0
+ultralytics==8.3.228
+onnx==1.19.1
+onnxruntime==1.23.2
+numpy==2.2.6
+opencv-python==4.12.0.88
+setuptools==78.1.0
+wheel==0.48.0
+# CLIP's legacy setup requires --no-build-isolation with the pinned setuptools.
+clip @ git+https://github.com/openai/CLIP.git@a1d071733d7111c9c014f024669f959182114e33

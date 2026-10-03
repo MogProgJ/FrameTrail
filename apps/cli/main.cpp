@@ -22,13 +22,13 @@
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.11 - Native analysis, saved review and live webcam\n\n"
+    std::cout << "FrameTrail 0.12 - Native analysis, saved review and live webcam\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
                  "  --max-frames <n>   Stop after n frames (positive integer)\n"
-                 "  --detect <model>   Run a supported YOLOX ONNX model\n"
-                 "  --model-type <id>  nano (default) or small; must match the export\n"
+                 "  --detect <model>   Run a supported native ONNX model\n"
+                 "  --model-type <id>  nano (default), small, world-s, world-m, openimages\n"
                  "  --backend <id>     cpu (default), auto (GPU/CPU), or directml (strict GPU)\n"
                  "  --gpu-device <n>   Optional DXGI adapter index; default selects capable GPU\n"
                  "  --confidence <n>   Confidence in (0,1], default 0.35\n"
@@ -39,7 +39,7 @@ void help() {
                  "  --events <csv>     Export line crossings (requires --track)\n"
                  "  --line x1,y1,x2,y2 Normalized endpoints [0,1]; default 0.1,0.5,0.9,0.5\n"
                  "  --direction <d>    both, forward (- to +), or reverse (+ to -)\n"
-                 "  --classes <ids>    COCO IDs; default 0,1,2,3,5,7\n"
+                 "  --classes <ids>    FrameTrail IDs (COCO 0..79, World additions 80..99, Open Images through 614; see vocabulary); default 0,1,2,3,5,7\n"
                  "  --save-run <path>  Save a whole-file run (requires --detect and --track)\n"
                  "  --profile <csv>    Export per-frame pipeline timings and RGB bytes\n"
                  "  --help             Show this help\n\n"
@@ -205,6 +205,8 @@ int run(const std::vector<std::string>& args) {
     if (!tracking && (tracks_path || events_path || seen.contains("--line") || seen.contains("--direction") || seen.contains("--classes") || seen.contains("--association")))
         throw std::runtime_error("Track exports and rule settings require --track");
     std::unique_ptr<frametrail::FrameTracker> tracker;
+    if(tracking)for(const auto id:tracking_options.classes)if(!frametrail::model_has_class(detector_options.variant,id))
+        throw std::runtime_error("Tracking category is not supported by the selected model");
     if (tracking) tracker = std::make_unique<frametrail::FrameTracker>(tracking_options);
     const std::vector<std::optional<std::filesystem::path>> outputs{csv_path,preview_path,detections_path,tracks_path,events_path,saved_path,profile_path};
     std::set<std::filesystem::path> output_names;

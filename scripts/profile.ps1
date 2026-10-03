@@ -3,14 +3,15 @@ param(
     [Parameter(Mandatory)][string]$InputFile,
     [ValidateRange(10, 1000000)][int]$Frames = 180,
     [ValidateRange(0, 100)][int]$Warmup = 5,
-    [ValidateSet('nano','small')][string]$Model = 'nano',
+    [ValidateSet('nano','small','world-s','world-m','openimages')][string]$Model = 'nano',
     [ValidateSet('cpu','auto','directml')][string]$Backend = 'cpu',
     [string]$OutputDirectory
 )
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path -Parent $PSScriptRoot
 $taskInput = (Resolve-Path -LiteralPath $InputFile).Path
-$taskModelManifest = Get-Content (Join-Path $taskRoot "dependencies/yolox-$Model.json") -Raw | ConvertFrom-Json
+$taskManifestName=if($Model -in @('nano','small')){"yolox-$Model"}else{"yolo-$Model"}
+$taskModelManifest = Get-Content (Join-Path $taskRoot "dependencies/$taskManifestName.json") -Raw | ConvertFrom-Json
 $taskModel = Join-Path $taskRoot ('models/' + $taskModelManifest.filename)
 $taskExe = Join-Path $taskRoot 'build/windows-msvc/Release/frametrail.exe'
 if (-not $OutputDirectory) { $OutputDirectory = Join-Path $taskRoot ('output/profile-' + (Get-Date -Format 'yyyyMMdd-HHmmss-fff')) }

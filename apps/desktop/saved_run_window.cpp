@@ -103,13 +103,17 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     const auto nano=configuration_ && configuration_->detector.variant==frametrail::DetectorModel::nano && !configuration_->detector.model.empty() ?
         text(configuration_->detector.model) : QCoreApplication::applicationDirPath()+QStringLiteral("/models/yolox_nano.onnx");
     model_=model_selector(nano,this);
-    if(configuration_ && configuration_->detector.variant==frametrail::DetectorModel::yolox_s) {
-        model_->setItemData(1,text(configuration_->detector.model));model_->setCurrentIndex(1);
-    }
+    if(configuration_) {
+        const auto index=int(configuration_->detector.variant);
+        if(!configuration_->detector.model.empty())model_->setItemData(index,text(configuration_->detector.model));
+        model_->setCurrentIndex(index);
+    } else if(QFileInfo::exists(model_->itemData(1).toString()))model_->setCurrentIndex(1);
     options->addWidget(new QLabel(QStringLiteral("Model")));options->addWidget(model_);
     options->addWidget(new QLabel(QStringLiteral("Confidence")));confidence_=new QDoubleSpinBox;confidence_->setObjectName(QStringLiteral("analysisConfidence"));
     confidence_->setRange(.05,.95);confidence_->setSingleStep(.05);confidence_->setValue(configuration_ ? configuration_->detector.confidence : .35);options->addWidget(confidence_);
-    auto* hint=new QLabel(QStringLiteral("All 80 object categories · processed on this device"));hint->setProperty("role","muted");options->addWidget(hint);options->addStretch();
+    auto* hint=new QLabel;
+    const auto update_hint=[this,hint]{hint->setText(QStringLiteral("All %1 object categories · on this device").arg(frametrail::model_category_count(selected_model(model_))));};
+    update_hint();connect(model_,&QComboBox::currentIndexChanged,this,[update_hint]{update_hint();});hint->setProperty("role","muted");options->addWidget(hint);options->addStretch();
     settings_panel_->hide();layout->addWidget(settings_panel_);
     progress_=new QProgressBar;progress_->setObjectName(QStringLiteral("analysisProgress"));progress_->setTextVisible(false);progress_->setMaximumHeight(7);progress_->hide();layout->addWidget(progress_);
     status_=new QLabel(QStringLiteral("Choose a video to begin."));status_->setObjectName(QStringLiteral("analysisStatus"));status_->setTextFormat(Qt::PlainText);status_->setWordWrap(true);layout->addWidget(status_);
@@ -203,7 +207,8 @@ void SavedRunWindow::analyse_video() {
     frametrail::RunConfiguration config;
     config.source=native(selected_video_);config.detector={native(model_->currentData().toString()),float(confidence_->value()),.45f,selected_model(model_)};
     if(configuration_) {config.detector.backend=configuration_->detector.backend;config.detector.gpu_device=configuration_->detector.gpu_device;}
-    config.kind=frametrail::RunKind::appearances;config.tracking.classes.resize(80);std::iota(config.tracking.classes.begin(),config.tracking.classes.end(),0);config.tracking.line.reset();
+    config.kind=frametrail::RunKind::appearances;config.tracking.classes=frametrail::model_classes(config.detector.variant);std::sort(config.tracking.classes.begin(),config.tracking.classes.end());
+    config.tracking.classes.erase(std::unique(config.tracking.classes.begin(),config.tracking.classes.end()),config.tracking.classes.end());config.tracking.line.reset();
     start_analysis(scratch_.filePath(QUuid::createUuid().toString(QUuid::WithoutBraces)+QStringLiteral(".frametrail")),std::move(config));
 }
 void SavedRunWindow::start_analysis(const QString& database,frametrail::RunConfiguration configuration) {

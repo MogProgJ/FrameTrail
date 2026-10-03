@@ -1,5 +1,6 @@
 #include "frametrail/detector.hpp"
 #include "dml_inference.hpp"
+#include "recognition_vocabulary.hpp"
 #include <onnxruntime_cxx_api.h>
 #include <algorithm>
 #include <array>
@@ -8,18 +9,7 @@
 
 namespace frametrail {
 namespace {
-constexpr std::string_view labels[] = {
-    "person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", "boat",
-    "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
-    "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack",
-    "umbrella", "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard", "sports ball",
-    "kite", "baseball bat", "baseball glove", "skateboard", "surfboard", "tennis racket",
-    "bottle", "wine glass", "cup", "fork", "knife", "spoon", "bowl", "banana", "apple",
-    "sandwich", "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake",
-    "chair", "couch", "potted plant", "bed", "dining table", "toilet", "tv", "laptop",
-    "mouse", "remote", "keyboard", "cell phone", "microwave", "oven", "toaster", "sink",
-    "refrigerator", "book", "clock", "vase", "scissors", "teddy bear", "hair drier", "toothbrush"
-};
+using vocabulary::labels;
 void thresholds(float confidence, float iou) {
     if (!std::isfinite(confidence) || confidence <= 0 || confidence > 1 ||
         !std::isfinite(iou) || iou <= 0 || iou > 1)
@@ -36,20 +26,44 @@ void cancelled(std::stop_token stop) {
 }
 }
 std::string_view class_name(int id) {
-    return id >= 0 && id < 80 ? labels[id] : "unknown";
+    return id >= 0 && id < recognition_classes ? labels[id] : "unknown";
 }
 
 std::string_view model_id(DetectorModel model) {
-    switch(model) {case DetectorModel::nano:return "nano";case DetectorModel::yolox_s:return "small";}
+    switch(model) {case DetectorModel::nano:return "nano";case DetectorModel::yolox_s:return "small";
+        case DetectorModel::world_s:return "world-s";case DetectorModel::world_m:return "world-m";case DetectorModel::openimages:return "openimages";}
     throw std::invalid_argument("Unsupported detector model");
 }
-std::string_view model_name(DetectorModel model) {return model_id(model)=="nano" ? "YOLOX-Nano" : "YOLOX-S";}
-DetectorModel parse_model(std::string_view id) {
-    if(id=="nano")return DetectorModel::nano;
-    if(id=="small")return DetectorModel::yolox_s;
-    throw std::invalid_argument("Model type must be nano or small");
+std::string_view model_name(DetectorModel model) {
+    switch(model) {case DetectorModel::nano:return "YOLOX-Nano";case DetectorModel::yolox_s:return "YOLOX-S";
+        case DetectorModel::world_s:return "YOLO-World S";case DetectorModel::world_m:return "YOLO-World M";case DetectorModel::openimages:return "YOLOv8 Open Images";}
+    throw std::invalid_argument("Unsupported detector model");
 }
-int model_input_size(DetectorModel model) {return model_id(model)=="nano" ? 416 : 640;}
+DetectorModel parse_model(std::string_view id) {
+    if(id=="nano")return DetectorModel::nano;if(id=="small")return DetectorModel::yolox_s;
+    if(id=="world-s")return DetectorModel::world_s;if(id=="world-m")return DetectorModel::world_m;
+    if(id=="openimages")return DetectorModel::openimages;
+    throw std::invalid_argument("Model type must be nano, small, world-s, world-m or openimages");
+}
+int model_input_size(DetectorModel model) {model_id(model);return model==DetectorModel::nano ? 416:640;}
+int model_class_count(DetectorModel model) {model_id(model);return model==DetectorModel::openimages ? 601:(model==DetectorModel::nano || model==DetectorModel::yolox_s ? 80:100);}
+int model_category_count(DetectorModel model) {return model==DetectorModel::openimages ? 597:model_class_count(model);}
+std::vector<int64_t> model_output_shape(DetectorModel model) {
+    if(model_class_count(model)>80)return {1,4+model_class_count(model),8400};
+    return {1,yolox::candidate_count(model_input_size(model)),85};
+}
+std::vector<int> model_classes(DetectorModel model) {
+    if(model==DetectorModel::openimages)return {vocabulary::openimages_ids.begin(),vocabulary::openimages_ids.end()};
+    std::vector<int> ids;for(int id=0;id<model_class_count(model);++id)ids.push_back(id);return ids;
+}
+bool model_has_class(DetectorModel model,int id) {
+    if(model!=DetectorModel::openimages)return id>=0 && id<model_class_count(model);
+    return std::find(vocabulary::openimages_ids.begin(),vocabulary::openimages_ids.end(),id)!=vocabulary::openimages_ids.end();
+}
+std::string model_vocabulary(DetectorModel model) {
+    std::string out;for(const auto id:model_classes(model)){if(!out.empty())out+='\n';out+=class_name(id);}return out;
+}
+std::string world_vocabulary(){return model_vocabulary(DetectorModel::world_s);}
 int yolox::candidate_count(int size) {
     if(size!=416 && size!=640)throw std::invalid_argument("Supported YOLOX input sizes are 416 and 640");
     return (size/8)*(size/8)+(size/16)*(size/16)+(size/32)*(size/32);
@@ -168,15 +182,23 @@ struct Detector::Impl {
         settings.SetGraphOptimizationLevel(GraphOptimizationLevel::ORT_ENABLE_ALL);
         session=Ort::Session(env,options.model.c_str(),settings);
         if (session.GetInputCount()!=1 || session.GetOutputCount()!=1)
-            throw std::runtime_error("Expected a supported YOLOX export (one input and output)");
+            throw std::runtime_error("Expected a supported detection export (one input and output)");
         const auto input=session.GetInputTypeInfo(0);
         const auto output=session.GetOutputTypeInfo(0);
         if (input.GetTensorTypeAndShapeInfo().GetElementType()!=ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT ||
             input.GetTensorTypeAndShapeInfo().GetShape()!=std::vector<int64_t>{1,3,size,size} ||
             output.GetTensorTypeAndShapeInfo().GetElementType()!=ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT ||
-            output.GetTensorTypeAndShapeInfo().GetShape()!=std::vector<int64_t>{1,yolox::candidate_count(size),85})
-            throw std::runtime_error("Model tensor contract differs from selected model type (Nano: 416/3549, S: 640/8400)");
+            output.GetTensorTypeAndShapeInfo().GetShape()!=model_output_shape(options.variant))
+            throw std::runtime_error("Model tensor contract differs from selected model profile");
         Ort::AllocatorWithDefaultOptions allocator;
+        if(model_class_count(options.variant)>80) {
+            const auto metadata=session.GetModelMetadata();
+            const auto profile=metadata.LookupCustomMetadataMapAllocated("frametrail.profile",allocator);
+            const auto vocabulary=metadata.LookupCustomMetadataMapAllocated("frametrail.vocabulary",allocator);
+            if(!profile || !vocabulary || std::string_view(profile.get())!=model_id(options.variant) ||
+               std::string_view(vocabulary.get())!=model_vocabulary(options.variant))
+                throw std::runtime_error("Recognition profile/vocabulary mismatch; use the pinned model export");
+        }
         input_name=session.GetInputNameAllocated(0,allocator).get();
         output_name=session.GetOutputNameAllocated(0,allocator).get();
     }
@@ -188,14 +210,18 @@ DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     cancelled(stop);
     const auto started=std::chrono::steady_clock::now();
     const auto size=model_input_size(impl_->options.variant);
-    auto input=yolox::preprocess(frame,size);
+    const bool world=model_class_count(impl_->options.variant)>80;
+    yolo_world::Input world_input;
+    yolox::Input legacy_input;
+    if(world)world_input=yolo_world::preprocess(frame);else legacy_input=yolox::preprocess(frame,size);
+    auto& tensor_data=world ? world_input.tensor:legacy_input.tensor;
     const auto prepared=std::chrono::steady_clock::now();
     cancelled(stop);
     std::vector<float> gpu_output;
     std::vector<Ort::Value> cpu_output;
     std::span<const float> output;
     if(impl_->gpu) {
-        try{gpu_output=impl_->gpu->run(input.tensor,stop);output=gpu_output;}
+        try{gpu_output=impl_->gpu->run(tensor_data,stop);output=gpu_output;}
         catch(const std::exception& e) {
             cancelled(stop);
             if(impl_->options.backend==DetectorBackend::directml)throw;
@@ -205,20 +231,20 @@ DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     if(!impl_->gpu) {
         const std::array<int64_t,4> shape{1,3,size,size};
         const auto memory=Ort::MemoryInfo::CreateCpu(OrtArenaAllocator,OrtMemTypeDefault);
-        auto tensor=Ort::Value::CreateTensor<float>(memory,input.tensor.data(),input.tensor.size(),shape.data(),shape.size());
+        auto tensor=Ort::Value::CreateTensor<float>(memory,tensor_data.data(),tensor_data.size(),shape.data(),shape.size());
         const char* inputs[]{impl_->input_name.c_str()};const char* outputs[]{impl_->output_name.c_str()};
         Ort::RunOptions run;
         std::stop_callback interrupt(stop,[&run]() noexcept {try{run.SetTerminate();}catch(...){}});
         cpu_output=impl_->session.Run(run,inputs,&tensor,1,outputs,1);
         const auto info=cpu_output[0].GetTensorTypeAndShapeInfo();
-        if(info.GetShape()!=std::vector<int64_t>{1,yolox::candidate_count(size),85})throw std::runtime_error("Unexpected detection result shape");
+        if(info.GetShape()!=model_output_shape(impl_->options.variant))throw std::runtime_error("Unexpected detection result shape");
         output={cpu_output[0].GetTensorData<float>(),info.GetElementCount()};
     }
     const auto inferred=std::chrono::steady_clock::now();
     cancelled(stop);
     DetectionResult result;
-    result.objects=yolox::postprocess(output,
-        input.ratio,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,size);
+    result.objects=world ? yolo_world::postprocess(output,world_input,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,impl_->options.variant):
+        yolox::postprocess(output,legacy_input.ratio,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,size);
     cancelled(stop);
     const auto finished=std::chrono::steady_clock::now();
     result.elapsed_ms=std::chrono::duration<double,std::milli>(finished-started).count();

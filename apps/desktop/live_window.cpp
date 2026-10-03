@@ -42,7 +42,7 @@ LiveWindow::LiveWindow(QString model,frametrail::DetectorModel variant,frametrai
     refresh_ = new QPushButton(QStringLiteral("Refresh cameras")); options->addWidget(refresh_);
     caption(QStringLiteral("ANALYSIS"));
     model_box_=model_selector(model_,this);
-    model_box_->setCurrentIndex(variant==frametrail::DetectorModel::yolox_s ? 1:0);
+    model_box_->setCurrentIndex(int(variant));
     options->addWidget(model_box_);
     backend_box_=backend_selector(this);backend_box_->setCurrentIndex(backend==frametrail::DetectorBackend::cpu ? 0:1);options->addWidget(backend_box_);
     detect_ = new QCheckBox(QStringLiteral("Detect objects")); detect_->setChecked(QFileInfo::exists(model_)); options->addWidget(detect_);

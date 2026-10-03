@@ -5,6 +5,7 @@
 #include <span>
 #include <stop_token>
 #include <string_view>
+#include <string>
 
 namespace frametrail {
 enum class DetectorBackend { cpu, automatic, directml };
@@ -25,11 +26,19 @@ struct DetectionResult {
     double preprocess_ms{}, inference_ms{}, postprocess_ms{};
     ExecutionInfo execution;
 };
-enum class DetectorModel { nano, yolox_s };
+enum class DetectorModel { nano, yolox_s, world_s, world_m, openimages };
 std::string_view model_id(DetectorModel model);
 std::string_view model_name(DetectorModel model);
 DetectorModel parse_model(std::string_view id);
 int model_input_size(DetectorModel model);
+int model_class_count(DetectorModel model); // Raw output scores; Open Images has human aliases.
+int model_category_count(DetectorModel model); // Distinct canonical categories shown to users.
+inline constexpr int recognition_classes = 615; // Stable canonical IDs; COCO 0..79, world-v1 0..99.
+std::vector<int64_t> model_output_shape(DetectorModel model);
+std::vector<int> model_classes(DetectorModel model);
+bool model_has_class(DetectorModel model, int id);
+std::string model_vocabulary(DetectorModel model);
+std::string world_vocabulary(); // Exact newline-separated metadata; protects class-to-label mapping.
 
 struct DetectorOptions {
     std::filesystem::path model;
@@ -55,6 +64,19 @@ int candidate_count(int size);
 Input preprocess(const Frame& frame, int size = input_size);
 std::vector<Detection> postprocess(std::span<const float> output, double ratio,
     int width, int height, float confidence, float nms_iou, int size = input_size);
+}
+
+// Decoded YOLO-World / Open Images exports: RGB / 255, centered letterbox,
+// decoded xywh + per-class scores in [1,4+classes,8400]. No objectness channel.
+namespace yolo_world {
+struct Input {
+    std::vector<float> tensor;
+    double ratio{};
+    int resized_width{}, resized_height{}, pad_x{}, pad_y{};
+};
+Input preprocess(const Frame& frame);
+std::vector<Detection> postprocess(std::span<const float> output, const Input& input,
+    int width, int height, float confidence, float nms_iou, DetectorModel model=DetectorModel::world_s);
 }
 
 class Detector {

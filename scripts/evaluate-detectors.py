@@ -54,10 +54,10 @@ def read_manifest(path):
             raise ValueError('Each image needs positive integer width and height')
         for item in entry['objects']:
             box = item['box']
-            if (type(item['class_id']) is not int or not 0 <= item['class_id'] < 80 or len(box) != 4 or
+            if (type(item['class_id']) is not int or not 0 <= item['class_id'] < 615 or len(box) != 4 or
                     not all(type(v) in (float, int) and math.isfinite(v) for v in box) or
                     not 0 <= box[0] < box[2] <= entry['width'] or not 0 <= box[1] < box[3] <= entry['height']):
-                raise ValueError('Invalid COCO contiguous ID or original-image xyxy box')
+                raise ValueError('Invalid FrameTrail contiguous ID or original-image xyxy box')
     return document
 
 
@@ -74,13 +74,14 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--backend', choices=('cpu','directml'), default='cpu')
     parser.add_argument('--confidence', type=float, default=.35)
+    parser.add_argument('--variants', nargs='+', choices=('nano','small','world-s','world-m','openimages'), default=['nano','small'])
     args = parser.parse_args()
     if not math.isfinite(args.confidence) or not 0 < args.confidence <= 1:
         parser.error('confidence must be in (0,1]')
     manifest = read_manifest(args.manifest.resolve())
     cli = args.cli.resolve(strict=True)
-    models = {name: (args.models / filename).resolve(strict=True)
-              for name, filename in [('nano', 'yolox_nano.onnx'), ('small', 'yolox_s.onnx')]}
+    filenames={'nano':'yolox_nano.onnx','small':'yolox_s.onnx','world-s':'yolo_world_s.onnx','world-m':'yolo_world_m.onnx','openimages':'yolo_openimages.onnx'}
+    models={name:(args.models/filenames[name]).resolve(strict=True) for name in args.variants}
     args.output.mkdir(parents=True, exist_ok=False)
     report = {'schema': 1, 'requested_backend': args.backend, 'confidence': args.confidence, 'nms_iou': .45, 'match_iou': .5,
               'cli_sha256': digest(cli), 'manifest_sha256': digest(args.manifest), 'models': {},

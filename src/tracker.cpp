@@ -111,7 +111,7 @@ struct Tracker::Impl {
 Tracker::Tracker(TrackingOptions options) : impl_(std::make_unique<Impl>()) {
     association_name(options.association);
     if (options.classes.empty()) throw std::invalid_argument("Tracking needs at least one class");
-    for (int id : options.classes) if (id < 0 || id >= 80) throw std::invalid_argument("Tracking class must be a COCO ID in [0,79]");
+    for (int id : options.classes) if (id < 0 || id >= recognition_classes) throw std::invalid_argument("Tracking class must be a FrameTrail vocabulary ID in [0,614]");
     if (options.line) {
         const auto& line = *options.line;
         if (!in_frame(line.a) || !in_frame(line.b) || length(subtract(line.b,line.a)) < 0.05 ||

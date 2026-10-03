@@ -6,7 +6,7 @@ Video analysis works directly from a recording. It no longer needs a counting li
 
 1. Open **Video analysis…** from the player. You can do this without opening media first.
 2. **Choose video…**, or drag one video from File Explorer into the window. A video already open in the player is offered as the initial selection. Dropping a file selects it; processing starts when you click Analyse.
-3. Optionally open **Analysis settings** to choose YOLOX-Nano or YOLOX-S and adjust confidence. All 80 model categories are considered. The player's selected model/confidence supply the initial settings, but player detection, tracking and counting-line switches are not prerequisites.
+3. Optionally open **Analysis settings** to choose an installed model and adjust confidence. All of its supported categories are considered; broad recognition has 597. The player's selected model/confidence supply the initial settings, but player detection, tracking and counting-line switches are not prerequisites.
 4. Click **Analyse video**. The window shows source-time progress and occasional analysed frames. Every decoded frame is processed in source order; the preview can skip frames independently. Long recordings can take substantial CPU time.
 5. Review the appearance list. Each row shows an object label, first-seen time, last-seen time, and a thumbnail. Click it to open its first frame, paused. **Play** continues the original recording without inference; **Back to appearance** returns to that frame. IDs, observations and confidence are in the row tooltip.
 6. Choose **Save analysis…** for a `.frametrail` file, or **Export CSV…** for a spreadsheet-readable report. Saving is optional and happens after processing. **Open analysis…** reopens a saved result, even without an installed model.
@@ -19,7 +19,7 @@ The list loads at most 100 entries at once. Previous/Next appear only when neede
 
 An appearance is the detections associated with one native tracker ID: first observation, last observation, observed-frame count, peak confidence, and a thumbnail of the first frame. Repeated observations update that row instead of generating a new row for each frame. Each run considers all model categories independently of the player's people/vehicle filter.
 
-**These are predictions, not verified identities or a count of unique real objects.** Brief, single-frame predictions are retained. A wrong label can become an entry. Tracking can split one object into several appearances or merge nearby objects; cuts, camera movement, occlusion and crowded scenes are difficult. The first/last span may include short gaps with no detection, so it is not a continuous-presence or dwell-time measurement. The current model recognizes 80 categories and will miss objects outside them. See [model evaluation](MODEL_EVALUATION.md) and [tracking](TRACKING.md).
+**These are predictions, not verified identities or a count of unique real objects.** Brief, single-frame predictions are retained. A wrong label can become an entry. Tracking can split one object into several appearances or merge nearby objects; cuts, camera movement, occlusion and crowded scenes are difficult. The first/last span may include short gaps with no detection, so it is not a continuous-presence or dwell-time measurement. Recognizable categories depend on the selected model; objects outside its vocabulary remain unavailable. See [model evaluation](MODEL_EVALUATION.md) and [tracking](TRACKING.md).
 
 Times come from decoded source presentation timestamps, including variable frame rate. Original frame sequences are zero-based. Missing timestamps remain blank in CSV rather than being guessed. The displayed review frame has the saved first-observation box; subsequent playback does not invent new boxes or rerun inference.
 
@@ -27,9 +27,9 @@ The reader accepts video formats supported by the bundled FFmpeg build, includin
 
 ## Saving and exporting
 
-A `.frametrail` file is a SQLite database using application ID `FTRL` and schema **3**. It contains:
+A `.frametrail` file is a SQLite database using application ID `FTRL` and schema **4**. It contains:
 
-- Source/model paths and file stamps, selected Nano/S profile and frozen detector/tracker settings.
+- Source/model paths and file stamps, selected model profile, exact vocabulary and frozen detector/tracker settings.
 - A persistent random run identity, creation time, codec/dimensions/duration, committed progress, status and error.
 - Appearance IDs, classes, first/last frame sequences and optional timestamps, observation counts, first/peak confidence, first box and embedded thumbnails.
 - Crossing events for runs created through the existing CLI counting workflow.
@@ -61,7 +61,7 @@ Review opens the database read-only and does not modify evidence. Missing models
 
 Native review seeks backward to a keyframe and decodes forward to the saved timestamp. Unsupported seeking or unsuitable timestamps use original sequence fallback, which can take time for late entries. Review uses a precise 5 ms timer and skips overdue presentation frames after a delayed UI tick. The selected first frame remains exact. Large-video decode/render costs can still cause uneven playback. Closing releases the review source handle.
 
-Schema-1 and schema-2 files remain readable without migration. They display their original **line crossings**, not newly reconstructed object appearances. Older app versions cannot read schema 3. The CLI's `inspect --save-run` counting workflow remains available; `run --export` selects the CSV appropriate to the stored run type:
+Schema-1/2/3 files remain readable without migration. Earlier crossing runs display their original **line crossings**, not newly reconstructed appearances. Versions before 0.12 cannot read schema 4. The CLI's `inspect --save-run` counting workflow remains available; `run --export` selects the CSV appropriate to the stored run type:
 
 ```powershell
 .\build\windows-msvc\Release\frametrail.exe run output\recording.frametrail
@@ -85,3 +85,8 @@ The workflow and layout above remain unchanged. The main player's Processing dev
 ## Continuity evidence in 0.11
 
 The layout and choose/drop → analyse → review → save/export flow stay unchanged. Native jobs now reset active tracker continuity at conservatively detected scene boundaries and reconfirm retained IDs after long gaps. This can split new appearances at detected cuts; old stored evidence is never recomputed. New runs retain their association policy in an optional schema-3 column, with historical greedy semantics for files lacking it. The GUI keeps greedy association; experimental repair is a CLI/developer option. See [tracking evidence](TRACKING_EVALUATION.md).
+
+
+## Wider categories (0.12)
+
+The layout and workflow are preserved. Selecting Broad recognition in Analysis settings considers its 597 canonical categories; World S/M consider their reviewed 100. Raw Open Images human aliases map to person before tracking. Schema 4 freezes the exact model vocabulary and validates it when reopened; old evidence keeps its existing labels. Broad models can produce overlapping part/whole labels and more noise, so they remain explicit choices. See [recognition and limits](RECOGNITION.md).

@@ -26,6 +26,47 @@ template<class F> void wait_for(F f) {
     }
 }
 void contract() {
+    require(frametrail::parse_model("world-m")==frametrail::DetectorModel::world_m &&
+        frametrail::model_class_count(frametrail::DetectorModel::world_s)==100 && frametrail::class_name(80)=="fox" &&
+        frametrail::class_name(86)=="balloon" && frametrail::class_name(99)=="shopping cart","World vocabulary/profile mapping wrong");
+    const auto world=frametrail::yolo_world::preprocess({0,{},2,1,8,{255,0,0,0,0,255,77,77}});
+    constexpr int world_plane=640*640;
+    require(world.pad_x==0 && world.pad_y==160 && world.resized_height==320,"World centered geometry wrong");
+    require(world.tensor[0]==114.f/255.f && world.tensor[160*640]==1 && world.tensor[2*world_plane+160*640]==0,
+        "World RGB/range/padding wrong");
+    std::vector<float> world_output(104*8400,0);
+    auto world_proposal=[&](int row,int cls,float score){
+        world_output[row]=320;world_output[8400+row]=320;world_output[16800+row]=80;world_output[25200+row]=160;
+        world_output[(4+cls)*8400+row]=score;
+    };
+    world_proposal(0,80,.9f);world_proposal(1,80,.8f);world_proposal(2,16,.85f);
+    const auto world_boxes=frametrail::yolo_world::postprocess(world_output,world,2,1,.35f,.45f);
+    require(world_boxes.size()==2 && world_boxes[0].class_id==80 && world_boxes[1].class_id==16 &&
+        std::abs(world_boxes[0].left-.875f)<.001f && std::abs(world_boxes[0].top-.25f)<.001f,"World layout/geometry/NMS wrong");
+    world_output[0]=std::numeric_limits<float>::quiet_NaN();
+    require(frametrail::yolo_world::postprocess(world_output,world,2,1,.35f,.45f).size()==2,"World malformed geometry poisoned other candidates");
+    fails([&]{frametrail::yolo_world::postprocess({},world,2,1,.35f,.45f);});
+    fails([]{frametrail::yolo_world::preprocess({});});
+    const auto oi=frametrail::DetectorModel::openimages;
+    const auto mapping=frametrail::model_classes(oi);
+    require(mapping.size()==601 && frametrail::model_output_shape(oi)==std::vector<int64_t>({1,605,8400}) &&
+        frametrail::model_has_class(oi,80) && frametrail::model_has_class(oi,614),"Open Images vocabulary/shape wrong");
+    std::vector<float> oi_output(605*8400,0);
+    int row=0;
+    // Publisher's Man/Woman/Boy/Girl all map to person before suppression.
+    for(std::size_t index=0;index<mapping.size();++index)if(mapping[index]==0) {
+        oi_output[row]=320;oi_output[8400+row]=320;oi_output[16800+row]=80;oi_output[25200+row]=160;
+        oi_output[(4+index)*8400+row]=.9f-row*.01f;++row;
+    }
+    require(row>=4 && frametrail::yolo_world::postprocess(oi_output,world,2,1,.35f,.45f,oi).size()==1,
+        "Open Images human aliases created duplicate boxes");
+    const auto last=std::find(mapping.begin(),mapping.end(),614)-mapping.begin();
+    oi_output[(4+last)*8400+20]=.95f;oi_output[20]=320;oi_output[8400+20]=320;
+    oi_output[16800+20]=80;oi_output[25200+20]=160;
+    const auto oi_boxes=frametrail::yolo_world::postprocess(oi_output,world,2,1,.35f,.45f,oi);
+    require(oi_boxes.size()==2 && oi_boxes[0].class_id==614 && oi_boxes[1].class_id==0,
+        "Noncontiguous Open Images label mapping wrong");
+
     // A padded RGB red/blue row: verify BGR planes, uint8 range, row stride, and padding.
     frametrail::Frame frame{0,{},2,1,8,{255,0,0, 0,0,255, 77,77}};
     const auto input=frametrail::yolox::preprocess(frame);

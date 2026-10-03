@@ -27,7 +27,7 @@ void AnalysisJob::start(const std::filesystem::path& database,RunConfiguration c
                 if(source_stamp!=store->summary().source_stamp || model_stamp!=store->summary().model_stamp)
                     throw std::runtime_error("Source or model changed while opening analysis");
                 {std::lock_guard lock(mutex_);progress_.duration=reader.info().duration;progress_.status="running";}
-                std::array<bool,80> observed_classes{};
+                std::array<bool,recognition_classes> observed_classes{};
                 auto preview_at=std::chrono::steady_clock::time_point{};
                 while(!stop.stop_requested()) {
                     auto frame=reader.read();if(!frame)break;

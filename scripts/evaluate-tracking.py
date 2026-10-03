@@ -29,7 +29,7 @@ def validate(document):
         identities = set()
         for item in frame['objects']:
             identity, cls, box = item['object_id'], item['class_id'], item['box']
-            if (not isinstance(identity, str) or not identity or identity in identities or type(cls) is not int or not 0 <= cls < 80 or
+            if (not isinstance(identity, str) or not identity or identity in identities or type(cls) is not int or not 0 <= cls < 615 or
                     len(box) != 4 or not all(type(v) in (int, float) and math.isfinite(v) for v in box) or
                     not 0 <= box[0] < box[2] <= width or not 0 <= box[1] < box[3] <= height):
                 raise ValueError('Invalid reference identity, class or original-pixel box')
@@ -145,7 +145,7 @@ def read_csv(path, events=False):
             raise ValueError('Native CSV headers missing')
         for row in reader:
             item = {'sequence': int(row['sequence']), 'track_id': int(row['track_id']), 'class_id': int(row['class_id'])}
-            if item['sequence'] < 1 or item['track_id'] < 1 or not 0 <= item['class_id'] < 80:
+            if item['sequence'] < 1 or item['track_id'] < 1 or not 0 <= item['class_id'] < 615:
                 raise ValueError('Invalid native row identity')
             if events:
                 item['direction'] = row['direction']

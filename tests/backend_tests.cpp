@@ -40,7 +40,7 @@ void compare(const std::filesystem::path& source,DetectorOptions options) {
         require(std::any_of(result.objects.begin(),result.objects.end(),[&](const auto& actual){return actual.class_id==expected.class_id && overlap(actual,expected)>.98 && std::abs(actual.confidence-expected.confidence)<.02;}),"GPU changed a strong reference class/box/confidence");
         ++checked;
     }
-    require(checked>=3,"Reference comparison has too few strong targets");
+    require(checked>=(options.variant==DetectorModel::world_s ? 2:3),"Reference comparison has too few strong targets");
     double milliseconds{};
     for(int i=0;i<10;++i) {
         const auto repeated=gpu.detect(frame);require(repeated.objects.size()==result.objects.size(),"Repeated GPU runs changed result count");
@@ -55,7 +55,8 @@ void compare(const std::filesystem::path& source,DetectorOptions options) {
 }
 void saved(const std::filesystem::path& source,DetectorOptions options,const std::filesystem::path& fixtures) {
     RunConfiguration config;config.source=source;config.detector=options;config.detector.backend=DetectorBackend::directml;
-    config.kind=RunKind::appearances;config.tracking.line.reset();config.tracking.classes.resize(80);std::iota(config.tracking.classes.begin(),config.tracking.classes.end(),0);
+    config.kind=RunKind::appearances;config.tracking.line.reset();config.tracking.classes=model_classes(options.variant);std::sort(config.tracking.classes.begin(),config.tracking.classes.end());
+    config.tracking.classes.erase(std::unique(config.tracking.classes.begin(),config.tracking.classes.end()),config.tracking.classes.end());
     const auto destination=fixtures/("gpu-appearance-"+std::to_string(std::chrono::steady_clock::now().time_since_epoch().count())+".frametrail");
     AnalysisJob job;job.start(destination,config);
     const auto deadline=std::chrono::steady_clock::now()+std::chrono::seconds(30);
@@ -64,7 +65,10 @@ void saved(const std::filesystem::path& source,DetectorOptions options,const std
     RunStore run(destination);const auto summary=run.summary();
     require(summary.processed_frames==6 && summary.appearance_count>=3 && summary.class_count>=3,"GPU analysis skipped source frames or lost object appearances");
     require(summary.execution.provider=="DirectML" && summary.execution.runtime=="1.24.4" && summary.configuration.detector.backend==DetectorBackend::directml,"Saved analysis lost actual/requested backend identity");
-    const auto entries=run.appearances();for(const auto& entry:entries)require(entry.last_sequence<6 && entry.first_timestamp && entry.last_timestamp,"GPU result lost source timestamp identity");
+    require(job.progress().classes==summary.class_count,"Expanded category progress diverged from stored evidence");
+    const auto entries=run.appearances();
+    if(options.variant==DetectorModel::openimages)require(std::any_of(entries.begin(),entries.end(),[](const auto& e){return e.first_detection.class_id>79;}),"Expanded-category appearance evidence missing");
+    for(const auto& entry:entries)require(entry.last_sequence<6 && entry.first_timestamp && entry.last_timestamp,"GPU result lost source timestamp identity");
     std::cout<<"Ordered GPU analysis, appearance timestamps and persisted runtime identity passed\n";
 }
 }

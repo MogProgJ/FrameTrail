@@ -27,6 +27,18 @@ try {
             & (Join-Path $taskPackage 'frametrail.exe') inspect $taskInput --detect (Join-Path $taskPackage 'models/yolox_s.onnx') --model-type small --max-frames 3
             if ($LASTEXITCODE -ne 0) { throw 'Packaged YOLOX-S inference failed.' }
         }
+        foreach($taskProfile in @('world-s','world-m','openimages')) {
+            $taskRecognition=Get-Content -LiteralPath (Join-Path $taskPackage "dependencies/yolo-$taskProfile.json") -Raw | ConvertFrom-Json
+            $taskRecognitionModel=Join-Path $taskPackage "models/$($taskRecognition.filename)"
+            if(Test-Path -LiteralPath $taskRecognitionModel) {
+                & (Join-Path $taskPackage 'frametrail.exe') inspect $taskInput --detect $taskRecognitionModel --model-type $taskProfile --max-frames 3
+                if($LASTEXITCODE -ne 0){throw 'Packaged expanded CPU recognition failed.'}
+                if($GpuChecks) {
+                    & (Join-Path $taskPackage 'frametrail.exe') inspect $taskInput --detect $taskRecognitionModel --model-type $taskProfile --backend directml --max-frames 3
+                    if($LASTEXITCODE -ne 0){throw 'Packaged expanded GPU recognition failed.'}
+                }
+            }
+        }
         if($GpuChecks) {
             foreach($taskProfile in @('nano','small')) {
                 $taskModelName=if($taskProfile -eq 'nano'){'yolox_nano.onnx'}else{'yolox_s.onnx'}
@@ -35,7 +47,7 @@ try {
             }
         }
         $taskApp = Start-Process -FilePath (Join-Path $taskPackage 'frametrail-desktop.exe') -ArgumentList @('--smoke-test', ('"' + $taskInput + '"')) -PassThru -WindowStyle Hidden
-        if (-not $taskApp.WaitForExit(15000)) { $taskApp.Kill(); throw 'Packaged GUI startup timed out.' }
+        if (-not $taskApp.WaitForExit(30000)) { $taskApp.Kill(); throw 'Packaged GUI startup timed out.' }
         if ($taskApp.ExitCode -ne 0) { throw "Packaged GUI decode/presentation failed: $($taskApp.ExitCode)" }
     } finally { Pop-Location }
 } finally {

@@ -107,7 +107,8 @@ FileStamp file_stamp(const std::filesystem::path& path) {
 struct RunStore::Impl {
     sqlite3* database{};
     bool writable{};
-    int schema_version{3};
+    int schema_version{4};
+    DetectorModel variant{DetectorModel::nano};
     bool execution_metadata{};
     bool association_metadata{};
     std::optional<ExecutionInfo> last_execution;
@@ -146,6 +147,7 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
     const auto source_stamp=file_stamp(source),model_stamp=file_stamp(model);
     // Validate native model/tracker settings before creating any output.
     Tracker validation(config.tracking);
+    for(const auto id:config.tracking.classes)if(!model_has_class(config.detector.variant,id))throw std::invalid_argument("Tracking category is not supported by this model");
     if(!std::isfinite(config.detector.confidence) || config.detector.confidence<=0 || config.detector.confidence>1 ||
         !std::isfinite(config.detector.nms_iou) || config.detector.nms_iou<=0 || config.detector.nms_iou>1)
         throw std::invalid_argument("Invalid detector thresholds");
@@ -156,8 +158,8 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
         bool ready{};
         ~NewFileGuard() {if(!ready){std::error_code ignored;std::filesystem::remove(path,ignored);}}
     } guard{database};
-    auto impl=std::make_unique<Impl>(database,true);
-    impl->execute("PRAGMA application_id=1179931212; PRAGMA user_version=3; PRAGMA trusted_schema=OFF; PRAGMA foreign_keys=ON;");
+    auto impl=std::make_unique<Impl>(database,true);impl->variant=config.detector.variant;
+    impl->execute("PRAGMA application_id=1179931212; PRAGMA user_version=4; PRAGMA trusted_schema=OFF; PRAGMA foreign_keys=ON;");
     impl->execute("BEGIN IMMEDIATE");
     impl->execute("CREATE TABLE run(id INTEGER PRIMARY KEY CHECK(id=1),created TEXT NOT NULL,status TEXT NOT NULL,"
         "error TEXT NOT NULL DEFAULT '',source TEXT NOT NULL,source_bytes INTEGER NOT NULL,source_modified INTEGER NOT NULL,"
@@ -166,17 +168,18 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
         "deadband REAL NOT NULL,rearm REAL NOT NULL,codec TEXT NOT NULL,width INTEGER NOT NULL,height INTEGER NOT NULL,"
         "duration_us INTEGER,processed_frames INTEGER NOT NULL DEFAULT 0,last_timestamp_us INTEGER,timestamp_seekable INTEGER NOT NULL DEFAULT 1,"
         "run_id TEXT NOT NULL DEFAULT(lower(hex(randomblob(16)))),"
-        "model_type TEXT NOT NULL CHECK(model_type IN('nano','small')),"
+        "model_type TEXT NOT NULL CHECK(model_type IN('nano','small','world-s','world-m','openimages')),"
         "run_kind TEXT NOT NULL CHECK(run_kind IN('crossings','appearances')),"
-        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.11 / YOLOX 0.1.1rc0 / tracker-v2 / scene-guard-v1',"
+        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.12 / recognition-v1 + YOLOX / tracker-v2 / scene-guard-v1',"
         "association_policy TEXT NOT NULL DEFAULT 'greedy',"
+        "vocabulary_id TEXT NOT NULL DEFAULT 'coco-v1',vocabulary TEXT NOT NULL DEFAULT '',"
         "requested_backend TEXT NOT NULL DEFAULT 'cpu',gpu_device INTEGER NOT NULL DEFAULT -1,"
         "execution_backend TEXT NOT NULL DEFAULT 'CPU',execution_runtime TEXT NOT NULL DEFAULT '',"
         "execution_device TEXT NOT NULL DEFAULT '',execution_fallback TEXT NOT NULL DEFAULT '');"
         "CREATE TABLE events(id INTEGER PRIMARY KEY CHECK(id>0),track_id INTEGER NOT NULL,sequence INTEGER NOT NULL,"
         "timestamp_us INTEGER,class_id INTEGER NOT NULL,direction INTEGER NOT NULL CHECK(direction IN(1,2)),"
         "x REAL NOT NULL,y REAL NOT NULL,thumbnail BLOB NOT NULL);"
-        "CREATE TABLE appearances(id INTEGER PRIMARY KEY CHECK(id>0),class_id INTEGER NOT NULL CHECK(class_id BETWEEN 0 AND 79),"
+        "CREATE TABLE appearances(id INTEGER PRIMARY KEY CHECK(id>0),class_id INTEGER NOT NULL CHECK(class_id BETWEEN 0 AND 614),"
         "first_sequence INTEGER NOT NULL,last_sequence INTEGER NOT NULL,first_timestamp_us INTEGER,last_timestamp_us INTEGER,"
         "observations INTEGER NOT NULL CHECK(observations>0),first_confidence REAL NOT NULL,peak_confidence REAL NOT NULL,"
         "left REAL NOT NULL,top REAL NOT NULL,right REAL NOT NULL,bottom REAL NOT NULL,thumbnail BLOB NOT NULL);");
@@ -194,21 +197,24 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
     insert.text(21,std::string(model_id(config.detector.variant)));
     insert.text(22,config.kind==RunKind::appearances ? "appearances" : "crossings");
     insert.row();
-    Statement backend(impl->database,"UPDATE run SET requested_backend=?,gpu_device=?,association_policy=? WHERE id=1");
-    backend.text(1,backend_id(config.detector.backend));backend.number(2,config.detector.gpu_device);backend.text(3,association_name(config.tracking.association));backend.row();
+    Statement backend(impl->database,"UPDATE run SET requested_backend=?,gpu_device=?,association_policy=?,vocabulary_id=?,vocabulary=? WHERE id=1");
+    backend.text(1,backend_id(config.detector.backend));backend.number(2,config.detector.gpu_device);backend.text(3,association_name(config.tracking.association));
+    backend.text(4,std::string(model_id(config.detector.variant)));
+    const auto vocabulary=model_vocabulary(config.detector.variant);
+    backend.text(5,vocabulary);backend.row();
     impl->execute("COMMIT");impl->execution_metadata=true;impl->association_metadata=true;guard.ready=true;return RunStore(std::move(impl));
 }
 RunStore::RunStore(const std::filesystem::path& database):impl_(std::make_unique<Impl>(database,false)) {
     impl_->execute("PRAGMA trusted_schema=OFF");
     Statement app(impl_->database,"PRAGMA application_id"),version(impl_->database,"PRAGMA user_version");
-    if(!app.row() || app.number(0)!=application_id || !version.row() || (version.number(0)<1 || version.number(0)>3))
-        throw std::runtime_error("This is not a supported FrameTrail run (schema versions 1–3)");
+    if(!app.row() || app.number(0)!=application_id || !version.row() || (version.number(0)<1 || version.number(0)>4))
+        throw std::runtime_error("This is not a supported FrameTrail run (schema versions 1–4)");
     impl_->schema_version=int(version.number(0));
     Statement columns(impl_->database,"SELECT COUNT(*) FROM pragma_table_info('run') WHERE name='execution_backend'");
     columns.row();impl_->execution_metadata=columns.number(0)!=0;
     Statement association(impl_->database,"SELECT COUNT(*) FROM pragma_table_info('run') WHERE name='association_policy'");
     association.row();impl_->association_metadata=association.number(0)!=0;
-    summary();
+    impl_->variant=summary().configuration.detector.variant;
 }
 RunSummary RunStore::summary() const {
     const std::string query=std::string("SELECT created,status,error,source,source_bytes,source_modified,model,model_bytes,model_modified,"
@@ -223,12 +229,21 @@ RunSummary RunStore::summary() const {
     const auto kind=row.text(28);
     if(kind!="appearances" && kind!="crossings")throw std::runtime_error("Invalid saved analysis kind");
     out.configuration.kind=kind=="appearances" ? RunKind::appearances : RunKind::crossings;
+    if(impl_->schema_version<4 && model_class_count(out.configuration.detector.variant)>80)
+        throw std::runtime_error("Legacy run cannot contain YOLO-World categories");
+    if(impl_->schema_version>=4) {
+        Statement vocabulary(impl_->database,"SELECT vocabulary_id,vocabulary FROM run WHERE id=1");
+        vocabulary.row();
+        const auto expected=model_vocabulary(out.configuration.detector.variant);
+        if(vocabulary.text(0)!=model_id(out.configuration.detector.variant) || vocabulary.text(1)!=expected)
+            throw std::runtime_error("Saved vocabulary does not match the model profile");
+    }
     out.model_stamp={std::uint64_t(row.number(7)),row.number(8)};
     out.configuration.tracking.classes.clear();
     std::istringstream classes(row.text(11));std::string token;
     while(std::getline(classes,token,',')) {
         std::size_t end{};const auto id=std::stoi(token,&end);
-        if(end!=token.size() || id<0 || id>=80 || out.configuration.tracking.classes.size()>=80)
+        if(end!=token.size() || id<0 || !model_has_class(out.configuration.detector.variant,id) || out.configuration.tracking.classes.size()>=std::size_t(model_class_count(out.configuration.detector.variant)))
             throw std::runtime_error("Invalid saved tracking classes");
         out.configuration.tracking.classes.push_back(id);
     }
@@ -299,7 +314,7 @@ void RunStore::record_frame(const Frame& frame,std::span<const CrossingEvent> ev
     try {
         for(const auto& event:events) {
             if(event.sequence!=frame.sequence || event.timestamp!=frame.timestamp || event.id==0 || event.track_id==0 ||
-                event.class_id<0 || event.class_id>=80 || !std::isfinite(event.position.x) || !std::isfinite(event.position.y) ||
+                event.class_id<0 || !model_has_class(impl_->variant,event.class_id) || !std::isfinite(event.position.x) || !std::isfinite(event.position.y) ||
                 event.position.x<0 || event.position.x>1 || event.position.y<0 || event.position.y>1)
                 throw std::invalid_argument("Event does not match its source frame");
             Statement old(impl_->database,"SELECT id,track_id,sequence,timestamp_us,class_id,direction,x,y FROM events WHERE id=?");
@@ -313,7 +328,7 @@ void RunStore::record_frame(const Frame& frame,std::span<const CrossingEvent> ev
         }
         for(const auto& object:objects) {
             const auto& d=object.detection;
-            if(object.id==0 || d.class_id<0 || d.class_id>=80 || !std::isfinite(d.confidence) || d.confidence<0 || d.confidence>1 ||
+            if(object.id==0 || d.class_id<0 || !model_has_class(impl_->variant,d.class_id) || !std::isfinite(d.confidence) || d.confidence<0 || d.confidence>1 ||
                 !std::isfinite(d.left) || !std::isfinite(d.top) || !std::isfinite(d.right) || !std::isfinite(d.bottom) ||
                 d.left<0 || d.top<0 || d.right>frame.width || d.bottom>frame.height || d.right<=d.left || d.bottom<=d.top)
                 throw std::invalid_argument("Appearance does not match its source frame");

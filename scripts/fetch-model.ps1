@@ -1,6 +1,8 @@
 [CmdletBinding()]
-param([ValidateSet('nano','small','all')][string]$Model = 'nano')
+param([ValidateSet('nano','small','all','world-s','world-m','world-all','openimages')][string]$Model = 'nano')
 $ErrorActionPreference = 'Stop'
+if($Model.StartsWith('world-')) { & (Join-Path $PSScriptRoot 'fetch-world.ps1') -Size $Model.Substring(6); return }
+if($Model -eq 'openimages') { & (Join-Path $PSScriptRoot 'fetch-world.ps1') -Size openimages; return }
 $taskRoot = Split-Path -Parent $PSScriptRoot
 $taskDirectory = Join-Path $taskRoot 'models'
 New-Item -ItemType Directory -Path $taskDirectory -Force | Out-Null
