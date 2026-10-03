@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(FrameTrail VERSION 0.9.0 LANGUAGES C CXX)
+project(FrameTrail VERSION 0.10.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -7,6 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 include(CTest)
 find_package(Threads REQUIRED)
 option(FRAMETRAIL_BUILD_GUI "Build the Qt desktop preview" ON)
+option(FRAMETRAIL_TEST_GPU "Run opt-in GPU hardware checks" OFF)
 
 # Dependencies are acquired explicitly, never downloaded during configuration.
 file(READ "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/windows-ffmpeg.json" _manifest)
@@ -59,12 +60,24 @@ add_library(frametrail_core
     src/analysis_job.cpp
     src/tracker.cpp
     src/detector.cpp
+    src/dml_inference.cpp
     src/media_reader.cpp
     src/frame_export.cpp
     src/preview_session.cpp)
 target_include_directories(frametrail_core PUBLIC include)
 target_link_libraries(frametrail_core PRIVATE
     FFmpeg::avdevice FFmpeg::avformat FFmpeg::avcodec FFmpeg::avutil FFmpeg::swscale Threads::Threads ONNXRuntime frametrail_sqlite)
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/windows-directml.json" _dml_manifest)
+string(JSON _dml_directory GET "${_dml_manifest}" directory)
+set(FRAMETRAIL_DIRECTML_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/.deps/${_dml_directory}" CACHE PATH "Optional DirectML runtime")
+option(FRAMETRAIL_ENABLE_DIRECTML "Enable optional native GPU support when acquired" ON)
+if(WIN32 AND FRAMETRAIL_ENABLE_DIRECTML AND EXISTS "${FRAMETRAIL_DIRECTML_ROOT}/include/dml_provider_factory.h")
+    target_compile_definitions(frametrail_core PRIVATE FRAMETRAIL_DIRECTML)
+    target_include_directories(frametrail_core PRIVATE "${FRAMETRAIL_DIRECTML_ROOT}/include")
+    target_link_libraries(frametrail_core PRIVATE dxgi d3d12)
+    set(_directml_enabled TRUE)
+endif()
+set(FRAMETRAIL_DIRECTML_BUILT "${_directml_enabled}" CACHE INTERNAL "DirectML compiled into current build" FORCE)
 if(MSVC)
     target_compile_options(frametrail_core PRIVATE /W4 /permissive- /utf-8)
 else()
@@ -82,6 +95,12 @@ function(frametrail_runtime target)
                 ${_runtime_dlls} "$<TARGET_FILE_DIR:${target}>"
             COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:ONNXRuntime>" "$<TARGET_FILE_DIR:${target}>"
             VERBATIM)
+        if(_directml_enabled)
+            add_custom_command(TARGET ${target} POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${target}>/backends/directml"
+                COMMAND ${CMAKE_COMMAND} -E copy_directory "${FRAMETRAIL_DIRECTML_ROOT}/bin" "$<TARGET_FILE_DIR:${target}>/backends/directml"
+                VERBATIM)
+        endif()
         foreach(_model IN ITEMS "${_detector_model}" "${_detector_small_model}")
             if(EXISTS "${_model}")
                 add_custom_command(TARGET ${target} POST_BUILD
@@ -138,6 +157,27 @@ if(FRAMETRAIL_BUILD_GUI)
 endif()
 
 if(BUILD_TESTING)
+    add_executable(frametrail_backend_tests tests/backend_tests.cpp)
+    target_link_libraries(frametrail_backend_tests PRIVATE frametrail_core)
+    frametrail_runtime(frametrail_backend_tests)
+    add_test(NAME backend_contract COMMAND frametrail_backend_tests contract "${CMAKE_CURRENT_BINARY_DIR}/fixtures/variable.mkv" "${_detector_model}" nano)
+    set_tests_properties(backend_contract PROPERTIES FIXTURES_REQUIRED media TIMEOUT 30)
+    if(FRAMETRAIL_TEST_GPU)
+        if(NOT _directml_enabled)
+            message(FATAL_ERROR "GPU checks require the optional runtime. Run scripts/fetch-gpu.ps1.")
+        endif()
+        foreach(_gpu_model IN ITEMS nano small)
+            if(_gpu_model STREQUAL "nano")
+                set(_gpu_path "${_detector_model}")
+            else()
+                set(_gpu_path "${_detector_small_model}")
+            endif()
+            add_test(NAME gpu_${_gpu_model}_agreement COMMAND frametrail_backend_tests gpu "${CMAKE_CURRENT_SOURCE_DIR}/.deps/detection-samples/dog.jpg" "${_gpu_path}" "${_gpu_model}")
+            set_tests_properties(gpu_${_gpu_model}_agreement PROPERTIES TIMEOUT 45 LABELS gpu)
+        endforeach()
+        add_test(NAME gpu_saved_analysis COMMAND frametrail_backend_tests saved "${CMAKE_CURRENT_BINARY_DIR}/fixtures/review.mkv" "${_detector_model}" nano "${CMAKE_CURRENT_BINARY_DIR}/fixtures")
+        set_tests_properties(gpu_saved_analysis PROPERTIES FIXTURES_REQUIRED analysis TIMEOUT 45 LABELS gpu)
+    endif()
     add_executable(frametrail_live_tests tests/live_tests.cpp)
     target_link_libraries(frametrail_live_tests PRIVATE frametrail_core)
     frametrail_runtime(frametrail_live_tests)
@@ -257,6 +297,15 @@ if(BUILD_TESTING)
                     "$<TARGET_FILE_DIR:frametrail_saved_desktop_tests>" VERBATIM)
             add_test(NAME desktop_analysis_intake COMMAND frametrail_saved_desktop_tests "${_fixtures}" "${_fixtures}/review.mkv" "${_detector_model}" --intake-only)
             set_tests_properties(desktop_analysis_intake PROPERTIES FIXTURES_REQUIRED analysis TIMEOUT 90 ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
+            if(FRAMETRAIL_TEST_GPU)
+                add_executable(frametrail_backend_desktop_tests tests/backend_desktop_tests.cpp)
+                target_link_libraries(frametrail_backend_desktop_tests PRIVATE frametrail_preview_ui Qt6::Test)
+                frametrail_qt_runtime(frametrail_backend_desktop_tests)
+                add_custom_command(TARGET frametrail_backend_desktop_tests POST_BUILD
+                    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:Qt6::Test>" "$<TARGET_FILE_DIR:frametrail_backend_desktop_tests>" VERBATIM)
+                add_test(NAME gpu_desktop_workflow COMMAND frametrail_backend_desktop_tests "${_fixtures}" "${_detection_sample}" "${_detector_model}")
+                set_tests_properties(gpu_desktop_workflow PROPERTIES FIXTURES_REQUIRED analysis TIMEOUT 90 ENVIRONMENT "QT_QPA_PLATFORM=offscreen" LABELS gpu)
+            endif()
             add_test(NAME desktop_saved_review COMMAND frametrail_saved_desktop_tests "${_fixtures}" "${_fixtures}/review.mkv" "${_detector_model}")
             set_tests_properties(desktop_saved_review PROPERTIES FIXTURES_REQUIRED analysis TIMEOUT 60 ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
         endif()

@@ -21,13 +21,15 @@
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.9 - CPU analysis, saved review and live webcam\n\n"
+    std::cout << "FrameTrail 0.10 - CPU analysis, saved review and live webcam\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
                  "  --max-frames <n>   Stop after n frames (positive integer)\n"
                  "  --detect <model>   Run a supported YOLOX ONNX model on the CPU\n"
                  "  --model-type <id>  nano (default) or small; must match the export\n"
+                 "  --backend <id>     cpu (default), auto (GPU/CPU), or directml (strict GPU)\n"
+                 "  --gpu-device <n>   Optional DXGI adapter index; default selects dedicated GPU\n"
                  "  --confidence <n>   Confidence in (0,1], default 0.35\n"
                  "  --detections <csv> Export detections (requires --detect)\n"
                  "  --track            Track people/vehicles (requires --detect)\n"
@@ -101,6 +103,7 @@ int run(const std::vector<std::string>& args) {
             <<"\nModel: "<<frametrail::model_name(summary.configuration.detector.variant)<<"\nConfidence: "<<summary.configuration.detector.confidence<<'\n';
         if(summary.configuration.kind==frametrail::RunKind::crossings)
             std::cout<<"Events saved: "<<summary.event_count<<"\nCrossings (- to +): "<<summary.forward<<"\nCrossings (+ to -): "<<summary.reverse<<'\n';
+        std::cout<<"Execution provider: "<<summary.execution.provider<<"\nRuntime: "<<summary.execution.runtime<<"\nDevice: "<<summary.execution.device<<"\nCPU fallback: "<<summary.execution.fallback<<'\n';
         if(!summary.error.empty())std::cout<<"Run error: "<<summary.error<<'\n';
         if(summary.configuration.kind==frametrail::RunKind::appearances)
             std::cout<<"Object appearances: "<<summary.appearance_count<<"\nObject types: "<<summary.class_count<<'\n';
@@ -130,7 +133,7 @@ int run(const std::vector<std::string>& args) {
         if (!seen.insert(option).second) throw std::runtime_error("Duplicate option: " + option);
         if (option == "--track") { tracking = true; continue; }
         if (option != "--csv" && option != "--preview" && option != "--max-frames" && option != "--detect" && option != "--detections" &&
-            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run" && option != "--profile" && option != "--model-type" && option != "--confidence") {
+            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run" && option != "--profile" && option != "--model-type" && option != "--confidence" && option != "--backend" && option != "--gpu-device") {
             throw std::runtime_error("Unknown option: " + option);
         }
         if (++i == args.size()) {
@@ -147,6 +150,10 @@ int run(const std::vector<std::string>& args) {
             model_path=path_from_utf8(args[i]);
         } else if (option == "--model-type") {
             detector_options.variant=frametrail::parse_model(args[i]);
+        } else if (option == "--backend") {
+            detector_options.backend=frametrail::parse_backend(args[i]);
+        } else if (option == "--gpu-device") {
+            detector_options.gpu_device=number<int>(args[i]);
         } else if (option == "--confidence") {
             detector_options.confidence=number<float>(args[i]);
         } else if (option == "--detections") {
@@ -186,7 +193,7 @@ int run(const std::vector<std::string>& args) {
             maximum = value;
         }
     }
-    if (!model_path && (seen.contains("--model-type") || seen.contains("--confidence")))
+    if (!model_path && (seen.contains("--model-type") || seen.contains("--confidence") || seen.contains("--backend") || seen.contains("--gpu-device")))
         throw std::runtime_error("Model settings require --detect");
     if (model_path) detector_options.model=*model_path;
     if (tracking && !model_path) throw std::runtime_error("--track requires --detect <model>");
@@ -213,7 +220,7 @@ int run(const std::vector<std::string>& args) {
         bool finished{};
         ~SavedRunGuard() {if(value && !finished){try{value->finish("failed","CLI did not finish; see its error output");}catch(...){}}}
     } saved;
-    if(saved_path)saved.value.emplace(frametrail::RunStore::create(*saved_path,{input,detector_options,tracking_options},reader.info()));
+    if(saved_path) {saved.value.emplace(frametrail::RunStore::create(*saved_path,{input,detector_options,tracking_options},reader.info()));saved.value->record_execution(detector->execution_info());}
     std::ofstream profile_csv;
     if (profile_path) {
         profile_csv.open(*profile_path, std::ios::binary);
@@ -266,6 +273,7 @@ int run(const std::vector<std::string>& args) {
         last = frame->timestamp;
         if (detector) {
             const auto result=detector->detect(*frame);
+            if(saved.value)saved.value->record_execution(result.execution);
             prepare_ms=result.preprocess_ms; infer_ms=result.inference_ms; post_ms=result.postprocess_ms;
             object_count+=result.objects.size();
             detection_ms+=result.elapsed_ms;
@@ -333,8 +341,8 @@ int run(const std::vector<std::string>& args) {
         detections_csv.close();
         if (!detections_csv) throw std::runtime_error("Failed to finish detection CSV");
     }
-    if (detector) std::cout << "Model: " << frametrail::model_name(detector_options.variant) << "\nDetections across frames: " << object_count
-        << "\nAverage CPU detection (ms/frame): " << detection_ms/count << '\n';
+    if (detector) std::cout << "Execution provider: " << detector->execution_info().provider << "\nRuntime: " << detector->execution_info().runtime << "\nDevice: " << detector->execution_info().device << "\nFallback: " << detector->execution_info().fallback << "\nModel: " << frametrail::model_name(detector_options.variant) << "\nDetections across frames: " << object_count
+        << "\nAverage detection (ms/frame): " << detection_ms/count << '\n';
     for (auto* stream : {&tracks_csv,&events_csv}) if (stream->is_open()) {
         stream->close();
         if (!*stream) throw std::runtime_error("Failed to finish tracking export");

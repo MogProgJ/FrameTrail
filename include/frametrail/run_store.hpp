@@ -25,6 +25,7 @@ struct RunSummary {
     std::optional<std::chrono::microseconds> last_timestamp;
     bool timestamp_seekable{};
     std::uint64_t appearance_count{}, class_count{};
+    ExecutionInfo execution;
 };
 struct StoredEvent {
     CrossingEvent event;
@@ -58,6 +59,7 @@ public:
     void record_frame(const Frame& frame, std::span<const CrossingEvent> events,
         std::span<const TrackedObject> objects = {});
     void finish(std::string_view status, std::string_view error = {});
+    void record_execution(const ExecutionInfo& execution);
     void export_csv(const std::filesystem::path& output) const; // Never overwrite.
     bool source_available() const;
 private:

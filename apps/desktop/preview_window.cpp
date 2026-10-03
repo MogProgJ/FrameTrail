@@ -3,6 +3,8 @@
 #include "saved_run_window.hpp"
 #include "live_window.hpp"
 #include "theme.hpp"
+#include <QPropertyAnimation>
+#include <QGraphicsOpacityEffect>
 #include "ui_preview_layout.h"
 
 #include <QCloseEvent>
@@ -159,7 +161,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     ui.setupUi(this);
     setWindowTitle(QStringLiteral("FrameTrail — Video workspace"));
     setMinimumSize(900, 600);
-    setStyleSheet(frametrail_theme());
+    setStyleSheet(frametrail_theme()+QStringLiteral("QLabel#details { color: #9fbff2; }"));
     ui.rootLayout->setContentsMargins(24, 22, 24, 22); ui.rootLayout->setSpacing(22);
     ui.header->setStretch(0, 1);
     ui.playback->setStretch(3, 1);
@@ -169,6 +171,9 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     canvas_ = ui.frameCanvas; source_label_ = ui.source;
     source_label_->setTextFormat(Qt::PlainText);
     source_label_->setMinimumWidth(0); source_label_->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
+    auto* source_effect=new QGraphicsOpacityEffect(source_label_);source_label_->setGraphicsEffect(source_effect);source_effect->setOpacity(1.);
+    source_transition_=new QPropertyAnimation(source_effect,"opacity",this);source_transition_->setDuration(160);
+    source_transition_->setStartValue(.35);source_transition_->setEndValue(1.);source_transition_->setEasingCurve(QEasingCurve::OutCubic);
     state_label_ = ui.state; state_label_->setTextFormat(Qt::PlainText);
     details_label_ = ui.details;
     play_button_ = ui.play; stop_button_ = ui.stop; replay_button_ = ui.replay;
@@ -180,13 +185,18 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     ui.modelLabel->setText(QStringLiteral("Detection model · 80 categories"));
     model_box_=model_selector(model_path_,this);
     ui.inspectorLayout->insertWidget(ui.inspectorLayout->indexOf(ui.modelLabel)+1,model_box_);
+    auto* backend_label=new QLabel(QStringLiteral("PROCESSING DEVICE"));backend_label->setProperty("role","section");
+    backend_box_=backend_selector(this);backend_label->setBuddy(backend_box_);
+    const auto backend_index=ui.inspectorLayout->indexOf(model_box_)+1;
+    ui.inspectorLayout->insertWidget(backend_index,backend_label);ui.inspectorLayout->insertWidget(backend_index+1,backend_box_);
+    detect_box_->setText(QStringLiteral("Detect objects"));
     ui.confidenceLabel->setBuddy(confidence_box_); ui.classesLabel->setBuddy(classes_box_); ui.directionLabel->setBuddy(direction_box_);
     line_button_->setToolTip(QStringLiteral("Click A then B. Right-click cancels. Playback stays at this position."));
     direction_box_->setToolTip(QStringLiteral("Sides refer to the A→B line. For a left-to-right line, + is below."));
     auto* open = ui.open; auto* live = ui.liveCamera;
     connect(live,&QPushButton::clicked,this,[this,live] {
         if(playing_)toggle_playback();
-        auto* window=new LiveWindow(model_box_->itemData(0).toString(),selected_model(model_box_));window->setAttribute(Qt::WA_DeleteOnClose);
+        auto* window=new LiveWindow(model_box_->itemData(0).toString(),selected_model(model_box_),selected_backend(backend_box_));window->setAttribute(Qt::WA_DeleteOnClose);
         live->setEnabled(false);connect(window,&QObject::destroyed,this,[live]{live->setEnabled(true);});window->show();
     });
     auto* saved = ui.savedAnalysis;
@@ -194,7 +204,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
         if(playing_)toggle_playback();
         frametrail::RunConfiguration configuration;
         configuration.source=source_.isEmpty() ? std::filesystem::path{} : native_path(source_);
-        configuration.detector={native_path(model_path_),float(confidence_box_->value()),.45f,selected_model(model_box_)};
+        configuration.detector={native_path(model_path_),float(confidence_box_->value()),.45f,selected_model(model_box_),selected_backend(backend_box_)};
         configuration.kind=frametrail::RunKind::appearances;
         configuration.tracking.line.reset();
         auto* window=new SavedRunWindow(std::move(configuration));
@@ -216,6 +226,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
         model_path_=model_box_->currentData().toString();
         reconfigure_analysis();
     });
+    connect(backend_box_,&QComboBox::currentIndexChanged,this,[this](int){reconfigure_analysis();});
     connect(confidence_box_,&QDoubleSpinBox::valueChanged,this,[this](double){reconfigure_analysis();});
     connect(track_box_,&QCheckBox::toggled,this,[this](bool){reconfigure_analysis();});
     connect(classes_box_,&QComboBox::currentIndexChanged,this,[this](int){reconfigure_analysis();});
@@ -258,7 +269,7 @@ void PreviewWindow::open_file(const QString& path) {
     replay_button_->setEnabled(false);
     state_label_->setText(QStringLiteral("Opening…"));
     source_label_->setText(QFileInfo(path).fileName());
-    source_label_->setToolTip(path);
+    source_label_->setToolTip(path);source_transition_->stop();source_transition_->start();
     details_label_->setText(QStringLiteral("Reading media…"));
     counts_label_->setText(QStringLiteral("Video counts: − → +  0    |    + → −  0"));
 }
@@ -266,7 +277,7 @@ void PreviewWindow::open_file(const QString& path) {
 std::pair<std::optional<frametrail::DetectorOptions>,std::optional<frametrail::TrackingOptions>> PreviewWindow::analysis_options() {
     std::optional<frametrail::DetectorOptions> detection;
     if (detect_box_->isChecked()) detection=frametrail::DetectorOptions{
-        native_path(model_path_),float(confidence_box_->value()),0.45f,selected_model(model_box_)};
+        native_path(model_path_),float(confidence_box_->value()),0.45f,selected_model(model_box_),selected_backend(backend_box_)};
     std::optional<frametrail::TrackingOptions> tracking;
     if (detection && track_box_->isChecked()) {
         tracking = frametrail::TrackingOptions{};
@@ -362,13 +373,19 @@ void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
         .arg(frame.width).arg(frame.height)
         .arg(info ? QString::fromStdString(info->codec) : QStringLiteral("Unknown codec"))
         .arg(frame.sequence).arg(timestamp_text(frame.timestamp)));
-    if (wrapped.detection) details_label_->setText(details_label_->text()+QStringLiteral("    •    %1 objects    •    CPU %2 ms/frame")
+    if (wrapped.detection) details_label_->setText(details_label_->text()+QStringLiteral("    •    %1 objects    •    %2 ms/frame")
         .arg(wrapped.detection->objects.size()).arg(wrapped.detection->elapsed_ms,0,'f',1));
     if (wrapped.tracking) {
         counts_label_->setText(QStringLiteral("Video counts: − → +  %1    |    + → −  %2    •    %3 observed tracks    •    Rules %4 ms")
             .arg(wrapped.tracking->negative_to_positive).arg(wrapped.tracking->positive_to_negative)
             .arg(wrapped.tracking->objects.size()).arg(wrapped.tracking->elapsed_ms,0,'f',2));
     } else counts_label_->setText(QStringLiteral("Video counts: − → +  0    |    + → −  0"));
+    if(wrapped.detection) {
+        const auto& execution=wrapped.detection->execution;
+        details_label_->setText(details_label_->text()+QStringLiteral(" · %1").arg(execution.provider=="DirectML" ? QStringLiteral("GPU"):QStringLiteral("CPU")));
+        details_label_->setToolTip(QString::fromStdString(execution.provider+" / ONNX Runtime "+execution.runtime+" / "+execution.device+
+            (execution.fallback.empty() ? "": "\nCPU fallback: "+execution.fallback)));
+    }
     displayed_frame_ = std::move(wrapped.frame);
     state_label_->setText(playing_ ? QStringLiteral("Playing") : QStringLiteral("Paused"));
     update_controls();

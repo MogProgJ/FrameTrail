@@ -1,4 +1,5 @@
 #include "frametrail/detector.hpp"
+#include "dml_inference.hpp"
 #include <onnxruntime_cxx_api.h>
 #include <algorithm>
 #include <array>
@@ -122,17 +123,44 @@ std::vector<Detection> yolox::postprocess(std::span<const float> output, double 
     return kept;
 }
 
+DetectorBackend parse_backend(std::string_view value) {
+    if(value=="cpu")return DetectorBackend::cpu;
+    if(value=="auto")return DetectorBackend::automatic;
+    if(value=="directml")return DetectorBackend::directml;
+    throw std::invalid_argument("Backend must be cpu, auto, or directml");
+}
+std::string_view backend_id(DetectorBackend backend) {
+    switch(backend) {
+        case DetectorBackend::cpu:return "cpu";
+        case DetectorBackend::automatic:return "auto";
+        case DetectorBackend::directml:return "directml";
+    }
+    throw std::invalid_argument("Invalid detector backend");
+}
+
 struct Detector::Impl {
     DetectorOptions options;
     Ort::Env env{ORT_LOGGING_LEVEL_WARNING,"FrameTrail"};
     Ort::Session session{nullptr};
     std::string input_name,output_name;
+    std::unique_ptr<DmlInference> gpu;
+    ExecutionInfo execution;
     explicit Impl(const DetectorOptions& supplied):options(supplied) {
         thresholds(options.confidence,options.nms_iou);
-        const auto size=model_input_size(options.variant);
+        backend_id(options.backend);
+        if(options.gpu_device < -1)throw std::invalid_argument("GPU device must be -1 or a DXGI index");
         if (!std::filesystem::is_regular_file(options.model))
             throw std::runtime_error("Detection model missing. Run scripts/fetch-model.ps1 and rebuild.");
         env.DisableTelemetryEvents();
+        if(options.backend!=DetectorBackend::cpu) {
+            try{gpu=std::make_unique<DmlInference>(options);execution=gpu->info();return;}
+            catch(const std::exception& e){if(options.backend==DetectorBackend::directml)throw;execution.fallback=e.what();}
+        }
+        initialise_cpu();
+    }
+    void initialise_cpu() {
+        gpu.reset();execution.provider="CPU";execution.runtime=OrtGetApiBase()->GetVersionString();execution.device="Processor";
+        const auto size=model_input_size(options.variant);
         Ort::SessionOptions settings;
         settings.SetIntraOpNumThreads(4);
         settings.SetInterOpNumThreads(1);
@@ -155,6 +183,7 @@ struct Detector::Impl {
 };
 Detector::Detector(const DetectorOptions& options):impl_(std::make_unique<Impl>(options)) {}
 Detector::~Detector()=default;
+const ExecutionInfo& Detector::execution_info() const{return impl_->execution;}
 DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     cancelled(stop);
     const auto started=std::chrono::steady_clock::now();
@@ -162,20 +191,33 @@ DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     auto input=yolox::preprocess(frame,size);
     const auto prepared=std::chrono::steady_clock::now();
     cancelled(stop);
-    const std::array<int64_t,4> shape{1,3,size,size};
-    const auto memory=Ort::MemoryInfo::CreateCpu(OrtArenaAllocator,OrtMemTypeDefault);
-    auto tensor=Ort::Value::CreateTensor<float>(memory,input.tensor.data(),input.tensor.size(),shape.data(),shape.size());
-    const char* inputs[]{impl_->input_name.c_str()};
-    const char* outputs[]{impl_->output_name.c_str()};
-    Ort::RunOptions run;
-    std::stop_callback interrupt(stop,[&run]() noexcept { try { run.SetTerminate(); } catch (...) {} });
-    auto values=impl_->session.Run(run,inputs,&tensor,1,outputs,1);
+    std::vector<float> gpu_output;
+    std::vector<Ort::Value> cpu_output;
+    std::span<const float> output;
+    if(impl_->gpu) {
+        try{gpu_output=impl_->gpu->run(input.tensor,stop);output=gpu_output;}
+        catch(const std::exception& e) {
+            cancelled(stop);
+            if(impl_->options.backend==DetectorBackend::directml)throw;
+            impl_->execution.fallback=std::string("GPU run failed; CPU retry: ")+e.what();impl_->initialise_cpu();
+        }
+    }
+    if(!impl_->gpu) {
+        const std::array<int64_t,4> shape{1,3,size,size};
+        const auto memory=Ort::MemoryInfo::CreateCpu(OrtArenaAllocator,OrtMemTypeDefault);
+        auto tensor=Ort::Value::CreateTensor<float>(memory,input.tensor.data(),input.tensor.size(),shape.data(),shape.size());
+        const char* inputs[]{impl_->input_name.c_str()};const char* outputs[]{impl_->output_name.c_str()};
+        Ort::RunOptions run;
+        std::stop_callback interrupt(stop,[&run]() noexcept {try{run.SetTerminate();}catch(...){}});
+        cpu_output=impl_->session.Run(run,inputs,&tensor,1,outputs,1);
+        const auto info=cpu_output[0].GetTensorTypeAndShapeInfo();
+        if(info.GetShape()!=std::vector<int64_t>{1,yolox::candidate_count(size),85})throw std::runtime_error("Unexpected detection result shape");
+        output={cpu_output[0].GetTensorData<float>(),info.GetElementCount()};
+    }
     const auto inferred=std::chrono::steady_clock::now();
     cancelled(stop);
-    const auto info=values[0].GetTensorTypeAndShapeInfo();
-    if (info.GetShape()!=std::vector<int64_t>{1,yolox::candidate_count(size),85}) throw std::runtime_error("Unexpected detection result shape");
     DetectionResult result;
-    result.objects=yolox::postprocess({values[0].GetTensorData<float>(),info.GetElementCount()},
+    result.objects=yolox::postprocess(output,
         input.ratio,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,size);
     cancelled(stop);
     const auto finished=std::chrono::steady_clock::now();
@@ -183,6 +225,7 @@ DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     result.preprocess_ms=std::chrono::duration<double,std::milli>(prepared-started).count();
     result.inference_ms=std::chrono::duration<double,std::milli>(inferred-prepared).count();
     result.postprocess_ms=std::chrono::duration<double,std::milli>(finished-inferred).count();
+    result.execution=impl_->execution;
     return result;
 }
 }

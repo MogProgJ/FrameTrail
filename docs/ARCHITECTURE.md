@@ -107,3 +107,9 @@ FFmpeg decodes, Qt presents the interface, ONNX Runtime runs YOLOX-Nano or YOLOX
 Training is an offline artifact-production workflow, not part of the desktop process. A future Python tool may train on a workstation or bwUniCluster and export a versioned ONNX model plus labels, preprocessing metadata, checksum, metrics, and provenance. The C++ application accepts that artifact only through a matching detector adapter and local validation.
 
 A future GPU execution provider remains inside the native detector boundary. A future Python inference worker, if justified, implements the same frame/result identity contract across a versioned process boundary. The native CPU detector remains the fallback. bwUniCluster is a scheduled batch target and is not part of the interactive runtime topology. See [Compute, training, and bwUniCluster](COMPUTE_AND_TRAINING.md).
+
+## Optional GPU module in 0.10
+
+`Detector` retains shared preprocessing/postprocessing and coordinates. `DmlInference` owns a private module, API table, adapter choice, session and tensor resources; no GPU handles enter Qt, tracking or storage. The linked CPU runtime stays independent. Automatic mode retries a failed GPU frame once on CPU and then remains there, while cancellation bypasses fallback. Source/generation identity and ordered handoff remain unchanged.
+
+`ExecutionInfo` reports actual provider, runtime, device and fallback separately from requested `DetectorBackend`. The worker records changes in optional schema-3 metadata; the reader detects columns rather than migrating existing files. The main player passes its device preference into the otherwise unchanged saved-analysis window. Explicit GPU hardware tests and comparison tooling exercise the module; see [details](GPU_INFERENCE.md).

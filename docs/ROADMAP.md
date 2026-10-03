@@ -12,7 +12,7 @@ These milestones are ordered by dependencies, not estimated calendar dates. Impl
 | 5 | Analyse, persist and review recordings | 0.9 appearance intake/save/export revamp implemented; representative workflow/resource evaluation remains |
 | 6 | One live input | Windows webcam baseline implemented; sustained hardware and accuracy validation remains |
 | 7 | Profile, optimize, and package | Baseline implemented; clean-machine and sustained validation remain |
-| 8 | Conditional compute and model expansion | Model comparison + selectable YOLOX-S implemented; GPU evaluation is next candidate |
+| 8 | Conditional compute and model expansion | Model comparison, YOLOX-S and optional GPU branch implemented; sustained validation / labelled accuracy gates remain |
 | 9 | Optional advanced perception and agents | After the native product proves useful |
 
 Phases 0–7 are the core product path. Phase 8 is a set of optional branches, not a promise to add every technology. A branch may be pulled forward after Phase 3 or 4 if a measured detector or throughput failure blocks the next core phase. Otherwise it stays deferred.
@@ -87,7 +87,7 @@ Completion evidence: results and timing measurements state hardware, model, inpu
 
 ## 8. Conditional compute and model expansion
 
-A native pretrained-model comparison is now implemented in 0.8: selectable YOLOX-S, fixed-profile contracts, saved model identity, and local evaluation tooling. On the selected 24 targets S recovered 24 versus Nano’s 18, with much slower CPU throughput. This is partial-label regression evidence, not general accuracy acceptance. See [model evaluation](MODEL_EVALUATION.md). The 0.9 saved-analysis usability/pipeline revamp was pulled forward to fix the recorded workflow. Optional local GPU evaluation remains the next compute candidate; compare on representative inputs before adoption.
+A native pretrained-model comparison is now implemented in 0.8: selectable YOLOX-S, fixed-profile contracts, saved model identity, and local evaluation tooling. On the selected 24 targets S recovered 24 versus Nano’s 18, with much slower CPU throughput. This is partial-label regression evidence, not general accuracy acceptance. See [model evaluation](MODEL_EVALUATION.md). The 0.9 saved-analysis usability/pipeline revamp was pulled forward to fix the recorded workflow. The optional native GPU branch is implemented and measured in 0.10, preserving CPU fallback. S gained about 4.2× in the measured warm pipeline, while Nano showed little benefit once startup was included. Four opt-in hardware checks cover parity, ordered analysis and GUI integration; sustained multi-window/live/temperature evaluation remains open. See [GPU evidence](GPU_INFERENCE.md). Broader labelled footage and tracker/event reliability are the next product validation work; training remains conditional.
 
 This phase covers four independent gates: local GPU inference, Python-based model training, an optional Python inference worker, and a commercial cloud service. Detailed triggers, stop conditions, and the bwUniCluster execution plan are in [Compute, training, and bwUniCluster](COMPUTE_AND_TRAINING.md).
 

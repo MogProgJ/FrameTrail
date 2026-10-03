@@ -2,7 +2,7 @@
 
 A native desktop application being built to turn images and video into detections, object tracks, and reviewable events.
 
-**Status: video-analysis workflow rebuilt (0.9).** Choose or drop a video, analyse object appearances and timestamps, review the footage, then save an analysis or export a readable CSV. No counting-line setup is needed. Select faster YOLOX-Nano or more detailed YOLOX-S; see [measured results and limits](docs/MODEL_EVALUATION.md). Live webcam detection, IDs and line counts remain available. Accuracy and sustained resource behaviour still need evaluation.
+**Status: optional native GPU inference implemented (0.10).** YOLOX-S measured about 4.2× faster through the GPU pipeline on this laptop; CPU remains the default and fallback. See [GPU setup, measurements and limits](docs/GPU_INFERENCE.md). The 0.9 choose/drop → analyse → review → save/CSV workflow keeps its layout and controls. Live webcam detection, IDs and line counts remain available. Accuracy and sustained resource behaviour still need evaluation.
 
 FrameTrail accepts local images, prerecorded video, and one Windows webcam through the native processing core. The initial use case is counting people or vehicles crossing a user-defined line in footage from a fixed camera.
 
@@ -30,6 +30,7 @@ Still images support detections and an annotated preview. They do not support mo
 | [Current status](docs/STATUS.md) | What exists now, open decisions, and the next work |
 | [Glossary](docs/GLOSSARY.md) | Plain-language definitions of the technical terms |
 | [Build and development guide](docs/DEVELOPMENT.md) | How to run the desktop/CLI, read the source, and understand its checks |
+| [Optional GPU inference](docs/GPU_INFERENCE.md) | Processing-device controls, isolated runtime, comparison and fallback |
 | [Model selection and evaluation](docs/MODEL_EVALUATION.md) | Nano/S choice, local comparison, speed tradeoffs and annotation tooling |
 | [Tracking and counting lines](docs/TRACKING.md) | Desktop controls, CSV commands, association rules, crossing semantics, and accuracy limits |
 | [Saved analysis and review](docs/SAVED_RUNS.md) | Video intake, timestamped appearances, review, optional saving, CSV, and partial results |
@@ -46,9 +47,11 @@ With Visual Studio 2022 C++ tools and CMake installed, run these from the reposi
 .\build\windows-msvc\Release\frametrail.exe inspect .\build\windows-msvc\fixtures\variable.mkv
 ```
 
+For optional GPU inference, run `scripts/fetch-gpu.ps1`, rebuild, then select **Processing device → GPU · CPU fallback** in the player. That preference carries into Video analysis when you open its window. CPU is the default; the portable 0.10 preview includes GPU support.
+
 For the optional stronger detector, also run `scripts/fetch-model.ps1 -Model all` **before building** and select **YOLOX-S · more detail** in the app.
 
-The dependency script downloads checksum-pinned FFmpeg, Qt, ONNX Runtime, YOLOX-Nano, and SQLite artifacts into ignored local folders. Use **Open media** with **Detect objects (CPU)** and **Track & count** checked. Adjust confidence, draw the line, and choose a direction. Player edits preserve your position and reset temporary analysis counts there. **Stop** preserves your position for **Play**, while **Replay** returns to the beginning. For a whole recording, click **Video analysis…**, choose/drop the video, and **Analyse video**. Review appearances before using **Save analysis…** or **Export CSV…**; no counting line or player tracking setup is needed. Playback remains silent; CPU analysis can slow playback. See [saved runs](docs/SAVED_RUNS.md), [CPU detection](docs/DETECTION.md), and [tracking](docs/TRACKING.md).
+The dependency script downloads checksum-pinned FFmpeg, Qt, ONNX Runtime, YOLOX-Nano, and SQLite artifacts into ignored local folders. Use **Open media** with **Detect objects** and **Track & count** checked. Adjust confidence, draw the line, and choose a direction. Player edits preserve your position and reset temporary analysis counts there. **Stop** preserves your position for **Play**, while **Replay** returns to the beginning. For a whole recording, click **Video analysis…**, choose/drop the video, and **Analyse video**. Review appearances before using **Save analysis…** or **Export CSV…**; no counting line or player tracking setup is needed. Playback remains silent; CPU analysis can slow playback. See [saved runs](docs/SAVED_RUNS.md), [CPU detection](docs/DETECTION.md), and [tracking](docs/TRACKING.md).
 
 ## Implementation
 

@@ -11,7 +11,8 @@ class FrameCanvas;
 
 class LiveWindow:public QMainWindow {
 public:
-    explicit LiveWindow(QString model, frametrail::DetectorModel variant=frametrail::DetectorModel::nano);
+    explicit LiveWindow(QString model, frametrail::DetectorModel variant=frametrail::DetectorModel::nano,
+        frametrail::DetectorBackend backend=frametrail::DetectorBackend::cpu);
 protected:
     void closeEvent(QCloseEvent*) override;
 private:
@@ -24,6 +25,7 @@ private:
     frametrail::CountingLine line_;
     QTimer timer_;
     QComboBox* model_box_{};
+    QComboBox* backend_box_{};
     QComboBox *cameras_{},*format_{},*classes_{},*direction_{};
     QPushButton *start_{},*stop_{},*refresh_{},*draw_{};
     QCheckBox *detect_{},*track_{};

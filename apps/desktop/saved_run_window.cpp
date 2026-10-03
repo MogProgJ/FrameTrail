@@ -202,6 +202,7 @@ void SavedRunWindow::analyse_video() {
     if(!confirm_discard())return;
     frametrail::RunConfiguration config;
     config.source=native(selected_video_);config.detector={native(model_->currentData().toString()),float(confidence_->value()),.45f,selected_model(model_)};
+    if(configuration_) {config.detector.backend=configuration_->detector.backend;config.detector.gpu_device=configuration_->detector.gpu_device;}
     config.kind=frametrail::RunKind::appearances;config.tracking.classes.resize(80);std::iota(config.tracking.classes.begin(),config.tracking.classes.end(),0);config.tracking.line.reset();
     start_analysis(scratch_.filePath(QUuid::createUuid().toString(QUuid::WithoutBraces)+QStringLiteral(".frametrail")),std::move(config));
 }

@@ -108,6 +108,8 @@ struct RunStore::Impl {
     sqlite3* database{};
     bool writable{};
     int schema_version{3};
+    bool execution_metadata{};
+    std::optional<ExecutionInfo> last_execution;
     explicit Impl(const std::filesystem::path& path,bool write) : writable(write) {
         const auto name=utf8(std::filesystem::absolute(path));
         const auto result=sqlite3_open_v2(name.c_str(),&database,
@@ -165,7 +167,10 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
         "run_id TEXT NOT NULL DEFAULT(lower(hex(randomblob(16)))),"
         "model_type TEXT NOT NULL CHECK(model_type IN('nano','small')),"
         "run_kind TEXT NOT NULL CHECK(run_kind IN('crossings','appearances')),"
-        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.9 / YOLOX 0.1.1rc0 / ORT 1.30.0 CPU / tracker-v1');"
+        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.10 / YOLOX 0.1.1rc0 / tracker-v1',"
+        "requested_backend TEXT NOT NULL DEFAULT 'cpu',gpu_device INTEGER NOT NULL DEFAULT -1,"
+        "execution_backend TEXT NOT NULL DEFAULT 'CPU',execution_runtime TEXT NOT NULL DEFAULT '',"
+        "execution_device TEXT NOT NULL DEFAULT '',execution_fallback TEXT NOT NULL DEFAULT '');"
         "CREATE TABLE events(id INTEGER PRIMARY KEY CHECK(id>0),track_id INTEGER NOT NULL,sequence INTEGER NOT NULL,"
         "timestamp_us INTEGER,class_id INTEGER NOT NULL,direction INTEGER NOT NULL CHECK(direction IN(1,2)),"
         "x REAL NOT NULL,y REAL NOT NULL,thumbnail BLOB NOT NULL);"
@@ -186,7 +191,10 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
     insert.text(17,media.codec);insert.number(18,media.width);insert.number(19,media.height);insert.time(20,media.duration);
     insert.text(21,std::string(model_id(config.detector.variant)));
     insert.text(22,config.kind==RunKind::appearances ? "appearances" : "crossings");
-    insert.row();impl->execute("COMMIT");guard.ready=true;return RunStore(std::move(impl));
+    insert.row();
+    Statement backend(impl->database,"UPDATE run SET requested_backend=?,gpu_device=? WHERE id=1");
+    backend.text(1,backend_id(config.detector.backend));backend.number(2,config.detector.gpu_device);backend.row();
+    impl->execute("COMMIT");impl->execution_metadata=true;guard.ready=true;return RunStore(std::move(impl));
 }
 RunStore::RunStore(const std::filesystem::path& database):impl_(std::make_unique<Impl>(database,false)) {
     impl_->execute("PRAGMA trusted_schema=OFF");
@@ -194,6 +202,8 @@ RunStore::RunStore(const std::filesystem::path& database):impl_(std::make_unique
     if(!app.row() || app.number(0)!=application_id || !version.row() || (version.number(0)<1 || version.number(0)>3))
         throw std::runtime_error("This is not a supported FrameTrail run (schema versions 1–3)");
     impl_->schema_version=int(version.number(0));
+    Statement columns(impl_->database,"SELECT COUNT(*) FROM pragma_table_info('run') WHERE name='execution_backend'");
+    columns.row();impl_->execution_metadata=columns.number(0)!=0;
     summary();
 }
 RunSummary RunStore::summary() const {
@@ -226,6 +236,11 @@ RunSummary RunStore::summary() const {
     out.processed_frames=row.number(23);out.last_timestamp=row.time(24);
     out.timestamp_seekable=row.number(25)!=0;
     out.id=row.text(26);
+    if(impl_->execution_metadata) {
+        Statement execution(impl_->database,"SELECT requested_backend,gpu_device,execution_backend,execution_runtime,execution_device,execution_fallback FROM run WHERE id=1");
+        execution.row();out.configuration.detector.backend=parse_backend(execution.text(0));out.configuration.detector.gpu_device=int(execution.number(1));
+        out.execution={execution.text(2),execution.text(3),execution.text(4),execution.text(5)};
+    }
     Statement counts(impl_->database,"SELECT COUNT(*),COALESCE(SUM(direction=1),0),COALESCE(SUM(direction=2),0) FROM events");
     counts.row();out.event_count=counts.number(0);out.forward=counts.number(1);out.reverse=counts.number(2);
     if(impl_->schema_version>=3) {
@@ -327,6 +342,13 @@ void RunStore::finish(std::string_view status,std::string_view error) {
     if(status!="completed" && status!="cancelled" && status!="failed") throw std::invalid_argument("Invalid final run status");
     Statement update(impl_->database,"UPDATE run SET status=?,error=? WHERE id=1");update.text(1,status);update.text(2,error);update.row();
 }
+void RunStore::record_execution(const ExecutionInfo& execution) {
+    impl_->require_writer();
+    if(impl_->last_execution==execution)return;
+    Statement update(impl_->database,"UPDATE run SET execution_backend=?,execution_runtime=?,execution_device=?,execution_fallback=? WHERE id=1");
+    update.text(1,execution.provider);update.text(2,execution.runtime);update.text(3,execution.device);update.text(4,execution.fallback);update.row();
+    impl_->last_execution=execution;
+}
 bool RunStore::source_available() const {
     const auto info=summary();try { return file_stamp(info.configuration.source)==info.source_stamp; }catch(...) {return false;}
 }
@@ -370,7 +392,7 @@ void RunStore::export_appearances_csv(const std::filesystem::path& output) const
         const auto write=[&](const std::string& value) {
             if(std::fwrite(value.data(),1,value.size(),file)!=value.size())throw std::runtime_error("Could not write appearance CSV");
         };
-        write("\xef\xbb\xbfObject,Appearance ID,First seen,Last seen,Span seconds,Observations,Peak confidence percent,First frame,Last frame,First timestamp us,Last timestamp us,Video,Analysis status,Model,Run ID\r\n");
+        write("\xef\xbb\xbfObject,Appearance ID,First seen,Last seen,Span seconds,Observations,Peak confidence percent,First frame,Last frame,First timestamp us,Last timestamp us,Video,Analysis status,Model,Run ID,Execution provider,Runtime,Device,CPU fallback\r\n");
         std::uint64_t after{};
         for(;;) {
             const auto page=appearances(after);if(page.empty())break;
@@ -381,7 +403,8 @@ void RunStore::export_appearances_csv(const std::filesystem::path& output) const
                 line<<','<<item.observations<<','<<std::setprecision(2)<<item.peak_confidence*100<<','<<item.first_sequence<<','<<item.last_sequence<<',';
                 if(item.first_timestamp)line<<item.first_timestamp->count();line<<',';
                 if(item.last_timestamp)line<<item.last_timestamp->count();
-                line<<','<<quote(utf8(info.configuration.source.filename()))<<','<<quote(info.status)<<','<<quote(model_name(info.configuration.detector.variant))<<','<<quote(info.id)<<"\r\n";
+                line<<','<<quote(utf8(info.configuration.source.filename()))<<','<<quote(info.status)<<','<<quote(model_name(info.configuration.detector.variant))<<','<<quote(info.id)
+                    <<','<<quote(info.execution.provider)<<','<<quote(info.execution.runtime)<<','<<quote(info.execution.device)<<','<<quote(info.execution.fallback)<<"\r\n";
                 write(line.str());after=item.id;
             }
         }

@@ -14,7 +14,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-LiveWindow::LiveWindow(QString model,frametrail::DetectorModel variant):model_(std::move(model)) {
+LiveWindow::LiveWindow(QString model,frametrail::DetectorModel variant,frametrail::DetectorBackend backend):model_(std::move(model)) {
     setWindowTitle(QStringLiteral("FrameTrail — Live camera")); resize(1280, 820); setMinimumSize(980, 640);
     setStyleSheet(frametrail_theme());
     auto* body = new QWidget; body->setObjectName(QStringLiteral("shell"));
@@ -44,7 +44,8 @@ LiveWindow::LiveWindow(QString model,frametrail::DetectorModel variant):model_(s
     model_box_=model_selector(model_,this);
     model_box_->setCurrentIndex(variant==frametrail::DetectorModel::yolox_s ? 1:0);
     options->addWidget(model_box_);
-    detect_ = new QCheckBox(QStringLiteral("Detect objects (CPU)")); detect_->setChecked(QFileInfo::exists(model_)); options->addWidget(detect_);
+    backend_box_=backend_selector(this);backend_box_->setCurrentIndex(backend==frametrail::DetectorBackend::cpu ? 0:1);options->addWidget(backend_box_);
+    detect_ = new QCheckBox(QStringLiteral("Detect objects")); detect_->setChecked(QFileInfo::exists(model_)); options->addWidget(detect_);
     auto* confidenceLabel = new QLabel(QStringLiteral("Confidence threshold")); options->addWidget(confidenceLabel);
     confidence_ = new QDoubleSpinBox; confidence_->setRange(.05,.95); confidence_->setSingleStep(.05); confidence_->setValue(.35); confidenceLabel->setBuddy(confidence_); confidence_->setAccessibleName(QStringLiteral("Confidence threshold")); options->addWidget(confidence_);
     track_ = new QCheckBox(QStringLiteral("Track && count")); track_->setChecked(true); options->addWidget(track_);
@@ -78,7 +79,7 @@ void LiveWindow::update_controls() {
     const bool active=session_.snapshot().active;const bool editable=!active && !editing_ && !pending_edit_ && !closing_;
     start_->setEnabled(editable && cameras_->currentIndex()>=0);stop_->setEnabled(active && !closing_);
     for(auto* widget:{static_cast<QWidget*>(cameras_),static_cast<QWidget*>(format_),static_cast<QWidget*>(refresh_),static_cast<QWidget*>(detect_)})widget->setEnabled(editable);
-    model_box_->setEnabled(editable);
+    model_box_->setEnabled(editable);backend_box_->setEnabled(editable);
     confidence_->setEnabled(editable && detect_->isChecked());track_->setEnabled(editable && detect_->isChecked());
     classes_->setEnabled(editable && detect_->isChecked() && track_->isChecked());direction_->setEnabled(classes_->isEnabled());
     draw_->setEnabled(!editing_ && !pending_edit_ && !closing_ && !canvas_->image().isNull() && detect_->isChecked() && track_->isChecked());
@@ -89,7 +90,7 @@ void LiveWindow::start() {
         frametrail::CameraInput camera{devices_.at(cameras_->currentIndex()).id};
         if(format_->currentIndex()>0){camera.width=format_->currentIndex()==1 ? 640:1280;camera.height=format_->currentIndex()==1 ? 480:720;camera.fps=30;}
         std::optional<frametrail::DetectorOptions> detector;
-        if(detect_->isChecked())detector=frametrail::DetectorOptions{std::filesystem::path(model_box_->currentData().toString().toStdWString()),float(confidence_->value()),.45f,selected_model(model_box_)};
+        if(detect_->isChecked())detector=frametrail::DetectorOptions{std::filesystem::path(model_box_->currentData().toString().toStdWString()),float(confidence_->value()),.45f,selected_model(model_box_),selected_backend(backend_box_)};
         std::optional<frametrail::TrackingOptions> tracking;
         if(detector && track_->isChecked()) {
             tracking=frametrail::TrackingOptions{};if(classes_->currentIndex()==1)tracking->classes={0};if(classes_->currentIndex()==2)tracking->classes={1,2,3,5,7};
@@ -112,6 +113,11 @@ void LiveWindow::tick() {
         const auto age=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-frame->arrived).count();
         metrics_->setText(QStringLiteral("%1 × %2 • captured %3 / analysed %4 • skipped before analysis %5 / before display %6 • processing %7 ms • arrival-to-display %8 ms")
             .arg(f.width).arg(f.height).arg(state.captured).arg(state.processed).arg(state.input_drops).arg(state.preview_drops).arg(frame->processing_ms,0,'f',1).arg(age,0,'f',1));
+        if(frame->detection) {
+            const auto& execution=frame->detection->execution;
+            metrics_->setText(metrics_->text()+QStringLiteral(" · %1").arg(execution.provider=="DirectML" ? QStringLiteral("GPU"):QStringLiteral("CPU")));
+            metrics_->setToolTip(QString::fromStdString(execution.provider+" / "+execution.runtime+" / "+execution.device+"\n"+execution.fallback));
+        }
         if(frame->tracking)counts_->setText(QStringLiteral("Crossings: − → + %1  |  + → − %2").arg(frame->tracking->negative_to_positive).arg(frame->tracking->positive_to_negative));
     }
     if(pending_edit_ && !state.active) {pending_edit_=false;editing_=true;canvas_->begin_line_selection();status_->setText(QStringLiteral("Select A then B. Right-click cancels. Start camera afterwards."));}

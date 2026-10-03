@@ -22,6 +22,7 @@ void AnalysisJob::start(const std::filesystem::path& database,RunConfiguration c
                 Tracker tracker(configuration.tracking);
                 if(stop.stop_requested())throw std::runtime_error("Analysis cancelled before creating output");
                 store.emplace(RunStore::create(database,configuration,reader.info()));
+                store->record_execution(detector.execution_info());
                 if(source_stamp!=store->summary().source_stamp || model_stamp!=store->summary().model_stamp)
                     throw std::runtime_error("Source or model changed while opening analysis");
                 {std::lock_guard lock(mutex_);progress_.duration=reader.info().duration;progress_.status="running";}
@@ -30,6 +31,7 @@ void AnalysisJob::start(const std::filesystem::path& database,RunConfiguration c
                 while(!stop.stop_requested()) {
                     auto frame=reader.read();if(!frame)break;
                     const auto detection=detector.detect(*frame,stop);
+                    store->record_execution(detection.execution);
                     const auto tracking=tracker.update(detection.objects,frame->sequence,frame->timestamp,frame->width,frame->height);
                     store->record_frame(*frame,tracking.events,
                         configuration.kind==RunKind::appearances ? std::span<const TrackedObject>(tracking.objects) : std::span<const TrackedObject>{});

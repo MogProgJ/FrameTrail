@@ -4,6 +4,7 @@ param(
     [ValidateRange(10, 1000000)][int]$Frames = 180,
     [ValidateRange(0, 100)][int]$Warmup = 5,
     [ValidateSet('nano','small')][string]$Model = 'nano',
+    [ValidateSet('cpu','auto','directml')][string]$Backend = 'cpu',
     [string]$OutputDirectory
 )
 $ErrorActionPreference = 'Stop'
@@ -22,7 +23,7 @@ $taskErrors = Join-Path $taskOutput 'errors.txt'
 foreach ($taskPath in @($taskInput, $taskModel, $taskCsv)) {
     if ($taskPath.Contains('"')) { throw 'A path contains an unsupported quote.' }
 }
-$taskArguments = @('inspect', ('"' + $taskInput + '"'), '--detect', ('"' + $taskModel + '"'), '--model-type', $Model, '--track', '--profile', ('"' + $taskCsv + '"'), '--max-frames', "$Frames")
+$taskArguments = @('inspect', ('"' + $taskInput + '"'), '--detect', ('"' + $taskModel + '"'), '--model-type', $Model, '--backend', $Backend, '--track', '--profile', ('"' + $taskCsv + '"'), '--max-frames', "$Frames")
 $taskWatch = [Diagnostics.Stopwatch]::StartNew()
 $taskProcess = Start-Process -FilePath $taskExe -ArgumentList $taskArguments -PassThru -WindowStyle Hidden -RedirectStandardOutput $taskLog -RedirectStandardError $taskErrors
 $taskPeak = 0L
@@ -48,7 +49,11 @@ $taskCpu = Get-CimInstance Win32_Processor | Select-Object -First 1
 $taskReport = [ordered]@{
     schema = 1; created_utc = [DateTime]::UtcNow.ToString('o')
     cpu = $taskCpu.Name; logical_processors = $taskCpu.NumberOfLogicalProcessors
-    os = [Environment]::OSVersion.VersionString; backend = 'ONNX Runtime CPU; 4 intra-op / 1 inter-op threads'
+    os = [Environment]::OSVersion.VersionString; requested_backend = $Backend
+    backend = ((Get-Content -LiteralPath $taskLog | Where-Object { $_ -match '^Execution provider: ' }) -replace '^Execution provider: ','')
+    runtime_version = ((Get-Content -LiteralPath $taskLog | Where-Object { $_ -match '^Runtime: ' }) -replace '^Runtime: ','')
+    device = ((Get-Content -LiteralPath $taskLog | Where-Object { $_ -match '^Device: ' }) -replace '^Device: ','')
+    fallback = ((Get-Content -LiteralPath $taskLog | Where-Object { $_ -match '^Fallback: ' }) -replace '^Fallback: ','')
     input_name = [IO.Path]::GetFileName($taskInput); input_sha256 = (Get-FileHash -LiteralPath $taskInput).Hash
     model_type = $Model
     model_sha256 = (Get-FileHash -LiteralPath $taskModel).Hash

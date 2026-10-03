@@ -7,6 +7,13 @@
 #include <string_view>
 
 namespace frametrail {
+enum class DetectorBackend { cpu, automatic, directml };
+DetectorBackend parse_backend(std::string_view value);
+std::string_view backend_id(DetectorBackend backend);
+struct ExecutionInfo {
+    std::string provider{"CPU"}, runtime, device, fallback;
+    bool operator==(const ExecutionInfo&) const = default;
+};
 struct Detection {
     int class_id{};
     float confidence{};
@@ -16,6 +23,7 @@ struct DetectionResult {
     std::vector<Detection> objects;
     double elapsed_ms{}; // Preprocessing + inference + postprocessing, excludes model load.
     double preprocess_ms{}, inference_ms{}, postprocess_ms{};
+    ExecutionInfo execution;
 };
 enum class DetectorModel { nano, yolox_s };
 std::string_view model_id(DetectorModel model);
@@ -28,6 +36,8 @@ struct DetectorOptions {
     float confidence{0.35f};
     float nms_iou{0.45f};
     DetectorModel variant{DetectorModel::nano};
+    DetectorBackend backend{DetectorBackend::cpu}; // Explicit baseline; GUI can opt into automatic GPU/CPU.
+    int gpu_device{-1}; // DXGI index; -1 selects a capable adapter with most dedicated memory.
 };
 std::string_view class_name(int id);
 
@@ -54,6 +64,7 @@ public:
     Detector(const Detector&) = delete;
     Detector& operator=(const Detector&) = delete;
     DetectionResult detect(const Frame& frame, std::stop_token stop = {});
+    const ExecutionInfo& execution_info() const;
 private:
     struct Impl;
     std::unique_ptr<Impl> impl_;

@@ -12,6 +12,7 @@ class QPushButton;
 class QCheckBox;
 class QDoubleSpinBox;
 class QComboBox;
+class QPropertyAnimation;
 
 class FrameCanvas : public QWidget {
 public:
@@ -79,6 +80,8 @@ private:
     QCheckBox* track_box_{};
     QComboBox* direction_box_{};
     QComboBox* model_box_{};
+    QComboBox* backend_box_{};
+    QPropertyAnimation* source_transition_{};
     QComboBox* classes_box_{};
     QPushButton* line_button_{};
     QLabel* counts_label_{};

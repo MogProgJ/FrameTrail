@@ -23,3 +23,13 @@ inline QComboBox* model_selector(const QString& nano_path, QWidget* parent = nul
 inline frametrail::DetectorModel selected_model(const QComboBox* box) {
     return box->currentIndex()==1 ? frametrail::DetectorModel::yolox_s : frametrail::DetectorModel::nano;
 }
+inline QComboBox* backend_selector(QWidget* parent=nullptr) {
+    auto* box=new QComboBox(parent);box->setObjectName(QStringLiteral("backendSelection"));
+    box->setAccessibleName(QStringLiteral("Processing device"));
+    box->addItems({QStringLiteral("CPU"),QStringLiteral("GPU · CPU fallback")});
+    box->setToolTip(QStringLiteral("GPU uses the optional native DirectML runtime. If unavailable or a run fails, processing continues on the CPU. No cloud processing."));
+    return box;
+}
+inline frametrail::DetectorBackend selected_backend(const QComboBox* box) {
+    return box->currentIndex()==1 ? frametrail::DetectorBackend::automatic:frametrail::DetectorBackend::cpu;
+}

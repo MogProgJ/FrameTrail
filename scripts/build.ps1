@@ -3,7 +3,8 @@ param(
     [ValidateSet('Release', 'Debug')]
     [string]$Configuration = 'Release',
     [switch]$SkipTests,
-    [switch]$MediaOnly
+    [switch]$MediaOnly,
+    [switch]$GpuChecks
 )
 
 $ErrorActionPreference = 'Stop'
@@ -22,6 +23,7 @@ try {
     $taskGui = if ($MediaOnly) { 'OFF' } else { 'ON' }
     $taskConfigureArgs = @('--preset', 'windows-msvc', "-DFFMPEG_ROOT=$taskFfmpegRoot", "-DFRAMETRAIL_BUILD_GUI=$taskGui")
     $taskConfigureArgs += "-DONNXRUNTIME_ROOT=$taskOrtRoot"
+    $taskConfigureArgs += "-DFRAMETRAIL_TEST_GPU=$(if($GpuChecks){'ON'}else{'OFF'})"
     if (-not $MediaOnly) { $taskConfigureArgs += "-DFRAMETRAIL_QT_ROOT=$taskQtRoot" }
     & $taskCmake @taskConfigureArgs
     if ($LASTEXITCODE -ne 0) { throw 'CMake configuration failed. Check the diagnostics above and ensure dependencies were fetched.' }

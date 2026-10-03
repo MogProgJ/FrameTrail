@@ -154,3 +154,9 @@ The main layout is `apps/desktop/preview_layout.ui` (Qt Designer), compiled by C
 Save/export are post-analysis actions using `QSaveFile` with direct-write fallback disabled. The source/model/working database are protected, existing-file replacement goes through the normal save dialog, and unsaved results have a Save/Discard/Cancel choice. `PreviewSession::release()` closes an inactive review reader on final close without changing the main player's resumable Stop semantics. Schema 3 supports appearances, while versions 1/2 retain their original crossing review.
 
 Run `scripts/build.ps1` for the 26-check native/desktop suite. `desktop_analysis_intake` covers the new flow; `saved_run_contract`, `saved_analysis_inference` and `desktop_saved_review` cover storage, real inference and compatibility. See [video analysis](SAVED_RUNS.md) for usage, exported columns and prediction limitations.
+
+## GPU module in 0.10
+
+`DetectorOptions` adds backend preference and an optional DXGI adapter index. `DmlInference` binds the separately loaded runtime's C API and RAII resources; the existing linked CPU C++ adapter retains its original ownership. Per-frame `ExecutionInfo` propagates through preview/live results and optional run metadata. Geometry, tracker, queue limits and saved-analysis interaction remain shared.
+
+Fetch with `scripts/fetch-gpu.ps1`, then `scripts/build.ps1 -GpuChecks` for all 31 native/desktop checks on capable hardware. The ordinary build has 27 checks and can omit GPU dependencies; `FRAMETRAIL_ENABLE_DIRECTML=OFF` tests a CPU-only build. Run `scripts/compare-backends.ps1` for serial, hash-checked local measurements. See [GPU inference](GPU_INFERENCE.md).

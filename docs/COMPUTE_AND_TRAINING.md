@@ -99,3 +99,9 @@ The first cluster exercise will be a short, reproducible smoke job on a developm
 ## 0.8 gate update — 3 October 2026
 
 A stronger pretrained CPU model (YOLOX-S) and local comparison tooling are implemented. Selected-target recovery improved on the supplied generated clip, but CPU throughput fell to about 5 FPS. Evaluate optional GPU inference next, retaining the CPU baseline, before undertaking custom training. Full real-footage annotations and event accuracy remain required. No cluster job, Python inference worker or cloud service has been provisioned. See [evidence and limits](MODEL_EVALUATION.md).
+
+## 0.10 gate update — 3 October 2026
+
+The local GPU gate now has a measured implementation: isolated DirectML inference with CPU fallback, strict benchmarking and unchanged saved-analysis workflow. YOLOX-S's warm pipeline improved roughly 4.2× on the GTX 1650 Ti; Nano's short run was slower after loading. CPU stays the default. The frozen partially annotated targets kept the CPU recovery counts. See [GPU evidence and limits](GPU_INFERENCE.md).
+
+This justifies keeping acceleration optional for the stronger model. It does not justify cluster training, a Python inference service or cloud hosting. Broader labelled accuracy, tracking/event evaluation and sustained resource behaviour remain the next gates; no cluster job or cloud resource was created.

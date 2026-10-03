@@ -61,6 +61,7 @@ void storage(const std::filesystem::path& fixtures) {
     require(!one.front().thumbnail.empty(),"Stored thumbnail was lost");
     fails([&]{reopened.events(0,101);},"Unbounded event page accepted");
     fails([&]{reopened.finish("failed");},"Read-only review changed status");
+    fails([&]{reopened.record_execution({"DirectML","1.24.4","Test device",{}});},"Read-only review rewrote execution metadata");
     // Model metadata must survive reopening; legacy Nano-only files stay read-only.
     const auto legacy=root/"legacy.frametrail";
     std::filesystem::copy_file(path,legacy);
@@ -133,6 +134,13 @@ void appearance_storage(const std::filesystem::path& fixtures) {
     require(result==SQLITE_OK,"Schema2 fixture conversion failed");const auto legacy_before=bytes(legacy);
     {frametrail::RunStore older(legacy);require(older.summary().configuration.kind==frametrail::RunKind::crossings && older.appearances().empty(),"Schema2 compatibility failed");}
     require(bytes(legacy)==legacy_before,"Schema2 review wrote a migration");
+    const auto previous=root/"schema3-before-gpu.frametrail";std::filesystem::copy_file(path,previous);
+    const auto previous_name=previous.u8string();require(sqlite3_open(reinterpret_cast<const char*>(previous_name.c_str()),&db)==SQLITE_OK,"Previous schema3 fixture open failed");
+    const auto removed=sqlite3_exec(db,"ALTER TABLE run DROP COLUMN requested_backend; ALTER TABLE run DROP COLUMN gpu_device; ALTER TABLE run DROP COLUMN execution_backend; ALTER TABLE run DROP COLUMN execution_runtime; ALTER TABLE run DROP COLUMN execution_device; ALTER TABLE run DROP COLUMN execution_fallback;",nullptr,nullptr,nullptr);
+    sqlite3_close(db);require(removed==SQLITE_OK,"Previous schema3 fixture conversion failed");
+    const auto previous_bytes=bytes(previous);
+    {frametrail::RunStore old(previous);require(old.summary().appearance_count==2 && old.summary().execution.runtime.empty(),"0.9 appearance analysis lost compatibility or acquired invented runtime identity");}
+    require(bytes(previous)==previous_bytes,"Previous schema3 review rewrote the file");
     const auto missing=root/"unknown-times.frametrail";
     {auto writer=frametrail::RunStore::create(missing,config,reader.info());frame.sequence=0;frame.timestamp.reset();writer.record_frame(frame,{},std::vector{frametrail::TrackedObject{1,{0,.8f,10,5,25,30},true,{}}});writer.finish("cancelled");}
     require(!frametrail::RunStore(missing).summary().timestamp_seekable && !frametrail::RunStore(missing).appearances()[0].first_timestamp,"Unknown timestamp was invented");

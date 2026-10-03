@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([Parameter(Mandatory)][string]$PackageDirectory, [Parameter(Mandatory)][string]$InputFile)
+param([Parameter(Mandatory)][string]$PackageDirectory, [Parameter(Mandatory)][string]$InputFile, [switch]$GpuChecks)
 $ErrorActionPreference = 'Stop'
 $taskPackage = (Resolve-Path -LiteralPath $PackageDirectory).Path
 $taskInput = (Resolve-Path -LiteralPath $InputFile).Path
@@ -26,6 +26,13 @@ try {
         if (Test-Path -LiteralPath (Join-Path $taskPackage 'models/yolox_s.onnx')) {
             & (Join-Path $taskPackage 'frametrail.exe') inspect $taskInput --detect (Join-Path $taskPackage 'models/yolox_s.onnx') --model-type small --max-frames 3
             if ($LASTEXITCODE -ne 0) { throw 'Packaged YOLOX-S inference failed.' }
+        }
+        if($GpuChecks) {
+            foreach($taskProfile in @('nano','small')) {
+                $taskModelName=if($taskProfile -eq 'nano'){'yolox_nano.onnx'}else{'yolox_s.onnx'}
+                & (Join-Path $taskPackage 'frametrail.exe') inspect $taskInput --detect (Join-Path $taskPackage "models/$taskModelName") --model-type $taskProfile --backend directml --max-frames 3
+                if($LASTEXITCODE -ne 0) { throw 'Strict packaged GPU inference failed.' }
+            }
         }
         $taskApp = Start-Process -FilePath (Join-Path $taskPackage 'frametrail-desktop.exe') -ArgumentList @('--smoke-test', ('"' + $taskInput + '"')) -PassThru -WindowStyle Hidden
         if (-not $taskApp.WaitForExit(15000)) { $taskApp.Kill(); throw 'Packaged GUI startup timed out.' }

@@ -72,6 +72,7 @@ def main():
     parser.add_argument('--cli', type=Path, required=True)
     parser.add_argument('--models', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--backend', choices=('cpu','directml'), default='cpu')
     parser.add_argument('--confidence', type=float, default=.35)
     args = parser.parse_args()
     if not math.isfinite(args.confidence) or not 0 < args.confidence <= 1:
@@ -81,7 +82,7 @@ def main():
     models = {name: (args.models / filename).resolve(strict=True)
               for name, filename in [('nano', 'yolox_nano.onnx'), ('small', 'yolox_s.onnx')]}
     args.output.mkdir(parents=True, exist_ok=False)
-    report = {'schema': 1, 'confidence': args.confidence, 'nms_iou': .45, 'match_iou': .5,
+    report = {'schema': 1, 'requested_backend': args.backend, 'confidence': args.confidence, 'nms_iou': .45, 'match_iou': .5,
               'cli_sha256': digest(cli), 'manifest_sha256': digest(args.manifest), 'models': {},
               'notes': 'Selected-image regression only; partial labels cannot establish precision. No mAP, event accuracy or generalization claim. Single-image timing includes first inference, excludes model load.'}
     for name, model in models.items():
@@ -90,7 +91,7 @@ def main():
             prefix = args.output / f'{name}-{index:03d}'
             detections, profile, log = [prefix.with_suffix(suffix) for suffix in ('.detections.csv', '.profile.csv', '.log')]
             command = [str(cli), 'inspect', str(entry['path']), '--detect', str(model), '--model-type', name,
-                       '--confidence', str(args.confidence), '--max-frames', '2', '--detections', str(detections), '--profile', str(profile)]
+                       '--backend', args.backend, '--confidence', str(args.confidence), '--max-frames', '2', '--detections', str(detections), '--profile', str(profile)]
             result = subprocess.run(command, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=90)
             log.write_text(result.stdout + result.stderr, encoding='utf-8')
             if result.returncode:
@@ -103,7 +104,11 @@ def main():
                 predictions = [{'class_id': int(row['class_id']), 'label': row['label'], 'confidence': float(row['confidence']),
                                 'box': [float(row[key]) for key in ('left','top','right','bottom')]} for row in csv.DictReader(stream)]
             metric = score(entry['objects'], predictions, entry['complete'])
-            metric.update(image=entry['path'].name, sha256=digest(entry['path']), complete=entry['complete'],
+            execution={line.split(': ',1)[0]:line.split(': ',1)[1] for line in result.stdout.splitlines() if line.startswith(('Execution provider: ','Runtime: ','Device: ','Fallback: '))}
+            expected='CPU' if args.backend=='cpu' else 'DirectML'
+            if execution.get('Execution provider')!=expected or execution.get('Fallback'):
+                raise RuntimeError('Evaluation did not use the requested backend')
+            metric.update(execution=execution, image=entry['path'].name, sha256=digest(entry['path']), complete=entry['complete'],
                           pipeline_ms=float(frames[0]['pipeline_ms']))
             results.append(metric)
         targets, matched = sum(r['targets'] for r in results), sum(r['matched'] for r in results)
