@@ -200,6 +200,13 @@ void PreviewSession::launch_worker() {
     }
 }
 
+void PreviewSession::release() {
+    if(snapshot().worker_active)throw std::logic_error("Wait for the preview to stop before releasing it");
+    if(worker_.joinable())worker_.join();
+    reader_.reset();
+    std::lock_guard lock(mutex_);frames_.clear();pending_frames_.clear();status_={};
+}
+
 void PreviewSession::stop() {
     source_stop_.request_stop();
     worker_.request_stop();

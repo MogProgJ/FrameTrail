@@ -48,6 +48,7 @@ public:
     std::uint64_t reconfigure(std::optional<DetectorOptions> detection,
         std::optional<TrackingOptions> tracking, std::vector<Frame> retained = {});
     void stop();
+    void release(); // After stop completes, join and release the retained file handle.
     [[nodiscard]] PreviewSnapshot snapshot() const;
     [[nodiscard]] std::optional<PreviewFrame> try_pop();
 

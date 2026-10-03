@@ -67,7 +67,7 @@
       <item>
        <widget class="QPushButton" name="savedAnalysis">
         <property name="text">
-         <string>Saved analysis…</string>
+         <string>Video analysis…</string>
         </property>
        </widget>
       </item>

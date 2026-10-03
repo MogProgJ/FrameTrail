@@ -9,7 +9,7 @@ These milestones are ordered by dependencies, not estimated calendar dates. Impl
 | 0–2 | Project definition and native media foundation | Implemented; representative-media validation remains |
 | 3 | CPU object detection | Implemented; evaluate on labelled people/vehicle footage |
 | 4 | Tracking and line-crossing events | Baseline implemented; labelled event/identity evaluation remains |
-| 5 | Persist and review events | Baseline implemented; representative workflow/resource evaluation remains |
+| 5 | Analyse, persist and review recordings | 0.9 appearance intake/save/export revamp implemented; representative workflow/resource evaluation remains |
 | 6 | One live input | Windows webcam baseline implemented; sustained hardware and accuracy validation remains |
 | 7 | Profile, optimize, and package | Baseline implemented; clean-machine and sustained validation remain |
 | 8 | Conditional compute and model expansion | Model comparison + selectable YOLOX-S implemented; GPU evaluation is next candidate |
@@ -57,9 +57,9 @@ Completion evidence: compare output with manually labelled clips for single cros
 
 ## 5. Review and persistence
 
-Persist run configuration and events. Add event thumbnails, timeline markers, review seeking, CSV export, and reopening saved results.
+Persist run configuration and evidence. Support direct video intake, timestamped object appearances, thumbnails, review seeking, optional saving, CSV export, and reopening results. Preserve the earlier crossing workflow for existing analyses.
 
-Progress: one SQLite file per frozen whole-file run, committed event/progress transactions, bounded thumbnail pages, page timeline markers, native seeking with source-sequence fallback, silent review playback without inference, reopening without a model, and CSV export are implemented. Cancellation/failure retain clearly labelled partial results. Contract and real-model/desktop integration checks cover these paths; see [saved runs](SAVED_RUNS.md). Representative people/vehicle recordings, event accuracy, native file dialogs, and sustained resource behaviour remain to be evaluated before calling this product workflow reliable.
+Progress: 0.9 removes the player/counting-line and upfront save requirements. Choose/drop a video, analyse all model categories, review first/last observations, then optionally save/export. One SQLite file stores frozen configuration and committed appearances/progress; thumbnails and result pages are bounded. Cancellation/close retain partial results with an unsaved-result choice. Read-only source review, legacy schemas and atomic protected exports are covered by native/desktop checks and a local clip intake run. See [video analysis](SAVED_RUNS.md). Detector labels/IDs remain approximate. Native dialogs, long recordings, representative accuracy and sustained resource behaviour remain open.
 
 Completion evidence: a user completes the full recorded-video workflow; replay seeking does not modify analysis; event writes are idempotent; missing source files and failed exports produce useful errors. Verify CSV quoting and timestamp consistency.
 
@@ -87,7 +87,7 @@ Completion evidence: results and timing measurements state hardware, model, inpu
 
 ## 8. Conditional compute and model expansion
 
-A native pretrained-model comparison is now implemented in 0.8: selectable YOLOX-S, fixed-profile contracts, saved model identity, and local evaluation tooling. On the selected 24 targets S recovered 24 versus Nano’s 18, with much slower CPU throughput. This is partial-label regression evidence, not general accuracy acceptance. See [model evaluation](MODEL_EVALUATION.md). Optional local GPU evaluation is the next candidate; compare on representative inputs before adoption.
+A native pretrained-model comparison is now implemented in 0.8: selectable YOLOX-S, fixed-profile contracts, saved model identity, and local evaluation tooling. On the selected 24 targets S recovered 24 versus Nano’s 18, with much slower CPU throughput. This is partial-label regression evidence, not general accuracy acceptance. See [model evaluation](MODEL_EVALUATION.md). The 0.9 saved-analysis usability/pipeline revamp was pulled forward to fix the recorded workflow. Optional local GPU evaluation remains the next compute candidate; compare on representative inputs before adoption.
 
 This phase covers four independent gates: local GPU inference, Python-based model training, an optional Python inference worker, and a commercial cloud service. Detailed triggers, stop conditions, and the bwUniCluster execution plan are in [Compute, training, and bwUniCluster](COMPUTE_AND_TRAINING.md).
 

@@ -15,7 +15,7 @@ if ((Get-FileHash -LiteralPath $taskModel).Hash.ToLowerInvariant() -ne $taskMode
 foreach ($taskName in @('frametrail.exe','frametrail-desktop.exe')) {
     if (-not (Test-Path -LiteralPath (Join-Path $taskBuild $taskName))) { throw 'Build Release with GUI enabled first: scripts/build.ps1' }
 }
-if (-not $OutputDirectory) { $OutputDirectory = Join-Path $taskRoot ('out/FrameTrail-0.8.0-win64-' + (Get-Date -Format 'yyyyMMdd-HHmmss')) }
+if (-not $OutputDirectory) { $OutputDirectory = Join-Path $taskRoot ('out/FrameTrail-0.9.0-win64-' + (Get-Date -Format 'yyyyMMdd-HHmmss')) }
 if ((Test-Path -LiteralPath $OutputDirectory) -or (Test-Path -LiteralPath ($OutputDirectory + '.zip'))) { throw 'Choose a new package directory. Existing packages are never overwritten.' }
 $taskStage = (New-Item -ItemType Directory -Path $OutputDirectory).FullName
 foreach ($taskName in @('frametrail.exe','frametrail-desktop.exe')) { Copy-Item -LiteralPath (Join-Path $taskBuild $taskName) -Destination $taskStage }
@@ -42,6 +42,11 @@ if (Test-Path -LiteralPath $taskSmallModel) {
 }
 Get-ChildItem -LiteralPath (Join-Path $taskRoot 'dependencies') -Filter '*.json' | Copy-Item -Destination (Join-Path $taskStage 'dependencies')
 Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/PACKAGING.md') -Destination (Join-Path $taskStage 'README.md')
+$taskGuide = Join-Path $taskStage 'README.md'
+$taskGuideText = (Get-Content -LiteralPath $taskGuide -Raw).Replace('](SAVED_RUNS.md)','](docs/SAVED_RUNS.md)')
+Set-Content -LiteralPath $taskGuide -Value $taskGuideText -Encoding utf8
+$taskDocs = New-Item -ItemType Directory -Path (Join-Path $taskStage 'docs')
+Get-ChildItem -LiteralPath (Join-Path $taskRoot 'docs') -Filter '*.md' | Copy-Item -Destination $taskDocs.FullName
 Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/THIRD_PARTY_NOTICES.md') -Destination (Join-Path $taskStage 'notices')
 Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/notices') -Destination (Join-Path $taskStage 'notices/upstream') -Recurse
 Copy-Item -LiteralPath (Join-Path $taskFfmpeg 'LICENSE.txt') -Destination (Join-Path $taskStage 'notices/FFmpeg-LICENSE.txt')
@@ -52,7 +57,7 @@ Copy-Item -LiteralPath (Join-Path $taskQt 'sbom') -Destination (Join-Path $taskS
 $taskFiles = @(Get-ChildItem -LiteralPath $taskStage -File -Recurse | Sort-Object FullName | ForEach-Object {
     [ordered]@{ path = $_.FullName.Substring($taskStage.Length + 1).Replace('\','/'); bytes = $_.Length; sha256 = (Get-FileHash -LiteralPath $_.FullName).Hash.ToLowerInvariant() }
 })
-[ordered]@{ version = '0.8.0'; channel = 'private-preview'; created_utc = [DateTime]::UtcNow.ToString('o'); files = $taskFiles } | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $taskStage 'manifest.json') -Encoding utf8
+[ordered]@{ version = '0.9.0'; channel = 'private-preview'; created_utc = [DateTime]::UtcNow.ToString('o'); files = $taskFiles } | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $taskStage 'manifest.json') -Encoding utf8
 Compress-Archive -Path (Join-Path $taskStage '*') -DestinationPath ($taskStage + '.zip') -CompressionLevel Optimal
 (Get-FileHash -LiteralPath ($taskStage + '.zip')).Hash | Set-Content -LiteralPath ($taskStage + '.zip.sha256') -Encoding ascii
 Write-Host "Private preview package: $taskStage.zip"

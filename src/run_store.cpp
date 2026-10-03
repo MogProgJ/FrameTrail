@@ -5,6 +5,8 @@
 #include <cstdio>
 #include <limits>
 #include <sstream>
+#include <iomanip>
+#include <locale>
 #include <stdexcept>
 
 namespace frametrail {
@@ -105,7 +107,7 @@ FileStamp file_stamp(const std::filesystem::path& path) {
 struct RunStore::Impl {
     sqlite3* database{};
     bool writable{};
-    int schema_version{2};
+    int schema_version{3};
     explicit Impl(const std::filesystem::path& path,bool write) : writable(write) {
         const auto name=utf8(std::filesystem::absolute(path));
         const auto result=sqlite3_open_v2(name.c_str(),&database,
@@ -135,7 +137,8 @@ RunStore::RunStore(RunStore&&) noexcept=default;
 RunStore& RunStore::operator=(RunStore&&) noexcept=default;
 
 RunStore RunStore::create(const std::filesystem::path& database,const RunConfiguration& config,const MediaInfo& media) {
-    if(!config.tracking.line) throw std::invalid_argument("Saved crossing analysis requires a counting line");
+    if(config.kind!=RunKind::crossings && config.kind!=RunKind::appearances)throw std::invalid_argument("Unsupported analysis kind");
+    if(config.kind==RunKind::crossings && !config.tracking.line) throw std::invalid_argument("Saved crossing analysis requires a counting line");
     const auto source=std::filesystem::absolute(config.source), model=std::filesystem::absolute(config.detector.model);
     const auto source_stamp=file_stamp(source),model_stamp=file_stamp(model);
     // Validate native model/tracker settings before creating any output.
@@ -151,7 +154,7 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
         ~NewFileGuard() {if(!ready){std::error_code ignored;std::filesystem::remove(path,ignored);}}
     } guard{database};
     auto impl=std::make_unique<Impl>(database,true);
-    impl->execute("PRAGMA application_id=1179931212; PRAGMA user_version=2; PRAGMA trusted_schema=OFF; PRAGMA foreign_keys=ON;");
+    impl->execute("PRAGMA application_id=1179931212; PRAGMA user_version=3; PRAGMA trusted_schema=OFF; PRAGMA foreign_keys=ON;");
     impl->execute("BEGIN IMMEDIATE");
     impl->execute("CREATE TABLE run(id INTEGER PRIMARY KEY CHECK(id=1),created TEXT NOT NULL,status TEXT NOT NULL,"
         "error TEXT NOT NULL DEFAULT '',source TEXT NOT NULL,source_bytes INTEGER NOT NULL,source_modified INTEGER NOT NULL,"
@@ -161,41 +164,51 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
         "duration_us INTEGER,processed_frames INTEGER NOT NULL DEFAULT 0,last_timestamp_us INTEGER,timestamp_seekable INTEGER NOT NULL DEFAULT 1,"
         "run_id TEXT NOT NULL DEFAULT(lower(hex(randomblob(16)))),"
         "model_type TEXT NOT NULL CHECK(model_type IN('nano','small')),"
-        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.8 / YOLOX 0.1.1rc0 / ORT 1.30.0 CPU / tracker-v1');"
+        "run_kind TEXT NOT NULL CHECK(run_kind IN('crossings','appearances')),"
+        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.9 / YOLOX 0.1.1rc0 / ORT 1.30.0 CPU / tracker-v1');"
         "CREATE TABLE events(id INTEGER PRIMARY KEY CHECK(id>0),track_id INTEGER NOT NULL,sequence INTEGER NOT NULL,"
         "timestamp_us INTEGER,class_id INTEGER NOT NULL,direction INTEGER NOT NULL CHECK(direction IN(1,2)),"
-        "x REAL NOT NULL,y REAL NOT NULL,thumbnail BLOB NOT NULL);" );
+        "x REAL NOT NULL,y REAL NOT NULL,thumbnail BLOB NOT NULL);"
+        "CREATE TABLE appearances(id INTEGER PRIMARY KEY CHECK(id>0),class_id INTEGER NOT NULL CHECK(class_id BETWEEN 0 AND 79),"
+        "first_sequence INTEGER NOT NULL,last_sequence INTEGER NOT NULL,first_timestamp_us INTEGER,last_timestamp_us INTEGER,"
+        "observations INTEGER NOT NULL CHECK(observations>0),first_confidence REAL NOT NULL,peak_confidence REAL NOT NULL,"
+        "left REAL NOT NULL,top REAL NOT NULL,right REAL NOT NULL,bottom REAL NOT NULL,thumbnail BLOB NOT NULL);");
     Statement insert(impl->database,"INSERT INTO run(id,created,status,source,source_bytes,source_modified,model,model_bytes,model_modified,"
-        "confidence,nms,classes,ax,ay,bx,by,direction,deadband,rearm,codec,width,height,duration_us,model_type)"
-        " VALUES(1,strftime('%Y-%m-%dT%H:%M:%fZ','now'),'running',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        "confidence,nms,classes,ax,ay,bx,by,direction,deadband,rearm,codec,width,height,duration_us,model_type,run_kind)"
+        " VALUES(1,strftime('%Y-%m-%dT%H:%M:%fZ','now'),'running',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
     insert.text(1,utf8(source)); insert.number(2,integer(source_stamp.bytes)); insert.number(3,source_stamp.modified);
     insert.text(4,utf8(model)); insert.number(5,integer(model_stamp.bytes)); insert.number(6,model_stamp.modified);
     insert.real(7,config.detector.confidence);insert.real(8,config.detector.nms_iou);
     std::string classes;for(auto id:config.tracking.classes) { if(!classes.empty())classes+=',';classes+=std::to_string(id); }
-    insert.text(9,classes); const auto& line=*config.tracking.line;
+    insert.text(9,classes); const auto line=config.tracking.line.value_or(CountingLine{});
     insert.real(10,line.a.x);insert.real(11,line.a.y);insert.real(12,line.b.x);insert.real(13,line.b.y);
     insert.number(14,static_cast<int>(line.direction));insert.real(15,line.deadband);insert.real(16,line.rearm_distance);
     insert.text(17,media.codec);insert.number(18,media.width);insert.number(19,media.height);insert.time(20,media.duration);
     insert.text(21,std::string(model_id(config.detector.variant)));
+    insert.text(22,config.kind==RunKind::appearances ? "appearances" : "crossings");
     insert.row();impl->execute("COMMIT");guard.ready=true;return RunStore(std::move(impl));
 }
 RunStore::RunStore(const std::filesystem::path& database):impl_(std::make_unique<Impl>(database,false)) {
     impl_->execute("PRAGMA trusted_schema=OFF");
     Statement app(impl_->database,"PRAGMA application_id"),version(impl_->database,"PRAGMA user_version");
-    if(!app.row() || app.number(0)!=application_id || !version.row() || (version.number(0)!=1 && version.number(0)!=2))
-        throw std::runtime_error("This is not a supported FrameTrail run (schema versions 1 and 2)");
+    if(!app.row() || app.number(0)!=application_id || !version.row() || (version.number(0)<1 || version.number(0)>3))
+        throw std::runtime_error("This is not a supported FrameTrail run (schema versions 1–3)");
     impl_->schema_version=int(version.number(0));
     summary();
 }
 RunSummary RunStore::summary() const {
     const std::string query=std::string("SELECT created,status,error,source,source_bytes,source_modified,model,model_bytes,model_modified,"
-        "confidence,nms,classes,ax,ay,bx,by,direction,deadband,rearm,codec,width,height,duration_us,processed_frames,last_timestamp_us,timestamp_seekable,run_id,") + (impl_->schema_version==1 ? "'nano'" : "model_type") + " FROM run WHERE id=1";
+        "confidence,nms,classes,ax,ay,bx,by,direction,deadband,rearm,codec,width,height,duration_us,processed_frames,last_timestamp_us,timestamp_seekable,run_id,") + (impl_->schema_version==1 ? "'nano'" : "model_type") + "," +
+        (impl_->schema_version<3 ? "'crossings'" : "run_kind") + " FROM run WHERE id=1";
     Statement row(impl_->database,query.c_str());
     if(!row.row()) throw std::runtime_error("Saved run metadata is missing");
     RunSummary out;
     out.created=row.text(0);out.status=row.text(1);out.error=row.text(2);
     out.configuration.source=path_from(row.text(3));out.source_stamp={std::uint64_t(row.number(4)),row.number(5)};
     out.configuration.detector={path_from(row.text(6)),float(row.real(9)),float(row.real(10)),parse_model(row.text(27))};
+    const auto kind=row.text(28);
+    if(kind!="appearances" && kind!="crossings")throw std::runtime_error("Invalid saved analysis kind");
+    out.configuration.kind=kind=="appearances" ? RunKind::appearances : RunKind::crossings;
     out.model_stamp={std::uint64_t(row.number(7)),row.number(8)};
     out.configuration.tracking.classes.clear();
     std::istringstream classes(row.text(11));std::string token;
@@ -207,6 +220,7 @@ RunSummary RunStore::summary() const {
     }
     out.configuration.tracking.line=CountingLine{{row.real(12),row.real(13)},{row.real(14),row.real(15)},
         static_cast<CrossingDirection>(row.number(16)),row.real(17),row.real(18)};
+    if(out.configuration.kind==RunKind::appearances)out.configuration.tracking.line.reset();
     Tracker validate(out.configuration.tracking);
     out.media={row.text(19),int(row.number(20)),int(row.number(21)),row.time(22)};
     out.processed_frames=row.number(23);out.last_timestamp=row.time(24);
@@ -214,6 +228,10 @@ RunSummary RunStore::summary() const {
     out.id=row.text(26);
     Statement counts(impl_->database,"SELECT COUNT(*),COALESCE(SUM(direction=1),0),COALESCE(SUM(direction=2),0) FROM events");
     counts.row();out.event_count=counts.number(0);out.forward=counts.number(1);out.reverse=counts.number(2);
+    if(impl_->schema_version>=3) {
+        Statement appearances(impl_->database,"SELECT COUNT(*),COUNT(DISTINCT class_id) FROM appearances");
+        appearances.row();out.appearance_count=appearances.number(0);out.class_count=appearances.number(1);
+    }
     return out;
 }
 std::vector<StoredEvent> RunStore::events(std::uint64_t after_id,std::size_t limit) const {
@@ -229,10 +247,31 @@ std::vector<StoredEvent> RunStore::events(std::uint64_t after_id,std::size_t lim
         value.thumbnail.assign(data,data+length);out.push_back(std::move(value));
     }return out;
 }
-void RunStore::record_frame(const Frame& frame,std::span<const CrossingEvent> events) {
+std::vector<StoredAppearance> RunStore::appearances(std::uint64_t after_id,std::size_t limit) const {
+    if(limit==0 || limit>100)throw std::invalid_argument("Appearance pages contain 1 to 100 rows");
+    if(impl_->schema_version<3)return {};
+    Statement rows(impl_->database,"SELECT id,class_id,first_sequence,last_sequence,first_timestamp_us,last_timestamp_us,observations,"
+        "first_confidence,peak_confidence,left,top,right,bottom,thumbnail FROM appearances WHERE id>? ORDER BY id LIMIT ?");
+    rows.number(1,integer(after_id));rows.number(2,std::int64_t(limit));
+    std::vector<StoredAppearance> out;
+    while(rows.row()) {
+        StoredAppearance value;
+        value.id=rows.number(0);value.first_sequence=rows.number(2);value.last_sequence=rows.number(3);
+        value.first_timestamp=rows.time(4);value.last_timestamp=rows.time(5);value.observations=rows.number(6);
+        value.first_detection={int(rows.number(1)),float(rows.real(7)),float(rows.real(9)),float(rows.real(10)),float(rows.real(11)),float(rows.real(12))};
+        value.peak_confidence=float(rows.real(8));
+        const auto count=sqlite3_column_bytes(rows.value,13);
+        if(count<=0 || count>45000)throw std::runtime_error("Invalid appearance thumbnail size");
+        const auto* data=static_cast<const std::uint8_t*>(sqlite3_column_blob(rows.value,13));
+        value.thumbnail.assign(data,data+count);out.push_back(std::move(value));
+    }
+    return out;
+}
+
+void RunStore::record_frame(const Frame& frame,std::span<const CrossingEvent> events,std::span<const TrackedObject> objects) {
     impl_->require_writer();
     if(frame.sequence>=std::uint64_t(std::numeric_limits<std::int64_t>::max()))throw std::invalid_argument("Source sequence exceeds SQLite range");
-    const auto thumb=events.empty() ? std::vector<std::uint8_t>{} : thumbnail(frame);
+    auto thumb=events.empty() ? std::vector<std::uint8_t>{} : thumbnail(frame);
     impl_->execute("BEGIN IMMEDIATE");
     try {
         for(const auto& event:events) {
@@ -248,6 +287,33 @@ void RunStore::record_frame(const Frame& frame,std::span<const CrossingEvent> ev
             insert.time(4,event.timestamp);insert.number(5,event.class_id);insert.number(6,static_cast<int>(event.direction));
             insert.real(7,event.position.x);insert.real(8,event.position.y);
             insert.check(sqlite3_bind_blob(insert.value,9,thumb.data(),int(thumb.size()),SQLITE_TRANSIENT));insert.row();
+        }
+        for(const auto& object:objects) {
+            const auto& d=object.detection;
+            if(object.id==0 || d.class_id<0 || d.class_id>=80 || !std::isfinite(d.confidence) || d.confidence<0 || d.confidence>1 ||
+                !std::isfinite(d.left) || !std::isfinite(d.top) || !std::isfinite(d.right) || !std::isfinite(d.bottom) ||
+                d.left<0 || d.top<0 || d.right>frame.width || d.bottom>frame.height || d.right<=d.left || d.bottom<=d.top)
+                throw std::invalid_argument("Appearance does not match its source frame");
+            Statement old(impl_->database,"SELECT class_id,last_sequence,last_timestamp_us FROM appearances WHERE id=?");
+            old.number(1,integer(object.id));
+            if(old.row()) {
+                if(old.number(0)!=d.class_id)throw std::logic_error("Conflicting appearance class");
+                if(frame.timestamp && old.time(2) && *frame.timestamp<*old.time(2))throw std::logic_error("Appearance timestamps must not move backwards");
+                if(integer(frame.sequence)<old.number(1))throw std::logic_error("Appearance frames must not move backwards");
+                if(integer(frame.sequence)==old.number(1)) {
+                    if(old.time(2)!=frame.timestamp)throw std::logic_error("Conflicting appearance timestamp");
+                    continue;
+                }
+                Statement update(impl_->database,"UPDATE appearances SET last_sequence=?,last_timestamp_us=?,observations=observations+1,peak_confidence=MAX(peak_confidence,?) WHERE id=?");
+                update.number(1,integer(frame.sequence));update.time(2,frame.timestamp);update.real(3,d.confidence);update.number(4,integer(object.id));update.row();
+            } else {
+                if(thumb.empty())thumb=thumbnail(frame);
+                Statement insert(impl_->database,"INSERT INTO appearances VALUES(?,?,?,?,?,?,1,?,?,?,?,?,?,?)");
+                insert.number(1,integer(object.id));insert.number(2,d.class_id);insert.number(3,integer(frame.sequence));insert.number(4,integer(frame.sequence));
+                insert.time(5,frame.timestamp);insert.time(6,frame.timestamp);insert.real(7,d.confidence);insert.real(8,d.confidence);
+                insert.real(9,d.left);insert.real(10,d.top);insert.real(11,d.right);insert.real(12,d.bottom);
+                insert.check(sqlite3_bind_blob(insert.value,13,thumb.data(),int(thumb.size()),SQLITE_TRANSIENT));insert.row();
+            }
         }
         Statement update(impl_->database,"UPDATE run SET timestamp_seekable=timestamp_seekable AND (? IS NOT NULL) AND "
             "(processed_frames=0 OR ?>last_timestamp_us),processed_frames=?,last_timestamp_us=? WHERE id=1 AND processed_frames<?");
@@ -289,4 +355,41 @@ void RunStore::export_csv(const std::filesystem::path& output) const {
         std::error_code ignored;std::filesystem::remove(output,ignored);throw;
     }
 }
+void RunStore::export_appearances_csv(const std::filesystem::path& output) const {
+    const auto info=summary();
+    auto* file=exclusive_file(output);
+    const auto formatted=[](std::optional<std::chrono::microseconds> time) {
+        if(!time)return std::string{};
+        const auto ms=std::max<std::int64_t>(0,time->count()/1000);
+        std::ostringstream value;
+        value<<std::setfill('0')<<std::setw(2)<<ms/3600000<<':'<<std::setw(2)<<(ms/60000)%60<<':'
+             <<std::setw(2)<<(ms/1000)%60<<'.'<<std::setw(3)<<ms%1000;
+        return value.str();
+    };
+    try {
+        const auto write=[&](const std::string& value) {
+            if(std::fwrite(value.data(),1,value.size(),file)!=value.size())throw std::runtime_error("Could not write appearance CSV");
+        };
+        write("\xef\xbb\xbfObject,Appearance ID,First seen,Last seen,Span seconds,Observations,Peak confidence percent,First frame,Last frame,First timestamp us,Last timestamp us,Video,Analysis status,Model,Run ID\r\n");
+        std::uint64_t after{};
+        for(;;) {
+            const auto page=appearances(after);if(page.empty())break;
+            for(const auto& item:page) {
+                std::ostringstream line;line.imbue(std::locale::classic());line<<std::fixed<<std::setprecision(3);
+                line<<quote(class_name(item.first_detection.class_id))<<','<<item.id<<','<<formatted(item.first_timestamp)<<','<<formatted(item.last_timestamp)<<',';
+                if(item.first_timestamp && item.last_timestamp)line<<std::chrono::duration<double>(*item.last_timestamp-*item.first_timestamp).count();
+                line<<','<<item.observations<<','<<std::setprecision(2)<<item.peak_confidence*100<<','<<item.first_sequence<<','<<item.last_sequence<<',';
+                if(item.first_timestamp)line<<item.first_timestamp->count();line<<',';
+                if(item.last_timestamp)line<<item.last_timestamp->count();
+                line<<','<<quote(utf8(info.configuration.source.filename()))<<','<<quote(info.status)<<','<<quote(model_name(info.configuration.detector.variant))<<','<<quote(info.id)<<"\r\n";
+                write(line.str());after=item.id;
+            }
+        }
+        const auto result=std::fclose(file);file=nullptr;if(result!=0)throw std::runtime_error("Could not finish appearance CSV");
+    } catch(...) {
+        if(file)std::fclose(file);
+        std::error_code ignored;std::filesystem::remove(output,ignored);throw;
+    }
+}
+
 }

@@ -17,14 +17,15 @@ Updated: 3 October 2026.
 - Selectable YOLOX-Nano / YOLOX-S CPU inference through ONNX Runtime, frame-aligned boxes/labels, a confidence control, and CLI detection CSV exports.
 - A native motion-association tracker with confirmation/expiry, selected people/vehicle classes, observed IDs and bounded trails.
 - Finite counting-line rules with direction filtering, deadband, re-arming, gap handling, desktop line drawing/counters, and streaming CLI track/event CSV.
-- Frozen whole-file analysis jobs, SQLite saved runs, embedded event thumbnails, paged event lists/timeline markers, source review seeking/playback, reopening without inference, and saved CSV exports.
+- Independent video-analysis intake with local drag/drop, all-category object appearances, first/last timestamps, thumbnails, bounded review pages and progress previews.
+- Temporary analysis followed by optional atomic saving and formatted UTF-8 CSV export; unsaved-result prompts, protected destinations, cancellation/close-time partial results and read-only legacy crossing review.
 - Committed progress/events, idempotent event IDs, partial cancellation/failure status, and missing/changed-source checks.
 - Windows webcam selection/capture, independent live capture and CPU analysis, capacity-one queues, skip/latency metrics, and stop/restart.
 - Improved saved-review timing with a precise timer, overdue-frame catch-up, and a 60 FPS regression check.
 - CMake presets, PowerShell dependency/build scripts, and CTest checks using generated synthetic media.
 - A development guide explaining commands, ownership, timing, and current limitations.
 
-Version 0.8 builds and runs on Windows x64. Recorded-file analysis and saved event review are joined by one live webcam. Live capture continues independently of CPU analysis and replaces pending frames when inference falls behind. Audio playback, live recording, and network cameras remain deferred. Representative accuracy and sustained resource measurements remain open. See [live camera](LIVE_CAMERA.md), [tracking](TRACKING.md), and [saved runs](SAVED_RUNS.md).
+Version 0.9 builds and runs on Windows x64. Recorded-file appearance analysis and saved review are joined by one live webcam. Live capture continues independently of CPU analysis and replaces pending frames when inference falls behind. Audio playback, live recording, and network cameras remain deferred. Representative accuracy and sustained resource measurements remain open. See [live camera](LIVE_CAMERA.md), [tracking](TRACKING.md), and [saved runs](SAVED_RUNS.md).
 
 ## Model upgrade and evaluation (0.8)
 
@@ -36,7 +37,7 @@ Inspected hardware: Intel Core i7-10750H, approximately 15.8 GiB reported RAM, I
 
 Tools used: Visual Studio 2022 MSVC 19.44, bundled CMake 3.31.6, checksum-pinned FFmpeg 8.1 branch, Qt 6.11.3 base, ONNX Runtime 1.30.0 CPU, YOLOX-Nano 0.1.1rc0, and SQLite 3.53.4 C amalgamation. Manifests are under `dependencies/`. No system-wide dependency installation was performed.
 
-The 0.8 suite includes 25 native/desktop CTest checks plus six standard-library Python evaluation checks. The 0.7 baseline contained 22 checks, including live overload/lifecycle and 60 FPS review timing alongside the existing media, inference, tracking, storage, and desktop checks. The integrated webcam also passed two short capture/detect/track/stop cycles at 1280×720 with clean device release; see [live camera evidence](LIVE_CAMERA.md). Stored review continues to leave the database unchanged. These are integration checks, not natural-video counting-accuracy measurements. Representative labelled footage, unplug/reconnect behaviour, native dialogs, and sustained memory/disk/latency measurements remain open. No leak detector has been run.
+The 0.9 suite passes 26 native/desktop CTest checks, including the rebuilt appearance intake, persistence, CSV and partial-result paths. Six standard-library Python evaluation checks remain part of the 0.8 model tooling. The new intake/save/export/reopen flow also passed on the supplied local recording; this is workflow evidence, not accuracy evaluation. The 0.7 baseline contained 22 checks, including live overload/lifecycle and 60 FPS review timing alongside the existing media, inference, tracking, storage, and desktop checks. The integrated webcam also passed two short capture/detect/track/stop cycles at 1280×720 with clean device release; see [live camera evidence](LIVE_CAMERA.md). Stored review continues to leave the database unchanged. These are integration checks, not natural-video counting-accuracy measurements. Representative labelled footage, unplug/reconnect behaviour, native dialogs, and sustained memory/disk/latency measurements remain open. No leak detector has been run.
 
 ## Repository publication
 
@@ -50,7 +51,7 @@ The user-facing checkout is `C:\Users\nazee\Documents\All Modules\FrameTrail`. A
 
 - Recorded files and images before live input.
 - Stationary-camera person/vehicle crossing events as the first video use case.
-- One source and one selected detector at a time; Nano and S are supported in 0.8.
+- One source and one selected detector per workspace; Nano and S are supported.
 - CPU baseline before deciding on acceleration.
 - C++ application with native C API integration; custom C modules only for a justified need.
 - Robotics remains a separate shelved idea.
@@ -79,9 +80,13 @@ a right-hand settings inspector, more space for video, and explicit idle camera
 messaging. See [performance](PERFORMANCE.md), [packaging](PACKAGING.md), and
 [design](DESIGN.md). No new real-camera test was performed for this update.
 
+## Saved-analysis revamp (0.9)
+
+Video analysis accepts a recording directly without a counting line, displays timestamped appearances, then offers Save analysis and Export CSV. The GUI hides advanced settings and unused result/paging controls, and preserves older crossing files. Run IDs and first/last source times are exported; short gaps and uncertain tracker identities are documented. The native CPU/model baseline is unchanged. See [the new workflow](SAVED_RUNS.md).
+
 ## Immediate next work
 
-Evaluate optional GPU inference against the Nano/S CPU baselines and broaden real-footage annotations. Evaluate short labelled recorded/live people or vehicle crossings; schedule a sustained webcam test, including unplug/reconnect, only with explicit camera authorization. Profiling and private packaging are now implemented; use their measurements to guide optimization and validate the package on a clean Windows machine. Preview Fit/100% zoom and broader quality refinements remain deferred; the reported saved-review timing issue received a focused fix in 0.6.
+Validate the new video-analysis workflow through native File Explorer/dialogs and representative longer recordings. Evaluate optional GPU inference against the Nano/S CPU baselines and broaden real-footage annotations. Evaluate short labelled recorded/live people or vehicle crossings; schedule a sustained webcam test, including unplug/reconnect, only with explicit camera authorization. Profiling and private packaging are now implemented; use their measurements to guide optimization and validate the package on a clean Windows machine. Preview Fit/100% zoom and broader quality refinements remain deferred; the reported saved-review timing issue received a focused fix in 0.6.
 
 The [compute and training plan](COMPUTE_AND_TRAINING.md) is integrated as conditional Phase 8. No cluster environment or cloud service will be added until evaluation identifies a concrete accuracy, throughput, or scale constraint.
 

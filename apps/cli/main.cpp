@@ -21,7 +21,7 @@
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.8 - CPU analysis, saved review and live webcam\n\n"
+    std::cout << "FrameTrail 0.9 - CPU analysis, saved review and live webcam\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
@@ -97,11 +97,18 @@ int run(const std::vector<std::string>& args) {
     if(args.size()>=2 && args[0]=="run") {
         if(args.size()!=2 && (args.size()!=4 || args[2]!="--export"))throw std::runtime_error("Use run <saved-run> [--export <new-csv>]");
         const frametrail::RunStore saved(path_from_utf8(args[1]));const auto summary=saved.summary();
-        std::cout<<"Run status: "<<summary.status<<"\nFrames analysed: "<<summary.processed_frames<<"\nEvents saved: "<<summary.event_count
-            <<"\nModel: "<<frametrail::model_name(summary.configuration.detector.variant)<<"\nConfidence: "<<summary.configuration.detector.confidence
-            <<"\nCrossings (- to +): "<<summary.forward<<"\nCrossings (+ to -): "<<summary.reverse<<'\n';
+        std::cout<<"Run status: "<<summary.status<<"\nFrames analysed: "<<summary.processed_frames
+            <<"\nModel: "<<frametrail::model_name(summary.configuration.detector.variant)<<"\nConfidence: "<<summary.configuration.detector.confidence<<'\n';
+        if(summary.configuration.kind==frametrail::RunKind::crossings)
+            std::cout<<"Events saved: "<<summary.event_count<<"\nCrossings (- to +): "<<summary.forward<<"\nCrossings (+ to -): "<<summary.reverse<<'\n';
         if(!summary.error.empty())std::cout<<"Run error: "<<summary.error<<'\n';
-        if(args.size()==4)saved.export_csv(path_from_utf8(args[3]));return 0;
+        if(summary.configuration.kind==frametrail::RunKind::appearances)
+            std::cout<<"Object appearances: "<<summary.appearance_count<<"\nObject types: "<<summary.class_count<<'\n';
+        if(args.size()==4) {
+            if(summary.configuration.kind==frametrail::RunKind::appearances)saved.export_appearances_csv(path_from_utf8(args[3]));
+            else saved.export_csv(path_from_utf8(args[3]));
+        }
+        return 0;
     }
     if (args.size() < 2 || args[0] != "inspect") {
         help();

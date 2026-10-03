@@ -1,62 +1,79 @@
-# Saved analysis and event review
+# Video analysis and saved results (0.9)
 
-The player is useful for checking a model and drawing a line. Its counters describe the current preview segment and reset when settings change. A **saved run** instead analyses the entire recording from the beginning with one frozen configuration. Seeking, playback, and later player edits cannot change that run's counts.
+Video analysis works directly from a recording. It no longer needs a counting line, enabled player tracking, or a destination filename before processing. The native CPU pipeline records **object appearances** with timestamps, then lets you review and save the result.
 
-## Try the workflow
+## Use the window
 
-1. Open a recording in the player. Enable **Detect objects (CPU)** and **Track & count**, select classes/confidence/direction, and draw the counting line.
-2. Click **Saved analysis…**. The player pauses. This window captures the current source and settings; close it and reopen from the player if you want a different configuration.
-3. Click **Analyse entire recording…** and choose a **new** `.frametrail` filename. Analysis runs on the CPU independently of playback speed. The window reports processed frames, source time, and events. CPU analysis of a long movie may take substantial time; no speed guarantee is implied.
-4. On completion, browse the crossing events. Each row includes a thumbnail, timestamp, class, track ID, event ID, direction, and original zero-based frame sequence. Zero events is a valid result, especially with unsuitable footage or a line that nothing crosses.
-5. Click a row or its timeline marker. The original event frame opens, paused. **Play from event** plays the subsequent source footage without inference. **Back to selected event** returns to that frame. There are no regenerated boxes/trails in review; the saved counting line remains visible.
-6. Use **Export events CSV…** with a new filename. Later, choose **Open saved run…** from the same window, even without a current media file or installed model.
+1. Open **Video analysis…** from the player. You can do this without opening media first.
+2. **Choose video…**, or drag one video from File Explorer into the window. A video already open in the player is offered as the initial selection. Dropping a file selects it; processing starts when you click Analyse.
+3. Optionally open **Analysis settings** to choose YOLOX-Nano or YOLOX-S and adjust confidence. All 80 model categories are considered. The player's selected model/confidence supply the initial settings, but player detection, tracking and counting-line switches are not prerequisites.
+4. Click **Analyse video**. The window shows source-time progress and occasional analysed frames. Every decoded frame is processed in source order; the preview can skip frames independently. Long recordings can take substantial CPU time.
+5. Review the appearance list. Each row shows an object label, first-seen time, last-seen time, and a thumbnail. Click it to open its first frame, paused. **Play** continues the original recording without inference; **Back to appearance** returns to that frame. IDs, observations and confidence are in the row tooltip.
+6. Choose **Save analysis…** for a `.frametrail` file, or **Export CSV…** for a spreadsheet-readable report. Saving is optional and happens after processing. **Open analysis…** reopens a saved result, even without an installed model.
 
-The list holds at most 100 events. Previous/Next buttons navigate pages; timeline markers belong to the displayed page. Unknown-time events appear in the list without a timeline marker. A single-frame image cannot produce a crossing event.
+Analysis first writes to a unique temporary workspace. There is no pre-analysis filename collision. Before replacing or closing unsaved results, the window offers Save, Discard, or Cancel. Closing an active analysis requests cancellation, then offers the same choice for any partial result. Unsaved results are not a recovery mechanism after a crash; save results you want to keep.
 
-## What is saved
+The list loads at most 100 entries at once. Previous/Next appear only when needed. Playback controls, result actions and the results panel appear when a result is available. Model/confidence controls remain behind Analysis settings.
 
-Each `.frametrail` file is one SQLite database, using schema version 2 (schema 1 remains readable) and application ID `FTRL`. It contains:
+## What an appearance means
 
-- Absolute source/model paths, file sizes and modification times, creation time, and the adapter/runtime/tracker version contract.
-- Detector confidence/NMS thresholds, tracked COCO classes, normalized line endpoints, direction, deadband, and re-arm distance.
-- Initial media dimensions/codec/duration, committed frame progress, last source timestamp, and analysis status/error.
-- Event IDs, source sequences, optional presentation timestamps in microseconds, track IDs, classes, crossing direction/position, and thumbnails.
+An appearance is the detections associated with one native tracker ID: first observation, last observation, observed-frame count, peak confidence, and a thumbnail of the first frame. Repeated observations update that row instead of generating a new row for each frame. Each run considers all model categories independently of the player's people/vehicle filter.
 
-Thumbnails are aspect-preserving RGB PPM blobs capped at 160×90. The format avoids a separate image-codec dependency and thumbnail sidecar files. At most roughly 43 KB of pixel data is stored per event; large event collections still consume disk space. Full frames, continuous box histories, and the video itself are not copied into the database. Keep the source recording separately.
+**These are predictions, not verified identities or a count of unique real objects.** Brief, single-frame predictions are retained. A wrong label can become an entry. Tracking can split one object into several appearances or merge nearby objects; cuts, camera movement, occlusion and crowded scenes are difficult. The first/last span may include short gaps with no detection, so it is not a continuous-presence or dwell-time measurement. The current model recognizes 80 categories and will miss objects outside them. See [model evaluation](MODEL_EVALUATION.md) and [tracking](TRACKING.md).
 
-Each run has a persistent random 128-bit identity, included in CSV. Event/track IDs are scoped to that run; combine run ID and event ID when merging exports. Copying or renaming the saved file preserves its run identity. Settings are fixed for the run. A rerun uses a new file/identity and does not overwrite previous evidence.
+Times come from decoded source presentation timestamps, including variable frame rate. Original frame sequences are zero-based. Missing timestamps remain blank in CSV rather than being guessed. The displayed review frame has the saved first-observation box; subsequent playback does not invent new boxes or rerun inference.
 
-## Reliability and partial results
+The reader accepts video formats supported by the bundled FFmpeg build, including common MP4/MKV recordings. Not every codec/container has been verified. Missing, damaged and audio-only inputs report errors; still images are rejected by this video workflow. A valid recording with no predictions is a completed empty result. The main player still supports image detection.
 
-`AnalysisJob` owns one ordered decode → detect → track → write worker. `RunStore` owns SQLite through a C++ RAII wrapper around its C API. Each frame's events and progress are committed in one transaction. Repeating an identical event ID does not insert another event; a conflicting ID fails and rolls back the transaction. Storage errors fail the analysis rather than silently dropping events. Counts are derived from committed event rows.
+## Saving and exporting
 
-**Cancel analysis** and closing the window request cancellation and retain committed results with `cancelled` status. Errors after database creation produce `failed` partial results. An interrupted process may leave `running`, which the UI labels **Interrupted / unfinished**; it is not a completed analysis. An abrupt interruption during a SQLite transaction can also require journal recovery before read-only review succeeds. Preserve the database and any adjacent journal if recovery is needed. No resume-analysis command is implemented; run the source again into a new file.
+A `.frametrail` file is a SQLite database using application ID `FTRL` and schema **3**. It contains:
 
-Review opens SQLite read-only. Missing models do not prevent browsing/export. Missing or changed sources leave thumbnails and CSV available but disable source playback. Restoring the original recording to its original path restores review. File size/modification-time checks detect ordinary changes; they are not a cryptographic content identity, and automatic relinking is not implemented.
+- Source/model paths and file stamps, selected Nano/S profile and frozen detector/tracker settings.
+- A persistent random run identity, creation time, codec/dimensions/duration, committed progress, status and error.
+- Appearance IDs, classes, first/last frame sequences and optional timestamps, observation counts, first/peak confidence, first box and embedded thumbnails.
+- Crossing events for runs created through the existing CLI counting workflow.
 
-Native seeking goes backward to a keyframe, flushes decoder state, and decodes forward to the saved timestamp. If seeking is unsupported or the recording has unknown/repeated/non-increasing timestamps, review decodes from the beginning to the saved frame sequence. This preserves identity but may take time for late events. After a fast seek, decoder sequences are local decode ordinals, so review shows source timestamps rather than presenting them as original frame numbers. The event list retains the original analysis sequence.
+Thumbnails are aspect-preserving RGB PPM images capped at 160 × 90, about 43 KB of pixel data at most per appearance. Full frames, continuous box histories and the video itself are not embedded. **Keep the source video separately** for playback. Long recordings with many fragmented tracks can produce large databases even though processing memory stays bounded.
 
-Version 0.6 improves review playback timing: a precise 5 ms timer replaces the previous 20 ms polling ceiling, and a delayed UI tick selects the newest due frame instead of slowly presenting every overdue frame. The selected event still opens on its exact frame. Only presentation frames may be skipped; stored analysis stays unchanged. A 60 FPS regression test covers clock progress, catching up after a blocked UI tick, and pause continuity. Large-video decoding/rendering limits can still cause uneven playback.
+CSV has one header and one row per appearance, with these columns:
 
-Exports preserve unknown timestamps as empty fields, quote text fields, and preserve UTF-8 paths. Existing output files are refused. Failed writes remove the new partial CSV when possible and report the failure. The saved run is unchanged by export.
+| Column | Meaning |
+| --- | --- |
+| Object / Appearance ID | Predicted class and tracker ID scoped to this run |
+| First seen / Last seen | Readable `HH:MM:SS.mmm` source timestamps |
+| Span seconds | First-to-last span, three decimal places; may include detection gaps |
+| Observations | Number of associated decoded frames |
+| Peak confidence percent | Highest prediction confidence, two decimal places |
+| First frame / Last frame | Original zero-based source sequences |
+| First timestamp us / Last timestamp us | Exact stored microsecond timestamps, blank when unavailable |
+| Video / Analysis status / Model / Run ID | Source filename, completion state, model profile and persistent run identity |
 
-## CLI equivalent
+Exports use UTF-8 with a byte-order mark, CRLF row endings, quoted text and consistent numeric formatting. This preserves Unicode and comma-containing filenames in spreadsheet apps. CSV stores structured fields; column widths and fonts are controlled by the spreadsheet app, rather than simulated with padding spaces.
+
+The desktop's native save dialog confirms replacement of existing destinations. Saving/exporting stages the file and commits through `QSaveFile`, so a failed operation preserves the existing destination. The source video, model and working database are protected from accidental replacement. The CLI refuses existing CSV destinations. Copying a saved file preserves its run identity; use Run ID plus Appearance ID when merging reports.
+
+## Partial results and review
+
+Cancel retains committed progress with `cancelled` status. An error after database creation retains a `failed` partial result. Both can be reviewed and saved/exported. Errors before database creation leave no fake completed result and allow another selection. An interrupted process can leave `running`, which is shown as incomplete. SQLite journal recovery may be required after an abrupt interruption; retain any adjacent journal. There is no resume-analysis command: reanalyse the source as a new run.
+
+Review opens the database read-only and does not modify evidence. Missing models do not prevent browsing or export. Missing/changed source video leaves thumbnails and exports available but disables source playback. Restoring the original source to its original path restores review. File stamps use size/modification time, not a cryptographic content identity; automatic relinking is not implemented.
+
+Native review seeks backward to a keyframe and decodes forward to the saved timestamp. Unsupported seeking or unsuitable timestamps use original sequence fallback, which can take time for late entries. Review uses a precise 5 ms timer and skips overdue presentation frames after a delayed UI tick. The selected first frame remains exact. Large-video decode/render costs can still cause uneven playback. Closing releases the review source handle.
+
+Schema-1 and schema-2 files remain readable without migration. They display their original **line crossings**, not newly reconstructed object appearances. Older app versions cannot read schema 3. The CLI's `inspect --save-run` counting workflow remains available; `run --export` selects the CSV appropriate to the stored run type:
 
 ```powershell
-New-Item -ItemType Directory -Path output -Force
-.\build\windows-msvc\Release\frametrail.exe inspect "C:\Videos\entrance.mp4" --detect models\yolox_nano.onnx --track --line 0.1,0.5,0.9,0.5 --save-run output\entrance.frametrail
-.\build\windows-msvc\Release\frametrail.exe run output\entrance.frametrail
-.\build\windows-msvc\Release\frametrail.exe run output\entrance.frametrail --export output\entrance-events.csv
+.\build\windows-msvc\Release\frametrail.exe run output\recording.frametrail
+.\build\windows-msvc\Release\frametrail.exe run output\recording.frametrail --export output\recording.csv
 ```
 
-`--save-run` requires detection/tracking and rejects `--max-frames` so a limited sample cannot be reported as a complete recording. Source/model files are required only for analysis and source playback. Saved-run inspection/export does not run inference. The CLI relies on OS process interruption; use desktop cancellation for a graceful partial result.
+## Pipeline and validation
 
-## Dependency and checks
+`AnalysisJob` owns one ordered decode → detect → track → write worker. `RunStore` wraps SQLite's native C API with C++ RAII. A frame's appearance updates, crossing events and progress commit together. Repeating an identical appearance observation does not inflate its count; conflicting IDs or reversed progress fail and roll back. Final counts come from committed rows.
 
-SQLite 3.53.4 is compiled from its official amalgamation as C, linked statically into the C++ core, and pinned in `dependencies/sqlite.json`. The downloaded archive's SHA3-256 was checked against the [publisher's download page](https://sqlite.org/download.html); the acquisition script verifies the committed SHA-256. Run `scripts/fetch-storage.ps1`, or the normal dependency script, before building. No database server or system-wide installation is required. SQLite source is [public domain](https://sqlite.org/copyright.html).
+One replaceable analysed-preview slot is published at most every 200 ms. Preview frames and detections share an owned snapshot; the worker never accesses Qt widgets. The UI holds a bounded page of results. A thumbnail is generated only when an appearance/event starts, not on every update. The whole video and result log do not accumulate in RAM. Decoder/model buffers, active tracks, resolution and database size still affect resource use; sustained measurements remain open.
 
-Automated checks cover transaction rollback, idempotency, bounded pagination, settings round trips, UTF-8/comma-containing paths, CSV failures/overwrite refusal, partial states, missing/changed sources, VFR and delayed-frame seeking, sequence fallback, inference isolation, and cancellation. A controlled translated reference photo produces one saved event at source frame 4 / 400,000 µs through the real model and native tracker. Desktop checks exercise analysis, thumbnail selection, seeking, playback, reopening without a model, and byte-for-byte database immutability. This is integration evidence, not accuracy evidence on real people/vehicle footage. Representative footage and sustained memory/disk/throughput measurements remain open.
+SQLite 3.53.4's pinned C amalgamation is compiled into the core; no database server, Python service or cloud account is required. Dependencies remain acquired explicitly with `scripts/fetch-dependencies.ps1`.
 
-## Model identity in 0.8
-
-New runs use schema 2 and freeze the selected Nano/S profile, model file stamp and confidence. Review shows the model name. Schema-1 files are read as Nano without migration or writes; versions before 0.8 cannot open schema 2. See [model evaluation](MODEL_EVALUATION.md).
+The 0.9 native/desktop suite has 26 checks. Coverage includes real-model ordered appearances, transaction rollback/idempotency, readable CSV/run identities, unknown timestamps, Unicode paths, empty detections, invalid/audio/still input, drag/drop rejection/acceptance, cancellation and close-time partial retention, protected destinations, saving/reopening, missing sources, legacy schemas, exact seeking, database immutability and 60 FPS review timing. The intake flow also completed on the user's supplied local 10-second clip. This validates the workflow, not detector accuracy. Native File Explorer interaction, file dialogs, additional DPI settings and sustained long-recording resource use still need manual validation.

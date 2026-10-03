@@ -192,10 +192,11 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     auto* saved = ui.savedAnalysis;
     connect(saved,&QPushButton::clicked,this,[this,saved] {
         if(playing_)toggle_playback();
-        const auto [detector,tracking]=analysis_options();
-        std::optional<frametrail::RunConfiguration> configuration;
-        if(!source_.isEmpty() && detector && tracking && tracking->line)
-            configuration=frametrail::RunConfiguration{native_path(source_),*detector,*tracking};
+        frametrail::RunConfiguration configuration;
+        configuration.source=source_.isEmpty() ? std::filesystem::path{} : native_path(source_);
+        configuration.detector={native_path(model_path_),float(confidence_box_->value()),.45f,selected_model(model_box_)};
+        configuration.kind=frametrail::RunKind::appearances;
+        configuration.tracking.line.reset();
         auto* window=new SavedRunWindow(std::move(configuration));
         saved->setEnabled(false);
         connect(window,&QObject::destroyed,this,[saved]{saved->setEnabled(true);});

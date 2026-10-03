@@ -4,7 +4,7 @@
 
 FrameTrail 0.6 has a desktop preview, live camera window, saved-analysis review, and command-line inspector backed by a reusable C++ library. Local files and one Windows webcam produce owned RGB24 pixels. Whole-file analysis stores settings/events in SQLite; saved review plays the source without inference. See [live camera](LIVE_CAMERA.md) for device controls and bounded live processing.
 
-The preview has Open media, Play/Pause, Stop, Replay, Saved analysis, and Live camera. CPU detection adds boxes/labels; [tracking](TRACKING.md) adds IDs and crossings; [saved runs](SAVED_RUNS.md) adds persistent evidence and review. Audio playback, live recording, and agents remain planned. CLI throughput includes enabled stages; it is not a live-performance promise.
+The preview has Open media, Play/Pause, Stop, Replay, Video analysis, and Live camera. CPU detection adds boxes/labels; [tracking](TRACKING.md) adds IDs and crossings; [video analysis](SAVED_RUNS.md) adds direct recorded-video intake, timestamped appearances, persistent evidence and review. Audio playback, live recording, and agents remain planned. CLI throughput includes enabled stages; it is not a live-performance promise.
 
 ## Windows setup
 
@@ -146,3 +146,11 @@ Licenses/notices remain inside `.deps`. Local development builds do not complete
 Evaluate recorded/live detection and crossings using [TRACKING.md](TRACKING.md), [SAVED_RUNS.md](SAVED_RUNS.md), and [LIVE_CAMERA.md](LIVE_CAMERA.md). Profile sustained resource use before optimization/packaging. Optional AI perception and an agent-driven service remain deferred.
 
 The main layout is `apps/desktop/preview_layout.ui` (Qt Designer), compiled by CMake AUTOUIC. All desktop windows share `theme.hpp`. Use `scripts/profile.ps1` for file-only stage measurements and `scripts/package.ps1` / `scripts/check-package.ps1` for private Windows deployment checks. Never invoke `--camera-smoke` without explicit user consent to activate the camera.
+
+## Recorded analysis in 0.9
+
+`SavedRunWindow` owns intake/settings, a temporary analysis workspace, `AnalysisJob`, and a separate decode-only review session. The GUI prepares `RunKind::appearances` with all 80 categories and no line. `AnalysisJob` processes ordered frames and passes `TrackingResult::objects` into `RunStore::record_frame`. SQLite updates first/last observations and retains first-frame thumbnails; the UI polls one owned preview snapshot and pages at most 100 stored entries.
+
+Save/export are post-analysis actions using `QSaveFile` with direct-write fallback disabled. The source/model/working database are protected, existing-file replacement goes through the normal save dialog, and unsaved results have a Save/Discard/Cancel choice. `PreviewSession::release()` closes an inactive review reader on final close without changing the main player's resumable Stop semantics. Schema 3 supports appearances, while versions 1/2 retain their original crossing review.
+
+Run `scripts/build.ps1` for the 26-check native/desktop suite. `desktop_analysis_intake` covers the new flow; `saved_run_contract`, `saved_analysis_inference` and `desktop_saved_review` cover storage, real inference and compatibility. See [video analysis](SAVED_RUNS.md) for usage, exported columns and prediction limitations.

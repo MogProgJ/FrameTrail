@@ -35,3 +35,11 @@ Qt integration tests capture the actual widgets with generated/sample media and
 exercise playback and reconfiguration. Screenshots support layout inspection;
 they do not establish screen-reader, high-contrast or full accessibility compliance.
 Those, native dialog behaviour and additional DPI settings still require testing.
+
+## Video analysis refresh (0.9)
+
+The recorded workflow now starts with **Choose video** or a local file drop. A single **Analyse video** action uses the existing native pipeline. It does not ask for a counting line or output filename. Model and confidence sit behind **Analysis settings**. The source label shows the basename, with its path in a tooltip.
+
+The empty state gives the video area the full width. During processing, a narrow progress bar and occasional analysed frames provide feedback. After completion, a compact appearance list sits beside the large review viewport; entries show labels and first/last times. Counts occupy one status line; IDs, observation count and peak confidence are in tooltips. Save/CSV and playback controls appear only with results, while paging appears only for larger lists. The old technical configuration paragraph, timeline row and crossing setup are absent from new analyses.
+
+This is implemented in native Qt Widgets in `saved_run_window.cpp`, using the shared theme. Actual-widget captures cover empty, completed and 920 × 620 layouts. Automated Qt drag/drop events cover local Unicode paths, unsupported drops and active-job rejection. Tests exercise unsaved prompts, partial cancellation/close, review, saving/export and reopening. Native File Explorer dragging, system dialogs, screen readers, high contrast and additional DPI settings remain manual checks. No new design-tool service or frontend framework was added.

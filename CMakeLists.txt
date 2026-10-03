@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(FrameTrail VERSION 0.8.0 LANGUAGES C CXX)
+project(FrameTrail VERSION 0.9.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -255,6 +255,8 @@ if(BUILD_TESTING)
             add_custom_command(TARGET frametrail_saved_desktop_tests POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:Qt6::Test>"
                     "$<TARGET_FILE_DIR:frametrail_saved_desktop_tests>" VERBATIM)
+            add_test(NAME desktop_analysis_intake COMMAND frametrail_saved_desktop_tests "${_fixtures}" "${_fixtures}/review.mkv" "${_detector_model}" --intake-only)
+            set_tests_properties(desktop_analysis_intake PROPERTIES FIXTURES_REQUIRED analysis TIMEOUT 90 ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
             add_test(NAME desktop_saved_review COMMAND frametrail_saved_desktop_tests "${_fixtures}" "${_fixtures}/review.mkv" "${_detector_model}")
             set_tests_properties(desktop_saved_review PROPERTIES FIXTURES_REQUIRED analysis TIMEOUT 60 ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
         endif()

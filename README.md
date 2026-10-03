@@ -2,17 +2,19 @@
 
 A native desktop application being built to turn images and video into detections, object tracks, and reviewable events.
 
-**Status: selectable CPU detectors and local model evaluation implemented (0.8).** Choose faster YOLOX-Nano or more detailed YOLOX-S; see [measured results and limits](docs/MODEL_EVALUATION.md). Use a Windows webcam for CPU detection, IDs, and line-crossing counts, with bounded queues and visible frame-skip/latency metrics. Recorded-file analysis, saved event review, and CSV remain available. Counting accuracy and sustained camera performance still need evaluation.
+**Status: video-analysis workflow rebuilt (0.9).** Choose or drop a video, analyse object appearances and timestamps, review the footage, then save an analysis or export a readable CSV. No counting-line setup is needed. Select faster YOLOX-Nano or more detailed YOLOX-S; see [measured results and limits](docs/MODEL_EVALUATION.md). Live webcam detection, IDs and line counts remain available. Accuracy and sustained resource behaviour still need evaluation.
 
 FrameTrail accepts local images, prerecorded video, and one Windows webcam through the native processing core. The initial use case is counting people or vehicles crossing a user-defined line in footage from a fixed camera.
 
 ## What a user will do
 
-1. Open an image or video file.
-2. Choose the object classes to detect, initially people and vehicles.
-3. For video, draw a counting line and choose a crossing direction.
-4. Run analysis and see boxes, object IDs, and recorded events.
-5. Click an event to review the corresponding footage and export results as CSV.
+1. Open **Video analysis…** and choose or drop a recording.
+2. Click **Analyse video**; optionally change model/confidence in Analysis settings.
+3. Review object labels, first/last timestamps and thumbnails.
+4. Click an appearance to review its source footage.
+5. Save the analysis locally or export its CSV.
+
+The main player separately supports image detections, playback and people/vehicle counting across a drawn line. Appearance IDs are approximate tracker associations, not verified unique real objects.
 
 Still images support detections and an annotated preview. They do not support movement tracking or crossing events because those require observations over time.
 
@@ -30,7 +32,7 @@ Still images support detections and an annotated preview. They do not support mo
 | [Build and development guide](docs/DEVELOPMENT.md) | How to run the desktop/CLI, read the source, and understand its checks |
 | [Model selection and evaluation](docs/MODEL_EVALUATION.md) | Nano/S choice, local comparison, speed tradeoffs and annotation tooling |
 | [Tracking and counting lines](docs/TRACKING.md) | Desktop controls, CSV commands, association rules, crossing semantics, and accuracy limits |
-| [Saved analysis and review](docs/SAVED_RUNS.md) | Saving whole-file runs, event thumbnails, review playback, CSV, and partial results |
+| [Saved analysis and review](docs/SAVED_RUNS.md) | Video intake, timestamped appearances, review, optional saving, CSV, and partial results |
 | [Live camera](docs/LIVE_CAMERA.md) | Webcam controls, bounded capture/analysis, skip metrics, and stop/restart |
 
 ## Build and try it (Windows x64)
@@ -46,7 +48,7 @@ With Visual Studio 2022 C++ tools and CMake installed, run these from the reposi
 
 For the optional stronger detector, also run `scripts/fetch-model.ps1 -Model all` **before building** and select **YOLOX-S · more detail** in the app.
 
-The dependency script downloads checksum-pinned FFmpeg, Qt, ONNX Runtime, YOLOX-Nano, and SQLite artifacts into ignored local folders. Use **Open media** with **Detect objects (CPU)** and **Track & count** checked. Adjust confidence, draw the line, and choose a direction. Player edits preserve your position and reset temporary analysis counts there. **Stop** preserves your position for **Play**, while **Replay** returns to the beginning. Click **Saved analysis… → Analyse entire recording…** to save a run with fixed settings, then click an event to review it. Playback remains silent; CPU analysis can slow playback. See [saved runs](docs/SAVED_RUNS.md), [CPU detection](docs/DETECTION.md), and [tracking](docs/TRACKING.md).
+The dependency script downloads checksum-pinned FFmpeg, Qt, ONNX Runtime, YOLOX-Nano, and SQLite artifacts into ignored local folders. Use **Open media** with **Detect objects (CPU)** and **Track & count** checked. Adjust confidence, draw the line, and choose a direction. Player edits preserve your position and reset temporary analysis counts there. **Stop** preserves your position for **Play**, while **Replay** returns to the beginning. For a whole recording, click **Video analysis…**, choose/drop the video, and **Analyse video**. Review appearances before using **Save analysis…** or **Export CSV…**; no counting line or player tracking setup is needed. Playback remains silent; CPU analysis can slow playback. See [saved runs](docs/SAVED_RUNS.md), [CPU detection](docs/DETECTION.md), and [tracking](docs/TRACKING.md).
 
 ## Implementation
 

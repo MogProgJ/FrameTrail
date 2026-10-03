@@ -1,4 +1,4 @@
-# Windows preview package (0.8)
+# Windows preview package (0.9)
 
 Extract the whole ZIP to a writable folder, then open **frametrail-desktop.exe**.
 Keep the DLLs, `platforms`, `models`, and `qt.conf` beside the executable.
@@ -8,7 +8,7 @@ are not implemented. The application is unsigned.
 
 ## Detection models
 
-Use the **Detection model** selector to choose faster Nano or more detailed, slower YOLOX-S. Both recognize 80 categories. S is included when `scripts/fetch-model.ps1 -Model all` was run before building/packaging. On one local 720p clip Nano processed about 27.5 FPS and S about 5 FPS; this varies with hardware and footage. Model changes preserve your playback position. New saved runs require FrameTrail 0.8; older runs remain readable.
+Use the **Detection model** selector to choose faster Nano or more detailed, slower YOLOX-S. Both recognize 80 categories. S is included when `scripts/fetch-model.ps1 -Model all` was run before building/packaging. On one local 720p clip Nano processed about 27.5 FPS and S about 5 FPS; this varies with hardware and footage. Model changes preserve your playback position. New schema-3 saved runs require FrameTrail 0.9; older crossing runs remain readable. Open **Video analysis…**, choose/drop a video, analyse, review appearances, then save/export. See [the workflow](SAVED_RUNS.md).
 
 ## Camera behaviour
 
@@ -36,7 +36,7 @@ It refuses existing destinations and never deletes earlier builds. It includes
 Release CLI/GUI executables, FFmpeg and ONNX Runtime DLLs, pinned Nano and optional S weights (when installed),
 Qt libraries/plugins selected by `windeployqt`, app-local MSVC release runtime,
 dependency manifests, upstream notices and Qt's supplied SBOM. `manifest.json`
-records each staged file's size and SHA-256. No footage, saved runs, test
+records each staged file's size and SHA-256. Workflow guides are included under `docs`. No footage, saved runs, test
 executables, editor files or credentials are included.
 
 The script packages the current Release build; run `build.ps1` first to avoid

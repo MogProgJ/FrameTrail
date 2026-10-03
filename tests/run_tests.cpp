@@ -2,6 +2,7 @@
 #include "frametrail/preview_session.hpp"
 #include <fstream>
 #include <sqlite3.h>
+#include <algorithm>
 #include <iostream>
 #include <thread>
 
@@ -93,6 +94,49 @@ void storage(const std::filesystem::path& fixtures) {
     {auto store=frametrail::RunStore::create(duplicate,config,media);store.record_frame(*first,{});
         first->sequence=1;store.record_frame(*first,{});require(!store.summary().timestamp_seekable,"Repeated timestamps allowed ambiguous seeking");store.finish("cancelled");}
 }
+void appearance_storage(const std::filesystem::path& fixtures) {
+    const auto root=output_root(fixtures);const auto model=root/"appearance-model.onnx";
+    {std::ofstream file(model);file<<"appearance storage fixture";}
+    const auto source=fixtures/"variable.mkv";frametrail::MediaReader reader(source);auto frame=*reader.read();
+    frametrail::RunConfiguration config{source,{model},{},frametrail::RunKind::appearances};config.tracking.line.reset();config.tracking.classes={0,14};
+    const auto path=root/"appearances.frametrail";
+    {
+        auto saved=frametrail::RunStore::create(path,config,reader.info());
+        const frametrail::TrackedObject person{1,{0,.8f,10,5,25,30},false,{}};
+        saved.record_frame(frame,{},std::vector{person});saved.record_frame(frame,{},std::vector{person});
+        frame.sequence=1;frame.timestamp=std::chrono::microseconds(100000);
+        auto weaker=person;weaker.detection.confidence=.6f;
+        const frametrail::TrackedObject bird{2,{14,.9f,30,10,40,25},false,{}};
+        saved.record_frame(frame,{},std::vector{weaker,bird});
+        frame.sequence=2;frame.timestamp=std::chrono::microseconds(500000);
+        auto stronger=person;stronger.detection.confidence=.95f;saved.record_frame(frame,{},std::vector{stronger});
+        auto info=saved.summary();require(info.appearance_count==2 && info.class_count==2 && info.processed_frames==3 && info.event_count==0,"Appearance summary lost aggregation");
+        const auto values=saved.appearances();
+        require(values[0].observations==3 && values[0].first_timestamp->count()==0 && values[0].last_timestamp->count()==500000 &&
+            values[0].first_detection.confidence==.8f && values[0].peak_confidence==.95f && values[0].first_sequence==0 && values[0].last_sequence==2 && !values[0].thumbnail.empty(),"Appearance interval/confidence/idempotence failed");
+        frame.sequence=3;frame.timestamp=std::chrono::microseconds(600000);auto conflict=person;conflict.detection.class_id=14;auto new_bird=bird;new_bird.id=3;
+        fails([&]{saved.record_frame(frame,{},std::vector{new_bird,conflict});},"Changed appearance class was accepted");
+        require(saved.summary().appearance_count==2 && saved.summary().processed_frames==3,"Failed appearance write was not rolled back");
+        saved.finish("completed");
+    }
+    const auto before=bytes(path);frametrail::RunStore saved(path);const auto info=saved.summary();
+    require(info.configuration.kind==frametrail::RunKind::appearances && !info.configuration.tracking.line && saved.appearances(1,1).front().id==2,"Appearance metadata/page round trip failed");
+    fails([&]{saved.appearances(0,101);},"Unbounded appearance page accepted");
+    const auto csv=root/"appearances.csv";saved.export_appearances_csv(csv);const auto content=bytes(csv);
+    require(content.starts_with("\xef\xbb\xbfObject,Appearance ID") && content.find("00:00:00.000,00:00:00.500,0.500,3,95.00")!=std::string::npos && content.find("\r\n")!=std::string::npos,"Readable CSV times/format/confidence failed");
+    require(content.find(info.id)!=std::string::npos,"Appearance CSV lost its run namespace");
+    fails([&]{saved.export_appearances_csv(csv);},"Appearance CSV replaced existing output");
+    require(bytes(path)==before && bytes(csv)==content,"Review/export changed saved results");
+    const auto legacy=root/"schema2.frametrail";std::filesystem::copy_file(path,legacy);
+    sqlite3* db{};const auto name=legacy.u8string();require(sqlite3_open(reinterpret_cast<const char*>(name.c_str()),&db)==SQLITE_OK,"Schema2 fixture open failed");
+    const auto result=sqlite3_exec(db,"ALTER TABLE run DROP COLUMN run_kind; DROP TABLE appearances; PRAGMA user_version=2;",nullptr,nullptr,nullptr);sqlite3_close(db);
+    require(result==SQLITE_OK,"Schema2 fixture conversion failed");const auto legacy_before=bytes(legacy);
+    {frametrail::RunStore older(legacy);require(older.summary().configuration.kind==frametrail::RunKind::crossings && older.appearances().empty(),"Schema2 compatibility failed");}
+    require(bytes(legacy)==legacy_before,"Schema2 review wrote a migration");
+    const auto missing=root/"unknown-times.frametrail";
+    {auto writer=frametrail::RunStore::create(missing,config,reader.info());frame.sequence=0;frame.timestamp.reset();writer.record_frame(frame,{},std::vector{frametrail::TrackedObject{1,{0,.8f,10,5,25,30},true,{}}});writer.finish("cancelled");}
+    require(!frametrail::RunStore(missing).summary().timestamp_seekable && !frametrail::RunStore(missing).appearances()[0].first_timestamp,"Unknown timestamp was invented");
+}
 void seeking(const std::filesystem::path& root) {
     for(const auto* name:{"variable.mkv","delayed.mkv"}) {
         frametrail::MediaReader reader(root/name);std::vector<frametrail::Frame> frames;
@@ -126,6 +170,23 @@ void analysis(const std::filesystem::path& source,const std::filesystem::path& m
     frametrail::RunStore store(path);const auto s=store.summary();const auto e=store.events();
     require(s.processed_frames==6 && s.event_count==1 && e.front().event.sequence==4 && e.front().event.timestamp->count()==400000 &&
         e.front().event.class_id==16 && s.forward==1,"Saved native pipeline lost crossing frame/timestamp/count");
+    auto appearance_config=config;appearance_config.kind=frametrail::RunKind::appearances;appearance_config.tracking.line.reset();
+    appearance_config.tracking.classes.clear();for(int id=0;id<80;++id)appearance_config.tracking.classes.push_back(id);
+    const auto appearance_file=root/"native-appearances.frametrail";job.start(appearance_file,appearance_config);
+    wait([&]{return !job.progress().active;});require(job.progress().status=="completed","Native appearance pipeline failed");
+    frametrail::RunStore appearance_store(appearance_file);const auto appearances=appearance_store.appearances();
+    require(appearance_store.summary().processed_frames==6 && appearance_store.summary().appearance_count>=3 && appearance_store.summary().class_count>=3 &&
+        std::ranges::any_of(appearances,[](const auto& item){return item.first_detection.class_id==16 && item.first_timestamp && item.first_timestamp->count()==0;}),"Appearance pipeline lost dog/categories/timestamp");
+    require(job.progress().preview && job.progress().preview->frame.width==1000,"Analysis preview was not published");
+    auto blank_config=appearance_config;blank_config.source=source.parent_path()/"blank.mkv";
+    const auto empty_file=root/"empty-appearances.frametrail";job.start(empty_file,blank_config);
+    wait([&]{return !job.progress().active;});require(job.progress().status=="completed" && frametrail::RunStore(empty_file).summary().appearance_count==0 && frametrail::RunStore(empty_file).summary().processed_frames==10,"Zero-object video was treated as a failure");
+    for(const auto* name:{"still.png","audio.wav","invalid.txt"}) {
+        auto invalid_input=appearance_config;invalid_input.source=source.parent_path()/name;
+        const auto output=root/(std::string(name)+".frametrail");job.start(output,invalid_input);
+        wait([&]{return !job.progress().active;});require(job.progress().status=="failed","Invalid/non-video input became a completed appearance analysis");
+        if(std::filesystem::exists(output))require(frametrail::RunStore(output).summary().status=="failed","Failed input lost partial status");
+    }
     const auto broken=root/"failed.frametrail";auto invalid=config;invalid.detector.model=root/"missing.onnx";job.start(broken,invalid);
     wait([&]{return !job.progress().active;});require(job.progress().status=="failed" && !std::filesystem::exists(broken),"Missing model created a successful run");
     job.start(root/"cancelled.frametrail",config);job.cancel();wait([&]{return !job.progress().active;});
@@ -139,7 +200,7 @@ void analysis(const std::filesystem::path& source,const std::filesystem::path& m
 }
 int main(int argc,char* argv[]) {
     try {
-        if(argc==2){storage(argv[1]);seeking(argv[1]);}
+        if(argc==2){storage(argv[1]);appearance_storage(argv[1]);seeking(argv[1]);}
         else if(argc==3)analysis(argv[1],argv[2]);else throw std::runtime_error("Expected fixtures, or source/model");
         std::cout<<"Saved-run contracts passed\n";return 0;
     }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}

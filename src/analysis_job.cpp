@@ -1,5 +1,7 @@
 #include "frametrail/analysis_job.hpp"
 #include <stdexcept>
+#include <array>
+#include <algorithm>
 
 namespace frametrail {
 AnalysisJob::~AnalysisJob() { cancel(); }
@@ -23,14 +25,27 @@ void AnalysisJob::start(const std::filesystem::path& database,RunConfiguration c
                 if(source_stamp!=store->summary().source_stamp || model_stamp!=store->summary().model_stamp)
                     throw std::runtime_error("Source or model changed while opening analysis");
                 {std::lock_guard lock(mutex_);progress_.duration=reader.info().duration;progress_.status="running";}
+                std::array<bool,80> observed_classes{};
+                auto preview_at=std::chrono::steady_clock::time_point{};
                 while(!stop.stop_requested()) {
                     auto frame=reader.read();if(!frame)break;
                     const auto detection=detector.detect(*frame,stop);
                     const auto tracking=tracker.update(detection.objects,frame->sequence,frame->timestamp,frame->width,frame->height);
-                    store->record_frame(*frame,tracking.events);
+                    store->record_frame(*frame,tracking.events,
+                        configuration.kind==RunKind::appearances ? std::span<const TrackedObject>(tracking.objects) : std::span<const TrackedObject>{});
+                    const auto now=std::chrono::steady_clock::now();
                     std::lock_guard lock(mutex_);++progress_.frames;progress_.events+=tracking.events.size();progress_.timestamp=frame->timestamp;
+                    if(configuration.kind==RunKind::appearances) for(const auto& object:tracking.objects) {
+                        progress_.appearances=std::max(progress_.appearances,object.id);
+                        if(!observed_classes[object.detection.class_id]) {observed_classes[object.detection.class_id]=true;++progress_.classes;}
+                    }
+                    if(now-preview_at>=std::chrono::milliseconds(200)) {
+                        progress_.preview=std::make_shared<AnalysisPreview>(AnalysisPreview{std::move(*frame),detection.objects});preview_at=now;
+                    }
                 }
                 if(stop.stop_requested())outcome="cancelled";
+                if(outcome=="completed" && configuration.kind==RunKind::appearances && progress().frames<2)
+                    throw std::runtime_error("Choose a video with at least two frames; this input is a still image");
                 if(outcome=="completed" && progress().frames==0)throw std::runtime_error("No visual frames could be decoded");
                 if(file_stamp(configuration.source)!=store->summary().source_stamp ||
                     file_stamp(configuration.detector.model)!=store->summary().model_stamp)

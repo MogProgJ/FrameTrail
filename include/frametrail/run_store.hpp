@@ -9,10 +9,12 @@ struct FileStamp {
     bool operator==(const FileStamp&) const = default;
 };
 FileStamp file_stamp(const std::filesystem::path& path);
+enum class RunKind { crossings, appearances };
 struct RunConfiguration {
     std::filesystem::path source;
     DetectorOptions detector;
     TrackingOptions tracking;
+    RunKind kind{RunKind::crossings};
 };
 struct RunSummary {
     RunConfiguration configuration;
@@ -22,10 +24,19 @@ struct RunSummary {
     std::uint64_t processed_frames{}, event_count{}, forward{}, reverse{};
     std::optional<std::chrono::microseconds> last_timestamp;
     bool timestamp_seekable{};
+    std::uint64_t appearance_count{}, class_count{};
 };
 struct StoredEvent {
     CrossingEvent event;
     std::vector<std::uint8_t> thumbnail; // Small RGB PPM, embedded in the database.
+};
+
+struct StoredAppearance {
+    std::uint64_t id{}, first_sequence{}, last_sequence{}, observations{};
+    std::optional<std::chrono::microseconds> first_timestamp, last_timestamp;
+    Detection first_detection;
+    float peak_confidence{};
+    std::vector<std::uint8_t> thumbnail;
 };
 
 // One frozen analysis per file. Read-only review never obtains a writer.
@@ -40,9 +51,12 @@ public:
     RunStore(const RunStore&) = delete;
     RunSummary summary() const;
     std::vector<StoredEvent> events(std::uint64_t after_id = 0, std::size_t limit = 100) const;
+    std::vector<StoredAppearance> appearances(std::uint64_t after_id = 0, std::size_t limit = 100) const;
+    void export_appearances_csv(const std::filesystem::path& output) const;
     // Events and progress commit together. Repeated identical IDs are ignored;
     // conflicting IDs fail. Memory holds only this frame's events/thumbnail.
-    void record_frame(const Frame& frame, std::span<const CrossingEvent> events);
+    void record_frame(const Frame& frame, std::span<const CrossingEvent> events,
+        std::span<const TrackedObject> objects = {});
     void finish(std::string_view status, std::string_view error = {});
     void export_csv(const std::filesystem::path& output) const; // Never overwrite.
     bool source_available() const;
