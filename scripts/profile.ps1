@@ -3,12 +3,14 @@ param(
     [Parameter(Mandatory)][string]$InputFile,
     [ValidateRange(10, 1000000)][int]$Frames = 180,
     [ValidateRange(0, 100)][int]$Warmup = 5,
+    [ValidateSet('nano','small')][string]$Model = 'nano',
     [string]$OutputDirectory
 )
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path -Parent $PSScriptRoot
 $taskInput = (Resolve-Path -LiteralPath $InputFile).Path
-$taskModel = Join-Path $taskRoot 'models/yolox_nano.onnx'
+$taskModelManifest = Get-Content (Join-Path $taskRoot "dependencies/yolox-$Model.json") -Raw | ConvertFrom-Json
+$taskModel = Join-Path $taskRoot ('models/' + $taskModelManifest.filename)
 $taskExe = Join-Path $taskRoot 'build/windows-msvc/Release/frametrail.exe'
 if (-not $OutputDirectory) { $OutputDirectory = Join-Path $taskRoot ('output/profile-' + (Get-Date -Format 'yyyyMMdd-HHmmss-fff')) }
 if (Test-Path -LiteralPath $OutputDirectory) { throw 'Choose a new profile directory; existing results are never overwritten.' }
@@ -20,7 +22,7 @@ $taskErrors = Join-Path $taskOutput 'errors.txt'
 foreach ($taskPath in @($taskInput, $taskModel, $taskCsv)) {
     if ($taskPath.Contains('"')) { throw 'A path contains an unsupported quote.' }
 }
-$taskArguments = @('inspect', ('"' + $taskInput + '"'), '--detect', ('"' + $taskModel + '"'), '--track', '--profile', ('"' + $taskCsv + '"'), '--max-frames', "$Frames")
+$taskArguments = @('inspect', ('"' + $taskInput + '"'), '--detect', ('"' + $taskModel + '"'), '--model-type', $Model, '--track', '--profile', ('"' + $taskCsv + '"'), '--max-frames', "$Frames")
 $taskWatch = [Diagnostics.Stopwatch]::StartNew()
 $taskProcess = Start-Process -FilePath $taskExe -ArgumentList $taskArguments -PassThru -WindowStyle Hidden -RedirectStandardOutput $taskLog -RedirectStandardError $taskErrors
 $taskPeak = 0L
@@ -48,6 +50,7 @@ $taskReport = [ordered]@{
     cpu = $taskCpu.Name; logical_processors = $taskCpu.NumberOfLogicalProcessors
     os = [Environment]::OSVersion.VersionString; backend = 'ONNX Runtime CPU; 4 intra-op / 1 inter-op threads'
     input_name = [IO.Path]::GetFileName($taskInput); input_sha256 = (Get-FileHash -LiteralPath $taskInput).Hash
+    model_type = $Model
     model_sha256 = (Get-FileHash -LiteralPath $taskModel).Hash
     executable_sha256 = (Get-FileHash -LiteralPath $taskExe).Hash
     confidence = 0.35; nms_iou = 0.45; tracking_classes = @(0,1,2,3,5,7)

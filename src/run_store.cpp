@@ -105,6 +105,7 @@ FileStamp file_stamp(const std::filesystem::path& path) {
 struct RunStore::Impl {
     sqlite3* database{};
     bool writable{};
+    int schema_version{2};
     explicit Impl(const std::filesystem::path& path,bool write) : writable(write) {
         const auto name=utf8(std::filesystem::absolute(path));
         const auto result=sqlite3_open_v2(name.c_str(),&database,
@@ -150,7 +151,7 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
         ~NewFileGuard() {if(!ready){std::error_code ignored;std::filesystem::remove(path,ignored);}}
     } guard{database};
     auto impl=std::make_unique<Impl>(database,true);
-    impl->execute("PRAGMA application_id=1179931212; PRAGMA user_version=1; PRAGMA trusted_schema=OFF; PRAGMA foreign_keys=ON;");
+    impl->execute("PRAGMA application_id=1179931212; PRAGMA user_version=2; PRAGMA trusted_schema=OFF; PRAGMA foreign_keys=ON;");
     impl->execute("BEGIN IMMEDIATE");
     impl->execute("CREATE TABLE run(id INTEGER PRIMARY KEY CHECK(id=1),created TEXT NOT NULL,status TEXT NOT NULL,"
         "error TEXT NOT NULL DEFAULT '',source TEXT NOT NULL,source_bytes INTEGER NOT NULL,source_modified INTEGER NOT NULL,"
@@ -159,13 +160,14 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
         "deadband REAL NOT NULL,rearm REAL NOT NULL,codec TEXT NOT NULL,width INTEGER NOT NULL,height INTEGER NOT NULL,"
         "duration_us INTEGER,processed_frames INTEGER NOT NULL DEFAULT 0,last_timestamp_us INTEGER,timestamp_seekable INTEGER NOT NULL DEFAULT 1,"
         "run_id TEXT NOT NULL DEFAULT(lower(hex(randomblob(16)))),"
-        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.7 / YOLOX-Nano 0.1.1rc0 / ORT 1.30.0 CPU / tracker-v1');"
+        "model_type TEXT NOT NULL CHECK(model_type IN('nano','small')),"
+        "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.8 / YOLOX 0.1.1rc0 / ORT 1.30.0 CPU / tracker-v1');"
         "CREATE TABLE events(id INTEGER PRIMARY KEY CHECK(id>0),track_id INTEGER NOT NULL,sequence INTEGER NOT NULL,"
         "timestamp_us INTEGER,class_id INTEGER NOT NULL,direction INTEGER NOT NULL CHECK(direction IN(1,2)),"
         "x REAL NOT NULL,y REAL NOT NULL,thumbnail BLOB NOT NULL);" );
     Statement insert(impl->database,"INSERT INTO run(id,created,status,source,source_bytes,source_modified,model,model_bytes,model_modified,"
-        "confidence,nms,classes,ax,ay,bx,by,direction,deadband,rearm,codec,width,height,duration_us)"
-        " VALUES(1,strftime('%Y-%m-%dT%H:%M:%fZ','now'),'running',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        "confidence,nms,classes,ax,ay,bx,by,direction,deadband,rearm,codec,width,height,duration_us,model_type)"
+        " VALUES(1,strftime('%Y-%m-%dT%H:%M:%fZ','now'),'running',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
     insert.text(1,utf8(source)); insert.number(2,integer(source_stamp.bytes)); insert.number(3,source_stamp.modified);
     insert.text(4,utf8(model)); insert.number(5,integer(model_stamp.bytes)); insert.number(6,model_stamp.modified);
     insert.real(7,config.detector.confidence);insert.real(8,config.detector.nms_iou);
@@ -174,23 +176,26 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
     insert.real(10,line.a.x);insert.real(11,line.a.y);insert.real(12,line.b.x);insert.real(13,line.b.y);
     insert.number(14,static_cast<int>(line.direction));insert.real(15,line.deadband);insert.real(16,line.rearm_distance);
     insert.text(17,media.codec);insert.number(18,media.width);insert.number(19,media.height);insert.time(20,media.duration);
+    insert.text(21,std::string(model_id(config.detector.variant)));
     insert.row();impl->execute("COMMIT");guard.ready=true;return RunStore(std::move(impl));
 }
 RunStore::RunStore(const std::filesystem::path& database):impl_(std::make_unique<Impl>(database,false)) {
     impl_->execute("PRAGMA trusted_schema=OFF");
     Statement app(impl_->database,"PRAGMA application_id"),version(impl_->database,"PRAGMA user_version");
-    if(!app.row() || app.number(0)!=application_id || !version.row() || version.number(0)!=1)
-        throw std::runtime_error("This is not a supported FrameTrail run (schema version 1)");
+    if(!app.row() || app.number(0)!=application_id || !version.row() || (version.number(0)!=1 && version.number(0)!=2))
+        throw std::runtime_error("This is not a supported FrameTrail run (schema versions 1 and 2)");
+    impl_->schema_version=int(version.number(0));
     summary();
 }
 RunSummary RunStore::summary() const {
-    Statement row(impl_->database,"SELECT created,status,error,source,source_bytes,source_modified,model,model_bytes,model_modified,"
-        "confidence,nms,classes,ax,ay,bx,by,direction,deadband,rearm,codec,width,height,duration_us,processed_frames,last_timestamp_us,timestamp_seekable,run_id FROM run WHERE id=1");
+    const std::string query=std::string("SELECT created,status,error,source,source_bytes,source_modified,model,model_bytes,model_modified,"
+        "confidence,nms,classes,ax,ay,bx,by,direction,deadband,rearm,codec,width,height,duration_us,processed_frames,last_timestamp_us,timestamp_seekable,run_id,") + (impl_->schema_version==1 ? "'nano'" : "model_type") + " FROM run WHERE id=1";
+    Statement row(impl_->database,query.c_str());
     if(!row.row()) throw std::runtime_error("Saved run metadata is missing");
     RunSummary out;
     out.created=row.text(0);out.status=row.text(1);out.error=row.text(2);
     out.configuration.source=path_from(row.text(3));out.source_stamp={std::uint64_t(row.number(4)),row.number(5)};
-    out.configuration.detector={path_from(row.text(6)),float(row.real(9)),float(row.real(10))};
+    out.configuration.detector={path_from(row.text(6)),float(row.real(9)),float(row.real(10)),parse_model(row.text(27))};
     out.model_stamp={std::uint64_t(row.number(7)),row.number(8)};
     out.configuration.tracking.classes.clear();
     std::istringstream classes(row.text(11));std::string token;

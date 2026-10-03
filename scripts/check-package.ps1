@@ -23,6 +23,10 @@ try {
     try {
         & (Join-Path $taskPackage 'frametrail.exe') inspect $taskInput --detect (Join-Path $taskPackage 'models/yolox_nano.onnx') --max-frames 3
         if ($LASTEXITCODE -ne 0) { throw 'Packaged CLI decode/inference failed.' }
+        if (Test-Path -LiteralPath (Join-Path $taskPackage 'models/yolox_s.onnx')) {
+            & (Join-Path $taskPackage 'frametrail.exe') inspect $taskInput --detect (Join-Path $taskPackage 'models/yolox_s.onnx') --model-type small --max-frames 3
+            if ($LASTEXITCODE -ne 0) { throw 'Packaged YOLOX-S inference failed.' }
+        }
         $taskApp = Start-Process -FilePath (Join-Path $taskPackage 'frametrail-desktop.exe') -ArgumentList @('--smoke-test', ('"' + $taskInput + '"')) -PassThru -WindowStyle Hidden
         if (-not $taskApp.WaitForExit(15000)) { $taskApp.Kill(); throw 'Packaged GUI startup timed out.' }
         if ($taskApp.ExitCode -ne 0) { throw "Packaged GUI decode/presentation failed: $($taskApp.ExitCode)" }

@@ -1,4 +1,5 @@
 #include "preview_window.hpp"
+#include "model_selection.hpp"
 #include "saved_run_window.hpp"
 #include "live_window.hpp"
 #include "theme.hpp"
@@ -176,14 +177,16 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     confidence_box_ = ui.confidence; track_box_ = ui.trackObjects;
     classes_box_ = ui.trackingClasses; direction_box_ = ui.crossingDirection;
     line_button_ = ui.drawLine; counts_label_ = ui.crossingCounts;
-    ui.modelLabel->setText(QFileInfo::exists(model_path_) ? QStringLiteral("YOLOX-Nano · 80 classes") : QStringLiteral("Model missing — run fetch-model.ps1"));
+    ui.modelLabel->setText(QStringLiteral("Detection model · 80 categories"));
+    model_box_=model_selector(model_path_,this);
+    ui.inspectorLayout->insertWidget(ui.inspectorLayout->indexOf(ui.modelLabel)+1,model_box_);
     ui.confidenceLabel->setBuddy(confidence_box_); ui.classesLabel->setBuddy(classes_box_); ui.directionLabel->setBuddy(direction_box_);
     line_button_->setToolTip(QStringLiteral("Click A then B. Right-click cancels. Playback stays at this position."));
     direction_box_->setToolTip(QStringLiteral("Sides refer to the A→B line. For a left-to-right line, + is below."));
     auto* open = ui.open; auto* live = ui.liveCamera;
     connect(live,&QPushButton::clicked,this,[this,live] {
         if(playing_)toggle_playback();
-        auto* window=new LiveWindow(model_path_);window->setAttribute(Qt::WA_DeleteOnClose);
+        auto* window=new LiveWindow(model_box_->itemData(0).toString(),selected_model(model_box_));window->setAttribute(Qt::WA_DeleteOnClose);
         live->setEnabled(false);connect(window,&QObject::destroyed,this,[live]{live->setEnabled(true);});window->show();
     });
     auto* saved = ui.savedAnalysis;
@@ -208,6 +211,10 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     connect(stop_button_, &QPushButton::clicked, this, [this] { stop_playback(); });
     connect(replay_button_, &QPushButton::clicked, this, [this] { open_file(source_); });
     connect(detect_box_,&QCheckBox::toggled,this,[this](bool){reconfigure_analysis();});
+    connect(model_box_,&QComboBox::currentIndexChanged,this,[this]{
+        model_path_=model_box_->currentData().toString();
+        reconfigure_analysis();
+    });
     connect(confidence_box_,&QDoubleSpinBox::valueChanged,this,[this](double){reconfigure_analysis();});
     connect(track_box_,&QCheckBox::toggled,this,[this](bool){reconfigure_analysis();});
     connect(classes_box_,&QComboBox::currentIndexChanged,this,[this](int){reconfigure_analysis();});
@@ -258,7 +265,7 @@ void PreviewWindow::open_file(const QString& path) {
 std::pair<std::optional<frametrail::DetectorOptions>,std::optional<frametrail::TrackingOptions>> PreviewWindow::analysis_options() {
     std::optional<frametrail::DetectorOptions> detection;
     if (detect_box_->isChecked()) detection=frametrail::DetectorOptions{
-        native_path(model_path_),float(confidence_box_->value()),0.45f};
+        native_path(model_path_),float(confidence_box_->value()),0.45f,selected_model(model_box_)};
     std::optional<frametrail::TrackingOptions> tracking;
     if (detection && track_box_->isChecked()) {
         tracking = frametrail::TrackingOptions{};

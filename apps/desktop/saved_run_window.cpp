@@ -91,8 +91,8 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     settings_=new QLabel;settings_->setWordWrap(true);settings_->setTextFormat(Qt::PlainText);layout->addWidget(settings_);
     if(configuration_) {
         const auto& c=*configuration_;const auto& line=*c.tracking.line;
-        settings_->setText(QStringLiteral("Captured settings: CPU YOLOX-Nano • confidence %1 • %2 tracked classes • line (%3,%4) → (%5,%6) • %7")
-            .arg(c.detector.confidence,0,'f',2).arg(c.tracking.classes.size()).arg(line.a.x).arg(line.a.y).arg(line.b.x).arg(line.b.y)
+        settings_->setText(QStringLiteral("Captured settings: CPU %1 • confidence %2 • %3 tracked classes • line (%4,%5) → (%6,%7) • %8")
+            .arg(QString::fromUtf8(frametrail::model_name(c.detector.variant).data())).arg(c.detector.confidence,0,'f',2).arg(c.tracking.classes.size()).arg(line.a.x).arg(line.a.y).arg(line.b.x).arg(line.b.y)
             .arg(QString::fromUtf8(frametrail::direction_name(line.direction).data())));
     }
     status_=new QLabel(QStringLiteral("Ready. A saved run is separate from the player’s temporary counters."));status_->setObjectName(QStringLiteral("analysisStatus"));
@@ -153,7 +153,7 @@ void SavedRunWindow::open_run(const QString& database) {
     const auto& s=*summary_;source_->setText(text(s.configuration.source));
     QStringList classes;for(auto id:s.configuration.tracking.classes)classes<<QString::fromUtf8(frametrail::class_name(id).data());
     const auto& line=*s.configuration.tracking.line;
-    settings_->setText(QStringLiteral("Saved %1 • confidence %2 • %3 • line (%4,%5) → (%6,%7) • %8")
+    settings_->setText(QString::fromUtf8(frametrail::model_name(s.configuration.detector.variant).data())+QStringLiteral(" • ")+QStringLiteral("Saved %1 • confidence %2 • %3 • line (%4,%5) → (%6,%7) • %8")
         .arg(QString::fromStdString(s.created)).arg(s.configuration.detector.confidence,0,'f',2).arg(classes.join(QStringLiteral(", ")))
         .arg(line.a.x).arg(line.a.y).arg(line.b.x).arg(line.b.y).arg(QString::fromUtf8(frametrail::direction_name(line.direction).data())));
     const auto state=s.status=="running" ? QStringLiteral("Interrupted / unfinished") : QString::fromStdString(s.status);

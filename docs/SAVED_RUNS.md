@@ -15,7 +15,7 @@ The list holds at most 100 events. Previous/Next buttons navigate pages; timelin
 
 ## What is saved
 
-Each `.frametrail` file is one SQLite database, using schema version 1 and application ID `FTRL`. It contains:
+Each `.frametrail` file is one SQLite database, using schema version 2 (schema 1 remains readable) and application ID `FTRL`. It contains:
 
 - Absolute source/model paths, file sizes and modification times, creation time, and the adapter/runtime/tracker version contract.
 - Detector confidence/NMS thresholds, tracked COCO classes, normalized line endpoints, direction, deadband, and re-arm distance.
@@ -56,3 +56,7 @@ New-Item -ItemType Directory -Path output -Force
 SQLite 3.53.4 is compiled from its official amalgamation as C, linked statically into the C++ core, and pinned in `dependencies/sqlite.json`. The downloaded archive's SHA3-256 was checked against the [publisher's download page](https://sqlite.org/download.html); the acquisition script verifies the committed SHA-256. Run `scripts/fetch-storage.ps1`, or the normal dependency script, before building. No database server or system-wide installation is required. SQLite source is [public domain](https://sqlite.org/copyright.html).
 
 Automated checks cover transaction rollback, idempotency, bounded pagination, settings round trips, UTF-8/comma-containing paths, CSV failures/overwrite refusal, partial states, missing/changed sources, VFR and delayed-frame seeking, sequence fallback, inference isolation, and cancellation. A controlled translated reference photo produces one saved event at source frame 4 / 400,000 µs through the real model and native tracker. Desktop checks exercise analysis, thumbnail selection, seeking, playback, reopening without a model, and byte-for-byte database immutability. This is integration evidence, not accuracy evidence on real people/vehicle footage. Representative footage and sustained memory/disk/throughput measurements remain open.
+
+## Model identity in 0.8
+
+New runs use schema 2 and freeze the selected Nano/S profile, model file stamp and confidence. Review shows the model name. Schema-1 files are read as Nano without migration or writes; versions before 0.8 cannot open schema 2. See [model evaluation](MODEL_EVALUATION.md).

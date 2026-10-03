@@ -2,7 +2,7 @@
 
 A native desktop application being built to turn images and video into detections, object tracks, and reviewable events.
 
-**Status: desktop refresh, CPU profiling and private Windows packaging implemented (0.7).** Use a Windows webcam for CPU detection, IDs, and line-crossing counts, with bounded queues and visible frame-skip/latency metrics. Recorded-file analysis, saved event review, and CSV remain available. Counting accuracy and sustained camera performance still need evaluation.
+**Status: selectable CPU detectors and local model evaluation implemented (0.8).** Choose faster YOLOX-Nano or more detailed YOLOX-S; see [measured results and limits](docs/MODEL_EVALUATION.md). Use a Windows webcam for CPU detection, IDs, and line-crossing counts, with bounded queues and visible frame-skip/latency metrics. Recorded-file analysis, saved event review, and CSV remain available. Counting accuracy and sustained camera performance still need evaluation.
 
 FrameTrail accepts local images, prerecorded video, and one Windows webcam through the native processing core. The initial use case is counting people or vehicles crossing a user-defined line in footage from a fixed camera.
 
@@ -28,6 +28,7 @@ Still images support detections and an annotated preview. They do not support mo
 | [Current status](docs/STATUS.md) | What exists now, open decisions, and the next work |
 | [Glossary](docs/GLOSSARY.md) | Plain-language definitions of the technical terms |
 | [Build and development guide](docs/DEVELOPMENT.md) | How to run the desktop/CLI, read the source, and understand its checks |
+| [Model selection and evaluation](docs/MODEL_EVALUATION.md) | Nano/S choice, local comparison, speed tradeoffs and annotation tooling |
 | [Tracking and counting lines](docs/TRACKING.md) | Desktop controls, CSV commands, association rules, crossing semantics, and accuracy limits |
 | [Saved analysis and review](docs/SAVED_RUNS.md) | Saving whole-file runs, event thumbnails, review playback, CSV, and partial results |
 | [Live camera](docs/LIVE_CAMERA.md) | Webcam controls, bounded capture/analysis, skip metrics, and stop/restart |
@@ -42,6 +43,8 @@ With Visual Studio 2022 C++ tools and CMake installed, run these from the reposi
 .\build\windows-msvc\Release\frametrail-desktop.exe
 .\build\windows-msvc\Release\frametrail.exe inspect .\build\windows-msvc\fixtures\variable.mkv
 ```
+
+For the optional stronger detector, also run `scripts/fetch-model.ps1 -Model all` **before building** and select **YOLOX-S · more detail** in the app.
 
 The dependency script downloads checksum-pinned FFmpeg, Qt, ONNX Runtime, YOLOX-Nano, and SQLite artifacts into ignored local folders. Use **Open media** with **Detect objects (CPU)** and **Track & count** checked. Adjust confidence, draw the line, and choose a direction. Player edits preserve your position and reset temporary analysis counts there. **Stop** preserves your position for **Play**, while **Replay** returns to the beginning. Click **Saved analysis… → Analyse entire recording…** to save a run with fixed settings, then click an event to review it. Playback remains silent; CPU analysis can slow playback. See [saved runs](docs/SAVED_RUNS.md), [CPU detection](docs/DETECTION.md), and [tracking](docs/TRACKING.md).
 

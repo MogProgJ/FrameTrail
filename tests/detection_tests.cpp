@@ -35,6 +35,19 @@ void contract() {
     require(input.tensor[415]==255 && input.tensor[2*plane+415]==0,"Resize edge wrong");
     require(input.tensor[208*416]==114 && input.tensor[3*plane-1]==114,"Padding is not bottom/right 114");
     require(input.tensor[207]>120 && input.tensor[207]<130,"Bilinear midpoint wrong");
+    const auto large=frametrail::yolox::preprocess(frame,640);
+    require(large.tensor.size()==3*640*640 && large.ratio==320 && large.resized_height==320,"S letterbox geometry wrong");
+    require(large.tensor[2*640*640]==255 && large.tensor[320*640]==114,"S color/padding wrong");
+    std::vector<float> large_output(8400*85,0);
+    // First stride-32 cell follows 6400 stride-8 and 1600 stride-16 cells.
+    auto* p=large_output.data()+8000*85;
+    p[0]=2; p[1]=3; p[2]=std::log(2.f); p[3]=std::log(4.f); p[4]=.8f;p[5+29]=.75f;
+    const auto large_boxes=frametrail::yolox::postprocess(large_output,.5,1280,720,.35f,.45f,640);
+    require(large_boxes.size()==1 && large_boxes[0].class_id==29 && std::abs(large_boxes[0].confidence-.6f)<.001f &&
+        large_boxes[0].left==64 && large_boxes[0].top==64 && large_boxes[0].right==192 && large_boxes[0].bottom==320,"S grid/scale/class decode wrong");
+    fails([&]{frametrail::yolox::postprocess(large_output,.5,1280,720,.35f,.45f);});
+    fails([&]{frametrail::yolox::preprocess(frame,512);});
+    fails([]{frametrail::parse_model("auto");});
     fails([]{frametrail::yolox::preprocess({});});
     std::vector<float> output(3549*85,0);
     // Two coincident person boxes, plus a different class: class-aware NMS keeps two.
@@ -54,8 +67,9 @@ void contract() {
     fails([&]{frametrail::yolox::postprocess({},1,10,10,.3f,.4f);});
     fails([&]{frametrail::yolox::postprocess(output,1,10,10,0,.4f);});
 }
-void inference(const std::filesystem::path& model,const std::filesystem::path& fixtures) {
-    frametrail::Detector detector({model});
+void inference(const std::filesystem::path& model,const std::filesystem::path& fixtures,frametrail::DetectorModel variant=frametrail::DetectorModel::nano) {
+    frametrail::Detector detector({model,.35f,.45f,variant});
+    fails([&]{frametrail::Detector mismatch({model,.35f,.45f,variant==frametrail::DetectorModel::nano ? frametrail::DetectorModel::yolox_s : frametrail::DetectorModel::nano});});
     frametrail::MediaReader image(fixtures/"still.png");
     auto frame=image.read();
     auto result=detector.detect(*frame);
@@ -66,7 +80,7 @@ void inference(const std::filesystem::path& model,const std::filesystem::path& f
     fails([&]{detector.detect(*frame,cancelled.get_token());});
     fails([&]{frametrail::Detector bad({fixtures/"invalid.txt"});});
     frametrail::PreviewSession session;
-    session.start(fixtures/"delayed.mkv",frametrail::DetectorOptions{model});
+    session.start(fixtures/"delayed.mkv",frametrail::DetectorOptions{model,.35f,.45f,variant});
     const auto generation=session.snapshot().generation;
     std::uint64_t sequence=0;
     wait_for([&] {
@@ -79,19 +93,20 @@ void inference(const std::filesystem::path& model,const std::filesystem::path& f
         return !state.worker_active && state.queued_frames==0;
     });
     require(sequence==10,"Analysis dropped frames");
-    session.start(fixtures/"delayed.mkv",frametrail::DetectorOptions{model});
+    session.start(fixtures/"delayed.mkv",frametrail::DetectorOptions{model,.35f,.45f,variant});
     wait_for([&]{return session.snapshot().queued_frames==2;});
     session.stop();
     wait_for([&]{return !session.snapshot().worker_active;});
     require(!session.try_pop(),"Cancelled analysis retained results");
-    session.start(fixtures/"delayed.mkv",frametrail::DetectorOptions{model});
+    session.start(fixtures/"delayed.mkv",frametrail::DetectorOptions{model,.35f,.45f,variant});
     wait_for([&]{return session.snapshot().state==frametrail::PreviewState::decoding;});
     session.stop();
     wait_for([&]{return !session.snapshot().worker_active;});
     require(session.snapshot().state==frametrail::PreviewState::cancelled,"Active inference cancellation failed");
 }
-void sample(const std::filesystem::path& model,const std::filesystem::path& sample_path) {
-    frametrail::Detector detector({model});
+void sample(const std::filesystem::path& model,const std::filesystem::path& sample_path,frametrail::DetectorModel variant=frametrail::DetectorModel::nano) {
+    frametrail::Detector detector({model,.35f,.45f,variant});
+    fails([&]{frametrail::Detector mismatch({model,.35f,.45f,variant==frametrail::DetectorModel::nano ? frametrail::DetectorModel::yolox_s : frametrail::DetectorModel::nano});});
     frametrail::MediaReader reader(sample_path);
     auto frame=reader.read();
     require(frame.has_value(),"No sample frame");
@@ -106,7 +121,7 @@ void sample(const std::filesystem::path& model,const std::filesystem::path& samp
     require(dog && bicycle,"Reference photo must contain dog and bicycle detections");
     double total=0;
     for (int i=0;i<10;++i) total+=detector.detect(*frame).elapsed_ms;
-    std::cout << "Warm CPU detection mean: " << total/10 << " ms/frame (10 runs, YOLOX-Nano 416, four threads)\n";
+    std::cout << "Warm CPU detection mean: " << total/10 << " ms/frame (10 runs, selected model, four threads)\n";
 #ifdef _WIN32
     PROCESS_MEMORY_COUNTERS memory{};
     memory.cb=sizeof(memory);
@@ -120,6 +135,8 @@ int main(int argc,char* argv[]) {
         if (argc==1) contract();
         else if (argc==4 && std::string_view(argv[1])=="--inference") inference(argv[2],argv[3]);
         else if (argc==4 && std::string_view(argv[1])=="--sample") sample(argv[2],argv[3]);
+        else if(argc==5 && std::string_view(argv[1])=="--inference") inference(argv[2],argv[3],frametrail::parse_model(argv[4]));
+        else if(argc==5 && std::string_view(argv[1])=="--sample") sample(argv[2],argv[3],frametrail::parse_model(argv[4]));
         else throw std::runtime_error("Unexpected test arguments");
         std::cout << "Detection checks passed\n";
         return 0;

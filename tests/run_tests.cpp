@@ -1,6 +1,7 @@
 #include "frametrail/analysis_job.hpp"
 #include "frametrail/preview_session.hpp"
 #include <fstream>
+#include <sqlite3.h>
 #include <iostream>
 #include <thread>
 
@@ -28,7 +29,7 @@ void storage(const std::filesystem::path& fixtures) {
     frametrail::MediaInfo media;std::optional<frametrail::Frame> first;
     {frametrail::MediaReader reader(source);media=reader.info();first=reader.read();}
     require(bool(first),"Fixture missing");
-    auto config=frametrail::RunConfiguration{source,{model,.55f,.4f},{}};
+    auto config=frametrail::RunConfiguration{source,{model,.55f,.4f,frametrail::DetectorModel::yolox_s},{}};
     config.tracking.line->a={.2,.3};config.tracking.line->b={.8,.7};config.tracking.classes={0,2};
     const auto path=root/std::filesystem::path(u8"résultats 空.frametrail");
     {
@@ -51,7 +52,7 @@ void storage(const std::filesystem::path& fixtures) {
     }
     const auto unchanged=bytes(path);frametrail::RunStore reopened(path);const auto summary=reopened.summary();
     require(summary.id.size()==32 && summary.status=="completed" && summary.configuration.tracking.classes==config.tracking.classes &&
-        summary.configuration.detector.confidence==config.detector.confidence && summary.configuration.tracking.line->b.y==.7,
+        summary.configuration.detector.variant==frametrail::DetectorModel::yolox_s && summary.configuration.detector.confidence==config.detector.confidence && summary.configuration.tracking.line->b.y==.7,
         "Frozen run settings failed round trip");
     const auto one=reopened.events(),two=reopened.events(one.back().event.id),three=reopened.events(two.back().event.id);
     require(one.size()==100 && two.size()==100 && three.size()==5 && two.front().event.id==101 && three.back().event.id==205,
@@ -59,6 +60,17 @@ void storage(const std::filesystem::path& fixtures) {
     require(!one.front().thumbnail.empty(),"Stored thumbnail was lost");
     fails([&]{reopened.events(0,101);},"Unbounded event page accepted");
     fails([&]{reopened.finish("failed");},"Read-only review changed status");
+    // Model metadata must survive reopening; legacy Nano-only files stay read-only.
+    const auto legacy=root/"legacy.frametrail";
+    std::filesystem::copy_file(path,legacy);
+    sqlite3* db{};
+    const auto legacy_utf8=legacy.u8string();
+    require(sqlite3_open(reinterpret_cast<const char*>(legacy_utf8.c_str()),&db)==SQLITE_OK,"Legacy fixture open failed");
+    const auto converted=sqlite3_exec(db,"ALTER TABLE run DROP COLUMN model_type; PRAGMA user_version=1;",nullptr,nullptr,nullptr);
+    sqlite3_close(db);require(converted==SQLITE_OK,"Legacy fixture conversion failed");
+    const auto legacy_before=bytes(legacy);
+    {frametrail::RunStore old(legacy);require(old.summary().configuration.detector.variant==frametrail::DetectorModel::nano && old.events().size()==100,"Legacy run compatibility failed");}
+    require(bytes(legacy)==legacy_before,"Legacy review rewrote the file");
     const auto csv=root/"events.csv";reopened.export_csv(csv);const auto csv_bytes=bytes(csv);
     require(csv_bytes.find("\",\"completed\",1,0,0,17,0,\"person\",\"negative_to_positive\"")!=std::string::npos,
         "CSV lost quoted source/status or exact source timestamp");

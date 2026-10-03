@@ -15,7 +15,7 @@ if ((Get-FileHash -LiteralPath $taskModel).Hash.ToLowerInvariant() -ne $taskMode
 foreach ($taskName in @('frametrail.exe','frametrail-desktop.exe')) {
     if (-not (Test-Path -LiteralPath (Join-Path $taskBuild $taskName))) { throw 'Build Release with GUI enabled first: scripts/build.ps1' }
 }
-if (-not $OutputDirectory) { $OutputDirectory = Join-Path $taskRoot ('out/FrameTrail-0.7.0-win64-' + (Get-Date -Format 'yyyyMMdd-HHmmss')) }
+if (-not $OutputDirectory) { $OutputDirectory = Join-Path $taskRoot ('out/FrameTrail-0.8.0-win64-' + (Get-Date -Format 'yyyyMMdd-HHmmss')) }
 if ((Test-Path -LiteralPath $OutputDirectory) -or (Test-Path -LiteralPath ($OutputDirectory + '.zip'))) { throw 'Choose a new package directory. Existing packages are never overwritten.' }
 $taskStage = (New-Item -ItemType Directory -Path $OutputDirectory).FullName
 foreach ($taskName in @('frametrail.exe','frametrail-desktop.exe')) { Copy-Item -LiteralPath (Join-Path $taskBuild $taskName) -Destination $taskStage }
@@ -34,6 +34,12 @@ if (-not $taskCrt) { throw 'MSVC x64 release CRT not found.' }
 Get-ChildItem -LiteralPath $taskCrt.FullName -Filter '*.dll' | Copy-Item -Destination $taskStage
 New-Item -ItemType Directory -Path (Join-Path $taskStage 'models'),(Join-Path $taskStage 'notices'),(Join-Path $taskStage 'dependencies') | Out-Null
 Copy-Item -LiteralPath $taskModel -Destination (Join-Path $taskStage 'models')
+$taskSmallManifest = Get-Content (Join-Path $taskRoot 'dependencies/yolox-small.json') -Raw | ConvertFrom-Json
+$taskSmallModel = Join-Path $taskRoot ('models/' + $taskSmallManifest.filename)
+if (Test-Path -LiteralPath $taskSmallModel) {
+    if ((Get-FileHash -LiteralPath $taskSmallModel).Hash.ToLowerInvariant() -ne $taskSmallManifest.sha256) { throw 'YOLOX-S checksum mismatch.' }
+    Copy-Item -LiteralPath $taskSmallModel -Destination (Join-Path $taskStage 'models')
+}
 Get-ChildItem -LiteralPath (Join-Path $taskRoot 'dependencies') -Filter '*.json' | Copy-Item -Destination (Join-Path $taskStage 'dependencies')
 Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/PACKAGING.md') -Destination (Join-Path $taskStage 'README.md')
 Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/THIRD_PARTY_NOTICES.md') -Destination (Join-Path $taskStage 'notices')
@@ -46,7 +52,7 @@ Copy-Item -LiteralPath (Join-Path $taskQt 'sbom') -Destination (Join-Path $taskS
 $taskFiles = @(Get-ChildItem -LiteralPath $taskStage -File -Recurse | Sort-Object FullName | ForEach-Object {
     [ordered]@{ path = $_.FullName.Substring($taskStage.Length + 1).Replace('\','/'); bytes = $_.Length; sha256 = (Get-FileHash -LiteralPath $_.FullName).Hash.ToLowerInvariant() }
 })
-[ordered]@{ version = '0.7.0'; channel = 'private-preview'; created_utc = [DateTime]::UtcNow.ToString('o'); files = $taskFiles } | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $taskStage 'manifest.json') -Encoding utf8
+[ordered]@{ version = '0.8.0'; channel = 'private-preview'; created_utc = [DateTime]::UtcNow.ToString('o'); files = $taskFiles } | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $taskStage 'manifest.json') -Encoding utf8
 Compress-Archive -Path (Join-Path $taskStage '*') -DestinationPath ($taskStage + '.zip') -CompressionLevel Optimal
 (Get-FileHash -LiteralPath ($taskStage + '.zip')).Hash | Set-Content -LiteralPath ($taskStage + '.zip.sha256') -Encoding ascii
 Write-Host "Private preview package: $taskStage.zip"

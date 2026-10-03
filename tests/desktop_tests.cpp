@@ -7,6 +7,7 @@
 #include <QPushButton>
 #include <QComboBox>
 #include <QDoubleSpinBox>
+#include <QFileInfo>
 #include <QtTest/QTest>
 #include <iostream>
 #include <stdexcept>
@@ -131,6 +132,14 @@ int main(int argc, char* argv[]) {
             QTest::mouseClick(video_canvas,Qt::LeftButton,{},point(.2,.4));
             QTest::mouseClick(video_canvas,Qt::LeftButton,{},point(.8,.6));
             applied();
+            auto* model=window.findChild<QComboBox*>(QStringLiteral("modelSelection"));
+            require(model && model->count()==2,"Model selector missing");
+            if(QFileInfo::exists(model->itemData(1).toString())) {
+                model->setCurrentIndex(1);applied();
+                require(window.grab().save(root+QStringLiteral("/desktop-small-model.png")),"S selection screenshot failed");
+                model->setCurrentIndex(0);applied();
+                model->setCurrentIndex(1);model->setCurrentIndex(0);applied();
+            }
             classes->setCurrentIndex(1);applied();
             direction->setCurrentIndex(1);applied();
             track->setChecked(false);applied();

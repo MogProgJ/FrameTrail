@@ -1,4 +1,5 @@
 #include "live_window.hpp"
+#include "model_selection.hpp"
 #include "preview_window.hpp"
 #include "theme.hpp"
 #include <QFrame>
@@ -13,7 +14,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
-LiveWindow::LiveWindow(QString model):model_(std::move(model)) {
+LiveWindow::LiveWindow(QString model,frametrail::DetectorModel variant):model_(std::move(model)) {
     setWindowTitle(QStringLiteral("FrameTrail — Live camera")); resize(1280, 820); setMinimumSize(980, 640);
     setStyleSheet(frametrail_theme());
     auto* body = new QWidget; body->setObjectName(QStringLiteral("shell"));
@@ -40,6 +41,9 @@ LiveWindow::LiveWindow(QString model):model_(std::move(model)) {
     format_ = new QComboBox; format_->setAccessibleName(QStringLiteral("Capture format")); format_->addItems({QStringLiteral("Camera default format"),QStringLiteral("640 × 480 / 30 fps"),QStringLiteral("1280 × 720 / 30 fps")}); options->addWidget(format_);
     refresh_ = new QPushButton(QStringLiteral("Refresh cameras")); options->addWidget(refresh_);
     caption(QStringLiteral("ANALYSIS"));
+    model_box_=model_selector(model_,this);
+    model_box_->setCurrentIndex(variant==frametrail::DetectorModel::yolox_s ? 1:0);
+    options->addWidget(model_box_);
     detect_ = new QCheckBox(QStringLiteral("Detect objects (CPU)")); detect_->setChecked(QFileInfo::exists(model_)); options->addWidget(detect_);
     auto* confidenceLabel = new QLabel(QStringLiteral("Confidence threshold")); options->addWidget(confidenceLabel);
     confidence_ = new QDoubleSpinBox; confidence_->setRange(.05,.95); confidence_->setSingleStep(.05); confidence_->setValue(.35); confidenceLabel->setBuddy(confidence_); confidence_->setAccessibleName(QStringLiteral("Confidence threshold")); options->addWidget(confidence_);
@@ -74,6 +78,7 @@ void LiveWindow::update_controls() {
     const bool active=session_.snapshot().active;const bool editable=!active && !editing_ && !pending_edit_ && !closing_;
     start_->setEnabled(editable && cameras_->currentIndex()>=0);stop_->setEnabled(active && !closing_);
     for(auto* widget:{static_cast<QWidget*>(cameras_),static_cast<QWidget*>(format_),static_cast<QWidget*>(refresh_),static_cast<QWidget*>(detect_)})widget->setEnabled(editable);
+    model_box_->setEnabled(editable);
     confidence_->setEnabled(editable && detect_->isChecked());track_->setEnabled(editable && detect_->isChecked());
     classes_->setEnabled(editable && detect_->isChecked() && track_->isChecked());direction_->setEnabled(classes_->isEnabled());
     draw_->setEnabled(!editing_ && !pending_edit_ && !closing_ && !canvas_->image().isNull() && detect_->isChecked() && track_->isChecked());
@@ -84,7 +89,7 @@ void LiveWindow::start() {
         frametrail::CameraInput camera{devices_.at(cameras_->currentIndex()).id};
         if(format_->currentIndex()>0){camera.width=format_->currentIndex()==1 ? 640:1280;camera.height=format_->currentIndex()==1 ? 480:720;camera.fps=30;}
         std::optional<frametrail::DetectorOptions> detector;
-        if(detect_->isChecked())detector=frametrail::DetectorOptions{std::filesystem::path(model_.toStdWString()),float(confidence_->value()),.45f};
+        if(detect_->isChecked())detector=frametrail::DetectorOptions{std::filesystem::path(model_box_->currentData().toString().toStdWString()),float(confidence_->value()),.45f,selected_model(model_box_)};
         std::optional<frametrail::TrackingOptions> tracking;
         if(detector && track_->isChecked()) {
             tracking=frametrail::TrackingOptions{};if(classes_->currentIndex()==1)tracking->classes={0};if(classes_->currentIndex()==2)tracking->classes={1,2,3,5,7};

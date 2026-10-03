@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(FrameTrail VERSION 0.7.0 LANGUAGES C CXX)
+project(FrameTrail VERSION 0.8.0 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -43,6 +43,7 @@ set_target_properties(ONNXRuntime PROPERTIES
     IMPORTED_LOCATION "${ONNXRUNTIME_ROOT}/lib/onnxruntime.dll"
     INTERFACE_INCLUDE_DIRECTORIES "${ONNXRUNTIME_ROOT}/include")
 set(_detector_model "${CMAKE_CURRENT_SOURCE_DIR}/models/yolox_nano.onnx")
+set(_detector_small_model "${CMAKE_CURRENT_SOURCE_DIR}/models/yolox_s.onnx")
 file(READ "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/sqlite.json" _sqlite_manifest)
 string(JSON _sqlite_directory GET "${_sqlite_manifest}" archiveRoot)
 set(SQLITE_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/.deps/${_sqlite_directory}" CACHE PATH "SQLite amalgamation root")
@@ -81,12 +82,14 @@ function(frametrail_runtime target)
                 ${_runtime_dlls} "$<TARGET_FILE_DIR:${target}>"
             COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:ONNXRuntime>" "$<TARGET_FILE_DIR:${target}>"
             VERBATIM)
-        if(EXISTS "${_detector_model}")
-            add_custom_command(TARGET ${target} POST_BUILD
+        foreach(_model IN ITEMS "${_detector_model}" "${_detector_small_model}")
+            if(EXISTS "${_model}")
+                add_custom_command(TARGET ${target} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${target}>/models"
-                COMMAND ${CMAKE_COMMAND} -E copy_if_different "${_detector_model}" "$<TARGET_FILE_DIR:${target}>/models/yolox_nano.onnx"
+                COMMAND ${CMAKE_COMMAND} -E copy_if_different "${_model}" "$<TARGET_FILE_DIR:${target}>/models/"
                 VERBATIM)
-        endif()
+            endif()
+        endforeach()
     endif()
 endfunction()
 
@@ -169,7 +172,7 @@ if(BUILD_TESTING)
         -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/generate_fixtures.cmake")
     set_tests_properties(generate_media_fixtures PROPERTIES FIXTURES_SETUP media TIMEOUT 60)
     add_executable(frametrail_run_tests tests/run_tests.cpp)
-    target_link_libraries(frametrail_run_tests PRIVATE frametrail_core)
+    target_link_libraries(frametrail_run_tests PRIVATE frametrail_core frametrail_sqlite)
     if(MSVC)
         target_compile_options(frametrail_run_tests PRIVATE /W4 /permissive- /utf-8)
     endif()
@@ -202,6 +205,18 @@ if(BUILD_TESTING)
                 "-DSAMPLE=${_detection_sample}" "-DFIXTURES=${_fixtures}" "-DFFMPEG=${_ffmpeg_executable}"
                 -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/check_tracking_cli.cmake")
             set_tests_properties(cli_tracking PROPERTIES FIXTURES_REQUIRED media TIMEOUT 60)
+        endif()
+    endif()
+    if(EXISTS "${_detector_small_model}")
+        add_test(NAME cli_model_selection COMMAND ${CMAKE_COMMAND}
+            "-DCLI=$<TARGET_FILE:frametrail>" "-DMODEL=${_detector_small_model}" "-DFIXTURES=${_fixtures}"
+            -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/check_model_cli.cmake")
+        set_tests_properties(cli_model_selection PROPERTIES FIXTURES_REQUIRED media TIMEOUT 60)
+        add_test(NAME detection_small_inference COMMAND frametrail_detection_tests --inference "${_detector_small_model}" "${_fixtures}" small)
+        set_tests_properties(detection_small_inference PROPERTIES FIXTURES_REQUIRED media TIMEOUT 90)
+        if(EXISTS "${_detection_sample}")
+            add_test(NAME detection_small_sample COMMAND frametrail_detection_tests --sample "${_detector_small_model}" "${_detection_sample}" small)
+            set_tests_properties(detection_small_sample PROPERTIES TIMEOUT 60)
         endif()
     endif()
     add_test(NAME media_contract COMMAND frametrail_media_tests "${_fixtures}")

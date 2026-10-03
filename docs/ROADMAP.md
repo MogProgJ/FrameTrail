@@ -11,8 +11,8 @@ These milestones are ordered by dependencies, not estimated calendar dates. Impl
 | 4 | Tracking and line-crossing events | Baseline implemented; labelled event/identity evaluation remains |
 | 5 | Persist and review events | Baseline implemented; representative workflow/resource evaluation remains |
 | 6 | One live input | Windows webcam baseline implemented; sustained hardware and accuracy validation remains |
-| 7 | Profile, optimize, and package | After the complete native workflow is measurable |
-| 8 | Conditional compute and model expansion | Enter individual gates only when measured limits justify them |
+| 7 | Profile, optimize, and package | Baseline implemented; clean-machine and sustained validation remain |
+| 8 | Conditional compute and model expansion | Model comparison + selectable YOLOX-S implemented; GPU evaluation is next candidate |
 | 9 | Optional advanced perception and agents | After the native product proves useful |
 
 Phases 0–7 are the core product path. Phase 8 is a set of optional branches, not a promise to add every technology. A branch may be pulled forward after Phase 3 or 4 if a measured detector or throughput failure blocks the next core phase. Otherwise it stays deferred.
@@ -87,9 +87,11 @@ Completion evidence: results and timing measurements state hardware, model, inpu
 
 ## 8. Conditional compute and model expansion
 
+A native pretrained-model comparison is now implemented in 0.8: selectable YOLOX-S, fixed-profile contracts, saved model identity, and local evaluation tooling. On the selected 24 targets S recovered 24 versus Nano’s 18, with much slower CPU throughput. This is partial-label regression evidence, not general accuracy acceptance. See [model evaluation](MODEL_EVALUATION.md). Optional local GPU evaluation is the next candidate; compare on representative inputs before adoption.
+
 This phase covers four independent gates: local GPU inference, Python-based model training, an optional Python inference worker, and a commercial cloud service. Detailed triggers, stop conditions, and the bwUniCluster execution plan are in [Compute, training, and bwUniCluster](COMPUTE_AND_TRAINING.md).
 
-No Phase 8 branch is selected now. **Custom training on bwUniCluster** becomes a plausible first branch only if labelled evaluation shows that YOLOX-Nano errors materially limit tracking or crossing accuracy. KIT documents a shared Slurm system with modern A100/H100 accelerators, which is ample for a compact detector. Shared hardware does not mean guaranteed or immediate GPU access; account entitlement, queue access, fair-share priority, and dataset permission must be verified first.
+**Custom training on bwUniCluster** remains conditional: first evaluate the stronger pretrained model and acceleration; training becomes justified only if labelled evaluation still shows domain-specific errors materially limiting tracking or crossing accuracy. KIT documents a shared Slurm system with modern A100/H100 accelerators, which is ample for a compact detector. Shared hardware does not mean guaranteed or immediate GPU access; account entitlement, queue access, fair-share priority, and dataset permission must be verified first.
 
 Local GPU inference is considered separately and only after end-to-end profiling. A Python training environment may produce an ONNX artifact while the shipped application remains C++. A Python inference worker is reserved for valuable models that cannot fit the native adapter. Commercial cloud serving remains last because bwUniCluster can cover scheduled training, while the current product does not require a remote always-on API.
 

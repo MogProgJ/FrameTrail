@@ -1,10 +1,14 @@
-# Windows preview package (0.7)
+# Windows preview package (0.8)
 
 Extract the whole ZIP to a writable folder, then open **frametrail-desktop.exe**.
 Keep the DLLs, `platforms`, `models`, and `qt.conf` beside the executable.
 This is a Windows x64 private preview. It needs no Python service, compiler,
 cloud account or separately installed Qt. Audio playback and live recording
 are not implemented. The application is unsigned.
+
+## Detection models
+
+Use the **Detection model** selector to choose faster Nano or more detailed, slower YOLOX-S. Both recognize 80 categories. S is included when `scripts/fetch-model.ps1 -Model all` was run before building/packaging. On one local 720p clip Nano processed about 27.5 FPS and S about 5 FPS; this varies with hardware and footage. Model changes preserve your playback position. New saved runs require FrameTrail 0.8; older runs remain readable.
 
 ## Camera behaviour
 
@@ -29,7 +33,7 @@ From the repository, after fetching dependencies and the model:
 
 The script creates a new folder and ZIP under `out`, plus a ZIP SHA-256 file.
 It refuses existing destinations and never deletes earlier builds. It includes
-Release CLI/GUI executables, FFmpeg and ONNX Runtime DLLs, the pinned model,
+Release CLI/GUI executables, FFmpeg and ONNX Runtime DLLs, pinned Nano and optional S weights (when installed),
 Qt libraries/plugins selected by `windeployqt`, app-local MSVC release runtime,
 dependency manifests, upstream notices and Qt's supplied SBOM. `manifest.json`
 records each staged file's size and SHA-256. No footage, saved runs, test

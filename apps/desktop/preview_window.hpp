@@ -78,6 +78,7 @@ private:
     QDoubleSpinBox* confidence_box_{};
     QCheckBox* track_box_{};
     QComboBox* direction_box_{};
+    QComboBox* model_box_{};
     QComboBox* classes_box_{};
     QPushButton* line_button_{};
     QLabel* counts_label_{};

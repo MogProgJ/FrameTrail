@@ -1,8 +1,8 @@
-# CPU object detection (0.3)
+# CPU object detection (0.8)
 
 ## What you can do
 
-Open an image or recording with **Detect objects (CPU)** checked. FrameTrail draws boxes, class names, and confidence scores for the displayed frame. Detection is enabled by default when the local model exists. Unchecking it restores preview-only playback. Changing detection settings restarts the current source from the beginning.
+Open an image or recording with **Detect objects (CPU)** checked. FrameTrail draws boxes, class names, and confidence scores for the displayed frame. Detection is enabled by default when the local model exists. Unchecking it restores preview-only playback. Changing detection settings preserves the current frame and prior playing/paused state; temporary tracking counts restart there. The model selector offers Nano and the optional stronger YOLOX-S; see [model evaluation](MODEL_EVALUATION.md).
 
 The confidence control defaults to 0.35. Raising it hides weaker predictions; lowering it shows more candidates and can introduce false positives. A score is not a calibrated probability that a label is correct. The initial detector recognizes the 80 COCO categories, including people, bicycles, cars, motorcycles, buses, and trucks. Tracking adds selected classes, IDs, and crossing counts; see [TRACKING.md](TRACKING.md). Version 0.5 persists whole-file crossing analyses and reopens evidence without inference; see [SAVED_RUNS.md](SAVED_RUNS.md).
 
@@ -21,11 +21,11 @@ References: [official YOLOX ONNX deployment guide](https://github.com/Megvii-Bas
 | Stage | Implementation |
 | --- | --- |
 | Input | Owned RGB24 frame from FFmpeg, at original decoded resolution |
-| Resize | Fit into 416x416 with aspect ratio preserved; integer resized dimensions are floored, with a minimum of one pixel |
+| Resize | Fit into 416x416 (Nano) or 640x640 (S) with aspect ratio preserved; integer resized dimensions are floored, with a minimum of one pixel |
 | Sampling | Half-pixel bilinear interpolation, rounded to uint8; may differ by one intensity level from OpenCV's optimized integer implementation |
 | Padding | Place resized image at the top-left; fill remaining bottom/right area with 114 |
-| Tensor | Float32 `[1,3,416,416]`, BGR planar order, values 0..255; no division by 255 or mean subtraction |
-| Raw output | Float32 `[1,3549,85]`: four box values, objectness, and 80 class scores |
+| Tensor | Float32 `[1,3,416,416]` or `[1,3,640,640]`, BGR planar order, values 0..255; no division by 255 or mean subtraction |
+| Raw output | Float32 `[1,3549,85]` or `[1,8400,85]`: four box values, objectness, and 80 class scores |
 | Box decoding | Grid strides 8, 16, 32; centers use grid offsets, dimensions use exponentials |
 | Score | Objectness multiplied by the highest class score for each candidate |
 | Filtering | Confidence threshold, finite-value checks, clipping to original image bounds, discard empty boxes |
@@ -34,7 +34,7 @@ References: [official YOLOX ONNX deployment guide](https://github.com/Megvii-Bas
 
 This adapter accepts the pinned model's exact tensor contract. Other ONNX models may use RGB, normalized values, different label maps, or already-decoded boxes; they are not interchangeable. Our NMS uses class-aware continuous-coordinate overlap rather than the upstream Python demo's default class-agnostic inclusive-pixel convention. This choice is deliberate and tested.
 
-The source frame and displayed QImage retain the original resolution. Only a separate inference tensor is reduced to 416x416. Fine or distant objects can be missed at this model input size. Preview zoom/scaling improvements are deferred at the user's request.
+The source frame and displayed QImage retain the original resolution. Only a separate inference tensor is reduced to the selected 416x416 or 640x640 input. Fine or distant objects can be missed at this model input size. Preview zoom/scaling improvements are deferred at the user's request.
 
 ## How this fits the C++ core
 
@@ -76,9 +76,9 @@ An optional pinned upstream demonstration image provides a real-image smoke chec
 
 This adds tests requiring dog and bicycle detections, validates CLI exports, and renders the desktop overlay for inspection. The image is stored under `.deps/detection-samples/`, not committed or packaged. Its source URL and checksum are in the fetch script. It is a demonstration input, not a representative accuracy dataset.
 
-With model and sample present, all 11 CTest checks pass. The inspected overlay found dog, bicycle, and car boxes on the 768x576 photo. On the inspected i7-10750H, two Release runs averaged approximately 15 and 20 ms per frame, each over ten warm detections with four CPU threads. The second run reported 61.1 MiB peak process working set. This includes preprocessing/postprocessing and excludes model load, file decode, and UI drawing. Subsequent runs can differ with load and power state. The sample test also reports process peak working set on Windows; this includes runtime and decoder memory and is not a model-only allocation measurement.
+Historical 0.3 baseline: with model and sample present, all 11 CTest checks passed. The inspected overlay found dog, bicycle, and car boxes on the 768x576 photo. On the inspected i7-10750H, two Release runs averaged approximately 15 and 20 ms per frame, each over ten warm detections with four CPU threads. The second run reported 61.1 MiB peak process working set. This includes preprocessing/postprocessing and excludes model load, file decode, and UI drawing. Subsequent runs can differ with load and power state. The sample test also reports process peak working set on Windows; this includes runtime and decoder memory and is not a model-only allocation measurement.
 
-No precision/recall study, representative movie benchmark, long-running memory baseline, or tracking/event evaluation is complete. Next, use short people/vehicle clips with manually checked expectations to measure misses, false positives, throughput, and resource use before building tracking rules.
+The 0.8 update adds a partial-label selected-target comparison on user-supplied footage and an S option; see [results and limits](MODEL_EVALUATION.md). Representative full precision/recall, long-running resource and tracking/event evaluation remain open.
 
 ## Notices
 

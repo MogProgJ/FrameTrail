@@ -95,3 +95,7 @@ Every optional path needs a written baseline and the same held-out evaluation in
 Adopt a change only when it improves an agreed product metric enough to justify its operational cost. A larger model, faster isolated benchmark, newer framework, or successful training loss is not sufficient evidence by itself.
 
 The first cluster exercise will be a short, reproducible smoke job on a development GPU queue: inspect the allocation, run a small training or inference command, export an artifact, and retrieve its logs. It will not begin until representative footage, labels, and a local evaluation command exist.
+
+## 0.8 gate update — 3 October 2026
+
+A stronger pretrained CPU model (YOLOX-S) and local comparison tooling are implemented. Selected-target recovery improved on the supplied generated clip, but CPU throughput fell to about 5 FPS. Evaluate optional GPU inference next, retaining the CPU baseline, before undertaking custom training. Full real-footage annotations and event accuracy remain required. No cluster job, Python inference worker or cloud service has been provisioned. See [evidence and limits](MODEL_EVALUATION.md).

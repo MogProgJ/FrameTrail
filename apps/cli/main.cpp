@@ -21,12 +21,14 @@
 namespace {
 
 void help() {
-    std::cout << "FrameTrail 0.7 - CPU analysis, saved review and live webcam\n\n"
+    std::cout << "FrameTrail 0.8 - CPU analysis, saved review and live webcam\n\n"
                  "Usage: frametrail inspect <local-file> [options]\n"
                  "  --csv <path>       Export decoded frame metadata\n"
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
                  "  --max-frames <n>   Stop after n frames (positive integer)\n"
-                 "  --detect <model>   Run the pinned YOLOX-Nano ONNX model on the CPU\n"
+                 "  --detect <model>   Run a supported YOLOX ONNX model on the CPU\n"
+                 "  --model-type <id>  nano (default) or small; must match the export\n"
+                 "  --confidence <n>   Confidence in (0,1], default 0.35\n"
                  "  --detections <csv> Export detections (requires --detect)\n"
                  "  --track            Track people/vehicles (requires --detect)\n"
                  "  --tracks <csv>     Export observed track boxes (requires --track)\n"
@@ -96,6 +98,7 @@ int run(const std::vector<std::string>& args) {
         if(args.size()!=2 && (args.size()!=4 || args[2]!="--export"))throw std::runtime_error("Use run <saved-run> [--export <new-csv>]");
         const frametrail::RunStore saved(path_from_utf8(args[1]));const auto summary=saved.summary();
         std::cout<<"Run status: "<<summary.status<<"\nFrames analysed: "<<summary.processed_frames<<"\nEvents saved: "<<summary.event_count
+            <<"\nModel: "<<frametrail::model_name(summary.configuration.detector.variant)<<"\nConfidence: "<<summary.configuration.detector.confidence
             <<"\nCrossings (- to +): "<<summary.forward<<"\nCrossings (+ to -): "<<summary.reverse<<'\n';
         if(!summary.error.empty())std::cout<<"Run error: "<<summary.error<<'\n';
         if(args.size()==4)saved.export_csv(path_from_utf8(args[3]));return 0;
@@ -111,6 +114,7 @@ int run(const std::vector<std::string>& args) {
     std::optional<std::filesystem::path> tracks_path, events_path;
     std::optional<std::filesystem::path> saved_path, profile_path;
     bool tracking = false;
+    frametrail::DetectorOptions detector_options;
     frametrail::TrackingOptions tracking_options;
     std::set<std::string> seen;
     std::optional<std::uint64_t> maximum;
@@ -119,7 +123,7 @@ int run(const std::vector<std::string>& args) {
         if (!seen.insert(option).second) throw std::runtime_error("Duplicate option: " + option);
         if (option == "--track") { tracking = true; continue; }
         if (option != "--csv" && option != "--preview" && option != "--max-frames" && option != "--detect" && option != "--detections" &&
-            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run" && option != "--profile") {
+            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run" && option != "--profile" && option != "--model-type" && option != "--confidence") {
             throw std::runtime_error("Unknown option: " + option);
         }
         if (++i == args.size()) {
@@ -134,6 +138,10 @@ int run(const std::vector<std::string>& args) {
         } else if (option == "--detect") {
             if (model_path) throw std::runtime_error("Duplicate --detect option");
             model_path=path_from_utf8(args[i]);
+        } else if (option == "--model-type") {
+            detector_options.variant=frametrail::parse_model(args[i]);
+        } else if (option == "--confidence") {
+            detector_options.confidence=number<float>(args[i]);
         } else if (option == "--detections") {
             if (detections_path) throw std::runtime_error("Duplicate --detections option");
             detections_path=path_from_utf8(args[i]);
@@ -171,6 +179,9 @@ int run(const std::vector<std::string>& args) {
             maximum = value;
         }
     }
+    if (!model_path && (seen.contains("--model-type") || seen.contains("--confidence")))
+        throw std::runtime_error("Model settings require --detect");
+    if (model_path) detector_options.model=*model_path;
     if (tracking && !model_path) throw std::runtime_error("--track requires --detect <model>");
     if(saved_path && (!tracking || maximum))throw std::runtime_error("--save-run requires --track and whole-file analysis (no --max-frames)");
     if (!tracking && (tracks_path || events_path || seen.contains("--line") || seen.contains("--direction") || seen.contains("--classes")))
@@ -189,13 +200,13 @@ int run(const std::vector<std::string>& args) {
     const auto start = std::chrono::steady_clock::now();
     frametrail::MediaReader reader(input);
     std::unique_ptr<frametrail::Detector> detector;
-    if (model_path) detector=std::make_unique<frametrail::Detector>(frametrail::DetectorOptions{*model_path});
+    if (model_path) detector=std::make_unique<frametrail::Detector>(detector_options);
     struct SavedRunGuard {
         std::optional<frametrail::RunStore> value;
         bool finished{};
         ~SavedRunGuard() {if(value && !finished){try{value->finish("failed","CLI did not finish; see its error output");}catch(...){}}}
     } saved;
-    if(saved_path)saved.value.emplace(frametrail::RunStore::create(*saved_path,{input,{*model_path},tracking_options},reader.info()));
+    if(saved_path)saved.value.emplace(frametrail::RunStore::create(*saved_path,{input,detector_options,tracking_options},reader.info()));
     std::ofstream profile_csv;
     if (profile_path) {
         profile_csv.open(*profile_path, std::ios::binary);
@@ -315,7 +326,7 @@ int run(const std::vector<std::string>& args) {
         detections_csv.close();
         if (!detections_csv) throw std::runtime_error("Failed to finish detection CSV");
     }
-    if (detector) std::cout << "Detections across frames: " << object_count
+    if (detector) std::cout << "Model: " << frametrail::model_name(detector_options.variant) << "\nDetections across frames: " << object_count
         << "\nAverage CPU detection (ms/frame): " << detection_ms/count << '\n';
     for (auto* stream : {&tracks_csv,&events_csv}) if (stream->is_open()) {
         stream->close();

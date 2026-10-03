@@ -38,16 +38,33 @@ std::string_view class_name(int id) {
     return id >= 0 && id < 80 ? labels[id] : "unknown";
 }
 
-yolox::Input yolox::preprocess(const Frame& frame) {
+std::string_view model_id(DetectorModel model) {
+    switch(model) {case DetectorModel::nano:return "nano";case DetectorModel::yolox_s:return "small";}
+    throw std::invalid_argument("Unsupported detector model");
+}
+std::string_view model_name(DetectorModel model) {return model_id(model)=="nano" ? "YOLOX-Nano" : "YOLOX-S";}
+DetectorModel parse_model(std::string_view id) {
+    if(id=="nano")return DetectorModel::nano;
+    if(id=="small")return DetectorModel::yolox_s;
+    throw std::invalid_argument("Model type must be nano or small");
+}
+int model_input_size(DetectorModel model) {return model_id(model)=="nano" ? 416 : 640;}
+int yolox::candidate_count(int size) {
+    if(size!=416 && size!=640)throw std::invalid_argument("Supported YOLOX input sizes are 416 and 640");
+    return (size/8)*(size/8)+(size/16)*(size/16)+(size/32)*(size/32);
+}
+
+yolox::Input yolox::preprocess(const Frame& frame, int size) {
+    candidate_count(size);
     if (frame.width <= 0 || frame.height <= 0 || frame.stride <= 0 ||
         static_cast<std::int64_t>(frame.stride) < static_cast<std::int64_t>(frame.width)*3 ||
         frame.pixels.size() < static_cast<std::uint64_t>(frame.stride)*frame.height)
         throw std::invalid_argument("Invalid RGB frame for detection");
     Input result;
-    result.ratio = std::min(double(input_size)/frame.width, double(input_size)/frame.height);
+    result.ratio = std::min(double(size)/frame.width, double(size)/frame.height);
     result.resized_width = std::max(1, int(frame.width * result.ratio));
     result.resized_height = std::max(1, int(frame.height * result.ratio));
-    constexpr int plane = input_size*input_size;
+    const int plane = size*size;
     result.tensor.assign(3*plane, 114.f);
     // Half-pixel bilinear resize, rounded to uint8, top-left letterbox.
     // FFmpeg gives RGB; this export was trained with BGR values in [0,255].
@@ -63,7 +80,7 @@ yolox::Input yolox::preprocess(const Frame& frame) {
                 const auto pixel=[&](int px,int py) { return frame.pixels[std::size_t(py)*frame.stride+std::size_t(px)*3+(2-c)]; };
                 const double top=pixel(x0,y0)*(1-fx)+pixel(x1,y0)*fx;
                 const double bottom=pixel(x0,y1)*(1-fx)+pixel(x1,y1)*fx;
-                result.tensor[c*plane+y*input_size+x]=float(std::round(top*(1-fy)+bottom*fy));
+                result.tensor[c*plane+y*size+x]=float(std::round(top*(1-fy)+bottom*fy));
             }
         }
     }
@@ -71,14 +88,14 @@ yolox::Input yolox::preprocess(const Frame& frame) {
 }
 
 std::vector<Detection> yolox::postprocess(std::span<const float> output, double ratio,
-    int width, int height, float confidence, float nms_iou) {
+    int width, int height, float confidence, float nms_iou, int size) {
     thresholds(confidence,nms_iou);
-    if (output.size()!=candidates*attributes || !std::isfinite(ratio) || ratio<=0 || width<=0 || height<=0)
+    if (output.size()!=std::size_t(candidate_count(size))*attributes || !std::isfinite(ratio) || ratio<=0 || width<=0 || height<=0)
         throw std::invalid_argument("Unexpected YOLOX output or image geometry");
     std::vector<Detection> proposals;
     int row=0;
     for (const int stride : {8,16,32}) {
-        const int grid=input_size/stride;
+        const int grid=size/stride;
         for (int y=0; y<grid; ++y) for (int x=0; x<grid; ++x,++row) {
             const float* p=output.data()+std::size_t(row)*attributes;
             if (!std::all_of(p,p+attributes,[](float value){return std::isfinite(value);})) continue;
@@ -112,6 +129,7 @@ struct Detector::Impl {
     std::string input_name,output_name;
     explicit Impl(const DetectorOptions& supplied):options(supplied) {
         thresholds(options.confidence,options.nms_iou);
+        const auto size=model_input_size(options.variant);
         if (!std::filesystem::is_regular_file(options.model))
             throw std::runtime_error("Detection model missing. Run scripts/fetch-model.ps1 and rebuild.");
         env.DisableTelemetryEvents();
@@ -122,14 +140,14 @@ struct Detector::Impl {
         settings.SetGraphOptimizationLevel(GraphOptimizationLevel::ORT_ENABLE_ALL);
         session=Ort::Session(env,options.model.c_str(),settings);
         if (session.GetInputCount()!=1 || session.GetOutputCount()!=1)
-            throw std::runtime_error("Expected the pinned YOLOX-Nano model (one input and output)");
+            throw std::runtime_error("Expected a supported YOLOX export (one input and output)");
         const auto input=session.GetInputTypeInfo(0);
         const auto output=session.GetOutputTypeInfo(0);
         if (input.GetTensorTypeAndShapeInfo().GetElementType()!=ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT ||
-            input.GetTensorTypeAndShapeInfo().GetShape()!=std::vector<int64_t>{1,3,416,416} ||
+            input.GetTensorTypeAndShapeInfo().GetShape()!=std::vector<int64_t>{1,3,size,size} ||
             output.GetTensorTypeAndShapeInfo().GetElementType()!=ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT ||
-            output.GetTensorTypeAndShapeInfo().GetShape()!=std::vector<int64_t>{1,3549,85})
-            throw std::runtime_error("Model tensor contract differs from YOLOX-Nano [1,3,416,416] -> [1,3549,85]");
+            output.GetTensorTypeAndShapeInfo().GetShape()!=std::vector<int64_t>{1,yolox::candidate_count(size),85})
+            throw std::runtime_error("Model tensor contract differs from selected model type (Nano: 416/3549, S: 640/8400)");
         Ort::AllocatorWithDefaultOptions allocator;
         input_name=session.GetInputNameAllocated(0,allocator).get();
         output_name=session.GetOutputNameAllocated(0,allocator).get();
@@ -140,10 +158,11 @@ Detector::~Detector()=default;
 DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     cancelled(stop);
     const auto started=std::chrono::steady_clock::now();
-    auto input=yolox::preprocess(frame);
+    const auto size=model_input_size(impl_->options.variant);
+    auto input=yolox::preprocess(frame,size);
     const auto prepared=std::chrono::steady_clock::now();
     cancelled(stop);
-    const std::array<int64_t,4> shape{1,3,416,416};
+    const std::array<int64_t,4> shape{1,3,size,size};
     const auto memory=Ort::MemoryInfo::CreateCpu(OrtArenaAllocator,OrtMemTypeDefault);
     auto tensor=Ort::Value::CreateTensor<float>(memory,input.tensor.data(),input.tensor.size(),shape.data(),shape.size());
     const char* inputs[]{impl_->input_name.c_str()};
@@ -154,10 +173,10 @@ DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     const auto inferred=std::chrono::steady_clock::now();
     cancelled(stop);
     const auto info=values[0].GetTensorTypeAndShapeInfo();
-    if (info.GetShape()!=std::vector<int64_t>{1,3549,85}) throw std::runtime_error("Unexpected detection result shape");
+    if (info.GetShape()!=std::vector<int64_t>{1,yolox::candidate_count(size),85}) throw std::runtime_error("Unexpected detection result shape");
     DetectionResult result;
     result.objects=yolox::postprocess({values[0].GetTensorData<float>(),info.GetElementCount()},
-        input.ratio,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou);
+        input.ratio,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,size);
     cancelled(stop);
     const auto finished=std::chrono::steady_clock::now();
     result.elapsed_ms=std::chrono::duration<double,std::milli>(finished-started).count();
