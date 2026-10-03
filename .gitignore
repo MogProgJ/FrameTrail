@@ -12,6 +12,8 @@ CMakeUserPresets.json
 /samples/
 /output/
 /datasets/
+/.venv/
+/.cache/
 __pycache__/
 *.sqlite
 *.sqlite3

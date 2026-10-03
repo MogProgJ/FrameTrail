@@ -85,6 +85,8 @@ All 29 Python contract checks passed, including immutable bundle validation, spl
 
 ## bwUniCluster handoff
 
+For a beginner-friendly sequence using the available Python module and a prepared upload archive, follow [the KIT quickstart](KIT_CLUSTER_QUICKSTART.md). The user has now completed an A100 80 GB diagnostic job successfully; actual Linux environment installation and GPU training remain pending.
+
 The user supplied `uc3.scc.kit.edu` and confirmed that login requires an interactive password and OTP. No credentials or account names are stored here. No cluster login or job submission was performed. Authenticate in your own terminal, then verify the account's permitted GPU partition, storage lifetime, and CUDA environment. [bwHPC documents the job policy](https://wiki.bwhpc.de/e/BwUniCluster3.0/Running_Jobs) and [supported container environments](https://wiki.bwhpc.de/e/BwUniCluster3.0/Containers).
 
 Transfer the repository, one bundle, the pinned publisher checkpoint and the environment lock to a persistent project/workspace directory. Export `FT_ROOT`, `FT_PYTHON`, `FT_DATASET`, `FT_WEIGHTS` and a new `FT_OUTPUT`. Submit `training/run-cluster.sbatch` with the permitted partition. `FT_MODE=smoke` and `FT_CONFIG=.../training/general-cluster-smoke.json` select the short GPU setup test; override wall time to fit the development queue. Defaults select reviewed training, and fail preflight on the current smoke bundle. Do not execute compute-heavy work on the login node.
