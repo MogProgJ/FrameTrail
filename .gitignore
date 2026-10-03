@@ -11,6 +11,8 @@ CMakeUserPresets.json
 /models/
 /samples/
 /output/
+/datasets/
+__pycache__/
 *.sqlite
 *.sqlite3
 *.frametrail

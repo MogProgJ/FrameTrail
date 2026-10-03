@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "date": "2026-10-04",
+  "stage": "dataset-training-tooling-0.13",
+  "scope": "general-recognition-v1",
+  "shortlist": [
+    "RF-DETR Small"
+  ],
+  "catalogue": {
+    "source": "Open Images V7 publisher validation",
+    "images": 41620,
+    "boxes": 303980,
+    "covered_raw_labels": 570,
+    "vocabulary_raw_labels": 601,
+    "vocabulary_canonical_categories": 597
+  },
+  "sample": {
+    "images": 96,
+    "boxes": 447,
+    "canonical_categories": 132,
+    "selected_domains": {
+      "people_and_transport": 16,
+      "home_and_furniture": 16,
+      "kitchen_and_food": 18,
+      "electronics_and_work": 15,
+      "personal_and_outdoor": 15,
+      "animals_and_hard_cases": 16
+    },
+    "splits": {
+      "train": 70,
+      "val": 11,
+      "test": 15
+    },
+    "downloaded_image_bytes": 27976859,
+    "image_download_budget_bytes": 150000000,
+    "reviewed_for_substantial_training": false,
+    "rejected_duplicates": 0,
+    "dataset_lock_sha256": "9c71e1b1d749f1d2c97604fc37aa363c51831e3838e5c7254bd26ba1016cb0b2"
+  },
+  "mechanical_training": {
+    "status": "completed",
+    "config": {
+      "schema": 1,
+      "family": "yolov8s-openimages",
+      "epochs": 1,
+      "imgsz": 320,
+      "batch": 2,
+      "device": "cpu",
+      "seed": 17,
+      "lr0": 0.0001,
+      "freeze": 10,
+      "patience": 5
+    },
+    "elapsed_seconds": 20.68800000000192,
+    "source_sha256": {
+      "scripts/train-detector.py": "2970d00162b56ccde5fd18d5a662a63963e33a927d4c817c74f79473b6f2b43b",
+      "scripts/training_data.py": "ec5e6653c959f9fc4192a509a8d3f9b93bad5843ad073c8c810d01dc7452020f"
+    },
+    "parent_weights_sha256": "4663086e1b8edbc4202a9ec589b03195ed149ef8aa8beeb4b503e0e35ff1731a",
+    "best_checkpoint_sha256": "d6ff5eb9ef0e16d7a7f02b384fa0c0412975d833cabd5645ead61d5507afb336",
+    "environment": {
+      "python": "3.12.14",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "torch": "2.8.0+cpu",
+      "ultralytics": "8.3.228",
+      "cuda": null,
+      "packages_sha256": "126b4332254623e983c50e68dd37c4f8f885d51d35535f1388786784ce051757"
+    },
+    "test_evaluated": false,
+    "approved_for_application": false
+  },
+  "export": {
+    "schema": 1,
+    "profile": "openimages",
+    "vocabulary_id": "openimages-v1",
+    "input": [
+      1,
+      3,
+      640,
+      640
+    ],
+    "output": [
+      1,
+      605,
+      8400
+    ],
+    "opset": 17,
+    "checkpoint_sha256": "d6ff5eb9ef0e16d7a7f02b384fa0c0412975d833cabd5645ead61d5507afb336",
+    "onnx_sha256": "4bdf43b77a034b7f6081df08d8eb51194b4bdb2017b3d458214f201d3e7cd82d",
+    "experiment_sha256": "c54a8b329d628c3fe8a36c163b4ab8c938a0b3cc13beb42a8ceccfddcc71c1e4",
+    "dataset_lock_sha256": "9c71e1b1d749f1d2c97604fc37aa363c51831e3838e5c7254bd26ba1016cb0b2",
+    "mode": "smoke",
+    "approved_for_application": false,
+    "ultralytics": "8.3.228",
+    "torch": "2.8.0+cpu",
+    "onnx": "1.19.1",
+    "preprocess": "RGB float32 /255, centered letterbox 114",
+    "limits": "Native contract compatibility is not an accuracy/adoption claim. Existing application models are preserved."
+  },
+  "native_reference": {
+    "cpu": {
+      "strong_targets": 2,
+      "min_iou": 0.9992639775930594,
+      "max_score_delta": 0.0013951687812805424,
+      "native_backend": "cpu",
+      "model_sha256": "4bdf43b77a034b7f6081df08d8eb51194b4bdb2017b3d458214f201d3e7cd82d",
+      "cpu_gpu_wrong_labels_rejected": true
+    },
+    "directml": {
+      "strong_targets": 2,
+      "min_iou": 0.9992639775930594,
+      "max_score_delta": 0.0013951687812805424,
+      "native_backend": "directml",
+      "model_sha256": "4bdf43b77a034b7f6081df08d8eb51194b4bdb2017b3d458214f201d3e7cd82d",
+      "cpu_gpu_wrong_labels_rejected": true
+    }
+  },
+  "python_checks": {
+    "passed": 29,
+    "failed": 0
+  },
+  "cluster": {
+    "hostname": "uc3.scc.kit.edu",
+    "job_template_prepared": true,
+    "authenticated": false,
+    "submitted_jobs": 0
+  },
+  "limits": [
+    "Publisher validation images are used only for a mechanical smoke; no independent accuracy or training-improvement claim.",
+    "Partial annotations remain unreviewed; production-mode preflight rejects the bundle.",
+    "132 sampled categories do not cover all 597 categories; retaining the full head is not evidence against forgetting.",
+    "Three reference images and two strong targets per backend verify limited integration, not general accuracy.",
+    "No application model or saved-analysis UI was changed; Linux/CUDA cluster execution remains unverified."
+  ]
+}

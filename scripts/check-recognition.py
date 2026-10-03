@@ -4,6 +4,7 @@ Optional developer check. Inputs remain local; this script does not train or dow
 """
 import argparse
 import csv
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -21,6 +22,10 @@ def main():
     parser.add_argument('--cli', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--images', nargs='+', type=Path, required=True)
+    parser.add_argument('--profiles', nargs='+', choices=('world-s', 'world-m', 'openimages'),
+                        default=['world-s', 'world-m', 'openimages'])
+    parser.add_argument('--openimages-model', type=Path, help='Optional full-vocabulary training artifact; application models stay unchanged')
+    parser.add_argument('--backend', choices=('cpu', 'directml'), default='cpu')
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     os.environ['YOLO_CONFIG_DIR'] = str(root/'.deps/world-export/config')
@@ -33,11 +38,11 @@ def main():
     registry = json.loads((root/'dependencies/recognition-vocabulary.json').read_text(encoding='utf-8'))
     args.output.mkdir(parents=True, exist_ok=False)
     cli = args.cli.resolve(strict=True)
-    report = {'schema': 1, 'reference_runtime': ort.__version__, 'checks': {},
+    report = {'schema': 1, 'reference_runtime': ort.__version__, 'cli_sha256': hashlib.sha256(cli.read_bytes()).hexdigest(), 'checks': {},
               'limits': 'Native bilinear rounding may differ by one intensity unit from OpenCV. Strong targets: >=0.55, IoU >0.98, score delta <0.03. This checks integration, not model accuracy.'}
-    for profile, filename in [('world-s', 'yolo_world_s.onnx'), ('world-m', 'yolo_world_m.onnx'),
-                              ('openimages', 'yolo_openimages.onnx')]:
-        model = root/'models'/filename
+    filenames = {'world-s': 'yolo_world_s.onnx', 'world-m': 'yolo_world_m.onnx', 'openimages': 'yolo_openimages.onnx'}
+    for profile in args.profiles:
+        model = args.openimages_model.resolve(strict=True) if profile == 'openimages' and args.openimages_model else root/'models'/filenames[profile]
         session_options = ort.SessionOptions()
         session_options.intra_op_num_threads = 4
         session = ort.InferenceSession(str(model), sess_options=session_options, providers=['CPUExecutionProvider'])
@@ -77,10 +82,15 @@ def main():
                     break
             output = args.output/f'{profile}-{number}.csv'
             result = subprocess.run([str(cli), 'inspect', str(source.resolve()), '--detect', str(model),
-                '--model-type', profile, '--detections', str(output.resolve())], capture_output=True,
+                '--model-type', profile, '--backend', args.backend, '--detections', str(output.resolve())], capture_output=True,
                 encoding='utf-8', errors='replace', timeout=90)
             if result.returncode:
                 raise RuntimeError(result.stderr)
+            expected_provider = 'CPU' if args.backend == 'cpu' else 'DirectML'
+            execution = {line.split(': ', 1)[0]: line.split(': ', 1)[1].strip() for line in result.stdout.splitlines()
+                         if line.startswith(('Execution provider: ', 'Fallback: '))}
+            if execution.get('Execution provider') != expected_provider or execution.get('Fallback'):
+                raise AssertionError('Reference comparison did not use the requested native backend')
             with output.open(encoding='utf-8', newline='') as stream:
                 actual = [{'class_id': int(r['class_id']), 'confidence': float(r['confidence']),
                     'box': [float(r[k]) for k in ('left','top','right','bottom')]} for r in csv.DictReader(stream)]
@@ -111,7 +121,8 @@ def main():
             if result.returncode == 0 or 'vocabulary' not in result.stderr.lower() or output.exists():
                 raise AssertionError(f'{profile}/{backend}: incorrect labels accepted or output reserved')
         report['checks'][profile] = {'strong_targets': checked, 'min_iou': min_iou,
-            'max_score_delta': max_score_delta, 'cpu_gpu_wrong_labels_rejected': True}
+            'max_score_delta': max_score_delta, 'native_backend': args.backend,
+            'model_sha256': hashlib.sha256(model.read_bytes()).hexdigest(), 'cpu_gpu_wrong_labels_rejected': True}
     (args.output/'report.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
     print(json.dumps(report, indent=2))
 

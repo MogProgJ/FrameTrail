@@ -12,7 +12,7 @@ These milestones are ordered by dependencies, not estimated calendar dates. Impl
 | 5 | Analyse, persist and review recordings | 0.9 appearance intake/save/export revamp implemented; representative workflow/resource evaluation remains |
 | 6 | One live input | Windows webcam baseline implemented; sustained hardware and accuracy validation remains |
 | 7 | Profile, optimize, and package | Baseline implemented; clean-machine and sustained validation remain |
-| 8 | Conditional compute and model expansion | 0.12 recognition/GPU branches implemented; low-light fox/dog training preparation selected after audit; data, custom-model and cluster gates remain |
+| 8 | Conditional compute and model expansion | Recognition/GPU branches implemented; general-object catalogue, sample, smoke training/export added in tooling stage 0.13; reviewed accuracy and cluster gates remain |
 | 9 | Optional advanced perception and agents | After the native product proves useful |
 
 Phases 0–7 are the core product path. Phase 8 is a set of optional branches, not a promise to add every technology. A branch may be pulled forward after Phase 3 or 4 if a measured detector or throughput failure blocks the next core phase. Otherwise it stays deferred.
@@ -101,9 +101,9 @@ Completion evidence for any adopted branch: compare it with the unchanged CPU/mo
 
 Implemented: native Open Images (597 canonical categories), experimental World S/M (100), strict embedded label-map checks, CPU/GPU execution and schema-4 vocabulary persistence through the unchanged saved-analysis workflow. Fixed small reference sets show a fox improvement but a people/vehicle regression; YOLOX-S therefore stays the default. See [recognition evidence](RECOGNITION.md).
 
-Next: prepare the user-selected **fox/dog and related animals in low light** pilot. The [training-readiness audit](TRAINING_READINESS.md) identifies four ordered modules: reviewed dataset and independent evaluation; custom-model registration/export through the native saved-analysis pipeline; a reproducible single-GPU bwUniCluster setup test; then conditional fine-tuning and measured adoption. The current profiles do not accept an arbitrary smaller class head. The supplied dark AI-generated clip is still a known failure and stays a stress example rather than primary evaluation truth.
+The user clarified the target as **broad everyday-object recognition**, with fox/dog and low light as difficult slices. [Dataset/training tooling](TRAINING.md) now includes a broad catalogue, 96-image multi-domain sample, protected YOLO/COCO export, reviewed-data preflight, CPU smoke training and a compatible full-vocabulary ONNX export. RF-DETR Small is shortlisted. The application and accepted saved-analysis flow remain unchanged.
 
-Training preparation can proceed without completing unrelated live-camera, audio, multi-camera or public-release work. Keep the accepted saved-analysis UI and existing model choices intact; any trained wildlife model starts as an optional profile. Substantial training and adoption remain gated by the audit's evidence requirements.
+Next: reviewed publisher-train/real data and independent per-domain evaluation, authenticated single-GPU cluster setup, then budgeted fine-tuning and measured adoption. Smaller class heads and RF-DETR still require explicit native adapters. The supplied generated clips remain stress examples. Unrelated live-camera, audio, multi-camera and public-release work need not block preparation; substantial training and adoption remain evidence-gated.
 
 ## Measurement vocabulary
 

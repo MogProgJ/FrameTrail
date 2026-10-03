@@ -27,7 +27,8 @@ Still images support detections and an annotated preview. They do not support mo
 | [Equipment and setup](docs/EQUIPMENT_AND_SETUP.md) | Hardware, proposed dependencies, and what to inspect before installing anything |
 | [Roadmap](docs/ROADMAP.md) | Implementation milestones and evidence needed to complete them |
 | [Compute, training, and bwUniCluster](docs/COMPUTE_AND_TRAINING.md) | Realistic gates for GPU inference, Python training, KIT cluster use, and cloud services |
-| [Training-readiness audit](docs/TRAINING_READINESS.md) | Low-light fox/dog pilot: current evidence, suitable data, missing prerequisites and ordered preparation gates |
+| [Dataset and training tooling](docs/TRAINING.md) | General-object catalogue, bounded sample, training/export commands, evidence and cluster handoff |
+| [Training-readiness audit](docs/TRAINING_READINESS.md) | Broad recognition prerequisites; fox/dog and low light as difficult evaluation slices |
 | [Current status](docs/STATUS.md) | What exists now, open decisions, and the next work |
 | [Glossary](docs/GLOSSARY.md) | Plain-language definitions of the technical terms |
 | [Build and development guide](docs/DEVELOPMENT.md) | How to run the desktop/CLI, read the source, and understand its checks |
@@ -67,7 +68,7 @@ C++ will own the application and resource lifetimes. Native C APIs, particularly
 
 - Local processing; no cloud account required by the proposed design.
 - One source at a time in the first release.
-- An existing detection model; custom model training is outside the first release.
+- Existing pretrained detectors in the app; offline dataset/training tooling is available, with trained-model adoption gated by reviewed evaluation.
 - CPU is the default; optional GPU acceleration has been measured on the target hardware.
 - Event accuracy and performance must be measured on representative footage.
 - No fixed real-time frame-rate promise before benchmarking.

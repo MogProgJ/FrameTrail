@@ -1,6 +1,6 @@
 # Compute, training, and bwUniCluster plan
 
-Updated: 3 October 2026.
+Updated: 4 October 2026.
 
 ## Decision
 
@@ -113,3 +113,9 @@ Broader native recognition and GPU execution are implemented. The user selected 
 Follow the [training-readiness audit](TRAINING_READINESS.md): inventory and evaluate scoped data, prove custom-model registration/export and saved-analysis compatibility, establish a pinned Linux single-GPU setup test, then assess one limited fine-tuning run. Fixed native profiles and the publisher-checkpoint exporter currently require extension for a small custom class head. The optional Windows CPU export environment is not a CUDA training environment.
 
 A trained wildlife profile will remain optional while YOLOX-S and broad recognition remain available. The accepted saved-analysis layout/flow is preserved. Unrelated live-camera, audio, multi-camera and public-release work need not block preparation. No dataset, cluster login, job, Python inference worker or cloud service was added by this audit.
+
+## General-recognition tooling update — 4 October 2026
+
+The user clarified broad everyday-object recognition as the goal; fox/dog and low light are evaluation slices. RF-DETR Small is shortlisted. A general catalogue, bounded six-domain sample, reviewed-data gate, YOLO/COCO bundles, training runner, full-vocabulary export and single-GPU Slurm template are now implemented. A local one-epoch CPU smoke produced a checkpoint and ONNX artifact that passed native CPU/DirectML reference and vocabulary checks. It is mechanics evidence, not an adopted accuracy upgrade. See [dataset/training tooling](TRAINING.md).
+
+The target hostname is `uc3.scc.kit.edu`. Login requires the user's interactive password/OTP; no credentials or account names are stored, and no remote job was submitted. The prepared Slurm script still needs account-permitted partition, pinned Linux CUDA environment, reviewed data and storage verification. The app keeps its current models and accepted saved-analysis interface.

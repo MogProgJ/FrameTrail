@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "id": "general-recognition-v1",
+  "goal": "Broad everyday-object recognition, with difficult conditions and animal distinctions as evaluation slices.",
+  "vocabulary": "openimages-v1",
+  "max_images": 96,
+  "images_per_category": 2,
+  "seed": 17,
+  "max_download_bytes": 150000000,
+  "domains": {
+    "people_and_transport": ["person", "bicycle", "car", "motorcycle", "bus", "truck", "boat", "airplane"],
+    "home_and_furniture": ["chair", "couch", "bed", "kitchen & dining room table", "lamp", "door", "mirror", "clock"],
+    "kitchen_and_food": ["bottle", "coffee cup", "bowl", "fork", "spoon", "knife", "apple", "banana", "pizza"],
+    "electronics_and_work": ["laptop", "cell phone", "computer keyboard", "mouse", "tv", "camera", "book", "scissors"],
+    "personal_and_outdoor": ["backpack", "umbrella", "handbag", "suitcase", "ball", "bench", "traffic light", "stop sign"],
+    "animals_and_hard_cases": ["dog", "cat", "bird", "horse", "fox", "rabbit", "deer", "owl", "raccoon", "lantern", "balloon"]
+  },
+  "hard_slices": ["low_light_rgb", "small_objects", "occlusion", "blur", "fox_dog_confusion"],
+  "shortlist": [
+    {"family": "YOLOv8s Open Images", "role": "existing broad baseline and first compatible training smoke"},
+    {"family": "RF-DETR Small", "role": "challenger; compare only after dataset review and native adapter validation"},
+    {"family": "YOLO-World", "role": "existing experimental vocabulary baseline; future vocabulary expansion"}
+  ]
+}
