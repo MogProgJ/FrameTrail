@@ -1,0 +1,4491 @@
+{
+ "schema": 1,
+ "stage": "absent-qualification-20261024-v1",
+ "frozen_before_original_fetch_or_viewing": true,
+ "model_predictions_used": false,
+ "roles_fixed": true,
+ "pinned_inputs_sha256": {
+  "broad-billboard-definition-20261022-v1/review-stage-v3/UNUSED_LOCAL_INVENTORY.json": "fc8fdff51977dcc9b34d5153181b6c32c7fc2117fbf9b64168d554fee9b61e22",
+  "broad-billboard-definition-20261022-v1/TASK_DEFINITION.json": "03bb6d7d22af67b3bf19825c59f7ffa2d2461ea1bb6d7385d5f281fc78c3d553",
+  "broad-billboard-definition-20261022-v1/first-pass-v4/ANNOTATIONS_DRAFT.json": "6bc12636d7d71242527c7742b3a66872f193775bae45a9d95d3c12ed3c0def2d",
+  "training-strategy-20261019-v1/EXPERIMENT_DESIGN.json": "1287a9eeeb22baa6d45b8a9a9f85180a9b0f8f5b923c63bac24ad8596734edd9"
+ },
+ "purpose": "Whole-photo class133 review of the unused inventory under task definition v2, seeking truly absent photos for the fresh draft gaps TRAIN 11 / validation 6 / TEST 4, including TRAIN shop-business-lettering 5 and traffic-information-signs 1.",
+ "execution_order": {
+  "A-contrast-anchor-all-roles": "Review all; primary absent candidates for every role.",
+  "B-train-billboard-anchor": "Review all; only source of possible genuine shop/traffic confusers in TRAIN.",
+  "C-heldout-billboard-anchor": "Review only to fill validation/TEST gaps left after block A."
+ },
+ "counts": {
+  "A-contrast-anchor-all-roles": 48,
+  "B-train-billboard-anchor": 52,
+  "C-heldout-billboard-anchor": 123
+ },
+ "entries": [
+  {
+   "image_id": "65e34de96ff0f728",
+   "role": "train",
+   "anchor": "traffic sign",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "c343a58043c1cfbc021b8639cd3f4b2bda5f119332dee984c595d0d764af49e2",
+   "recorded_dhash": "0f0f1d0f0f031727",
+   "identity_group": "flickr-nsid:93755244@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [
+    {
+     "id": "aa002b206c310671",
+     "distance": 6
+    }
+   ],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-03.json",
+    "disposition": "boundary-hold",
+    "note": "Railway danger notice; compare flagged perceptual match"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/65e34de96ff0f728.jpg",
+   "queue_index": 0
+  },
+  {
+   "image_id": "a8df81ce61f8a569",
+   "role": "train",
+   "anchor": "computer monitor",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "a6e4bb18e394faaf94724afc199f1b5b7cbd7cb981e246dad77650c969a2ce90",
+   "recorded_dhash": "6393a3635034b090",
+   "identity_group": "flickr-nsid:20133719@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "boundary-hold",
+    "note": "Concert control monitors; distant stage requires full-image check"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a8df81ce61f8a569.jpg",
+   "queue_index": 1
+  },
+  {
+   "image_id": "b33447da6ab4cbe6",
+   "role": "train",
+   "anchor": "traffic sign",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "e94aab77479fdd4d6e807e1e31b9dc882ea7a94d00d9a62baa61bd1e82dbb4c6",
+   "recorded_dhash": "2627020002074d19",
+   "identity_group": "flickr-nsid:73451168@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-03.json",
+    "disposition": "boundary-hold",
+    "note": "Urban intersection and ordinary traffic signs; inspect distant facades"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/b33447da6ab4cbe6.jpg",
+   "queue_index": 2
+  },
+  {
+   "image_id": "cf1108361c47af2b",
+   "role": "train",
+   "anchor": "washing machine",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "b6134361d62b630a741636c58507117fb72f6b61db4886bb1c570cb42bac93b4",
+   "recorded_dhash": "3f8fe360636b9a96",
+   "identity_group": "flickr-nsid:9198466@N05",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-03.json",
+    "disposition": "boundary-hold",
+    "note": "Outdoor appliances for sale with small sale notice"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/cf1108361c47af2b.jpg",
+   "queue_index": 3
+  },
+  {
+   "image_id": "0030b0b11d665ac8",
+   "role": "train",
+   "anchor": "whiteboard",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "6367520ae58a09ec1fe4c954534c39faa340b436dc801709d3b4fe769cf604c8",
+   "recorded_dhash": "db4707171b0b031b",
+   "identity_group": "flickr-nsid:99669727@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Written meeting whiteboard"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/0030b0b11d665ac8.jpg",
+   "queue_index": 4
+  },
+  {
+   "image_id": "02eb3145e144ea41",
+   "role": "train",
+   "anchor": "whiteboard",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "8b81d01e031faeb4edee58572312ddd26004b9731641f3df5a405ab8aa04f88c",
+   "recorded_dhash": "af4fcccccc0c78fc",
+   "identity_group": "flickr-nsid:28415633@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "People beside whiteboard"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/02eb3145e144ea41.jpg",
+   "queue_index": 5
+  },
+  {
+   "image_id": "0e7f0ff800ca8b96",
+   "role": "train",
+   "anchor": "traffic sign",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "9c04aab5ae826d3f08ee98a2f97261a46a6f539b35ab0d9b4ec3e73c1b578823",
+   "recorded_dhash": "6070c04845c6a3eb",
+   "identity_group": "flickr-nsid:28966218@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Street name signs"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/0e7f0ff800ca8b96.jpg",
+   "queue_index": 6
+  },
+  {
+   "image_id": "0ef0aeb22015977e",
+   "role": "train",
+   "anchor": "computer monitor",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "a2e02dad715c825d0c6429bd2fb06b1937e851e483a95e39ec529310f873e29a",
+   "recorded_dhash": "be7e8e92fcfc7270",
+   "identity_group": "flickr-nsid:54450095@N05",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Isolated desktop monitor product photo"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/0ef0aeb22015977e.jpg",
+   "queue_index": 7
+  },
+  {
+   "image_id": "117cc5e10b16b05b",
+   "role": "train",
+   "anchor": "traffic sign",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "6174298030d3e62584e8b6541904a52e2438d8b6ec3420ffa413bba34f551f75",
+   "recorded_dhash": "a70e0ec49cc8ccc5",
+   "identity_group": "flickr-nsid:77782116@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "State welcome traffic sign"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/117cc5e10b16b05b.jpg",
+   "queue_index": 8
+  },
+  {
+   "image_id": "2fddb241eea05365",
+   "role": "train",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "01c05b64168e4fe98c5d2d4f4132d4fda320a4a6a55f587e991c4188d450db21",
+   "recorded_dhash": "1f7a6b6a7676b6b7",
+   "identity_group": "flickr-nsid:61019290@N07",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Framed portrait in gallery"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2fddb241eea05365.jpg",
+   "queue_index": 9
+  },
+  {
+   "image_id": "3ba19b9ff3244873",
+   "role": "train",
+   "anchor": "washing machine",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "7439e31d5ae8d6354e825d01fca40cdb616db95e1c685509f75b5b59d4a7f178",
+   "recorded_dhash": "19710171e9690be3",
+   "identity_group": "flickr-nsid:65484630@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-03.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Top-loading washer"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3ba19b9ff3244873.jpg",
+   "queue_index": 10
+  },
+  {
+   "image_id": "3cbc26073f554350",
+   "role": "train",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "7f9cb2d924a56fd475c3bbc4f501fcf857b7e863c8bc283b7a61198fd71708ba",
+   "recorded_dhash": "c7e7e7a3aacacecc",
+   "identity_group": "flickr-nsid:80845533@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Small decorative framed messages"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3cbc26073f554350.jpg",
+   "queue_index": 11
+  },
+  {
+   "image_id": "55e8bc499978bc3a",
+   "role": "train",
+   "anchor": "whiteboard",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "2b2f4978876b172b154a86d4df6831063d14a0b261194f7bf541abd9a15eff62",
+   "recorded_dhash": "682c67272795983a",
+   "identity_group": "flickr-nsid:36711837@N05",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Presenter beside portable whiteboard"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/55e8bc499978bc3a.jpg",
+   "queue_index": 12
+  },
+  {
+   "image_id": "58ee7bb18fe237ac",
+   "role": "train",
+   "anchor": "computer monitor",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "4e2dce091da535b34eb81d05926f75b1f547cc0482945362f6b7205ec498df86",
+   "recorded_dhash": "498118305a9f0e06",
+   "identity_group": "flickr-nsid:21881956@N05",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Vintage CRT computer monitors"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/58ee7bb18fe237ac.jpg",
+   "queue_index": 13
+  },
+  {
+   "image_id": "5f83693cd057954b",
+   "role": "train",
+   "anchor": "whiteboard",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "b073939bfa7bf7f17a0c91152bcc94e24a5dd41cf1c64753a0b79ef5a558a04d",
+   "recorded_dhash": "edfbdbe7f7ff7d7f",
+   "identity_group": "flickr-nsid:49503114626@N01",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Drawings on whiteboard"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/5f83693cd057954b.jpg",
+   "queue_index": 14
+  },
+  {
+   "image_id": "60501ac4a8b1f148",
+   "role": "train",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "c41a6f73bd717be93d4ecef9dd43040a425b54903e58791384c9be6b2bc25b69",
+   "recorded_dhash": "fcdc9c9a9eb8aa66",
+   "identity_group": "flickr-nsid:13481788@N02",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Framed painting"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/60501ac4a8b1f148.jpg",
+   "queue_index": 15
+  },
+  {
+   "image_id": "62a5425ce90220fc",
+   "role": "train",
+   "anchor": "whiteboard",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "b99f1071f665d9d6531acef067d75d4c4a3fbdcfbefb1c1ab542470470c4d537",
+   "recorded_dhash": "5a5b4ec5d74e3d93",
+   "identity_group": "flickr-nsid:64952728@N03",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Illustrated planning notes close-up"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/62a5425ce90220fc.jpg",
+   "queue_index": 16
+  },
+  {
+   "image_id": "7c60190ca0def50b",
+   "role": "train",
+   "anchor": "washing machine",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "9c326b82edde2979e3b89fbb17ed092644d20f2f6b7aec41c6fc1259785ddd73",
+   "recorded_dhash": "36703e3f3f3e3e1e",
+   "identity_group": "flickr-nsid:86639298@N02",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-03.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Tumble dryer rather than washer"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/7c60190ca0def50b.jpg",
+   "queue_index": 17
+  },
+  {
+   "image_id": "7d3c9512d8ad8e26",
+   "role": "train",
+   "anchor": "washing machine",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "921f94b643e3ac8483f6fe17bebee5af59c2853710fab95e1f0c53fcc8936b2f",
+   "recorded_dhash": "f65453475b75a686",
+   "identity_group": "flickr-nsid:95235686@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-03.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Laundrette with distant signs; inspect advertising versus notices"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/7d3c9512d8ad8e26.jpg",
+   "queue_index": 18
+  },
+  {
+   "image_id": "8d932f62ee664206",
+   "role": "train",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "fe87a2a5329aa43c8c98c09d9c1a8c797d5342bc5fc1efe8e51f044baa0b1e69",
+   "recorded_dhash": "74a683d3d33c1c0c",
+   "identity_group": "flickr-nsid:26558498@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Framed painting with visitor"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/8d932f62ee664206.jpg",
+   "queue_index": 19
+  },
+  {
+   "image_id": "910041a96e70e3b7",
+   "role": "train",
+   "anchor": "whiteboard",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "8307ef11b564a406c0559e12f563eafcf9f46c8b1cf88dee8d0de24c41205b34",
+   "recorded_dhash": "0421938301c9fd3d",
+   "identity_group": "flickr-nsid:64379474@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Written board in graffiti-covered room"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/910041a96e70e3b7.jpg",
+   "queue_index": 20
+  },
+  {
+   "image_id": "a3bb4f51abf27bb5",
+   "role": "train",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "aabf274b64a2b2f9bb611c6f8dbf15bc9415572408c6095c2c8d1ea527ce478b",
+   "recorded_dhash": "0931312d6c293103",
+   "identity_group": "flickr-nsid:23339587@N07",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Small dark framed artwork"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a3bb4f51abf27bb5.jpg",
+   "queue_index": 21
+  },
+  {
+   "image_id": "ad59a83d5dc4174c",
+   "role": "train",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "8e4b419506f75cafb429c8fa2ff76a80d65c285a0fcf0810d9e46357bf34654a",
+   "recorded_dhash": "034d585951c04481",
+   "identity_group": "flickr-nsid:61555160@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Framed portrait"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/ad59a83d5dc4174c.jpg",
+   "queue_index": 22
+  },
+  {
+   "image_id": "ae3429b19016eba7",
+   "role": "train",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "dbd960e3704e9090229265c86b813f367c37651f6381b3c21c3c18491eb5a202",
+   "recorded_dhash": "444e4a8a4a4c4c4c",
+   "identity_group": "flickr-nsid:7876071@N06",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Religious hanging artwork"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/ae3429b19016eba7.jpg",
+   "queue_index": 23
+  },
+  {
+   "image_id": "b68ade198dd36307",
+   "role": "train",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "85f84cc913745455ba09d7f3e8188587b81247ea9f3064778fb9ebc847d15ef0",
+   "recorded_dhash": "017149cd69558581",
+   "identity_group": "flickr-nsid:53730654@N04",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Religious framed icon"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/b68ade198dd36307.jpg",
+   "queue_index": 24
+  },
+  {
+   "image_id": "bb2c1ddff018b1d2",
+   "role": "train",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "57db382863092015b5eec9cba93a27acb306d07aef1d8442513527bd53ac045c",
+   "recorded_dhash": "0f26727939190e03",
+   "identity_group": "flickr-nsid:47303652@N06",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Framed flower artwork"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/bb2c1ddff018b1d2.jpg",
+   "queue_index": 25
+  },
+  {
+   "image_id": "c0831c762234d99c",
+   "role": "train",
+   "anchor": "whiteboard",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "ea5313c8519f29d8fb13c7831406a7ccda6555f6db7e2c7d94e49dc7b8917354",
+   "recorded_dhash": "e123464313c22223",
+   "identity_group": "flickr-nsid:52786697@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Presenter at whiteboard"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/c0831c762234d99c.jpg",
+   "queue_index": 26
+  },
+  {
+   "image_id": "c9ce9512738748b0",
+   "role": "train",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "0c4da84284dff021193e954f649a01d74c629c4881ed6afb6c3ecf4085fb9155",
+   "recorded_dhash": "0f0f8bcbcb8b1f0f",
+   "identity_group": "flickr-nsid:35000483@N02",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Gallery photographic panels"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/c9ce9512738748b0.jpg",
+   "queue_index": 27
+  },
+  {
+   "image_id": "cb26499cae74775c",
+   "role": "train",
+   "anchor": "computer monitor",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "75ba897b0fd0cfb9750c2bcac52275c9dabdac9276a6e4b49c40353b79b3f957",
+   "recorded_dhash": "0fa3f7777771ec0c",
+   "identity_group": "flickr-nsid:72936858@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Two desktop monitors"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/cb26499cae74775c.jpg",
+   "queue_index": 28
+  },
+  {
+   "image_id": "d01d23db738218ca",
+   "role": "train",
+   "anchor": "whiteboard",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "203992945527afcd4d92a07b75665f80ac6d544035fad9b6f35a4416fc2a3268",
+   "recorded_dhash": "9f9f1f1f3e3f969e",
+   "identity_group": "flickr-nsid:36813960@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Written whiteboard"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/d01d23db738218ca.jpg",
+   "queue_index": 29
+  },
+  {
+   "image_id": "dcfb7be73a1b8376",
+   "role": "train",
+   "anchor": "traffic sign",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "a1da88d131c9047927c890950222e7f295436422eb1f411bb62dd16b54d82373",
+   "recorded_dhash": "112d257067570b37",
+   "identity_group": "flickr-nsid:63797645@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-03.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Directional road sign"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/dcfb7be73a1b8376.jpg",
+   "queue_index": 30
+  },
+  {
+   "image_id": "ea3823dee72eec20",
+   "role": "train",
+   "anchor": "traffic sign",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "20698d18f67577284039d2f9f1188ee517d1264aad92cd1c39f661624fe4b78c",
+   "recorded_dhash": "43476f36361c930f",
+   "identity_group": "flickr-nsid:64164422@N08",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-03.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "No-entry and parking prohibition signs"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/ea3823dee72eec20.jpg",
+   "queue_index": 31
+  },
+  {
+   "image_id": "f24c9a6bce2c8bcf",
+   "role": "train",
+   "anchor": "computer monitor",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "c093ec8fa8b924a3b69d5da4362ddcf027125f00507461a3cefe07c617f85917",
+   "recorded_dhash": "4f377ef2b7b5b79a",
+   "identity_group": "flickr-nsid:41894183508@N01",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-02.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Computer and software packaging"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/f24c9a6bce2c8bcf.jpg",
+   "queue_index": 32
+  },
+  {
+   "image_id": "08bfd40c6f81ef7a",
+   "role": "val",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "47eb15d236fbbf9767a3d2c6649212c62aad439a07664574425ff417dd9a1a09",
+   "recorded_dhash": "2b1e969849498cd8",
+   "identity_group": "flickr-nsid:87217470@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "boundary-hold",
+    "note": "Exterior wall mural with vehicle; examine physical board versus mural"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/08bfd40c6f81ef7a.jpg",
+   "queue_index": 33
+  },
+  {
+   "image_id": "d9e8beecc85c8c4a",
+   "role": "val",
+   "anchor": "traffic sign",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "859b014df48352ce43801df0d49f2bdd10d686dcbd375fedbcf1e6e761ea6806",
+   "recorded_dhash": "07333333330b1717",
+   "identity_group": "flickr-nsid:83015819@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-05.json",
+    "disposition": "boundary-hold",
+    "note": "Freestanding road-safety campaign display; same advertising versus information boundary as positive public campaigns"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/d9e8beecc85c8c4a.jpg",
+   "queue_index": 34
+  },
+  {
+   "image_id": "1b6fa76c4b73e9b3",
+   "role": "val",
+   "anchor": "whiteboard",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "217f3a85a3d2cdf2a3999997ec25ea8451192298f1a7bc27b81911728732fdb0",
+   "recorded_dhash": "0f1f958581a54717",
+   "identity_group": "flickr-nsid:18288598@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-05.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Illustrated planning whiteboard"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/1b6fa76c4b73e9b3.jpg",
+   "queue_index": 35
+  },
+  {
+   "image_id": "1ebbc822851b0953",
+   "role": "val",
+   "anchor": "traffic sign",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "f48200d04b4e50db98fde3c7cc2cbf06ae10988bc6ce613d4c293a6d00c17f82",
+   "recorded_dhash": "c991cf8496939085",
+   "identity_group": "flickr-nsid:80719516@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-05.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Traffic prohibitions"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/1ebbc822851b0953.jpg",
+   "queue_index": 36
+  },
+  {
+   "image_id": "225d45e166ce106a",
+   "role": "val",
+   "anchor": "computer monitor",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "1966a2bf2d1b03a924a03811587514a38acc5c260171fa843195087d88ac543a",
+   "recorded_dhash": "3119d8ca43c7c6de",
+   "identity_group": "flickr-nsid:94325529@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Desktop monitors"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/225d45e166ce106a.jpg",
+   "queue_index": 37
+  },
+  {
+   "image_id": "31389522f357909e",
+   "role": "val",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "129c443656703f1d66364f8c9cdd201fa1923fa6955ba44f7faa84f11e1474ca",
+   "recorded_dhash": "a2c2d2daccd8c8aa",
+   "identity_group": "flickr-nsid:35791234@N03",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Framed decorative wedding photograph"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/31389522f357909e.jpg",
+   "queue_index": 38
+  },
+  {
+   "image_id": "5893d774505cac11",
+   "role": "val",
+   "anchor": "computer monitor",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "31fd8a244441b014a336a85f08fc4d51a135fac34d1586b0775225eef199c41a",
+   "recorded_dhash": "298b0373331cb6fe",
+   "identity_group": "flickr-nsid:31362181@N08",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Computer book and monitors; no visible advertising board in thumbnail"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/5893d774505cac11.jpg",
+   "queue_index": 39
+  },
+  {
+   "image_id": "6584195871f94980",
+   "role": "val",
+   "anchor": "whiteboard",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "8a993015be4c38aa953dce364888ad273f3e52aed9de28000cfd8d08e48cfcce",
+   "recorded_dhash": "3711010101210d09",
+   "identity_group": "flickr-nsid:124379194@N08",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-05.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Written scheduling whiteboard"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/6584195871f94980.jpg",
+   "queue_index": 40
+  },
+  {
+   "image_id": "aecb7489814d3a34",
+   "role": "val",
+   "anchor": "computer monitor",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "a379d012a59f5b6918c3e559daba966f69847db4755922c85737b3832b115b84",
+   "recorded_dhash": "79b01e0f273d1c1a",
+   "identity_group": "flickr-nsid:41894185093@N01",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-04.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Vintage desktop computer"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/aecb7489814d3a34.jpg",
+   "queue_index": 41
+  },
+  {
+   "image_id": "cfa2443f391535ec",
+   "role": "val",
+   "anchor": "traffic sign",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "2e48fc3d8fbb7e4b70989a67e9e5f99bfa48d0f81b2fdfb972cc039ce366dbff",
+   "recorded_dhash": "363cab44310d473b",
+   "identity_group": "flickr-nsid:47065077@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-05.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Otter-crossing warning sign"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/cfa2443f391535ec.jpg",
+   "queue_index": 42
+  },
+  {
+   "image_id": "feb45b5974c2e630",
+   "role": "val",
+   "anchor": "washing machine",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "510e88d1df5502ca5b593f0237539a60839616ffdcf6e84821e56669278059c9",
+   "recorded_dhash": "93031783050d0707",
+   "identity_group": "flickr-nsid:24201822@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-05.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Washer and dryer"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/feb45b5974c2e630.jpg",
+   "queue_index": 43
+  },
+  {
+   "image_id": "29cd97b5de31d220",
+   "role": "test",
+   "anchor": "picture frame",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "84aca1fffa9a15060e4e61cc339eb730d173295046ca1e63847125187a0f205f",
+   "recorded_dhash": "e1fbe3b3d3bafe3e",
+   "identity_group": "flickr-nsid:106675994@N07",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-01.json",
+    "disposition": "boundary-hold",
+    "note": "Gallery gilded portrait; apparent edited/composite content needs provenance check"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/29cd97b5de31d220.jpg",
+   "queue_index": 44
+  },
+  {
+   "image_id": "c7e6392996d34449",
+   "role": "test",
+   "anchor": "computer monitor",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "20f970ce655ca6903a446560319bf9ecc32b0d6dc5267caaa43551f3ad30ae2c",
+   "recorded_dhash": "98cc98785058e643",
+   "identity_group": "flickr-nsid:15932083@N05",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-01.json",
+    "disposition": "boundary-hold",
+    "note": "Trade-show monitor with promotional stand; inspect physical display panels"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/c7e6392996d34449.jpg",
+   "queue_index": 45
+  },
+  {
+   "image_id": "3c49b6fe8d3f1115",
+   "role": "test",
+   "anchor": "washing machine",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "bf95979d8caa1ea8349093bdfbf197129d39fdde44cff18a8dc7aee3e0aeae83",
+   "recorded_dhash": "382c2e561615072e",
+   "identity_group": "flickr-nsid:33227787@N05",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-01.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Row of laundry machines"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3c49b6fe8d3f1115.jpg",
+   "queue_index": 46
+  },
+  {
+   "image_id": "679f52e059e4622f",
+   "role": "test",
+   "anchor": "whiteboard",
+   "block": "A-contrast-anchor-all-roles",
+   "sha256": "b136ec1633a89806e549832ef80dd790f8974f6c7826a5425ad896048ae44197",
+   "recorded_dhash": "0f0342484e0e0e0e",
+   "identity_group": "flickr-nsid:35468151816@N01",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 0,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-contrast-01.json",
+    "disposition": "billboard-absence-candidate",
+    "note": "Community notices on indoor board"
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/679f52e059e4622f.jpg",
+   "queue_index": 47
+  },
+  {
+   "image_id": "3547d8e7ed6d8111",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "6f745be21b01e43b8cbf5a012e907d52557137aad138269edc5234328d6d237a",
+   "recorded_dhash": "5fd3878f8e8e8e86",
+   "identity_group": "flickr-nsid:49027973@N08",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-04.json",
+    "disposition": "non-target-context",
+    "note": "Agricultural experiment/treatment information board."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3547d8e7ed6d8111.jpg",
+   "queue_index": 48
+  },
+  {
+   "image_id": "356986d84c8bdc28",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "839ad8bb361d972c8e4f056413de95968c581bb661ca65e938efd2ea7267a16a",
+   "recorded_dhash": "00276c1c3c595b9e",
+   "identity_group": "flickr-nsid:26809429@N02",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 6,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "non-target-context",
+    "note": "Electronic motorway travel-time information sign."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/356986d84c8bdc28.jpg",
+   "queue_index": 49
+  },
+  {
+   "image_id": "83345074adb9538f",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "372e71a174677e5ddc1591bce67037d98586135e8f5d8af911fe44fdbc9cc198",
+   "recorded_dhash": "00202000f67c2f8f",
+   "identity_group": "flickr-nsid:69628404@N08",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "non-target-context",
+    "note": "Handheld tourism leaflet; printed depiction is not an outdoor advertising board."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/83345074adb9538f.jpg",
+   "queue_index": 50
+  },
+  {
+   "image_id": "a2983a0668799165",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "811a400ccc6e89e3bd5084018e34bd29451d2b4312942e4d14d23277a630e2dd",
+   "recorded_dhash": "1f1f9ec9c9276729",
+   "identity_group": "flickr-nsid:77919685@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-04.json",
+    "disposition": "non-target-context",
+    "note": "Stadium name/logo facade; inspect remaining scene for advertising."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a2983a0668799165.jpg",
+   "queue_index": 51
+  },
+  {
+   "image_id": "e0fde118e609a018",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "c5c7e10b1e20b336f16fb86bf32c457d082c8c39a89e2f6b8b71b9f4434ec74b",
+   "recorded_dhash": "02028d8cb01cf07f",
+   "identity_group": "flickr-nsid:10710442@N08",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "non-target-context",
+    "note": "Restaurant name-only sign."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/e0fde118e609a018.jpg",
+   "queue_index": 52
+  },
+  {
+   "image_id": "00165f9e139aedaf",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "14290e0a7b507169389692a35858b1de65c2319f27919d328204cc10982088a8",
+   "recorded_dhash": "0f1ae68a8e2c8001",
+   "identity_group": "flickr-nsid:13512376@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 13,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Dense Chinese shop/business-name facade panels; strict advertising boundary unresolved."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/00165f9e139aedaf.jpg",
+   "queue_index": 53
+  },
+  {
+   "image_id": "05b5f77a37c69836",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "a1875f81ca56f5d9768fb21be592d78fb92496995daa5b50f8731cdfe5fe01ba",
+   "recorded_dhash": "7753f179c461735f",
+   "identity_group": "flickr-nsid:12357841@N02",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Miss Tilly's restaurant-name/menu pole sign; billboard versus business sign boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/05b5f77a37c69836.jpg",
+   "queue_index": 54
+  },
+  {
+   "image_id": "0da647ef6a2da927",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "c43dc59a217e3bb60ca2cc69e90670b2974873a2cac3d326bea351e7f48f6de0",
+   "recorded_dhash": "8909498b8b1b1f0f",
+   "identity_group": "flickr-nsid:14812197@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Promotional vertical flags/banners near Hollywood; material/size and remaining panels need full-resolution review."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/0da647ef6a2da927.jpg",
+   "queue_index": 55
+  },
+  {
+   "image_id": "1cbd02645b6fc7ac",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "0722b770fc8d90727745dff3a759fac8ccef10c13d0c102ff871b41e29da9553",
+   "recorded_dhash": "617170384cc6c7ef",
+   "identity_group": "flickr-nsid:22666220@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Technogym business-brand sign; strict advertising-board versus company-name sign boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/1cbd02645b6fc7ac.jpg",
+   "queue_index": 56
+  },
+  {
+   "image_id": "2c03c610def46ad8",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "48d906bd6b12b7a6a94f7b90199c06ca44ef6c10be735d6b66072af8bdec2a81",
+   "recorded_dhash": "0d3af6a6b2296581",
+   "identity_group": "flickr-nsid:33398364@N08",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Shopping-building branding and promotional lettering; inspect whether a physical advertising panel is present."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2c03c610def46ad8.jpg",
+   "queue_index": 57
+  },
+  {
+   "image_id": "33f91560658d3543",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "b3f609052c6de494aa2de65bc9a118858365e4db5387bbb42dfee89255b7de90",
+   "recorded_dhash": "0000004830307060",
+   "identity_group": "flickr-nsid:54418671@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Cylindrical SPAM promotional object; flat advertising-board scope uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/33f91560658d3543.jpg",
+   "queue_index": 58
+  },
+  {
+   "image_id": "3db2cf22867fc76a",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "c2edeb2bfe33528eb472a48b8ae3d37ad1a1c383a743b60d89cb219fd5b1a3f9",
+   "recorded_dhash": "07cf8e9e8e868e8e",
+   "identity_group": "flickr-nsid:26157413@N08",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Rooftop message panel; advertising content and active board scope uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3db2cf22867fc76a.jpg",
+   "queue_index": 59
+  },
+  {
+   "image_id": "45b675d7a987eb2d",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "a9745abb79b6083752788128f4b015f963e5783fb0703aae08311d46d39ce7de",
+   "recorded_dhash": "6901110b0f020d19",
+   "identity_group": "flickr-nsid:25028863@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Blank freestanding billboard structure; no visible advertising content."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/45b675d7a987eb2d.jpg",
+   "queue_index": 60
+  },
+  {
+   "image_id": "616998b423722775",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "f00dc3a2a5ad793d7b9b8567264dfc9139396d10b6e464b7844a77e0318824f9",
+   "recorded_dhash": "94c4c445479cc7cf",
+   "identity_group": "flickr-nsid:73852802@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Framed political or satirical message poster; content scope uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/616998b423722775.jpg",
+   "queue_index": 61
+  },
+  {
+   "image_id": "62f567a60c41d726",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "b7f57715b10abf63d644a37c46ac40372adbbaa7d97fd6857ef0102cb5e813b0",
+   "recorded_dhash": "e4dc8c3c24273b39",
+   "identity_group": "flickr-nsid:40943981@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Restaurant name panel with partial promotional material at right."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/62f567a60c41d726.jpg",
+   "queue_index": 62
+  },
+  {
+   "image_id": "7369a35450ab0266",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "d889e840e1f61de1a6e36c76851c3d6b1dfe2ae2deaa979dbbd8d36ec90a0022",
+   "recorded_dhash": "3e3711394f1731f1",
+   "identity_group": "flickr-nsid:18259771@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Tourism welcome board; information versus promotional scope uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/7369a35450ab0266.jpg",
+   "queue_index": 63
+  },
+  {
+   "image_id": "766ff9c58948dc8e",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "9f8355261bae068ad864ee4eb51bbb50329ebfd66c81ed6ea9df0a70628a220a",
+   "recorded_dhash": "f0d0c8cc9f3d39fc",
+   "identity_group": "flickr-nsid:14738242@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Painted welcome mural; physical advertising-board scope uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/766ff9c58948dc8e.jpg",
+   "queue_index": 64
+  },
+  {
+   "image_id": "89b8acd5d36a4628",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "bd8b7a2307d08b415a3864070e78f7e6556bd2e02eb737a9dfc9b466d6907ecd",
+   "recorded_dhash": "3f3d4c3633f3f47c",
+   "identity_group": "flickr-nsid:22017657@N05",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Business name sign beside inactive or rear-facing billboard structure."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/89b8acd5d36a4628.jpg",
+   "queue_index": 65
+  },
+  {
+   "image_id": "8c072e4830a8419c",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "ed55408a7317d911cdbdce3cb7003a084c96cd325f1bd32fb55a081f942e1369",
+   "recorded_dhash": "c9030d26060f9204",
+   "identity_group": "flickr-nsid:96489918@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-04.json",
+    "disposition": "boundary-hold",
+    "note": "Indoor conference video screen showing speakers; no advertising content established."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/8c072e4830a8419c.jpg",
+   "queue_index": 66
+  },
+  {
+   "image_id": "a0c6ca2cccd5fab5",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "3602b1285a155e2bd51b9593605edc62c88c0a9d78513313f49d4ba00884cce8",
+   "recorded_dhash": "3d6f1abeee7ee8f0",
+   "identity_group": "flickr-nsid:92306213@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-04.json",
+    "disposition": "boundary-hold",
+    "note": "Car photo with background HAGERTY brand panel; inspect board versus name sign."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a0c6ca2cccd5fab5.jpg",
+   "queue_index": 67
+  },
+  {
+   "image_id": "a3ca55f207176b70",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "8b11c69537e86a9e4eb8db3c50b6da1e46aa9f1e6e928aee6d0baf6011ec6d08",
+   "recorded_dhash": "0000000002230b8c",
+   "identity_group": "flickr-nsid:95672737@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-04.json",
+    "disposition": "boundary-hold",
+    "note": "Wall Drug business-name board; business-lettering boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a3ca55f207176b70.jpg",
+   "queue_index": 68
+  },
+  {
+   "image_id": "a549ecd02129ef8a",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "e22f882a0f30cf3f9b2fe2596018c0c813de1739d5ca3b252ca0f0faf3e09dcf",
+   "recorded_dhash": "e18989516d6cf0e8",
+   "identity_group": "flickr-nsid:119886413@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-04.json",
+    "disposition": "boundary-hold",
+    "note": "Dark street/car scene with partly legible name/service panels; original needed."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a549ecd02129ef8a.jpg",
+   "queue_index": 69
+  },
+  {
+   "image_id": "a77601a409a6caba",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "78c1c113ec5dfa7eaaefe3e129b271edf8d6cbd72e5c76a923a3413672efdb92",
+   "recorded_dhash": "2323131323131363",
+   "identity_group": "flickr-nsid:54106223@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-04.json",
+    "disposition": "boundary-hold",
+    "note": "Indoor projected church service announcement beside speaker; screen versus physical board."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a77601a409a6caba.jpg",
+   "queue_index": 70
+  },
+  {
+   "image_id": "b36d6932c4963074",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "266bdf9d9a89b935c4dad0a6b525bcb4abbbe018a34cba61fd92261e01132a3e",
+   "recorded_dhash": "b7377b6343a7a7fc",
+   "identity_group": "flickr-nsid:46612246@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-04.json",
+    "disposition": "boundary-hold",
+    "note": "Cinema marquee titles versus separate advertising panels."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/b36d6932c4963074.jpg",
+   "queue_index": 71
+  },
+  {
+   "image_id": "bd7fae17003521c6",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "1f892d7de4bbd9c991a7b48297eb0f3394e2cf4804c8aa47d9120f3963f43d8d",
+   "recorded_dhash": "87a1b4828cccfc0c",
+   "identity_group": "flickr-nsid:8699239@N04",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "boundary-hold",
+    "note": "Blank billboard structure with graffiti; no active advertising face."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/bd7fae17003521c6.jpg",
+   "queue_index": 72
+  },
+  {
+   "image_id": "c0ba504f51ead771",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "a9c91f143eb1fb3738be9407d2fdfe6532e2148ef6cd584bf6def38ff5b75307",
+   "recorded_dhash": "cffcc1072f1ffd89",
+   "identity_group": "flickr-nsid:10997798@N07",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-04.json",
+    "disposition": "boundary-hold",
+    "note": "Historical advertisement painted directly on brick; mural versus physical board."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/c0ba504f51ead771.jpg",
+   "queue_index": 73
+  },
+  {
+   "image_id": "d1a9a119476fc110",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "678701647d3c62658db7109b3caa9e976b2cde43540022b7bb124819bf441804",
+   "recorded_dhash": "ccce23714ddfdac7",
+   "identity_group": "flickr-nsid:23185977@N08",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-04.json",
+    "disposition": "boundary-hold",
+    "note": "Petco Park stadium branding and decorative display; inspect advertising panels."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/d1a9a119476fc110.jpg",
+   "queue_index": 74
+  },
+  {
+   "image_id": "f669b8bf5e2ea12b",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "84f84171b1b45f0a6e30b32f2aa57562e2df972596bd456fbfcde4d51c30923c",
+   "recorded_dhash": "c0ccc6b6f65e03e1",
+   "identity_group": "flickr-nsid:63397650@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "boundary-hold",
+    "note": "Business rooftop logo and decorative brick star; inspect distant panels."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/f669b8bf5e2ea12b.jpg",
+   "queue_index": 75
+  },
+  {
+   "image_id": "eec5343864ac439f",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "efd1b99403245a5d16a216dd9464ffe923a81c407fe874dd51b2ca1bda988e11",
+   "recorded_dhash": "82460c1c03733bd9",
+   "identity_group": "flickr-nsid:18115835@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "exclude-composite",
+    "note": "Four-photo collage with unrelated billboard scenes; not a single independently identified photograph."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/eec5343864ac439f.jpg",
+   "queue_index": 76
+  },
+  {
+   "image_id": "03ec44a9639b95fd",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "c966b3360e3ecd7846203933f9b45a69eba2eac93f32b9e2511c5a50f36b92a1",
+   "recorded_dhash": "ac8eb2232e2e2e9e",
+   "identity_group": "flickr-nsid:123120636@N08",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Framed Mamma Mia theatre advertisement at street level."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/03ec44a9639b95fd.jpg",
+   "queue_index": 77
+  },
+  {
+   "image_id": "04cb0a69e5e61e33",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "4edc9b65209bcec5c7cce6cf5d9604d7157a873c7601df12cd870a79891bf15f",
+   "recorded_dhash": "80300d0b46a0c0e0",
+   "identity_group": "flickr-nsid:45191620@N07",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Large freestanding roadside product advertisement in sparse desert street scene."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/04cb0a69e5e61e33.jpg",
+   "queue_index": 78
+  },
+  {
+   "image_id": "0840c7f8768accc6",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "78cfff647248945ec15333f1c1639ee9adc408076594b1c895838b3da6fcc3e5",
+   "recorded_dhash": "6968746c6c1b1f0f",
+   "identity_group": "flickr-nsid:27432570@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-04.json",
+    "disposition": "positive-context",
+    "note": "Tall freestanding tourist/shopping campaign board with photographs and contact details."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/0840c7f8768accc6.jpg",
+   "queue_index": 79
+  },
+  {
+   "image_id": "2ae2114a4a2f116b",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "ffc942c435a58c91698848a355e9df605396a6e709e0ae981fe4f18ae0df9919",
+   "recorded_dhash": "131918fe6662e5e8",
+   "identity_group": "flickr-nsid:16782093@N03",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 9,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Large GUESS product/fashion advertisement on building facade."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2ae2114a4a2f116b.jpg",
+   "queue_index": 80
+  },
+  {
+   "image_id": "2b8442e9156921ac",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "33142bd21f2be491d88ceff6893a9823d0a7e0640ded454959418c4eebc9d25a",
+   "recorded_dhash": "4f0fc1818042c385",
+   "identity_group": "flickr-nsid:13613802@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-04.json",
+    "disposition": "positive-context",
+    "note": "Large illustrated promotional panel on building under scaffolding."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2b8442e9156921ac.jpg",
+   "queue_index": 81
+  },
+  {
+   "image_id": "7723f0840125b915",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "3e288678812fe1e0ec6a8d4eb79f4b05531530ada1817d198bb47a4525103b08",
+   "recorded_dhash": "0f0f1d1b2f873064",
+   "identity_group": "flickr-nsid:7377473@N02",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "positive-context",
+    "note": "Distant yellow professional advertising panels; original needed for complete boxes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/7723f0840125b915.jpg",
+   "queue_index": 82
+  },
+  {
+   "image_id": "7ab0c4e9f362f044",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "6b8325468d1ad3c046f2fdd36b29e03a8d9590195791c5c6adf7359c4811e6cc",
+   "recorded_dhash": "9e8ca49452381c16",
+   "identity_group": "flickr-nsid:72396314@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 12,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-03.json",
+    "disposition": "positive-context",
+    "note": "Commercial street with multiple large photographic advertising panels."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/7ab0c4e9f362f044.jpg",
+   "queue_index": 83
+  },
+  {
+   "image_id": "7b599a8af1aaa7fb",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "eb27f4ad77485559903a471a5eb2b6d3a3decbec64fbc59db5a7c2f832a981ac",
+   "recorded_dhash": "e3e0c383c3cb0980",
+   "identity_group": "flickr-nsid:48595348@N08",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-04.json",
+    "disposition": "positive-context",
+    "note": "Framed cupcake-product and family-therapy service promotional panels."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/7b599a8af1aaa7fb.jpg",
+   "queue_index": 84
+  },
+  {
+   "image_id": "9b5635760011caeb",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "ff278d9534344aab934156ec964897ce5ef6ff93e0ae672274aff028d635210c",
+   "recorded_dhash": "559e9e9ebe8ef3d0",
+   "identity_group": "flickr-nsid:85549619@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-04.json",
+    "disposition": "positive-context",
+    "note": "Freestanding disco-themed campaign billboard."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/9b5635760011caeb.jpg",
+   "queue_index": 85
+  },
+  {
+   "image_id": "c290260fba414277",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "ee2cbf612f3c910934e921a3dfd23927cda985a9d6d2f22d4ab183703a042428",
+   "recorded_dhash": "de793b3f9f391b93",
+   "identity_group": "flickr-nsid:42030037@N08",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-04.json",
+    "disposition": "positive-context",
+    "note": "Outdoor public-health AIDS campaign billboard."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/c290260fba414277.jpg",
+   "queue_index": 86
+  },
+  {
+   "image_id": "c72cf3016e535062",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "badde7989c74910d707eedc0fe494c30eea3952ac348b5550849cb4c60b99ff6",
+   "recorded_dhash": "7f7f3f3e19701817",
+   "identity_group": "flickr-nsid:27485522@N04",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-04.json",
+    "disposition": "positive-context",
+    "note": "Framed fashion campaign alongside station information; box ad separately."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/c72cf3016e535062.jpg",
+   "queue_index": 87
+  },
+  {
+   "image_id": "f2a5f7f979164256",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "0f6c8cded1ed3294cc5c75a24f242b34bdf8050e21aa3cf0d3edc0b827f9ac78",
+   "recorded_dhash": "317870f0f0c0cd99",
+   "identity_group": "flickr-nsid:7196922@N02",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context",
+    "note": "Sports-ground tourism/sponsor advertising panels; scoreboard/name signs separate."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/f2a5f7f979164256.jpg",
+   "queue_index": 88
+  },
+  {
+   "image_id": "0116dcf25359ea13",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "6b9d6c0b62100f3cf701435ea31534efda81ba8b3e6539a071e59fd917a313f0",
+   "recorded_dhash": "83818199d9486042",
+   "identity_group": "flickr-nsid:67646117@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 7,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square product advertisements; compare against prior scenes before use."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/0116dcf25359ea13.jpg",
+   "queue_index": 89
+  },
+  {
+   "image_id": "1df2f89ef659485b",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "9b91e6267a46d21ab09bd7a94ecf9e5f3d92c5937bf2c9c8599c7ba1ac773547",
+   "recorded_dhash": "246470b1b3b3e6ae",
+   "identity_group": "flickr-nsid:54174314@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Large Motorola product advertisement in Times Square; prior-scene check."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/1df2f89ef659485b.jpg",
+   "queue_index": 90
+  },
+  {
+   "image_id": "260df075cea842ce",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "a4d3d899bbf45b4dba01c06b85a79bdf2a928be6a6fda0cd59cb82b7958b3370",
+   "recorded_dhash": "091c3f3f2e26a3c3",
+   "identity_group": "flickr-nsid:66403675@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Large Las Vegas show/product facade advertisements; compare scene and label all boards."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/260df075cea842ce.jpg",
+   "queue_index": 91
+  },
+  {
+   "image_id": "34bca1e105282301",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "7a2576c6f241cbabdf3c1d6835666c35be891a581dcd2c4b2a0e9b154464ef55",
+   "recorded_dhash": "1c1c8c39389e8e18",
+   "identity_group": "flickr-nsid:24330894@N03",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-04.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Hollywood view with WALL-E product campaign and distant boards; compare old/cross-role Hollywood scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/34bca1e105282301.jpg",
+   "queue_index": 92
+  },
+  {
+   "image_id": "401238ad129c3e87",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "9b0bbbd3d37620690a5198173dd5e8dc61b2f432f06378e139671294c4145e49",
+   "recorded_dhash": "0e4ec983069c0c74",
+   "identity_group": "flickr-nsid:55907694@N04",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 19,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-04.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square advertising cluster; compare prior/cross-role scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/401238ad129c3e87.jpg",
+   "queue_index": 93
+  },
+  {
+   "image_id": "957607b20c3d5bfc",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "19106f457fb45ca3ad912c9982a8c5e96a81ec640d36290f22e9f35420ded7f0",
+   "recorded_dhash": "37274993fa57456d",
+   "identity_group": "flickr-nsid:44613506@N07",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-04.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square theatre campaign billboards at night; compare recurring scene."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/957607b20c3d5bfc.jpg",
+   "queue_index": 94
+  },
+  {
+   "image_id": "a966c4f22b75600f",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "06c7fabf0cbb4ccf5a274d50071da3966f7f27369a7583fdaee599f2956ee656",
+   "recorded_dhash": "b0303032f4d70bc4",
+   "identity_group": "flickr-nsid:29920256@N03",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 14,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-04.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square illuminated advertising panels; compare prior scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a966c4f22b75600f.jpg",
+   "queue_index": 95
+  },
+  {
+   "image_id": "d086f2a58dc5a329",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "1f01a299c60874745544f28b1df1dc76e8876c3ddda7d0edf9e04929a9c4f12e",
+   "recorded_dhash": "8989890901098143",
+   "identity_group": "flickr-nsid:27166091@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 20,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-04.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square advertising scene; compare old and new split scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/d086f2a58dc5a329.jpg",
+   "queue_index": 96
+  },
+  {
+   "image_id": "d39e1edc94110427",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "ff609de63bbac63f4b2fee665650681503e1dfe3151dcc9cefcf20da46dc4178",
+   "recorded_dhash": "968ccc8e8ccccc85",
+   "identity_group": "flickr-nsid:33736471@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 12,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Night Times Square advertising; compare prior scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/d39e1edc94110427.jpg",
+   "queue_index": 97
+  },
+  {
+   "image_id": "e76e5e8e51bb8c57",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "2bb625f8c893c9c67fc463769ea298d8d5d3f9a54cb7d0e1350ac8ebb8efc7e8",
+   "recorded_dhash": "2373f6de4f5bcb4b",
+   "identity_group": "flickr-nsid:99527366@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Yahoo outdoor campaign board; Times Square setting needs scene comparison."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/e76e5e8e51bb8c57.jpg",
+   "queue_index": 98
+  },
+  {
+   "image_id": "f7dbeca8d27a6498",
+   "role": "train",
+   "anchor": "billboard",
+   "block": "B-train-billboard-anchor",
+   "sha256": "e7ed6ec0c9e0304023783fc6ea1570ee80f1c7c4d5a385b3b4ea13ad20f5d8f7",
+   "recorded_dhash": "33333333b6b3b326",
+   "identity_group": "flickr-nsid:49477837@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 10,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square campaign panels; compare prior/cross-role scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/f7dbeca8d27a6498.jpg",
+   "queue_index": 99
+  },
+  {
+   "image_id": "45914a5e6f5a9e42",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "05e5be40a1d4ba1a034c3aebc2a4dc1506930706ef576b786b4ded86a841cfdf",
+   "recorded_dhash": "39f9c9c00617170d",
+   "identity_group": "flickr-nsid:34396501@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "non-target-context",
+    "note": "Motorway destination information signs; full original needed before absence certification."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/45914a5e6f5a9e42.jpg",
+   "queue_index": 100
+  },
+  {
+   "image_id": "9f493d9aae27adfd",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "a91c538bd0b305bd79b995d8abab4b785b9250e0aa551019e125dc0edc9a3e49",
+   "recorded_dhash": "f8f8d8f9e9fbcd6d",
+   "identity_group": "flickr-nsid:62003934@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "non-target-context",
+    "note": "Ornate museum/location directional signs."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/9f493d9aae27adfd.jpg",
+   "queue_index": 101
+  },
+  {
+   "image_id": "b00a5500f8ae0234",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "36736394a2db217d45fecc930c4ade00fce60eae670e360bfd4a71f1008b8c24",
+   "recorded_dhash": "9f8e8e8e1e262626",
+   "identity_group": "flickr-nsid:56541240@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "non-target-context",
+    "note": "Electrical supplies business name/address sign."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/b00a5500f8ae0234.jpg",
+   "queue_index": 102
+  },
+  {
+   "image_id": "b2c4eb4da9539d67",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "d8b28c71383fe42ec49c58e6b671ebed75ce1859f2722c913884f8f98447097c",
+   "recorded_dhash": "0000606060f0f2aa",
+   "identity_group": "flickr-nsid:99472418@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "non-target-context",
+    "note": "Cheese shop business name sign."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/b2c4eb4da9539d67.jpg",
+   "queue_index": 103
+  },
+  {
+   "image_id": "be61b5d691098655",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "0d429c035b664e55ec563497db887d8bb447211e6e8ad3de935fe726f062a53a",
+   "recorded_dhash": "1818aefefefefef8",
+   "identity_group": "flickr-nsid:42008287@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-06.json",
+    "disposition": "non-target-context",
+    "note": "Government railway construction information board."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/be61b5d691098655.jpg",
+   "queue_index": 104
+  },
+  {
+   "image_id": "db6f76e1fcd366e7",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "7de4877c32acd0b77fbf5fe2fc2f447439be7a4a96e75a4ca1bb7cd3f0a9ab7c",
+   "recorded_dhash": "132b010949331919",
+   "identity_group": "flickr-nsid:22483217@N06",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "non-target-context",
+    "note": "Small indoor university project information display."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/db6f76e1fcd366e7.jpg",
+   "queue_index": 105
+  },
+  {
+   "image_id": "f984e14b5d31fe02",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "a8f407adb0c888a5aadba70a8973a7dd492fd40988e6bc07d692fbecdf854c53",
+   "recorded_dhash": "86c261707860d868",
+   "identity_group": "flickr-nsid:72155957@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-06.json",
+    "disposition": "non-target-context",
+    "note": "Building and ordinary shop or institute name signs; inspect complete original."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/f984e14b5d31fe02.jpg",
+   "queue_index": 106
+  },
+  {
+   "image_id": "f9b0d5266f944746",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "e8a1b532c806fa49f09961ad7a21dcb2ba6abe6691d76941ae0f37e236aa345a",
+   "recorded_dhash": "0b334f4e4e8e1e07",
+   "identity_group": "flickr-nsid:49024304@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-08.json",
+    "disposition": "non-target-context",
+    "note": "Pub name/logo sign beside building; inspect small information panel."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/f9b0d5266f944746.jpg",
+   "queue_index": 107
+  },
+  {
+   "image_id": "fd9ba4d208562c2f",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "4ac9c9d9c5dff831afdea1e86a52e3d1a8c5dfb567d35437442de1612b7a9a01",
+   "recorded_dhash": "3e3c7df9b91b3f7c",
+   "identity_group": "flickr-nsid:88824995@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-08.json",
+    "disposition": "non-target-context",
+    "note": "High-pressure danger/information board."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/fd9ba4d208562c2f.jpg",
+   "queue_index": 108
+  },
+  {
+   "image_id": "0171886e5bd1315a",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "ae943785a6cf4bee303b94cbdd129fee5ff935b245713c3e2f0cbc4ae37a8ea1",
+   "recorded_dhash": "81a3b33a36b2a092",
+   "identity_group": "flickr-nsid:62631588@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "boundary-hold",
+    "note": "Dog training club name/banner; campaign versus organisation name boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/0171886e5bd1315a.jpg",
+   "queue_index": 109
+  },
+  {
+   "image_id": "03da786fb548ddbc",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "b346afe19b2c571904c92a0bdd89bede5d4e2df8435e69cb2eb23031e17622d6",
+   "recorded_dhash": "19d9d1dc476f1f7e",
+   "identity_group": "flickr-nsid:21295125@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "boundary-hold",
+    "note": "Casino facade name and partial entertainment promotion; inspect original panels."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/03da786fb548ddbc.jpg",
+   "queue_index": 110
+  },
+  {
+   "image_id": "20a8f0648e6d8317",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "209add4609fbd48d4eb31dbc806d44414ea60c6014bd121955b8d18db98a594c",
+   "recorded_dhash": "80c3c1e0f8c849c4",
+   "identity_group": "flickr-nsid:76884470@N02",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "boundary-hold",
+    "note": "Large cultural organisation name banner; information versus advertisement."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/20a8f0648e6d8317.jpg",
+   "queue_index": 111
+  },
+  {
+   "image_id": "2222030de222fe39",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "53ab57f7f4de57f525588cce8b74458f47332b02dc7db13a417ca23c2a59a80f",
+   "recorded_dhash": "0e1e928391c4a103",
+   "identity_group": "flickr-nsid:11301657@N02",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "boundary-hold",
+    "note": "Recycling promotional graphic on truck body; flat board versus vehicle wrap boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2222030de222fe39.jpg",
+   "queue_index": 112
+  },
+  {
+   "image_id": "2dd45d8a8abb1c10",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "ac5e98dbd727abd57f862db80814f9a45372ff32e7d83ba60279c335b4e71b62",
+   "recorded_dhash": "98909011667352c4",
+   "identity_group": "flickr-nsid:49980602@N03",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "boundary-hold",
+    "note": "Restaurant name and information/menu sign; inspect any separate advertising face."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2dd45d8a8abb1c10.jpg",
+   "queue_index": 113
+  },
+  {
+   "image_id": "308fc65998594f8b",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "7f3690e981df3b426d819f846af2efaf81425ce582b3ec82996d9bbfa6f7ea86",
+   "recorded_dhash": "1c14d0e8bcacacbc",
+   "identity_group": "flickr-nsid:18618970@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "boundary-hold",
+    "note": "Pub name/logo boards and partial small offer panel; original needed."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/308fc65998594f8b.jpg",
+   "queue_index": 114
+  },
+  {
+   "image_id": "3ecb3b9457d30de3",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "a986e85050ce05e4a3192c3135cff701cbcfacca655f6fcb1803c74a81b7f872",
+   "recorded_dhash": "a9ac8cceeeeb3b20",
+   "identity_group": "flickr-nsid:49815520@N05",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "boundary-hold",
+    "note": "Indoor translucent photo exhibition/display; advertising board scope uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3ecb3b9457d30de3.jpg",
+   "queue_index": 115
+  },
+  {
+   "image_id": "493816f5e25dd687",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "332c51eab5088ae061cd9a29e0c5cef1a2ac6a93e07ea83e90d49bfbe8ed2d6c",
+   "recorded_dhash": "0ac0c0c1c043e73f",
+   "identity_group": "flickr-nsid:60587334@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 9,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "boundary-hold",
+    "note": "Motel name and hospitality information sign; preserve business-lettering boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/493816f5e25dd687.jpg",
+   "queue_index": 116
+  },
+  {
+   "image_id": "53526ebb675c1c9e",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "8073d64ba894b5f8df4b04b0950efaf2cda06b4e48a28c6c85c8c44e023933b8",
+   "recorded_dhash": "0359e5555d092303",
+   "identity_group": "flickr-nsid:7542593@N04",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "boundary-hold",
+    "note": "Portrait monument/display outside public building; campaign versus civic information uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/53526ebb675c1c9e.jpg",
+   "queue_index": 117
+  },
+  {
+   "image_id": "617e6c523192e925",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "eeb57cc575c7ca6f1637684284bb10bad4e17acaea6ca14760dda23703401fe0",
+   "recorded_dhash": "985858c7c7a4379b",
+   "identity_group": "flickr-nsid:21550937@N03",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "boundary-hold",
+    "note": "Tourist sculpture with partially visible Vancouver panel; original inspection needed."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/617e6c523192e925.jpg",
+   "queue_index": 118
+  },
+  {
+   "image_id": "7fa470f4469e5644",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "f844293496b539c9cba685381d77a4b73149cd5913f01d3b667ffea9ac000995",
+   "recorded_dhash": "88c268e4fc1ea0f0",
+   "identity_group": "flickr-nsid:67275787@N07",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "boundary-hold",
+    "note": "Town welcome sign with event marquee; campaign versus public-information boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/7fa470f4469e5644.jpg",
+   "queue_index": 119
+  },
+  {
+   "image_id": "832800af0a48a691",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "68c3d7599d10f1eb22b3c774421172b65b8563fe30e03d74e65179433d9b69d7",
+   "recorded_dhash": "27edc8dc5c7d7c6e",
+   "identity_group": "flickr-nsid:45106164@N04",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "boundary-hold",
+    "note": "Tourism promotional bus wrap; vehicle surface versus physical billboard boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/832800af0a48a691.jpg",
+   "queue_index": 120
+  },
+  {
+   "image_id": "848553533c6ec4c1",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "3df67f0c8294d7dee5165faa6c141c8b70d8dfd664e4bdd74a84825236806be3",
+   "recorded_dhash": "1797929ea99fa398",
+   "identity_group": "flickr-nsid:37461569@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "boundary-hold",
+    "note": "Restaurant wall illustration and business signs; advertising panel distinction."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/848553533c6ec4c1.jpg",
+   "queue_index": 121
+  },
+  {
+   "image_id": "8581e76663aea4d7",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "dc945998dcd010bc40ebb11d458cf751db1dd2470364388d84cc1d3e6dedaf0a",
+   "recorded_dhash": "3c53737373333384",
+   "identity_group": "flickr-nsid:99129911@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 6,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "boundary-hold",
+    "note": "Film advertisement on vending machines versus separate physical billboard."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/8581e76663aea4d7.jpg",
+   "queue_index": 122
+  },
+  {
+   "image_id": "8f9c51d76c0e9274",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "8c651f8add7c21030846e47db4b24994c6f037a4caf5a351a1e8a3aa7cb0229d",
+   "recorded_dhash": "4f5b0faf97964c53",
+   "identity_group": "flickr-nsid:17905920@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "boundary-hold",
+    "note": "Ice-cream business name/product-type sign and sculpture; no distinct campaign face cleared."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/8f9c51d76c0e9274.jpg",
+   "queue_index": 123
+  },
+  {
+   "image_id": "b34043b0f8303e59",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "5dac6a64b11510b511ab1a2f8175f5df4e6880e4dfbea250abd3d8095fa31ea9",
+   "recorded_dhash": "187ceb3b2be70707",
+   "identity_group": "flickr-nsid:42982698@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "boundary-hold",
+    "note": "Glazed building graphic/logos; physical advertising panel versus facade design uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/b34043b0f8303e59.jpg",
+   "queue_index": 124
+  },
+  {
+   "image_id": "beb1153b54d2b3c1",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "bfa2abc4eced71e522ffc938ad7d1b35ecb778b8b43c0302d8f2b0d7ed749783",
+   "recorded_dhash": "313717352517173c",
+   "identity_group": "flickr-nsid:10681948@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "boundary-hold",
+    "note": "Bakery product claim printed on shop window; physical-board/material boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/beb1153b54d2b3c1.jpg",
+   "queue_index": 125
+  },
+  {
+   "image_id": "c97bdf744a18eb19",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "bea01a7fa415d081a69a53b3ac3cf70715487edbb6196889c82d96efefb974e6",
+   "recorded_dhash": "39fa9eb6b62a4ddc",
+   "identity_group": "flickr-nsid:24448891@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-06.json",
+    "disposition": "boundary-hold",
+    "note": "Restaurant name and cooking tagline; business sign versus campaign advertisement."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/c97bdf744a18eb19.jpg",
+   "queue_index": 126
+  },
+  {
+   "image_id": "d256c3097f857d7a",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "92a8630d0a55f294e4560bc1c10701ddb0caccac742c42731aeffc6aadd47b9c",
+   "recorded_dhash": "949091b032161637",
+   "identity_group": "flickr-nsid:57338887@N03",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-06.json",
+    "disposition": "boundary-hold",
+    "note": "Small paper parody advertisement on construction structure; physical board and size uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/d256c3097f857d7a.jpg",
+   "queue_index": 127
+  },
+  {
+   "image_id": "f551d266355bc9b1",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "68f0e963cc698e20f4b5da727df304beb6212392f6e05af98681d33bec232355",
+   "recorded_dhash": "0727353f27051b03",
+   "identity_group": "flickr-nsid:51005181@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-08.json",
+    "disposition": "boundary-hold",
+    "note": "Small indoor conference/title display; physical billboard size/material boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/f551d266355bc9b1.jpg",
+   "queue_index": 128
+  },
+  {
+   "image_id": "0ab44a5835d66a45",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "3ce24bc2cc4b53621f1af65a8a75d8f5efbe697f6cb63ac6d5efa20c818c6878",
+   "recorded_dhash": "2c2e2664fc9e9ff8",
+   "identity_group": "flickr-nsid:36654051@N07",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "exclude-composite",
+    "note": "Multi-photo collage with truck advertising scene; not one identified scene."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/0ab44a5835d66a45.jpg",
+   "queue_index": 129
+  },
+  {
+   "image_id": "00bedd5c2fbf2dff",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "6392c74604ccfad585f17ac103c2d0f2b8e81b7c6dd1fb535d31db225d15dd4c",
+   "recorded_dhash": "1f276e2e3e1e02e2",
+   "identity_group": "flickr-nsid:96083563@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context",
+    "note": "Freestanding Yahoo internet-service campaign billboard."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/00bedd5c2fbf2dff.jpg",
+   "queue_index": 130
+  },
+  {
+   "image_id": "1afb4e618588eb2d",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "c1da58f7fc3f9a0e61515686a1ac1171697d726750d245aa18642dcab8cc8e34",
+   "recorded_dhash": "0f1f1b9b2a1b7f11",
+   "identity_group": "flickr-nsid:12950131@N06",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context",
+    "note": "City-street scene with large advertising panels; inspect small/distant faces."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/1afb4e618588eb2d.jpg",
+   "queue_index": 131
+  },
+  {
+   "image_id": "26a0af1b449a290c",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "56fead5ce7eb58fbeb48a98b0598ef527d351598514859543cbfa7d0d707a02c",
+   "recorded_dhash": "2680c1e5267b70fa",
+   "identity_group": "flickr-nsid:17088227@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context",
+    "note": "Framed street-side H&M fashion product advertisement."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/26a0af1b449a290c.jpg",
+   "queue_index": 132
+  },
+  {
+   "image_id": "2c1368a802d7324b",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "6990a05909118fbdbcfd2827e2fa067439c70c47a849b8a10b8956bafbb7beee",
+   "recorded_dhash": "96961a2fa5a5c5e5",
+   "identity_group": "flickr-nsid:27586530@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 5,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "positive-context",
+    "note": "Large illustrated footwear/product campaign panels on facade."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2c1368a802d7324b.jpg",
+   "queue_index": 133
+  },
+  {
+   "image_id": "2c7fb585adcb769d",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "2029287361a9835d09876026f351afaee6e5913b9615a672d80a24d567cde200",
+   "recorded_dhash": "3a3b6b4949080107",
+   "identity_group": "flickr-nsid:73449134@N04",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 7,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "positive-context",
+    "note": "Building campaign banners with people/messages; handheld protest placard is separate scope."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2c7fb585adcb769d.jpg",
+   "queue_index": 134
+  },
+  {
+   "image_id": "2d3cdcba514f2249",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "6968bc67c858dad504985d70c4729dbfbab416bde6a043eb650f14ac407a7d79",
+   "recorded_dhash": "f8878fe6779fe7f9",
+   "identity_group": "flickr-nsid:54723260@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "positive-context",
+    "note": "Large roadside footwear/product billboard."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2d3cdcba514f2249.jpg",
+   "queue_index": 135
+  },
+  {
+   "image_id": "333b1da99a322e5e",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "50c2c63cf90c27ddac8e5eea3483b718303219eb781a6829b630c0d5ab0338bf",
+   "recorded_dhash": "d9999ce032131131",
+   "identity_group": "flickr-nsid:21372046@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 6,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context",
+    "note": "Freestanding Wild Poland photographic exhibition promotion with other panels behind."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/333b1da99a322e5e.jpg",
+   "queue_index": 136
+  },
+  {
+   "image_id": "40c30c1af661b1c3",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "5d12582279faab57f46c11da53704b9535e09c3adf11a81711a2572abe04e3ea",
+   "recorded_dhash": "191b1b0f0c04050f",
+   "identity_group": "flickr-nsid:21437888@N02",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "positive-context",
+    "note": "Large framed illustrated campaign advertisement above street."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/40c30c1af661b1c3.jpg",
+   "queue_index": 137
+  },
+  {
+   "image_id": "473526f785daaf2c",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "b8e008f64fedb28cfc6d8b399a8c06fa584f89089f4581a85a961745362e2857",
+   "recorded_dhash": "319c9c1c3c3d0f1f",
+   "identity_group": "flickr-nsid:79761301@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context",
+    "note": "Large theatre/entertainment promotional panels on building."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/473526f785daaf2c.jpg",
+   "queue_index": 138
+  },
+  {
+   "image_id": "5cbb36add7815d95",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "46ad2d10cc203ecc552734a5773c5512d81d71abf9373205583212eb7170ebc5",
+   "recorded_dhash": "fcbeae8d9e7c7d3d",
+   "identity_group": "flickr-nsid:14265068@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context",
+    "note": "Large Lion King entertainment campaign banner above commercial courtyard."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/5cbb36add7815d95.jpg",
+   "queue_index": 139
+  },
+  {
+   "image_id": "60f29eb6a19e86a7",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "8f1bba34f2c656b0dbf27cffb74c9c4dfe203eb8e2076b2fe60e01db6f1c0d29",
+   "recorded_dhash": "5f490e05541c9c9c",
+   "identity_group": "flickr-nsid:81121555@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 5,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "positive-context",
+    "note": "Urban road with large facade advertisements; original needed for distant complete boxes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/60f29eb6a19e86a7.jpg",
+   "queue_index": 140
+  },
+  {
+   "image_id": "708b56b3e82e3a58",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "d70d45d4aaf14d04bb57d9666251fd199f44230903e950d7a4e99cdc6badb3a5",
+   "recorded_dhash": "778d9113078fc727",
+   "identity_group": "flickr-nsid:11217496@N03",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "positive-context",
+    "note": "Framed street product advertisement with chef and offer."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/708b56b3e82e3a58.jpg",
+   "queue_index": 141
+  },
+  {
+   "image_id": "789d7ac1977e9617",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "f7e16797b26dc939edb8aaa6fc913b475f393c24dff665bfb7460f03234e884f",
+   "recorded_dhash": "80070bffc327373e",
+   "identity_group": "flickr-nsid:54731024@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "positive-context",
+    "note": "Large photographic product/fashion advertising panel on facade; inspect lower panel separately."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/789d7ac1977e9617.jpg",
+   "queue_index": 142
+  },
+  {
+   "image_id": "78a0115d8c8294e2",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "2c6e8c43587f72c4072ab76313731e93d7dad2dc4b107a322329381eb12aa1cf",
+   "recorded_dhash": "3f3f3f5c4ccecebc",
+   "identity_group": "flickr-nsid:27035950@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "positive-context",
+    "note": "Large private-investigator service advertisement with telephone contact."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/78a0115d8c8294e2.jpg",
+   "queue_index": 143
+  },
+  {
+   "image_id": "7a7b8b33e51de0e5",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "1d1d814113f2bd2ea197cce2ba04773d951da9f6bd1eda7892e599bdf31edd4c",
+   "recorded_dhash": "3c37327b49599e41",
+   "identity_group": "flickr-nsid:89165847@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 5,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "positive-context",
+    "note": "Japanese commercial buildings with product campaign panels; inspect all distant faces."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/7a7b8b33e51de0e5.jpg",
+   "queue_index": 144
+  },
+  {
+   "image_id": "8a1d920f169e7f7a",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "5c50382b2d288382d774d79ce6e0882f9b55a28b7949d3c027c5c7826b2e1bb9",
+   "recorded_dhash": "c444c70202102100",
+   "identity_group": "flickr-nsid:49180634@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "positive-context",
+    "note": "Large photographic fashion/retailer advertisement on facade."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/8a1d920f169e7f7a.jpg",
+   "queue_index": 145
+  },
+  {
+   "image_id": "8aebd2d37e832dff",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "749bc498715a08ef9b862d136b0eca6956cee9b8819d72e510eb93b79af73622",
+   "recorded_dhash": "00002869f19c0ec4",
+   "identity_group": "flickr-nsid:26296445@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "positive-context",
+    "note": "Large freestanding Coca-Cola holiday product campaign."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/8aebd2d37e832dff.jpg",
+   "queue_index": 146
+  },
+  {
+   "image_id": "9f11f6b4530e8fd7",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "a92f9de3cc35c8f6d9b0e89eb6889b81ed7e232d3a31d898a8ddaf2b85d7948a",
+   "recorded_dhash": "2b29b1b0268e366d",
+   "identity_group": "flickr-nsid:23059063@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "positive-context",
+    "note": "Large illustrated manga/product campaign board."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/9f11f6b4530e8fd7.jpg",
+   "queue_index": 147
+  },
+  {
+   "image_id": "a88758658eed9da6",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "ebeaaa80026b850e80c2bde199043c2508758aff041ad1146eea749a83a5b500",
+   "recorded_dhash": "3b8fd7879f1b96d8",
+   "identity_group": "flickr-nsid:74949169@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-06.json",
+    "disposition": "positive-context",
+    "note": "Framed outdoor Hannah Montana film advertisement."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a88758658eed9da6.jpg",
+   "queue_index": 148
+  },
+  {
+   "image_id": "bff34db19d7edd47",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "4032efd84c2f672bd769354088a8177507a9d0753018074867d8434677ce7199",
+   "recorded_dhash": "0f0f030323074fc7",
+   "identity_group": "flickr-nsid:74041653@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "positive-context",
+    "note": "Multiple large rooftop/product campaign billboards."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/bff34db19d7edd47.jpg",
+   "queue_index": 149
+  },
+  {
+   "image_id": "c19adb2866fe9a60",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "242ab6084b0d6d76be2755946cdb2d7bcb68812786ccabe33a23014e406b7249",
+   "recorded_dhash": "9f85ad3f8f870f1f",
+   "identity_group": "flickr-nsid:22958361@N08",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "positive-context",
+    "note": "Heineken product/city campaign above airport parking direction signs."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/c19adb2866fe9a60.jpg",
+   "queue_index": 150
+  },
+  {
+   "image_id": "f8bc672c8c36acf5",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "1f23daeb1dff0a600f62950ea66c94b05865eb190ef63ff83e15606cf533c856",
+   "recorded_dhash": "0fc5e93c39ddcfc5",
+   "identity_group": "flickr-nsid:126872985@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-08.json",
+    "disposition": "positive-context",
+    "note": "Separate framed campaign/event board beside robot sculpture; original needed for campaign and bounds."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/f8bc672c8c36acf5.jpg",
+   "queue_index": 151
+  },
+  {
+   "image_id": "051d7592051ab985",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "3c910058db90f129e77461eadd615a663b9e58e44055da24c5aab5c8c9ab0d22",
+   "recorded_dhash": "1b07634b0b1b5b2b",
+   "identity_group": "flickr-nsid:18799672@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 21,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square advertising cluster; compare prior/cross-role scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/051d7592051ab985.jpg",
+   "queue_index": 152
+  },
+  {
+   "image_id": "0f3801e240c92fb6",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "05e4dcf9b815a46f53fd4a71661460bf3796b32aee978f9a1d8de137887ac53b",
+   "recorded_dhash": "494ac99c968f4b2d",
+   "identity_group": "flickr-nsid:14116968@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 7,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square digital advertising panels; compare prior/cross-role scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/0f3801e240c92fb6.jpg",
+   "queue_index": 153
+  },
+  {
+   "image_id": "2291ee87165169ac",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "5c59ee5d098abd3a66724d18608edab736287d56cc59612b223c9faba517e871",
+   "recorded_dhash": "274f472703377776",
+   "identity_group": "flickr-nsid:28669457@N04",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 14,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-05.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Piccadilly Circus Pepsi campaign; same landmark also appears in prospective test."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2291ee87165169ac.jpg",
+   "queue_index": 154
+  },
+  {
+   "image_id": "4d0dca2a046d1fe9",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "bcf7e01e2b1d5e6de4a3bfd7b886f588507279716ac885d41e9000af99d1606b",
+   "recorded_dhash": "06069f1f1f3f9ded",
+   "identity_group": "flickr-nsid:37686087@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 10,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-06.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Piccadilly Circus advertising at night; recurring cross-role landmark."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/4d0dca2a046d1fe9.jpg",
+   "queue_index": 155
+  },
+  {
+   "image_id": "e65bccba7826a02f",
+   "role": "val",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "c5ecc44c59229bb1cebeac802a47b32fda1e80c360aff042bd789482f277fae5",
+   "recorded_dhash": "4bd9d9e162e3929a",
+   "identity_group": "flickr-nsid:60252052@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 6,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-07.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Las Vegas entertainment campaign panels on Excalibur venue sign; compare known recurring structures."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/e65bccba7826a02f.jpg",
+   "queue_index": 156
+  },
+  {
+   "image_id": "002a124b80fc1fec",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "91eca6a06f1e451f78608bdc9a76d84ad250c3659481cfe49504cac3f5abf472",
+   "recorded_dhash": "0f0f03b8f8f0383e",
+   "identity_group": "flickr-nsid:64588110@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "non-target-context",
+    "note": "Waterfront directional/tourist information board; no advertising cleared."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/002a124b80fc1fec.jpg",
+   "queue_index": 157
+  },
+  {
+   "image_id": "1d01b5b97125d86f",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "65ed4e420489e09a15332121e62cc8acc74c66d93164797739f5b8cc6287af8e",
+   "recorded_dhash": "23008c8c8e968e8f",
+   "identity_group": "flickr-nsid:8521690@N02",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "non-target-context",
+    "note": "Portable library welcome/name board."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/1d01b5b97125d86f.jpg",
+   "queue_index": 158
+  },
+  {
+   "image_id": "05d7317e0a954e83",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "e278ff176e1e28e1316525d4281bb2737a09e6c828e2429b69b75112a1790f8a",
+   "recorded_dhash": "1f0f0c4d41482cbc",
+   "identity_group": "flickr-nsid:64937801@N02",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Weathered/partly removed advertisement; active visible campaign and complete target bounds uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/05d7317e0a954e83.jpg",
+   "queue_index": 159
+  },
+  {
+   "image_id": "09fb9f5c86ed56b5",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "f953b867680b61f2a19b01595c3aed7a220d78703f4fad18ac703bdc85fe6a0a",
+   "recorded_dhash": "b7b0acc2433cb063",
+   "identity_group": "flickr-nsid:97651299@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Property/location map with business promotion and separate figure; inspect physical panels and message."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/09fb9f5c86ed56b5.jpg",
+   "queue_index": 160
+  },
+  {
+   "image_id": "0c20f0c14eafee6e",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "2c2216f37049cd8448cdd0dec9639dcd1aead772578ec36e038420c715f2f8e0",
+   "recorded_dhash": "ef636303c3c7efec",
+   "identity_group": "flickr-nsid:40282795@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Winery name/entry sign; preserve business-lettering boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/0c20f0c14eafee6e.jpg",
+   "queue_index": 161
+  },
+  {
+   "image_id": "13738fd6baee7352",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "3232ed1ba5a72d3f6ea8f3fd87e716a170be1cffb08c0a5352f5bad7715ae203",
+   "recorded_dhash": "1737d7d79fb7bd35",
+   "identity_group": "flickr-nsid:7702002@N08",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Dense illustrated collage on facade; physical advertising board versus mural/stickers uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/13738fd6baee7352.jpg",
+   "queue_index": 162
+  },
+  {
+   "image_id": "14739a4907bd6163",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "b38af667da5a1ab8051989740ae7e4bc7dd93f7a71bdbfb7c61cb1ce7edb7960",
+   "recorded_dhash": "e03034b7f676f7f6",
+   "identity_group": "flickr-nsid:9494577@N04",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Obey artwork/mural facade; advertising board material/content boundary uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/14739a4907bd6163.jpg",
+   "queue_index": 163
+  },
+  {
+   "image_id": "17f1bc32271053f6",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "1158c6da29e9e39295aea05ede0ab5d14066957e5aa06014a5411f28dbf664b0",
+   "recorded_dhash": "81d9d8d89898f024",
+   "identity_group": "flickr-nsid:91672964@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Stadium video screen showing person; advertising-board content uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/17f1bc32271053f6.jpg",
+   "queue_index": 164
+  },
+  {
+   "image_id": "1868a6fcfbfac188",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "6fe71146c1ad258e460c4e020d13e5e9361affef4cb9def44ff431ab1fa0206e",
+   "recorded_dhash": "10134b492d2d3393",
+   "identity_group": "flickr-nsid:70058529@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Municipal Wi-Fi/information board; advertising versus information boundary unresolved."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/1868a6fcfbfac188.jpg",
+   "queue_index": 165
+  },
+  {
+   "image_id": "1de72df0d22439be",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "8fa19c72f280be7805e4b716cd0fd4044604b35eb545c3a29ba20d4661c2de60",
+   "recorded_dhash": "054ccc5ccc49cc4c",
+   "identity_group": "flickr-nsid:78693739@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Dry-cleaning business name painted on wall; mural/name-board boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/1de72df0d22439be.jpg",
+   "queue_index": 166
+  },
+  {
+   "image_id": "3279158126d6646e",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "de504a0daa89167e57c50ed474cc01ab0f5f925d074ca1bfdb62d5a8e292906b",
+   "recorded_dhash": "0f0e1e1c6c793838",
+   "identity_group": "flickr-nsid:43775473@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Roadside pawnshop-name board; business name versus advertising campaign boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3279158126d6646e.jpg",
+   "queue_index": 167
+  },
+  {
+   "image_id": "3bb630316f0e7221",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "af453bbcc61c7defc95d7cb1af6131821dfc10e5f9b72bc641cea6cd6290f9f3",
+   "recorded_dhash": "26042c3478e8b070",
+   "identity_group": "flickr-nsid:43885961@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Theatre title marquee; distinguish information/name display from advertising face."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3bb630316f0e7221.jpg",
+   "queue_index": 168
+  },
+  {
+   "image_id": "3e5ecc84e07f7ff9",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "3691066477db9a9f68bab1fea1c5ed27ce4c8a4b810cb0913942d0b95ed5fdc8",
+   "recorded_dhash": "af2d0f0f1ddd4d5d",
+   "identity_group": "flickr-nsid:48889052497@N01",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Street shop panels with partly legible prices/messages; original needed for advertising versus name sign."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3e5ecc84e07f7ff9.jpg",
+   "queue_index": 169
+  },
+  {
+   "image_id": "50ed8fb1a7a4b75b",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "814f35a4c1d33c140790cfe85a1c04ab0ec6ab59df914df2d76ae2807bcc5a1d",
+   "recorded_dhash": "948eb2323333377c",
+   "identity_group": "flickr-nsid:108982746@N06",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "McDonald's business-name and hiring marquee; strict billboard versus business sign boundary unresolved."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/50ed8fb1a7a4b75b.jpg",
+   "queue_index": 170
+  },
+  {
+   "image_id": "531e182ce7b493db",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "b8a0247e92be8727414d32c4e65b28bd3e2ef2264e54f8d05f7ef3f0cdc5218f",
+   "recorded_dhash": "6665ccbd0cbc8455",
+   "identity_group": "flickr-nsid:8265353@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Large business name/logo facade; preserve business-lettering boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/531e182ce7b493db.jpg",
+   "queue_index": 171
+  },
+  {
+   "image_id": "65de9bbd59bdadf5",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "3d23535b2d68f487588da33da44260194c9725eaca3b57555bc6c76b91c41210",
+   "recorded_dhash": "0f67627646064e64",
+   "identity_group": "flickr-nsid:8123170@N06",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Restaurant/direction pole signs during maintenance; inspect strict category boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/65de9bbd59bdadf5.jpg",
+   "queue_index": 172
+  },
+  {
+   "image_id": "6a1313a7ffd76211",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "02fb06ee3cba54c689dfe39e161cec411b86eb820615ef6db6764f69cff64ec5",
+   "recorded_dhash": "c444068b43e6e6d0",
+   "identity_group": "flickr-nsid:48718829@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Stadium AT&T-branded board; campaign face versus permanent venue branding uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/6a1313a7ffd76211.jpg",
+   "queue_index": 173
+  },
+  {
+   "image_id": "7bd839bb3d576bd8",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "1254ab93757b49f5559f881d774e39a30f09a13ed005a42f853b818dbdaee8c8",
+   "recorded_dhash": "381cd2e2d2e2860d",
+   "identity_group": "flickr-nsid:35899785@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Western Exterminator business-brand board; billboard versus business-name sign boundary unresolved."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/7bd839bb3d576bd8.jpg",
+   "queue_index": 174
+  },
+  {
+   "image_id": "8a0034aabcd86822",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "c29892505c22bf3783e1aae1ab936c9d4c8a89b384b41ee2be4214369474c8b8",
+   "recorded_dhash": "0238380c4c082320",
+   "identity_group": "flickr-nsid:9383990@N03",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Political campaign poster on tree; physical-board and size boundary unresolved."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/8a0034aabcd86822.jpg",
+   "queue_index": 175
+  },
+  {
+   "image_id": "94da9709283f6a8f",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "f75b715a769d50ab5b524c15d419af62e3f9510a6095d2fb97bd54002f8c1468",
+   "recorded_dhash": "cbbb3a083978f28c",
+   "identity_group": "flickr-nsid:81342178@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Business name/location pole signs; inspect original before absence claim."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/94da9709283f6a8f.jpg",
+   "queue_index": 176
+  },
+  {
+   "image_id": "9b7289a56b33f3b8",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "19941e9e986f0e2b39af6ad99d1374dfb5307d0201175fa889689dbbd2ef2eca",
+   "recorded_dhash": "3e7b5b7b37b7d99b",
+   "identity_group": "flickr-nsid:98319861@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Primary-school name board and branded welcome/enrolment-style banner; business/information versus campaign boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/9b7289a56b33f3b8.jpg",
+   "queue_index": 177
+  },
+  {
+   "image_id": "9feacb1236607498",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "e31c67b340c638b02d10291d97527d927aa2e96b5cf13b07da67f38a42fdaec1",
+   "recorded_dhash": "4301617d47573367",
+   "identity_group": "flickr-nsid:24175071@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Construction company-name board; advertising versus site branding unresolved."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/9feacb1236607498.jpg",
+   "queue_index": 178
+  },
+  {
+   "image_id": "a05ca9ca50d00afb",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "076a1071c9d268cc877172cfef93fa203740db34c7c9dbcadc6684c7793423bb",
+   "recorded_dhash": "2f0e1e362f1b1b1f",
+   "identity_group": "flickr-nsid:31044991@N04",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Decorative proverb/message board on red wall; advertising purpose uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a05ca9ca50d00afb.jpg",
+   "queue_index": 179
+  },
+  {
+   "image_id": "a0668caab067233a",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "cd46303815d340041d9fd5762d4e5db07fd95cd2865f97b433bf8f114266a913",
+   "recorded_dhash": "4fcfc6c6c4c4e4e0",
+   "identity_group": "flickr-nsid:44971549@N06",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 6,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Narrow commercial street with mixed signs; original needed to separate campaigns from name signs."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a0668caab067233a.jpg",
+   "queue_index": 180
+  },
+  {
+   "image_id": "ae4a5325a024dd56",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "72280ba4f829936c380d03891abf3b4b43bb660e126ba03de3a64ef9fca1d2db",
+   "recorded_dhash": "7f6f6f6f5a584d05",
+   "identity_group": "flickr-nsid:31018257@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Night street business signs, with distant panels too small to adjudicate from contact sheet."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/ae4a5325a024dd56.jpg",
+   "queue_index": 181
+  },
+  {
+   "image_id": "ba8f7c01a67f3a44",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "f54b19d868f66f7104632e56970b7667a35ef906bbff4003620db1fb281418a0",
+   "recorded_dhash": "cf2147571d7c1a1f",
+   "identity_group": "flickr-nsid:88158121@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Marine-debris information banner; strict category/material boundary unresolved."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/ba8f7c01a67f3a44.jpg",
+   "queue_index": 182
+  },
+  {
+   "image_id": "d3ec0ca22b9ddafc",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "3834e8265350f2d1a19229f5fc5e2c1adccb02751138b47d62b9a02ff3665ce0",
+   "recorded_dhash": "1f17070f7b5b4f47",
+   "identity_group": "flickr-nsid:85952969@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Large criticism/message board and sign-space advertising below; inspect individual panels and scope."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/d3ec0ca22b9ddafc.jpg",
+   "queue_index": 183
+  },
+  {
+   "image_id": "de8b2d4f82f9ed9c",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "bfc27bca0283e613ea190f901d093530505302d77a78622b703fa041f71452e8",
+   "recorded_dhash": "1d7f6c64e9c9b1e5",
+   "identity_group": "flickr-nsid:38865853@N03",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "boundary-hold",
+    "note": "Freestanding Qatar Urban Forum event display; inspect physical board and advertising boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/de8b2d4f82f9ed9c.jpg",
+   "queue_index": 184
+  },
+  {
+   "image_id": "e0b46a4a13f2de49",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "4830e25b77b5d8191c6050d7a2cf687e97393a18971f655d9dca75371e3bd8cb",
+   "recorded_dhash": "0f0f0371186061ec",
+   "identity_group": "flickr-nsid:12547641@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Cinema programme marquee; campaign-versus-information boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/e0b46a4a13f2de49.jpg",
+   "queue_index": 185
+  },
+  {
+   "image_id": "ea095709abf6e707",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "f2bc5f22edcb60ecb30c0a42b22b5ffeefaa89f39f420ead2603b51f85670a16",
+   "recorded_dhash": "71c9c6e682b2625f",
+   "identity_group": "flickr-nsid:64443231@N02",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Theme-park name/programme sign; advertising versus venue information uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/ea095709abf6e707.jpg",
+   "queue_index": 186
+  },
+  {
+   "image_id": "efbc9e59b90cc7a1",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "4da123cca7d3840f729eb4339951704745cc366b17381e5a262506bff1c305d2",
+   "recorded_dhash": "8e037c9e8cac677d",
+   "identity_group": "flickr-nsid:13127104@N08",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Sports scoreboard and permanent bank branding; campaign face uncertain."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/efbc9e59b90cc7a1.jpg",
+   "queue_index": 187
+  },
+  {
+   "image_id": "f06eb38267da2877",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "a6806bf4188a20f4e237e9577c9578df78aeaf8181e467d6a18709d25432113a",
+   "recorded_dhash": "0191c1d0cc066cc8",
+   "identity_group": "flickr-nsid:89484739@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "boundary-hold",
+    "note": "Football scoreboard and pitch-side sponsor panels; distinguish scoreboard from advertising boards and review exhaustive scope."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/f06eb38267da2877.jpg",
+   "queue_index": 188
+  },
+  {
+   "image_id": "f9683f523504ae56",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "5eb8b41db369a41d681e8ab0f5c7c751665ffcf6e5c577e6f31bbaa06f280874",
+   "recorded_dhash": "3838501313136171",
+   "identity_group": "flickr-nsid:55353663@N06",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "boundary-hold",
+    "note": "Beer-garden name sign; preserve business-lettering boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/f9683f523504ae56.jpg",
+   "queue_index": 189
+  },
+  {
+   "image_id": "fda8bc676d20a1a4",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "d2bcefea0a19137a6c142980d436ff5ceccbd1c66906f19207ee1574c2a1fbbb",
+   "recorded_dhash": "371761f1e507c7e8",
+   "identity_group": "flickr-nsid:35034347485@N01",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-04.json",
+    "disposition": "boundary-hold",
+    "note": "Public-health campaign on bus rear; advertisement wrap/furniture versus physical billboard boundary."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/fda8bc676d20a1a4.jpg",
+   "queue_index": 190
+  },
+  {
+   "image_id": "15a3fd584c992981",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "26c0eb54742b8a8ab75cabc1d6b2a86e488b063172543c875f6f32b60e2d7a23",
+   "recorded_dhash": "078cc0d1d1c26e6f",
+   "identity_group": "flickr-nsid:51438104@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context",
+    "note": "Freestanding Milka product campaign billboard."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/15a3fd584c992981.jpg",
+   "queue_index": 191
+  },
+  {
+   "image_id": "253d08887b7a03bf",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "8fee22fb5a3029383725ba23ca82d1dcdb4691d35fae60d5039695c08c459cff",
+   "recorded_dhash": "763b8dcf1657cef1",
+   "identity_group": "flickr-nsid:45879387@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 6,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context",
+    "note": "Several large roadside advertising panels; inspect small/distant content and exhaustive scope."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/253d08887b7a03bf.jpg",
+   "queue_index": 192
+  },
+  {
+   "image_id": "2d8719d32ef6be3e",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "893feb16c4cfaa978e6e61689218b9e19d918fd825537ced127687c2abc1c560",
+   "recorded_dhash": "a02c66ec6a333134",
+   "identity_group": "flickr-nsid:15590064@N07",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context",
+    "note": "Large roadside cigarette/product advertisements."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2d8719d32ef6be3e.jpg",
+   "queue_index": 193
+  },
+  {
+   "image_id": "2dee13f2d925574c",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "51fbad9528074d95dc7b6aa4a4046651885c7a595b2253c4de0e48852128287e",
+   "recorded_dhash": "5313331795b35b61",
+   "identity_group": "flickr-nsid:32586799@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context",
+    "note": "Freestanding political campaign board; inspect bounds and separate photo-caption padding."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2dee13f2d925574c.jpg",
+   "queue_index": 194
+  },
+  {
+   "image_id": "3a92398ca72016d7",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "91b3546cdcef049c250724999047fad0d4b034922d1cae6b8c4201e52c2e6c2b",
+   "recorded_dhash": "0100e2a2c1dcd5d3",
+   "identity_group": "flickr-nsid:10058483@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Large museum/exhibition campaign banner: Masterpieces live here."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3a92398ca72016d7.jpg",
+   "queue_index": 195
+  },
+  {
+   "image_id": "3b15a6e03ad6b488",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "27dd1687a1bc594264c22ee6e16546d6c01ea9a0b68ce79a637a2e632f5f7b71",
+   "recorded_dhash": "1e4f67c6c7c68707",
+   "identity_group": "flickr-nsid:81203773@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 5,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Large radio-station campaign panel with photographic/graphic message."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3b15a6e03ad6b488.jpg",
+   "queue_index": 196
+  },
+  {
+   "image_id": "49c1e5716bcf2a78",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "b910f6f99c04eb88a43b0b9e8dccad6659b7eba57de5da1b7d0ee0cb6331bd0f",
+   "recorded_dhash": "60d093110e8e838f",
+   "identity_group": "flickr-nsid:22925444@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 10,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Large retailer/product facade advertising panels; original required for exhaustive separate boxes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/49c1e5716bcf2a78.jpg",
+   "queue_index": 197
+  },
+  {
+   "image_id": "5b66ef813bafddcf",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "c5058fa6fc4044c7148868fc42d509b5bb4f28a76a5b36d69e8500178f8058f1",
+   "recorded_dhash": "2f0f2fb7d6e5b71f",
+   "identity_group": "flickr-nsid:62794868@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 11,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Sports-ground sponsor advertising panels; scoreboard is separate."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/5b66ef813bafddcf.jpg",
+   "queue_index": 198
+  },
+  {
+   "image_id": "5fecfb78700c3106",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "6fd07761df9a2a125329206d8a2292f957463d8106d6fa601efe5874ea8635d0",
+   "recorded_dhash": "7c505060585848c2",
+   "identity_group": "flickr-nsid:62616836@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context",
+    "note": "Large Margaritaville resort/casino development advertisement."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/5fecfb78700c3106.jpg",
+   "queue_index": 199
+  },
+  {
+   "image_id": "62d0376700be86a0",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "54540006315f0ae8fa14da6d63f6ff230644f6ea5ed7b2f448550536dbb7b657",
+   "recorded_dhash": "e35a6750593d0d1f",
+   "identity_group": "flickr-nsid:35034347531@N01",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Large framed plumbing-service advertisement with person/contact/service claims."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/62d0376700be86a0.jpg",
+   "queue_index": 200
+  },
+  {
+   "image_id": "64a0cc828d2595a9",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "d0a799897d2b012a210bb81b5d26a73b4a373498e5c0c0134be0b87736e97202",
+   "recorded_dhash": "279ce1ccc0a4c0d1",
+   "identity_group": "flickr-nsid:47778386@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context",
+    "note": "Large Verizon product/service billboard."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/64a0cc828d2595a9.jpg",
+   "queue_index": 201
+  },
+  {
+   "image_id": "7c93d73e4b20ee22",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "a02c2d885888519d8e707af16b6abcfdfc65d7fde9f544aed82d45a282af99b7",
+   "recorded_dhash": "8c8cc6a6a8e2c3c3",
+   "identity_group": "flickr-nsid:23526149@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Framed street-side Dishonored2 game advertisement."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/7c93d73e4b20ee22.jpg",
+   "queue_index": 202
+  },
+  {
+   "image_id": "87cad34e351c6487",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "186cdbbd5a7c97cf6c8a27fa0a8f5397d28809d1b66b95f5d76a7044da87608a",
+   "recorded_dhash": "80004848c8481cbc",
+   "identity_group": "flickr-nsid:11249246@N04",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Large facade campaign panel with product/game graphics and QR code."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/87cad34e351c6487.jpg",
+   "queue_index": 203
+  },
+  {
+   "image_id": "88b4cd5f107251c2",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "516c4f4da41a99a0e110ca6a8e86be998b7643916dd330dd2f380dbd5cd665e0",
+   "recorded_dhash": "ace2dfdcdcdc581c",
+   "identity_group": "flickr-nsid:16725630@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Framed commercial rental/retail advertisement with unit details and contact."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/88b4cd5f107251c2.jpg",
+   "queue_index": 204
+  },
+  {
+   "image_id": "9afc2cdb3a063a17",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "330c0e570005ce50bd228665dac4c8fcae8019668b43b3defa84d3f6fe713353",
+   "recorded_dhash": "1f77636333942603",
+   "identity_group": "flickr-nsid:90054085@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "positive-context",
+    "note": "Freestanding roadside advertising panel with image/contact/price; inspect original legibility."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/9afc2cdb3a063a17.jpg",
+   "queue_index": 205
+  },
+  {
+   "image_id": "9e2612a3ab532b04",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "8d95b23b4f021e8c0820561405508d24623e3aa45800cc371384cb6177d77303",
+   "recorded_dhash": "fcd7d7d77f180a37",
+   "identity_group": "flickr-nsid:10005662@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 7,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "positive-context",
+    "note": "Large photographic advertising panels on urban facade; original needed for complete boxes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/9e2612a3ab532b04.jpg",
+   "queue_index": 206
+  },
+  {
+   "image_id": "a0d9f4302ef487d0",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "0e8403eb987541b641dcd000e646b27f07d2b9fa83fbf6cfbbc3e122e5acc74e",
+   "recorded_dhash": "2e34b1b3b3e77d7b",
+   "identity_group": "flickr-nsid:75771828@N06",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "positive-context",
+    "note": "Large Man of Peace event/campaign banner on pole."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a0d9f4302ef487d0.jpg",
+   "queue_index": 207
+  },
+  {
+   "image_id": "a8ed2c9c17319ea2",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "bc6640127bba3e20de92fdce9d5b8fdbf9d53646f9582fc6665aca3ef11a380e",
+   "recorded_dhash": "cf4d4d34351525e5",
+   "identity_group": "flickr-nsid:17352537@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 6,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "positive-context",
+    "note": "Large public/political campaign board with flags/text; inspect all panels."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/a8ed2c9c17319ea2.jpg",
+   "queue_index": 208
+  },
+  {
+   "image_id": "ba92dc0b956ac7e2",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "c65db466cdbe4cee5f74cff87945bc948562fc97bd7b85f252be3c915b31e3be",
+   "recorded_dhash": "c58696e7e1c7c6b4",
+   "identity_group": "flickr-nsid:59353670@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "positive-context",
+    "note": "Large metro service/opening campaign panels with photographs and messages."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/ba92dc0b956ac7e2.jpg",
+   "queue_index": 209
+  },
+  {
+   "image_id": "ed93226216efabb9",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "74c7cb17b35c5ac353d0f027a1de5e7580831069bc08c0799f8ca95a0b66de4d",
+   "recorded_dhash": "d1141c1c14141450",
+   "identity_group": "flickr-nsid:68227549@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 7,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context",
+    "note": "Large framed fashion/music advertising panels mounted above Virgin storefront; inspect individual boards at full resolution."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/ed93226216efabb9.jpg",
+   "queue_index": 210
+  },
+  {
+   "image_id": "f187871d82b20e7e",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "a40f78d0859e70f3466782b8d648ecca6efa61dadc45e13461b0a7aa78e1876b",
+   "recorded_dhash": "1367a79c8717150d",
+   "identity_group": "flickr-nsid:88175021@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 12,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "positive-context",
+    "note": "Commercial street with large photographic course/product advertising panels; inspect separate signs."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/f187871d82b20e7e.jpg",
+   "queue_index": 211
+  },
+  {
+   "image_id": "fb9c015bc617c341",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "2457373ff76062000652aaf28fef6e9f57e5581d2d0ee49551c86604bc433c8f",
+   "recorded_dhash": "1c06020a128684c4",
+   "identity_group": "flickr-nsid:77697591@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 1,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "positive-context",
+    "note": "Framed fashion sale campaign with product photograph and discount claims."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/fb9c015bc617c341.jpg",
+   "queue_index": 212
+  },
+  {
+   "image_id": "000c2c0fb7c00baa",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "db7c9ea067eb2ad80d59cae92382e12b322293014227fce75f448314db4edbd9",
+   "recorded_dhash": "0d4c4b8b1b1b8383",
+   "identity_group": "flickr-nsid:8767215@N04",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 3,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Dense Times Square advertising panels; compare scene with prior Times Square data before any use."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/000c2c0fb7c00baa.jpg",
+   "queue_index": 213
+  },
+  {
+   "image_id": "01b7fbf0cc2dc3a2",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "31298d4fd9869b88f534ef2e4de8167bef516a860a91fba93681f485c0362f41",
+   "recorded_dhash": "63624353cac75569",
+   "identity_group": "flickr-nsid:52671637@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 16,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square advertising scene; compare prior and cross-role scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/01b7fbf0cc2dc3a2.jpg",
+   "queue_index": 214
+  },
+  {
+   "image_id": "0245090a4b81413a",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "4335dc882f721485ea311b6cd9dc16c80b7dedc0ec234b6f4a09a070132b4d63",
+   "recorded_dhash": "4e273599d3572e8a",
+   "identity_group": "flickr-nsid:31212180@N08",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 4,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Piccadilly Circus advertising panels; recurring landmark scene comparison needed."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/0245090a4b81413a.jpg",
+   "queue_index": 215
+  },
+  {
+   "image_id": "027e7adc476b6505",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "5ebab34d4da597f884e615db14277ee83cc78d72b45e4d8d2fdb92be6bbfa21f",
+   "recorded_dhash": "242686173339190f",
+   "identity_group": "flickr-nsid:72738738@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Las Vegas Bally's illuminated advertising scene; compare recurring scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/027e7adc476b6505.jpg",
+   "queue_index": 216
+  },
+  {
+   "image_id": "02c5b49d76d4409c",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "9466567aa9df38ebeaee1196182681147d99655cd104b18c879a53478c313dec",
+   "recorded_dhash": "cd8d8d8f8f073717",
+   "identity_group": "flickr-nsid:25187937@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 11,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square large advertising panels; compare prior and cross-role scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/02c5b49d76d4409c.jpg",
+   "queue_index": 217
+  },
+  {
+   "image_id": "2fc53e6dd5198105",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "62a0d4133cba026f4645c67573fbce40eb08f467723c6eb791c644501771f7c7",
+   "recorded_dhash": "3d3d3d2cac94046c",
+   "identity_group": "flickr-nsid:28581186@N02",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 12,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square illuminated advertising panels; recurring scene comparison needed."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/2fc53e6dd5198105.jpg",
+   "queue_index": 218
+  },
+  {
+   "image_id": "3c7402e215f4f1a8",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "5290ac89859c14dfae106118b5faa67b3d8b3b17173eabe816f442405956ff6d",
+   "recorded_dhash": "0909082c446405c6",
+   "identity_group": "flickr-nsid:16873035@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 2,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square advertising cluster; compare prior and cross-role scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/3c7402e215f4f1a8.jpg",
+   "queue_index": 219
+  },
+  {
+   "image_id": "699a8e28c5d192a6",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "aa85da190fca85e7b01c858c9450977da388341fbce97d663cf5ebaf109efd78",
+   "recorded_dhash": "2726637357060607",
+   "identity_group": "flickr-nsid:67596800@N00",
+   "intake_job": "7824179",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 17,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7824179-20261020-v1/scene-triage-billboard-01.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square advertisement scene; prior-scene comparison required."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/699a8e28c5d192a6.jpg",
+   "queue_index": 220
+  },
+  {
+   "image_id": "89a79124d4139fdc",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "38c3c48a23611ad0f374441a1bf4d66b2b69daeab9ca0816f20f324d17fdc550",
+   "recorded_dhash": "d95953c7cfc767cf",
+   "identity_group": "flickr-nsid:46488122@N05",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 9,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-02.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Las Vegas advertising night scene; compare recurring prior/cross-role scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/89a79124d4139fdc.jpg",
+   "queue_index": 221
+  },
+  {
+   "image_id": "9f9e1b7cdf8cc9d5",
+   "role": "test",
+   "anchor": "billboard",
+   "block": "C-heldout-billboard-anchor",
+   "sha256": "44c7108aa62027bc15bf494f50301a790396ca6ecf23603f892e9bed12ff6eb9",
+   "recorded_dhash": "3e0e625a0baccb1f",
+   "identity_group": "flickr-nsid:50653019@N00",
+   "intake_job": "7840599",
+   "source_status": "photo-specific-license-corroborated",
+   "prior_perceptual_candidates": [],
+   "publisher_billboard_box_count": 12,
+   "prior_narrow_triage": {
+    "sheet": "data-review-7840599-20261021-v1/scene-triage-billboard-03.json",
+    "disposition": "positive-context-scene-check",
+    "note": "Times Square advertising scene; compare prior and cross-role scenes."
+   },
+   "public_original_url": "https://open-images-dataset.s3.amazonaws.com/train/9f9e1b7cdf8cc9d5.jpg",
+   "queue_index": 222
+  }
+ ]
+}
