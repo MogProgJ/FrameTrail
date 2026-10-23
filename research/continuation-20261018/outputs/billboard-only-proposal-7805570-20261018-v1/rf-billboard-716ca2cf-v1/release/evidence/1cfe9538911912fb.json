@@ -1,0 +1,63 @@
+{
+  "photo": 45,
+  "image_id": "1cfe9538911912fb",
+  "publisher_attribution": {
+    "id": "1cfe9538911912fb",
+    "landing_url": "https://www.flickr.com/photos/1c11/10150859096",
+    "original_url": "https://c4.staticflickr.com/6/5504/10150859096_93a75ec039_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Aitor Calero",
+    "author_url": "https://www.flickr.com/people/1c11/",
+    "title": "Batido mañanero post entreno",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Aitor Calero",
+    "url": "https://www.flickr.com/photos/1c11",
+    "image": "https://live.staticflickr.com/3424/buddyicons/42684882@N04.jpg?1266498143#42684882@N04"
+  },
+  "current_title": "Batido mañanero post entreno",
+  "source_url": "https://www.flickr.com/photos/1c11/10150859096",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 45,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "Aitor Calero",
+      "url": "https://www.flickr.com/photos/1c11",
+      "image": "https://live.staticflickr.com/3424/buddyicons/42684882@N04.jpg?1266498143#42684882@N04"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Aitor Calero",
+      "url": "https://www.flickr.com/photos/1c11",
+      "image": "https://live.staticflickr.com/3424/buddyicons/42684882@N04.jpg?1266498143#42684882@N04"
+    },
+    "meta_description": ""
+  },
+  "creator_override": null,
+  "image_sha256": "c06aebf40cc460f2dc16c50dfda76f4d65d274665e73c34331b4f91d965ce476",
+  "source_page_sha256": "ad14ddc3fb397e63eeb40b21f412096206711ce2bc8b02c4c983cda6b0c8cf22",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "c5be0c7c975fff6a6ba30244d27f9b10a9909c55f6e5dc666ece31a8526dcd73",
+  "source_job": 7626978,
+  "scope_note": "One banana and two pears retained with reviewed visible boundaries. Pepper Mill observation remains preserved and never becomes Bottle.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

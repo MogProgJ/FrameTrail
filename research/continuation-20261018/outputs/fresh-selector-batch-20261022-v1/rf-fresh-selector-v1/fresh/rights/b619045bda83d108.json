@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "b619045bda83d108",
+  "image_sha256": "2a5405fa0f753e64b65fd729a49b0da1ce47b5ed2268b8d97b4cd853843b9ce1",
+  "source_review": {
+    "image_id": "b619045bda83d108",
+    "image_sha256": "2a5405fa0f753e64b65fd729a49b0da1ce47b5ed2268b8d97b4cd853843b9ce1",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/bigcitysigns/19154061263",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/bigcitysigns/19154061263",
+      "original_url": "https://c1.staticflickr.com/4/3733/19154061263_f7ed57738f_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Big City Signs",
+      "author_url": "https://www.flickr.com/people/bigcitysigns/",
+      "title": "RBC-Summer-DF- side 2",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Big City Signs",
+      "url": "https://www.flickr.com/photos/bigcitysigns",
+      "image": "https://live.staticflickr.com/4814/buddyicons/50881309@N08.jpg?1542065071#50881309@N08"
+    },
+    "current_title": "RBC-Summer-DF- side 2",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Big City Signs",
+          "url": "https://www.flickr.com/photos/bigcitysigns",
+          "image": "https://live.staticflickr.com/4814/buddyicons/50881309@N08.jpg?1542065071#50881309@N08"
+        }
+      },
+      "meta_description": "two-side-print banner"
+    },
+    "identity_group": "flickr-nsid:50881309@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/bigcitysigns/19154061263",
+    "html_sha256": "e690205565b1a3595076e4b151154782e192f550ade7faa17ba9a15af6d2399e",
+    "stored_sha256": "2831dc61f93491df1d6b69d87edb29d354626b59caa6b27c921bdf5118ef794f",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\b619045bda83d108.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\b619045bda83d108.json",
+    "sha256": "83a199f9c5abc2f45962bfec10b4ecc957da4cd5133ad6d27be05f2ecde5093d"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b619045bda83d108.json",
+    "sha256": "2616275c51c1522bf0827150edb5a2bcb609e59b3facb69245f53539badeba40"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/bigcitysigns/19154061263",
+    "original_url": "https://c1.staticflickr.com/4/3733/19154061263_f7ed57738f_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Big City Signs",
+    "author_url": "https://www.flickr.com/people/bigcitysigns/",
+    "title": "RBC-Summer-DF- side 2",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

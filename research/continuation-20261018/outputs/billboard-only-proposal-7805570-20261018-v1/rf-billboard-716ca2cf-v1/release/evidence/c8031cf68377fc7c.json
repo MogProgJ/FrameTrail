@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "c8031cf68377fc7c",
+  "image_sha256": "74f943aa44225629d1329426b288c4adf9dc869911fa7ea6589a1982df3ff45c",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "c8031cf68377fc7c",
+    "image_sha256": "74f943aa44225629d1329426b288c4adf9dc869911fa7ea6589a1982df3ff45c",
+    "selected_category": "light switch",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/daveynin/2622350612",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/daveynin/2622350612",
+      "original_url": "https://c5.staticflickr.com/4/3110/2622350612_1b8791e9d7_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "daveynin",
+      "author_url": "https://www.flickr.com/people/daveynin/",
+      "title": "Old Switch Light",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "daveynin",
+      "url": "https://www.flickr.com/photos/daveynin",
+      "image": "https://live.staticflickr.com/4414/buddyicons/44124370018@N01.jpg?1503797341#44124370018@N01"
+    },
+    "current_title": "Old Switch Light",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "daveynin",
+          "url": "https://www.flickr.com/photos/daveynin",
+          "image": "https://live.staticflickr.com/4414/buddyicons/44124370018@N01.jpg?1503797341#44124370018@N01"
+        }
+      },
+      "meta_description": "This piece is idle and never removed in Western Pennsylvania School f/t Deaf building"
+    },
+    "identity_group": "flickr-nsid:44124370018@N01",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/daveynin/2622350612",
+    "html_sha256": "bdc48eddde950841fe1cd2de81ec6c12eecc729fc3c082e9815b4fdbe34f4be9",
+    "stored_sha256": "924de461ba68ae5107b7c7a3a6a5da8201d54f3360b8269348aea231cc8fc64c",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\c8031cf68377fc7c.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/c8031cf68377fc7c.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

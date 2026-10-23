@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "00198353ef684011",
+  "image_sha256": "943c27d32abc436074edf4157166318613a9097cdc07532470a6bab230467fa5",
+  "source_review": {
+    "image_id": "00198353ef684011",
+    "image_sha256": "943c27d32abc436074edf4157166318613a9097cdc07532470a6bab230467fa5",
+    "selected_category": "whiteboard",
+    "selected_domain": "contrast",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/sparkfun/10762065775",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/sparkfun/10762065775",
+      "original_url": "https://farm2.staticflickr.com/7345/10762065775_286aca724f_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "SparkFun Electronics",
+      "author_url": "https://www.flickr.com/people/sparkfun/",
+      "title": "Lightbulb Project",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "SparkFun Electronics",
+      "url": "https://www.flickr.com/photos/sparkfun",
+      "image": "https://live.staticflickr.com/3782/buddyicons/41898857@N04.jpg?1369320957#41898857@N04"
+    },
+    "current_title": "Lightbulb Project",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "SparkFun Electronics",
+          "url": "https://www.flickr.com/photos/sparkfun",
+          "image": "https://live.staticflickr.com/3782/buddyicons/41898857@N04.jpg?1369320957#41898857@N04"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:41898857@N04",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/sparkfun/10762065775",
+    "html_sha256": "9086750aa14a453772e650a5c2d36adb1456ae4465b788bc804e8cd1004d9ff9",
+    "stored_sha256": "fff4362286afa40c1d746f3776320010b8ab2ddbbc3a478df57ac06bb28e199e",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\00198353ef684011.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\00198353ef684011.json",
+    "sha256": "e003319a4bceaed492f6ba0fe7c54229c4606a4af8f4b457e533d0684b249ac0"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\00198353ef684011.json",
+    "sha256": "7d43eb801f2097b14c07ab36754d8aec74462a64286b48864c2401b9db222114"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/sparkfun/10762065775",
+    "original_url": "https://farm2.staticflickr.com/7345/10762065775_286aca724f_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "SparkFun Electronics",
+    "author_url": "https://www.flickr.com/people/sparkfun/",
+    "title": "Lightbulb Project",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

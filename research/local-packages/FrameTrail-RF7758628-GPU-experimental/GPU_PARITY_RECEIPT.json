@@ -1,0 +1,94 @@
+{
+  "status": "native-RF-GPU-parity-passed",
+  "probes": [
+    {
+      "probe": "00208-00006",
+      "passed": true,
+      "count": 47,
+      "minimum_IoU": 0.9998495570686089,
+      "maximum_confidence_difference": 1.2904416134662533e-05,
+      "maximum_normalized_geometry_difference": 4.054015611008784e-05,
+      "timing": {
+        "preprocess_ms": 7.7994,
+        "inference_ms": 63.8052,
+        "postprocess_ms": 1.8963,
+        "detections": 47
+      }
+    },
+    {
+      "probe": "00280-00016",
+      "passed": true,
+      "count": 70,
+      "minimum_IoU": 0.9998954954447323,
+      "maximum_confidence_difference": 7.3910254944076215e-06,
+      "maximum_normalized_geometry_difference": 2.4489576365146113e-05,
+      "timing": {
+        "preprocess_ms": 9.0665,
+        "inference_ms": 65.7858,
+        "postprocess_ms": 2.0151,
+        "detections": 70
+      }
+    },
+    {
+      "probe": "00046-00010",
+      "passed": true,
+      "count": 29,
+      "minimum_IoU": 0.9999187652478075,
+      "maximum_confidence_difference": 3.993547653180496e-06,
+      "maximum_normalized_geometry_difference": 1.4871401189174725e-05,
+      "timing": {
+        "preprocess_ms": 10.9757,
+        "inference_ms": 63.1896,
+        "postprocess_ms": 1.283,
+        "detections": 29
+      }
+    },
+    {
+      "probe": "6f716b522ec9676c",
+      "passed": true,
+      "count": 48,
+      "minimum_IoU": 0.9998920193894674,
+      "maximum_confidence_difference": 4.947148223855002e-06,
+      "maximum_normalized_geometry_difference": 4.598680088444699e-05,
+      "timing": {
+        "preprocess_ms": 14.2503,
+        "inference_ms": 70.1019,
+        "postprocess_ms": 2.7263,
+        "detections": 48
+      }
+    },
+    {
+      "probe": "063bfafe3658da21",
+      "passed": true,
+      "count": 23,
+      "minimum_IoU": 0.9999815053445842,
+      "maximum_confidence_difference": 3.963662130734846e-06,
+      "maximum_normalized_geometry_difference": 2.5331851959409235e-06,
+      "timing": {
+        "preprocess_ms": 14.4869,
+        "inference_ms": 62.4711,
+        "postprocess_ms": 5.1289,
+        "detections": 23
+      }
+    },
+    {
+      "probe": "1bd4dbcf65711274",
+      "passed": true,
+      "count": 51,
+      "minimum_IoU": 0.9995060960516984,
+      "maximum_confidence_difference": 1.2844775216680482e-05,
+      "maximum_normalized_geometry_difference": 1.4949688003840031e-05,
+      "timing": {
+        "preprocess_ms": 11.5693,
+        "inference_ms": 69.4175,
+        "postprocess_ms": 1.9267,
+        "detections": 51
+      }
+    }
+  ],
+  "CPU_unavailable_GPU_fallback_checked": true,
+  "wrong_GPU_checkpoint_rejected": true,
+  "cancellation_checked": true,
+  "quality_adopted": false,
+  "weights_changed": false
+}

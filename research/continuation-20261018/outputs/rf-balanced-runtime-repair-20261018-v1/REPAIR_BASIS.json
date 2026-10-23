@@ -1,0 +1,14 @@
+{
+  "status": "prepared",
+  "root_cause": "The login-side submit preflight lacked the existing RF-DETR PYTHONPATH overlay that run-balanced.sbatch already exports.",
+  "observed_failure_before_submission_lock_and_sbatch": true,
+  "module_line": "module load devel/miniforge/25.3.1-python-3.12",
+  "overlay_line": "export PYTHONPATH=\"$PWD/output/rf-comparison-v1/python-overlay\"",
+  "exact_batch_environment_reused": true,
+  "sealed_training_code_changed": false,
+  "protocol_changed": false,
+  "dependencies_installed": false,
+  "reupload": false,
+  "submitted": false,
+  "successful_prior_reference": "The same overlay repair was recorded before completed job 7780632; the current batch script retains that overlay."
+}

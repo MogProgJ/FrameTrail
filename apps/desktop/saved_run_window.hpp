@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTemporaryDir>
 #include <QTimer>
+#include <functional>
 
 class FrameCanvas;
 class QLabel;
@@ -28,6 +29,8 @@ public:
     void review_event(int row);
     std::optional<std::chrono::microseconds> displayed_timestamp() const { return displayed_timestamp_; }
     bool analysing() const { return job_.progress().active; }
+    std::function<void(bool)> workspace_close_decision;
+    void suspend_playback();
 protected:
     void closeEvent(QCloseEvent* event) override;
     void dragEnterEvent(QDragEnterEvent* event) override;
@@ -66,7 +69,8 @@ private:
     QWidget* settings_panel_{};
     QWidget* results_panel_{};
     QProgressBar* progress_{};
-    bool closing_{}, awaiting_job_{}, awaiting_frame_{}, playing_{}, clock_started_{}, unsaved_{}, draft_job_{};
+    bool closing_{}, awaiting_job_{}, awaiting_frame_{}, playing_{}, clock_started_{}, unsaved_{}, draft_job_{},cancel_requested_{};
+    std::chrono::steady_clock::time_point analysis_started_{};
     std::chrono::steady_clock::time_point clock_,paused_;
     std::chrono::microseconds first_timestamp_{};
     std::uint64_t first_sequence_{};

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "81478273f967ea73",
+  "image_sha256": "a2f9118c3a01c4004bc3e9b9dc2fa22898d23954e7b9ffddda9db22d721f5510",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "81478273f967ea73",
+    "image_sha256": "a2f9118c3a01c4004bc3e9b9dc2fa22898d23954e7b9ffddda9db22d721f5510",
+    "selected_category": "waste container",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/nicholassmale/3869671917",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/nicholassmale/3869671917",
+      "original_url": "https://farm4.staticflickr.com/2575/3869671917_3e79e529ac_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Nicholas Smale",
+      "author_url": "https://www.flickr.com/people/nicholassmale/",
+      "title": "2009 Cambridge Folk Festival",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Nicholas Smale",
+      "url": "https://www.flickr.com/photos/nicholassmale",
+      "image": "https://live.staticflickr.com/8542/buddyicons/28328008@N04.jpg?1369088446#28328008@N04"
+    },
+    "current_title": "2009 Cambridge Folk Festival",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Nicholas Smale",
+          "url": "https://www.flickr.com/photos/nicholassmale",
+          "image": "https://live.staticflickr.com/8542/buddyicons/28328008@N04.jpg?1369088446#28328008@N04"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:28328008@N04",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/nicholassmale/3869671917",
+    "html_sha256": "1164a58d662b822985d0cfdec8f7b85406dad10f5ca522fbe32f0acf718f86ac",
+    "stored_sha256": "887fc99cd4562feefbb022592ac1e98b868e6e2cba57423f66ef217fcef69e7a",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\81478273f967ea73.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/81478273f967ea73.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,65 @@
+{
+  "image_id": "4c916adba93611ad",
+  "image_sha256": "6187401d7104202cc547747e6c7b375386849e0e85d40224aa77123abe493f0f",
+  "identity_group": "flickr-nsid:25465562@N00",
+  "scene_group": "scene:chick-fil-a-breakfast-billboard-with-attached-cows-above-global-limousine-campaign",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\4c916adba93611ad.json",
+    "sha256": "e7db771c1965a29e878d9c16991f5d1e2a8e88a0ce8f70440a026cfc314d78a6"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.2412,
+      0.2005,
+      0.7588,
+      0.6914
+    ],
+    [
+      0.295625,
+      0.731667,
+      0.999375,
+      0.999167
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-val-02.json",
+    "sha256": "26e6ea8c0a176e969ac8cdab4e9166e73b11d3356f8051d981e1ecfd82454b3a"
+  },
+  "content_decision": {
+    "id": "4c916adba93611ad",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.2412,
+        0.2005,
+        0.7588,
+        0.6914
+      ],
+      [
+        0.295625,
+        0.731667,
+        0.999375,
+        0.999167
+      ]
+    ],
+    "note": "Two campaign units: upper Chick-fil-A billboard including attached advertising cow protrusions, and lower limousine-service billboard cut by image edge. Expanded upper source bounds to integrated campaign extent; far-right box is building identification, not campaign.",
+    "scene_description": "Chick-fil-A breakfast billboard with attached cows above Global Limousine campaign"
+  },
+  "prospective_split": "val",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

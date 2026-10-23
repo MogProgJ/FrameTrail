@@ -1,0 +1,37 @@
+{
+  "conditions": [
+    {
+      "method": "M0",
+      "seed": 17,
+      "index": 0,
+      "complete": true,
+      "best": null
+    },
+    {
+      "method": "M0",
+      "seed": 29,
+      "index": 1,
+      "complete": true,
+      "best": null
+    },
+    {
+      "method": "M1",
+      "seed": 17,
+      "index": 2,
+      "complete": true,
+      "best": null,
+      "combined_training_validation_seconds": 1071.3753973479907
+    },
+    {
+      "method": "M1",
+      "seed": 29,
+      "index": 3,
+      "complete": true,
+      "best": null,
+      "combined_training_validation_seconds": 1063.400694043019
+    }
+  ],
+  "winner": null,
+  "selection": "validation-only; paired methods require both seeds",
+  "production_adoption": false
+}

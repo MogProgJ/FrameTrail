@@ -1,17 +1,26 @@
 #include "preview_window.hpp"
+#include "cached_playback_window.hpp"
 #include <QApplication>
 #include <QTimer>
 #include <QComboBox>
+#include <QPushButton>
 
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
+    app.setStyle(QStringLiteral("Fusion"));
+    app.setFont(QFont(QStringLiteral("Segoe UI"),10));
     app.setApplicationName(QStringLiteral("FrameTrail"));
     PreviewWindow window;
     auto arguments = app.arguments();
-    if(arguments.removeAll(QStringLiteral("--rf-experimental"))) {
+    const bool smooth_mode=arguments.removeAll(QStringLiteral("--smooth-rf-experimental"))>0;
+    if(arguments.removeAll(QStringLiteral("--rf-balanced"))) {
+        window.findChild<QComboBox*>(QStringLiteral("modelSelection"))->setCurrentIndex(6);
+        window.setWindowTitle(QStringLiteral("FrameTrail · balanced model preview"));
+    }
+    if(arguments.removeAll(QStringLiteral("--rf-experimental")) || smooth_mode) {
         window.findChild<QComboBox*>(QStringLiteral("modelSelection"))->setCurrentIndex(5);
         window.findChild<QComboBox*>(QStringLiteral("backendSelection"))->setCurrentIndex(1);
-        window.setWindowTitle(QStringLiteral("FrameTrail · RF trained 7758628 · experimental"));
+        window.setWindowTitle(QStringLiteral("FrameTrail · RF-DETR experimental"));
     }
     window.show();
     if (arguments.size() > 1 && arguments[1] == QStringLiteral("--smoke-test")) {
@@ -25,5 +34,13 @@ int main(int argc, char* argv[]) {
         poll->start(20);
         QTimer::singleShot(10000, &app, [&] { app.exit(1); });
     } else if (arguments.size() > 1) window.open_file(arguments[1]);
+    if(smooth_mode){
+        auto* prepare=new QTimer(&window);prepare->setInterval(20);
+        QObject::connect(prepare,&QTimer::timeout,&window,[&window,prepare]{
+            if(!window.displayed_sequence())return;
+            prepare->stop();window.findChild<QPushButton*>(QStringLiteral("smoothPlayback"))->click();
+            window.findChild<QPushButton*>(QStringLiteral("preparePlayback"))->click();
+        });prepare->start();
+    }
     return app.exec();
 }

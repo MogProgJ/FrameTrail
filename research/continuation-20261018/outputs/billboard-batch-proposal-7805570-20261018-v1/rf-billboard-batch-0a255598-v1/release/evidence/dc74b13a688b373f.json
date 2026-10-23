@@ -1,0 +1,64 @@
+{
+  "image_id": "dc74b13a688b373f",
+  "image_sha256": "aec12ef61251c8a7b9c1a221d2abc915fc1bda76c97b0f4f3893c762735d6925",
+  "publisher_attribution": {
+    "id": "dc74b13a688b373f",
+    "landing_url": "https://www.flickr.com/photos/darrelbirkett/6935032024",
+    "original_url": "https://c8.staticflickr.com/8/7045/6935032024_4d3d21598a_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "DarrelBirkett",
+    "author_url": "https://www.flickr.com/people/darrelbirkett/",
+    "title": "Peregrine~Saker Falcon",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "DarrelBirkett",
+    "url": "https://www.flickr.com/photos/darrelbirkett",
+    "image": "https://live.staticflickr.com/2918/buddyicons/34459996@N04.jpg?1399074994#34459996@N04"
+  },
+  "current_title": "Peregrine~Saker Falcon",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "DarrelBirkett",
+        "url": "https://www.flickr.com/photos/darrelbirkett",
+        "image": "https://live.staticflickr.com/2918/buddyicons/34459996@N04.jpg?1399074994#34459996@N04"
+      }
+    },
+    "meta_description": "This is actually a hybrid.  Achieved though artificial insemination."
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/darrelbirkett/6935032024",
+  "canonical_page_url": "https://www.flickr.com/photos/darrelbirkett/6935032024",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "d28101a3bd201b09fc4d93625ecc63ad5aed55e656b8cc64cb3f22fd681b1448",
+  "source_gzip_sha256": "f380ec28dbef3fcd3a11ae46734edfcdb42b111add459d4b11e89f221c6413ae",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-056",
+  "visual_proof_sha256": "f136bf5b7df126e6f613e8e3462000d5d1686f832574a73cb4f0feb9eac4dfcd",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

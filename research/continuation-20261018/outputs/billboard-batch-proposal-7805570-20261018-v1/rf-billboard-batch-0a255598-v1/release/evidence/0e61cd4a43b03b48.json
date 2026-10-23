@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "0e61cd4a43b03b48",
+  "image_sha256": "9653aa352500a59bf8bb6116be0fb6ac1db7963cedb6e5a010e4a4cdcb66d62a",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "0e61cd4a43b03b48",
+    "image_sha256": "9653aa352500a59bf8bb6116be0fb6ac1db7963cedb6e5a010e4a4cdcb66d62a",
+    "selected_category": "washing machine",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/vix_b/6088354307",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/vix_b/6088354307",
+      "original_url": "https://c1.staticflickr.com/7/6088/6088354307_e4506d2d34_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Vix_B",
+      "author_url": "https://www.flickr.com/people/vix_b/",
+      "title": "Forest of Dean 2011",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Vix_B",
+      "url": "https://www.flickr.com/photos/vix_b",
+      "image": "https://live.staticflickr.com/3815/buddyicons/30588906@N00.jpg?1371499166#30588906@N00"
+    },
+    "current_title": "Forest of Dean 2011",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Vix_B",
+          "url": "https://www.flickr.com/photos/vix_b",
+          "image": "https://live.staticflickr.com/3815/buddyicons/30588906@N00.jpg?1371499166#30588906@N00"
+        }
+      },
+      "meta_description": "Kitchen"
+    },
+    "identity_group": "flickr-nsid:30588906@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/vix_b/6088354307",
+    "html_sha256": "e19f4a95267a7a7526c40dd0034b5ed0225a595e0017bb23ced5edbe6ba1cea2",
+    "stored_sha256": "a754e3d4e41f7a4ba13f7437c15889bf484f29ff0501f6606f247bcff5ed716a",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\0e61cd4a43b03b48.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/0e61cd4a43b03b48.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

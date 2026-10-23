@@ -1,0 +1,5 @@
+event_id,sequence,timestamp_us,track_id,class_id,label,direction,x_normalized,y_normalized
+1,38,1583333,19,0,person,negative_to_positive,0.5,0.702593
+2,53,2208333,25,0,person,negative_to_positive,0.5,0.799924
+3,144,6000000,70,0,person,positive_to_negative,0.5,0.684291
+4,209,8708333,95,0,person,negative_to_positive,0.5,0.752613

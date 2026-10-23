@@ -1,0 +1,40 @@
+{
+  "image_id": "31c585fd77d4d28f",
+  "image_sha256": "bafb970fdc736cc5867291901bd9d6535bc2267df8dad852636cbbe66e38db82",
+  "identity_group": "flickr-nsid:35498166@N00",
+  "scene_group": "scene:bridge-warning-and-chevron-with-apartment-skyline",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\31c585fd77d4d28f.json",
+    "sha256": "d0f1d12ffad6e497a7d6faab22fcb9a16dfbc02598b2bfc836af4fcb3ffe9626"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-train-traffic.json",
+    "sha256": "b6f5e869ddac873983b07cc2f447668cc76d268dd202f42091d8ebfce18749b4"
+  },
+  "content_decision": {
+    "id": "31c585fd77d4d28f",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "traffic-information-signs",
+    "note": "Original shows bridge warning/chevron signs and residential skyline; no identifiable advertising campaign.",
+    "scene_description": "Bridge warning and chevron with apartment skyline"
+  },
+  "prospective_split": "train",
+  "confuser_family": "traffic-information-signs",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

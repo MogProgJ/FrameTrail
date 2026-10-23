@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "14af69b8e6849468",
+  "image_sha256": "208f6d4104c6fb7a438e296240301be56e746f01244d8cd54efb1b6b75550d4d",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "14af69b8e6849468",
+    "image_sha256": "208f6d4104c6fb7a438e296240301be56e746f01244d8cd54efb1b6b75550d4d",
+    "selected_category": "traffic sign",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/countylemonade/7169102066",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/countylemonade/7169102066",
+      "original_url": "https://c1.staticflickr.com/6/5071/7169102066_17a5d8b8ff_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Garrett",
+      "author_url": "https://www.flickr.com/people/countylemonade/",
+      "title": "North Temple at the future Fairpark Trax station",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Garrett",
+      "url": "https://www.flickr.com/photos/countylemonade",
+      "image": "https://live.staticflickr.com/3127/buddyicons/33970903@N02.jpg?1231004186#33970903@N02"
+    },
+    "current_title": "North Temple at the future Fairpark Trax station",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Garrett",
+          "url": "https://www.flickr.com/photos/countylemonade",
+          "image": "https://live.staticflickr.com/3127/buddyicons/33970903@N02.jpg?1231004186#33970903@N02"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:33970903@N02",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/countylemonade/7169102066",
+    "html_sha256": "7150fd02fadcd8718b53f8a85518e923359ae42ba096d45da872da3770ad09f6",
+    "stored_sha256": "532215a6a73a9e197bcbc6b702c0aa50993b4cfc6169ccf01a214bbf36d963b2",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\14af69b8e6849468.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/14af69b8e6849468.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

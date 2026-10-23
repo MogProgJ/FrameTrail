@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "8cef1306583217e2",
+  "image_sha256": "9218d04705b9485339494336760be7ce5048724058b222361df78c1c019e2afe",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "8cef1306583217e2",
+    "image_sha256": "9218d04705b9485339494336760be7ce5048724058b222361df78c1c019e2afe",
+    "selected_category": "cat",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/fpat/3823608064",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/fpat/3823608064",
+      "original_url": "https://farm3.staticflickr.com/3430/3823608064_a66de8009c_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "fPat Murray",
+      "author_url": "https://www.flickr.com/people/fpat/",
+      "title": "All this for a picture of a #*(%ing cat.",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "fPat Murray",
+      "url": "https://www.flickr.com/photos/fpat",
+      "image": "https://live.staticflickr.com/5666/buddyicons/22729391@N03.jpg?1478755915#22729391@N03"
+    },
+    "current_title": "All this for a picture of a #*(%ing cat.",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "fPat Murray",
+          "url": "https://www.flickr.com/photos/fpat",
+          "image": "https://live.staticflickr.com/5666/buddyicons/22729391@N03.jpg?1478755915#22729391@N03"
+        }
+      },
+      "meta_description": "Big Sur, Ca\n\t\n\tI was trying to take this same photo a few minutes earlier with a middle aged man standing by the phone.  He was standing in front of the dial pad, which was ruining the composition, so i asked him if he could move over a step while i took the picture.  \"Wait your fucking turn pal!\" As i walked away I heard \"Of course I won't be late mom! I wouldn't miss your Cherry Pie!\" \n\tSo i went back to sitting on the hood of my jeep waiting for someone else to walk up to the phone so i could take the photo.  The man walked past after he finished his phone call and muttered \"all this for a picture of a fucking cat\"\n\t\n\tThe End."
+    },
+    "identity_group": "flickr-nsid:22729391@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/fpat/3823608064",
+    "html_sha256": "f57e9f925a18880a1407a6123282d9b44ff85ed1e4abd0392812ca3e7dff9027",
+    "stored_sha256": "3baf08e04d0368abeda3fe09c61556ae910b64065a738ce1866e0a63289575f4",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\8cef1306583217e2.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/8cef1306583217e2.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

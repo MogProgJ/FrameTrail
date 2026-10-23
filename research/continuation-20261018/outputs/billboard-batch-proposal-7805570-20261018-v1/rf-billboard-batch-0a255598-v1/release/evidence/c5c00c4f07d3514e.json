@@ -1,0 +1,64 @@
+{
+  "image_id": "c5c00c4f07d3514e",
+  "image_sha256": "8bfb65b5ca786f0b80bfc1d3c146ca88aef54e6d5a051403fae719ffd2284e17",
+  "publisher_attribution": {
+    "id": "c5c00c4f07d3514e",
+    "landing_url": "https://www.flickr.com/photos/angryjuliemonday/6381700539",
+    "original_url": "https://c7.staticflickr.com/7/6041/6381700539_6d1a38c560_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "AngryJulieMonday",
+    "author_url": "https://www.flickr.com/people/angryjuliemonday/",
+    "title": "The girls waiting in line for Breaking Dawn",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "AngryJulieMonday",
+    "url": "https://www.flickr.com/photos/angryjuliemonday",
+    "image": "https://live.staticflickr.com/3548/buddyicons/33731571@N07.jpg?1238775289#33731571@N07"
+  },
+  "current_title": "The girls waiting in line for Breaking Dawn",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "AngryJulieMonday",
+        "url": "https://www.flickr.com/photos/angryjuliemonday",
+        "image": "https://live.staticflickr.com/3548/buddyicons/33731571@N07.jpg?1238775289#33731571@N07"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/angryjuliemonday/6381700539",
+  "canonical_page_url": "https://www.flickr.com/photos/angryjuliemonday/6381700539",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "544ba5244c9e4b648394210a61b1d8617d937cb2169d051bc4cfd1602ab45c0c",
+  "source_gzip_sha256": "ddecf44c4e5f51547d4f0678bf61812efb01f7178ffde5d0370d811cc564c184",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-194",
+  "visual_proof_sha256": "fccf47e90494021f75df626d8eb4caa071239ac35b014e52ca400524a32b0891",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

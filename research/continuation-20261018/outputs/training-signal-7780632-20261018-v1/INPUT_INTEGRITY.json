@@ -1,0 +1,144 @@
+{
+  "files": [
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\validation-probe-7780632-20261018-v1\\training-diagnostic-sample-selection.json",
+      "sha256": "ba4b957e613ecccb665935582196ca905abe18cf4bd4821790af278926a87dd8",
+      "bytes": 3388
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\validation-probe-7780632-20261018-v1\\TRAINING_DIAGNOSTIC_PLAN.md",
+      "sha256": "16f26702916df57591dfe9388030b0ef7438fb3408418de365d77ddf476530b3",
+      "bytes": 2335
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\candidate-manifest-v2.json",
+      "sha256": "e43a2c7a415c4f82209a1fc2471d8677503f51315e71f422ec0d6665eac377b9",
+      "bytes": 2461334
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\All Modules\\FrameTrail\\.deps\\rfdetr-probe-assets\\rf-detr-small.pth",
+      "sha256": "d81979a9213a2109345158ce9232668df4c1ae52e9b8db3f2ec0a8cbad959b33",
+      "bytes": 386045550
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\11\\01a12a01-d564-7de0-91f4-a16484eea2cb\\rf-comparison-package-20261013-v1\\local-assignment-wheel\\torch_hungarian-0.1.0rc0-py3-none-any.whl",
+      "sha256": "1823ae4d37c870b49e1a0fa460dc9a39649f015210cf5bdb7299507d82cccdeb",
+      "bytes": 16894
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\trial-results-7780632-20261018-v1\\retrieval\\verified-7780632\\output\\rf-nextdata-7780632\\best.pt",
+      "sha256": "3a9adf74b11b851fba7393cc41b12b538a7aa1576b0a4e179468cc36c2279389",
+      "bytes": 115226187
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\trial-results-7780632-20261018-v1\\retrieval\\verified-7780632\\output\\rf-nextdata-7780632\\last.pt",
+      "sha256": "d280723323b4ae8b07f1631667f2d87a9744c3398a06cc94e71dcef04fae2a02",
+      "bytes": 115202741
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\scoped_rf.py",
+      "sha256": "a6c0a6c133676ce2340fdebcfb4658d74eda38804028ba0ee8a82c45e28e3489",
+      "bytes": 7111
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\scoped_engine.py",
+      "sha256": "c26a3088f81d109b2a31a8682e82228b6602abc574aff80fef38b8208a79272c",
+      "bytes": 6803
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\rf-mapping.json",
+      "sha256": "fe743b7b4182cffc190486ad9dbb576afb4610fb37e1db67b0f93dc4fec02524",
+      "bytes": 29848
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\head_policy.py",
+      "sha256": "95bfc8b0d5c96558cc453e2c86a1320943f0678ed2dbb3ecfc067af5ffcbcb2b",
+      "bytes": 1275
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\determinism_policy.py",
+      "sha256": "966d7cefc507b65b153d78e295001e6b46f02151c545e2774f7ad8eaf7546b5e",
+      "bytes": 2184
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\protocol.json",
+      "sha256": "274fe648bd391eb80f62b68e4007f689045e99832642dc0531e58f7c575f7a4d",
+      "bytes": 3323
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\train_nextdata.py",
+      "sha256": "cde34807d70749160d53548e400e3407d32028ec630d0949340000d5c3a15192",
+      "bytes": 6526
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\All Modules\\FrameTrail\\.deps\\rfdetr-probe-cpu\\Lib\\site-packages\\rfdetr\\models\\criterion.py",
+      "sha256": "fbe37034157e512df146e8f20694adf91fb3156829496eb79bcd5a9c293815ef",
+      "bytes": 66049
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\All Modules\\FrameTrail\\.deps\\rfdetr-probe-cpu\\Lib\\site-packages\\rfdetr\\models\\matcher.py",
+      "sha256": "2521d58fd5c3270f8f352c14ae299364347bd27792e18696de8bb20c637765f6",
+      "bytes": 66291
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\071335ec7bce7681.jpg",
+      "sha256": "789ff4923509a7d920588d28e52b65519a27a955c4ac42135e4d3ba2bc804482",
+      "bytes": 719657
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\06e039d4d15e8a10.jpg",
+      "sha256": "bae9493a7e22ef96ffb0f7d0ec1d3a63b706d024a36ed6383608f8da18f3486e",
+      "bytes": 240781
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\1869ae51bf109ec2.jpg",
+      "sha256": "e6bec38249fb495c5ad39a793dc3639e9d32b44d852a30e2ef0e897aefce40cc",
+      "bytes": 148032
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\0a4d79bf57e035f2.jpg",
+      "sha256": "028f8145c0cf6e153ccb643148ee70b6b01c2f5dded22c863c99c555c5720226",
+      "bytes": 69052
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\078433fcb4d125c2.jpg",
+      "sha256": "188fc1b5cddbf464a3c6eccfb77e788199a45c1ef943710dc7bd88da4a03a2de",
+      "bytes": 181772
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\062b4f2407f2522d.jpg",
+      "sha256": "5ec815fbdafbf47ee48bdc9c6fcb048fc375c40571be692aec8c9c14cb504ac8",
+      "bytes": 142344
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\001a4338f140e05e.jpg",
+      "sha256": "623d862b67e36a330ab0158c364d6c4deab0cf5bcd6379c655f8b5f21d437961",
+      "bytes": 102528
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\013037fd8c0daf0a.jpg",
+      "sha256": "c3429a67e0d25e31fbde6f95b17023f5b2604ce21aad1367c01b538d4f527cb6",
+      "bytes": 107554
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\0256394be89b2d9f.jpg",
+      "sha256": "7a6c9ad73a99862b3fa32cdc58267e6aaf5452b2bab290ec879b368f9863844f",
+      "bytes": 1100321
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\1b214b729bce48e0.jpg",
+      "sha256": "76ad5298c5178c49e659a37cb95eac43d69c78fd7bc47ed74fc80d672ba2f803",
+      "bytes": 487608
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\08dd4d1137b5ebeb.jpg",
+      "sha256": "9c185cef9c068286faef7f66c0638ef4ffcd4136c5af98cefb09031790ede350",
+      "bytes": 92632
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\078cc35acabe5e77.jpg",
+      "sha256": "116c9756b4a1a6b26f9bb51e072a90430540fade2a0628de91a6dfc80da71e52",
+      "bytes": 392832
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "image_id": "9f818743329190c0",
+  "image_sha256": "5712543f7c137e42a4c9f6fa8363b57ec735140c78414f587ca7acf10c109ebe",
+  "publisher_attribution": {
+    "id": "9f818743329190c0",
+    "landing_url": "https://www.flickr.com/photos/36881690@N07/4522838013",
+    "original_url": "https://farm1.staticflickr.com/4048/4522838013_acce3cf01f_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "frame.fusion",
+    "author_url": "https://www.flickr.com/people/36881690@N07/",
+    "title": "Flydeck of a superyacht with Jacuzzi",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "frame.fusion",
+    "url": "https://www.flickr.com/photos/36881690@N07",
+    "image": "https://live.staticflickr.com/3400/buddyicons/36881690@N07.jpg?1239711066#36881690@N07"
+  },
+  "current_title": "Flydeck of a superyacht with Jacuzzi",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "frame.fusion",
+        "url": "https://www.flickr.com/photos/36881690@N07",
+        "image": "https://live.staticflickr.com/3400/buddyicons/36881690@N07.jpg?1239711066#36881690@N07"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/36881690@N07/4522838013",
+  "canonical_page_url": "https://www.flickr.com/photos/36881690@N07/4522838013",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "22b2d62b94e70bfcee5afd4d2155ba76169d710f7a650b5a16156d8e5aa1e48f",
+  "source_gzip_sha256": "ed45e5759b8588456b0452cd4a1510b1fbab1e85c936cb7318c97c2d542c1a01",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-261",
+  "visual_proof_sha256": "c67209f7119f01910864c1281cd78763db6657f81776ddf02761d35c4eb313bf",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

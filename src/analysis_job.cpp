@@ -19,6 +19,7 @@ void AnalysisJob::start(const std::filesystem::path& database,RunConfiguration c
             try {
                 const auto source_stamp=file_stamp(configuration.source),model_stamp=file_stamp(configuration.detector.model);
                 MediaReader reader(configuration.source,stop);
+                if(stop.stop_requested())throw std::runtime_error("Analysis cancelled before opening detector");
                 Detector detector(configuration.detector);
                 FrameTracker tracker(configuration.tracking);
                 if(stop.stop_requested())throw std::runtime_error("Analysis cancelled before creating output");
@@ -37,7 +38,9 @@ void AnalysisJob::start(const std::filesystem::path& database,RunConfiguration c
                     store->record_frame(*frame,tracking.events,
                         configuration.kind==RunKind::appearances ? std::span<const TrackedObject>(tracking.objects) : std::span<const TrackedObject>{});
                     const auto now=std::chrono::steady_clock::now();
-                    std::lock_guard lock(mutex_);++progress_.frames;progress_.events+=tracking.events.size();progress_.timestamp=frame->timestamp;
+                    std::lock_guard lock(mutex_);
+                    if(!progress_.frames)progress_.first_timestamp=frame->timestamp;
+                    ++progress_.frames;progress_.events+=tracking.events.size();progress_.timestamp=frame->timestamp;
                     if(configuration.kind==RunKind::appearances) for(const auto& object:tracking.objects) {
                         progress_.appearances=std::max(progress_.appearances,object.id);
                         if(!observed_classes[object.detection.class_id]) {observed_classes[object.detection.class_id]=true;++progress_.classes;}

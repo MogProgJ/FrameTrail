@@ -1,0 +1,80 @@
+{
+  "image_id": "8e68b658ee40cbac",
+  "image_sha256": "637e9811199e271e8727a835b80b57418e9d2575016de18db81ad3264e62817f",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "8e68b658ee40cbac",
+    "image_sha256": "637e9811199e271e8727a835b80b57418e9d2575016de18db81ad3264e62817f",
+    "selected_category": "washing machine",
+    "selected_domain": "contrast",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/gillyberlin/2697997035",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/gillyberlin/2697997035",
+      "original_url": "https://c5.staticflickr.com/4/3066/2697997035_c2ca0b4b9b_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "GillyBerlin",
+      "author_url": "https://www.flickr.com/people/gillyberlin/",
+      "title": "Heimwerkern in der Küche",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "GillyBerlin",
+      "url": "https://www.flickr.com/photos/gillyberlin",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/92748110@N00.jpg?1659106345#92748110@N00"
+    },
+    "current_title": "Heimwerkern in der Küche",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "GillyBerlin",
+          "url": "https://www.flickr.com/photos/gillyberlin",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/92748110@N00.jpg?1659106345#92748110@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:92748110@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/gillyberlin/2697997035",
+    "html_sha256": "86c4bb096f94ee286c32e17da03fbde08e4b67c7529dae05ec75e294df8bf858",
+    "stored_sha256": "aac7a1cf40baa40c154b9b4d5a602953f3c54c54519ded3ee74c314489428d7a",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\8e68b658ee40cbac.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\8e68b658ee40cbac.html.gz",
+    "sha256": "aac7a1cf40baa40c154b9b4d5a602953f3c54c54519ded3ee74c314489428d7a"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

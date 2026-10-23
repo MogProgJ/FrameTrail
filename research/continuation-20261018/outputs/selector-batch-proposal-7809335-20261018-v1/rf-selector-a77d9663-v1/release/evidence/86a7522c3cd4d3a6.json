@@ -1,0 +1,64 @@
+{
+  "image_id": "86a7522c3cd4d3a6",
+  "image_sha256": "397451b50123700355a841b9c1f8469c4d67b4178ccc459d256af6d67c3b2f41",
+  "publisher_attribution": {
+    "id": "86a7522c3cd4d3a6",
+    "landing_url": "https://www.flickr.com/photos/coniecto/15977213728",
+    "original_url": "https://farm7.staticflickr.com/7543/15977213728_7861e06600_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Gabriela Avram",
+    "author_url": "https://www.flickr.com/people/coniecto/",
+    "title": "Wandering in Berlin 2",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Gabriela Avram",
+    "url": "https://www.flickr.com/photos/coniecto",
+    "image": "https://live.staticflickr.com/1031/buddyicons/99447964@N00.jpg?1241434665#99447964@N00"
+  },
+  "current_title": "Wandering in Berlin 2",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Gabriela Avram",
+        "url": "https://www.flickr.com/photos/coniecto",
+        "image": "https://live.staticflickr.com/1031/buddyicons/99447964@N00.jpg?1241434665#99447964@N00"
+      }
+    },
+    "meta_description": "                               "
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/coniecto/15977213728",
+  "canonical_page_url": "https://www.flickr.com/photos/coniecto/15977213728",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "6cf3aa598890513b1fb6741541d5cea7d6bae2f986c14201a8f60120b5b48cf3",
+  "source_gzip_sha256": "b6dc2cd7bf12591abf46929f77c61474c0d2ddf2a6e6c3c424d880cadf914fcf",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-273",
+  "visual_proof_sha256": "b7b9d544fbacd150230b3a76b3512faf6e9e1adce45e5425ff92fb39f28cd073",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

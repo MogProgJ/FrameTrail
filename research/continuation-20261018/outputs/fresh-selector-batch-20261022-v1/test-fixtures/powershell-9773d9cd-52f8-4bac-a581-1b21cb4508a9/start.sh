@@ -1,0 +1,1 @@
+literal sha256sum $1 0123456789

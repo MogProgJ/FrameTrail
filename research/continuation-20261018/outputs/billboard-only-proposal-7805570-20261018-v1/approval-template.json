@@ -1,0 +1,9 @@
+{
+  "approved": false,
+  "protocol_sha256": "716ca2cf411984698e6d096f00fd5ef01995bee9ed4fe0c82a742e26c4bc6e1c",
+  "scope": "one-billboard-row-negative-calibration-max3000-oneGPU-45minutes",
+  "active_classifier_rows": [
+    133
+  ],
+  "user_authorization_evidence": null
+}

@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "dd1074c4e1f58872",
+  "image_sha256": "8b81f5c369706c3f919ec90245b2d69f14b3d7e35fbac9c56b21e5a5939030b0",
+  "source_review": {
+    "image_id": "dd1074c4e1f58872",
+    "image_sha256": "8b81f5c369706c3f919ec90245b2d69f14b3d7e35fbac9c56b21e5a5939030b0",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/awnisalan/93186616/",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/awnisalan/93186616/",
+      "original_url": "https://farm3.staticflickr.com/16/93186616_0475e05d03_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "awnisALAN",
+      "author_url": "https://www.flickr.com/people/awnisalan/",
+      "title": "Seriously.",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "awnisALAN",
+      "url": "https://www.flickr.com/photos/awnisalan",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/33307631@N00.jpg?1724186070#33307631@N00"
+    },
+    "current_title": "Seriously.",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "awnisALAN",
+          "url": "https://www.flickr.com/photos/awnisalan",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/33307631@N00.jpg?1724186070#33307631@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:33307631@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/awnisalan/93186616",
+    "html_sha256": "202e17c938fb3dd8d6a53f835db21bdd3b367c49d3681a2687b22c7342499c36",
+    "stored_sha256": "1022e832e1ea2103c95d9d174ee92a7b23e297efecef2d3f94525fadea75a300",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\dd1074c4e1f58872.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\dd1074c4e1f58872.json",
+    "sha256": "ec6d4f9af12d9fcf21d2f8fbc7d0b4a17fe529bf543b00841d740be52856491c"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\dd1074c4e1f58872.json",
+    "sha256": "b67a500b82a16d267e396649b1b53b782cb73b6b7cca605e39e56d5239b7edbb"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/awnisalan/93186616/",
+    "original_url": "https://farm3.staticflickr.com/16/93186616_0475e05d03_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "awnisALAN",
+    "author_url": "https://www.flickr.com/people/awnisalan/",
+    "title": "Seriously.",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

@@ -1,0 +1,53 @@
+{
+  "image_id": "3d01928a39b59560",
+  "image_sha256": "4431e5a1653b88a25233df308ef9dcd2e9eefced2777d9103ef7d76dbbf40c6b",
+  "identity_group": "flickr-nsid:30800482@N04",
+  "scene_group": "scene:night-blue-krakchemia-adam-slodowy-service-campaign-billboard-photographed-from-below",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\3d01928a39b59560.json",
+    "sha256": "756099901cff31de891e51b4ca1ba939d6c224548a0ac0b9c5567d00f94b3677"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0,
+      0.4115,
+      1,
+      0.9036
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-batch-05.json",
+    "sha256": "1d2412bf566da605def22a66faf0a40b8e423848802ec9673e7d474ad1242b7e"
+  },
+  "content_decision": {
+    "id": "3d01928a39b59560",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0,
+        0.4115,
+        1,
+        0.9036
+      ]
+    ],
+    "note": "One physical Polish product/service billboard photographed obliquely at night; frame truncated at image sides. Refined visible face bounds; no additional boards.",
+    "scene_description": "Night blue Krakchemia Adam Slodowy service campaign billboard photographed from below"
+  },
+  "prospective_split": "train",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

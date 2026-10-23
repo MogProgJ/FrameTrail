@@ -1,0 +1,64 @@
+{
+  "image_id": "3e297d904f4c9970",
+  "image_sha256": "71b8c1050866aea104be729c00eec80550106d3d11388c4a3bfc99233527a612",
+  "publisher_attribution": {
+    "id": "3e297d904f4c9970",
+    "landing_url": "https://www.flickr.com/photos/vardolath/7021328533",
+    "original_url": "https://farm1.staticflickr.com/7183/7021328533_a6a092eb9e_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Carlos Gracia",
+    "author_url": "https://www.flickr.com/people/vardolath/",
+    "title": "Lamp",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Carlos Gracia",
+    "url": "https://www.flickr.com/photos/vardolath",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/56093324@N02.jpg?1576703570#56093324@N02"
+  },
+  "current_title": "Lamp",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Carlos Gracia",
+        "url": "https://www.flickr.com/photos/vardolath",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/56093324@N02.jpg?1576703570#56093324@N02"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/vardolath/7021328533",
+  "canonical_page_url": "https://www.flickr.com/photos/vardolath/7021328533",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "3257b980dc269b3efbc2e826b2eeaa32e0fcc388ddfac2c88a5b56830672c0e0",
+  "source_gzip_sha256": "f23e1de6c4736ad1a150e29a321649566b6f09c91de74b9dd02976a341a3716a",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-272",
+  "visual_proof_sha256": "8630ae48f39581c9426013751675cd6e6539aaf8a6d3daf15ef45d16dcace2e5",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

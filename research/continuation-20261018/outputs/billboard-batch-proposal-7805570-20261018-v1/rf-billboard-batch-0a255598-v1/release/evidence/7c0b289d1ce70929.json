@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "7c0b289d1ce70929",
+  "image_sha256": "57c7e029db7d13da08178c568b0ce2d02dffe90427307def087299d0d04b641b",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "7c0b289d1ce70929",
+    "image_sha256": "57c7e029db7d13da08178c568b0ce2d02dffe90427307def087299d0d04b641b",
+    "selected_category": "door handle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/103050471@N02/11129313893",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/103050471@N02/11129313893",
+      "original_url": "https://c2.staticflickr.com/6/5538/11129313893_fa60226dd5_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Marie Buyens",
+      "author_url": "https://www.flickr.com/people/103050471@N02/",
+      "title": "Photomarathon 5 - Obsessions",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Marie Buyens",
+      "url": "https://www.flickr.com/photos/103050471@N02",
+      "image": "https://live.staticflickr.com/5533/buddyicons/103050471@N02.jpg?1386260172#103050471@N02"
+    },
+    "current_title": "Photomarathon 5 - Obsessions",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Marie Buyens",
+          "url": "https://www.flickr.com/photos/103050471@N02",
+          "image": "https://live.staticflickr.com/5533/buddyicons/103050471@N02.jpg?1386260172#103050471@N02"
+        }
+      },
+      "meta_description": "\"Did I lock the door? Did I really lock it? Let me check again, just to be sure.... Did I lock the door?\""
+    },
+    "identity_group": "flickr-nsid:103050471@N02",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/103050471@N02/11129313893",
+    "html_sha256": "d789967b21e65bd0cdb8f3fe19453890291cc447775eb7f5000ed32f4885f230",
+    "stored_sha256": "c5f7f557a0478e89b0f46f0fefcdd7a1466a29e38e4704843948b2dad1863f30",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\7c0b289d1ce70929.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/7c0b289d1ce70929.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

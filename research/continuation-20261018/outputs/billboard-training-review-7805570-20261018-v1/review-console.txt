@@ -1,0 +1,20 @@
+[2026-10-18 15:48:07] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-18 15:48:07] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 15:48:07] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 15:48:10] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+selected-100 positive d8fff472678899cf
+selected-100 positive 4ee1c6ca28a1bdb8
+selected-100 positive a92833d5a82934db
+selected-100 positive 9382cfa97e1581e0
+selected-100 explicit-negative c8031cf68377fc7c
+selected-100 explicit-negative ce1ed62305439430
+selected-100 explicit-negative 27c8a391f7be1541
+selected-100 explicit-negative 48cb108620747608
+rejected-last-2000 positive d8fff472678899cf
+rejected-last-2000 positive 4ee1c6ca28a1bdb8
+rejected-last-2000 positive a92833d5a82934db
+rejected-last-2000 positive 9382cfa97e1581e0
+rejected-last-2000 explicit-negative c8031cf68377fc7c
+rejected-last-2000 explicit-negative ce1ed62305439430
+rejected-last-2000 explicit-negative 27c8a391f7be1541
+rejected-last-2000 explicit-negative 48cb108620747608

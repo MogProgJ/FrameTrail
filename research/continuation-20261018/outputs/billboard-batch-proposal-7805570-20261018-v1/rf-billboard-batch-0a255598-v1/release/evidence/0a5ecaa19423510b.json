@@ -1,0 +1,63 @@
+{
+  "photo": 21,
+  "image_id": "0a5ecaa19423510b",
+  "publisher_attribution": {
+    "id": "0a5ecaa19423510b",
+    "landing_url": "https://www.flickr.com/photos/farehamwine/18360778113",
+    "original_url": "https://c4.staticflickr.com/1/478/18360778113_2731cf3e26_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Dominic Lockyer",
+    "author_url": "https://www.flickr.com/people/farehamwine/",
+    "title": "2015-06-16 23.51.10",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Dominic Lockyer",
+    "url": "https://www.flickr.com/photos/farehamwine",
+    "image": "https://live.staticflickr.com/2635/buddyicons/62243473@N05.jpg?1306859494#62243473@N05"
+  },
+  "current_title": "2015-06-16 23.51.10",
+  "source_url": "https://www.flickr.com/photos/farehamwine/18360778113",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 21,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "Dominic Lockyer",
+      "url": "https://www.flickr.com/photos/farehamwine",
+      "image": "https://live.staticflickr.com/2635/buddyicons/62243473@N05.jpg?1306859494#62243473@N05"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Dominic Lockyer",
+      "url": "https://www.flickr.com/photos/farehamwine",
+      "image": "https://live.staticflickr.com/2635/buddyicons/62243473@N05.jpg?1306859494#62243473@N05"
+    },
+    "meta_description": ""
+  },
+  "creator_override": null,
+  "image_sha256": "003d56000514df7982de2ec3f6d1e4821eff36d12e47fca80c4bc3d1520a0ad4",
+  "source_page_sha256": "adba8bf1d70283ab475def71a1bcebfbfa156319a1965e9ac62c80894ce2aa35",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "0e29f1bfbc7097d7fb48f724c97b90b87f536fa696ff4f14d81983ee2c22b539",
+  "source_job": 7626978,
+  "scope_note": "Two forks, clipped plate, olive bowl and single flowerpot have clear individual boundaries. Two wine-glass fragments retained as positive-only. Knife/spoon ambiguity, food granularity, plant edge and napkin/Paper towel are held.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

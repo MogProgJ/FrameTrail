@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "55c521871211b010",
+  "image_sha256": "c8406e4089d2eebf212d33ecf710e8cc1ceb02cd1c5f3b366415c30a40396f0d",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "55c521871211b010",
+    "image_sha256": "c8406e4089d2eebf212d33ecf710e8cc1ceb02cd1c5f3b366415c30a40396f0d",
+    "selected_category": "cat",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/barbaradoduk/3391016179",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/barbaradoduk/3391016179",
+      "original_url": "https://farm1.staticflickr.com/3553/3391016179_8876e9b1cf_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Barbara Doduk",
+      "author_url": "https://www.flickr.com/people/barbaradoduk/",
+      "title": "27/03/2009 5:28 PM: TREATS!",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Barbara Doduk",
+      "url": "https://www.flickr.com/photos/barbaradoduk",
+      "image": "https://live.staticflickr.com/47/buddyicons/12986979@N00.jpg?1178163728#12986979@N00"
+    },
+    "current_title": "27/03/2009 5:28 PM: TREATS!",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Barbara Doduk",
+          "url": "https://www.flickr.com/photos/barbaradoduk",
+          "image": "https://live.staticflickr.com/47/buddyicons/12986979@N00.jpg?1178163728#12986979@N00"
+        }
+      },
+      "meta_description": "In front courtyard, giving treats to the cats.\n\t\n\t<a href=\"http://www.rapsociety.com/catsanctuary\" rel=\"noreferrer nofollow\">www.rapsociety.com/catsanctuary</a>"
+    },
+    "identity_group": "flickr-nsid:12986979@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/barbaradoduk/3391016179",
+    "html_sha256": "ddabf665535442a26864db14e694c6549adbda150c0d660d8bf7a097b0ef7c66",
+    "stored_sha256": "d53b749bce42c1af5875ffb67d51f4420c9abb79ac26ca9e3e1d00520c7f431d",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\55c521871211b010.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/55c521871211b010.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

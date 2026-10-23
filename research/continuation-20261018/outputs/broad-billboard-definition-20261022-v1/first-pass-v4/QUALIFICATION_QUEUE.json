@@ -1,0 +1,343 @@
+{
+  "unknown_validation_display_or_boundary_followups": [
+    {
+      "image_id": "00320a4009f3dcd1",
+      "original_viewed": true,
+      "note": "Visible property advertisement on rear building; empty foreground billboard framework excluded. Needs new complete target annotation.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "058f5d1672575fd1",
+      "original_viewed": true,
+      "note": "Taxi rank with small payment/service markings and construction artwork; small taxi panels require scope/unit review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "0ba81a6e68d0c122",
+      "original_viewed": true,
+      "note": "Restaurant interior, decorative sculpture and small tabletop menu/service cards; retail-card boundary review needed.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "0ca79618fd149cef",
+      "original_viewed": true,
+      "note": "Post office counter with service-price/menu panels and leaflet holders; dedicated service-board extent needs annotation review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "11e19062bddee3e4",
+      "original_viewed": true,
+      "note": "Conference corridor with wall-applied slogan and room-direction/info fixtures; no separate clear ad panel, small distant faces unresolved.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "15e8210bd3027289",
+      "original_viewed": true,
+      "note": "Laundry shop price lists and machine-capacity instructions; price-list/service-offer boundary needs annotation review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "30772ab8300b3373",
+      "original_viewed": true,
+      "note": "Domestic kitchen with framed political/civic campaign poster; campaign-versus-private-decoration function needs scope/box review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "38da0b3d016d8607",
+      "original_viewed": true,
+      "note": "Fire hydrant and storefront window with illuminated OUVERT business-status display; dedicated display unit needs box review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "5735979330751187",
+      "original_viewed": true,
+      "note": "Window with alarm-company equipment plaque and lower display case with apparent promotional leaflets; mixed small-display units need review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "581c3ad380cdda47",
+      "original_viewed": true,
+      "note": "Street with horse carriage and Boutique du Parvis entrance lettering on lintel; dedicated-panel versus facade lettering boundary needs review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "5e7a5e5bc66b385c",
+      "original_viewed": true,
+      "note": "Foggy street: cropped advertising panel at left and large building electronic face/identity lettering require annotation and function QA.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "767a795580355bb3",
+      "original_viewed": true,
+      "note": "Furniture store with green window price/product promotional panels; dedicated display faces need new annotation.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "784cbb5bef87fa5e",
+      "original_viewed": true,
+      "note": "Street with EA and GSM Mobile physical shop identity panels and window promotion panels; multiple new targets need complete boxes.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "87124b264970d627",
+      "original_viewed": true,
+      "note": "Hotel with bare facade letters, small plaques and separate pub identity panel on right; dedicated panel needs annotation; facade letters not automatically a billboard.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "8cef1306583217e2",
+      "original_viewed": true,
+      "note": "Public telephone with equipment identity/instructions/phone-rate stickers; small equipment-integrated service labels need boundary QA.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "8e18b1ffb95ae971",
+      "original_viewed": true,
+      "note": "Lounge furniture and decorative photographs; small tabletop tent cards need retail-card boundary review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "95fc279e6ab4f289",
+      "original_viewed": true,
+      "note": "Urban street, transit vehicles, clock monument and cropped facade letters; small distant shop/vehicle faces need review before completeness.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "95ffb1dd18fae849",
+      "original_viewed": true,
+      "note": "Taxi rank with building-mounted food/service promotional panel at upper left; new target annotation needed.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "9b4fbfc458b2bf22",
+      "original_viewed": true,
+      "note": "Clothing-donation container with large charity identity/appeal top board and integrated artwork; independent top board versus equipment-face unit needs review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "a8da8bb5126360fb",
+      "original_viewed": true,
+      "note": "Cars at garage with cropped physical service-name fascia and possible indoor promotional faces; completeness/boxes need review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "ac49abf832a3e17d",
+      "original_viewed": true,
+      "note": "Urban street with freestanding tourist/advertising information kiosk at lower left; display function and faces need annotation review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "aed73799e58d18a9",
+      "original_viewed": true,
+      "note": "Protest message on umbrella and bag; campaign-on-object versus dedicated display unit boundary unresolved.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "c137729770ff24fa",
+      "original_viewed": true,
+      "note": "Vehicle shell on truck with Same day delivery service text on side; vehicle-integrated versus separate service-panel unit needs review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "c5daf51ea9fb3442",
+      "original_viewed": true,
+      "note": "Appliance shop with brand advertising fascia and freestanding store/product promotional strips; multiple dedicated faces need annotation review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "c96c1766584ad2ce",
+      "original_viewed": true,
+      "note": "TJ Hughes store with clear window reopening campaign poster and shop fascia; new complete target annotation needed.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "cffdb86a52363a3d",
+      "original_viewed": true,
+      "note": "Street food/service advertising banner and additional construction/venue message panels; multiple new targets need complete annotation, orange traffic direction sign excluded.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "dc9cddc9719c580f",
+      "original_viewed": true,
+      "note": "Leopold Cafe frontage with clear home-delivery campaign panel, neighboring identity panels and main fascia; complete new target annotation needed.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "e03fe5a2690d8c98",
+      "original_viewed": true,
+      "note": "Munich and Ivo & Co physical shop identity panels; several new targets need complete boxes.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "e37f74d1e93cdb0f",
+      "original_viewed": true,
+      "note": "Dogs on street with pole-mounted credit/service promotional flyer and other paper notices; small-print display boundary needs review.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "e7288ed46470fc08",
+      "original_viewed": true,
+      "note": "Commercial Japanese lantern with restaurant/service lettering; nonplanar sign versus board-unit boundary unresolved.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "fb540270ae36a989",
+      "original_viewed": true,
+      "note": "Motorcycle gathering with tall promotional/event fabric flag at left; dedicated banner unit needs annotation.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    },
+    {
+      "image_id": "ffc3d3a817840cbd",
+      "original_viewed": true,
+      "note": "Restaurant interior with decorative window lettering/map and menus on table; panel/function boundary review needed.",
+      "display_or_boundary_followup": true,
+      "draft_scope_133": "unknown",
+      "reason": "Legacy unknown scope retained pending separate complete annotation/guard qualification; this first-pass visual review never creates negative supervision.",
+      "independent_human_review": false
+    }
+  ],
+  "unknown_validation_retained": 119,
+  "unknown_as_background": false,
+  "reviewed_draft_holds": [
+    "562d7492978db1be",
+    "92acfd217c54a6c1",
+    "a39dda42b11a5c4c",
+    "b9baad45d76338a0",
+    "c112d5d0c11204c2",
+    "db5023702de03984",
+    "eecb0152c21db860",
+    "2d9a83c18fe991c8",
+    "013037fd8c0daf0a",
+    "7f2be8ccfdf33465",
+    "867a012fafb5766c",
+    "88ced829147507c7",
+    "89f3b4db87857c8d",
+    "8d5986ae877b7be4",
+    "995211dda562c920",
+    "a92833d5a82934db",
+    "c310febc40974a94",
+    "c8bb3241ac57b9e2",
+    "dc2a7c32db059a9e",
+    "ee4b59dc616c21ad",
+    "5ce07497741762d6",
+    "a4dd3353126f93b4",
+    "0d61873b3bb7ce16",
+    "0e2c4f604dcf1f34",
+    "424bc7dbb0f8677d",
+    "8f038763ea453eef",
+    "ef21856ee7f7a136",
+    "243ebb245142e014",
+    "983d7d4d44387095",
+    "df0023910b6759e6"
+  ],
+  "inherited_target_conflicts": [
+    {
+      "image_id": "88ced829147507c7",
+      "retained_target_index": 1,
+      "retained_normalized_cxcywh": [
+        0.1366665,
+        0.509375,
+        0.273333,
+        0.06000000000000005
+      ],
+      "finding": "Inherited class133 target encloses 7 Av street-name sign, which conflicts with explicit operational-wayfinding exclusion in both narrow and broad working rules.",
+      "action": "Hold inherited target from any future training/scoring release. Preserve old source target and old results; remove/correct only in a future versioned truth overlay with an exact exclusion receipt.",
+      "production_change": false
+    }
+  ],
+  "all_first_pass_originals_viewed": 323,
+  "approved_for_training": false
+}

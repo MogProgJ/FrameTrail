@@ -1,0 +1,63 @@
+{
+  "photo": 32,
+  "image_id": "e03fe5a2690d8c98",
+  "publisher_attribution": {
+    "id": "e03fe5a2690d8c98",
+    "landing_url": "https://www.flickr.com/photos/oh-barcelona/6833066928",
+    "original_url": "https://c1.staticflickr.com/8/7208/6833066928_bfc05c6ce9_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Oh-Barcelona.com",
+    "author_url": "https://www.flickr.com/people/oh-barcelona/",
+    "title": "Born shops",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Oh-Barcelona.com",
+    "url": "https://www.flickr.com/photos/oh-barcelona",
+    "image": "https://live.staticflickr.com/4055/buddyicons/33831399@N04.jpg?1324561105#33831399@N04"
+  },
+  "current_title": "Born shops",
+  "source_url": "https://www.flickr.com/photos/oh-barcelona/6833066928",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 32,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "Oh-Barcelona.com",
+      "url": "https://www.flickr.com/photos/oh-barcelona",
+      "image": "https://live.staticflickr.com/4055/buddyicons/33831399@N04.jpg?1324561105#33831399@N04"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Oh-Barcelona.com",
+      "url": "https://www.flickr.com/photos/oh-barcelona",
+      "image": "https://live.staticflickr.com/4055/buddyicons/33831399@N04.jpg?1324561105#33831399@N04"
+    },
+    "meta_description": ""
+  },
+  "creator_override": null,
+  "image_sha256": "80e5796b971c97c4ad68371e8109d62c98144c62082700b34766b98cbb29e29e",
+  "source_page_sha256": "a4e514632f3007a14c20f34bde3b4514592b7235b3ad3dc0abf157e3052b185b",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "89df09c3750070d3534a77b9474afdc6a66b1b98e9569270e72dcfdd25dfbc3c",
+  "source_job": 7626978,
+  "scope_note": "One clipped building facade, three distinct upper windows and two balcony chairs retained. Window is partial because the left French-door/window representation is unresolved. Doors, multi-plant group and houseplant extent held.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

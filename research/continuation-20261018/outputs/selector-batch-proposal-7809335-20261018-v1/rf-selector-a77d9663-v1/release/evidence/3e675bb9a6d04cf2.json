@@ -1,0 +1,64 @@
+{
+  "image_id": "3e675bb9a6d04cf2",
+  "image_sha256": "f4ee55a61c9ee71542933dd7f4d280d75679349d2f1f68722a9644b72bacb091",
+  "publisher_attribution": {
+    "id": "3e675bb9a6d04cf2",
+    "landing_url": "https://www.flickr.com/photos/dmje/3367785790",
+    "original_url": "https://farm3.staticflickr.com/3588/3367785790_e3ec65bae2_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Mike",
+    "author_url": "https://www.flickr.com/people/dmje/",
+    "title": "The output!",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Mike",
+    "url": "https://www.flickr.com/photos/dmje",
+    "image": "https://live.staticflickr.com/23/buddyicons/48411273@N00.jpg?1239725044#48411273@N00"
+  },
+  "current_title": "The output!",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Mike",
+        "url": "https://www.flickr.com/photos/dmje",
+        "image": "https://live.staticflickr.com/23/buddyicons/48411273@N00.jpg?1239725044#48411273@N00"
+      }
+    },
+    "meta_description": "Some printed output from my microprinter. iPhone for scale ;-)"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/dmje/3367785790",
+  "canonical_page_url": "https://www.flickr.com/photos/dmje/3367785790",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "a9fcd2016b346cc7c7bb530add88ee0aa3566bec6d4dbe9368431f5326390d1b",
+  "source_gzip_sha256": "f19c6b9469dfd52470e3de53efa7887bebda2ad08dfcd6410fef9ac4fe3bb772",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-036",
+  "visual_proof_sha256": "36d76b6c95e7069a972a6e95524cce37bec217cd9a4e2de2864b348bd72b21ad",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

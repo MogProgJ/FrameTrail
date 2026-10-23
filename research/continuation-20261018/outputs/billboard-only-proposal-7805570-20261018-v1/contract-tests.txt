@@ -1,0 +1,10 @@
+test_current_baseline_retains_original (test_contract.ProposalContracts.test_current_baseline_retains_original) ... ok
+test_new_job_approval_is_absent_and_required (test_contract.ProposalContracts.test_new_job_approval_is_absent_and_required) ... ok
+test_schedule_has_3000_training_only_four_photo_batches (test_contract.ProposalContracts.test_schedule_has_3000_training_only_four_photo_batches) ... ok
+test_stop_at_1500_only_without_gain (test_contract.ProposalContracts.test_stop_at_1500_only_without_gain) ... ok
+test_synthetic_optimizer_changes_only_billboard_row (test_contract.ProposalContracts.test_synthetic_optimizer_changes_only_billboard_row) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 12.356s
+
+OK

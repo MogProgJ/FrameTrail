@@ -1,0 +1,72 @@
+{
+  "stage": "whole-original-negative-content-review-before-predictions",
+  "approved_for_training": false,
+  "scene_comparison_complete": false,
+  "model_predictions_seen": false,
+  "records": [
+    {
+      "id": "1ed09b82d0a8370d",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows domestic laundry appliance and clothing; manufacturer/control labels are not campaign panels.",
+      "scene_description": "White Frigidaire laundry appliance with bright clothes"
+    },
+    {
+      "id": "64f48726c64d158b",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows domestic kitchen, cabinets and washing machine; no advertising campaign.",
+      "scene_description": "Green tile cream cabinet kitchen with front-loading washer"
+    },
+    {
+      "id": "2de30a20ca6e53b5",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows top-loading appliance and window; control/instruction labels are not advertising.",
+      "scene_description": "Top loading Japanese control appliance beside lace-curtained window"
+    },
+    {
+      "id": "28b10d0cab704513",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows domestic washing machine and child; retail bag/packaging remains other-class unknown, no advertising board.",
+      "scene_description": "Child beside open front-loader in domestic utility space"
+    },
+    {
+      "id": "380aab08547bb9d7",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original is sink disposal hardware, misnamed by publisher washer anchor; no campaign. Do not create washer ground truth.",
+      "scene_description": "In Sink Erator disposal close-up"
+    },
+    {
+      "id": "1cfc8fd2934d4d5f",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows ship/industrial laundry room and worker; no campaign faces.",
+      "scene_description": "Amazon shipboard laundry machines with worker"
+    },
+    {
+      "id": "562d7492978db1be",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows laundrette machines and Coke-branded appliance surface. Permanent object branding/control instructions are not separate installed advertising panels; no campaign board.",
+      "scene_description": "Row of laundrette machines beside Coke branded appliance side"
+    },
+    {
+      "id": "605daeae27237af9",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows domestic dishwasher controls/counter; no campaign. Other appliance class remains unknown.",
+      "scene_description": "Carlton dishwasher control under kitchen counter"
+    }
+  ]
+}

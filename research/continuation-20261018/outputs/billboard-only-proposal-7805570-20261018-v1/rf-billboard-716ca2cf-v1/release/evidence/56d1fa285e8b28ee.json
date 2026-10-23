@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "56d1fa285e8b28ee",
+  "image_sha256": "b431ad78af51e7a53d6be3f72b5fe7bbfd77006a9e9e1bee3a89f72f03c97d3a",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "56d1fa285e8b28ee",
+    "image_sha256": "b431ad78af51e7a53d6be3f72b5fe7bbfd77006a9e9e1bee3a89f72f03c97d3a",
+    "selected_category": "taxi",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/pennuja/14455538993",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/pennuja/14455538993",
+      "original_url": "https://c7.staticflickr.com/6/5512/14455538993_e1526b2fd7_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Jim Pennucci",
+      "author_url": "https://www.flickr.com/people/pennuja/",
+      "title": "Collecting",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Jim Pennucci",
+      "url": "https://www.flickr.com/photos/pennuja",
+      "image": "https://live.staticflickr.com/7363/buddyicons/22749993@N08.jpg?1394031144#22749993@N08"
+    },
+    "current_title": "Collecting",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Jim Pennucci",
+          "url": "https://www.flickr.com/photos/pennuja",
+          "image": "https://live.staticflickr.com/7363/buddyicons/22749993@N08.jpg?1394031144#22749993@N08"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:22749993@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/pennuja/14455538993",
+    "html_sha256": "0b7077be21801ca002d1f578864e5cd125cf7465720b089fea803f91894bcd57",
+    "stored_sha256": "14241d409e0285e5de854d3117abd0b33e1623a92909e95c308a82415aa779f5",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\56d1fa285e8b28ee.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/56d1fa285e8b28ee.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

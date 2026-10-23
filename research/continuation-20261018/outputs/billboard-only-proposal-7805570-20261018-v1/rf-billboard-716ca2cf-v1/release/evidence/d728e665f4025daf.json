@@ -1,0 +1,64 @@
+{
+  "image_id": "d728e665f4025daf",
+  "image_sha256": "a4ef169b3e489f4de742adbebcd5bd1ef28e11f864474a442d8dc9721b4baca6",
+  "publisher_attribution": {
+    "id": "d728e665f4025daf",
+    "landing_url": "https://www.flickr.com/photos/-jocelyn-/5093912153",
+    "original_url": "https://c8.staticflickr.com/5/4128/5093912153_068b4b8d3f_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": ".jocelyn.",
+    "author_url": "https://www.flickr.com/people/-jocelyn-/",
+    "title": "Objects in mirror....",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": ".jocelyn.",
+    "url": "https://www.flickr.com/photos/-jocelyn-",
+    "image": "https://live.staticflickr.com/3249/buddyicons/27302421@N04.jpg?1232584227#27302421@N04"
+  },
+  "current_title": "Objects in mirror....",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": ".jocelyn.",
+        "url": "https://www.flickr.com/photos/-jocelyn-",
+        "image": "https://live.staticflickr.com/3249/buddyicons/27302421@N04.jpg?1232584227#27302421@N04"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/-jocelyn-/5093912153",
+  "canonical_page_url": "https://www.flickr.com/photos/-jocelyn-/5093912153",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "d950b21733e9c28b84004d1c6d1b65cd14b725dd1bacb552d65a07a8831b1ebc",
+  "source_gzip_sha256": "72377e3e7a80f73f91e4901a50c967aefedba97389282caf5b1358e7416abf35",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-016",
+  "visual_proof_sha256": "c8b11cb8b5be3a45fa06e2165fb27fc3c3fe5b20dbe133d9da089faed15197b4",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

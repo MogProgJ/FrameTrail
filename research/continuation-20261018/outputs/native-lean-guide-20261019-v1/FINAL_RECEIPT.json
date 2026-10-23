@@ -1,0 +1,112 @@
+{
+  "status": "lean-core-and-local-guide-packaged-and-verified",
+  "date": "2026-10-19",
+  "package": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-lean-guide-20261019-v1",
+  "launcher": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\Run-FrameTrail.cmd",
+  "application_sha256": "b004b8b167f93e14b00a2d6d1be9ad9f2c89550ec81566c20786195c2968098d",
+  "features": [
+    "Embedded searchable Quick Guide, Ctrl+K/F1",
+    "Object-category lookup with explicit model selection",
+    "Existing single-window sections/state preserved",
+    "Slower main-preview polling while idle; fast active polling retained"
+  ],
+  "package_sizes": {
+    "previous_app_bytes": 731418828,
+    "core_app_bytes": 386138634,
+    "optional_models_bytes": 344952714,
+    "core_reduction_bytes": 345280194,
+    "core_reduction_percent": 47.206905371049594,
+    "total_core_plus_optional_bytes": 731091348,
+    "limits": "Optional model bytes still exist outside app. This reduces the core distribution, not total storage when all packs/history are retained. No inference speed or working-memory reduction is claimed."
+  },
+  "core_archive": {
+    "archive": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-lean-guide-20261019-v1\\FrameTrail-core.zip",
+    "bytes": 227065172,
+    "sha256": "4c06913498f2159e83424de469305e7bc6ac61b3663fd4158b78e7ba7acac4cc",
+    "members": 25,
+    "readback_hashes_verified": true,
+    "optional_models_included": false,
+    "models": 4
+  },
+  "default_model": "YOLOX-S",
+  "core_model_label_union": 615,
+  "optional_models": [
+    "rfdetr_balanced7805570_step100.onnx",
+    "rfdetr_scale7758628.onnx",
+    "yolo_world_m.onnx"
+  ],
+  "all_seven_weights_unchanged": true,
+  "inference_and_core_sources_unchanged": true,
+  "existing_regression_checks_passed": 13,
+  "checks": [
+    {
+      "name": "regression-final",
+      "exit_code": 0,
+      "wall_seconds": 20.656302700001106
+    },
+    {
+      "name": "guide-verified",
+      "exit_code": 0,
+      "wall_seconds": 1.5913991000015812
+    },
+    {
+      "name": "guide-verified-scale125",
+      "exit_code": 0,
+      "wall_seconds": 1.6100506000002497
+    },
+    {
+      "name": "unified-final",
+      "exit_code": 0,
+      "wall_seconds": 4.7449295000005804
+    },
+    {
+      "name": "unified-scale125",
+      "exit_code": 0,
+      "wall_seconds": 5.193173600000591
+    },
+    {
+      "name": "full-cache-balanced",
+      "exit_code": 0,
+      "wall_seconds": 13.824865000002319
+    },
+    {
+      "name": "packaged-standard",
+      "exit_code": 0,
+      "wall_seconds": 1.5643263000019942
+    },
+    {
+      "name": "packaged-balanced",
+      "exit_code": 0,
+      "wall_seconds": 1.7389293000014732
+    },
+    {
+      "name": "packaged-core-without-optional",
+      "exit_code": 0,
+      "wall_seconds": 0.6889159999991534
+    }
+  ],
+  "guide_main_idle_polls_observed_per_second": 9,
+  "previous_main_polling_interval_ms": 10,
+  "new_idle_main_interval_ms": 100,
+  "active_main_interval_ms": 10,
+  "inference_speedup_claimed": false,
+  "working_memory_reduction_claimed": false,
+  "production_adoption": false,
+  "RF_ONNX_numerical_hold": true,
+  "RF_checkpoint": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "new_cluster_jobs": 0,
+  "cluster_contact": false,
+  "training_status": "Fresh reviewed collection remains unavailable/unconfirmed during KIT outage; strategy unchanged, no duplicate job.",
+  "verification_limits": [
+    "Qt offscreen and simulated 125% scale, not physical display/screen-reader certification",
+    "Camera entered only while off; no live camera hardware test",
+    "Full core plus optional models uses approximately the former total bytes; research history is preserved",
+    "Label availability is not measured accuracy for every object type",
+    "Only main-preview polling cadence changed; other section timers are unchanged"
+  ],
+  "environment_findings": [
+    "Default sandbox TEMP denied creation of analysis database; full suite passed with a writable local TEMP/TMP",
+    "Earlier overlapping build/test caused an executable lock; subsequent checks ran only after builds completed",
+    "Parallel runtime-copy conflict resolved by serialized final build; native source/runtime behaviour unchanged"
+  ]
+}

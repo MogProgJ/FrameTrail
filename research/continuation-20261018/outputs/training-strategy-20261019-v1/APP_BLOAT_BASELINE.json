@@ -1,0 +1,87 @@
+{
+  "priority": "secondary; no app deletions or feature edits in this strategy pass",
+  "total_bytes": 731418828,
+  "model_bytes": 481562612,
+  "file_count": 26,
+  "model_files": [
+    {
+      "file": "models\\rfdetr_balanced7805570_step100.onnx",
+      "bytes": 115536331
+    },
+    {
+      "file": "models\\rfdetr_scale7758628.onnx",
+      "bytes": 115536332
+    },
+    {
+      "file": "models\\yolox_nano.onnx",
+      "bytes": 3659407
+    },
+    {
+      "file": "models\\yolox_s.onnx",
+      "bytes": 35858002
+    },
+    {
+      "file": "models\\yolo_openimages.onnx",
+      "bytes": 45663825
+    },
+    {
+      "file": "models\\yolo_world_m.onnx",
+      "bytes": 113880051
+    },
+    {
+      "file": "models\\yolo_world_s.onnx",
+      "bytes": 51428664
+    }
+  ],
+  "largest_non_model_files": [
+    {
+      "file": "avcodec-62.dll",
+      "bytes": 90992128
+    },
+    {
+      "file": "avfilter-11.dll",
+      "bytes": 31212544
+    },
+    {
+      "file": "avformat-62.dll",
+      "bytes": 22722560
+    },
+    {
+      "file": "backends\\directml\\DirectML.dll",
+      "bytes": 18527776
+    },
+    {
+      "file": "backends\\directml\\onnxruntime.dll",
+      "bytes": 17328152
+    },
+    {
+      "file": "onnxruntime.dll",
+      "bytes": 16462648
+    },
+    {
+      "file": "swscale-9.dll",
+      "bytes": 12900864
+    },
+    {
+      "file": "Qt6Core.dll",
+      "bytes": 10370872
+    },
+    {
+      "file": "Qt6Gui.dll",
+      "bytes": 9576248
+    },
+    {
+      "file": "Qt6Widgets.dll",
+      "bytes": 6501176
+    },
+    {
+      "file": "avdevice-62.dll",
+      "bytes": 4947456
+    },
+    {
+      "file": "avutil-60.dll",
+      "bytes": 3014144
+    }
+  ],
+  "recommended_next_app_scope": "Audit the minimum model set needed for actual project categories before any deletion; default YOLOX-S alone is not established as sufficient for billboard/washer coverage. Build a reversible lean CPU package with optional models/backends, preserving research evidence. Measure size, launch/memory and workflows separately; smaller distribution is not an inference speed claim. Add a small local guide/section jump without a new runtime dependency."
+}

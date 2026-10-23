@@ -1,0 +1,613 @@
+{
+  "schema": 1,
+  "purpose": "scoped-pilot-baseline-or-candidate-comparison",
+  "reference_sha256": "d5e4fc4b32536d382ab284afd88671b9e9e5f64811372c50727c0b0851e87110",
+  "identity": {
+    "role": "continuation_baseline",
+    "checkpoint_sha256": "d280723323b4ae8b07f1631667f2d87a9744c3398a06cc94e71dcef04fae2a02",
+    "evaluation_lock_sha256": "362e49cb9001e9a06795c59aafc7df0d6a26700ddaf8f592ef7431251fdcfa10",
+    "backend": "PyTorchCPU/FP32/math-attention"
+  },
+  "aggregate": {
+    "complete_tp": 4,
+    "complete_fp": 0,
+    "complete_fn": 5,
+    "complete_precision": 1.0,
+    "complete_recall": 0.4444444444444444,
+    "partial_positive_hits": 5,
+    "partial_positive_misses": 1,
+    "partial_known_positive_recall": 0.8333333333333334,
+    "unscored_predictions": 48
+  },
+  "by_sequence": {
+    "flickr-nsid:12505664@N00": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 1,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 19
+    },
+    "flickr-nsid:27963141@N00": {
+      "complete_tp": 1,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": 1.0,
+      "complete_recall": 0.3333333333333333,
+      "partial_positive_hits": 1,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 1
+    },
+    "flickr-nsid:36910487@N07": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 1,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 6
+    },
+    "flickr-nsid:43145783@N00": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 2,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 6
+    },
+    "flickr-nsid:47439717@N05": {
+      "complete_tp": 1,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "flickr-nsid:51792270@N03": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 1,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 1
+    },
+    "flickr-nsid:68982768@N00": {
+      "complete_tp": 1,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 1,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 0
+    },
+    "flickr-nsid:90029322@N00": {
+      "complete_tp": 1,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": 1.0,
+      "complete_recall": 0.3333333333333333,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 15
+    }
+  },
+  "by_class": {
+    "person": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 2,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 0
+    },
+    "motorcycle": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 2,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 0
+    },
+    "traffic light": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 1,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 0
+    },
+    "cat": {
+      "complete_tp": 1,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "dog": {
+      "complete_tp": 1,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "knife": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 1,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "book": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 1,
+      "complete_precision": 1.0,
+      "complete_recall": 0.6666666666666666,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "human hand": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "mirror": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 1,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "sun hat": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 1,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    }
+  },
+  "frames": [
+    {
+      "frame_id": "3bc55fd11d9dbf88",
+      "counts": {
+        "complete_tp": 1,
+        "partial_tp": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "3bc55fd11d9dbf88-0",
+          "iou": 0.9989142542302549,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "3bc55fd11d9dbf88-1",
+          "iou": 0.998872145343884,
+          "kind": "partial_tp"
+        }
+      ],
+      "missed_targets": [],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "d0647952f4f6e734",
+      "counts": {
+        "unscored_predictions": 1,
+        "complete_fn": 1
+      },
+      "matches_and_complete_scope_false_positives": [],
+      "missed_targets": [
+        {
+          "target_id": "d0647952f4f6e734-0",
+          "label": "knife",
+          "kind": "complete_fn",
+          "nearby_other_class": "scissors",
+          "nearby_iou": 0.9816198860998897
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 0,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "f5bab454755c47d0",
+      "counts": {
+        "complete_tp": 1,
+        "partial_tp": 1,
+        "unscored_predictions": 1,
+        "complete_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "f5bab454755c47d0-0",
+          "iou": 0.9949839810707289,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "f5bab454755c47d0-1",
+          "iou": 0.998759525307448,
+          "kind": "partial_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "f5bab454755c47d0-2",
+          "label": "human hand",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "f5bab454755c47d0-3",
+          "label": "human hand",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "4f7ffb75c46a12fe",
+      "counts": {
+        "unscored_predictions": 15,
+        "complete_tp": 1,
+        "complete_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 4,
+          "target_id": "4f7ffb75c46a12fe-1",
+          "iou": 0.6568010337221754,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "4f7ffb75c46a12fe-0",
+          "label": "sun hat",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "4f7ffb75c46a12fe-2",
+          "label": "book",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 0,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 5,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 6,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 7,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 8,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 9,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 10,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 11,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 12,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 13,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 14,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 15,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "991d9f77a13e95d2",
+      "counts": {
+        "complete_tp": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "991d9f77a13e95d2-0",
+          "iou": 0.997963098165201,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "7704f6da4e25910c",
+      "counts": {
+        "partial_tp": 2,
+        "unscored_predictions": 6
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "7704f6da4e25910c-1",
+          "iou": 0.8995468839923478,
+          "kind": "partial_tp"
+        },
+        {
+          "prediction_index": 2,
+          "target_id": "7704f6da4e25910c-0",
+          "iou": 0.7564536527525866,
+          "kind": "partial_tp"
+        }
+      ],
+      "missed_targets": [],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 5,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 6,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 7,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "08539f255801e98c",
+      "counts": {
+        "unscored_predictions": 19,
+        "partial_tp": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 1,
+          "target_id": "08539f255801e98c-0",
+          "iou": 0.7825599615315658,
+          "kind": "partial_tp"
+        }
+      ],
+      "missed_targets": [],
+      "ignored_predictions": [
+        {
+          "prediction_index": 0,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 5,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 6,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 7,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 8,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 9,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 10,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 11,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 12,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 13,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 14,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 15,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 16,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 17,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 18,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 19,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "2a8e023449caa728",
+      "counts": {
+        "unscored_predictions": 6,
+        "partial_fn": 1
+      },
+      "matches_and_complete_scope_false_positives": [],
+      "missed_targets": [
+        {
+          "target_id": "2a8e023449caa728-0",
+          "label": "mirror",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 0,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 5,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    }
+  ],
+  "limits": "Scoped evaluation at confidence .35, class-wise NMS .45, match IoU .5. Partial labels support known-positive recall only; unmatched unknown predictions are unscored. Small assistant-reviewed evidence, not full-vocabulary AP, tracking performance, or independent representative accuracy."
+}

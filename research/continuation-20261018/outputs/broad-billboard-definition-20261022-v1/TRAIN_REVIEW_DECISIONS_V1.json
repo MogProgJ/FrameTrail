@@ -1,0 +1,645 @@
+[
+  {
+    "image_id": "00198353ef684011",
+    "note": "Meeting room whiteboard and decorative framed pictures; no dedicated advertisement or business identity board.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "03a27395be344ab4",
+    "note": "Retain property marketing board; distant green facade lettering is not a separate panel.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "04924b243ce19811",
+    "note": "Retain platform advertising panel; station lettering and operational strips excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "060bdd332c2c7055",
+    "note": "Venue identification panel now in scope; exclude its support legs.",
+    "additions_xyxy": [
+      [
+        514,
+        449,
+        1024,
+        615
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "0c39f6a763ce3ec0",
+    "note": "Felix's Fish Camp restaurant identity display, including shaped decorative face extension, now in scope; exclude supports and lamps.",
+    "additions_xyxy": [
+      [
+        519,
+        66,
+        954,
+        466
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "0c4e2a0564dec658",
+    "note": "Generic computer equipment and household scene; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "0ead37227d5e2931",
+    "note": "Commercial ferry identity/contact/fares panel now in scope as a service board; person occludes part of face.",
+    "additions_xyxy": [
+      [
+        111,
+        196,
+        1024,
+        658
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "1006ce66c4f168ce",
+    "note": "Retain public campaign billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "13909d11dbe65be8",
+    "note": "Retain bank advertisement behind foreground operational departures screen; exclude departures screen.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "1cfc8fd2934d4d5f",
+    "note": "Industrial washing equipment and equipment branding; no separate advertising display.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "1ed09b82d0a8370d",
+    "note": "Washing machine and clothing; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "20a3a8cd5733db8c",
+    "note": "Operational bus stop location, route and contact display; no separately dominant business identity or promotion.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "218828c2b0ceb0b2",
+    "note": "Retain narrow visible advertising face; rear structure is not a new display face.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "23ac6df7ada563a3",
+    "note": "Retain VegFest event banner.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "27920c9574d34fd9",
+    "note": "Retain elevated advertising display; graffiti/mural excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "28b10d0cab704513",
+    "note": "Child beside domestic washing machine; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "2de30a20ca6e53b5",
+    "note": "Domestic appliance controls and instruction labels; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "30cbf2e7a5034abe",
+    "note": "Retain charity campaign billboard; open rooftop individual letters are not a dedicated panel.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "31c585fd77d4d28f",
+    "note": "Roadworks warning and chevron; operational safety signs excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "37c1b3a6b5c824d4",
+    "note": "Two physically distinct restaurant service/identity panels now in scope: Drive Thru/Open 24 Hours and Los Roberto's Mexican Food.",
+    "additions_xyxy": [
+      [
+        302,
+        20,
+        783,
+        245
+      ],
+      [
+        110,
+        238,
+        976,
+        714
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "380aab08547bb9d7",
+    "note": "Garbage disposal drain and equipment lettering; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "3d01928a39b59560",
+    "note": "Retain close oblique advertising face.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "46330787365e39e3",
+    "note": "Truck restriction road sign; excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "4693658c0ef57ce1",
+    "note": "Flip chart, projection and decorative art; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "513b5406a0b58ba4",
+    "note": "Computer demonstration and glass-applied lettering; no dedicated advertising board identified.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "562d7492978db1be",
+    "note": "Coca-Cola graphic on cropped vending machine side; unresolved whether independent dedicated ad panel or integrated appliance branding. Do not supervise as absent.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "5a1cea0bb9f7b721",
+    "note": "Retain museum exhibition panel; building name in individual facade lettering excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "605daeae27237af9",
+    "note": "Domestic appliance and equipment brand/controls; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "6060c02183e1a945",
+    "note": "Cropped blue shop identity panel at upper right now in scope; red doorway couplets are decorative.",
+    "additions_xyxy": [
+      [
+        810,
+        61,
+        1024,
+        219
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "64f48726c64d158b",
+    "note": "Domestic kitchen, appliances and small decorative magnet; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "64feab3aaa22fa1b",
+    "note": "Retain two cooperative promotional panels.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "6da6a9c6bdf31c76",
+    "note": "Retain Pool Safely public-service panel.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "757556fbf9393cff",
+    "note": "Museu de Arte Contemporanea physical venue identity panel now in scope.",
+    "additions_xyxy": [
+      [
+        91,
+        81,
+        592,
+        319
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "75ac7104b8c15a17",
+    "note": "Retain advocacy billboard; gravestone inscriptions excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "888e37034d215b1c",
+    "note": "Retain Santeria service advertisement.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "8a2155fbed2a9b9f",
+    "note": "Technical monitor/controller and notebook; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "92acfd217c54a6c1",
+    "note": "Retain Plan B pub advertising board; distant street storefront panels require completeness QA.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "99c50590c334d1e5",
+    "note": "Retain museum exhibition banner; arrow-led pedestrian route plates and street-name plate excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "9b1480cf4a006424",
+    "note": "Retain Morty's pub identity/specials board.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "a05d74b985d4bc2b",
+    "note": "Retain public/political campaign display.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "a37b64646cdb1e20",
+    "note": "Retain two Buddha service/product boards; add partially occluded Hotel Tathagat identity board behind them.",
+    "additions_xyxy": [
+      [
+        302,
+        165,
+        607,
+        302
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "a39dda42b11a5c4c",
+    "note": "Retain four ads; distant pale roadside business panel and other small street boards require completeness QA.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "b3c84145d7be9b72",
+    "note": "Restaurant neon identity panel now in scope; exclude hanging support and lower box thickness.",
+    "additions_xyxy": [
+      [
+        226,
+        238,
+        791,
+        479
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "b3cddda00c8dde08",
+    "note": "Retain hotel/restaurant/tourism promotional board; user explicitly includes both this and restaurant-name panels.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "b619045bda83d108",
+    "note": "Retain summer church camp event banner.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "b7fdd04c8d1a1e0b",
+    "note": "Green Putting America to Work public-service campaign panel now in scope; orange roadwork distance warning and distant operational park signs excluded.",
+    "additions_xyxy": [
+      [
+        569,
+        17,
+        979,
+        170
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "b9baad45d76338a0",
+    "note": "Retain beer campaign panel; add lawyer service board and ESPRIT shop panel. Cropped/occluded shop frontage and awning need completeness QA; blank face is not assumed advertisement.",
+    "additions_xyxy": [
+      [
+        146,
+        590,
+        221,
+        643
+      ],
+      [
+        181,
+        577,
+        279,
+        606
+      ]
+    ],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "bb760b5b12f42f43",
+    "note": "Retain oil-sands campaign billboard; small CBS owner plaque attached to frame is fixture branding, not an independent display.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "bdf66bc984b9720e",
+    "note": "Retain two museum exhibition panels; individual building-name lettering excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "c112d5d0c11204c2",
+    "note": "Garage service board now in scope. Cropped left-edge market panel/facade ambiguity requires completeness QA.",
+    "additions_xyxy": [
+      [
+        249,
+        325,
+        770,
+        517
+      ]
+    ],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "c169d65520795324",
+    "note": "Whiteboard sketches and operational floorplan notices; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "c2c1c1d3eb3b5c54",
+    "note": "Oakdale Motel identity/vacancy arrow is one integrated display face, now in scope; exclude supporting frame.",
+    "additions_xyxy": [
+      [
+        334,
+        154,
+        801,
+        534
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "d6bab621c0ddc4ea",
+    "note": "Road turn/parking restrictions and parking meters; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "db5023702de03984",
+    "note": "Retain CBS program advertisement; route/station operational entrance identifier excluded. Distant storefront needs completeness QA.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "ed01c21759d5c1dd",
+    "note": "Handwritten whiteboard messages; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "ee920572c18e9006",
+    "note": "Retain photo/fashion festival banner as one display unit.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "eecb0152c21db860",
+    "note": "Retain show billboard; Atlantic terminal business/service identity fixture now in scope. Three stacked face segmentation needs QA; facade letters excluded.",
+    "additions_xyxy": [
+      [
+        263,
+        622,
+        663,
+        768
+      ]
+    ],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "ef535834c691726f",
+    "note": "Retain political campaign, cultural-event Binningen klingt and property advertisement panels; slim tram information plate and road/school warning signs excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "ef60f47752e17cae",
+    "note": "Classroom projection, computer equipment and decorative portrait; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "f116401d17107895",
+    "note": "Retain Men in Black 3 framed campaign advertisement.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  }
+]

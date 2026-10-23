@@ -1,0 +1,57 @@
+{
+  "sheet": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\review-sheets\\billboard-08.jpg",
+  "stage": "initial-scene-triage-only-not-label-or-training-clearance",
+  "model_predictions_used": false,
+  "exhaustive_annotation": false,
+  "records": [
+    {
+      "id": "e81d4fc6bdb57335",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Business/location direction signs."
+    },
+    {
+      "id": "e894aab4f702c000",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Motel name/vacancy sign."
+    },
+    {
+      "id": "f551d266355bc9b1",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Small indoor conference/title display; physical billboard size/material boundary."
+    },
+    {
+      "id": "f8bc672c8c36acf5",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Separate framed campaign/event board beside robot sculpture; original needed for campaign and bounds."
+    },
+    {
+      "id": "f9b0d5266f944746",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Pub name/logo sign beside building; inspect small information panel."
+    },
+    {
+      "id": "fd9ba4d208562c2f",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "High-pressure danger/information board."
+    },
+    {
+      "id": "fe1a510b5a1c56fc",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large political campaign poster on outdoor advertising structure."
+    }
+  ]
+}

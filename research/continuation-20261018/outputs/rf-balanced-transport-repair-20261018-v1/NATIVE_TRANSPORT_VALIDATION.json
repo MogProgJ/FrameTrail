@@ -1,0 +1,8 @@
+﻿{
+    "status":  "pass",
+    "tested_powershell":  "5.1.26100.9711",
+    "legacy_quotes_lost":  true,
+    "new_native_payload_sha256":  "cb2e2cc2e3dc0ca7dacedc5a33695e1cf48eb6ed53d7c8295bf7f217e9730cb3",
+    "new_native_payload_preserved":  true,
+    "network_calls":  0
+}

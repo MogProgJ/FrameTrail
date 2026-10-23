@@ -2,6 +2,9 @@
 #include "preview_window.hpp"
 #include "model_selection.hpp"
 #include "theme.hpp"
+#include "studio_controls.hpp"
+#include "processing_feedback.hpp"
+#include <QFrame>
 #include <QCloseEvent>
 #include <QCoreApplication>
 #include <QDragEnterEvent>
@@ -86,10 +89,10 @@ QString dropped_file(const QMimeData* data) {
 
 SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> configuration):configuration_(std::move(configuration)) {
     setWindowTitle(QStringLiteral("FrameTrail — Video analysis"));resize(1240,820);setMinimumSize(920,620);setAcceptDrops(true);
-    setStyleSheet(frametrail_theme()+QStringLiteral("QToolButton { color: #a1afc2; border: none; padding: 6px; background: transparent; }"));
+    install_studio_style();setStyleSheet(frametrail_theme());
     auto* shell=new QWidget;shell->setObjectName(QStringLiteral("shell"));auto* layout=new QVBoxLayout(shell);
-    layout->setContentsMargins(24,22,24,22);layout->setSpacing(14);
-    auto* header=new QHBoxLayout;auto* title=new QLabel(QStringLiteral("Video analysis"));title->setObjectName(QStringLiteral("title"));header->addWidget(title);header->addStretch();
+    layout->setContentsMargins(20,18,20,18);layout->setSpacing(14);
+    auto* header=new QHBoxLayout;auto* title=new QLabel(QStringLiteral("Video analysis"));title->setObjectName(QStringLiteral("title"));header->addWidget(title);studio_heading(header);header->addStretch();
     choose_=new QPushButton(QStringLiteral("Choose video…"));choose_->setObjectName(QStringLiteral("chooseVideo"));header->addWidget(choose_);
     open_=new QPushButton(QStringLiteral("Open analysis…"));open_->setObjectName(QStringLiteral("openRun"));header->addWidget(open_);layout->addLayout(header);
     source_=new QLabel(QStringLiteral("Drop a video into this window, or choose one to begin."));source_->setObjectName(QStringLiteral("analysisSource"));source_->setProperty("role","muted");source_->setTextFormat(Qt::PlainText);source_->setWordWrap(true);layout->addWidget(source_);
@@ -111,14 +114,15 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     options->addWidget(new QLabel(QStringLiteral("Model")));options->addWidget(model_);
     options->addWidget(new QLabel(QStringLiteral("Confidence")));confidence_=new QDoubleSpinBox;confidence_->setObjectName(QStringLiteral("analysisConfidence"));
     confidence_->setRange(.05,.95);confidence_->setSingleStep(.05);confidence_->setValue(configuration_ ? configuration_->detector.confidence : .35);options->addWidget(confidence_);
-    auto* hint=new QLabel;
-    const auto update_hint=[this,hint]{hint->setText(selected_model(model_)==frametrail::DetectorModel::rf_scale7758628 ? QStringLiteral("Experimental RF · false alarms expected") : QStringLiteral("All %1 object categories · on this device").arg(frametrail::model_category_count(selected_model(model_))));};
+    model_->setMinimumWidth(0);model_->setMaximumWidth(300);model_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
+    auto* hint=new QLabel;hint->setWordWrap(true);hint->setMinimumWidth(0);
+    const auto update_hint=[this,hint]{hint->setText(frametrail::is_rf_model(selected_model(model_)) ? QStringLiteral("Experimental RF · false alarms expected") : QStringLiteral("All %1 object categories · on this device").arg(frametrail::model_category_count(selected_model(model_))));};
     update_hint();connect(model_,&QComboBox::currentIndexChanged,this,[update_hint]{update_hint();});hint->setProperty("role","muted");options->addWidget(hint);options->addStretch();
     settings_panel_->hide();layout->addWidget(settings_panel_);
     progress_=new QProgressBar;progress_->setObjectName(QStringLiteral("analysisProgress"));progress_->setTextVisible(false);progress_->setMaximumHeight(7);progress_->hide();layout->addWidget(progress_);
     status_=new QLabel(QStringLiteral("Choose a video to begin."));status_->setObjectName(QStringLiteral("analysisStatus"));status_->setTextFormat(Qt::PlainText);status_->setWordWrap(true);layout->addWidget(status_);
     auto* split=new QSplitter;canvas_=new FrameCanvas;canvas_->set_empty_text(QStringLiteral("Drop a video here\nChoose → Analyse → Review → Save"));split->addWidget(canvas_);
-    auto* results=new QWidget;results_panel_=results;auto* results_layout=new QVBoxLayout(results);results_layout->setContentsMargins(0,0,0,0);results_layout->setSpacing(10);
+    auto* results=new QFrame;results->setObjectName(QStringLiteral("inspector"));results_panel_=results;auto* results_layout=new QVBoxLayout(results);results_layout->setContentsMargins(14,16,14,14);results_layout->setSpacing(10);
     results_title_=new QLabel(QStringLiteral("Object appearances"));results_title_->setProperty("role","section");results_layout->addWidget(results_title_);
     events_=new QListWidget;events_->setObjectName(QStringLiteral("savedEvents"));events_->setIconSize(QSize(96,54));events_->setAcceptDrops(false);events_->viewport()->setAcceptDrops(false);results_layout->addWidget(events_,1);
     auto* paging=new QHBoxLayout;previous_=new QPushButton(QStringLiteral("Previous"));more_=new QPushButton(QStringLiteral("Next"));previous_->setObjectName(QStringLiteral("previousResults"));more_->setObjectName(QStringLiteral("nextResults"));paging->addWidget(previous_);paging->addWidget(more_);results_layout->addLayout(paging);previous_->hide();more_->hide();previous_->setEnabled(false);more_->setEnabled(false);
@@ -135,7 +139,7 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
         const auto path=QFileDialog::getOpenFileName(this,QStringLiteral("Open analysis"),{},QStringLiteral("FrameTrail analysis (*.frametrail);;All files (*)"));
         if(!path.isEmpty()){try{open_run(path);}catch(const std::exception& e){show_error(e);}}
     });
-    connect(cancel_,&QPushButton::clicked,this,[this]{job_.cancel();cancel_->setEnabled(false);status_->setText(QStringLiteral("Stopping analysis…"));});
+    connect(cancel_,&QPushButton::clicked,this,[this]{cancel_requested_=true;job_.cancel();cancel_->setEnabled(false);status_->setText(QStringLiteral("Stopping analysis…"));});
     connect(save_,&QPushButton::clicked,this,[this]{choose_save();});
     connect(export_,&QPushButton::clicked,this,[this]{
         const auto name=summary_ ? QFileInfo(text(summary_->configuration.source)).completeBaseName()+QStringLiteral("-analysis.csv") : QStringLiteral("analysis.csv");
@@ -154,13 +158,14 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     connect(play_,&QPushButton::clicked,this,[this]{toggle_playback();});connect(back_,&QPushButton::clicked,this,[this]{review_event(events_->currentRow());});
     connect(&timer_,&QTimer::timeout,this,[this]{tick();});timer_.setTimerType(Qt::PreciseTimer);timer_.start(5);
     if(configuration_ && !configuration_->source.empty())select_video(text(configuration_->source));
+    studio_button(choose_,"open");studio_button(open_,"open");studio_button(analyse_,"analyse");studio_button(play_,"play");
     update_controls();
 }
 void SavedRunWindow::show_error(const std::exception& error) {status_->setText(QStringLiteral("Could not complete: ")+QString::fromUtf8(error.what()));update_controls();}
 void SavedRunWindow::update_controls() {
     const bool busy=analysing() || awaiting_job_ || closing_;
     choose_->setEnabled(!busy);open_->setEnabled(!busy);analyse_->setEnabled(!busy && !selected_video_.isEmpty());
-    cancel_->setVisible(busy && !closing_);cancel_->setEnabled(analysing() && job_.progress().status!="cancelled");
+    cancel_->setVisible(busy && !closing_);cancel_->setEnabled(analysing() && !cancel_requested_);
     save_->setVisible(store_.has_value());export_->setVisible(store_.has_value());save_->setEnabled(store_.has_value() && !busy);export_->setEnabled(store_.has_value() && !busy);
     settings_toggle_->setEnabled(!busy);model_->setEnabled(!busy);confidence_->setEnabled(!busy);
     results_panel_->setVisible(store_.has_value());
@@ -217,7 +222,7 @@ void SavedRunWindow::start_analysis(const QString& database,frametrail::RunConfi
     review_.stop();pending_review_.reset();next_.reset();playing_=false;awaiting_frame_=false;play_->setEnabled(false);back_->setEnabled(false);displayed_timestamp_.reset();preview_sequence_.reset();
     store_.reset();summary_.reset();page_.clear();appearances_.clear();events_->clear();canvas_->set_image({});canvas_->set_empty_text(QStringLiteral("Starting analysis…"));unsaved_=false;
     previous_->hide();more_->hide();source_->setText(QFileInfo(text(configuration.source)).fileName());source_->setToolTip(text(configuration.source));
-    database_=database;draft_job_=QFileInfo(database).absolutePath()==scratch_.path();job_.start(native(database),std::move(configuration));awaiting_job_=true;
+    database_=database;draft_job_=QFileInfo(database).absolutePath()==scratch_.path();cancel_requested_=false;analysis_started_=std::chrono::steady_clock::now();job_.start(native(database),std::move(configuration));awaiting_job_=true;
     progress_->setRange(0,0);progress_->show();status_->setText(QStringLiteral("Starting analysis…"));review_status_->setText(QStringLiteral("Processing locally. Save the result when you’re ready."));update_controls();
 }
 void SavedRunWindow::save_analysis(const QString& output,bool replace) {
@@ -249,7 +254,8 @@ void SavedRunWindow::open_run(const QString& database) {
     results_title_->setText(objects ? QStringLiteral("Object appearances") : QStringLiteral("Line crossings · earlier analysis"));
     const auto outcome=s.status=="completed" ? QStringLiteral("Analysis completed") : s.status=="cancelled" ? QStringLiteral("Analysis cancelled · partial results") : QStringLiteral("Analysis incomplete");
     status_->setText(outcome+(objects ? QStringLiteral(" · %1 appearances · %2 object types").arg(s.appearance_count).arg(s.class_count) : QStringLiteral(" · %1 crossings").arg(s.event_count)));
-    if(!s.error.empty())status_->setText(status_->text()+QStringLiteral(" · ")+QString::fromStdString(s.error));
+    status_->setToolTip(QString::fromStdString(s.error)); // Keep raw diagnostics available without presenting a requested cancellation as an error.
+    if(!s.error.empty() && s.status!="cancelled")status_->setText(status_->text()+QStringLiteral(" · ")+QString::fromStdString(s.error));
     canvas_->set_empty_text(objects ? QStringLiteral("No object appearances found\nTry a lower confidence in Analysis settings") : QStringLiteral("No crossing events in this analysis"));
     review_status_->setText(store_->source_available() ? QStringLiteral("Click an appearance to review it.") : QStringLiteral("Video missing or changed. Thumbnails and exports are still available."));
     progress_->hide();load_page(0);update_controls();
@@ -298,6 +304,7 @@ void SavedRunWindow::toggle_playback() {
     if(playing_){playing_=false;paused_=std::chrono::steady_clock::now();play_->setText(QStringLiteral("Play"));}
     else {clock_+=std::chrono::steady_clock::now()-paused_;playing_=true;play_->setText(QStringLiteral("Pause"));}
 }
+void SavedRunWindow::suspend_playback(){if(playing_)toggle_playback();}
 void SavedRunWindow::tick() {
     const auto progress=job_.progress();
     if(closing_) {
@@ -312,8 +319,11 @@ void SavedRunWindow::tick() {
     }
     if(awaiting_job_) {
         if(progress.active) {
-            status_->setText(QStringLiteral("Analysing video · %1 / %2").arg(time_text(progress.timestamp)).arg(time_text(progress.duration)));
-            if(progress.duration && progress.duration->count()>0 && progress.timestamp){progress_->setRange(0,100);progress_->setValue(int(std::clamp(double(progress.timestamp->count())/progress.duration->count()*100,0.,99.)));}
+            if(cancel_requested_){status_->setText(QStringLiteral("Stopping analysis…"));return;}
+            const auto elapsed=std::chrono::duration<double>(std::chrono::steady_clock::now()-analysis_started_).count();
+            const auto feedback=processing_feedback(progress.frames,elapsed,progress.first_timestamp,progress.timestamp,progress.duration);
+            status_->setText(progress.frames ? QStringLiteral("Analysing · %1").arg(feedback.text) : QStringLiteral("Opening video and detector… · %1 elapsed").arg(work_duration(elapsed)));
+            if(feedback.permille){progress_->setRange(0,1000);progress_->setValue(*feedback.permille);}
             if(progress.preview && preview_sequence_!=progress.preview->frame.sequence) {
                 const auto& frame=progress.preview->frame;QImage image(frame.pixels.data(),frame.width,frame.height,frame.stride,QImage::Format_RGB888);
                 canvas_->set_image(image.copy(),progress.preview->detections);preview_sequence_=frame.sequence;
@@ -351,7 +361,7 @@ void SavedRunWindow::tick() {
     }else if(!state.worker_active){playing_=false;awaiting_frame_=false;play_->setEnabled(false);play_->setText(QStringLiteral("Finished"));}
 }
 void SavedRunWindow::closeEvent(QCloseEvent* event) {
-    if(!closing_ && !analysing() && !awaiting_job_ && !confirm_discard()){event->ignore();return;}
+    if(!closing_ && !analysing() && !awaiting_job_ && !confirm_discard()){event->ignore();if(workspace_close_decision)workspace_close_decision(false);return;}
     if(job_.progress().active || review_.snapshot().worker_active){closing_=true;job_.cancel();review_.stop();event->ignore();status_->setText(QStringLiteral("Closing analysis…"));}
-    else {review_.release();store_.reset();event->accept();}
+    else {review_.release();store_.reset();event->accept();if(workspace_close_decision)workspace_close_decision(true);}
 }

@@ -1,0 +1,114 @@
+{
+  "stage": "test-original-content-and-box-review-before-model-scoring",
+  "approved_for_training": false,
+  "scene_comparison_complete": false,
+  "model_predictions_seen": false,
+  "records": [
+    {
+      "id": "ed93226216efabb9",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Large music posters clear, but original contains further smaller window campaigns; publisher7 boxes also count Virgin business-name awnings. Whole-photo campaign scope remains incomplete."
+    },
+    {
+      "id": "07ec166bed0945e0",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.0811,
+          0.1406,
+          0.8848,
+          0.7318
+        ],
+        [
+          0.882812,
+          0.127083,
+          0.998438,
+          0.7125
+        ]
+      ],
+      "note": "Two separately framed roadside campaign faces: Hampton Roads/Farm Fresh regional-business promotion and partially cut right product advertisement. Refined sloping main panel bounds; supports excluded.",
+      "scene_description": "Hampton Roads Americas First Region Farm Fresh blue board beside partial black product billboard"
+    },
+    {
+      "id": "983d7d4d44387095",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.3555,
+          0.3268,
+          0.6064,
+          0.6055
+        ],
+        [
+          0.1611,
+          0.8724,
+          0.2266,
+          0.9622
+        ]
+      ],
+      "note": "Two identifiable campaign faces: Peter Turner professional/political promotional billboard and small Car Wash Now Open banner beside trailer. Removed publisher boxes on Exit/forecourt information; refined main face to exclude rear slats.",
+      "scene_description": "Peter Turner blue portrait billboard over green yellow service station with small carwash opening banner"
+    },
+    {
+      "id": "88b4cd5f107251c2",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Main framed clothing campaign clear, but original also contains partly visible promotional window posters above. Source single box is not exhaustive."
+    },
+    {
+      "id": "a8ed2c9c17319ea2",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Large political campaign board clear; mixed clinic/business information and smaller promotional displays require unresolved complete scope. Do not import all publisher sign boxes."
+    },
+    {
+      "id": "62d0376700be86a0",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Main plumbing campaign is accompanied by an additional partly cut SF Environment battery/public campaign at top. Missing upper target and overlapping oblique boundaries require further precise review."
+    },
+    {
+      "id": "8c7f9b63185c9372",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.027778,
+          0.088632,
+          0.95,
+          0.554913
+        ]
+      ],
+      "note": "One FINS swimming-service campaign billboard. Existing advertising-face bounds verified; lower metal stand excluded and no other campaign faces.",
+      "scene_description": "FINS swim lessons blue child goggles roadside billboard"
+    },
+    {
+      "id": "411a932270973982",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.068125,
+          0.160833,
+          0.955,
+          0.674167
+        ]
+      ],
+      "note": "One framed Book of Mormon theatre campaign across platform wall. Source bounds verified; Oxford Circus roundels and rails are information/structure, not additional targets.",
+      "scene_description": "Book of Mormon musical campaign framed between Oxford Circus station roundels"
+    },
+    {
+      "id": "243ebb245142e014",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0,
+          0.1777,
+          0.9707,
+          0.5762
+        ]
+      ],
+      "note": "One physical Prometheus home-release campaign billboard. Refined complete frame bounds; excluded support/agency name/direction sign and source black padding.",
+      "scene_description": "Prometheus Questions Will Be Answered preorder billboard above roundabout direction sign"
+    }
+  ]
+}

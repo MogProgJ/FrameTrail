@@ -1,0 +1,42 @@
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  cached_playback_window.cpp
+  playback_workspace.cpp
+  preview_window.cpp
+  saved_run_window.cpp
+  Generating Code...
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_preview_ui.lib
+  unified_workspace_tests.cpp
+  frametrail_unified_workspace_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_unified_workspace_tests.exe
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_preview_ui.lib
+  frametrail-desktop.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail-desktop.exe
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_preview_ui.lib
+  cached_playback_tests.cpp
+  frametrail_cached_playback_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_cached_playback_tests.exe
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_preview_ui.lib
+  frametrail_saved_desktop_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_saved_desktop_tests.exe
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_preview_ui.lib
+  frametrail_desktop_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-unified-20261019-v1\build\Release\frametrail_desktop_tests.exe

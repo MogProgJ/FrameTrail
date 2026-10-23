@@ -1,0 +1,11 @@
+{
+  "status": "exact-selector-scope-approved",
+  "authorization_source": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\USER_AUTHORIZATION.json",
+  "authorization_source_sha256": "6d8173b1a48855fabd31892914813fa88f771408be1ae3a46b2ac81abeb66f79",
+  "verbatim_user_authorization": "Yeah, it's approved, man. You don't have to ask for my approval on this. All right, always just keep working and working and working.",
+  "approval_sha256": "85aa28b8ad3f8e5f76f1fa4746496cb32163c63ae15ec3de98568ed9a280a81f",
+  "protocol_sha256": "a77d9663fcc898b6a257f6722dd37bc24b1d3a2d3065eb8cce5f0625403f019a",
+  "core_package_seal_sha256": "9d8009c09ed03b4e01397fb9b4d346baeb1560f3c2007ba46a8cab8c9923d885",
+  "cluster_submitted": false,
+  "continuous_work_instruction_saved": true
+}

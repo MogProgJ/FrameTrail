@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "5e1777ea45c550a3",
+  "image_sha256": "dcde0521191815e0425a8ea6889d4e09e3631148c17ccaf0516ffc0975dbffff",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "5e1777ea45c550a3",
+    "image_sha256": "dcde0521191815e0425a8ea6889d4e09e3631148c17ccaf0516ffc0975dbffff",
+    "selected_category": "waste container",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/spidysg/5564243627",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/spidysg/5564243627",
+      "original_url": "https://farm4.staticflickr.com/5100/5564243627_df1da05251_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Spidysg",
+      "author_url": "https://www.flickr.com/people/spidysg/",
+      "title": "Old fashioned Bus Stop",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Spidysg",
+      "url": "https://www.flickr.com/photos/spidysg",
+      "image": "https://live.staticflickr.com/6067/buddyicons/32982440@N04.jpg?1315756108#32982440@N04"
+    },
+    "current_title": "Old fashioned Bus Stop",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Spidysg",
+          "url": "https://www.flickr.com/photos/spidysg",
+          "image": "https://live.staticflickr.com/6067/buddyicons/32982440@N04.jpg?1315756108#32982440@N04"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:32982440@N04",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/spidysg/5564243627",
+    "html_sha256": "4e3491fc89aa24481a0379a774951998cee7ebc76a6a988aedae7cf7fc6bbc80",
+    "stored_sha256": "87604d67edf928f14ba72cbfc2bdb0bf23bb85887a3fc6ea068e27cfe0e90a71",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\5e1777ea45c550a3.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/5e1777ea45c550a3.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

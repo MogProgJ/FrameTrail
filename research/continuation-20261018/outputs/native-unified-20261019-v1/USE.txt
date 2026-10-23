@@ -1,0 +1,13 @@
+FrameTrail: one window, four sections
+
+Preview / Analysis / Playback / Camera remain in the shared sidebar.
+Ctrl+1, Ctrl+2, Ctrl+3, Ctrl+4 switch sections.
+Analysis and preparation can continue in the background; the top badge shows activity.
+Playback pauses while hidden. Leaving Camera requests capture to stop.
+
+Playback: choose a video or copy the Preview video/settings, then Prepare playback.
+Quitting preserves the Save/Discard/Cancel choice for unsaved analyses.
+
+Run-FrameTrail.cmd uses the unchanged YOLOX-S default.
+Run-Balanced-Preview.cmd selects the unchanged held RF preview.
+See REPORT.md for verification scope and screenshots.

@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "date": "2026-10-24",
+  "scope": "User requested current FrameTrail code and all findings on the existing private GitHub repository.",
+  "repository": "MogProgJ/FrameTrail",
+  "branch": "main",
+  "preserved_earlier_checkout_commit": "e73759ea85a3a46343dc957d89a93d53fb7fcddf",
+  "latest_source_snapshot": "native-lean-guide-20261019-v1/source",
+  "validation": {
+    "earlier_checkout_native_checks": 37,
+    "consolidated_source_native_checks": 37,
+    "python_existing_checks": 120,
+    "guide_normal": "passed",
+    "guide_scale_125": "passed",
+    "single_window_workflow": "passed",
+    "source_credential_pattern_scan": "passed",
+    "archive_credential_pattern_scan": "passed",
+    "current_index_links": "passed",
+    "initial_copied_archive_independent_sha256_check": {
+      "status": "passed",
+      "files": 27814
+    },
+    "additional_package_model_and_demo_metadata": {
+      "scanned_and_copy_hash_verified": 180,
+      "status": "passed"
+    }
+  },
+  "archived_source_files": 27994,
+  "archived_source_bytes": 885258419,
+  "excluded_local_files": 11754,
+  "publication_policy": "Code, findings, plans, receipts, annotation drafts, provenance and handoffs are included. Media, weights, binaries, third-party builds/dependencies and authentication/runtime artifacts remain local and are indexed. This is not a binary backup or model/data release.",
+  "scientific_work_rerun": false,
+  "scientific_test_predictions": 0,
+  "model_promotion": false,
+  "next_step": "Qualify unused local photos to close the expanded-definition absent-photo gaps: 11 TRAIN, 6 validation, 4 TEST, including five TRAIN shop confusers and one traffic confuser."
+}

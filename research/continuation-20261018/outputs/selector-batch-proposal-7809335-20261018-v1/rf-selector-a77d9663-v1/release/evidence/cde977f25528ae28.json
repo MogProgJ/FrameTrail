@@ -1,0 +1,64 @@
+{
+  "image_id": "cde977f25528ae28",
+  "image_sha256": "419e1e429954e0a60a5f538e32e3922b5491b417921dae128ff84cb83da5f7b7",
+  "publisher_attribution": {
+    "id": "cde977f25528ae28",
+    "landing_url": "https://www.flickr.com/photos/phalinn/4256341817",
+    "original_url": "https://c1.staticflickr.com/5/4006/4256341817_f5509ef999_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Phalinn Ooi",
+    "author_url": "https://www.flickr.com/people/phalinn/",
+    "title": "Deer",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Mohd Fazlin Mohd Effendy Ooi",
+    "url": "https://www.flickr.com/photos/phalinn",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/17868205@N00.jpg?1681831995#17868205@N00"
+  },
+  "current_title": "Deer",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Mohd Fazlin Mohd Effendy Ooi",
+        "url": "https://www.flickr.com/photos/phalinn",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/17868205@N00.jpg?1681831995#17868205@N00"
+      }
+    },
+    "meta_description": "Rusa"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/phalinn/4256341817",
+  "canonical_page_url": "https://www.flickr.com/photos/phalinn/4256341817",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "fe7ddbc1ac54f5a90b361e30c1bbb6bb5afeecc6828ddbd1b182e1f4a51484e7",
+  "source_gzip_sha256": "066a3b46182208167d4f895b5db558fdb8a8214e2050dfd2e5809bd7fbc6d29f",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-264",
+  "visual_proof_sha256": "782dacaa3decc23759d34357e8c76f807f88fdcd168464ff6b27ffe42a5b592a",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

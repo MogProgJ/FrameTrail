@@ -1,0 +1,26 @@
+{
+  "image_id": "0c20f0c14eafee6e",
+  "source_url": "https://www.flickr.com/photos/witchesfallscottages/14362363042",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/witchesfallscottages/14362363042",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/0c20f0c14eafee6e.html.gz",
+  "html_bytes": 518396,
+  "html_sha256": "589ee63d8d5701cb6f799cbf032d790f5950dc1331eab3e7ea440a0248d5f68c",
+  "stored_sha256": "b373780d87abd2efa7a36de6d07e77c81c02588a1e10eeaa8bacae87fa523f72"
+}

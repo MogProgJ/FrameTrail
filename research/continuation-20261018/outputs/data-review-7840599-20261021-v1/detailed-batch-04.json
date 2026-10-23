@@ -1,0 +1,110 @@
+{
+  "stage": "original-image-content-and-box-review-only",
+  "approved_for_training": false,
+  "scene_comparison_complete": false,
+  "model_predictions_seen": false,
+  "records": [
+    {
+      "id": "7b599a8af1aaa7fb",
+      "disposition": "hold-content-boundary",
+      "normalized_xyxy": [],
+      "note": "Original is a two-tenant identification/name sign with generic slogan. Distinguishing an advertising campaign from business identification is uncertain; retain hold."
+    },
+    {
+      "id": "db5023702de03984",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.1113,
+          0.0742,
+          0.6367,
+          0.4844
+        ]
+      ],
+      "note": "One framed CBS Evening News campaign above 57Street subway entry. Box refined to advertising face/inner frame; station destination/name panel excluded.",
+      "scene_description": "57 Street Station NQR entrance CBS Evening News Katie Couric campaign"
+    },
+    {
+      "id": "03a27395be344ab4",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.3467,
+          0.1563,
+          0.832,
+          0.7881
+        ]
+      ],
+      "note": "One freestanding Redrow housing sales campaign with development photograph/contact/Now Open. Extended right edge beyond publisher box to full visible board; poles excluded.",
+      "scene_description": "Redrow The Birches Now Open housing billboard outside grey retail building"
+    },
+    {
+      "id": "30cbf2e7a5034abe",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.3271,
+          0.4803,
+          0.7178,
+          0.7042
+        ]
+      ],
+      "note": "One Armee du Salut charity campaign billboard. Refined visible face/frame; FARINE FIVE ROSES roof lettering and support poles excluded.",
+      "scene_description": "Salvation Army poverty campaign in front of Farine Five Roses industrial building"
+    },
+    {
+      "id": "6da6a9c6bdf31c76",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.110937,
+          0.26875,
+          0.9,
+          0.697917
+        ]
+      ],
+      "note": "One Pool Safely public-safety photographic campaign billboard. Existing visible face bounds verified; CBS support branding and poles not separate targets.",
+      "scene_description": "Pool Safely pool fence campaign with two girls against sky"
+    },
+    {
+      "id": "888e37034d215b1c",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.0703,
+          0.1287,
+          0.8096,
+          0.84
+        ]
+      ],
+      "note": "One separate framed service advertisement with prices/contact/offers. Refined to red advertising frame, excluding black pedestal and surrounding station directions.",
+      "scene_description": "Red framed Santeria Milagrosa tarot service campaign on tiled station wall"
+    },
+    {
+      "id": "9b5635760011caeb",
+      "disposition": "exclude-generated-ad-mockup",
+      "normalized_xyxy": [],
+      "note": "Source title Disco Flickr Ad and photo-specific description explicitly say Created with fd's Flickr Toys; visible billboard face is a generated ad mockup, not verified genuine physical advertising content. Exclude from release; preserve source evidence."
+    },
+    {
+      "id": "2ae2114a4a2f116b",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Main GUESS campaign clear, but publisher9 boxes mix blank boards, transit signs and small street panels. Several small campaign candidates cannot be resolved; complete label scope not certified."
+    },
+    {
+      "id": "b9baad45d76338a0",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.1699,
+          0.4378,
+          1,
+          0.796
+        ]
+      ],
+      "note": "One continuous blue beer-product advertising facade panel, truncated at right. Publisher main box covered only part of this face and two extra boxes were ordinary lawyer identification/blank sign; corrected whole physical advertising face.",
+      "scene_description": "Blue Zlatna Dab beer campaign with woman and bottle across urban storefront facade"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "purpose": "annotation-draft-only",
+  "approved_for_training": false,
+  "images": 60,
+  "objects_by_state": {
+    "pending": 489,
+    "confirmed": 35,
+    "rejected": 19
+  },
+  "objects_by_origin": {
+    "publisher": 322,
+    "model": 84,
+    "manual": 137
+  },
+  "correction_events": 209,
+  "geometry_passes": 0,
+  "coverage_passes": 0,
+  "images_with_holds": 60,
+  "limits": "Counts describe drafts, not complete annotations, rights clearance, training readiness or accuracy."
+}

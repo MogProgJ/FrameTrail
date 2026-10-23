@@ -1,0 +1,698 @@
+[
+  {
+    "id": "cleaning-005",
+    "source_name": "IMG_8132_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "cleaning:single-staged-scene"
+  },
+  {
+    "id": "cleaning-015",
+    "source_name": "IMG_8149_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "cleaning:single-staged-scene"
+  },
+  {
+    "id": "cleaning-021",
+    "source_name": "IMG_8157_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "cleaning:single-staged-scene"
+  },
+  {
+    "id": "cleaning-028",
+    "source_name": "IMG_8165_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "cleaning:single-staged-scene"
+  },
+  {
+    "id": "hanger-001",
+    "source_name": "14_jpeg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "hanger:14_jpeg"
+  },
+  {
+    "id": "hanger-002",
+    "source_name": "18_jpeg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "hanger:18_jpeg"
+  },
+  {
+    "id": "hanger-003",
+    "source_name": "1_jpeg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "hanger:1_jpeg"
+  },
+  {
+    "id": "hanger-004",
+    "source_name": "4_jpeg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "hanger:4_jpeg"
+  },
+  {
+    "id": "hanger-017",
+    "source_name": "15_jpeg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "hanger:15_jpeg"
+  },
+  {
+    "id": "hanger-020",
+    "source_name": "16_jpeg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "hanger:16_jpeg"
+  },
+  {
+    "id": "hanger-023",
+    "source_name": "17_jpeg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "hanger:17_jpeg"
+  },
+  {
+    "id": "hanger-041",
+    "source_name": "5_jpeg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "hanger:5_jpeg"
+  },
+  {
+    "id": "hanger-053",
+    "source_name": "9_jpeg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "hanger:9_jpeg"
+  },
+  {
+    "id": "hanger-056",
+    "source_name": "19_jpeg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "hanger:19_jpeg"
+  },
+  {
+    "id": "hanger-059",
+    "source_name": "23_jpeg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "hanger:23_jpeg"
+  },
+  {
+    "id": "toaster-001",
+    "source_name": "15-Beautiful-Atlanta-Craftsman-Kitchen-Remodel-Ideas_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:15-Beautiful-Atlanta-Craftsman-Kitchen-Remodel-Ideas_jpg"
+  },
+  {
+    "id": "toaster-002",
+    "source_name": "81f83224-92fb-4fe9-9deb-c2a567c5336e_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:81f83224-92fb-4fe9-9deb-c2a567c5336e_jpg"
+  },
+  {
+    "id": "toaster-003",
+    "source_name": "Bespoke-breakfast-cupboard_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Bespoke-breakfast-cupboard_jpg"
+  },
+  {
+    "id": "toaster-004",
+    "source_name": "White-Kettle-and-Toaster_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:White-Kettle-and-Toaster_jpg"
+  },
+  {
+    "id": "toaster-005",
+    "source_name": "kitchen_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:kitchen_jpg"
+  },
+  {
+    "id": "toaster-007",
+    "source_name": "249593fd-eae1-4049-9266-039764134737_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:249593fd-eae1-4049-9266-039764134737_jpg"
+  },
+  {
+    "id": "toaster-008",
+    "source_name": "43-Extremely-creative-small-kitchen-design-ideas_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:43-Extremely-creative-small-kitchen-design-ideas_jpg"
+  },
+  {
+    "id": "toaster-009",
+    "source_name": "6def351b-1007-49df-ab7b-a9e36849e734_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:6def351b-1007-49df-ab7b-a9e36849e734_jpg"
+  },
+  {
+    "id": "toaster-010",
+    "source_name": "7-Best-Countertop-microwave-oven-ideas-_-kitchen-inspirations-kitchen-renovation-new-kitchen_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:7-Best-Countertop-microwave-oven-ideas-_-kitchen-inspirations-kitchen-renovation-new-kitchen_jpg"
+  },
+  {
+    "id": "toaster-011",
+    "source_name": "Adornas-Kitchens-2020-Adornas-Kitchens-Interiors-Bangor_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Adornas-Kitchens-2020-Adornas-Kitchens-Interiors-Bangor_jpg"
+  },
+  {
+    "id": "toaster-012",
+    "source_name": "Aesthetic-Home-Find-tap-here-to-shop_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Aesthetic-Home-Find-tap-here-to-shop_jpg"
+  },
+  {
+    "id": "toaster-013",
+    "source_name": "Amazon_com_-Smeg-TSF01CRUS-50-s-Retro-Style-Aesthetic-2-Slice-Toaster-Cream_-Home-Kitchen-1-_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Amazon_com_-Smeg-TSF01CRUS-50-s-Retro-Style-Aesthetic-2-Slice-Toaster-Cream_-Home-Kitchen-1-_jpg"
+  },
+  {
+    "id": "toaster-014",
+    "source_name": "An-Inch-of-Gray_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:An-Inch-of-Gray_jpg"
+  },
+  {
+    "id": "toaster-015",
+    "source_name": "Coffee-Bar-Appliance-Closet_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Coffee-Bar-Appliance-Closet_jpg"
+  },
+  {
+    "id": "toaster-016",
+    "source_name": "Decorating-Ideas_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Decorating-Ideas_jpg"
+  },
+  {
+    "id": "toaster-018",
+    "source_name": "HADEN-Heritage-Black-and-Copper-2-Slice-Toaster_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:HADEN-Heritage-Black-and-Copper-2-Slice-Toaster_jpg"
+  },
+  {
+    "id": "toaster-019",
+    "source_name": "How-to-Limewash-a-Brick-Home_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:How-to-Limewash-a-Brick-Home_jpg"
+  },
+  {
+    "id": "toaster-020",
+    "source_name": "Kitchen-Appliances-Secret-Compartment-Contemporary-kitchen-BHG_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Kitchen-Appliances-Secret-Compartment-Contemporary-kitchen-BHG_jpg"
+  },
+  {
+    "id": "toaster-021",
+    "source_name": "Kitchen-Remodel-Final-Reveal_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Kitchen-Remodel-Final-Reveal_jpg"
+  },
+  {
+    "id": "toaster-022",
+    "source_name": "Kitchen-Tour-ZDesign-At-Home_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Kitchen-Tour-ZDesign-At-Home_jpg"
+  },
+  {
+    "id": "toaster-023",
+    "source_name": "Kitchen-design_-ideas-for-hiding-the-microwave_-VICTORIA-ELIZABETH-BARNES_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Kitchen-design_-ideas-for-hiding-the-microwave_-VICTORIA-ELIZABETH-BARNES_jpg"
+  },
+  {
+    "id": "toaster-024",
+    "source_name": "Kitchen-of-the-Week_-A-Streamlined-Cape-Cod-Classic-Remodelista-1-_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:confirmed-scene-24-25"
+  },
+  {
+    "id": "toaster-026",
+    "source_name": "LIKEtoKNOW_it_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:LIKEtoKNOW_it_jpg"
+  },
+  {
+    "id": "toaster-027",
+    "source_name": "Next-Wood-Finish-Detail-4-Slot-Toaster-Black_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Next-Wood-Finish-Detail-4-Slot-Toaster-Black_jpg"
+  },
+  {
+    "id": "toaster-028",
+    "source_name": "Small-Kitchen-Appliances-You-ll-Use-and-Love-I-Do-1-_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:confirmed-scene-28-29"
+  },
+  {
+    "id": "toaster-029",
+    "source_name": "Small-Kitchen-Appliances-You-ll-Use-and-Love-I-Do-_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:confirmed-scene-28-29"
+  },
+  {
+    "id": "toaster-030",
+    "source_name": "Smeg-TSF01-2-Slice-Toaster-1-_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Smeg-TSF01-2-Slice-Toaster-1-_jpg"
+  },
+  {
+    "id": "toaster-031",
+    "source_name": "Taking-Toast-to-the-Next-Level-With-Revolution-Cooking-Thou-Swell_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Taking-Toast-to-the-Next-Level-With-Revolution-Cooking-Thou-Swell_jpg"
+  },
+  {
+    "id": "toaster-032",
+    "source_name": "WHATAYLALIKES-SMEG-Toaster-_-LIKEtoKNOW_it_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:WHATAYLALIKES-SMEG-Toaster-_-LIKEtoKNOW_it_jpg"
+  },
+  {
+    "id": "toaster-033",
+    "source_name": "White-Appliance-Garage-Keeps-Kitchen-Counters-Tidy_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:White-Appliance-Garage-Keeps-Kitchen-Counters-Tidy_jpg"
+  },
+  {
+    "id": "toaster-034",
+    "source_name": "White-Smeg-Kettle-Toaster_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:White-Smeg-Kettle-Toaster_jpg"
+  },
+  {
+    "id": "toaster-036",
+    "source_name": "dream-kitchen-aesthetic_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:dream-kitchen-aesthetic_jpg"
+  },
+  {
+    "id": "toaster-038",
+    "source_name": "f0228f31-206e-45ef-9d44-a992716e31d9_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:f0228f31-206e-45ef-9d44-a992716e31d9_jpg"
+  },
+  {
+    "id": "toaster-039",
+    "source_name": "kitchen-aesthetic-colourful-decor_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:kitchen-aesthetic-colourful-decor_jpg"
+  },
+  {
+    "id": "toaster-040",
+    "source_name": "small-kitchen-appliance-storage_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:small-kitchen-appliance-storage_jpg"
+  },
+  {
+    "id": "toaster-041",
+    "source_name": "0d90182d-410f-42fd-a1f2-52f13d245e43_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:0d90182d-410f-42fd-a1f2-52f13d245e43_jpg"
+  },
+  {
+    "id": "toaster-042",
+    "source_name": "Amazon_com_-Smeg-TSF01CRUS-50-s-Retro-Style-Aesthetic-2-Slice-Toaster-Cream_-Home-Kitchen_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Amazon_com_-Smeg-TSF01CRUS-50-s-Retro-Style-Aesthetic-2-Slice-Toaster-Cream_-Home-Kitchen_jpg"
+  },
+  {
+    "id": "toaster-043",
+    "source_name": "Hocken-Avenue-Project-Philippe-Beauparlant_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Hocken-Avenue-Project-Philippe-Beauparlant_jpg"
+  },
+  {
+    "id": "toaster-044",
+    "source_name": "Lakefront-Cottage-Kitchen-Makeover_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Lakefront-Cottage-Kitchen-Makeover_jpg"
+  },
+  {
+    "id": "toaster-045",
+    "source_name": "Plisse-Toaster_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Plisse-Toaster_jpg"
+  },
+  {
+    "id": "toaster-046",
+    "source_name": "Project-Gallery_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Project-Gallery_jpg"
+  },
+  {
+    "id": "toaster-047",
+    "source_name": "Smeg-TSF01-2-Slice-Toaster-2-_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Smeg-TSF01-2-Slice-Toaster-2-_jpg"
+  },
+  {
+    "id": "toaster-048",
+    "source_name": "Smeg-TSF01-2-Slice-Toaster_jpg",
+    "exif_tags": [],
+    "image_info_keys": [
+      "jfif",
+      "jfif_version",
+      "jfif_unit",
+      "jfif_density"
+    ],
+    "group_id": "toaster:Smeg-TSF01-2-Slice-Toaster_jpg"
+  }
+]

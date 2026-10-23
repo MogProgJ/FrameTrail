@@ -1,0 +1,64 @@
+{
+  "image_id": "6d3b4e8b58ca3cb4",
+  "image_sha256": "a2f166c154017a136cb3f3fad170e16e55951da89d4b09a15a48a39e7fa4c54c",
+  "publisher_attribution": {
+    "id": "6d3b4e8b58ca3cb4",
+    "landing_url": "https://www.flickr.com/photos/clender/15633518787",
+    "original_url": "https://farm5.staticflickr.com/7534/15633518787_7baf31f88a_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Carl Lender",
+    "author_url": "https://www.flickr.com/people/clender/",
+    "title": "Pebble Beach - 2014",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Carl Lender",
+    "url": "https://www.flickr.com/photos/clender",
+    "image": "https://live.staticflickr.com/5321/buddyicons/43547797@N00.jpg?1369574727#43547797@N00"
+  },
+  "current_title": "Pebble Beach - 2014",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Carl Lender",
+        "url": "https://www.flickr.com/photos/clender",
+        "image": "https://live.staticflickr.com/5321/buddyicons/43547797@N00.jpg?1369574727#43547797@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/clender/15633518787",
+  "canonical_page_url": "https://www.flickr.com/photos/clender/15633518787",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "0cf7b9ff784ff33ae3b9bc2fdeddf69d8ae85a3bfd4f4fb6ec35ad606c46a332",
+  "source_gzip_sha256": "2df8759841fb47885895bb61c3ce1a280465b34c3d178357632419da4f5fcf8c",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-282",
+  "visual_proof_sha256": "fd3d0034719e06cbc046e8d0fce3f03a0a3d65e529472c0e556960a22a7959fc",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

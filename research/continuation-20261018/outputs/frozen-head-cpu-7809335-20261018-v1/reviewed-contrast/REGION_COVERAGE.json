@@ -1,0 +1,91 @@
+{
+  "examples": [
+    {
+      "image_id": "ae470b502efe1304",
+      "query_indices": [
+        7,
+        76,
+        77,
+        98,
+        137,
+        154,
+        168,
+        196,
+        258,
+        280
+      ],
+      "query_count": 10
+    },
+    {
+      "image_id": "b9a8737cb91b7f6d",
+      "query_indices": [
+        0,
+        3,
+        5,
+        15
+      ],
+      "query_count": 4
+    },
+    {
+      "image_id": "822a3cdf226995d7",
+      "query_indices": [
+        0,
+        73
+      ],
+      "query_count": 2
+    },
+    {
+      "image_id": "baeb2e9d9a26baa5",
+      "query_indices": [
+        13,
+        15,
+        27,
+        44,
+        52,
+        138,
+        170,
+        262
+      ],
+      "query_count": 8
+    },
+    {
+      "image_id": "865e5ad3d526c866",
+      "query_indices": [
+        0,
+        8,
+        25,
+        188,
+        202
+      ],
+      "query_count": 5
+    },
+    {
+      "image_id": "d4d369f5f5f1fb43",
+      "query_indices": [
+        11,
+        93,
+        183
+      ],
+      "query_count": 3
+    },
+    {
+      "image_id": "6408ad432de00474",
+      "query_indices": [
+        42,
+        84,
+        187
+      ],
+      "query_count": 3
+    },
+    {
+      "image_id": "ce924fe52d00e437",
+      "query_indices": [
+        83
+      ],
+      "query_count": 1
+    }
+  ],
+  "query_features": 36,
+  "all_eight_forward_errors_zero": true,
+  "model_state_unchanged": true
+}

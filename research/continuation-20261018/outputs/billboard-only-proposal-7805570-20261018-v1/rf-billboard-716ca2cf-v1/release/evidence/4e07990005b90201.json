@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "4e07990005b90201",
+  "image_sha256": "7c772634b8d4dd69e985c3529bbb9213371b243154c3e5f7e25c0763b0c30e87",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "4e07990005b90201",
+    "image_sha256": "7c772634b8d4dd69e985c3529bbb9213371b243154c3e5f7e25c0763b0c30e87",
+    "selected_category": "van",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/rickwashere/10341271",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/rickwashere/10341271",
+      "original_url": "https://farm2.staticflickr.com/6/10341271_6792f2e61e_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Rick",
+      "author_url": "https://www.flickr.com/people/rickwashere/",
+      "title": "Cable Cars",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Rick",
+      "url": "https://www.flickr.com/photos/rickwashere",
+      "image": "https://live.staticflickr.com/3701/buddyicons/35042004@N00.jpg?1390644068#35042004@N00"
+    },
+    "current_title": "Cable Cars",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Rick",
+          "url": "https://www.flickr.com/photos/rickwashere",
+          "image": "https://live.staticflickr.com/3701/buddyicons/35042004@N00.jpg?1390644068#35042004@N00"
+        }
+      },
+      "meta_description": "As you can plainly see, I was in the front, hanging off the side.  I had to shove an old lady out of the way to get that spot!"
+    },
+    "identity_group": "flickr-nsid:35042004@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/rickwashere/10341271",
+    "html_sha256": "48e8e48d492d557fae50a9619f7e4c9d5c96d0c997c5e65c7763ef53988b5e50",
+    "stored_sha256": "bdcd43de69c2a1911a697cbcd915942e6370f2dd4e7be3e3ee33b3707956f83e",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\4e07990005b90201.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/4e07990005b90201.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

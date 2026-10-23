@@ -1,0 +1,80 @@
+{
+  "image_id": "b3c84145d7be9b72",
+  "image_sha256": "3f73e7c5248a3568e2781d0bf4d5cc7d624c0c5217f40860871a06b8a358f4e5",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "b3c84145d7be9b72",
+    "image_sha256": "3f73e7c5248a3568e2781d0bf4d5cc7d624c0c5217f40860871a06b8a358f4e5",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/neutronboy/4726002886",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/neutronboy/4726002886",
+      "original_url": "https://farm3.staticflickr.com/1352/4726002886_bcdcbcd6d4_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Mark Ramsay",
+      "author_url": "https://www.flickr.com/people/neutronboy/",
+      "title": "Neon Restaurant",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Mark Ramsay",
+      "url": "https://www.flickr.com/photos/neutronboy",
+      "image": "https://live.staticflickr.com/7334/buddyicons/34043089@N00.jpg?1399047236#34043089@N00"
+    },
+    "current_title": "Neon Restaurant",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Mark Ramsay",
+          "url": "https://www.flickr.com/photos/neutronboy",
+          "image": "https://live.staticflickr.com/7334/buddyicons/34043089@N00.jpg?1399047236#34043089@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:34043089@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/neutronboy/4726002886",
+    "html_sha256": "7e14ccff70b5a236c905bf0a8c43cb03168bce1de5a841612a832ea6bf40d8dd",
+    "stored_sha256": "75c1139ddd28e5ec9cf322b17e748db07284d8f86a9ee72875e5546249200ddc",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\b3c84145d7be9b72.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\b3c84145d7be9b72.html.gz",
+    "sha256": "75c1139ddd28e5ec9cf322b17e748db07284d8f86a9ee72875e5546249200ddc"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

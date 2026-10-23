@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "6b71fec6941aebd7",
+  "image_sha256": "5e8f29f044c920ecfa598f6a0cf335beec447bc628c4e5162d8dd3374d72c4e7",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "6b71fec6941aebd7",
+    "image_sha256": "5e8f29f044c920ecfa598f6a0cf335beec447bc628c4e5162d8dd3374d72c4e7",
+    "selected_category": "cat",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/attaboyluke/2223674768",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/attaboyluke/2223674768",
+      "original_url": "https://farm8.staticflickr.com/2183/2223674768_9005957ff1_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Luke Andrews",
+      "author_url": "https://www.flickr.com/people/attaboyluke/",
+      "title": "El gato a la playa",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Luke Andrews",
+      "url": "https://www.flickr.com/photos/attaboyluke",
+      "image": "https://live.staticflickr.com/2807/buddyicons/98916584@N00.jpg?1387839281#98916584@N00"
+    },
+    "current_title": "El gato a la playa",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Luke Andrews",
+          "url": "https://www.flickr.com/photos/attaboyluke",
+          "image": "https://live.staticflickr.com/2807/buddyicons/98916584@N00.jpg?1387839281#98916584@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:98916584@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/attaboyluke/2223674768",
+    "html_sha256": "d77c0e5cac9f38c6ec0ffc5c1ada0b50ca8560cd0d25d55fb823c4cc3be64a23",
+    "stored_sha256": "98659a15ae7b010d6afbef96134d81c23b1090e2f1ecde0da16a03b00661aba6",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\6b71fec6941aebd7.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/6b71fec6941aebd7.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

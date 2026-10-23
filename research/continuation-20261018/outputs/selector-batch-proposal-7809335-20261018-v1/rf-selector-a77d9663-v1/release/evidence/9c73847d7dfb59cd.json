@@ -1,0 +1,64 @@
+{
+  "image_id": "9c73847d7dfb59cd",
+  "image_sha256": "8e960bee192a155091aa96a12d4c9011d482548b23f5b95f9f84fd0225a43ef0",
+  "publisher_attribution": {
+    "id": "9c73847d7dfb59cd",
+    "landing_url": "https://www.flickr.com/photos/ipjmike/333268100",
+    "original_url": "https://c6.staticflickr.com/1/131/333268100_5133515ac1_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Michael Rehfeldt",
+    "author_url": "https://www.flickr.com/people/ipjmike/",
+    "title": "CI 747-400 Cargo B-18719 TPE",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Michael Rehfeldt",
+    "url": "https://www.flickr.com/photos/ipjmike",
+    "image": "https://live.staticflickr.com/7366/buddyicons/95505871@N00.jpg?1373424904#95505871@N00"
+  },
+  "current_title": "CI 747-400 Cargo B-18719 TPE",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Michael Rehfeldt",
+        "url": "https://www.flickr.com/photos/ipjmike",
+        "image": "https://live.staticflickr.com/7366/buddyicons/95505871@N00.jpg?1373424904#95505871@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/ipjmike/333268100",
+  "canonical_page_url": "https://www.flickr.com/photos/ipjmike/333268100",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "7c023205a0f0981fd923125a28442aaecab946bd05e0b07cb4b4f3ae2960910c",
+  "source_gzip_sha256": "ee70c40c9d4fdac924791ec8c2cb589acaa2dd17159acc5b28ebec5b7e188d54",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-265",
+  "visual_proof_sha256": "101307785bc61d91a82be9b2f4ecb86fe7fb28993e90f5cd011a5b2f5385728c",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

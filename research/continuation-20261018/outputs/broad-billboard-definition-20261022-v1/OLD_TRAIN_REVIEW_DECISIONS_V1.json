@@ -1,0 +1,625 @@
+[
+  {
+    "image_id": "001a4338f140e05e",
+    "note": "Domestic washer and renovation materials; no display board.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "062b4f2407f2522d",
+    "note": "Towels, bedding, fabric packaging and laptop; no dedicated advertising board.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "078433fcb4d125c2",
+    "note": "Wall switch and decorative toy flower; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "08dd4d1137b5ebeb",
+    "note": "Domestic laundry room and framed decorative picture; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "09d430e41bd56e0d",
+    "note": "Wall switch close-up; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "0b5455fbbc912400",
+    "note": "Washers inside vehicle compartment; equipment and packaging are not dedicated ad panels.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "0cfedba7346611f2",
+    "note": "Domestic washer, mirror and person; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "0e61cd4a43b03b48",
+    "note": "Domestic kitchen with decorative chicken art and appliance notices; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "1364c788098d058f",
+    "note": "Wall switch close-up; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "17bbc8187c609d54",
+    "note": "River/4x4 safety warning signs; excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "20d7ecf4e991f908",
+    "note": "Decorative clock and wall switches; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "259107b4202e6168",
+    "note": "Laundry equipment and framed artistic photographs; depictions within decorative art excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "27396602483f4cb0",
+    "note": "Top-loading washing machine and controls; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "27c8a391f7be1541",
+    "note": "Electrical switch close-up; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "28e00ee6e869b29a",
+    "note": "Door hardware and construction templates; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "2c8ac32ffb411ae3",
+    "note": "Standpipe connection identification/safety notice; operational infrastructure excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "2d9a83c18fe991c8",
+    "note": "Laundromat equipment/instructions; cropped blue wall poster at upper right may advertise a product/service. Hold unknown pending crop/source inspection.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "3563dcf2b06b6819",
+    "note": "Domestic laundry and decorative framed swimsuit art; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "385cb813b307e28c",
+    "note": "Wall switch; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "399048f892919b4c",
+    "note": "Jean de Beauvais laundromat identity/welcome/contact board now in scope; machine instructions and rules excluded.",
+    "additions_xyxy": [
+      [
+        326,
+        7,
+        442,
+        88
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "3dbc9f2537db454e",
+    "note": "Domestic bathroom and washer; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "46e344332f867034",
+    "note": "Wall switch; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "4715b3a7e388197a",
+    "note": "Infant beside washing machine; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "48cb108620747608",
+    "note": "Fire hydrant and sidewalk; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "4c150075d7b07e13",
+    "note": "Hanging towels; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "5902a1ea0b8d7eb2",
+    "note": "Domestic door and switches; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "5a4eab8ba33e0509",
+    "note": "Hanging towels; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "6d9c6e5497b1f083",
+    "note": "Fire hydrant, roadway and grass; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "6fdb7e49fc8e52a3",
+    "note": "Wall switch with handwritten graffiti; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "7170f94d9c51934e",
+    "note": "Wall switch close-up; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "7427f046f1a28e5c",
+    "note": "Wall switch close-up; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "7c125a9e5c8d2f29",
+    "note": "Exposed electrical wall switches; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "7d2959cc5d308b32",
+    "note": "Decorative embroidered towels; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "84772c34d53af92e",
+    "note": "Domestic toaster and kettle; equipment branding excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "8df00dfe83bcb022",
+    "note": "Wall switch; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "9404a1942f9cbe2d",
+    "note": "Parking meter operational display; excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "c32ebf3022238d5b",
+    "note": "Shoes hanging from door knob; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "c6e7c3e2dee792f8",
+    "note": "Street-name and dead-end road signs; excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "c71372f50fbada13",
+    "note": "Bath towels and domestic fixtures; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "c8031cf68377fc7c",
+    "note": "Wall switches; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "ccce84e06e683568",
+    "note": "Door handle and decorative frosted glass; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "cd89f1fc4ab90d38",
+    "note": "Wall switch; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "ce1ed62305439430",
+    "note": "Domestic toaster; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "ea847b1425581694",
+    "note": "Embroidered bath towels; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "eaa39ad36b4ea9b4",
+    "note": "Wall switch; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "f5b043fe02f892b9",
+    "note": "Decorative towels; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "fdc6128a29bf42c9",
+    "note": "Embroidered towel with photographer watermark; no physical billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "013037fd8c0daf0a",
+    "note": "Retain three narrow ads; additional red fuel/service identity-price fixture partly hidden by tree needs exhaustive target QA. Remain partial.",
+    "additions_xyxy": [
+      [
+        413,
+        640,
+        444,
+        708
+      ]
+    ],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "078cc35acabe5e77",
+    "note": "Retain Emirates Durham sports-venue/sponsor display; gates and entry numbers are operational excluded. Whole photo contains no other clear display face.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "39ba18171aeb4415",
+    "note": "Retain church campaign billboard; add separate Adult Video business identity panel.",
+    "additions_xyxy": [
+      [
+        101,
+        262,
+        213,
+        313
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "7f2be8ccfdf33465",
+    "note": "Retain four narrow service ads; numerous additional shop identity/product panels in street frontage require exhaustive box review. Remain partial.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "867a012fafb5766c",
+    "note": "Times Square advertising scene; retained targets are partial and additional dedicated campaign/store identity faces need dense annotation QA.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "88ced829147507c7",
+    "note": "Times Square M&M/Hershey scene; many newly in-scope store identity panels as well as old campaign ads. Retain partial scope until dense QA.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "89f3b4db87857c8d",
+    "note": "Times Square dense advertisement/identity scene; old ten targets are partial. Additional faces need dense QA; never treat unmatched areas as negative.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "8d5986ae877b7be4",
+    "note": "Retain two blurred roadside ads; possible cropped third board at right edge requires completeness QA.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "995211dda562c920",
+    "note": "Retain three truck-mounted advertising targets; night storefront panels and multiple visible truck faces require unit/completeness QA.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "9b49325466652a54",
+    "note": "Retain main Motorola/Claro campaign face; small scaffold contractor plaques are fixture ownership/construction markings, not independent displays.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "a92833d5a82934db",
+    "note": "Retain two distant advertisement targets; additional distant storefront/billboard faces need exhaustive annotation QA. Rear of giant foreground structure excluded.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "b98bf3ea9eb1b4e0",
+    "note": "Retain Norberg Festival event identity target; add TOOLS business panel and distant blue/yellow business identity panel. Whole-photo draft reviewed.",
+    "additions_xyxy": [
+      [
+        641,
+        221,
+        789,
+        287
+      ],
+      [
+        145,
+        386,
+        210,
+        406
+      ]
+    ],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "c310febc40974a94",
+    "note": "Times Square dense campaign/identity scene; old four targets partial, additional Xinhua/shop/electronic advertising faces need exhaustive QA.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "c8bb3241ac57b9e2",
+    "note": "Retain political billboard; add two partially cropped property-letting/agent panels at left. Other extreme-edge faces remain uncertain; retain partial scope.",
+    "additions_xyxy": [
+      [
+        0,
+        493,
+        118,
+        539
+      ],
+      [
+        0,
+        536,
+        119,
+        595
+      ]
+    ],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "d8fff472678899cf",
+    "note": "Retain MINI product campaign billboard; small owner/permit plaques on fixture excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "dc2a7c32db059a9e",
+    "note": "Times Square night campaign/identity scene; six old targets partial, many additional advertising/shop panels require dense QA.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "ee4b59dc616c21ad",
+    "note": "Retain two bus-shelter advertising faces; middle occluded panel may be advertisement or operational map, unresolved. Vehicle equipment wrap excluded.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "status": "local-status-parser-fixed-four-hashes-recovered-without-network",
+  "actual_job_id": "7809335",
+  "cause": "Remote cat prints JSON without a final newline, joining }FRAMETRAIL_TASK_ARCHIVE; original start-of-line parser missed all four hashes.",
+  "original_regex_found": 0,
+  "recovered_archives": [
+    {
+      "index": 0,
+      "sha256": "f2f2b62b9ffc9098b563fe7df6906fe460bea69da0824be30b07094859d68f26"
+    },
+    {
+      "index": 1,
+      "sha256": "112c9a1ca497061435b2e27b40875a4d792b98b9011abff8d14a89c221b031b2"
+    },
+    {
+      "index": 2,
+      "sha256": "37a0e0babde1c6fc4fb9c815c074d956252a8973cfe5e26087bf13fe2c1088f0"
+    },
+    {
+      "index": 3,
+      "sha256": "38e92b6062f37fa6429ef9eecb62ee43a896f37dcc99571c75c00e4e648a1a17"
+    }
+  ],
+  "saved_log_and_user_console_agree": true,
+  "retrieval": "one fixed SFTP remote glob for all four archives and sidecars; exact downloaded filename and hash verification retained",
+  "core_package_modified": false,
+  "SSH_contacted": false,
+  "new_jobs": 0,
+  "raw_source_sha256": "d433dfc16b68c4efbf170cace754a07c779bedd50343de5a44a8b2a9a1fc68c6"
+}

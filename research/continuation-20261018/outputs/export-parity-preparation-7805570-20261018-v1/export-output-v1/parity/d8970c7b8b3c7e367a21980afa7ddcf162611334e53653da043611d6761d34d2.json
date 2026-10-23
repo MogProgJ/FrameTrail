@@ -1,0 +1,10 @@
+{
+  "image_sha256": "d8970c7b8b3c7e367a21980afa7ddcf162611334e53653da043611d6761d34d2",
+  "comparison": {
+    "passed": true,
+    "detections": 0
+  },
+  "raw_parity": null,
+  "ORT_seconds": 0.44831690000137314,
+  "detections": []
+}

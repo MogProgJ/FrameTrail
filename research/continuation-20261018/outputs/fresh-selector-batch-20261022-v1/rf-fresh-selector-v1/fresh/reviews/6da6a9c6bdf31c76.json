@@ -1,0 +1,53 @@
+{
+  "image_id": "6da6a9c6bdf31c76",
+  "image_sha256": "4314c16b6cfe4b819782044ff2baf34d8c5c49a0111388c17eb9c30655b99876",
+  "identity_group": "flickr-nsid:50036088@N05",
+  "scene_group": "scene:pool-safely-pool-fence-campaign-with-two-girls-against-sky",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\6da6a9c6bdf31c76.json",
+    "sha256": "e59999b37ce122beeeb6d86c3031d2762d7e73cf349a33314089f1da2adbd282"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.110937,
+      0.26875,
+      0.9,
+      0.697917
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-batch-04.json",
+    "sha256": "5a67229911c4e0e20bab8bc5e3ad7556762e069b5a12b87bf65ef7b51ce297de"
+  },
+  "content_decision": {
+    "id": "6da6a9c6bdf31c76",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.110937,
+        0.26875,
+        0.9,
+        0.697917
+      ]
+    ],
+    "note": "One Pool Safely public-safety photographic campaign billboard. Existing visible face bounds verified; CBS support branding and poles not separate targets.",
+    "scene_description": "Pool Safely pool fence campaign with two girls against sky"
+  },
+  "prospective_split": "train",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

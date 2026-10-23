@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "validation_photos": 15,
+  "full_model_forwards": 30,
+  "cpu_saved_prediction_parity_passed": true,
+  "raw_target_stage_checks": 168,
+  "encoder_reconstruction_checks_passed": true,
+  "all_24_new_class_targets_have_distinct_covering_decoder_queries": true,
+  "checkpoint_box_identity_checks_passed": true,
+  "original_input_hashes_unchanged": true,
+  "heldout_used": false,
+  "new_training": false,
+  "model_export": false
+}

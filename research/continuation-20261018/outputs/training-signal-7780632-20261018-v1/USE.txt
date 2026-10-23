@@ -1,0 +1,4 @@
+Read REPORT.md for the completed CPU loss/gradient check.
+PROPOSAL.md describes a separate proposed GPU continuation; it is not approved or submitted.
+The proposed sampler is an unexecuted plan, not a training record. No model weights are included.
+Preserve this sealed evidence. Reproduction requires copying diagnostic scripts into a fresh work folder with the pinned local runtime and original input files.

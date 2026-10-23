@@ -1,0 +1,64 @@
+{
+  "image_id": "fe3f9c3a2b87aeb5",
+  "image_sha256": "ad44d19ff8f251d8ba310d832ccd6762ded25f6e1503fdf5dfe0ca82cba3f619",
+  "publisher_attribution": {
+    "id": "fe3f9c3a2b87aeb5",
+    "landing_url": "https://www.flickr.com/photos/yeaki/7664168092",
+    "original_url": "https://farm6.staticflickr.com/7108/7664168092_886349d8ee_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Tobias von der Haar",
+    "author_url": "https://www.flickr.com/people/yeaki/",
+    "title": "Cruise Ship in Dover Port",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Tobias von der Haar",
+    "url": "https://www.flickr.com/photos/yeaki",
+    "image": "https://live.staticflickr.com/3814/buddyicons/76402385@N03.jpg?1375469832#76402385@N03"
+  },
+  "current_title": "Cruise Ship in Dover Port",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Tobias von der Haar",
+        "url": "https://www.flickr.com/photos/yeaki",
+        "image": "https://live.staticflickr.com/3814/buddyicons/76402385@N03.jpg?1375469832#76402385@N03"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/yeaki/7664168092",
+  "canonical_page_url": "https://www.flickr.com/photos/yeaki/7664168092",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "c5f7844a38c56565d126b2cfc16af8d4af9ce5574a0638c986d529daf5bee515",
+  "source_gzip_sha256": "12f21290d1de593eaf888c64d70e0bdd0c00ef23e4dbbf2fab2fd6bfbbe86175",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-173",
+  "visual_proof_sha256": "bb79d27d5976daf5f07eb297149e1b0b1b24e6b09800c5c47f70ae04d14acd47",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

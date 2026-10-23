@@ -1,0 +1,39 @@
+[2026-10-18 20:57:30] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-18 20:57:30] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 20:57:30] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 20:57:31] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+Inspected training billboard proposals 1/20
+Inspected training billboard proposals 2/20
+Inspected training billboard proposals 3/20
+Inspected training billboard proposals 4/20
+Inspected training billboard proposals 5/20
+Inspected training billboard proposals 6/20
+Inspected training billboard proposals 7/20
+Inspected training billboard proposals 8/20
+Inspected training billboard proposals 9/20
+Inspected training billboard proposals 10/20
+Inspected training billboard proposals 11/20
+Inspected training billboard proposals 12/20
+Inspected training billboard proposals 13/20
+Inspected training billboard proposals 14/20
+Inspected training billboard proposals 15/20
+Inspected training billboard proposals 16/20
+Inspected training billboard proposals 17/20
+Inspected training billboard proposals 18/20
+Inspected training billboard proposals 19/20
+Inspected training billboard proposals 20/20
+{
+  "status": "training-only-proposal-coverage-inspected",
+  "images": 20,
+  "known_targets": 54,
+  "all_encoder_covered": 52,
+  "selected_encoder_covered": 36,
+  "final_decoder_covered": 37,
+  "raw_coverage_lost_by_topk": 16,
+  "threshold_IoU": 0.5,
+  "all_model_state_unchanged": true,
+  "optimizer_updates": 0,
+  "validation_or_test_used": false,
+  "new_GPU_jobs": 0,
+  "limits": "Coverage upper bounds and proposal-stage comparison on training images only; not a proof that encoder fine-tuning will improve detection or retain old classes."
+}

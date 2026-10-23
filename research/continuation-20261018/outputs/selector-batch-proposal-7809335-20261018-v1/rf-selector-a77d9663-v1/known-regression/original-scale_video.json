@@ -1,0 +1,714 @@
+{
+  "schema": 1,
+  "purpose": "scoped-pilot-baseline-or-candidate-comparison",
+  "reference_sha256": "4f7cd45b48eb47cba9c5ab6650d7841ae4fc4071dc59a388ff6a9fdff069531c",
+  "identity": {
+    "role": "original_baseline",
+    "checkpoint_sha256": "3a9adf74b11b851fba7393cc41b12b538a7aa1576b0a4e179468cc36c2279389",
+    "evaluation_lock_sha256": "362e49cb9001e9a06795c59aafc7df0d6a26700ddaf8f592ef7431251fdcfa10",
+    "backend": "PyTorchCPU/FP32/math-attention"
+  },
+  "aggregate": {
+    "complete_tp": 19,
+    "complete_fp": 0,
+    "complete_fn": 11,
+    "complete_precision": 1.0,
+    "complete_recall": 0.6333333333333333,
+    "partial_positive_hits": 0,
+    "partial_positive_misses": 6,
+    "partial_known_positive_recall": 0.0,
+    "unscored_predictions": 13
+  },
+  "by_sequence": {
+    "00046": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "00208": {
+      "complete_tp": 7,
+      "complete_fp": 0,
+      "complete_fn": 3,
+      "complete_precision": 1.0,
+      "complete_recall": 0.7,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 4
+    },
+    "00272": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 6,
+      "complete_precision": 1.0,
+      "complete_recall": 0.25,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 2
+    },
+    "00280": {
+      "complete_tp": 4,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": 1.0,
+      "complete_recall": 0.6666666666666666,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 1
+    },
+    "00568": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 2
+    },
+    "00754": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 4,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 4
+    }
+  },
+  "by_class": {
+    "person": {
+      "complete_tp": 6,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "motorcycle": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "bird": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "dog": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "cup": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "fork": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "spoon": {
+      "complete_tp": 1,
+      "complete_fp": 0,
+      "complete_fn": 1,
+      "complete_precision": 1.0,
+      "complete_recall": 0.5,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "book": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "curtain": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "helmet": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "plate": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "shirt": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "table": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "toy": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "trousers": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "wheel": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    }
+  },
+  "frames": [
+    {
+      "frame_id": "00208-00006",
+      "counts": {
+        "complete_tp": 3,
+        "unscored_predictions": 2,
+        "complete_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00208-00006-publisher-933",
+          "iou": 0.9563756935107874,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00208-00006-publisher-930",
+          "iou": 0.9865002330231899,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 2,
+          "target_id": "00208-00006-publisher-929",
+          "iou": 0.9403183682344634,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00208-00006-publisher-928",
+          "label": "spoon",
+          "kind": "complete_fn",
+          "nearby_other_class": "wine glass",
+          "nearby_iou": 0.7439812057477027
+        },
+        {
+          "target_id": "00208-00006-publisher-932",
+          "label": "plate",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00208-00012",
+      "counts": {
+        "complete_tp": 4,
+        "unscored_predictions": 2,
+        "complete_fn": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00208-00012-publisher-933",
+          "iou": 0.9608565625730959,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00208-00012-publisher-930",
+          "iou": 0.9852458438745533,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 2,
+          "target_id": "00208-00012-publisher-929",
+          "iou": 0.9438723592381251,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 5,
+          "target_id": "00208-00012-publisher-928",
+          "iou": 0.9174458962849987,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00208-00012-publisher-932",
+          "label": "plate",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00754-00008",
+      "counts": {
+        "unscored_predictions": 2,
+        "complete_tp": 1,
+        "partial_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 1,
+          "target_id": "00754-00008-publisher-3380",
+          "iou": 0.6884151870834967,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00754-00008-publisher-3382",
+          "label": "curtain",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00754-00008-publisher-3383",
+          "label": "table",
+          "kind": "partial_fn",
+          "nearby_other_class": "dining table",
+          "nearby_iou": 0.9454822842076201
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 0,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00754-00016",
+      "counts": {
+        "complete_tp": 1,
+        "unscored_predictions": 2,
+        "partial_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00754-00016-publisher-3380",
+          "iou": 0.9899238582753228,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00754-00016-publisher-3382",
+          "label": "curtain",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00754-00016-publisher-3383",
+          "label": "table",
+          "kind": "partial_fn",
+          "nearby_other_class": "dining table",
+          "nearby_iou": 0.9516649558228586
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00272-00008",
+      "counts": {
+        "complete_tp": 1,
+        "unscored_predictions": 1,
+        "complete_fn": 3
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00272-00008-publisher-1198",
+          "iou": 0.8929476459104116,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00272-00008-publisher-1197",
+          "label": "helmet",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00272-00008-publisher-1200",
+          "label": "trousers",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00272-00008-publisher-1201",
+          "label": "shirt",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00272-00016",
+      "counts": {
+        "complete_tp": 1,
+        "unscored_predictions": 1,
+        "complete_fn": 3
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00272-00016-publisher-1198",
+          "iou": 0.9304362959393208,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00272-00016-publisher-1197",
+          "label": "helmet",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00272-00016-publisher-1200",
+          "label": "trousers",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00272-00016-publisher-1201",
+          "label": "shirt",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00280-00008",
+      "counts": {
+        "complete_tp": 2,
+        "unscored_predictions": 1,
+        "complete_fn": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00280-00008-publisher-1232",
+          "iou": 0.9897551721772279,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 2,
+          "target_id": "00280-00008-publisher-1233",
+          "iou": 0.9677114082923363,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00280-00008-publisher-1234",
+          "label": "wheel",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00280-00016",
+      "counts": {
+        "complete_tp": 2,
+        "complete_fn": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00280-00016-publisher-1232",
+          "iou": 0.987144701874267,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00280-00016-publisher-1233",
+          "iou": 0.9733399995327052,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00280-00016-publisher-1234",
+          "label": "wheel",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "00568-00005",
+      "counts": {
+        "complete_tp": 1,
+        "unscored_predictions": 1,
+        "partial_fn": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00568-00005-publisher-2606",
+          "iou": 0.981655064836586,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00568-00005-publisher-2607",
+          "label": "toy",
+          "kind": "partial_fn",
+          "nearby_other_class": "person",
+          "nearby_iou": 0.6322002676176756
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00568-00010",
+      "counts": {
+        "complete_tp": 1,
+        "unscored_predictions": 1,
+        "partial_fn": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00568-00010-publisher-2606",
+          "iou": 0.9869112008730391,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00568-00010-publisher-2607",
+          "label": "toy",
+          "kind": "partial_fn",
+          "nearby_other_class": "person",
+          "nearby_iou": 0.5271189746744239
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00046-00010",
+      "counts": {
+        "complete_tp": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00046-00010-publisher-214",
+          "iou": 0.9638955812460545,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "00046-00020",
+      "counts": {
+        "complete_tp": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00046-00020-publisher-214",
+          "iou": 0.9727745796713095,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [],
+      "ignored_predictions": []
+    }
+  ],
+  "limits": "Scoped evaluation at confidence .35, class-wise NMS .45, match IoU .5. Partial labels support known-positive recall only; unmatched unknown predictions are unscored. Small assistant-reviewed evidence, not full-vocabulary AP, tracking performance, or independent representative accuracy."
+}

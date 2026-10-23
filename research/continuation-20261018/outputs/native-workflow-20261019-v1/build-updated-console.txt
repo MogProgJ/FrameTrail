@@ -1,0 +1,41 @@
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_sqlite.lib
+  analysis_job.cpp
+  playback_cache.cpp
+  Generating Code...
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  cached_playback_window.cpp
+  preview_window.cpp
+  saved_run_window.cpp
+  Generating Code...
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_preview_ui.lib
+  workflow_diagnostics.cpp
+  frametrail_workflow_diagnostics.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_workflow_diagnostics.exe
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_preview_ui.lib
+  cached_playback_tests.cpp
+  frametrail_cached_playback_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_cached_playback_tests.exe
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_preview_ui.lib
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-workflow-20261019-v1/source/CMakeLists.txt
+  main.cpp
+  frametrail-desktop.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail-desktop.exe
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_preview_ui.lib
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-workflow-20261019-v1/source/CMakeLists.txt
+  desktop_tests.cpp
+  frametrail_desktop_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_desktop_tests.exe

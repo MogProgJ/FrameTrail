@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "26ab64ff7615533f",
+  "image_sha256": "37d007e71a5019bb4e7e9c2c52804f28a93c9418d1b84dcbfca5ce2a5c7563c2",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "26ab64ff7615533f",
+    "image_sha256": "37d007e71a5019bb4e7e9c2c52804f28a93c9418d1b84dcbfca5ce2a5c7563c2",
+    "selected_category": "cat",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/kansirnet/6632922189",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/kansirnet/6632922189",
+      "original_url": "https://c8.staticflickr.com/8/7019/6632922189_8741a0ed99_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Kansir",
+      "author_url": "https://www.flickr.com/people/kansirnet/",
+      "title": "\u5b88\u9580\u8c93",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Kansir",
+      "url": "https://www.flickr.com/photos/kansirnet",
+      "image": "https://live.staticflickr.com/5456/buddyicons/86499133@N00.jpg?1369289149#86499133@N00"
+    },
+    "current_title": "\u5b88\u9580\u8c93",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Kansir",
+          "url": "https://www.flickr.com/photos/kansirnet",
+          "image": "https://live.staticflickr.com/5456/buddyicons/86499133@N00.jpg?1369289149#86499133@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:86499133@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/kansirnet/6632922189",
+    "html_sha256": "4ae1fd6be79622314e8ca8555f817381d7ff56a09240a043203cbf133b6c7ddf",
+    "stored_sha256": "193327265896cd40ba51caca9f1e011daa3c3873e99cb6e05a3f6ef0e7952c2c",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\26ab64ff7615533f.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/26ab64ff7615533f.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

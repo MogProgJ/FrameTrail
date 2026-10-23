@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "35f6c1138217d58e",
+  "image_sha256": "80db7975cfff2fe869f0b2ddea4c37dafed92180fd81a24e6b5f0ef8e642d3fb",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "35f6c1138217d58e",
+    "image_sha256": "80db7975cfff2fe869f0b2ddea4c37dafed92180fd81a24e6b5f0ef8e642d3fb",
+    "selected_category": "kettle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/travelista/7606887160",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/travelista/7606887160",
+      "original_url": "https://c7.staticflickr.com/9/8158/7606887160_55a5a37b5f_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "The Travelista",
+      "author_url": "https://www.flickr.com/people/travelista/",
+      "title": "Tour of Traditional Berber House",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "The Travelista",
+      "url": "https://www.flickr.com/photos/travelista",
+      "image": "https://live.staticflickr.com/1187/buddyicons/8903345@N04.jpg?1184683943#8903345@N04"
+    },
+    "current_title": "Tour of Traditional Berber House",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "The Travelista",
+          "url": "https://www.flickr.com/photos/travelista",
+          "image": "https://live.staticflickr.com/1187/buddyicons/8903345@N04.jpg?1184683943#8903345@N04"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:8903345@N04",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/travelista/7606887160",
+    "html_sha256": "80de7e7e68f5b63e2f2ebed269444b0443f9ac7ab8ed413c79232d97d81ed178",
+    "stored_sha256": "e623c706d5aa0ea62b11abfd100b68384948292c59bcef82b7f6844db9db2110",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\35f6c1138217d58e.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/35f6c1138217d58e.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

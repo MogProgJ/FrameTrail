@@ -1,0 +1,64 @@
+{
+  "image_id": "e504657efdef1b98",
+  "image_sha256": "83617eee4170ba3212a6f59ce569f9dd2bfe76833cca5788bc578699f0bd8621",
+  "publisher_attribution": {
+    "id": "e504657efdef1b98",
+    "landing_url": "https://www.flickr.com/photos/aforum/437958083",
+    "original_url": "https://c1.staticflickr.com/1/187/437958083_04ac781de1_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Carnaval.com Studios",
+    "author_url": "https://www.flickr.com/people/aforum/",
+    "title": "CarnavalSF-07-064",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Carnaval.com Studios",
+    "url": "https://www.flickr.com/photos/aforum",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/17281186@N00.jpg?1660079281#17281186@N00"
+  },
+  "current_title": "CarnavalSF-07-064",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Carnaval.com Studios",
+        "url": "https://www.flickr.com/photos/aforum",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/17281186@N00.jpg?1660079281#17281186@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/aforum/437958083",
+  "canonical_page_url": "https://www.flickr.com/photos/aforum/437958083",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "fa0cf95a408b35988adb9c960cbb5690181ceef46d19d8d2815dba3a03e2af02",
+  "source_gzip_sha256": "0fd779633f12b23ea44d779da7b5ddaa68edd7f1e9840f1a4ca3e668d745a274",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-167",
+  "visual_proof_sha256": "7a7f85dbe604616231b27418bb2e3ba6605190e15b4eacf7feb361898ac53f08",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

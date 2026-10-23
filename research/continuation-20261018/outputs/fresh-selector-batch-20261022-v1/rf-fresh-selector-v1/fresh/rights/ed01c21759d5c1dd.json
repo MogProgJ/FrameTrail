@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "ed01c21759d5c1dd",
+  "image_sha256": "4999323b45a90cefcc5cf726b1bea4a50f04bb7c4ac2dbb572e1adac9c9e8096",
+  "source_review": {
+    "image_id": "ed01c21759d5c1dd",
+    "image_sha256": "4999323b45a90cefcc5cf726b1bea4a50f04bb7c4ac2dbb572e1adac9c9e8096",
+    "selected_category": "whiteboard",
+    "selected_domain": "contrast",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/21218849@N03/3792910537",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/21218849@N03/3792910537",
+      "original_url": "https://c6.staticflickr.com/4/3594/3792910537_885a699070_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Samuel Mann",
+      "author_url": "https://www.flickr.com/people/21218849@N03/",
+      "title": "350 system metaphor and planning game",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Samuel Mann",
+      "url": "https://www.flickr.com/photos/21218849@N03",
+      "image": "https://live.staticflickr.com/3016/buddyicons/21218849@N03.jpg?1218227786#21218849@N03"
+    },
+    "current_title": "350 system metaphor and planning game",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Samuel Mann",
+          "url": "https://www.flickr.com/photos/21218849@N03",
+          "image": "https://live.staticflickr.com/3016/buddyicons/21218849@N03.jpg?1218227786#21218849@N03"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:21218849@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/21218849@N03/3792910537",
+    "html_sha256": "3d9e44c8809cfbafbc4c4043a191732f6e8b48a2784a1d5c9477a3ad7c78919f",
+    "stored_sha256": "73c4bcd09c4e4afacc928d209a2a4de43be355415bde0d9526e5ebb7b8a4bbe8",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\ed01c21759d5c1dd.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\ed01c21759d5c1dd.json",
+    "sha256": "dbe07aa0a23ee93743dba0643a098c6cd72d65151b7b23fa86b9e5ef54726d07"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\ed01c21759d5c1dd.json",
+    "sha256": "a3e14d741a8416ef0793d6c8f37e272be91df35a4221b49828978cb45badca41"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/21218849@N03/3792910537",
+    "original_url": "https://c6.staticflickr.com/4/3594/3792910537_885a699070_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Samuel Mann",
+    "author_url": "https://www.flickr.com/people/21218849@N03/",
+    "title": "350 system metaphor and planning game",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

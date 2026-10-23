@@ -1,0 +1,80 @@
+{
+  "stage": "whole-original-negative-content-review-before-predictions",
+  "approved_for_training": false,
+  "scene_comparison_complete": false,
+  "model_predictions_seen": false,
+  "records": [
+    {
+      "id": "ed01c21759d5c1dd",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows handwritten phrases on ordinary indoor whiteboard; no advertising campaign.",
+      "scene_description": "Handwritten metaphors list on recessed indoor whiteboard"
+    },
+    {
+      "id": "c169d65520795324",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows cartoons/notes on indoor whiteboard and pinned schedules; no campaign.",
+      "scene_description": "Green cake sheep cartoons on office whiteboard"
+    },
+    {
+      "id": "8a2155fbed2a9b9f",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows medical/technical console, CRT and equipment manual; labels/packaging are not installed campaign boards.",
+      "scene_description": "Medical technical console CRT and green equipment manual"
+    },
+    {
+      "id": "0c4e2a0564dec658",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows classroom computer desks, monitors, person and consumer bottle/clothing branding; no installed advertising campaign panel.",
+      "scene_description": "Classroom monitors woman and foreground shoe on desk"
+    },
+    {
+      "id": "4693658c0ef57ce1",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows presenter, hand-drawn flipchart, projection and room decor; no installed advertising campaign.",
+      "scene_description": "Presenter at flipchart beside fireplace mirror"
+    },
+    {
+      "id": "8d932f62ee664206",
+      "disposition": "hold-whole-photo-absence-completeness",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Original includes decorative relief/portrait art and small framed product-style prints at right whose campaign-versus-art purpose is unresolved; retain absence hold.",
+      "scene_description": "Relief musician artwork and framed prints with gallery visitor"
+    },
+    {
+      "id": "513b5406a0b58ba4",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows video-game demonstration on computer, participants and building-name glazing; no installed advertising campaign panel. Screen content stays a depiction/other-class unknown.",
+      "scene_description": "Game demonstration monitor with large white costume head participant"
+    },
+    {
+      "id": "00198353ef684011",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows meeting room, handwritten board, landscape art and hanging lamps; no installed campaign panel.",
+      "scene_description": "Meeting room with long wood table and many hanging light bulbs"
+    },
+    {
+      "id": "ef60f47752e17cae",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows software lesson/projection, monitor and framed decorative art; no installed advertising campaign. Projected code/text is image content only.",
+      "scene_description": "Software HTML lesson on projection screen beside framed blue portrait"
+    }
+  ]
+}

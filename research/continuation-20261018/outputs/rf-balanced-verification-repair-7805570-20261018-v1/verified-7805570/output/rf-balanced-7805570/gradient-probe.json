@@ -1,0 +1,8 @@
+{
+  "only_main_classifier_gradients": true,
+  "active_rows": [
+    133,
+    593
+  ],
+  "inactive_row_gradients_zero": true
+}

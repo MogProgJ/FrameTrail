@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "status": "downloaded",
+  "url": "https://open-images-dataset.s3.amazonaws.com/train/0d18a88d79444d2e.jpg",
+  "context": {
+    "selection_sha256": "69d67561b87f4efad265f4713a415ff985e7bc551fa01b931c574c1e16d68ef5",
+    "catalogue_sha256": "bd42dbb1129406c16cda37401670ecba04d6d956cde0071ab79de6190162e78d",
+    "scope_sha256": "2b0c50ae45db08322291b498babae33ac3d2f93d8ea58368d132ae1ddda5329a",
+    "vocabulary_sha256": "4add59233e843ee655a9937c793f19b61c24854ea84e7c10fc5c2b21a63a5bbc",
+    "exclusion_manifest_sha256": "afaf19d24f3d31d8ff267141e585832943ac9eaf82aac99c921c353b4c876054",
+    "module": "photo-pilot-v1",
+    "runner_sha256": "f7e0093ec00dbcc3c1eb7c19647418d1fa8bb6c4fceb9e96c19020bb948b792a"
+  },
+  "bytes": 169033,
+  "sha256": "895f52c80aa8d155177900fa2ad677568079fe92f204ebbfc0272031e65da462",
+  "decoded": {
+    "width": 1024,
+    "height": 683,
+    "dhash": "edcfdb7333313210",
+    "mean_luma": 138.74
+  },
+  "retrieved_at_utc": "2026-10-04T15:45:59.510445+00:00",
+  "etag": "\"e30ef3785fdf959b6fff660d0585d725\"",
+  "last_modified": "Wed, 11 Jul 2018 01:14:06 GMT",
+  "verification": "HTTP identity/length, local SHA256 and JPEG decode; no publisher checksum supplied"
+}

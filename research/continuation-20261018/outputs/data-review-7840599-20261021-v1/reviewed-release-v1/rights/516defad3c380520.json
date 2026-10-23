@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "516defad3c380520",
+  "image_sha256": "5f2abc362f175d32ad88e28ceba9336be2e744498de0d03a62709da254812839",
+  "source_review": {
+    "image_id": "516defad3c380520",
+    "image_sha256": "5f2abc362f175d32ad88e28ceba9336be2e744498de0d03a62709da254812839",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "test",
+    "source_url": "https://www.flickr.com/photos/et_id_der_ikke_findes/6349040226",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/et_id_der_ikke_findes/6349040226",
+      "original_url": "https://farm1.staticflickr.com/6058/6349040226_5317e35875_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Martin Jakobsen",
+      "author_url": "https://www.flickr.com/people/et_id_der_ikke_findes/",
+      "title": "IMG_4795",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Martin Jakobsen",
+      "url": "https://www.flickr.com/photos/et_id_der_ikke_findes",
+      "image": "https://live.staticflickr.com/1250/buddyicons/8757347@N03.jpg?1181404169#8757347@N03"
+    },
+    "current_title": "IMG_4795",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Martin Jakobsen",
+          "url": "https://www.flickr.com/photos/et_id_der_ikke_findes",
+          "image": "https://live.staticflickr.com/1250/buddyicons/8757347@N03.jpg?1181404169#8757347@N03"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:8757347@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/et_id_der_ikke_findes/6349040226",
+    "html_sha256": "8ac3f64082c9c38d994dde10b29c76ca0e20cd119885061573a097857571a9cf",
+    "stored_sha256": "efa3b0f6c3ee8b0dc5cac6f350425f694a64f2ad2a5ca13333059e7045b58688",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\516defad3c380520.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\516defad3c380520.json",
+    "sha256": "2a12127f32fbd9fb2952f1e331bcac5aa675933d88fdb74cf94109cf2b3be30f"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\516defad3c380520.json",
+    "sha256": "591faf07a21c59c8b6f91e76520697f2fd416c78670b04835f5343cf729ae509"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/et_id_der_ikke_findes/6349040226",
+    "original_url": "https://farm1.staticflickr.com/6058/6349040226_5317e35875_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Martin Jakobsen",
+    "author_url": "https://www.flickr.com/people/et_id_der_ikke_findes/",
+    "title": "IMG_4795",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

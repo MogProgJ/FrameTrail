@@ -1,0 +1,148 @@
+{
+  "sheet": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\review-sheets\\contrast-03.jpg",
+  "stage": "initial-scene-triage-only-not-label-or-training-clearance",
+  "model_predictions_used": false,
+  "exhaustive_annotation": false,
+  "records": [
+    {
+      "id": "31c585fd77d4d28f",
+      "role": "train",
+      "anchor": "traffic sign",
+      "disposition": "billboard-absence-candidate",
+      "note": "Road curve warning sign"
+    },
+    {
+      "id": "46330787365e39e3",
+      "role": "train",
+      "anchor": "traffic sign",
+      "disposition": "billboard-absence-candidate",
+      "note": "No trucks sign"
+    },
+    {
+      "id": "65e34de96ff0f728",
+      "role": "train",
+      "anchor": "traffic sign",
+      "disposition": "boundary-hold",
+      "note": "Railway danger notice; compare flagged perceptual match"
+    },
+    {
+      "id": "b33447da6ab4cbe6",
+      "role": "train",
+      "anchor": "traffic sign",
+      "disposition": "boundary-hold",
+      "note": "Urban intersection and ordinary traffic signs; inspect distant facades"
+    },
+    {
+      "id": "b7fdd04c8d1a1e0b",
+      "role": "train",
+      "anchor": "traffic sign",
+      "disposition": "billboard-absence-candidate",
+      "note": "Roadworks information signs"
+    },
+    {
+      "id": "d6bab621c0ddc4ea",
+      "role": "train",
+      "anchor": "traffic sign",
+      "disposition": "billboard-absence-candidate",
+      "note": "No turn traffic sign with people at parking meters"
+    },
+    {
+      "id": "dcfb7be73a1b8376",
+      "role": "train",
+      "anchor": "traffic sign",
+      "disposition": "billboard-absence-candidate",
+      "note": "Directional road sign"
+    },
+    {
+      "id": "ea3823dee72eec20",
+      "role": "train",
+      "anchor": "traffic sign",
+      "disposition": "billboard-absence-candidate",
+      "note": "No-entry and parking prohibition signs"
+    },
+    {
+      "id": "1cfc8fd2934d4d5f",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Shipboard laundry machines"
+    },
+    {
+      "id": "1ed09b82d0a8370d",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Laundry appliance with clothes"
+    },
+    {
+      "id": "28b10d0cab704513",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Child at open washing machine"
+    },
+    {
+      "id": "2de30a20ca6e53b5",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Top-loading appliance"
+    },
+    {
+      "id": "380aab08547bb9d7",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Sink waste disposal mislabelled as washing machine; still potential billboard absence"
+    },
+    {
+      "id": "3ba19b9ff3244873",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Top-loading washer"
+    },
+    {
+      "id": "562d7492978db1be",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Laundry machines beside beverage machine"
+    },
+    {
+      "id": "605daeae27237af9",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Dishwasher rather than washer; potential billboard absence"
+    },
+    {
+      "id": "64f48726c64d158b",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Kitchen with washing machine"
+    },
+    {
+      "id": "7c60190ca0def50b",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Tumble dryer rather than washer"
+    },
+    {
+      "id": "7d3c9512d8ad8e26",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Laundrette with distant signs; inspect advertising versus notices"
+    },
+    {
+      "id": "cf1108361c47af2b",
+      "role": "train",
+      "anchor": "washing machine",
+      "disposition": "boundary-hold",
+      "note": "Outdoor appliances for sale with small sale notice"
+    }
+  ]
+}

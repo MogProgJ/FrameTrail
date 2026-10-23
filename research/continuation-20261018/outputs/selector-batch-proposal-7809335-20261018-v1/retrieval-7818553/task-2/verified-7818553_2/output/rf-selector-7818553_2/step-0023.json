@@ -1,0 +1,12 @@
+{
+  "step": 23,
+  "loss": 12.751250505447388,
+  "dense_encoder_loss": 0.6932311557757203,
+  "gradient_norm": 7.04013729095459,
+  "train_ids": [
+    "ee4b59dc616c21ad",
+    "4c150075d7b07e13",
+    "28e00ee6e869b29a",
+    "ce924fe52d00e437"
+  ]
+}

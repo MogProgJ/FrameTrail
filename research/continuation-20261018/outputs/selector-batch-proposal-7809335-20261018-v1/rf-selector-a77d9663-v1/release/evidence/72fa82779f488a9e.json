@@ -1,0 +1,64 @@
+{
+  "image_id": "72fa82779f488a9e",
+  "image_sha256": "a4c7d3aaa3f34f60503db379ad20325e3ea6d53a6ab7f7e88afd34c09bd39303",
+  "publisher_attribution": {
+    "id": "72fa82779f488a9e",
+    "landing_url": "https://www.flickr.com/photos/bartworldv6/3908207916",
+    "original_url": "https://c7.staticflickr.com/3/2609/3908207916_d0712469dc_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "David Jafra",
+    "author_url": "https://www.flickr.com/people/bartworldv6/",
+    "title": "Disney's Hotel New York - Disneyland Paris",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "David Jafra",
+    "url": "https://www.flickr.com/photos/bartworldv6",
+    "image": "https://live.staticflickr.com/1481/buddyicons/44212722@N00.jpg?1454703531#44212722@N00"
+  },
+  "current_title": "Disney's Hotel New York - Disneyland Paris",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "David Jafra",
+        "url": "https://www.flickr.com/photos/bartworldv6",
+        "image": "https://live.staticflickr.com/1481/buddyicons/44212722@N00.jpg?1454703531#44212722@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/bartworldv6/3908207916",
+  "canonical_page_url": "https://www.flickr.com/photos/bartworldv6/3908207916",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "6b14dad0c8e66455f4a421a8ebc62e02a2601e72786235673ff1b1988042dd58",
+  "source_gzip_sha256": "c994c57aef165eed80a9dc850825782f538d9918b93a744ac4548c8e9c19c3f8",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-159",
+  "visual_proof_sha256": "ebf54e3e02d40029af9bec3e9ff0d2b4e66f928d63bf5611fdc37a2c0ca4ea03",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

@@ -1,0 +1,13 @@
+PartitionName=gpu_a100_il
+   AllowGroups=ALL AllowAccounts=ALL AllowQos=ALL
+   AllocNodes=ALL Default=NO QoS=N/A
+   DefaultTime=00:10:00 DisableRootJobs=NO ExclusiveUser=NO ExclusiveTopo=NO GraceTime=0 Hidden=NO
+   MaxNodes=10 MaxTime=2-00:00:00 MinNodes=0 LLN=NO MaxCPUsPerNode=128 MaxCPUsPerSocket=UNLIMITED
+   Nodes=uc2n[901,903-905,909-913]
+   PriorityJobFactor=1 PriorityTier=1 RootOnly=NO ReqResv=NO OverSubscribe=NO
+   OverTimeLimit=NONE PreemptMode=OFF
+   State=UP TotalCPUs=1152 TotalNodes=9 SelectTypeParameters=NONE
+   JobDefaults=DefCpuPerGPU=16,DefMemPerGPU=127500
+   DefMemPerNode=UNLIMITED MaxMemPerNode=UNLIMITED
+   TRES=cpu=1152,mem=4590000M,node=9,billing=1152,gres/gpu=36
+

@@ -1,0 +1,45 @@
+{
+  "image_sha256": "560a9fc339397937154ac0489286cfc5376b13b731306e8dead14cf3086d3700",
+  "comparison": {
+    "passed": true,
+    "detections": 3,
+    "classes_match": true,
+    "minimum_iou": 0.9999985547186674,
+    "maximum_confidence_difference": 1.0728836059570312e-06,
+    "maximum_normalized_box_difference": 6.705522537231445e-08
+  },
+  "raw_parity": null,
+  "ORT_seconds": 0.48176900000180467,
+  "detections": [
+    {
+      "canonical_id": 16,
+      "confidence": 0.9458127617835999,
+      "box": [
+        201.37239837646484,
+        465.2193875312805,
+        378.6791763305664,
+        532.0651316642761
+      ]
+    },
+    {
+      "canonical_id": 0,
+      "confidence": 0.878955602645874,
+      "box": [
+        684.0571327209473,
+        347.537400752306,
+        804.5311241149902,
+        528.5964607894421
+      ]
+    },
+    {
+      "canonical_id": 0,
+      "confidence": 0.6715477705001831,
+      "box": [
+        731.2977676391602,
+        262.70195853710175,
+        815.7589950561523,
+        523.5881205797195
+      ]
+    }
+  ]
+}

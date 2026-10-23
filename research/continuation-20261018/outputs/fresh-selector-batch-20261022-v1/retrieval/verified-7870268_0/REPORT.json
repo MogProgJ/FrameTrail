@@ -1,0 +1,51 @@
+{
+  "status": "complete-awaiting-local-CPU-selection",
+  "actual_job_id": "7870268_0",
+  "scope_sha256": "a8cc4ce065bb300869f85e416b48f56fd3ecf8cf00e25db2b08abef9dfaaeb3f",
+  "seed": 17,
+  "index": 0,
+  "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "schedule_sha256": "d831162e01329f216a33ce8fa241dfe5f9207fd1a168611befef9d53e3438f5b",
+  "frozen_digest": "214d4ba84414fe25c8f8b138c6e0270e440a0351576d08be0a7d36b106d2c5ae",
+  "production_adoption": false,
+  "updates": 1500,
+  "elapsed_active_seconds": 471.00039734799066,
+  "patches": [
+    {
+      "step": 0,
+      "path": "patch-0000.pt",
+      "sha256": "aba2514c5e0a8d07d80d0a3cbf89f980387fbc7c887c879d08a4efbb073da3b7"
+    },
+    {
+      "step": 100,
+      "path": "patch-0100.pt",
+      "sha256": "1710d403bae0eb7feb1445080b05b5c61a2b98fbf8c4a40bb7baca0c01e03937"
+    },
+    {
+      "step": 250,
+      "path": "patch-0250.pt",
+      "sha256": "27d7a0bbd7f2ce5ec128cd1f041e0791f7618abfeed69a74e3f864747fd15100"
+    },
+    {
+      "step": 500,
+      "path": "patch-0500.pt",
+      "sha256": "b8d96f5f18776fba0edf103f54b89413832d0d7dd4fea3911276e52808ffb152"
+    },
+    {
+      "step": 1000,
+      "path": "patch-1000.pt",
+      "sha256": "091eb61d06c83214fb63d822487b21d66d79307a7e65db9bb04f7a68be0f462c"
+    },
+    {
+      "step": 1500,
+      "path": "patch-1500.pt",
+      "sha256": "45ec4497202d42859ae8f9c6eb7ecdcc67d8587a1d87439975af13fcf345d442"
+    }
+  ],
+  "last_sha256": "c1b3c2ce45853eed30ad799d654936862d9d989449c9ae0966d2321598f705ce",
+  "frozen_state_unchanged": true,
+  "inactive_rows_bitwise_unchanged": true,
+  "validation_selection_performed": false,
+  "test_photos_used": 0,
+  "automatic_retries": 0
+}

@@ -1,0 +1,19 @@
+{
+  "job": "7870268",
+  "tasks": [
+    {
+      "status": "complete-structurally-verified-awaiting-local-selection",
+      "actual_job_id": "7870268_0",
+      "complete": true,
+      "production_adoption": false
+    },
+    {
+      "status": "complete-structurally-verified-awaiting-local-selection",
+      "actual_job_id": "7870268_1",
+      "complete": true,
+      "production_adoption": false
+    }
+  ],
+  "all_complete": true,
+  "production_adoption": false
+}

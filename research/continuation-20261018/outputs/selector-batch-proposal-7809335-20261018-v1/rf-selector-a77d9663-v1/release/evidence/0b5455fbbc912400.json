@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "0b5455fbbc912400",
+  "image_sha256": "35656683423ebc6c82d87f76361e2dfbc98319eede4b837bf2038add704fce03",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "0b5455fbbc912400",
+    "image_sha256": "35656683423ebc6c82d87f76361e2dfbc98319eede4b837bf2038add704fce03",
+    "selected_category": "washing machine",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/sadhbhos/6147747198",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/sadhbhos/6147747198",
+      "original_url": "https://farm1.staticflickr.com/6208/6147747198_6d42192bd9_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Sadhbh O&#x27;Shea",
+      "author_url": "https://www.flickr.com/people/sadhbhos/",
+      "title": "Team Sky Bus",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Sadhbh O&#x27;Shea",
+      "url": "https://www.flickr.com/photos/sadhbhos",
+      "image": "https://live.staticflickr.com/3486/buddyicons/67550283@N08.jpg?1394463757#67550283@N08"
+    },
+    "current_title": "Team Sky Bus",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Sadhbh O&#x27;Shea",
+          "url": "https://www.flickr.com/photos/sadhbhos",
+          "image": "https://live.staticflickr.com/3486/buddyicons/67550283@N08.jpg?1394463757#67550283@N08"
+        }
+      },
+      "meta_description": "Team Sky show us where the riders get their kit washed, it is the portable laundry room."
+    },
+    "identity_group": "flickr-nsid:67550283@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/sadhbhos/6147747198",
+    "html_sha256": "2310b651671158bcc3456f16cea5ef00a9842a05fbe2ef8418c0cb38d4ebb7eb",
+    "stored_sha256": "a44667e3c6c195922c39690456adeb8f69746e806633b2193cdf77a30583301a",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\0b5455fbbc912400.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/0b5455fbbc912400.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

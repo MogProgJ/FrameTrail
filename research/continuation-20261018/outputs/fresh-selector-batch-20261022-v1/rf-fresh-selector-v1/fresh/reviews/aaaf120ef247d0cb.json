@@ -1,0 +1,40 @@
+{
+  "image_id": "aaaf120ef247d0cb",
+  "image_sha256": "81841364ef6a85e6d4baef7f4f22e3b8b8c6cc47ef32cb6b9af61cb31cb00020",
+  "identity_group": "flickr-nsid:56624456@N00",
+  "scene_group": "scene:two-men-at-a-workshop-whiteboard-with-red-technical-notes",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\aaaf120ef247d0cb.json",
+    "sha256": "02bc5b515437a33d9a3f25848bd80a3ef66b84b01201442ce09bc68feef5e941"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-val-02.json",
+    "sha256": "f82ee31dfe661131e9e4fcf55b35701afce493472b73fc5a605d0c1246a56f8d"
+  },
+  "content_decision": {
+    "id": "aaaf120ef247d0cb",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "indoor-frames-screens-boards",
+    "note": "Full original contains two people writing technical workshop notes on an indoor whiteboard; no advertising face.",
+    "scene_description": "Two men at a workshop whiteboard with red technical notes"
+  },
+  "prospective_split": "val",
+  "confuser_family": "indoor-frames-screens-boards",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

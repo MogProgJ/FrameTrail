@@ -1,0 +1,45 @@
+{
+  "index": 3,
+  "weighting": "uniform",
+  "ridge": 100.0,
+  "training_feature_count": 10537,
+  "plan_sha256": "bd0c939de85d3c7a9fbb85cd96167bc8c9e1a318a6a83a7f142a3515a1abea93",
+  "addendum_sha256": "43f4e9de54d32cf6c6237c62f9bf18cd19dce312187c6be2bf33d26d817369a3",
+  "only_row133_changed": true,
+  "optimizer": "CPU float64 full-batch LBFGS",
+  "iterations": 5,
+  "function_evaluations": 5,
+  "seconds": 0.022243400002480485,
+  "history": [
+    {
+      "objective": 3.057086113803619,
+      "data_loss": 3.057086113803619,
+      "anchor": 0.0,
+      "gradient_norm": 8.492661824419312
+    },
+    {
+      "objective": 2.829440314375771,
+      "data_loss": 2.1201611325372443,
+      "anchor": 0.7092791818385269,
+      "gradient_norm": 4.895449452855848
+    },
+    {
+      "objective": 2.727168518274051,
+      "data_loss": 2.4402010264777716,
+      "anchor": 0.28696749179627945,
+      "gradient_norm": 0.15044298189802974
+    },
+    {
+      "objective": 2.7270693727716138,
+      "data_loss": 2.430285301213566,
+      "anchor": 0.2967840715580476,
+      "gradient_norm": 0.0031428626698507744
+    },
+    {
+      "objective": 2.727069329690341,
+      "data_loss": 2.4300952273777874,
+      "anchor": 0.2969741023125534,
+      "gradient_norm": 9.419163285353725e-05
+    }
+  ]
+}

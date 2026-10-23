@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "8df00dfe83bcb022",
+  "image_sha256": "225655732107af968f85500946345301b246b62d7c2f77eb57e4c0f214685eca",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "8df00dfe83bcb022",
+    "image_sha256": "225655732107af968f85500946345301b246b62d7c2f77eb57e4c0f214685eca",
+    "selected_category": "light switch",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/sneddon/2523841356",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/sneddon/2523841356",
+      "original_url": "https://farm3.staticflickr.com/2132/2523841356_f2a43cb3e2_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Jim Sneddon",
+      "author_url": "https://www.flickr.com/people/sneddon/",
+      "title": "On",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Jim Sneddon",
+      "url": "https://www.flickr.com/photos/sneddon",
+      "image": "https://live.staticflickr.com/1107/buddyicons/37718156@N00.jpg?1207341559#37718156@N00"
+    },
+    "current_title": "On",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Jim Sneddon",
+          "url": "https://www.flickr.com/photos/sneddon",
+          "image": "https://live.staticflickr.com/1107/buddyicons/37718156@N00.jpg?1207341559#37718156@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:37718156@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/sneddon/2523841356",
+    "html_sha256": "9746bd28b68211a3caf6f70a47b09913fbbf0b2826097cfaed332612974317e6",
+    "stored_sha256": "e59ed908bb7953ad0a1f6c9d9fe8490d705e89e07bd1f8fe7d3ead6cfb2fc754",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\8df00dfe83bcb022.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/8df00dfe83bcb022.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

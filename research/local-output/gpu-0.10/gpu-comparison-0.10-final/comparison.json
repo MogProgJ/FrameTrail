@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-03T12:49:27.3721433Z",
+  "comparisons": [
+    {
+      "model": "nano",
+      "measured_frames": 110,
+      "cpu_runtime": "1.30.0",
+      "gpu_runtime": "1.24.4",
+      "gpu_device": "NVIDIA GeForce GTX 1650 Ti",
+      "cpu_pipeline_ms": 20.43667727272727,
+      "gpu_pipeline_ms": 17.214153636363644,
+      "cpu_effective_fps": 48.931633389078335,
+      "gpu_effective_fps": 58.09173202030525,
+      "pipeline_speedup": 1.1872019795127353,
+      "cpu_p95_ms": 25.1479,
+      "gpu_p95_ms": 23.6167,
+      "cpu_peak_working_set_bytes": 82599936,
+      "gpu_peak_working_set_bytes": 302641152,
+      "cpu_process_seconds": 2.8228886,
+      "gpu_process_seconds": 4.1753793
+    },
+    {
+      "model": "small",
+      "measured_frames": 110,
+      "cpu_runtime": "1.30.0",
+      "gpu_runtime": "1.24.4",
+      "gpu_device": "NVIDIA GeForce GTX 1650 Ti",
+      "cpu_pipeline_ms": 163.40886999999995,
+      "gpu_pipeline_ms": 39.20503999999998,
+      "cpu_effective_fps": 6.119618843212124,
+      "gpu_effective_fps": 25.50692461989582,
+      "pipeline_speedup": 4.168057729312355,
+      "cpu_p95_ms": 188.59,
+      "gpu_p95_ms": 46.5332,
+      "cpu_peak_working_set_bytes": 168689664,
+      "gpu_peak_working_set_bytes": 342065152,
+      "cpu_process_seconds": 19.766215,
+      "gpu_process_seconds": 5.9465701
+    }
+  ],
+  "notes": "Sequential native CLI on identical source/model/executable hashes. Warmup excluded from pipeline metrics; process time includes loading and warmup. CPU ORT 1.30.0 and isolated GPU ORT 1.24.4 differ, so this measures the shipped paths rather than isolating provider overhead. GPU Run includes transfers. No GUI/camera/accuracy claim; OS memory sampling does not measure VRAM. Results are local and are not uploaded."
+}

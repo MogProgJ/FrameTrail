@@ -1,0 +1,238 @@
+{
+  "step": 0,
+  "image_id": "06e039d4d15e8a10",
+  "selection_roles": [
+    {
+      "canonical_id": 15,
+      "role": "explicit-negative",
+      "image_id": "06e039d4d15e8a10",
+      "image_sha256": "bae9493a7e22ef96ffb0f7d0ec1d3a63b706d024a36ed6383608f8da18f3486e"
+    }
+  ],
+  "targets": 3,
+  "loss_components": {
+    "loss_ce": {
+      "value": 1.039370059967041,
+      "trainable": true
+    },
+    "loss_bbox": {
+      "value": 0.08869055658578873,
+      "trainable": false
+    },
+    "loss_giou": {
+      "value": 0.11209819465875626,
+      "trainable": false
+    },
+    "loss_ce_0": {
+      "value": 1.0010370016098022,
+      "trainable": true
+    },
+    "loss_bbox_0": {
+      "value": 0.12454210966825485,
+      "trainable": false
+    },
+    "loss_giou_0": {
+      "value": 0.17341136932373047,
+      "trainable": false
+    },
+    "loss_ce_1": {
+      "value": 0.948030948638916,
+      "trainable": true
+    },
+    "loss_bbox_1": {
+      "value": 0.10121872276067734,
+      "trainable": false
+    },
+    "loss_giou_1": {
+      "value": 0.18980230391025543,
+      "trainable": false
+    },
+    "loss_ce_enc": {
+      "value": 0.8934390544891357,
+      "trainable": false
+    },
+    "loss_bbox_enc": {
+      "value": 0.15607492625713348,
+      "trainable": false
+    },
+    "loss_giou_enc": {
+      "value": 0.263022780418396,
+      "trainable": false
+    }
+  },
+  "weighted_total": 11.59305477142334,
+  "trainable_weighted_classification": 5.976876258850098,
+  "constant_weighted_loss": 5.616179466247559,
+  "head_gradients": {
+    "15": {
+      "weight_l2": 2.780027151107788,
+      "bias": 0.2281634360551834
+    },
+    "16": {
+      "weight_l2": 0.0,
+      "bias": 0.0
+    },
+    "133": {
+      "weight_l2": 0.0,
+      "bias": 0.0
+    },
+    "593": {
+      "weight_l2": 0.0,
+      "bias": 0.0
+    }
+  },
+  "global_head_gradient_norm": 2.789374351501465,
+  "row_gradient_reconstruction_max_error": 1.1920928955078125e-07,
+  "bias_gradient_reconstruction_max_error": 1.4901161193847656e-08,
+  "stages": [
+    {
+      "stage": "main",
+      "normalizer": 3.0,
+      "classification_loss": 1.039370059967041,
+      "classification_trainable": true,
+      "classes": {
+        "15": {
+          "scope": "absent",
+          "matches": 0,
+          "weight_gradient_l2": 0.6152046322822571,
+          "bias_gradient": 0.048835258930921555,
+          "unmatched_negative_logit_gradient_sum": 0.048835255205631256
+        },
+        "16": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": []
+    },
+    {
+      "stage": "auxiliary-0",
+      "normalizer": 3.0,
+      "classification_loss": 1.0010370016098022,
+      "classification_trainable": true,
+      "classes": {
+        "15": {
+          "scope": "absent",
+          "matches": 0,
+          "weight_gradient_l2": 1.7447341680526733,
+          "bias_gradient": 0.12568846344947815,
+          "unmatched_negative_logit_gradient_sum": 0.12568847835063934
+        },
+        "16": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": []
+    },
+    {
+      "stage": "auxiliary-1",
+      "normalizer": 3.0,
+      "classification_loss": 0.948030948638916,
+      "classification_trainable": true,
+      "classes": {
+        "15": {
+          "scope": "absent",
+          "matches": 0,
+          "weight_gradient_l2": 0.6853703856468201,
+          "bias_gradient": 0.05363970249891281,
+          "unmatched_negative_logit_gradient_sum": 0.05363969877362251
+        },
+        "16": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": []
+    },
+    {
+      "stage": "encoder",
+      "normalizer": 3.0,
+      "classification_loss": 0.8934390544891357,
+      "classification_trainable": false,
+      "classes": {
+        "15": {
+          "scope": "absent",
+          "matches": 0,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "16": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": []
+    }
+  ],
+  "seconds": 1.530999999999949
+}

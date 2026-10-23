@@ -1,0 +1,286 @@
+{
+  "step": 600,
+  "image_id": "1b214b729bce48e0",
+  "selection_roles": [
+    {
+      "canonical_id": 16,
+      "role": "positive",
+      "image_id": "1b214b729bce48e0",
+      "image_sha256": "76ad5298c5178c49e659a37cb95eac43d69c78fd7bc47ed74fc80d672ba2f803"
+    }
+  ],
+  "targets": 1,
+  "loss_components": {
+    "loss_ce": {
+      "value": 0.24866457283496857,
+      "trainable": true
+    },
+    "loss_bbox": {
+      "value": 0.00945010781288147,
+      "trainable": false
+    },
+    "loss_giou": {
+      "value": 0.0725024938583374,
+      "trainable": false
+    },
+    "loss_ce_0": {
+      "value": 0.23878471553325653,
+      "trainable": true
+    },
+    "loss_bbox_0": {
+      "value": 0.009590893983840942,
+      "trainable": false
+    },
+    "loss_giou_0": {
+      "value": 0.07027393579483032,
+      "trainable": false
+    },
+    "loss_ce_1": {
+      "value": 0.25671839714050293,
+      "trainable": true
+    },
+    "loss_bbox_1": {
+      "value": 0.009026974439620972,
+      "trainable": false
+    },
+    "loss_giou_1": {
+      "value": 0.07156676054000854,
+      "trainable": false
+    },
+    "loss_ce_enc": {
+      "value": 0.3099963665008545,
+      "trainable": false
+    },
+    "loss_bbox_enc": {
+      "value": 0.013123825192451477,
+      "trainable": false
+    },
+    "loss_giou_enc": {
+      "value": 0.06554383039474487,
+      "trainable": false
+    }
+  },
+  "weighted_total": 2.874061107635498,
+  "trainable_weighted_classification": 1.488335371017456,
+  "constant_weighted_loss": 1.385725736618042,
+  "head_gradients": {
+    "15": {
+      "weight_l2": 0.0,
+      "bias": 0.0
+    },
+    "16": {
+      "weight_l2": 0.8990271091461182,
+      "bias": 0.06905137747526169
+    },
+    "133": {
+      "weight_l2": 0.0,
+      "bias": 0.0
+    },
+    "593": {
+      "weight_l2": 0.0,
+      "bias": 0.0
+    }
+  },
+  "global_head_gradient_norm": 0.9016749858856201,
+  "row_gradient_reconstruction_max_error": 1.4901161193847656e-08,
+  "bias_gradient_reconstruction_max_error": 0.0,
+  "stages": [
+    {
+      "stage": "main",
+      "normalizer": 1.0,
+      "classification_loss": 0.24866457283496857,
+      "classification_trainable": true,
+      "classes": {
+        "15": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "16": {
+          "scope": "positive_only",
+          "matches": 1,
+          "weight_gradient_l2": 0.3529367446899414,
+          "bias_gradient": 0.02621687948703766,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": [
+        {
+          "query": 0,
+          "target_index": 0,
+          "canonical_id": 16,
+          "iou": 0.9281772971153259,
+          "probability": 0.945614755153656,
+          "soft_target": 0.9325063228607178,
+          "expected_weighted_logit_gradient": 0.026216864585876465,
+          "actual_weighted_logit_gradient": 0.02621687948703766,
+          "descent_would_raise_matched_logit": false
+        }
+      ]
+    },
+    {
+      "stage": "auxiliary-0",
+      "normalizer": 1.0,
+      "classification_loss": 0.23878471553325653,
+      "classification_trainable": true,
+      "classes": {
+        "15": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "16": {
+          "scope": "positive_only",
+          "matches": 1,
+          "weight_gradient_l2": 0.6501289010047913,
+          "bias_gradient": 0.04421033710241318,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": [
+        {
+          "query": 0,
+          "target_index": 0,
+          "canonical_id": 16,
+          "iou": 0.9304136633872986,
+          "probability": 0.9597734212875366,
+          "soft_target": 0.9376683235168457,
+          "expected_weighted_logit_gradient": 0.044210195541381836,
+          "actual_weighted_logit_gradient": 0.04421033710241318,
+          "descent_would_raise_matched_logit": false
+        }
+      ]
+    },
+    {
+      "stage": "auxiliary-1",
+      "normalizer": 1.0,
+      "classification_loss": 0.25671839714050293,
+      "classification_trainable": true,
+      "classes": {
+        "15": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "16": {
+          "scope": "positive_only",
+          "matches": 1,
+          "weight_gradient_l2": 0.01982066035270691,
+          "bias_gradient": -0.001375839114189148,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": [
+        {
+          "query": 0,
+          "target_index": 0,
+          "canonical_id": 16,
+          "iou": 0.9290360808372498,
+          "probability": 0.9281187057495117,
+          "soft_target": 0.9288066625595093,
+          "expected_weighted_logit_gradient": -0.0013759136199951172,
+          "actual_weighted_logit_gradient": -0.001375839114189148,
+          "descent_would_raise_matched_logit": true
+        }
+      ]
+    },
+    {
+      "stage": "encoder",
+      "normalizer": 1.0,
+      "classification_loss": 0.3099963665008545,
+      "classification_trainable": false,
+      "classes": {
+        "15": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "16": {
+          "scope": "positive_only",
+          "matches": 1,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": [
+        {
+          "query": 0,
+          "target_index": 0,
+          "canonical_id": 16,
+          "iou": 0.9354414939880371,
+          "probability": 0.8530181646347046,
+          "soft_target": 0.9141175150871277,
+          "expected_weighted_logit_gradient": -0.12219870090484619,
+          "actual_weighted_logit_gradient": null,
+          "descent_would_raise_matched_logit": null
+        }
+      ]
+    }
+  ],
+  "seconds": 1.25
+}

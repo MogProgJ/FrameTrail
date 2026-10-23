@@ -1,0 +1,77 @@
+{
+  "status": "unreviewed-by-independent-human",
+  "selection": "Six illustrative TRAIN-only strict-boundary examples; not representative and not a new label release.",
+  "photos": [
+    {
+      "image_id": "0c39f6a763ce3ec0",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\images\\0c39f6a763ce3ec0.jpg",
+      "image_sha256": "e0a49cc6db517a259e7ec8b037ad1cab7deddc14d0909fcbacc2cdefa25ca5a7",
+      "current_billboard_scope": "absent",
+      "targets": [],
+      "caption": "Restaurant identity sign"
+    },
+    {
+      "image_id": "37c1b3a6b5c824d4",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\images\\37c1b3a6b5c824d4.jpg",
+      "image_sha256": "b6a240019ba6fd6e16f340305f33661632b7ebd22b29678905a264f6554379b0",
+      "current_billboard_scope": "absent",
+      "targets": [],
+      "caption": "Business name / drive-through sign"
+    },
+    {
+      "image_id": "757556fbf9393cff",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\images\\757556fbf9393cff.jpg",
+      "image_sha256": "99c57c48bfb822cf3992fdcc6f2235354bc0008ee2367e6148faff5a4cd26bad",
+      "current_billboard_scope": "absent",
+      "targets": [],
+      "caption": "Museum identity / directional sign"
+    },
+    {
+      "image_id": "5a1cea0bb9f7b721",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\images\\5a1cea0bb9f7b721.jpg",
+      "image_sha256": "68a911102c7bec7d4b82a417bb8747841d642187bebc920fcce8a19525bc320d",
+      "current_billboard_scope": "complete",
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.47705000000000003,
+            0.5814,
+            0.9267,
+            0.5429999999999999
+          ]
+        }
+      ],
+      "caption": "Museum exhibition advertising panel"
+    },
+    {
+      "image_id": "13909d11dbe65be8",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\images\\13909d11dbe65be8.jpg",
+      "image_sha256": "7727d6048435db5febb5ff1f5e5da39b53c3753b5300ccce575d9adce497f7e1",
+      "current_billboard_scope": "complete",
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.7634375,
+            0.48686650000000004,
+            0.47187500000000004,
+            0.943715
+          ]
+        }
+      ],
+      "caption": "Advertisement behind transit display"
+    },
+    {
+      "image_id": "20a3a8cd5733db8c",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\images\\20a3a8cd5733db8c.jpg",
+      "image_sha256": "70e0dd3720310dee3789417319266f68937124d86bf10f2c68fe1a87ee4ae0b6",
+      "current_billboard_scope": "absent",
+      "targets": [],
+      "caption": "Bus-stop information board"
+    }
+  ],
+  "existing_labels_unchanged": true,
+  "test_images_used": 0,
+  "purpose": "Independent product/domain review for the next data/representation strategy, not retroactive rescoring."
+}

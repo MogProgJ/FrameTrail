@@ -1,0 +1,5 @@
+TEST_WINDOW QComboBoxPrivateContainer visible=0 modal=0
+TEST_WINDOW QMainWindow visible=1 modal=0
+analysisStatus: Analysing video · 00:00:01.000 / 00:00:02.000
+reviewStatus: Processing locally. Save the result when you’re ready.
+RF GUI preview, analysis, save, CSV and reopen passed

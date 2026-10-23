@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "reference_runtime": "1.23.2",
+  "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+  "checks": {
+    "openimages": {
+      "strong_targets": 2,
+      "min_iou": 0.9992639775930594,
+      "max_score_delta": 0.0013951687812805424,
+      "native_backend": "directml",
+      "model_sha256": "4bdf43b77a034b7f6081df08d8eb51194b4bdb2017b3d458214f201d3e7cd82d",
+      "cpu_gpu_wrong_labels_rejected": true
+    }
+  },
+  "limits": "Native bilinear rounding may differ by one intensity unit from OpenCV. Strong targets: >=0.55, IoU >0.98, score delta <0.03. This checks integration, not model accuracy."
+}

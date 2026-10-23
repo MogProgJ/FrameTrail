@@ -1,0 +1,64 @@
+{
+  "image_id": "25221a1eb60aaf34",
+  "image_sha256": "0ce7f9d2f57dbae345de25eb8cd34a7075ca8addf2c0125a5c1fd46e05ffd0f9",
+  "publisher_attribution": {
+    "id": "25221a1eb60aaf34",
+    "landing_url": "https://www.flickr.com/photos/68732830@N06/8482989260",
+    "original_url": "https://farm5.staticflickr.com/8518/8482989260_8d393c3170_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Linda Stanley",
+    "author_url": "https://www.flickr.com/people/68732830@N06/",
+    "title": "Wilers",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "pipilongstockings",
+    "url": "https://www.flickr.com/photos/68732830@N06",
+    "image": "https://live.staticflickr.com/7564/buddyicons/68732830@N06.jpg?1415132989#68732830@N06"
+  },
+  "current_title": "Wilers",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "pipilongstockings",
+        "url": "https://www.flickr.com/photos/68732830@N06",
+        "image": "https://live.staticflickr.com/7564/buddyicons/68732830@N06.jpg?1415132989#68732830@N06"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/68732830@N06/8482989260",
+  "canonical_page_url": "https://www.flickr.com/photos/68732830@N06/8482989260",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "88c37b2eb3f58ca8687b506800718d682dd63ba8e23ba8d171d579711647c1c4",
+  "source_gzip_sha256": "24130a24847c4d9d55b30f16bc704c1824c9decedd67c370a33eba24ba59ebef",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-009",
+  "visual_proof_sha256": "d2a27b195bee57040c82e0e56321065717a5b403be5c084ac2c163b9dff4cfac",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

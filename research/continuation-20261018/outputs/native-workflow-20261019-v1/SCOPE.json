@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-19",
+  "project": "FrameTrail",
+  "cluster": "User reports KIT unavailable indefinitely; no authentication, status, retrieval or submission attempted",
+  "latest_data_collection_status": "unconfirmed",
+  "scope": "Local video preparation, cancellation, partial-result save/reopen and visual feedback",
+  "baseline_package": "native-balanced-7805570-20261018-v1",
+  "model_changed": false,
+  "training": false,
+  "new_cluster_jobs": 0,
+  "default_model": "YOLOX-S",
+  "production_adoption": false,
+  "strict_ONNX_export_gate": "held",
+  "authorization": "User: All righty, proceed then. Standing local continuous-work instruction applies."
+}

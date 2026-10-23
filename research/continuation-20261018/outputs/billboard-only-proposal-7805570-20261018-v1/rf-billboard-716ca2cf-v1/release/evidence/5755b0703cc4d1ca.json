@@ -1,0 +1,72 @@
+{
+  "image_id": "5755b0703cc4d1ca",
+  "image_sha256": "f9ae15556d4942d3c2394164c2dd72307fc69a9732b80ba7a6dcb1c2ffd40309",
+  "publisher_attribution": {
+    "id": "5755b0703cc4d1ca",
+    "landing_url": "https://www.flickr.com/photos/snowpeak/9521182588",
+    "original_url": "https://c3.staticflickr.com/8/7447/9521182588_2314f56eed_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "John Fowler",
+    "author_url": "https://www.flickr.com/people/snowpeak/",
+    "title": "Happy Day",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "John Fowler",
+    "url": "https://www.flickr.com/photos/snowpeak",
+    "image": "https://live.staticflickr.com/2893/buddyicons/53986933@N00.jpg?1490914699#53986933@N00"
+  },
+  "current_title": "Happy Day",
+  "caption_and_notices": {
+    "image_id": "5755b0703cc4d1ca",
+    "identity_group": "flickr-nsid:53986933@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "John Fowler",
+      "url": "https://www.flickr.com/photos/snowpeak",
+      "image": "https://live.staticflickr.com/2893/buddyicons/53986933@N00.jpg?1490914699#53986933@N00"
+    },
+    "current_title": "Happy Day",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "John Fowler",
+        "url": "https://www.flickr.com/photos/snowpeak",
+        "image": "https://live.staticflickr.com/2893/buddyicons/53986933@N00.jpg?1490914699#53986933@N00"
+      }
+    },
+    "meta_description": "Just passed 500,000 views. Celebrating with a Blenheim Ginger Ale. Headed for the hammock.\n\t"
+  },
+  "source_url": "https://www.flickr.com/photos/snowpeak/9521182588",
+  "canonical_page_url": "https://www.flickr.com/photos/snowpeak/9521182588",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "d250fdb7068c0e42452769b49413d41697d96551a4b09644b5fb07de46133fa8",
+  "source_gzip_sha256": "facd76293a27be944514894dfb7993d7f04fcf706b6885186aa664328af8f62a",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "2f6a96896de6a67ae753de82ddfb6662b215c13722530e7fe21b91f9ce87c596"
+}

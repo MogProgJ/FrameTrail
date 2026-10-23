@@ -1,0 +1,18 @@
+{
+  "project": "FrameTrail",
+  "job": "7780632",
+  "status": "validation-confidence-localization-probe-complete",
+  "selected_checkpoint_step": 0,
+  "diagnostic_counts": {
+    "new_class_targets": 24,
+    "confidence_limited_with_usable_decoder_box": 24,
+    "without_decoder_box_iou_half": 0,
+    "proposal_selection_coverage_losses": 1,
+    "decoder_coverage_losses": 0
+  },
+  "next_best_step": "Run a training-only classification-loss and row-gradient diagnostic without optimizer updates, then prepare the narrowest evidence-supported bounded optimization proposal. All 24 new-class targets already have usable decoder boxes; wider localization adaptation is not supported by this probe.",
+  "application_adoption": false,
+  "heldout_used": false,
+  "new_training": false,
+  "standing_communication_preference": "End every user-facing response with the single best plausible concrete FrameTrail next step and briefly why; propagate this preference in every handoff."
+}

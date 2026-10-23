@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "af53b519877c74c2",
+  "image_sha256": "2ce9c066f34bcf3d393073b3744350f20ed4bca0fc5cb45632f093126d34f3e2",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "af53b519877c74c2",
+    "image_sha256": "2ce9c066f34bcf3d393073b3744350f20ed4bca0fc5cb45632f093126d34f3e2",
+    "selected_category": "washing machine",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/emilysnuffer/8552418464",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/emilysnuffer/8552418464",
+      "original_url": "https://farm3.staticflickr.com/8085/8552418464_440b8007f3_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Emily May",
+      "author_url": "https://www.flickr.com/people/emilysnuffer/",
+      "title": "Let Me Upgrade You",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Emily May",
+      "url": "https://www.flickr.com/photos/emilysnuffer",
+      "image": "https://live.staticflickr.com/5024/buddyicons/60849758@N05.jpg?1300756966#60849758@N05"
+    },
+    "current_title": "Let Me Upgrade You",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Emily May",
+          "url": "https://www.flickr.com/photos/emilysnuffer",
+          "image": "https://live.staticflickr.com/5024/buddyicons/60849758@N05.jpg?1300756966#60849758@N05"
+        }
+      },
+      "meta_description": "Blogged, 3/12/13, <a href=\"http://www.gohausgo.com\" rel=\"noreferrer nofollow\">www.gohausgo.com</a>"
+    },
+    "identity_group": "flickr-nsid:60849758@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/emilysnuffer/8552418464",
+    "html_sha256": "5f7356df2b2836f52a1432f2fd44f01ca6b7f3a50b055961a998fed6474b5fe8",
+    "stored_sha256": "95da20f3109a0955ef1b284800213221b01bdbac6b101fd5f62047520386f3f7",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\af53b519877c74c2.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/af53b519877c74c2.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

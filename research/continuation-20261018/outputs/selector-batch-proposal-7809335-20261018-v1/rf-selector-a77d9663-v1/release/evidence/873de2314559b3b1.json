@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "873de2314559b3b1",
+  "image_sha256": "d8ae0f310a13199b87d2c48313e73d06e6b3fc5acaab79d24d3e2138e4670010",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "873de2314559b3b1",
+    "image_sha256": "d8ae0f310a13199b87d2c48313e73d06e6b3fc5acaab79d24d3e2138e4670010",
+    "selected_category": "door handle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/figgenhoffer/2575975137",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/figgenhoffer/2575975137",
+      "original_url": "https://farm2.staticflickr.com/3112/2575975137_423aa0a0e7_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "D.C.Atty",
+      "author_url": "https://www.flickr.com/people/figgenhoffer/",
+      "title": "star of S.F.P.D.",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "D.C.Atty",
+      "url": "https://www.flickr.com/photos/figgenhoffer",
+      "image": "https://live.staticflickr.com/4030/buddyicons/22939124@N08.jpg?1281091711#22939124@N08"
+    },
+    "current_title": "star of S.F.P.D.",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "D.C.Atty",
+          "url": "https://www.flickr.com/photos/figgenhoffer",
+          "image": "https://live.staticflickr.com/4030/buddyicons/22939124@N08.jpg?1281091711#22939124@N08"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:22939124@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/figgenhoffer/2575975137",
+    "html_sha256": "bc06e206bc6d78335fba6efc5b8ec00bd4c8837ad455cd67a957146d9c15234e",
+    "stored_sha256": "4c923123b0937bead82879f10a49d63ef8323cad64126eba4ea08f4bd3c1b4a3",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\873de2314559b3b1.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/873de2314559b3b1.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

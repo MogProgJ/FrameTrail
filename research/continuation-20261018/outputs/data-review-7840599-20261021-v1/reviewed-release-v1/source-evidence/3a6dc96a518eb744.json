@@ -1,0 +1,80 @@
+{
+  "image_id": "3a6dc96a518eb744",
+  "image_sha256": "0379459331dbf230117c695d9bf97e659b8150856846a16d21d7661811e35473",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "3a6dc96a518eb744",
+    "image_sha256": "0379459331dbf230117c695d9bf97e659b8150856846a16d21d7661811e35473",
+    "selected_category": "computer monitor",
+    "selected_domain": "contrast",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/mwichary/2189556715",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/mwichary/2189556715",
+      "original_url": "https://farm5.staticflickr.com/2314/2189556715_07fc57e67c_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Marcin Wichary",
+      "author_url": "https://www.flickr.com/people/mwichary/",
+      "title": "Tatung Einstein and NewBrain",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Marcin Wichary",
+      "url": "https://www.flickr.com/photos/mwichary",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/8399025@N07.jpg?1777501960#8399025@N07"
+    },
+    "current_title": "Tatung Einstein and NewBrain",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Marcin Wichary",
+          "url": "https://www.flickr.com/photos/mwichary",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/8399025@N07.jpg?1777501960#8399025@N07"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:8399025@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/mwichary/2189556715",
+    "html_sha256": "c5dc7ff7761b0c6675aeb48d9fa180db98cc7548a2c3affbe41608029d98f970",
+    "stored_sha256": "9b9359cf1797ed1436f4bd45038d3bfaeb194acd4f16c5d038fd4dbb06a5a37a",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\3a6dc96a518eb744.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\3a6dc96a518eb744.html.gz",
+    "sha256": "9b9359cf1797ed1436f4bd45038d3bfaeb194acd4f16c5d038fd4dbb06a5a37a"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

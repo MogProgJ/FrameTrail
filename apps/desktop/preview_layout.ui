@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='utf-8'?>
 <ui version="4.0">
  <class>PreviewLayout</class>
  <widget class="QMainWindow" name="PreviewLayout">
@@ -79,75 +79,77 @@
        <number>12</number>
       </property>
       <item>
-       <layout class="QVBoxLayout" name="videoColumn">
-        <property name="spacing">
-         <number>12</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="source">
-          <property name="text">
-           <string>No file selected</string>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="FrameCanvas" name="frameCanvas"/>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="playback">
-          <property name="spacing">
-           <number>12</number>
-          </property>
-          <item>
-           <widget class="QPushButton" name="play">
-            <property name="text">
-             <string>Play</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="stop">
-            <property name="text">
-             <string>Stop</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="replay">
-            <property name="text">
-             <string>Replay</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="state">
-            <property name="text">
-             <string>Ready</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QLabel" name="details">
-          <property name="text">
-           <string>Local files · Image or silent video playback</string>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-          <property name="role" stdset="0">
-           <string>muted</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QWidget" name="videoPane">
+        <layout class="QVBoxLayout" name="videoColumn">
+         <property name="spacing">
+          <number>12</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="source">
+           <property name="text">
+            <string>No file selected</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="FrameCanvas" name="frameCanvas" />
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="playback">
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="play">
+             <property name="text">
+              <string>Play</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="stop">
+             <property name="text">
+              <string>Stop</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="replay">
+             <property name="text">
+              <string>Replay</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="state">
+             <property name="text">
+              <string>Ready</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="details">
+           <property name="text">
+            <string>Local files · Image or silent video playback</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+           <property name="role" stdset="0">
+            <string>muted</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </item>
       <item>
        <widget class="QScrollArea" name="settingsScroll">
@@ -156,26 +158,26 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>314</width>
+          <width>270</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>332</width>
+          <width>390</width>
           <height>16777215</height>
          </size>
         </property>
         <widget class="QFrame" name="inspector">
          <property name="minimumSize">
           <size>
-           <width>290</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>310</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
@@ -409,6 +411,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
- <connections/>
+ <resources />
+ <connections />
 </ui>

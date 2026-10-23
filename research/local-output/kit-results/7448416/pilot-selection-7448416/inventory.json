@@ -1,0 +1,4284 @@
+{
+  "schema": 1,
+  "scope_id": "general-train-intake-pilot-v1",
+  "raw_labels": 601,
+  "canonical_categories": 597,
+  "catalogue_images": 1743042,
+  "catalogue_boxes": 14610229,
+  "classes": [
+    {
+      "raw_id": 0,
+      "name": "Accordion",
+      "canonical_id": 100,
+      "canonical_name": "accordion",
+      "annotated_images": 839
+    },
+    {
+      "raw_id": 1,
+      "name": "Adhesive tape",
+      "canonical_id": 101,
+      "canonical_name": "adhesive tape",
+      "annotated_images": 109
+    },
+    {
+      "raw_id": 2,
+      "name": "Aircraft",
+      "canonical_id": 102,
+      "canonical_name": "aircraft",
+      "annotated_images": 1143
+    },
+    {
+      "raw_id": 3,
+      "name": "Airplane",
+      "canonical_id": 4,
+      "canonical_name": "airplane",
+      "annotated_images": 12003
+    },
+    {
+      "raw_id": 4,
+      "name": "Alarm clock",
+      "canonical_id": 103,
+      "canonical_name": "alarm clock",
+      "annotated_images": 135
+    },
+    {
+      "raw_id": 5,
+      "name": "Alpaca",
+      "canonical_id": 104,
+      "canonical_name": "alpaca",
+      "annotated_images": 452
+    },
+    {
+      "raw_id": 6,
+      "name": "Ambulance",
+      "canonical_id": 105,
+      "canonical_name": "ambulance",
+      "annotated_images": 338
+    },
+    {
+      "raw_id": 7,
+      "name": "Animal",
+      "canonical_id": 106,
+      "canonical_name": "animal",
+      "annotated_images": 9396
+    },
+    {
+      "raw_id": 8,
+      "name": "Ant",
+      "canonical_id": 107,
+      "canonical_name": "ant",
+      "annotated_images": 381
+    },
+    {
+      "raw_id": 9,
+      "name": "Antelope",
+      "canonical_id": 108,
+      "canonical_name": "antelope",
+      "annotated_images": 848
+    },
+    {
+      "raw_id": 10,
+      "name": "Apple",
+      "canonical_id": 47,
+      "canonical_name": "apple",
+      "annotated_images": 1078
+    },
+    {
+      "raw_id": 11,
+      "name": "Armadillo",
+      "canonical_id": 109,
+      "canonical_name": "armadillo",
+      "annotated_images": 44
+    },
+    {
+      "raw_id": 12,
+      "name": "Artichoke",
+      "canonical_id": 110,
+      "canonical_name": "artichoke",
+      "annotated_images": 164
+    },
+    {
+      "raw_id": 13,
+      "name": "Auto part",
+      "canonical_id": 111,
+      "canonical_name": "auto part",
+      "annotated_images": 6516
+    },
+    {
+      "raw_id": 14,
+      "name": "Axe",
+      "canonical_id": 112,
+      "canonical_name": "axe",
+      "annotated_images": 115
+    },
+    {
+      "raw_id": 15,
+      "name": "Backpack",
+      "canonical_id": 24,
+      "canonical_name": "backpack",
+      "annotated_images": 715
+    },
+    {
+      "raw_id": 16,
+      "name": "Bagel",
+      "canonical_id": 113,
+      "canonical_name": "bagel",
+      "annotated_images": 262
+    },
+    {
+      "raw_id": 17,
+      "name": "Baked goods",
+      "canonical_id": 114,
+      "canonical_name": "baked goods",
+      "annotated_images": 10289
+    },
+    {
+      "raw_id": 18,
+      "name": "Balance beam",
+      "canonical_id": 115,
+      "canonical_name": "balance beam",
+      "annotated_images": 261
+    },
+    {
+      "raw_id": 19,
+      "name": "Ball",
+      "canonical_id": 116,
+      "canonical_name": "ball",
+      "annotated_images": 3480
+    },
+    {
+      "raw_id": 20,
+      "name": "Balloon",
+      "canonical_id": 86,
+      "canonical_name": "balloon",
+      "annotated_images": 3262
+    },
+    {
+      "raw_id": 21,
+      "name": "Banana",
+      "canonical_id": 46,
+      "canonical_name": "banana",
+      "annotated_images": 723
+    },
+    {
+      "raw_id": 22,
+      "name": "Band-aid",
+      "canonical_id": 117,
+      "canonical_name": "band-aid",
+      "annotated_images": 20
+    },
+    {
+      "raw_id": 23,
+      "name": "Banjo",
+      "canonical_id": 118,
+      "canonical_name": "banjo",
+      "annotated_images": 244
+    },
+    {
+      "raw_id": 24,
+      "name": "Barge",
+      "canonical_id": 119,
+      "canonical_name": "barge",
+      "annotated_images": 419
+    },
+    {
+      "raw_id": 25,
+      "name": "Barrel",
+      "canonical_id": 120,
+      "canonical_name": "barrel",
+      "annotated_images": 662
+    },
+    {
+      "raw_id": 26,
+      "name": "Baseball bat",
+      "canonical_id": 34,
+      "canonical_name": "baseball bat",
+      "annotated_images": 1098
+    },
+    {
+      "raw_id": 27,
+      "name": "Baseball glove",
+      "canonical_id": 35,
+      "canonical_name": "baseball glove",
+      "annotated_images": 1671
+    },
+    {
+      "raw_id": 28,
+      "name": "Bat (Animal)",
+      "canonical_id": 91,
+      "canonical_name": "bat",
+      "annotated_images": 389
+    },
+    {
+      "raw_id": 29,
+      "name": "Bathroom accessory",
+      "canonical_id": 121,
+      "canonical_name": "bathroom accessory",
+      "annotated_images": 763
+    },
+    {
+      "raw_id": 30,
+      "name": "Bathroom cabinet",
+      "canonical_id": 122,
+      "canonical_name": "bathroom cabinet",
+      "annotated_images": 324
+    },
+    {
+      "raw_id": 31,
+      "name": "Bathtub",
+      "canonical_id": 123,
+      "canonical_name": "bathtub",
+      "annotated_images": 533
+    },
+    {
+      "raw_id": 32,
+      "name": "Beaker",
+      "canonical_id": 124,
+      "canonical_name": "beaker",
+      "annotated_images": 86
+    },
+    {
+      "raw_id": 33,
+      "name": "Bear",
+      "canonical_id": 21,
+      "canonical_name": "bear",
+      "annotated_images": 353
+    },
+    {
+      "raw_id": 34,
+      "name": "Bed",
+      "canonical_id": 59,
+      "canonical_name": "bed",
+      "annotated_images": 2933
+    },
+    {
+      "raw_id": 35,
+      "name": "Bee",
+      "canonical_id": 93,
+      "canonical_name": "bee",
+      "annotated_images": 2856
+    },
+    {
+      "raw_id": 36,
+      "name": "Beehive",
+      "canonical_id": 125,
+      "canonical_name": "beehive",
+      "annotated_images": 430
+    },
+    {
+      "raw_id": 37,
+      "name": "Beer",
+      "canonical_id": 126,
+      "canonical_name": "beer",
+      "annotated_images": 4661
+    },
+    {
+      "raw_id": 38,
+      "name": "Beetle",
+      "canonical_id": 127,
+      "canonical_name": "beetle",
+      "annotated_images": 1878
+    },
+    {
+      "raw_id": 39,
+      "name": "Bell pepper",
+      "canonical_id": 128,
+      "canonical_name": "bell pepper",
+      "annotated_images": 380
+    },
+    {
+      "raw_id": 40,
+      "name": "Belt",
+      "canonical_id": 129,
+      "canonical_name": "belt",
+      "annotated_images": 348
+    },
+    {
+      "raw_id": 41,
+      "name": "Bench",
+      "canonical_id": 13,
+      "canonical_name": "bench",
+      "annotated_images": 3630
+    },
+    {
+      "raw_id": 42,
+      "name": "Bicycle",
+      "canonical_id": 1,
+      "canonical_name": "bicycle",
+      "annotated_images": 17631
+    },
+    {
+      "raw_id": 43,
+      "name": "Bicycle helmet",
+      "canonical_id": 130,
+      "canonical_name": "bicycle helmet",
+      "annotated_images": 5006
+    },
+    {
+      "raw_id": 44,
+      "name": "Bicycle wheel",
+      "canonical_id": 131,
+      "canonical_name": "bicycle wheel",
+      "annotated_images": 15599
+    },
+    {
+      "raw_id": 45,
+      "name": "Bidet",
+      "canonical_id": 132,
+      "canonical_name": "bidet",
+      "annotated_images": 376
+    },
+    {
+      "raw_id": 46,
+      "name": "Billboard",
+      "canonical_id": 133,
+      "canonical_name": "billboard",
+      "annotated_images": 3399
+    },
+    {
+      "raw_id": 47,
+      "name": "Billiard table",
+      "canonical_id": 134,
+      "canonical_name": "billiard table",
+      "annotated_images": 666
+    },
+    {
+      "raw_id": 48,
+      "name": "Binoculars",
+      "canonical_id": 135,
+      "canonical_name": "binoculars",
+      "annotated_images": 109
+    },
+    {
+      "raw_id": 49,
+      "name": "Bird",
+      "canonical_id": 14,
+      "canonical_name": "bird",
+      "annotated_images": 18525
+    },
+    {
+      "raw_id": 50,
+      "name": "Blender",
+      "canonical_id": 136,
+      "canonical_name": "blender",
+      "annotated_images": 149
+    },
+    {
+      "raw_id": 51,
+      "name": "Blue jay",
+      "canonical_id": 137,
+      "canonical_name": "blue jay",
+      "annotated_images": 234
+    },
+    {
+      "raw_id": 52,
+      "name": "Boat",
+      "canonical_id": 8,
+      "canonical_name": "boat",
+      "annotated_images": 25478
+    },
+    {
+      "raw_id": 53,
+      "name": "Bomb",
+      "canonical_id": 138,
+      "canonical_name": "bomb",
+      "annotated_images": 6
+    },
+    {
+      "raw_id": 54,
+      "name": "Book",
+      "canonical_id": 73,
+      "canonical_name": "book",
+      "annotated_images": 7894
+    },
+    {
+      "raw_id": 55,
+      "name": "Bookcase",
+      "canonical_id": 139,
+      "canonical_name": "bookcase",
+      "annotated_images": 3388
+    },
+    {
+      "raw_id": 56,
+      "name": "Boot",
+      "canonical_id": 140,
+      "canonical_name": "boot",
+      "annotated_images": 1426
+    },
+    {
+      "raw_id": 57,
+      "name": "Bottle",
+      "canonical_id": 39,
+      "canonical_name": "bottle",
+      "annotated_images": 11456
+    },
+    {
+      "raw_id": 58,
+      "name": "Bottle opener",
+      "canonical_id": 141,
+      "canonical_name": "bottle opener",
+      "annotated_images": 17
+    },
+    {
+      "raw_id": 59,
+      "name": "Bow and arrow",
+      "canonical_id": 142,
+      "canonical_name": "bow and arrow",
+      "annotated_images": 295
+    },
+    {
+      "raw_id": 60,
+      "name": "Bowl",
+      "canonical_id": 45,
+      "canonical_name": "bowl",
+      "annotated_images": 1464
+    },
+    {
+      "raw_id": 61,
+      "name": "Bowling equipment",
+      "canonical_id": 143,
+      "canonical_name": "bowling equipment",
+      "annotated_images": 630
+    },
+    {
+      "raw_id": 62,
+      "name": "Box",
+      "canonical_id": 144,
+      "canonical_name": "box",
+      "annotated_images": 2212
+    },
+    {
+      "raw_id": 63,
+      "name": "Boy",
+      "canonical_id": 0,
+      "canonical_name": "person",
+      "annotated_images": 45938
+    },
+    {
+      "raw_id": 64,
+      "name": "Brassiere",
+      "canonical_id": 145,
+      "canonical_name": "brassiere",
+      "annotated_images": 1200
+    },
+    {
+      "raw_id": 65,
+      "name": "Bread",
+      "canonical_id": 146,
+      "canonical_name": "bread",
+      "annotated_images": 1717
+    },
+    {
+      "raw_id": 66,
+      "name": "Briefcase",
+      "canonical_id": 147,
+      "canonical_name": "briefcase",
+      "annotated_images": 111
+    },
+    {
+      "raw_id": 67,
+      "name": "Broccoli",
+      "canonical_id": 50,
+      "canonical_name": "broccoli",
+      "annotated_images": 475
+    },
+    {
+      "raw_id": 68,
+      "name": "Bronze sculpture",
+      "canonical_id": 148,
+      "canonical_name": "bronze sculpture",
+      "annotated_images": 2236
+    },
+    {
+      "raw_id": 69,
+      "name": "Brown bear",
+      "canonical_id": 149,
+      "canonical_name": "brown bear",
+      "annotated_images": 492
+    },
+    {
+      "raw_id": 70,
+      "name": "Building",
+      "canonical_id": 150,
+      "canonical_name": "building",
+      "annotated_images": 104007
+    },
+    {
+      "raw_id": 71,
+      "name": "Bull",
+      "canonical_id": 151,
+      "canonical_name": "bull",
+      "annotated_images": 1074
+    },
+    {
+      "raw_id": 72,
+      "name": "Burrito",
+      "canonical_id": 152,
+      "canonical_name": "burrito",
+      "annotated_images": 167
+    },
+    {
+      "raw_id": 73,
+      "name": "Bus",
+      "canonical_id": 5,
+      "canonical_name": "bus",
+      "annotated_images": 7293
+    },
+    {
+      "raw_id": 74,
+      "name": "Bust",
+      "canonical_id": 153,
+      "canonical_name": "bust",
+      "annotated_images": 898
+    },
+    {
+      "raw_id": 75,
+      "name": "Butterfly",
+      "canonical_id": 92,
+      "canonical_name": "butterfly",
+      "annotated_images": 4937
+    },
+    {
+      "raw_id": 76,
+      "name": "Cabbage",
+      "canonical_id": 154,
+      "canonical_name": "cabbage",
+      "annotated_images": 276
+    },
+    {
+      "raw_id": 77,
+      "name": "Cabinetry",
+      "canonical_id": 155,
+      "canonical_name": "cabinetry",
+      "annotated_images": 3001
+    },
+    {
+      "raw_id": 78,
+      "name": "Cake",
+      "canonical_id": 55,
+      "canonical_name": "cake",
+      "annotated_images": 3720
+    },
+    {
+      "raw_id": 79,
+      "name": "Cake stand",
+      "canonical_id": 156,
+      "canonical_name": "cake stand",
+      "annotated_images": 248
+    },
+    {
+      "raw_id": 80,
+      "name": "Calculator",
+      "canonical_id": 157,
+      "canonical_name": "calculator",
+      "annotated_images": 172
+    },
+    {
+      "raw_id": 81,
+      "name": "Camel",
+      "canonical_id": 158,
+      "canonical_name": "camel",
+      "annotated_images": 762
+    },
+    {
+      "raw_id": 82,
+      "name": "Camera",
+      "canonical_id": 159,
+      "canonical_name": "camera",
+      "annotated_images": 5037
+    },
+    {
+      "raw_id": 83,
+      "name": "Can opener",
+      "canonical_id": 160,
+      "canonical_name": "can opener",
+      "annotated_images": 6
+    },
+    {
+      "raw_id": 84,
+      "name": "Canary",
+      "canonical_id": 161,
+      "canonical_name": "canary",
+      "annotated_images": 231
+    },
+    {
+      "raw_id": 85,
+      "name": "Candle",
+      "canonical_id": 162,
+      "canonical_name": "candle",
+      "annotated_images": 1220
+    },
+    {
+      "raw_id": 86,
+      "name": "Candy",
+      "canonical_id": 163,
+      "canonical_name": "candy",
+      "annotated_images": 648
+    },
+    {
+      "raw_id": 87,
+      "name": "Cannon",
+      "canonical_id": 164,
+      "canonical_name": "cannon",
+      "annotated_images": 779
+    },
+    {
+      "raw_id": 88,
+      "name": "Canoe",
+      "canonical_id": 165,
+      "canonical_name": "canoe",
+      "annotated_images": 2076
+    },
+    {
+      "raw_id": 89,
+      "name": "Cantaloupe",
+      "canonical_id": 166,
+      "canonical_name": "cantaloupe",
+      "annotated_images": 101
+    },
+    {
+      "raw_id": 90,
+      "name": "Car",
+      "canonical_id": 2,
+      "canonical_name": "car",
+      "annotated_images": 89465
+    },
+    {
+      "raw_id": 91,
+      "name": "Carnivore",
+      "canonical_id": 167,
+      "canonical_name": "carnivore",
+      "annotated_images": 2229
+    },
+    {
+      "raw_id": 92,
+      "name": "Carrot",
+      "canonical_id": 51,
+      "canonical_name": "carrot",
+      "annotated_images": 594
+    },
+    {
+      "raw_id": 93,
+      "name": "Cart",
+      "canonical_id": 168,
+      "canonical_name": "cart",
+      "annotated_images": 1981
+    },
+    {
+      "raw_id": 94,
+      "name": "Cassette deck",
+      "canonical_id": 169,
+      "canonical_name": "cassette deck",
+      "annotated_images": 53
+    },
+    {
+      "raw_id": 95,
+      "name": "Castle",
+      "canonical_id": 170,
+      "canonical_name": "castle",
+      "annotated_images": 3738
+    },
+    {
+      "raw_id": 96,
+      "name": "Cat",
+      "canonical_id": 15,
+      "canonical_name": "cat",
+      "annotated_images": 12516
+    },
+    {
+      "raw_id": 97,
+      "name": "Cat furniture",
+      "canonical_id": 171,
+      "canonical_name": "cat furniture",
+      "annotated_images": 184
+    },
+    {
+      "raw_id": 98,
+      "name": "Caterpillar",
+      "canonical_id": 172,
+      "canonical_name": "caterpillar",
+      "annotated_images": 696
+    },
+    {
+      "raw_id": 99,
+      "name": "Cattle",
+      "canonical_id": 173,
+      "canonical_name": "cattle",
+      "annotated_images": 2916
+    },
+    {
+      "raw_id": 100,
+      "name": "Ceiling fan",
+      "canonical_id": 174,
+      "canonical_name": "ceiling fan",
+      "annotated_images": 431
+    },
+    {
+      "raw_id": 101,
+      "name": "Cello",
+      "canonical_id": 175,
+      "canonical_name": "cello",
+      "annotated_images": 1346
+    },
+    {
+      "raw_id": 102,
+      "name": "Centipede",
+      "canonical_id": 176,
+      "canonical_name": "centipede",
+      "annotated_images": 235
+    },
+    {
+      "raw_id": 103,
+      "name": "Chainsaw",
+      "canonical_id": 177,
+      "canonical_name": "chainsaw",
+      "annotated_images": 119
+    },
+    {
+      "raw_id": 104,
+      "name": "Chair",
+      "canonical_id": 56,
+      "canonical_name": "chair",
+      "annotated_images": 25504
+    },
+    {
+      "raw_id": 105,
+      "name": "Cheese",
+      "canonical_id": 178,
+      "canonical_name": "cheese",
+      "annotated_images": 503
+    },
+    {
+      "raw_id": 106,
+      "name": "Cheetah",
+      "canonical_id": 179,
+      "canonical_name": "cheetah",
+      "annotated_images": 568
+    },
+    {
+      "raw_id": 107,
+      "name": "Chest of drawers",
+      "canonical_id": 180,
+      "canonical_name": "chest of drawers",
+      "annotated_images": 1151
+    },
+    {
+      "raw_id": 108,
+      "name": "Chicken",
+      "canonical_id": 181,
+      "canonical_name": "chicken",
+      "annotated_images": 1421
+    },
+    {
+      "raw_id": 109,
+      "name": "Chime",
+      "canonical_id": 182,
+      "canonical_name": "chime",
+      "annotated_images": 25
+    },
+    {
+      "raw_id": 110,
+      "name": "Chisel",
+      "canonical_id": 183,
+      "canonical_name": "chisel",
+      "annotated_images": 25
+    },
+    {
+      "raw_id": 111,
+      "name": "Chopsticks",
+      "canonical_id": 184,
+      "canonical_name": "chopsticks",
+      "annotated_images": 470
+    },
+    {
+      "raw_id": 112,
+      "name": "Christmas tree",
+      "canonical_id": 185,
+      "canonical_name": "christmas tree",
+      "annotated_images": 3074
+    },
+    {
+      "raw_id": 113,
+      "name": "Clock",
+      "canonical_id": 74,
+      "canonical_name": "clock",
+      "annotated_images": 916
+    },
+    {
+      "raw_id": 114,
+      "name": "Closet",
+      "canonical_id": 186,
+      "canonical_name": "closet",
+      "annotated_images": 381
+    },
+    {
+      "raw_id": 115,
+      "name": "Clothing",
+      "canonical_id": 187,
+      "canonical_name": "clothing",
+      "annotated_images": 327818
+    },
+    {
+      "raw_id": 116,
+      "name": "Coat",
+      "canonical_id": 188,
+      "canonical_name": "coat",
+      "annotated_images": 3516
+    },
+    {
+      "raw_id": 117,
+      "name": "Cocktail",
+      "canonical_id": 189,
+      "canonical_name": "cocktail",
+      "annotated_images": 2589
+    },
+    {
+      "raw_id": 118,
+      "name": "Cocktail shaker",
+      "canonical_id": 190,
+      "canonical_name": "cocktail shaker",
+      "annotated_images": 25
+    },
+    {
+      "raw_id": 119,
+      "name": "Coconut",
+      "canonical_id": 191,
+      "canonical_name": "coconut",
+      "annotated_images": 382
+    },
+    {
+      "raw_id": 120,
+      "name": "Coffee",
+      "canonical_id": 192,
+      "canonical_name": "coffee",
+      "annotated_images": 1858
+    },
+    {
+      "raw_id": 121,
+      "name": "Coffee cup",
+      "canonical_id": 193,
+      "canonical_name": "coffee cup",
+      "annotated_images": 3793
+    },
+    {
+      "raw_id": 122,
+      "name": "Coffee table",
+      "canonical_id": 194,
+      "canonical_name": "coffee table",
+      "annotated_images": 2840
+    },
+    {
+      "raw_id": 123,
+      "name": "Coffeemaker",
+      "canonical_id": 195,
+      "canonical_name": "coffeemaker",
+      "annotated_images": 233
+    },
+    {
+      "raw_id": 124,
+      "name": "Coin",
+      "canonical_id": 196,
+      "canonical_name": "coin",
+      "annotated_images": 1224
+    },
+    {
+      "raw_id": 125,
+      "name": "Common fig",
+      "canonical_id": 197,
+      "canonical_name": "common fig",
+      "annotated_images": 99
+    },
+    {
+      "raw_id": 126,
+      "name": "Common sunflower",
+      "canonical_id": 198,
+      "canonical_name": "common sunflower",
+      "annotated_images": 1570
+    },
+    {
+      "raw_id": 127,
+      "name": "Computer keyboard",
+      "canonical_id": 199,
+      "canonical_name": "computer keyboard",
+      "annotated_images": 3331
+    },
+    {
+      "raw_id": 128,
+      "name": "Computer monitor",
+      "canonical_id": 200,
+      "canonical_name": "computer monitor",
+      "annotated_images": 3339
+    },
+    {
+      "raw_id": 129,
+      "name": "Computer mouse",
+      "canonical_id": 201,
+      "canonical_name": "computer mouse",
+      "annotated_images": 622
+    },
+    {
+      "raw_id": 130,
+      "name": "Container",
+      "canonical_id": 202,
+      "canonical_name": "container",
+      "annotated_images": 0
+    },
+    {
+      "raw_id": 131,
+      "name": "Convenience store",
+      "canonical_id": 203,
+      "canonical_name": "convenience store",
+      "annotated_images": 1809
+    },
+    {
+      "raw_id": 132,
+      "name": "Cookie",
+      "canonical_id": 204,
+      "canonical_name": "cookie",
+      "annotated_images": 998
+    },
+    {
+      "raw_id": 133,
+      "name": "Cooking spray",
+      "canonical_id": 205,
+      "canonical_name": "cooking spray",
+      "annotated_images": 12
+    },
+    {
+      "raw_id": 134,
+      "name": "Corded phone",
+      "canonical_id": 206,
+      "canonical_name": "corded phone",
+      "annotated_images": 352
+    },
+    {
+      "raw_id": 135,
+      "name": "Cosmetics",
+      "canonical_id": 207,
+      "canonical_name": "cosmetics",
+      "annotated_images": 848
+    },
+    {
+      "raw_id": 136,
+      "name": "Couch",
+      "canonical_id": 57,
+      "canonical_name": "couch",
+      "annotated_images": 3321
+    },
+    {
+      "raw_id": 137,
+      "name": "Countertop",
+      "canonical_id": 208,
+      "canonical_name": "countertop",
+      "annotated_images": 2212
+    },
+    {
+      "raw_id": 138,
+      "name": "Cowboy hat",
+      "canonical_id": 209,
+      "canonical_name": "cowboy hat",
+      "annotated_images": 1977
+    },
+    {
+      "raw_id": 139,
+      "name": "Crab",
+      "canonical_id": 210,
+      "canonical_name": "crab",
+      "annotated_images": 740
+    },
+    {
+      "raw_id": 140,
+      "name": "Cream",
+      "canonical_id": 211,
+      "canonical_name": "cream",
+      "annotated_images": 70
+    },
+    {
+      "raw_id": 141,
+      "name": "Cricket ball",
+      "canonical_id": 212,
+      "canonical_name": "cricket ball",
+      "annotated_images": 95
+    },
+    {
+      "raw_id": 142,
+      "name": "Crocodile",
+      "canonical_id": 213,
+      "canonical_name": "crocodile",
+      "annotated_images": 719
+    },
+    {
+      "raw_id": 143,
+      "name": "Croissant",
+      "canonical_id": 214,
+      "canonical_name": "croissant",
+      "annotated_images": 207
+    },
+    {
+      "raw_id": 144,
+      "name": "Crown",
+      "canonical_id": 215,
+      "canonical_name": "crown",
+      "annotated_images": 554
+    },
+    {
+      "raw_id": 145,
+      "name": "Crutch",
+      "canonical_id": 216,
+      "canonical_name": "crutch",
+      "annotated_images": 80
+    },
+    {
+      "raw_id": 146,
+      "name": "Cucumber",
+      "canonical_id": 217,
+      "canonical_name": "cucumber",
+      "annotated_images": 454
+    },
+    {
+      "raw_id": 147,
+      "name": "Cupboard",
+      "canonical_id": 218,
+      "canonical_name": "cupboard",
+      "annotated_images": 872
+    },
+    {
+      "raw_id": 148,
+      "name": "Curtain",
+      "canonical_id": 219,
+      "canonical_name": "curtain",
+      "annotated_images": 2616
+    },
+    {
+      "raw_id": 149,
+      "name": "Cutting board",
+      "canonical_id": 220,
+      "canonical_name": "cutting board",
+      "annotated_images": 196
+    },
+    {
+      "raw_id": 150,
+      "name": "Dagger",
+      "canonical_id": 221,
+      "canonical_name": "dagger",
+      "annotated_images": 264
+    },
+    {
+      "raw_id": 151,
+      "name": "Dairy Product",
+      "canonical_id": 222,
+      "canonical_name": "dairy product",
+      "annotated_images": 2909
+    },
+    {
+      "raw_id": 152,
+      "name": "Deer",
+      "canonical_id": 82,
+      "canonical_name": "deer",
+      "annotated_images": 2093
+    },
+    {
+      "raw_id": 153,
+      "name": "Desk",
+      "canonical_id": 223,
+      "canonical_name": "desk",
+      "annotated_images": 9472
+    },
+    {
+      "raw_id": 154,
+      "name": "Dessert",
+      "canonical_id": 224,
+      "canonical_name": "dessert",
+      "annotated_images": 8466
+    },
+    {
+      "raw_id": 155,
+      "name": "Diaper",
+      "canonical_id": 225,
+      "canonical_name": "diaper",
+      "annotated_images": 115
+    },
+    {
+      "raw_id": 156,
+      "name": "Dice",
+      "canonical_id": 226,
+      "canonical_name": "dice",
+      "annotated_images": 214
+    },
+    {
+      "raw_id": 157,
+      "name": "Digital clock",
+      "canonical_id": 227,
+      "canonical_name": "digital clock",
+      "annotated_images": 169
+    },
+    {
+      "raw_id": 158,
+      "name": "Dinosaur",
+      "canonical_id": 228,
+      "canonical_name": "dinosaur",
+      "annotated_images": 1101
+    },
+    {
+      "raw_id": 159,
+      "name": "Dishwasher",
+      "canonical_id": 229,
+      "canonical_name": "dishwasher",
+      "annotated_images": 88
+    },
+    {
+      "raw_id": 160,
+      "name": "Dog",
+      "canonical_id": 16,
+      "canonical_name": "dog",
+      "annotated_images": 20607
+    },
+    {
+      "raw_id": 161,
+      "name": "Dog bed",
+      "canonical_id": 230,
+      "canonical_name": "dog bed",
+      "annotated_images": 237
+    },
+    {
+      "raw_id": 162,
+      "name": "Doll",
+      "canonical_id": 231,
+      "canonical_name": "doll",
+      "annotated_images": 3383
+    },
+    {
+      "raw_id": 163,
+      "name": "Dolphin",
+      "canonical_id": 232,
+      "canonical_name": "dolphin",
+      "annotated_images": 886
+    },
+    {
+      "raw_id": 164,
+      "name": "Door",
+      "canonical_id": 233,
+      "canonical_name": "door",
+      "annotated_images": 13382
+    },
+    {
+      "raw_id": 165,
+      "name": "Door handle",
+      "canonical_id": 234,
+      "canonical_name": "door handle",
+      "annotated_images": 568
+    },
+    {
+      "raw_id": 166,
+      "name": "Doughnut",
+      "canonical_id": 235,
+      "canonical_name": "doughnut",
+      "annotated_images": 400
+    },
+    {
+      "raw_id": 167,
+      "name": "Dragonfly",
+      "canonical_id": 236,
+      "canonical_name": "dragonfly",
+      "annotated_images": 1360
+    },
+    {
+      "raw_id": 168,
+      "name": "Drawer",
+      "canonical_id": 237,
+      "canonical_name": "drawer",
+      "annotated_images": 1623
+    },
+    {
+      "raw_id": 169,
+      "name": "Dress",
+      "canonical_id": 238,
+      "canonical_name": "dress",
+      "annotated_images": 31527
+    },
+    {
+      "raw_id": 170,
+      "name": "Drill (Tool)",
+      "canonical_id": 239,
+      "canonical_name": "drill (tool)",
+      "annotated_images": 171
+    },
+    {
+      "raw_id": 171,
+      "name": "Drink",
+      "canonical_id": 240,
+      "canonical_name": "drink",
+      "annotated_images": 16071
+    },
+    {
+      "raw_id": 172,
+      "name": "Drinking straw",
+      "canonical_id": 241,
+      "canonical_name": "drinking straw",
+      "annotated_images": 183
+    },
+    {
+      "raw_id": 173,
+      "name": "Drum",
+      "canonical_id": 242,
+      "canonical_name": "drum",
+      "annotated_images": 8104
+    },
+    {
+      "raw_id": 174,
+      "name": "Duck",
+      "canonical_id": 88,
+      "canonical_name": "duck",
+      "annotated_images": 4669
+    },
+    {
+      "raw_id": 175,
+      "name": "Dumbbell",
+      "canonical_id": 243,
+      "canonical_name": "dumbbell",
+      "annotated_images": 111
+    },
+    {
+      "raw_id": 176,
+      "name": "Eagle",
+      "canonical_id": 244,
+      "canonical_name": "eagle",
+      "annotated_images": 1484
+    },
+    {
+      "raw_id": 177,
+      "name": "Earrings",
+      "canonical_id": 245,
+      "canonical_name": "earrings",
+      "annotated_images": 669
+    },
+    {
+      "raw_id": 178,
+      "name": "Egg (Food)",
+      "canonical_id": 246,
+      "canonical_name": "egg (food)",
+      "annotated_images": 934
+    },
+    {
+      "raw_id": 179,
+      "name": "Elephant",
+      "canonical_id": 20,
+      "canonical_name": "elephant",
+      "annotated_images": 1732
+    },
+    {
+      "raw_id": 180,
+      "name": "Envelope",
+      "canonical_id": 247,
+      "canonical_name": "envelope",
+      "annotated_images": 120
+    },
+    {
+      "raw_id": 181,
+      "name": "Eraser",
+      "canonical_id": 248,
+      "canonical_name": "eraser",
+      "annotated_images": 24
+    },
+    {
+      "raw_id": 182,
+      "name": "Face powder",
+      "canonical_id": 249,
+      "canonical_name": "face powder",
+      "annotated_images": 49
+    },
+    {
+      "raw_id": 183,
+      "name": "Facial tissue holder",
+      "canonical_id": 250,
+      "canonical_name": "facial tissue holder",
+      "annotated_images": 19
+    },
+    {
+      "raw_id": 184,
+      "name": "Falcon",
+      "canonical_id": 251,
+      "canonical_name": "falcon",
+      "annotated_images": 1489
+    },
+    {
+      "raw_id": 185,
+      "name": "Fashion accessory",
+      "canonical_id": 252,
+      "canonical_name": "fashion accessory",
+      "annotated_images": 23059
+    },
+    {
+      "raw_id": 186,
+      "name": "Fast food",
+      "canonical_id": 253,
+      "canonical_name": "fast food",
+      "annotated_images": 7353
+    },
+    {
+      "raw_id": 187,
+      "name": "Fax",
+      "canonical_id": 254,
+      "canonical_name": "fax",
+      "annotated_images": 22
+    },
+    {
+      "raw_id": 188,
+      "name": "Fedora",
+      "canonical_id": 255,
+      "canonical_name": "fedora",
+      "annotated_images": 2910
+    },
+    {
+      "raw_id": 189,
+      "name": "Filing cabinet",
+      "canonical_id": 256,
+      "canonical_name": "filing cabinet",
+      "annotated_images": 275
+    },
+    {
+      "raw_id": 190,
+      "name": "Fire hydrant",
+      "canonical_id": 10,
+      "canonical_name": "fire hydrant",
+      "annotated_images": 408
+    },
+    {
+      "raw_id": 191,
+      "name": "Fireplace",
+      "canonical_id": 257,
+      "canonical_name": "fireplace",
+      "annotated_images": 685
+    },
+    {
+      "raw_id": 192,
+      "name": "Fish",
+      "canonical_id": 258,
+      "canonical_name": "fish",
+      "annotated_images": 5434
+    },
+    {
+      "raw_id": 193,
+      "name": "Flag",
+      "canonical_id": 259,
+      "canonical_name": "flag",
+      "annotated_images": 8402
+    },
+    {
+      "raw_id": 194,
+      "name": "Flashlight",
+      "canonical_id": 260,
+      "canonical_name": "flashlight",
+      "annotated_images": 62
+    },
+    {
+      "raw_id": 195,
+      "name": "Flower",
+      "canonical_id": 261,
+      "canonical_name": "flower",
+      "annotated_images": 62716
+    },
+    {
+      "raw_id": 196,
+      "name": "Flowerpot",
+      "canonical_id": 262,
+      "canonical_name": "flowerpot",
+      "annotated_images": 7352
+    },
+    {
+      "raw_id": 197,
+      "name": "Flute",
+      "canonical_id": 263,
+      "canonical_name": "flute",
+      "annotated_images": 243
+    },
+    {
+      "raw_id": 198,
+      "name": "Flying disc",
+      "canonical_id": 264,
+      "canonical_name": "flying disc",
+      "annotated_images": 207
+    },
+    {
+      "raw_id": 199,
+      "name": "Food",
+      "canonical_id": 265,
+      "canonical_name": "food",
+      "annotated_images": 25712
+    },
+    {
+      "raw_id": 200,
+      "name": "Food processor",
+      "canonical_id": 266,
+      "canonical_name": "food processor",
+      "annotated_images": 130
+    },
+    {
+      "raw_id": 201,
+      "name": "Football",
+      "canonical_id": 267,
+      "canonical_name": "football",
+      "annotated_images": 4339
+    },
+    {
+      "raw_id": 202,
+      "name": "Football helmet",
+      "canonical_id": 268,
+      "canonical_name": "football helmet",
+      "annotated_images": 2087
+    },
+    {
+      "raw_id": 203,
+      "name": "Footwear",
+      "canonical_id": 269,
+      "canonical_name": "footwear",
+      "annotated_images": 130723
+    },
+    {
+      "raw_id": 204,
+      "name": "Fork",
+      "canonical_id": 42,
+      "canonical_name": "fork",
+      "annotated_images": 1034
+    },
+    {
+      "raw_id": 205,
+      "name": "Fountain",
+      "canonical_id": 270,
+      "canonical_name": "fountain",
+      "annotated_images": 3089
+    },
+    {
+      "raw_id": 206,
+      "name": "Fox",
+      "canonical_id": 80,
+      "canonical_name": "fox",
+      "annotated_images": 484
+    },
+    {
+      "raw_id": 207,
+      "name": "French fries",
+      "canonical_id": 271,
+      "canonical_name": "french fries",
+      "annotated_images": 1121
+    },
+    {
+      "raw_id": 208,
+      "name": "French horn",
+      "canonical_id": 272,
+      "canonical_name": "french horn",
+      "annotated_images": 336
+    },
+    {
+      "raw_id": 209,
+      "name": "Frog",
+      "canonical_id": 273,
+      "canonical_name": "frog",
+      "annotated_images": 1370
+    },
+    {
+      "raw_id": 210,
+      "name": "Fruit",
+      "canonical_id": 274,
+      "canonical_name": "fruit",
+      "annotated_images": 5283
+    },
+    {
+      "raw_id": 211,
+      "name": "Frying pan",
+      "canonical_id": 275,
+      "canonical_name": "frying pan",
+      "annotated_images": 301
+    },
+    {
+      "raw_id": 212,
+      "name": "Furniture",
+      "canonical_id": 276,
+      "canonical_name": "furniture",
+      "annotated_images": 14702
+    },
+    {
+      "raw_id": 213,
+      "name": "Garden Asparagus",
+      "canonical_id": 277,
+      "canonical_name": "garden asparagus",
+      "annotated_images": 313
+    },
+    {
+      "raw_id": 214,
+      "name": "Gas stove",
+      "canonical_id": 278,
+      "canonical_name": "gas stove",
+      "annotated_images": 473
+    },
+    {
+      "raw_id": 215,
+      "name": "Giraffe",
+      "canonical_id": 23,
+      "canonical_name": "giraffe",
+      "annotated_images": 920
+    },
+    {
+      "raw_id": 216,
+      "name": "Girl",
+      "canonical_id": 0,
+      "canonical_name": "person",
+      "annotated_images": 93731
+    },
+    {
+      "raw_id": 217,
+      "name": "Glasses",
+      "canonical_id": 279,
+      "canonical_name": "glasses",
+      "annotated_images": 41945
+    },
+    {
+      "raw_id": 218,
+      "name": "Glove",
+      "canonical_id": 280,
+      "canonical_name": "glove",
+      "annotated_images": 733
+    },
+    {
+      "raw_id": 219,
+      "name": "Goat",
+      "canonical_id": 281,
+      "canonical_name": "goat",
+      "annotated_images": 1112
+    },
+    {
+      "raw_id": 220,
+      "name": "Goggles",
+      "canonical_id": 282,
+      "canonical_name": "goggles",
+      "annotated_images": 7128
+    },
+    {
+      "raw_id": 221,
+      "name": "Goldfish",
+      "canonical_id": 283,
+      "canonical_name": "goldfish",
+      "annotated_images": 407
+    },
+    {
+      "raw_id": 222,
+      "name": "Golf ball",
+      "canonical_id": 284,
+      "canonical_name": "golf ball",
+      "annotated_images": 321
+    },
+    {
+      "raw_id": 223,
+      "name": "Golf cart",
+      "canonical_id": 285,
+      "canonical_name": "golf cart",
+      "annotated_images": 336
+    },
+    {
+      "raw_id": 224,
+      "name": "Gondola",
+      "canonical_id": 286,
+      "canonical_name": "gondola",
+      "annotated_images": 569
+    },
+    {
+      "raw_id": 225,
+      "name": "Goose",
+      "canonical_id": 89,
+      "canonical_name": "goose",
+      "annotated_images": 2746
+    },
+    {
+      "raw_id": 226,
+      "name": "Grape",
+      "canonical_id": 287,
+      "canonical_name": "grape",
+      "annotated_images": 767
+    },
+    {
+      "raw_id": 227,
+      "name": "Grapefruit",
+      "canonical_id": 288,
+      "canonical_name": "grapefruit",
+      "annotated_images": 432
+    },
+    {
+      "raw_id": 228,
+      "name": "Grinder",
+      "canonical_id": 289,
+      "canonical_name": "grinder",
+      "annotated_images": 11
+    },
+    {
+      "raw_id": 229,
+      "name": "Guacamole",
+      "canonical_id": 290,
+      "canonical_name": "guacamole",
+      "annotated_images": 181
+    },
+    {
+      "raw_id": 230,
+      "name": "Guitar",
+      "canonical_id": 291,
+      "canonical_name": "guitar",
+      "annotated_images": 17671
+    },
+    {
+      "raw_id": 231,
+      "name": "Hair dryer",
+      "canonical_id": 292,
+      "canonical_name": "hair dryer",
+      "annotated_images": 27
+    },
+    {
+      "raw_id": 232,
+      "name": "Hair spray",
+      "canonical_id": 293,
+      "canonical_name": "hair spray",
+      "annotated_images": 6
+    },
+    {
+      "raw_id": 233,
+      "name": "Hamburger",
+      "canonical_id": 294,
+      "canonical_name": "hamburger",
+      "annotated_images": 1068
+    },
+    {
+      "raw_id": 234,
+      "name": "Hammer",
+      "canonical_id": 295,
+      "canonical_name": "hammer",
+      "annotated_images": 119
+    },
+    {
+      "raw_id": 235,
+      "name": "Hamster",
+      "canonical_id": 296,
+      "canonical_name": "hamster",
+      "annotated_images": 454
+    },
+    {
+      "raw_id": 236,
+      "name": "Hand dryer",
+      "canonical_id": 297,
+      "canonical_name": "hand dryer",
+      "annotated_images": 56
+    },
+    {
+      "raw_id": 237,
+      "name": "Handbag",
+      "canonical_id": 26,
+      "canonical_name": "handbag",
+      "annotated_images": 1901
+    },
+    {
+      "raw_id": 238,
+      "name": "Handgun",
+      "canonical_id": 298,
+      "canonical_name": "handgun",
+      "annotated_images": 561
+    },
+    {
+      "raw_id": 239,
+      "name": "Harbor seal",
+      "canonical_id": 299,
+      "canonical_name": "harbor seal",
+      "annotated_images": 875
+    },
+    {
+      "raw_id": 240,
+      "name": "Harmonica",
+      "canonical_id": 300,
+      "canonical_name": "harmonica",
+      "annotated_images": 20
+    },
+    {
+      "raw_id": 241,
+      "name": "Harp",
+      "canonical_id": 301,
+      "canonical_name": "harp",
+      "annotated_images": 201
+    },
+    {
+      "raw_id": 242,
+      "name": "Harpsichord",
+      "canonical_id": 302,
+      "canonical_name": "harpsichord",
+      "annotated_images": 195
+    },
+    {
+      "raw_id": 243,
+      "name": "Hat",
+      "canonical_id": 303,
+      "canonical_name": "hat",
+      "annotated_images": 8460
+    },
+    {
+      "raw_id": 244,
+      "name": "Headphones",
+      "canonical_id": 304,
+      "canonical_name": "headphones",
+      "annotated_images": 1064
+    },
+    {
+      "raw_id": 245,
+      "name": "Heater",
+      "canonical_id": 305,
+      "canonical_name": "heater",
+      "annotated_images": 32
+    },
+    {
+      "raw_id": 246,
+      "name": "Hedgehog",
+      "canonical_id": 306,
+      "canonical_name": "hedgehog",
+      "annotated_images": 231
+    },
+    {
+      "raw_id": 247,
+      "name": "Helicopter",
+      "canonical_id": 307,
+      "canonical_name": "helicopter",
+      "annotated_images": 2398
+    },
+    {
+      "raw_id": 248,
+      "name": "Helmet",
+      "canonical_id": 308,
+      "canonical_name": "helmet",
+      "annotated_images": 7608
+    },
+    {
+      "raw_id": 249,
+      "name": "High heels",
+      "canonical_id": 309,
+      "canonical_name": "high heels",
+      "annotated_images": 1532
+    },
+    {
+      "raw_id": 250,
+      "name": "Hiking equipment",
+      "canonical_id": 310,
+      "canonical_name": "hiking equipment",
+      "annotated_images": 2571
+    },
+    {
+      "raw_id": 251,
+      "name": "Hippopotamus",
+      "canonical_id": 311,
+      "canonical_name": "hippopotamus",
+      "annotated_images": 388
+    },
+    {
+      "raw_id": 252,
+      "name": "Home appliance",
+      "canonical_id": 312,
+      "canonical_name": "home appliance",
+      "annotated_images": 1051
+    },
+    {
+      "raw_id": 253,
+      "name": "Honeycomb",
+      "canonical_id": 313,
+      "canonical_name": "honeycomb",
+      "annotated_images": 350
+    },
+    {
+      "raw_id": 254,
+      "name": "Horizontal bar",
+      "canonical_id": 314,
+      "canonical_name": "horizontal bar",
+      "annotated_images": 54
+    },
+    {
+      "raw_id": 255,
+      "name": "Horse",
+      "canonical_id": 17,
+      "canonical_name": "horse",
+      "annotated_images": 7073
+    },
+    {
+      "raw_id": 256,
+      "name": "Hot dog",
+      "canonical_id": 52,
+      "canonical_name": "hot dog",
+      "annotated_images": 362
+    },
+    {
+      "raw_id": 257,
+      "name": "House",
+      "canonical_id": 315,
+      "canonical_name": "house",
+      "annotated_images": 58145
+    },
+    {
+      "raw_id": 258,
+      "name": "Houseplant",
+      "canonical_id": 316,
+      "canonical_name": "houseplant",
+      "annotated_images": 8932
+    },
+    {
+      "raw_id": 259,
+      "name": "Human arm",
+      "canonical_id": 317,
+      "canonical_name": "human arm",
+      "annotated_images": 41380
+    },
+    {
+      "raw_id": 260,
+      "name": "Human beard",
+      "canonical_id": 318,
+      "canonical_name": "human beard",
+      "annotated_images": 2771
+    },
+    {
+      "raw_id": 261,
+      "name": "Human body",
+      "canonical_id": 319,
+      "canonical_name": "human body",
+      "annotated_images": 45398
+    },
+    {
+      "raw_id": 262,
+      "name": "Human ear",
+      "canonical_id": 320,
+      "canonical_name": "human ear",
+      "annotated_images": 8336
+    },
+    {
+      "raw_id": 263,
+      "name": "Human eye",
+      "canonical_id": 321,
+      "canonical_name": "human eye",
+      "annotated_images": 23743
+    },
+    {
+      "raw_id": 264,
+      "name": "Human face",
+      "canonical_id": 322,
+      "canonical_name": "human face",
+      "annotated_images": 331627
+    },
+    {
+      "raw_id": 265,
+      "name": "Human foot",
+      "canonical_id": 323,
+      "canonical_name": "human foot",
+      "annotated_images": 979
+    },
+    {
+      "raw_id": 266,
+      "name": "Human hair",
+      "canonical_id": 324,
+      "canonical_name": "human hair",
+      "annotated_images": 56391
+    },
+    {
+      "raw_id": 267,
+      "name": "Human hand",
+      "canonical_id": 325,
+      "canonical_name": "human hand",
+      "annotated_images": 22093
+    },
+    {
+      "raw_id": 268,
+      "name": "Human head",
+      "canonical_id": 326,
+      "canonical_name": "human head",
+      "annotated_images": 49308
+    },
+    {
+      "raw_id": 269,
+      "name": "Human leg",
+      "canonical_id": 327,
+      "canonical_name": "human leg",
+      "annotated_images": 17454
+    },
+    {
+      "raw_id": 270,
+      "name": "Human mouth",
+      "canonical_id": 328,
+      "canonical_name": "human mouth",
+      "annotated_images": 24454
+    },
+    {
+      "raw_id": 271,
+      "name": "Human nose",
+      "canonical_id": 329,
+      "canonical_name": "human nose",
+      "annotated_images": 28791
+    },
+    {
+      "raw_id": 272,
+      "name": "Humidifier",
+      "canonical_id": 330,
+      "canonical_name": "humidifier",
+      "annotated_images": 9
+    },
+    {
+      "raw_id": 273,
+      "name": "Ice cream",
+      "canonical_id": 331,
+      "canonical_name": "ice cream",
+      "annotated_images": 1454
+    },
+    {
+      "raw_id": 274,
+      "name": "Indoor rower",
+      "canonical_id": 332,
+      "canonical_name": "indoor rower",
+      "annotated_images": 22
+    },
+    {
+      "raw_id": 275,
+      "name": "Infant bed",
+      "canonical_id": 333,
+      "canonical_name": "infant bed",
+      "annotated_images": 426
+    },
+    {
+      "raw_id": 276,
+      "name": "Insect",
+      "canonical_id": 334,
+      "canonical_name": "insect",
+      "annotated_images": 6080
+    },
+    {
+      "raw_id": 277,
+      "name": "Invertebrate",
+      "canonical_id": 335,
+      "canonical_name": "invertebrate",
+      "annotated_images": 778
+    },
+    {
+      "raw_id": 278,
+      "name": "Ipod",
+      "canonical_id": 336,
+      "canonical_name": "ipod",
+      "annotated_images": 414
+    },
+    {
+      "raw_id": 279,
+      "name": "Isopod",
+      "canonical_id": 337,
+      "canonical_name": "isopod",
+      "annotated_images": 87
+    },
+    {
+      "raw_id": 280,
+      "name": "Jacket",
+      "canonical_id": 338,
+      "canonical_name": "jacket",
+      "annotated_images": 12911
+    },
+    {
+      "raw_id": 281,
+      "name": "Jacuzzi",
+      "canonical_id": 339,
+      "canonical_name": "jacuzzi",
+      "annotated_images": 102
+    },
+    {
+      "raw_id": 282,
+      "name": "Jaguar (Animal)",
+      "canonical_id": 340,
+      "canonical_name": "jaguar (animal)",
+      "annotated_images": 509
+    },
+    {
+      "raw_id": 283,
+      "name": "Jeans",
+      "canonical_id": 341,
+      "canonical_name": "jeans",
+      "annotated_images": 31351
+    },
+    {
+      "raw_id": 284,
+      "name": "Jellyfish",
+      "canonical_id": 342,
+      "canonical_name": "jellyfish",
+      "annotated_images": 729
+    },
+    {
+      "raw_id": 285,
+      "name": "Jet ski",
+      "canonical_id": 343,
+      "canonical_name": "jet ski",
+      "annotated_images": 458
+    },
+    {
+      "raw_id": 286,
+      "name": "Jug",
+      "canonical_id": 344,
+      "canonical_name": "jug",
+      "annotated_images": 395
+    },
+    {
+      "raw_id": 287,
+      "name": "Juice",
+      "canonical_id": 345,
+      "canonical_name": "juice",
+      "annotated_images": 1746
+    },
+    {
+      "raw_id": 288,
+      "name": "Kangaroo",
+      "canonical_id": 346,
+      "canonical_name": "kangaroo",
+      "annotated_images": 458
+    },
+    {
+      "raw_id": 289,
+      "name": "Kettle",
+      "canonical_id": 347,
+      "canonical_name": "kettle",
+      "annotated_images": 464
+    },
+    {
+      "raw_id": 290,
+      "name": "Kitchen & dining room table",
+      "canonical_id": 348,
+      "canonical_name": "kitchen & dining room table",
+      "annotated_images": 1966
+    },
+    {
+      "raw_id": 291,
+      "name": "Kitchen appliance",
+      "canonical_id": 349,
+      "canonical_name": "kitchen appliance",
+      "annotated_images": 1157
+    },
+    {
+      "raw_id": 292,
+      "name": "Kitchen knife",
+      "canonical_id": 350,
+      "canonical_name": "kitchen knife",
+      "annotated_images": 274
+    },
+    {
+      "raw_id": 293,
+      "name": "Kitchen utensil",
+      "canonical_id": 351,
+      "canonical_name": "kitchen utensil",
+      "annotated_images": 254
+    },
+    {
+      "raw_id": 294,
+      "name": "Kitchenware",
+      "canonical_id": 352,
+      "canonical_name": "kitchenware",
+      "annotated_images": 0
+    },
+    {
+      "raw_id": 295,
+      "name": "Kite",
+      "canonical_id": 33,
+      "canonical_name": "kite",
+      "annotated_images": 365
+    },
+    {
+      "raw_id": 296,
+      "name": "Knife",
+      "canonical_id": 43,
+      "canonical_name": "knife",
+      "annotated_images": 610
+    },
+    {
+      "raw_id": 297,
+      "name": "Koala",
+      "canonical_id": 353,
+      "canonical_name": "koala",
+      "annotated_images": 368
+    },
+    {
+      "raw_id": 298,
+      "name": "Ladder",
+      "canonical_id": 354,
+      "canonical_name": "ladder",
+      "annotated_images": 754
+    },
+    {
+      "raw_id": 299,
+      "name": "Ladle",
+      "canonical_id": 355,
+      "canonical_name": "ladle",
+      "annotated_images": 20
+    },
+    {
+      "raw_id": 300,
+      "name": "Ladybug",
+      "canonical_id": 356,
+      "canonical_name": "ladybug",
+      "annotated_images": 565
+    },
+    {
+      "raw_id": 301,
+      "name": "Lamp",
+      "canonical_id": 357,
+      "canonical_name": "lamp",
+      "annotated_images": 1565
+    },
+    {
+      "raw_id": 302,
+      "name": "Land vehicle",
+      "canonical_id": 358,
+      "canonical_name": "land vehicle",
+      "annotated_images": 29521
+    },
+    {
+      "raw_id": 303,
+      "name": "Lantern",
+      "canonical_id": 87,
+      "canonical_name": "lantern",
+      "annotated_images": 808
+    },
+    {
+      "raw_id": 304,
+      "name": "Laptop",
+      "canonical_id": 63,
+      "canonical_name": "laptop",
+      "annotated_images": 5528
+    },
+    {
+      "raw_id": 305,
+      "name": "Lavender (Plant)",
+      "canonical_id": 359,
+      "canonical_name": "lavender (plant)",
+      "annotated_images": 965
+    },
+    {
+      "raw_id": 306,
+      "name": "Lemon",
+      "canonical_id": 360,
+      "canonical_name": "lemon",
+      "annotated_images": 679
+    },
+    {
+      "raw_id": 307,
+      "name": "Leopard",
+      "canonical_id": 361,
+      "canonical_name": "leopard",
+      "annotated_images": 694
+    },
+    {
+      "raw_id": 308,
+      "name": "Light bulb",
+      "canonical_id": 362,
+      "canonical_name": "light bulb",
+      "annotated_images": 427
+    },
+    {
+      "raw_id": 309,
+      "name": "Light switch",
+      "canonical_id": 363,
+      "canonical_name": "light switch",
+      "annotated_images": 80
+    },
+    {
+      "raw_id": 310,
+      "name": "Lighthouse",
+      "canonical_id": 364,
+      "canonical_name": "lighthouse",
+      "annotated_images": 1464
+    },
+    {
+      "raw_id": 311,
+      "name": "Lily",
+      "canonical_id": 365,
+      "canonical_name": "lily",
+      "annotated_images": 1198
+    },
+    {
+      "raw_id": 312,
+      "name": "Limousine",
+      "canonical_id": 366,
+      "canonical_name": "limousine",
+      "annotated_images": 334
+    },
+    {
+      "raw_id": 313,
+      "name": "Lion",
+      "canonical_id": 367,
+      "canonical_name": "lion",
+      "annotated_images": 1190
+    },
+    {
+      "raw_id": 314,
+      "name": "Lipstick",
+      "canonical_id": 368,
+      "canonical_name": "lipstick",
+      "annotated_images": 1086
+    },
+    {
+      "raw_id": 315,
+      "name": "Lizard",
+      "canonical_id": 369,
+      "canonical_name": "lizard",
+      "annotated_images": 1838
+    },
+    {
+      "raw_id": 316,
+      "name": "Lobster",
+      "canonical_id": 370,
+      "canonical_name": "lobster",
+      "annotated_images": 405
+    },
+    {
+      "raw_id": 317,
+      "name": "Loveseat",
+      "canonical_id": 371,
+      "canonical_name": "loveseat",
+      "annotated_images": 511
+    },
+    {
+      "raw_id": 318,
+      "name": "Luggage and bags",
+      "canonical_id": 372,
+      "canonical_name": "luggage and bags",
+      "annotated_images": 953
+    },
+    {
+      "raw_id": 319,
+      "name": "Lynx",
+      "canonical_id": 373,
+      "canonical_name": "lynx",
+      "annotated_images": 223
+    },
+    {
+      "raw_id": 320,
+      "name": "Magpie",
+      "canonical_id": 374,
+      "canonical_name": "magpie",
+      "annotated_images": 123
+    },
+    {
+      "raw_id": 321,
+      "name": "Mammal",
+      "canonical_id": 375,
+      "canonical_name": "mammal",
+      "annotated_images": 33162
+    },
+    {
+      "raw_id": 322,
+      "name": "Man",
+      "canonical_id": 0,
+      "canonical_name": "person",
+      "annotated_images": 378077
+    },
+    {
+      "raw_id": 323,
+      "name": "Mango",
+      "canonical_id": 376,
+      "canonical_name": "mango",
+      "annotated_images": 126
+    },
+    {
+      "raw_id": 324,
+      "name": "Maple",
+      "canonical_id": 377,
+      "canonical_name": "maple",
+      "annotated_images": 2285
+    },
+    {
+      "raw_id": 325,
+      "name": "Maracas",
+      "canonical_id": 378,
+      "canonical_name": "maracas",
+      "annotated_images": 6
+    },
+    {
+      "raw_id": 326,
+      "name": "Marine invertebrates",
+      "canonical_id": 379,
+      "canonical_name": "marine invertebrates",
+      "annotated_images": 1738
+    },
+    {
+      "raw_id": 327,
+      "name": "Marine mammal",
+      "canonical_id": 380,
+      "canonical_name": "marine mammal",
+      "annotated_images": 974
+    },
+    {
+      "raw_id": 328,
+      "name": "Measuring cup",
+      "canonical_id": 381,
+      "canonical_name": "measuring cup",
+      "annotated_images": 65
+    },
+    {
+      "raw_id": 329,
+      "name": "Mechanical fan",
+      "canonical_id": 382,
+      "canonical_name": "mechanical fan",
+      "annotated_images": 589
+    },
+    {
+      "raw_id": 330,
+      "name": "Medical equipment",
+      "canonical_id": 383,
+      "canonical_name": "medical equipment",
+      "annotated_images": 645
+    },
+    {
+      "raw_id": 331,
+      "name": "Microphone",
+      "canonical_id": 384,
+      "canonical_name": "microphone",
+      "annotated_images": 20393
+    },
+    {
+      "raw_id": 332,
+      "name": "Microwave oven",
+      "canonical_id": 385,
+      "canonical_name": "microwave oven",
+      "annotated_images": 432
+    },
+    {
+      "raw_id": 333,
+      "name": "Milk",
+      "canonical_id": 386,
+      "canonical_name": "milk",
+      "annotated_images": 156
+    },
+    {
+      "raw_id": 334,
+      "name": "Miniskirt",
+      "canonical_id": 387,
+      "canonical_name": "miniskirt",
+      "annotated_images": 746
+    },
+    {
+      "raw_id": 335,
+      "name": "Mirror",
+      "canonical_id": 388,
+      "canonical_name": "mirror",
+      "annotated_images": 1146
+    },
+    {
+      "raw_id": 336,
+      "name": "Missile",
+      "canonical_id": 389,
+      "canonical_name": "missile",
+      "annotated_images": 432
+    },
+    {
+      "raw_id": 337,
+      "name": "Mixer",
+      "canonical_id": 390,
+      "canonical_name": "mixer",
+      "annotated_images": 181
+    },
+    {
+      "raw_id": 338,
+      "name": "Mixing bowl",
+      "canonical_id": 391,
+      "canonical_name": "mixing bowl",
+      "annotated_images": 597
+    },
+    {
+      "raw_id": 339,
+      "name": "Mobile phone",
+      "canonical_id": 67,
+      "canonical_name": "cell phone",
+      "annotated_images": 4312
+    },
+    {
+      "raw_id": 340,
+      "name": "Monkey",
+      "canonical_id": 392,
+      "canonical_name": "monkey",
+      "annotated_images": 2143
+    },
+    {
+      "raw_id": 341,
+      "name": "Moths and butterflies",
+      "canonical_id": 393,
+      "canonical_name": "moths and butterflies",
+      "annotated_images": 1697
+    },
+    {
+      "raw_id": 342,
+      "name": "Motorcycle",
+      "canonical_id": 3,
+      "canonical_name": "motorcycle",
+      "annotated_images": 6944
+    },
+    {
+      "raw_id": 343,
+      "name": "Mouse",
+      "canonical_id": 64,
+      "canonical_name": "mouse",
+      "annotated_images": 698
+    },
+    {
+      "raw_id": 344,
+      "name": "Muffin",
+      "canonical_id": 394,
+      "canonical_name": "muffin",
+      "annotated_images": 1364
+    },
+    {
+      "raw_id": 345,
+      "name": "Mug",
+      "canonical_id": 395,
+      "canonical_name": "mug",
+      "annotated_images": 1598
+    },
+    {
+      "raw_id": 346,
+      "name": "Mule",
+      "canonical_id": 396,
+      "canonical_name": "mule",
+      "annotated_images": 584
+    },
+    {
+      "raw_id": 347,
+      "name": "Mushroom",
+      "canonical_id": 397,
+      "canonical_name": "mushroom",
+      "annotated_images": 1782
+    },
+    {
+      "raw_id": 348,
+      "name": "Musical instrument",
+      "canonical_id": 398,
+      "canonical_name": "musical instrument",
+      "annotated_images": 5253
+    },
+    {
+      "raw_id": 349,
+      "name": "Musical keyboard",
+      "canonical_id": 399,
+      "canonical_name": "musical keyboard",
+      "annotated_images": 1505
+    },
+    {
+      "raw_id": 350,
+      "name": "Nail (Construction)",
+      "canonical_id": 400,
+      "canonical_name": "nail (construction)",
+      "annotated_images": 124
+    },
+    {
+      "raw_id": 351,
+      "name": "Necklace",
+      "canonical_id": 401,
+      "canonical_name": "necklace",
+      "annotated_images": 2200
+    },
+    {
+      "raw_id": 352,
+      "name": "Nightstand",
+      "canonical_id": 402,
+      "canonical_name": "nightstand",
+      "annotated_images": 773
+    },
+    {
+      "raw_id": 353,
+      "name": "Oboe",
+      "canonical_id": 403,
+      "canonical_name": "oboe",
+      "annotated_images": 93
+    },
+    {
+      "raw_id": 354,
+      "name": "Office building",
+      "canonical_id": 404,
+      "canonical_name": "office building",
+      "annotated_images": 4942
+    },
+    {
+      "raw_id": 355,
+      "name": "Office supplies",
+      "canonical_id": 405,
+      "canonical_name": "office supplies",
+      "annotated_images": 1280
+    },
+    {
+      "raw_id": 356,
+      "name": "Orange",
+      "canonical_id": 49,
+      "canonical_name": "orange",
+      "annotated_images": 900
+    },
+    {
+      "raw_id": 357,
+      "name": "Organ (Musical Instrument)",
+      "canonical_id": 406,
+      "canonical_name": "organ (musical instrument)",
+      "annotated_images": 377
+    },
+    {
+      "raw_id": 358,
+      "name": "Ostrich",
+      "canonical_id": 407,
+      "canonical_name": "ostrich",
+      "annotated_images": 364
+    },
+    {
+      "raw_id": 359,
+      "name": "Otter",
+      "canonical_id": 408,
+      "canonical_name": "otter",
+      "annotated_images": 487
+    },
+    {
+      "raw_id": 360,
+      "name": "Oven",
+      "canonical_id": 69,
+      "canonical_name": "oven",
+      "annotated_images": 509
+    },
+    {
+      "raw_id": 361,
+      "name": "Owl",
+      "canonical_id": 90,
+      "canonical_name": "owl",
+      "annotated_images": 1362
+    },
+    {
+      "raw_id": 362,
+      "name": "Oyster",
+      "canonical_id": 409,
+      "canonical_name": "oyster",
+      "annotated_images": 495
+    },
+    {
+      "raw_id": 363,
+      "name": "Paddle",
+      "canonical_id": 410,
+      "canonical_name": "paddle",
+      "annotated_images": 2244
+    },
+    {
+      "raw_id": 364,
+      "name": "Palm tree",
+      "canonical_id": 411,
+      "canonical_name": "palm tree",
+      "annotated_images": 10378
+    },
+    {
+      "raw_id": 365,
+      "name": "Pancake",
+      "canonical_id": 412,
+      "canonical_name": "pancake",
+      "annotated_images": 362
+    },
+    {
+      "raw_id": 366,
+      "name": "Panda",
+      "canonical_id": 413,
+      "canonical_name": "panda",
+      "annotated_images": 574
+    },
+    {
+      "raw_id": 367,
+      "name": "Paper cutter",
+      "canonical_id": 414,
+      "canonical_name": "paper cutter",
+      "annotated_images": 3
+    },
+    {
+      "raw_id": 368,
+      "name": "Paper towel",
+      "canonical_id": 415,
+      "canonical_name": "paper towel",
+      "annotated_images": 146
+    },
+    {
+      "raw_id": 369,
+      "name": "Parachute",
+      "canonical_id": 416,
+      "canonical_name": "parachute",
+      "annotated_images": 1047
+    },
+    {
+      "raw_id": 370,
+      "name": "Parking meter",
+      "canonical_id": 12,
+      "canonical_name": "parking meter",
+      "annotated_images": 177
+    },
+    {
+      "raw_id": 371,
+      "name": "Parrot",
+      "canonical_id": 417,
+      "canonical_name": "parrot",
+      "annotated_images": 1414
+    },
+    {
+      "raw_id": 372,
+      "name": "Pasta",
+      "canonical_id": 418,
+      "canonical_name": "pasta",
+      "annotated_images": 734
+    },
+    {
+      "raw_id": 373,
+      "name": "Pastry",
+      "canonical_id": 419,
+      "canonical_name": "pastry",
+      "annotated_images": 1141
+    },
+    {
+      "raw_id": 374,
+      "name": "Peach",
+      "canonical_id": 420,
+      "canonical_name": "peach",
+      "annotated_images": 220
+    },
+    {
+      "raw_id": 375,
+      "name": "Pear",
+      "canonical_id": 421,
+      "canonical_name": "pear",
+      "annotated_images": 263
+    },
+    {
+      "raw_id": 376,
+      "name": "Pen",
+      "canonical_id": 422,
+      "canonical_name": "pen",
+      "annotated_images": 1011
+    },
+    {
+      "raw_id": 377,
+      "name": "Pencil case",
+      "canonical_id": 423,
+      "canonical_name": "pencil case",
+      "annotated_images": 95
+    },
+    {
+      "raw_id": 378,
+      "name": "Pencil sharpener",
+      "canonical_id": 424,
+      "canonical_name": "pencil sharpener",
+      "annotated_images": 13
+    },
+    {
+      "raw_id": 379,
+      "name": "Penguin",
+      "canonical_id": 425,
+      "canonical_name": "penguin",
+      "annotated_images": 894
+    },
+    {
+      "raw_id": 380,
+      "name": "Perfume",
+      "canonical_id": 426,
+      "canonical_name": "perfume",
+      "annotated_images": 208
+    },
+    {
+      "raw_id": 381,
+      "name": "Person",
+      "canonical_id": 0,
+      "canonical_name": "person",
+      "annotated_images": 248384
+    },
+    {
+      "raw_id": 382,
+      "name": "Personal care",
+      "canonical_id": 427,
+      "canonical_name": "personal care",
+      "annotated_images": 128
+    },
+    {
+      "raw_id": 383,
+      "name": "Personal flotation device",
+      "canonical_id": 428,
+      "canonical_name": "personal flotation device",
+      "annotated_images": 1222
+    },
+    {
+      "raw_id": 384,
+      "name": "Piano",
+      "canonical_id": 429,
+      "canonical_name": "piano",
+      "annotated_images": 1246
+    },
+    {
+      "raw_id": 385,
+      "name": "Picnic basket",
+      "canonical_id": 430,
+      "canonical_name": "picnic basket",
+      "annotated_images": 284
+    },
+    {
+      "raw_id": 386,
+      "name": "Picture frame",
+      "canonical_id": 431,
+      "canonical_name": "picture frame",
+      "annotated_images": 5536
+    },
+    {
+      "raw_id": 387,
+      "name": "Pig",
+      "canonical_id": 432,
+      "canonical_name": "pig",
+      "annotated_images": 811
+    },
+    {
+      "raw_id": 388,
+      "name": "Pillow",
+      "canonical_id": 433,
+      "canonical_name": "pillow",
+      "annotated_images": 1249
+    },
+    {
+      "raw_id": 389,
+      "name": "Pineapple",
+      "canonical_id": 434,
+      "canonical_name": "pineapple",
+      "annotated_images": 310
+    },
+    {
+      "raw_id": 390,
+      "name": "Pitcher (Container)",
+      "canonical_id": 435,
+      "canonical_name": "pitcher (container)",
+      "annotated_images": 288
+    },
+    {
+      "raw_id": 391,
+      "name": "Pizza",
+      "canonical_id": 53,
+      "canonical_name": "pizza",
+      "annotated_images": 1251
+    },
+    {
+      "raw_id": 392,
+      "name": "Pizza cutter",
+      "canonical_id": 436,
+      "canonical_name": "pizza cutter",
+      "annotated_images": 19
+    },
+    {
+      "raw_id": 393,
+      "name": "Plant",
+      "canonical_id": 437,
+      "canonical_name": "plant",
+      "annotated_images": 72363
+    },
+    {
+      "raw_id": 394,
+      "name": "Plastic bag",
+      "canonical_id": 438,
+      "canonical_name": "plastic bag",
+      "annotated_images": 517
+    },
+    {
+      "raw_id": 395,
+      "name": "Plate",
+      "canonical_id": 439,
+      "canonical_name": "plate",
+      "annotated_images": 2023
+    },
+    {
+      "raw_id": 396,
+      "name": "Platter",
+      "canonical_id": 440,
+      "canonical_name": "platter",
+      "annotated_images": 1358
+    },
+    {
+      "raw_id": 397,
+      "name": "Plumbing fixture",
+      "canonical_id": 441,
+      "canonical_name": "plumbing fixture",
+      "annotated_images": 264
+    },
+    {
+      "raw_id": 398,
+      "name": "Polar bear",
+      "canonical_id": 442,
+      "canonical_name": "polar bear",
+      "annotated_images": 490
+    },
+    {
+      "raw_id": 399,
+      "name": "Pomegranate",
+      "canonical_id": 443,
+      "canonical_name": "pomegranate",
+      "annotated_images": 225
+    },
+    {
+      "raw_id": 400,
+      "name": "Popcorn",
+      "canonical_id": 444,
+      "canonical_name": "popcorn",
+      "annotated_images": 194
+    },
+    {
+      "raw_id": 401,
+      "name": "Porch",
+      "canonical_id": 445,
+      "canonical_name": "porch",
+      "annotated_images": 2774
+    },
+    {
+      "raw_id": 402,
+      "name": "Porcupine",
+      "canonical_id": 446,
+      "canonical_name": "porcupine",
+      "annotated_images": 203
+    },
+    {
+      "raw_id": 403,
+      "name": "Poster",
+      "canonical_id": 447,
+      "canonical_name": "poster",
+      "annotated_images": 16152
+    },
+    {
+      "raw_id": 404,
+      "name": "Potato",
+      "canonical_id": 448,
+      "canonical_name": "potato",
+      "annotated_images": 304
+    },
+    {
+      "raw_id": 405,
+      "name": "Power plugs and sockets",
+      "canonical_id": 449,
+      "canonical_name": "power plugs and sockets",
+      "annotated_images": 147
+    },
+    {
+      "raw_id": 406,
+      "name": "Pressure cooker",
+      "canonical_id": 450,
+      "canonical_name": "pressure cooker",
+      "annotated_images": 13
+    },
+    {
+      "raw_id": 407,
+      "name": "Pretzel",
+      "canonical_id": 451,
+      "canonical_name": "pretzel",
+      "annotated_images": 168
+    },
+    {
+      "raw_id": 408,
+      "name": "Printer",
+      "canonical_id": 452,
+      "canonical_name": "printer",
+      "annotated_images": 210
+    },
+    {
+      "raw_id": 409,
+      "name": "Pumpkin",
+      "canonical_id": 453,
+      "canonical_name": "pumpkin",
+      "annotated_images": 1705
+    },
+    {
+      "raw_id": 410,
+      "name": "Punching bag",
+      "canonical_id": 454,
+      "canonical_name": "punching bag",
+      "annotated_images": 121
+    },
+    {
+      "raw_id": 411,
+      "name": "Rabbit",
+      "canonical_id": 81,
+      "canonical_name": "rabbit",
+      "annotated_images": 1179
+    },
+    {
+      "raw_id": 412,
+      "name": "Raccoon",
+      "canonical_id": 84,
+      "canonical_name": "raccoon",
+      "annotated_images": 310
+    },
+    {
+      "raw_id": 413,
+      "name": "Racket",
+      "canonical_id": 455,
+      "canonical_name": "racket",
+      "annotated_images": 240
+    },
+    {
+      "raw_id": 414,
+      "name": "Radish",
+      "canonical_id": 456,
+      "canonical_name": "radish",
+      "annotated_images": 264
+    },
+    {
+      "raw_id": 415,
+      "name": "Ratchet (Device)",
+      "canonical_id": 457,
+      "canonical_name": "ratchet (device)",
+      "annotated_images": 43
+    },
+    {
+      "raw_id": 416,
+      "name": "Raven",
+      "canonical_id": 458,
+      "canonical_name": "raven",
+      "annotated_images": 429
+    },
+    {
+      "raw_id": 417,
+      "name": "Rays and skates",
+      "canonical_id": 459,
+      "canonical_name": "rays and skates",
+      "annotated_images": 324
+    },
+    {
+      "raw_id": 418,
+      "name": "Red panda",
+      "canonical_id": 460,
+      "canonical_name": "red panda",
+      "annotated_images": 328
+    },
+    {
+      "raw_id": 419,
+      "name": "Refrigerator",
+      "canonical_id": 72,
+      "canonical_name": "refrigerator",
+      "annotated_images": 549
+    },
+    {
+      "raw_id": 420,
+      "name": "Remote control",
+      "canonical_id": 461,
+      "canonical_name": "remote control",
+      "annotated_images": 192
+    },
+    {
+      "raw_id": 421,
+      "name": "Reptile",
+      "canonical_id": 462,
+      "canonical_name": "reptile",
+      "annotated_images": 481
+    },
+    {
+      "raw_id": 422,
+      "name": "Rhinoceros",
+      "canonical_id": 463,
+      "canonical_name": "rhinoceros",
+      "annotated_images": 526
+    },
+    {
+      "raw_id": 423,
+      "name": "Rifle",
+      "canonical_id": 464,
+      "canonical_name": "rifle",
+      "annotated_images": 1752
+    },
+    {
+      "raw_id": 424,
+      "name": "Ring binder",
+      "canonical_id": 465,
+      "canonical_name": "ring binder",
+      "annotated_images": 48
+    },
+    {
+      "raw_id": 425,
+      "name": "Rocket",
+      "canonical_id": 466,
+      "canonical_name": "rocket",
+      "annotated_images": 638
+    },
+    {
+      "raw_id": 426,
+      "name": "Roller skates",
+      "canonical_id": 467,
+      "canonical_name": "roller skates",
+      "annotated_images": 739
+    },
+    {
+      "raw_id": 427,
+      "name": "Rose",
+      "canonical_id": 468,
+      "canonical_name": "rose",
+      "annotated_images": 5407
+    },
+    {
+      "raw_id": 428,
+      "name": "Rugby ball",
+      "canonical_id": 469,
+      "canonical_name": "rugby ball",
+      "annotated_images": 270
+    },
+    {
+      "raw_id": 429,
+      "name": "Ruler",
+      "canonical_id": 470,
+      "canonical_name": "ruler",
+      "annotated_images": 235
+    },
+    {
+      "raw_id": 430,
+      "name": "Salad",
+      "canonical_id": 471,
+      "canonical_name": "salad",
+      "annotated_images": 2654
+    },
+    {
+      "raw_id": 431,
+      "name": "Salt and pepper shakers",
+      "canonical_id": 472,
+      "canonical_name": "salt and pepper shakers",
+      "annotated_images": 96
+    },
+    {
+      "raw_id": 432,
+      "name": "Sandal",
+      "canonical_id": 473,
+      "canonical_name": "sandal",
+      "annotated_images": 1298
+    },
+    {
+      "raw_id": 433,
+      "name": "Sandwich",
+      "canonical_id": 48,
+      "canonical_name": "sandwich",
+      "annotated_images": 795
+    },
+    {
+      "raw_id": 434,
+      "name": "Saucer",
+      "canonical_id": 474,
+      "canonical_name": "saucer",
+      "annotated_images": 1582
+    },
+    {
+      "raw_id": 435,
+      "name": "Saxophone",
+      "canonical_id": 475,
+      "canonical_name": "saxophone",
+      "annotated_images": 854
+    },
+    {
+      "raw_id": 436,
+      "name": "Scale",
+      "canonical_id": 476,
+      "canonical_name": "scale",
+      "annotated_images": 131
+    },
+    {
+      "raw_id": 437,
+      "name": "Scarf",
+      "canonical_id": 477,
+      "canonical_name": "scarf",
+      "annotated_images": 2003
+    },
+    {
+      "raw_id": 438,
+      "name": "Scissors",
+      "canonical_id": 76,
+      "canonical_name": "scissors",
+      "annotated_images": 292
+    },
+    {
+      "raw_id": 439,
+      "name": "Scoreboard",
+      "canonical_id": 478,
+      "canonical_name": "scoreboard",
+      "annotated_images": 466
+    },
+    {
+      "raw_id": 440,
+      "name": "Scorpion",
+      "canonical_id": 479,
+      "canonical_name": "scorpion",
+      "annotated_images": 157
+    },
+    {
+      "raw_id": 441,
+      "name": "Screwdriver",
+      "canonical_id": 480,
+      "canonical_name": "screwdriver",
+      "annotated_images": 46
+    },
+    {
+      "raw_id": 442,
+      "name": "Sculpture",
+      "canonical_id": 481,
+      "canonical_name": "sculpture",
+      "annotated_images": 18107
+    },
+    {
+      "raw_id": 443,
+      "name": "Sea lion",
+      "canonical_id": 482,
+      "canonical_name": "sea lion",
+      "annotated_images": 936
+    },
+    {
+      "raw_id": 444,
+      "name": "Sea turtle",
+      "canonical_id": 483,
+      "canonical_name": "sea turtle",
+      "annotated_images": 745
+    },
+    {
+      "raw_id": 445,
+      "name": "Seafood",
+      "canonical_id": 484,
+      "canonical_name": "seafood",
+      "annotated_images": 1824
+    },
+    {
+      "raw_id": 446,
+      "name": "Seahorse",
+      "canonical_id": 485,
+      "canonical_name": "seahorse",
+      "annotated_images": 230
+    },
+    {
+      "raw_id": 447,
+      "name": "Seat belt",
+      "canonical_id": 486,
+      "canonical_name": "seat belt",
+      "annotated_images": 318
+    },
+    {
+      "raw_id": 448,
+      "name": "Segway",
+      "canonical_id": 487,
+      "canonical_name": "segway",
+      "annotated_images": 273
+    },
+    {
+      "raw_id": 449,
+      "name": "Serving tray",
+      "canonical_id": 488,
+      "canonical_name": "serving tray",
+      "annotated_images": 106
+    },
+    {
+      "raw_id": 450,
+      "name": "Sewing machine",
+      "canonical_id": 489,
+      "canonical_name": "sewing machine",
+      "annotated_images": 362
+    },
+    {
+      "raw_id": 451,
+      "name": "Shark",
+      "canonical_id": 490,
+      "canonical_name": "shark",
+      "annotated_images": 496
+    },
+    {
+      "raw_id": 452,
+      "name": "Sheep",
+      "canonical_id": 18,
+      "canonical_name": "sheep",
+      "annotated_images": 1188
+    },
+    {
+      "raw_id": 453,
+      "name": "Shelf",
+      "canonical_id": 491,
+      "canonical_name": "shelf",
+      "annotated_images": 6011
+    },
+    {
+      "raw_id": 454,
+      "name": "Shellfish",
+      "canonical_id": 492,
+      "canonical_name": "shellfish",
+      "annotated_images": 397
+    },
+    {
+      "raw_id": 455,
+      "name": "Shirt",
+      "canonical_id": 493,
+      "canonical_name": "shirt",
+      "annotated_images": 5217
+    },
+    {
+      "raw_id": 456,
+      "name": "Shorts",
+      "canonical_id": 494,
+      "canonical_name": "shorts",
+      "annotated_images": 6833
+    },
+    {
+      "raw_id": 457,
+      "name": "Shotgun",
+      "canonical_id": 495,
+      "canonical_name": "shotgun",
+      "annotated_images": 429
+    },
+    {
+      "raw_id": 458,
+      "name": "Shower",
+      "canonical_id": 496,
+      "canonical_name": "shower",
+      "annotated_images": 206
+    },
+    {
+      "raw_id": 459,
+      "name": "Shrimp",
+      "canonical_id": 497,
+      "canonical_name": "shrimp",
+      "annotated_images": 617
+    },
+    {
+      "raw_id": 460,
+      "name": "Sink",
+      "canonical_id": 71,
+      "canonical_name": "sink",
+      "annotated_images": 1442
+    },
+    {
+      "raw_id": 461,
+      "name": "Skateboard",
+      "canonical_id": 36,
+      "canonical_name": "skateboard",
+      "annotated_images": 1103
+    },
+    {
+      "raw_id": 462,
+      "name": "Ski",
+      "canonical_id": 498,
+      "canonical_name": "ski",
+      "annotated_images": 1361
+    },
+    {
+      "raw_id": 463,
+      "name": "Skirt",
+      "canonical_id": 499,
+      "canonical_name": "skirt",
+      "annotated_images": 974
+    },
+    {
+      "raw_id": 464,
+      "name": "Skull",
+      "canonical_id": 500,
+      "canonical_name": "skull",
+      "annotated_images": 1501
+    },
+    {
+      "raw_id": 465,
+      "name": "Skunk",
+      "canonical_id": 501,
+      "canonical_name": "skunk",
+      "annotated_images": 39
+    },
+    {
+      "raw_id": 466,
+      "name": "Skyscraper",
+      "canonical_id": 502,
+      "canonical_name": "skyscraper",
+      "annotated_images": 21029
+    },
+    {
+      "raw_id": 467,
+      "name": "Slow cooker",
+      "canonical_id": 503,
+      "canonical_name": "slow cooker",
+      "annotated_images": 103
+    },
+    {
+      "raw_id": 468,
+      "name": "Snack",
+      "canonical_id": 504,
+      "canonical_name": "snack",
+      "annotated_images": 10313
+    },
+    {
+      "raw_id": 469,
+      "name": "Snail",
+      "canonical_id": 505,
+      "canonical_name": "snail",
+      "annotated_images": 615
+    },
+    {
+      "raw_id": 470,
+      "name": "Snake",
+      "canonical_id": 506,
+      "canonical_name": "snake",
+      "annotated_images": 1188
+    },
+    {
+      "raw_id": 471,
+      "name": "Snowboard",
+      "canonical_id": 31,
+      "canonical_name": "snowboard",
+      "annotated_images": 574
+    },
+    {
+      "raw_id": 472,
+      "name": "Snowman",
+      "canonical_id": 507,
+      "canonical_name": "snowman",
+      "annotated_images": 538
+    },
+    {
+      "raw_id": 473,
+      "name": "Snowmobile",
+      "canonical_id": 508,
+      "canonical_name": "snowmobile",
+      "annotated_images": 197
+    },
+    {
+      "raw_id": 474,
+      "name": "Snowplow",
+      "canonical_id": 509,
+      "canonical_name": "snowplow",
+      "annotated_images": 224
+    },
+    {
+      "raw_id": 475,
+      "name": "Soap dispenser",
+      "canonical_id": 510,
+      "canonical_name": "soap dispenser",
+      "annotated_images": 58
+    },
+    {
+      "raw_id": 476,
+      "name": "Sock",
+      "canonical_id": 511,
+      "canonical_name": "sock",
+      "annotated_images": 682
+    },
+    {
+      "raw_id": 477,
+      "name": "Sofa bed",
+      "canonical_id": 512,
+      "canonical_name": "sofa bed",
+      "annotated_images": 1132
+    },
+    {
+      "raw_id": 478,
+      "name": "Sombrero",
+      "canonical_id": 513,
+      "canonical_name": "sombrero",
+      "annotated_images": 505
+    },
+    {
+      "raw_id": 479,
+      "name": "Sparrow",
+      "canonical_id": 514,
+      "canonical_name": "sparrow",
+      "annotated_images": 1157
+    },
+    {
+      "raw_id": 480,
+      "name": "Spatula",
+      "canonical_id": 515,
+      "canonical_name": "spatula",
+      "annotated_images": 38
+    },
+    {
+      "raw_id": 481,
+      "name": "Spice rack",
+      "canonical_id": 516,
+      "canonical_name": "spice rack",
+      "annotated_images": 66
+    },
+    {
+      "raw_id": 482,
+      "name": "Spider",
+      "canonical_id": 517,
+      "canonical_name": "spider",
+      "annotated_images": 1702
+    },
+    {
+      "raw_id": 483,
+      "name": "Spoon",
+      "canonical_id": 44,
+      "canonical_name": "spoon",
+      "annotated_images": 1044
+    },
+    {
+      "raw_id": 484,
+      "name": "Sports equipment",
+      "canonical_id": 518,
+      "canonical_name": "sports equipment",
+      "annotated_images": 10056
+    },
+    {
+      "raw_id": 485,
+      "name": "Sports uniform",
+      "canonical_id": 519,
+      "canonical_name": "sports uniform",
+      "annotated_images": 6531
+    },
+    {
+      "raw_id": 486,
+      "name": "Squash (Plant)",
+      "canonical_id": 520,
+      "canonical_name": "squash (plant)",
+      "annotated_images": 122
+    },
+    {
+      "raw_id": 487,
+      "name": "Squid",
+      "canonical_id": 521,
+      "canonical_name": "squid",
+      "annotated_images": 97
+    },
+    {
+      "raw_id": 488,
+      "name": "Squirrel",
+      "canonical_id": 85,
+      "canonical_name": "squirrel",
+      "annotated_images": 1810
+    },
+    {
+      "raw_id": 489,
+      "name": "Stairs",
+      "canonical_id": 522,
+      "canonical_name": "stairs",
+      "annotated_images": 4533
+    },
+    {
+      "raw_id": 490,
+      "name": "Stapler",
+      "canonical_id": 523,
+      "canonical_name": "stapler",
+      "annotated_images": 49
+    },
+    {
+      "raw_id": 491,
+      "name": "Starfish",
+      "canonical_id": 524,
+      "canonical_name": "starfish",
+      "annotated_images": 436
+    },
+    {
+      "raw_id": 492,
+      "name": "Stationary bicycle",
+      "canonical_id": 525,
+      "canonical_name": "stationary bicycle",
+      "annotated_images": 110
+    },
+    {
+      "raw_id": 493,
+      "name": "Stethoscope",
+      "canonical_id": 526,
+      "canonical_name": "stethoscope",
+      "annotated_images": 75
+    },
+    {
+      "raw_id": 494,
+      "name": "Stool",
+      "canonical_id": 527,
+      "canonical_name": "stool",
+      "annotated_images": 576
+    },
+    {
+      "raw_id": 495,
+      "name": "Stop sign",
+      "canonical_id": 11,
+      "canonical_name": "stop sign",
+      "annotated_images": 375
+    },
+    {
+      "raw_id": 496,
+      "name": "Strawberry",
+      "canonical_id": 528,
+      "canonical_name": "strawberry",
+      "annotated_images": 1257
+    },
+    {
+      "raw_id": 497,
+      "name": "Street light",
+      "canonical_id": 529,
+      "canonical_name": "street light",
+      "annotated_images": 11226
+    },
+    {
+      "raw_id": 498,
+      "name": "Stretcher",
+      "canonical_id": 530,
+      "canonical_name": "stretcher",
+      "annotated_images": 122
+    },
+    {
+      "raw_id": 499,
+      "name": "Studio couch",
+      "canonical_id": 531,
+      "canonical_name": "studio couch",
+      "annotated_images": 1133
+    },
+    {
+      "raw_id": 500,
+      "name": "Submarine",
+      "canonical_id": 532,
+      "canonical_name": "submarine",
+      "annotated_images": 75
+    },
+    {
+      "raw_id": 501,
+      "name": "Submarine sandwich",
+      "canonical_id": 533,
+      "canonical_name": "submarine sandwich",
+      "annotated_images": 233
+    },
+    {
+      "raw_id": 502,
+      "name": "Suit",
+      "canonical_id": 534,
+      "canonical_name": "suit",
+      "annotated_images": 43922
+    },
+    {
+      "raw_id": 503,
+      "name": "Suitcase",
+      "canonical_id": 28,
+      "canonical_name": "suitcase",
+      "annotated_images": 408
+    },
+    {
+      "raw_id": 504,
+      "name": "Sun hat",
+      "canonical_id": 535,
+      "canonical_name": "sun hat",
+      "annotated_images": 4296
+    },
+    {
+      "raw_id": 505,
+      "name": "Sunglasses",
+      "canonical_id": 536,
+      "canonical_name": "sunglasses",
+      "annotated_images": 15125
+    },
+    {
+      "raw_id": 506,
+      "name": "Surfboard",
+      "canonical_id": 37,
+      "canonical_name": "surfboard",
+      "annotated_images": 1691
+    },
+    {
+      "raw_id": 507,
+      "name": "Sushi",
+      "canonical_id": 537,
+      "canonical_name": "sushi",
+      "annotated_images": 681
+    },
+    {
+      "raw_id": 508,
+      "name": "Swan",
+      "canonical_id": 538,
+      "canonical_name": "swan",
+      "annotated_images": 1365
+    },
+    {
+      "raw_id": 509,
+      "name": "Swim cap",
+      "canonical_id": 539,
+      "canonical_name": "swim cap",
+      "annotated_images": 330
+    },
+    {
+      "raw_id": 510,
+      "name": "Swimming pool",
+      "canonical_id": 540,
+      "canonical_name": "swimming pool",
+      "annotated_images": 3618
+    },
+    {
+      "raw_id": 511,
+      "name": "Swimwear",
+      "canonical_id": 541,
+      "canonical_name": "swimwear",
+      "annotated_images": 3365
+    },
+    {
+      "raw_id": 512,
+      "name": "Sword",
+      "canonical_id": 542,
+      "canonical_name": "sword",
+      "annotated_images": 391
+    },
+    {
+      "raw_id": 513,
+      "name": "Syringe",
+      "canonical_id": 543,
+      "canonical_name": "syringe",
+      "annotated_images": 94
+    },
+    {
+      "raw_id": 514,
+      "name": "Table",
+      "canonical_id": 544,
+      "canonical_name": "table",
+      "annotated_images": 44845
+    },
+    {
+      "raw_id": 515,
+      "name": "Table tennis racket",
+      "canonical_id": 545,
+      "canonical_name": "table tennis racket",
+      "annotated_images": 589
+    },
+    {
+      "raw_id": 516,
+      "name": "Tablet computer",
+      "canonical_id": 546,
+      "canonical_name": "tablet computer",
+      "annotated_images": 784
+    },
+    {
+      "raw_id": 517,
+      "name": "Tableware",
+      "canonical_id": 547,
+      "canonical_name": "tableware",
+      "annotated_images": 6084
+    },
+    {
+      "raw_id": 518,
+      "name": "Taco",
+      "canonical_id": 548,
+      "canonical_name": "taco",
+      "annotated_images": 352
+    },
+    {
+      "raw_id": 519,
+      "name": "Tank",
+      "canonical_id": 549,
+      "canonical_name": "tank",
+      "annotated_images": 1062
+    },
+    {
+      "raw_id": 520,
+      "name": "Tap",
+      "canonical_id": 550,
+      "canonical_name": "tap",
+      "annotated_images": 1170
+    },
+    {
+      "raw_id": 521,
+      "name": "Tart",
+      "canonical_id": 551,
+      "canonical_name": "tart",
+      "annotated_images": 412
+    },
+    {
+      "raw_id": 522,
+      "name": "Taxi",
+      "canonical_id": 552,
+      "canonical_name": "taxi",
+      "annotated_images": 1434
+    },
+    {
+      "raw_id": 523,
+      "name": "Tea",
+      "canonical_id": 553,
+      "canonical_name": "tea",
+      "annotated_images": 1068
+    },
+    {
+      "raw_id": 524,
+      "name": "Teapot",
+      "canonical_id": 554,
+      "canonical_name": "teapot",
+      "annotated_images": 496
+    },
+    {
+      "raw_id": 525,
+      "name": "Teddy bear",
+      "canonical_id": 77,
+      "canonical_name": "teddy bear",
+      "annotated_images": 1020
+    },
+    {
+      "raw_id": 526,
+      "name": "Telephone",
+      "canonical_id": 555,
+      "canonical_name": "telephone",
+      "annotated_images": 221
+    },
+    {
+      "raw_id": 527,
+      "name": "Television",
+      "canonical_id": 62,
+      "canonical_name": "tv",
+      "annotated_images": 2789
+    },
+    {
+      "raw_id": 528,
+      "name": "Tennis ball",
+      "canonical_id": 556,
+      "canonical_name": "tennis ball",
+      "annotated_images": 385
+    },
+    {
+      "raw_id": 529,
+      "name": "Tennis racket",
+      "canonical_id": 38,
+      "canonical_name": "tennis racket",
+      "annotated_images": 807
+    },
+    {
+      "raw_id": 530,
+      "name": "Tent",
+      "canonical_id": 557,
+      "canonical_name": "tent",
+      "annotated_images": 3508
+    },
+    {
+      "raw_id": 531,
+      "name": "Tiara",
+      "canonical_id": 558,
+      "canonical_name": "tiara",
+      "annotated_images": 367
+    },
+    {
+      "raw_id": 532,
+      "name": "Tick",
+      "canonical_id": 559,
+      "canonical_name": "tick",
+      "annotated_images": 107
+    },
+    {
+      "raw_id": 533,
+      "name": "Tie",
+      "canonical_id": 27,
+      "canonical_name": "tie",
+      "annotated_images": 7733
+    },
+    {
+      "raw_id": 534,
+      "name": "Tiger",
+      "canonical_id": 560,
+      "canonical_name": "tiger",
+      "annotated_images": 1039
+    },
+    {
+      "raw_id": 535,
+      "name": "Tin can",
+      "canonical_id": 561,
+      "canonical_name": "tin can",
+      "annotated_images": 1307
+    },
+    {
+      "raw_id": 536,
+      "name": "Tire",
+      "canonical_id": 562,
+      "canonical_name": "tire",
+      "annotated_images": 30815
+    },
+    {
+      "raw_id": 537,
+      "name": "Toaster",
+      "canonical_id": 70,
+      "canonical_name": "toaster",
+      "annotated_images": 60
+    },
+    {
+      "raw_id": 538,
+      "name": "Toilet",
+      "canonical_id": 61,
+      "canonical_name": "toilet",
+      "annotated_images": 862
+    },
+    {
+      "raw_id": 539,
+      "name": "Toilet paper",
+      "canonical_id": 563,
+      "canonical_name": "toilet paper",
+      "annotated_images": 226
+    },
+    {
+      "raw_id": 540,
+      "name": "Tomato",
+      "canonical_id": 564,
+      "canonical_name": "tomato",
+      "annotated_images": 1283
+    },
+    {
+      "raw_id": 541,
+      "name": "Tool",
+      "canonical_id": 565,
+      "canonical_name": "tool",
+      "annotated_images": 793
+    },
+    {
+      "raw_id": 542,
+      "name": "Toothbrush",
+      "canonical_id": 79,
+      "canonical_name": "toothbrush",
+      "annotated_images": 113
+    },
+    {
+      "raw_id": 543,
+      "name": "Torch",
+      "canonical_id": 566,
+      "canonical_name": "torch",
+      "annotated_images": 18
+    },
+    {
+      "raw_id": 544,
+      "name": "Tortoise",
+      "canonical_id": 567,
+      "canonical_name": "tortoise",
+      "annotated_images": 1324
+    },
+    {
+      "raw_id": 545,
+      "name": "Towel",
+      "canonical_id": 568,
+      "canonical_name": "towel",
+      "annotated_images": 144
+    },
+    {
+      "raw_id": 546,
+      "name": "Tower",
+      "canonical_id": 569,
+      "canonical_name": "tower",
+      "annotated_images": 21806
+    },
+    {
+      "raw_id": 547,
+      "name": "Toy",
+      "canonical_id": 570,
+      "canonical_name": "toy",
+      "annotated_images": 17481
+    },
+    {
+      "raw_id": 548,
+      "name": "Traffic light",
+      "canonical_id": 9,
+      "canonical_name": "traffic light",
+      "annotated_images": 1774
+    },
+    {
+      "raw_id": 549,
+      "name": "Traffic sign",
+      "canonical_id": 571,
+      "canonical_name": "traffic sign",
+      "annotated_images": 2817
+    },
+    {
+      "raw_id": 550,
+      "name": "Train",
+      "canonical_id": 6,
+      "canonical_name": "train",
+      "annotated_images": 10081
+    },
+    {
+      "raw_id": 551,
+      "name": "Training bench",
+      "canonical_id": 572,
+      "canonical_name": "training bench",
+      "annotated_images": 100
+    },
+    {
+      "raw_id": 552,
+      "name": "Treadmill",
+      "canonical_id": 573,
+      "canonical_name": "treadmill",
+      "annotated_images": 106
+    },
+    {
+      "raw_id": 553,
+      "name": "Tree",
+      "canonical_id": 574,
+      "canonical_name": "tree",
+      "annotated_images": 289999
+    },
+    {
+      "raw_id": 554,
+      "name": "Tree house",
+      "canonical_id": 575,
+      "canonical_name": "tree house",
+      "annotated_images": 107
+    },
+    {
+      "raw_id": 555,
+      "name": "Tripod",
+      "canonical_id": 576,
+      "canonical_name": "tripod",
+      "annotated_images": 1196
+    },
+    {
+      "raw_id": 556,
+      "name": "Trombone",
+      "canonical_id": 577,
+      "canonical_name": "trombone",
+      "annotated_images": 451
+    },
+    {
+      "raw_id": 557,
+      "name": "Trousers",
+      "canonical_id": 578,
+      "canonical_name": "trousers",
+      "annotated_images": 4858
+    },
+    {
+      "raw_id": 558,
+      "name": "Truck",
+      "canonical_id": 7,
+      "canonical_name": "truck",
+      "annotated_images": 8078
+    },
+    {
+      "raw_id": 559,
+      "name": "Trumpet",
+      "canonical_id": 579,
+      "canonical_name": "trumpet",
+      "annotated_images": 835
+    },
+    {
+      "raw_id": 560,
+      "name": "Turkey",
+      "canonical_id": 580,
+      "canonical_name": "turkey",
+      "annotated_images": 367
+    },
+    {
+      "raw_id": 561,
+      "name": "Turtle",
+      "canonical_id": 581,
+      "canonical_name": "turtle",
+      "annotated_images": 130
+    },
+    {
+      "raw_id": 562,
+      "name": "Umbrella",
+      "canonical_id": 25,
+      "canonical_name": "umbrella",
+      "annotated_images": 3357
+    },
+    {
+      "raw_id": 563,
+      "name": "Unicycle",
+      "canonical_id": 582,
+      "canonical_name": "unicycle",
+      "annotated_images": 127
+    },
+    {
+      "raw_id": 564,
+      "name": "Van",
+      "canonical_id": 583,
+      "canonical_name": "van",
+      "annotated_images": 5378
+    },
+    {
+      "raw_id": 565,
+      "name": "Vase",
+      "canonical_id": 75,
+      "canonical_name": "vase",
+      "annotated_images": 1561
+    },
+    {
+      "raw_id": 566,
+      "name": "Vegetable",
+      "canonical_id": 584,
+      "canonical_name": "vegetable",
+      "annotated_images": 5254
+    },
+    {
+      "raw_id": 567,
+      "name": "Vehicle",
+      "canonical_id": 585,
+      "canonical_name": "vehicle",
+      "annotated_images": 15736
+    },
+    {
+      "raw_id": 568,
+      "name": "Vehicle registration plate",
+      "canonical_id": 586,
+      "canonical_name": "vehicle registration plate",
+      "annotated_images": 5368
+    },
+    {
+      "raw_id": 569,
+      "name": "Violin",
+      "canonical_id": 587,
+      "canonical_name": "violin",
+      "annotated_images": 1307
+    },
+    {
+      "raw_id": 570,
+      "name": "Volleyball (Ball)",
+      "canonical_id": 588,
+      "canonical_name": "volleyball (ball)",
+      "annotated_images": 579
+    },
+    {
+      "raw_id": 571,
+      "name": "Waffle",
+      "canonical_id": 589,
+      "canonical_name": "waffle",
+      "annotated_images": 378
+    },
+    {
+      "raw_id": 572,
+      "name": "Waffle iron",
+      "canonical_id": 590,
+      "canonical_name": "waffle iron",
+      "annotated_images": 23
+    },
+    {
+      "raw_id": 573,
+      "name": "Wall clock",
+      "canonical_id": 591,
+      "canonical_name": "wall clock",
+      "annotated_images": 854
+    },
+    {
+      "raw_id": 574,
+      "name": "Wardrobe",
+      "canonical_id": 592,
+      "canonical_name": "wardrobe",
+      "annotated_images": 208
+    },
+    {
+      "raw_id": 575,
+      "name": "Washing machine",
+      "canonical_id": 593,
+      "canonical_name": "washing machine",
+      "annotated_images": 326
+    },
+    {
+      "raw_id": 576,
+      "name": "Waste container",
+      "canonical_id": 594,
+      "canonical_name": "waste container",
+      "annotated_images": 1020
+    },
+    {
+      "raw_id": 577,
+      "name": "Watch",
+      "canonical_id": 595,
+      "canonical_name": "watch",
+      "annotated_images": 1434
+    },
+    {
+      "raw_id": 578,
+      "name": "Watercraft",
+      "canonical_id": 596,
+      "canonical_name": "watercraft",
+      "annotated_images": 2481
+    },
+    {
+      "raw_id": 579,
+      "name": "Watermelon",
+      "canonical_id": 597,
+      "canonical_name": "watermelon",
+      "annotated_images": 409
+    },
+    {
+      "raw_id": 580,
+      "name": "Weapon",
+      "canonical_id": 598,
+      "canonical_name": "weapon",
+      "annotated_images": 1646
+    },
+    {
+      "raw_id": 581,
+      "name": "Whale",
+      "canonical_id": 599,
+      "canonical_name": "whale",
+      "annotated_images": 713
+    },
+    {
+      "raw_id": 582,
+      "name": "Wheel",
+      "canonical_id": 600,
+      "canonical_name": "wheel",
+      "annotated_images": 76884
+    },
+    {
+      "raw_id": 583,
+      "name": "Wheelchair",
+      "canonical_id": 97,
+      "canonical_name": "wheelchair",
+      "annotated_images": 882
+    },
+    {
+      "raw_id": 584,
+      "name": "Whisk",
+      "canonical_id": 601,
+      "canonical_name": "whisk",
+      "annotated_images": 157
+    },
+    {
+      "raw_id": 585,
+      "name": "Whiteboard",
+      "canonical_id": 602,
+      "canonical_name": "whiteboard",
+      "annotated_images": 899
+    },
+    {
+      "raw_id": 586,
+      "name": "Willow",
+      "canonical_id": 603,
+      "canonical_name": "willow",
+      "annotated_images": 193
+    },
+    {
+      "raw_id": 587,
+      "name": "Window",
+      "canonical_id": 604,
+      "canonical_name": "window",
+      "annotated_images": 59833
+    },
+    {
+      "raw_id": 588,
+      "name": "Window blind",
+      "canonical_id": 605,
+      "canonical_name": "window blind",
+      "annotated_images": 397
+    },
+    {
+      "raw_id": 589,
+      "name": "Wine",
+      "canonical_id": 606,
+      "canonical_name": "wine",
+      "annotated_images": 4878
+    },
+    {
+      "raw_id": 590,
+      "name": "Wine glass",
+      "canonical_id": 40,
+      "canonical_name": "wine glass",
+      "annotated_images": 4894
+    },
+    {
+      "raw_id": 591,
+      "name": "Wine rack",
+      "canonical_id": 607,
+      "canonical_name": "wine rack",
+      "annotated_images": 140
+    },
+    {
+      "raw_id": 592,
+      "name": "Winter melon",
+      "canonical_id": 608,
+      "canonical_name": "winter melon",
+      "annotated_images": 37
+    },
+    {
+      "raw_id": 593,
+      "name": "Wok",
+      "canonical_id": 609,
+      "canonical_name": "wok",
+      "annotated_images": 470
+    },
+    {
+      "raw_id": 594,
+      "name": "Woman",
+      "canonical_id": 0,
+      "canonical_name": "person",
+      "annotated_images": 265635
+    },
+    {
+      "raw_id": 595,
+      "name": "Wood-burning stove",
+      "canonical_id": 610,
+      "canonical_name": "wood-burning stove",
+      "annotated_images": 287
+    },
+    {
+      "raw_id": 596,
+      "name": "Woodpecker",
+      "canonical_id": 611,
+      "canonical_name": "woodpecker",
+      "annotated_images": 425
+    },
+    {
+      "raw_id": 597,
+      "name": "Worm",
+      "canonical_id": 612,
+      "canonical_name": "worm",
+      "annotated_images": 201
+    },
+    {
+      "raw_id": 598,
+      "name": "Wrench",
+      "canonical_id": 613,
+      "canonical_name": "wrench",
+      "annotated_images": 62
+    },
+    {
+      "raw_id": 599,
+      "name": "Zebra",
+      "canonical_id": 22,
+      "canonical_name": "zebra",
+      "annotated_images": 621
+    },
+    {
+      "raw_id": 600,
+      "name": "Zucchini",
+      "canonical_id": 614,
+      "canonical_name": "zucchini",
+      "annotated_images": 287
+    }
+  ],
+  "domains": {
+    "people_and_transport": [
+      "person",
+      "bicycle",
+      "car",
+      "motorcycle",
+      "bus",
+      "truck",
+      "boat",
+      "airplane"
+    ],
+    "home_and_furniture": [
+      "chair",
+      "couch",
+      "bed",
+      "kitchen & dining room table",
+      "lamp",
+      "door",
+      "mirror",
+      "clock"
+    ],
+    "kitchen_and_food": [
+      "bottle",
+      "coffee cup",
+      "bowl",
+      "fork",
+      "spoon",
+      "knife",
+      "apple",
+      "banana",
+      "pizza"
+    ],
+    "electronics_and_work": [
+      "laptop",
+      "cell phone",
+      "computer keyboard",
+      "mouse",
+      "tv",
+      "camera",
+      "book",
+      "scissors"
+    ],
+    "personal_and_outdoor": [
+      "backpack",
+      "umbrella",
+      "handbag",
+      "suitcase",
+      "ball",
+      "bench",
+      "traffic light",
+      "stop sign"
+    ],
+    "animals_and_hard_cases": [
+      "dog",
+      "cat",
+      "bird",
+      "horse",
+      "fox",
+      "rabbit",
+      "deer",
+      "owl",
+      "raccoon",
+      "lantern",
+      "balloon"
+    ]
+  },
+  "limits": "Counts are publisher annotation coverage, not exhaustive labels or deployment accuracy."
+}

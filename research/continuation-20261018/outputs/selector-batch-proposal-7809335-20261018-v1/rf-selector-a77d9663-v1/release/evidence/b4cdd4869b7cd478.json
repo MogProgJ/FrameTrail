@@ -1,0 +1,64 @@
+{
+  "image_id": "b4cdd4869b7cd478",
+  "image_sha256": "286ec83775c26e83d1c04e6f81fb4921267c05e2833a8e748e009f9c5998b134",
+  "publisher_attribution": {
+    "id": "b4cdd4869b7cd478",
+    "landing_url": "https://www.flickr.com/photos/solarguard/9257107988",
+    "original_url": "https://c1.staticflickr.com/3/2831/9257107988_2e2135af85_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Solar Guard Exclusive Truck Parts",
+    "author_url": "https://www.flickr.com/people/solarguard/",
+    "title": "Montage zonneklep Van Baak Transport",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Solar Guard Exclusive Truck Parts",
+    "url": "https://www.flickr.com/photos/solarguard",
+    "image": "https://live.staticflickr.com/3699/buddyicons/98633198@N04.jpg?1373378561#98633198@N04"
+  },
+  "current_title": "Montage zonneklep Van Baak Transport",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Solar Guard Exclusive Truck Parts",
+        "url": "https://www.flickr.com/photos/solarguard",
+        "image": "https://live.staticflickr.com/3699/buddyicons/98633198@N04.jpg?1373378561#98633198@N04"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/solarguard/9257107988",
+  "canonical_page_url": "https://www.flickr.com/photos/solarguard/9257107988",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "849c71229676c40a86bb637dcd68c672fd2b13da206e0e8ff838607e48ccf29e",
+  "source_gzip_sha256": "1bb0225a8f6dfc809e6e2ebee22fcec49aade8e70e3b0df95e5ab843123a3630",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-046",
+  "visual_proof_sha256": "20dda8711f6df5a38ac6af969812cc42f8593861d72f66fe9992036a56f389f9",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "001a4338f140e05e",
+  "image_sha256": "623d862b67e36a330ab0158c364d6c4deab0cf5bcd6379c655f8b5f21d437961",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "001a4338f140e05e",
+    "image_sha256": "623d862b67e36a330ab0158c364d6c4deab0cf5bcd6379c655f8b5f21d437961",
+    "selected_category": "washing machine",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/aegidian/15062725496",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/aegidian/15062725496",
+      "original_url": "https://c7.staticflickr.com/6/5559/15062725496_b91e8f8af0_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Giles Williams",
+      "author_url": "https://www.flickr.com/people/aegidian/",
+      "title": "Untitled",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Giles Williams",
+      "url": "https://www.flickr.com/photos/aegidian",
+      "image": "https://live.staticflickr.com/5468/buddyicons/45963333@N00.jpg?1369123201#45963333@N00"
+    },
+    "current_title": "Untitled",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Giles Williams",
+          "url": "https://www.flickr.com/photos/aegidian",
+          "image": "https://live.staticflickr.com/5468/buddyicons/45963333@N00.jpg?1369123201#45963333@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:45963333@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/aegidian/15062725496",
+    "html_sha256": "bde4bed9b480cb84b0832e2e39071cdd00cd8b0291ce12e246e677abd2bef99d",
+    "stored_sha256": "024f942e4e697a7a158a8540994d297ec16c7ba6737432b3970e2e5c53dca8cc",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\001a4338f140e05e.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/001a4338f140e05e.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

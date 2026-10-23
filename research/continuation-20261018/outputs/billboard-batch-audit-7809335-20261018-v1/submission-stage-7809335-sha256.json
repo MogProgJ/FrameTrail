@@ -1,0 +1,9 @@
+{
+  "actual_array_job_id": "7809335",
+  "files": {
+    "audit-contract-tests.txt": "f914f96d387f4aae24f26c99c66e67c0958e305b104a06ee320e312448b72968",
+    "audit_batch.py": "2b02074aeda5af6909c3f95b5ed4c89b800e302e5202d67fc903549fb46eebd3",
+    "README.md": "d276ba6752473349d37012c03c7274fd2c0bae7e74f9c21302384074ac280e59",
+    "test_audit.py": "e80198edf6364f69803b12c6d16c932430412d4879af8eee65ce700c50e33306"
+  }
+}

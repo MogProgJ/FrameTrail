@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\export-parity-preparation-7805570-20261018-v1\export_and_check.py", line 96, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nazee\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\export-parity-preparation-7805570-20261018-v1\export_and_check.py", line 36, in main
+    if not approval_path.exists():raise ValueError('Separate local export scope approval is required; no export started')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Separate local export scope approval is required; no export started

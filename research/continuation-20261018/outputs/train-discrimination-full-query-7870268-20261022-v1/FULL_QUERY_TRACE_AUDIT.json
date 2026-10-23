@@ -1,0 +1,437 @@
+{
+  "status": "all-eight-full-query-traces-and-single-treatment-controls-audited",
+  "records": [
+    {
+      "fold": 0,
+      "model": "linear",
+      "fitting_absent_photos": 58,
+      "fitting_absent_photos_alarmed_at0_5": 58,
+      "negative_query_alarms_at0_5": 2319,
+      "hard_query_alarms": 485,
+      "other_query_alarms": 1834,
+      "largest_alarm_photos": [
+        {
+          "image_id": "8a2155fbed2a9b9f",
+          "max_score": 0.9940271377563477,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "1ed09b82d0a8370d",
+          "max_score": 0.9925968647003174,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "513b5406a0b58ba4",
+          "max_score": 0.9914524555206299,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "c169d65520795324",
+          "max_score": 0.9904462099075317,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "37c1b3a6b5c824d4",
+          "max_score": 0.9870993494987488,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "0c4e2a0564dec658",
+          "max_score": 0.9867575168609619,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "17bbc8187c609d54",
+          "max_score": 0.9754387140274048,
+          "pool": "old_absent"
+        },
+        {
+          "image_id": "562d7492978db1be",
+          "max_score": 0.9743815660476685,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "0ead37227d5e2931",
+          "max_score": 0.9730495810508728,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "2c8ac32ffb411ae3",
+          "max_score": 0.9700614213943481,
+          "pool": "old_absent"
+        }
+      ],
+      "maximum_train_vs_calibration_score_difference": 0.0,
+      "all300_queries_supervised": true,
+      "hard_rest_and_class_photo_mass_passed": true
+    },
+    {
+      "fold": 0,
+      "model": "mlp32",
+      "fitting_absent_photos": 58,
+      "fitting_absent_photos_alarmed_at0_5": 4,
+      "negative_query_alarms_at0_5": 4,
+      "hard_query_alarms": 2,
+      "other_query_alarms": 2,
+      "largest_alarm_photos": [
+        {
+          "image_id": "37c1b3a6b5c824d4",
+          "max_score": 0.9973053932189941,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "2c8ac32ffb411ae3",
+          "max_score": 0.752315104007721,
+          "pool": "old_absent"
+        },
+        {
+          "image_id": "d6bab621c0ddc4ea",
+          "max_score": 0.6422946453094482,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "17bbc8187c609d54",
+          "max_score": 0.5776007771492004,
+          "pool": "old_absent"
+        }
+      ],
+      "maximum_train_vs_calibration_score_difference": 1.8189894035458565e-12,
+      "all300_queries_supervised": true,
+      "hard_rest_and_class_photo_mass_passed": true
+    },
+    {
+      "fold": 1,
+      "model": "linear",
+      "fitting_absent_photos": 57,
+      "fitting_absent_photos_alarmed_at0_5": 57,
+      "negative_query_alarms_at0_5": 2239,
+      "hard_query_alarms": 464,
+      "other_query_alarms": 1775,
+      "largest_alarm_photos": [
+        {
+          "image_id": "8a2155fbed2a9b9f",
+          "max_score": 0.9990785121917725,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "513b5406a0b58ba4",
+          "max_score": 0.9976152181625366,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "ef60f47752e17cae",
+          "max_score": 0.995974600315094,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "cd89f1fc4ab90d38",
+          "max_score": 0.9955804944038391,
+          "pool": "old_absent"
+        },
+        {
+          "image_id": "0c4e2a0564dec658",
+          "max_score": 0.9952097535133362,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "37c1b3a6b5c824d4",
+          "max_score": 0.9872642755508423,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "31c585fd77d4d28f",
+          "max_score": 0.9868853092193604,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "385cb813b307e28c",
+          "max_score": 0.9841705560684204,
+          "pool": "old_absent"
+        },
+        {
+          "image_id": "c112d5d0c11204c2",
+          "max_score": 0.9792121648788452,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "0ead37227d5e2931",
+          "max_score": 0.9785711169242859,
+          "pool": "fresh_absent"
+        }
+      ],
+      "maximum_train_vs_calibration_score_difference": 0.0,
+      "all300_queries_supervised": true,
+      "hard_rest_and_class_photo_mass_passed": true
+    },
+    {
+      "fold": 1,
+      "model": "mlp32",
+      "fitting_absent_photos": 57,
+      "fitting_absent_photos_alarmed_at0_5": 6,
+      "negative_query_alarms_at0_5": 9,
+      "hard_query_alarms": 2,
+      "other_query_alarms": 7,
+      "largest_alarm_photos": [
+        {
+          "image_id": "37c1b3a6b5c824d4",
+          "max_score": 0.9979370832443237,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "6060c02183e1a945",
+          "max_score": 0.9112428426742554,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "8a2155fbed2a9b9f",
+          "max_score": 0.9044749140739441,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "d6bab621c0ddc4ea",
+          "max_score": 0.8336524963378906,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "f5b043fe02f892b9",
+          "max_score": 0.8300273418426514,
+          "pool": "old_absent"
+        },
+        {
+          "image_id": "513b5406a0b58ba4",
+          "max_score": 0.533521294593811,
+          "pool": "fresh_absent"
+        }
+      ],
+      "maximum_train_vs_calibration_score_difference": 0.0,
+      "all300_queries_supervised": true,
+      "hard_rest_and_class_photo_mass_passed": true
+    },
+    {
+      "fold": 2,
+      "model": "linear",
+      "fitting_absent_photos": 58,
+      "fitting_absent_photos_alarmed_at0_5": 58,
+      "negative_query_alarms_at0_5": 2397,
+      "hard_query_alarms": 463,
+      "other_query_alarms": 1934,
+      "largest_alarm_photos": [
+        {
+          "image_id": "8a2155fbed2a9b9f",
+          "max_score": 0.9984571933746338,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "ef60f47752e17cae",
+          "max_score": 0.9969017505645752,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "1ed09b82d0a8370d",
+          "max_score": 0.9934451580047607,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "31c585fd77d4d28f",
+          "max_score": 0.9897633790969849,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "0c4e2a0564dec658",
+          "max_score": 0.9892967343330383,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "cd89f1fc4ab90d38",
+          "max_score": 0.9890422224998474,
+          "pool": "old_absent"
+        },
+        {
+          "image_id": "d6bab621c0ddc4ea",
+          "max_score": 0.985493004322052,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "385cb813b307e28c",
+          "max_score": 0.9808142185211182,
+          "pool": "old_absent"
+        },
+        {
+          "image_id": "00198353ef684011",
+          "max_score": 0.9802215099334717,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "20d7ecf4e991f908",
+          "max_score": 0.9787863492965698,
+          "pool": "old_absent"
+        }
+      ],
+      "maximum_train_vs_calibration_score_difference": 0.0,
+      "all300_queries_supervised": true,
+      "hard_rest_and_class_photo_mass_passed": true
+    },
+    {
+      "fold": 2,
+      "model": "mlp32",
+      "fitting_absent_photos": 58,
+      "fitting_absent_photos_alarmed_at0_5": 7,
+      "negative_query_alarms_at0_5": 7,
+      "hard_query_alarms": 4,
+      "other_query_alarms": 3,
+      "largest_alarm_photos": [
+        {
+          "image_id": "8a2155fbed2a9b9f",
+          "max_score": 0.9909674525260925,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "6060c02183e1a945",
+          "max_score": 0.7537685036659241,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "0c39f6a763ce3ec0",
+          "max_score": 0.7452080845832825,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "17bbc8187c609d54",
+          "max_score": 0.6667894721031189,
+          "pool": "old_absent"
+        },
+        {
+          "image_id": "b7fdd04c8d1a1e0b",
+          "max_score": 0.5853321552276611,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "d6bab621c0ddc4ea",
+          "max_score": 0.5819454193115234,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "2c8ac32ffb411ae3",
+          "max_score": 0.5765453577041626,
+          "pool": "old_absent"
+        }
+      ],
+      "maximum_train_vs_calibration_score_difference": 1.7462298274040222e-09,
+      "all300_queries_supervised": true,
+      "hard_rest_and_class_photo_mass_passed": true
+    },
+    {
+      "fold": 3,
+      "model": "linear",
+      "fitting_absent_photos": 58,
+      "fitting_absent_photos_alarmed_at0_5": 58,
+      "negative_query_alarms_at0_5": 2566,
+      "hard_query_alarms": 488,
+      "other_query_alarms": 2078,
+      "largest_alarm_photos": [
+        {
+          "image_id": "513b5406a0b58ba4",
+          "max_score": 0.9992951154708862,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "ef60f47752e17cae",
+          "max_score": 0.9991126656532288,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "0ead37227d5e2931",
+          "max_score": 0.9955673813819885,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "31c585fd77d4d28f",
+          "max_score": 0.9942637085914612,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "4693658c0ef57ce1",
+          "max_score": 0.9922093152999878,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "20d7ecf4e991f908",
+          "max_score": 0.9918203353881836,
+          "pool": "old_absent"
+        },
+        {
+          "image_id": "6060c02183e1a945",
+          "max_score": 0.9884140491485596,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "0b5455fbbc912400",
+          "max_score": 0.9881119728088379,
+          "pool": "old_absent"
+        },
+        {
+          "image_id": "00198353ef684011",
+          "max_score": 0.9847198724746704,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "37c1b3a6b5c824d4",
+          "max_score": 0.9807459115982056,
+          "pool": "fresh_absent"
+        }
+      ],
+      "maximum_train_vs_calibration_score_difference": 2.9802322387695312e-08,
+      "all300_queries_supervised": true,
+      "hard_rest_and_class_photo_mass_passed": true
+    },
+    {
+      "fold": 3,
+      "model": "mlp32",
+      "fitting_absent_photos": 58,
+      "fitting_absent_photos_alarmed_at0_5": 6,
+      "negative_query_alarms_at0_5": 6,
+      "hard_query_alarms": 2,
+      "other_query_alarms": 4,
+      "largest_alarm_photos": [
+        {
+          "image_id": "37c1b3a6b5c824d4",
+          "max_score": 0.9921262264251709,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "b7fdd04c8d1a1e0b",
+          "max_score": 0.6949676275253296,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "0ead37227d5e2931",
+          "max_score": 0.6484777331352234,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "20a3a8cd5733db8c",
+          "max_score": 0.6199741959571838,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "6060c02183e1a945",
+          "max_score": 0.5697767734527588,
+          "pool": "fresh_absent"
+        },
+        {
+          "image_id": "513b5406a0b58ba4",
+          "max_score": 0.5084459781646729,
+          "pool": "fresh_absent"
+        }
+      ],
+      "maximum_train_vs_calibration_score_difference": 2.3283064365386963e-10,
+      "all300_queries_supervised": true,
+      "hard_rest_and_class_photo_mass_passed": true
+    }
+  ],
+  "source_folds_and_normalization_identical": true,
+  "all_negative_queries_supervised": true,
+  "validation_or_test_reads": 0,
+  "optimizer_updates_by_audit": 0,
+  "production_adoption": false
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "ba9feb550c23e4b2",
+  "image_sha256": "e6265aba53fc03bb1fe7a501188e7fb7240d13e5d2be5318dd6afc0083b8a91c",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "ba9feb550c23e4b2",
+    "image_sha256": "e6265aba53fc03bb1fe7a501188e7fb7240d13e5d2be5318dd6afc0083b8a91c",
+    "selected_category": "door handle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/thomasguest/3647805492",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/thomasguest/3647805492",
+      "original_url": "https://farm3.staticflickr.com/3650/3647805492_75fe4061b9_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Thomas Guest",
+      "author_url": "https://www.flickr.com/people/thomasguest/",
+      "title": "Visitors and servants bells",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Thomas Guest",
+      "url": "https://www.flickr.com/photos/thomasguest",
+      "image": "https://live.staticflickr.com/3135/buddyicons/45216882@N00.jpg?1250602874#45216882@N00"
+    },
+    "current_title": "Visitors and servants bells",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Thomas Guest",
+          "url": "https://www.flickr.com/photos/thomasguest",
+          "image": "https://live.staticflickr.com/3135/buddyicons/45216882@N00.jpg?1250602874#45216882@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:45216882@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/thomasguest/3647805492",
+    "html_sha256": "80107b920592f2e0355828fcc05d07765c49b54a74feca78cd8b798828a3e7a4",
+    "stored_sha256": "fcca929f6090e8f8db11e1b7beffa7469fd41f97b7ae6b6093c85a7b4a9af288",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\ba9feb550c23e4b2.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/ba9feb550c23e4b2.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

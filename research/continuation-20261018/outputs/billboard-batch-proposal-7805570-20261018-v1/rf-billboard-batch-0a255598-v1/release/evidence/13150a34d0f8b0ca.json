@@ -1,0 +1,63 @@
+{
+  "photo": 14,
+  "image_id": "13150a34d0f8b0ca",
+  "publisher_attribution": {
+    "id": "13150a34d0f8b0ca",
+    "landing_url": "https://www.flickr.com/photos/fotofyl/103144586",
+    "original_url": "https://c3.staticflickr.com/1/30/103144586_30b291de6d_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Erifyli Orli Tsavdari",
+    "author_url": "https://www.flickr.com/people/fotofyl/",
+    "title": "a bed is for sleeping",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Erifyli Orli Tsavdari",
+    "url": "https://www.flickr.com/photos/fotofyl",
+    "image": "https://live.staticflickr.com/1337/buddyicons/11986010@N00.jpg?1211358688#11986010@N00"
+  },
+  "current_title": "a bed is for sleeping",
+  "source_url": "https://www.flickr.com/photos/fotofyl/103144586",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 14,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "Erifyli Orli Tsavdari",
+      "url": "https://www.flickr.com/photos/fotofyl",
+      "image": "https://live.staticflickr.com/1337/buddyicons/11986010@N00.jpg?1211358688#11986010@N00"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Erifyli Orli Tsavdari",
+      "url": "https://www.flickr.com/photos/fotofyl",
+      "image": "https://live.staticflickr.com/1337/buddyicons/11986010@N00.jpg?1211358688#11986010@N00"
+    },
+    "meta_description": ""
+  },
+  "creator_override": null,
+  "image_sha256": "8f4a3bc97311968a25a7024997a918c4e097e711176a0f8816319c978391bad4",
+  "source_page_sha256": "1a55210a5c3dc33b1cd5229c76e476467f1ad95950f450bbacc492024dae35a2",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "249cf03af9bba23dab9131e353a024cc04bad7fa764a02970633070c63c29b17",
+  "source_job": 7626978,
+  "scope_note": "One bed and one clipped window assembly retained. Pink bedding/Pillow interpretation and curtain edges remain held.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

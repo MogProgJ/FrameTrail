@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "f69d389a2b269d99",
+  "image_sha256": "afc354cd444560a5681f6189cb85729568419231935741b76431c245e0093dbe",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "f69d389a2b269d99",
+    "image_sha256": "afc354cd444560a5681f6189cb85729568419231935741b76431c245e0093dbe",
+    "selected_category": "traffic sign",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/auntylaurie/5163354268",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/auntylaurie/5163354268",
+      "original_url": "https://c2.staticflickr.com/2/1264/5163354268_83a8bc8c1d_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Laurie Avocado",
+      "author_url": "https://www.flickr.com/people/auntylaurie/",
+      "title": "The Real South Park",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Laurie Avocado",
+      "url": "https://www.flickr.com/photos/auntylaurie",
+      "image": "https://live.staticflickr.com/146/buddyicons/90809455@N00.jpg?1169748011#90809455@N00"
+    },
+    "current_title": "The Real South Park",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Laurie Avocado",
+          "url": "https://www.flickr.com/photos/auntylaurie",
+          "image": "https://live.staticflickr.com/146/buddyicons/90809455@N00.jpg?1169748011#90809455@N00"
+        }
+      },
+      "meta_description": "Avalon Blvd. was originally South Park Ave. and the park itself was the Ascot Race Track."
+    },
+    "identity_group": "flickr-nsid:90809455@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/auntylaurie/5163354268",
+    "html_sha256": "f91414ee10ed3128b71e1891ad74d00c5813ea18ab3652eb1cee7397f1c2ae7b",
+    "stored_sha256": "26ff44f775fc87a6cd791bfccc24c29acef21b6f6fbdd291cdac9a15b859e011",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\f69d389a2b269d99.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/f69d389a2b269d99.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,15 @@
+{
+    "active_analysis_quit_cancel_preserved": true,
+    "active_analysis_quit_discard_shutdown": true,
+    "analysis_state_preserved": true,
+    "background_activity_visible": true,
+    "cache_retained_across_navigation": true,
+    "camera_not_acquired_on_navigation": true,
+    "hidden_playback_paused": true,
+    "keyboard_navigation": true,
+    "prepared_frames": 16,
+    "save_csv_reopen": true,
+    "saved_appearances": 3,
+    "single_top_level_workspace": true,
+    "status": "passed"
+}

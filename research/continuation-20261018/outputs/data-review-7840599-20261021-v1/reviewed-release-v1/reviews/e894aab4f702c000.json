@@ -1,0 +1,40 @@
+{
+  "image_id": "e894aab4f702c000",
+  "image_sha256": "aa70824d5e4b0f63f7863e7d6be50f2130805860f4c8f7541e4b32b67c0332fe",
+  "identity_group": "flickr-nsid:11666393@N00",
+  "scene_group": "scene:white-swan-motel-vintage-no-vacancy-and-air-conditioned-neon-name-signs",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\e894aab4f702c000.json",
+    "sha256": "a5892083dc5e7074a230b60825bde255ddb0f5e5be441210bf290c6072b83ee0"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-val-01.json",
+    "sha256": "9d72588728dc58bd65f6126f8939528883807ea5ed3954dc4591ef497e7874bc"
+  },
+  "content_decision": {
+    "id": "e894aab4f702c000",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "shop-business-lettering",
+    "note": "Full original shows motel name/vacancy/air-conditioning and accepted-payment information; no advertising campaign.",
+    "scene_description": "White Swan Motel vintage no vacancy and air conditioned neon name signs"
+  },
+  "prospective_split": "val",
+  "confuser_family": "shop-business-lettering",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

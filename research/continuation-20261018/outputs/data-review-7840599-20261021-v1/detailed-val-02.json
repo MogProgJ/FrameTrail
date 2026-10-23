@@ -1,0 +1,108 @@
+{
+  "stage": "validation-original-content-and-box-review-before-predictions",
+  "approved_for_training": false,
+  "scene_comparison_complete": false,
+  "model_predictions_seen": false,
+  "records": [
+    {
+      "id": "bff34db19d7edd47",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Original resolves four rooftop campaigns (two separate central faces) while publisher3 boxes merge the central pair. Hold pending precise independent face boundaries rather than accept merged source box."
+    },
+    {
+      "id": "c684d8b7a6e8cae8",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.2625,
+          0.249531,
+          0.999375,
+          0.999062
+        ]
+      ],
+      "note": "One state-visit event campaign board, heavily occluded by road caution sign and truncated at image edges. Existing bounding enclosure verified; foreground caution sign excluded.",
+      "scene_description": "Spanish royal state visit campaign poster behind orange Precaucion road sign"
+    },
+    {
+      "id": "a4dd3353126f93b4",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "traffic-information-signs",
+      "note": "Full original resolves Welcome to Western Australia location information marker, not an advertisement. Van/window writing and road stop sign do not contain advertising campaign faces. Initial positive triage corrected before any predictions.",
+      "scene_description": "Red campervan beside Western Australia welcome information marker"
+    },
+    {
+      "id": "26a0af1b449a290c",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Main H&M campaign face clear, but smaller display face behind parked van has unresolved campaign scope; retain whole-photo completeness hold."
+    },
+    {
+      "id": "4c916adba93611ad",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.2412,
+          0.2005,
+          0.7588,
+          0.6914
+        ],
+        [
+          0.295625,
+          0.731667,
+          0.999375,
+          0.999167
+        ]
+      ],
+      "note": "Two campaign units: upper Chick-fil-A billboard including attached advertising cow protrusions, and lower limousine-service billboard cut by image edge. Expanded upper source bounds to integrated campaign extent; far-right box is building identification, not campaign.",
+      "scene_description": "Chick-fil-A breakfast billboard with attached cows above Global Limousine campaign"
+    },
+    {
+      "id": "cea218650a100dd0",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.0371,
+          0.0156,
+          0.3828,
+          0.724
+        ],
+        [
+          0.3545,
+          0.1523,
+          0.6191,
+          0.7415
+        ]
+      ],
+      "note": "Two separately framed advertising faces: Bud Light product/website unit and Obama-Biden political campaign screen. Split publisher merged box; stadium-name letters below and seating are not campaigns.",
+      "scene_description": "Invesco Field Bud Light product display beside Obama Biden political campaign screen"
+    },
+    {
+      "id": "2c1368a802d7324b",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Original reveals an additional partially cut rooftop Asics product campaign beyond publisher5 boxes and small wall display faces. Whole-photo bounds/scope not yet independently complete."
+    },
+    {
+      "id": "9f11f6b4530e8fd7",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Main manga campaign clear, but narrow LED and partially cut left campaign/name panel remain unresolved. Avoid treating unknown text display as campaign or background."
+    },
+    {
+      "id": "dd1074c4e1f58872",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.1084,
+          0.3867,
+          0.8926,
+          0.7161
+        ]
+      ],
+      "note": "One McDonald's cheeseburger product/price billboard. Refined to visible advertising face excluding lower metal stand; no other faces in original.",
+      "scene_description": "McDonalds a buck seriously double cheeseburger billboard on dry hillside"
+    }
+  ]
+}

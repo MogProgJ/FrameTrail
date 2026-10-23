@@ -1,0 +1,15 @@
+test_both_baselines_and_unknown_cap (__main__.PostrunRules.test_both_baselines_and_unknown_cap) ... ok
+test_decoder_never_emits_background_row (__main__.PostrunRules.test_decoder_never_emits_background_row) ... ok
+test_duplicate_billboard_is_false_alarm (__main__.PostrunRules.test_duplicate_billboard_is_false_alarm) ... ok
+test_global_tie_break_uses_earlier_step_then_trial_index (__main__.PostrunRules.test_global_tie_break_uses_earlier_step_then_trial_index) ... ok
+test_heldout_adapter_preserves_original_roles_and_labels (__main__.PostrunRules.test_heldout_adapter_preserves_original_roles_and_labels) ... ok
+test_missing_extra_and_invalid_predictions_rejected (__main__.PostrunRules.test_missing_extra_and_invalid_predictions_rejected) ... ok
+test_one_seed_or_partial_method_cannot_win (__main__.PostrunRules.test_one_seed_or_partial_method_cannot_win) ... ok
+test_partial_scope_does_not_claim_whole_photo_precision (__main__.PostrunRules.test_partial_scope_does_not_claim_whole_photo_precision) ... ok
+test_unknown_predictions_are_not_false_billboards (__main__.PostrunRules.test_unknown_predictions_are_not_false_billboards) ... ok
+test_whole_absent_billboard_counts_fp (__main__.PostrunRules.test_whole_absent_billboard_counts_fp) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.022s
+
+OK

@@ -1,0 +1,64 @@
+{
+  "image_id": "f1ab7e3f0aa15135",
+  "image_sha256": "089e374583f9dbffad2eedbda6bb191c7c900c78915f09a6109bec7dcec28f32",
+  "publisher_attribution": {
+    "id": "f1ab7e3f0aa15135",
+    "landing_url": "https://www.flickr.com/photos/philip_mann/8503709429",
+    "original_url": "https://farm6.staticflickr.com/8087/8503709429_78989e427f_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Philip mann",
+    "author_url": "https://www.flickr.com/people/philip_mann/",
+    "title": "For sale 5",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Philip mann",
+    "url": "https://www.flickr.com/photos/philip_mann",
+    "image": "https://live.staticflickr.com/230/buddyicons/8058219@N07.jpg?1276412500#8058219@N07"
+  },
+  "current_title": "For sale 5",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Philip mann",
+        "url": "https://www.flickr.com/photos/philip_mann",
+        "image": "https://live.staticflickr.com/230/buddyicons/8058219@N07.jpg?1276412500#8058219@N07"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/philip_mann/8503709429",
+  "canonical_page_url": "https://www.flickr.com/photos/philip_mann/8503709429",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "29f2635f5bd8ad53079a31818339430b5f650644ca5df0ddab5a2987fde4f28a",
+  "source_gzip_sha256": "57a308e323818e12774561754659abc3811cd8123cdcb6403db10d4cf6cc6a25",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-220",
+  "visual_proof_sha256": "9ce3e6f5f483c068d06f50f946c96959a813a99064453577b7233fb08c5d1cce",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

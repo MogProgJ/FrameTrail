@@ -1,0 +1,1425 @@
+{
+  "contract": "frametrail-rf-semantic-mapping-v1",
+  "approved_for_training": false,
+  "registry_sha256": "4add59233e843ee655a9937c793f19b61c24854ea84e7c10fc5c2b21a63a5bbc",
+  "checkpoint_sha256": "d81979a9213a2109345158ce9232668df4c1ae52e9b8db3f2ec0a8cbad959b33",
+  "original_probe_sha256": "6f84826b0df299b84376a34647287f0af3d01b63751887bf2e9e849e4fa578ed",
+  "checkpoint_output_width": 91,
+  "checkpoint_active_slots": 80,
+  "canonical_registry_slots": 615,
+  "openimages_unique_canonical_classes": 597,
+  "broad_head_draft": {
+    "foreground_rows": 615,
+    "output_width": 616,
+    "background_slot": 615,
+    "status": "mechanics-proposal-not-trained-or-adopted"
+  },
+  "rows": [
+    {
+      "checkpoint_slot": 1,
+      "coco_name": "person",
+      "canonical_id": 0,
+      "canonical_name": "person",
+      "openimages_raw_ids": [
+        63,
+        216,
+        322,
+        381,
+        594
+      ],
+      "previous_canonical_id": 0
+    },
+    {
+      "checkpoint_slot": 2,
+      "coco_name": "bicycle",
+      "canonical_id": 1,
+      "canonical_name": "bicycle",
+      "openimages_raw_ids": [
+        42
+      ],
+      "previous_canonical_id": 1
+    },
+    {
+      "checkpoint_slot": 3,
+      "coco_name": "car",
+      "canonical_id": 2,
+      "canonical_name": "car",
+      "openimages_raw_ids": [
+        90
+      ],
+      "previous_canonical_id": 2
+    },
+    {
+      "checkpoint_slot": 4,
+      "coco_name": "motorcycle",
+      "canonical_id": 3,
+      "canonical_name": "motorcycle",
+      "openimages_raw_ids": [
+        342
+      ],
+      "previous_canonical_id": 3
+    },
+    {
+      "checkpoint_slot": 5,
+      "coco_name": "airplane",
+      "canonical_id": 4,
+      "canonical_name": "airplane",
+      "openimages_raw_ids": [
+        3
+      ],
+      "previous_canonical_id": 4
+    },
+    {
+      "checkpoint_slot": 6,
+      "coco_name": "bus",
+      "canonical_id": 5,
+      "canonical_name": "bus",
+      "openimages_raw_ids": [
+        73
+      ],
+      "previous_canonical_id": 5
+    },
+    {
+      "checkpoint_slot": 7,
+      "coco_name": "train",
+      "canonical_id": 6,
+      "canonical_name": "train",
+      "openimages_raw_ids": [
+        550
+      ],
+      "previous_canonical_id": 6
+    },
+    {
+      "checkpoint_slot": 8,
+      "coco_name": "truck",
+      "canonical_id": 7,
+      "canonical_name": "truck",
+      "openimages_raw_ids": [
+        558
+      ],
+      "previous_canonical_id": 7
+    },
+    {
+      "checkpoint_slot": 9,
+      "coco_name": "boat",
+      "canonical_id": 8,
+      "canonical_name": "boat",
+      "openimages_raw_ids": [
+        52
+      ],
+      "previous_canonical_id": 8
+    },
+    {
+      "checkpoint_slot": 10,
+      "coco_name": "traffic light",
+      "canonical_id": 9,
+      "canonical_name": "traffic light",
+      "openimages_raw_ids": [
+        548
+      ],
+      "previous_canonical_id": 9
+    },
+    {
+      "checkpoint_slot": 11,
+      "coco_name": "fire hydrant",
+      "canonical_id": 10,
+      "canonical_name": "fire hydrant",
+      "openimages_raw_ids": [
+        190
+      ],
+      "previous_canonical_id": 10
+    },
+    {
+      "checkpoint_slot": 13,
+      "coco_name": "stop sign",
+      "canonical_id": 11,
+      "canonical_name": "stop sign",
+      "openimages_raw_ids": [
+        495
+      ],
+      "previous_canonical_id": 11
+    },
+    {
+      "checkpoint_slot": 14,
+      "coco_name": "parking meter",
+      "canonical_id": 12,
+      "canonical_name": "parking meter",
+      "openimages_raw_ids": [
+        370
+      ],
+      "previous_canonical_id": 12
+    },
+    {
+      "checkpoint_slot": 15,
+      "coco_name": "bench",
+      "canonical_id": 13,
+      "canonical_name": "bench",
+      "openimages_raw_ids": [
+        41
+      ],
+      "previous_canonical_id": 13
+    },
+    {
+      "checkpoint_slot": 16,
+      "coco_name": "bird",
+      "canonical_id": 14,
+      "canonical_name": "bird",
+      "openimages_raw_ids": [
+        49
+      ],
+      "previous_canonical_id": 14
+    },
+    {
+      "checkpoint_slot": 17,
+      "coco_name": "cat",
+      "canonical_id": 15,
+      "canonical_name": "cat",
+      "openimages_raw_ids": [
+        96
+      ],
+      "previous_canonical_id": 15
+    },
+    {
+      "checkpoint_slot": 18,
+      "coco_name": "dog",
+      "canonical_id": 16,
+      "canonical_name": "dog",
+      "openimages_raw_ids": [
+        160
+      ],
+      "previous_canonical_id": 16
+    },
+    {
+      "checkpoint_slot": 19,
+      "coco_name": "horse",
+      "canonical_id": 17,
+      "canonical_name": "horse",
+      "openimages_raw_ids": [
+        255
+      ],
+      "previous_canonical_id": 17
+    },
+    {
+      "checkpoint_slot": 20,
+      "coco_name": "sheep",
+      "canonical_id": 18,
+      "canonical_name": "sheep",
+      "openimages_raw_ids": [
+        452
+      ],
+      "previous_canonical_id": 18
+    },
+    {
+      "checkpoint_slot": 21,
+      "coco_name": "cow",
+      "canonical_id": 19,
+      "canonical_name": "cow",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 19
+    },
+    {
+      "checkpoint_slot": 22,
+      "coco_name": "elephant",
+      "canonical_id": 20,
+      "canonical_name": "elephant",
+      "openimages_raw_ids": [
+        179
+      ],
+      "previous_canonical_id": 20
+    },
+    {
+      "checkpoint_slot": 23,
+      "coco_name": "bear",
+      "canonical_id": 21,
+      "canonical_name": "bear",
+      "openimages_raw_ids": [
+        33
+      ],
+      "previous_canonical_id": 21
+    },
+    {
+      "checkpoint_slot": 24,
+      "coco_name": "zebra",
+      "canonical_id": 22,
+      "canonical_name": "zebra",
+      "openimages_raw_ids": [
+        599
+      ],
+      "previous_canonical_id": 22
+    },
+    {
+      "checkpoint_slot": 25,
+      "coco_name": "giraffe",
+      "canonical_id": 23,
+      "canonical_name": "giraffe",
+      "openimages_raw_ids": [
+        215
+      ],
+      "previous_canonical_id": 23
+    },
+    {
+      "checkpoint_slot": 27,
+      "coco_name": "backpack",
+      "canonical_id": 24,
+      "canonical_name": "backpack",
+      "openimages_raw_ids": [
+        15
+      ],
+      "previous_canonical_id": 24
+    },
+    {
+      "checkpoint_slot": 28,
+      "coco_name": "umbrella",
+      "canonical_id": 25,
+      "canonical_name": "umbrella",
+      "openimages_raw_ids": [
+        562
+      ],
+      "previous_canonical_id": 25
+    },
+    {
+      "checkpoint_slot": 31,
+      "coco_name": "handbag",
+      "canonical_id": 26,
+      "canonical_name": "handbag",
+      "openimages_raw_ids": [
+        237
+      ],
+      "previous_canonical_id": 26
+    },
+    {
+      "checkpoint_slot": 32,
+      "coco_name": "tie",
+      "canonical_id": 27,
+      "canonical_name": "tie",
+      "openimages_raw_ids": [
+        533
+      ],
+      "previous_canonical_id": 27
+    },
+    {
+      "checkpoint_slot": 33,
+      "coco_name": "suitcase",
+      "canonical_id": 28,
+      "canonical_name": "suitcase",
+      "openimages_raw_ids": [
+        503
+      ],
+      "previous_canonical_id": 28
+    },
+    {
+      "checkpoint_slot": 34,
+      "coco_name": "frisbee",
+      "canonical_id": 29,
+      "canonical_name": "frisbee",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 29
+    },
+    {
+      "checkpoint_slot": 35,
+      "coco_name": "skis",
+      "canonical_id": 30,
+      "canonical_name": "skis",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 30
+    },
+    {
+      "checkpoint_slot": 36,
+      "coco_name": "snowboard",
+      "canonical_id": 31,
+      "canonical_name": "snowboard",
+      "openimages_raw_ids": [
+        471
+      ],
+      "previous_canonical_id": 31
+    },
+    {
+      "checkpoint_slot": 37,
+      "coco_name": "sports ball",
+      "canonical_id": 32,
+      "canonical_name": "sports ball",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 32
+    },
+    {
+      "checkpoint_slot": 38,
+      "coco_name": "kite",
+      "canonical_id": 33,
+      "canonical_name": "kite",
+      "openimages_raw_ids": [
+        295
+      ],
+      "previous_canonical_id": 33
+    },
+    {
+      "checkpoint_slot": 39,
+      "coco_name": "baseball bat",
+      "canonical_id": 34,
+      "canonical_name": "baseball bat",
+      "openimages_raw_ids": [
+        26
+      ],
+      "previous_canonical_id": 34
+    },
+    {
+      "checkpoint_slot": 40,
+      "coco_name": "baseball glove",
+      "canonical_id": 35,
+      "canonical_name": "baseball glove",
+      "openimages_raw_ids": [
+        27
+      ],
+      "previous_canonical_id": 35
+    },
+    {
+      "checkpoint_slot": 41,
+      "coco_name": "skateboard",
+      "canonical_id": 36,
+      "canonical_name": "skateboard",
+      "openimages_raw_ids": [
+        461
+      ],
+      "previous_canonical_id": 36
+    },
+    {
+      "checkpoint_slot": 42,
+      "coco_name": "surfboard",
+      "canonical_id": 37,
+      "canonical_name": "surfboard",
+      "openimages_raw_ids": [
+        506
+      ],
+      "previous_canonical_id": 37
+    },
+    {
+      "checkpoint_slot": 43,
+      "coco_name": "tennis racket",
+      "canonical_id": 38,
+      "canonical_name": "tennis racket",
+      "openimages_raw_ids": [
+        529
+      ],
+      "previous_canonical_id": 38
+    },
+    {
+      "checkpoint_slot": 44,
+      "coco_name": "bottle",
+      "canonical_id": 39,
+      "canonical_name": "bottle",
+      "openimages_raw_ids": [
+        57
+      ],
+      "previous_canonical_id": 39
+    },
+    {
+      "checkpoint_slot": 46,
+      "coco_name": "wine glass",
+      "canonical_id": 40,
+      "canonical_name": "wine glass",
+      "openimages_raw_ids": [
+        590
+      ],
+      "previous_canonical_id": 40
+    },
+    {
+      "checkpoint_slot": 47,
+      "coco_name": "cup",
+      "canonical_id": 41,
+      "canonical_name": "cup",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 41
+    },
+    {
+      "checkpoint_slot": 48,
+      "coco_name": "fork",
+      "canonical_id": 42,
+      "canonical_name": "fork",
+      "openimages_raw_ids": [
+        204
+      ],
+      "previous_canonical_id": 42
+    },
+    {
+      "checkpoint_slot": 49,
+      "coco_name": "knife",
+      "canonical_id": 43,
+      "canonical_name": "knife",
+      "openimages_raw_ids": [
+        296
+      ],
+      "previous_canonical_id": 43
+    },
+    {
+      "checkpoint_slot": 50,
+      "coco_name": "spoon",
+      "canonical_id": 44,
+      "canonical_name": "spoon",
+      "openimages_raw_ids": [
+        483
+      ],
+      "previous_canonical_id": 44
+    },
+    {
+      "checkpoint_slot": 51,
+      "coco_name": "bowl",
+      "canonical_id": 45,
+      "canonical_name": "bowl",
+      "openimages_raw_ids": [
+        60
+      ],
+      "previous_canonical_id": 45
+    },
+    {
+      "checkpoint_slot": 52,
+      "coco_name": "banana",
+      "canonical_id": 46,
+      "canonical_name": "banana",
+      "openimages_raw_ids": [
+        21
+      ],
+      "previous_canonical_id": 46
+    },
+    {
+      "checkpoint_slot": 53,
+      "coco_name": "apple",
+      "canonical_id": 47,
+      "canonical_name": "apple",
+      "openimages_raw_ids": [
+        10
+      ],
+      "previous_canonical_id": 47
+    },
+    {
+      "checkpoint_slot": 54,
+      "coco_name": "sandwich",
+      "canonical_id": 48,
+      "canonical_name": "sandwich",
+      "openimages_raw_ids": [
+        433
+      ],
+      "previous_canonical_id": 48
+    },
+    {
+      "checkpoint_slot": 55,
+      "coco_name": "orange",
+      "canonical_id": 49,
+      "canonical_name": "orange",
+      "openimages_raw_ids": [
+        356
+      ],
+      "previous_canonical_id": 49
+    },
+    {
+      "checkpoint_slot": 56,
+      "coco_name": "broccoli",
+      "canonical_id": 50,
+      "canonical_name": "broccoli",
+      "openimages_raw_ids": [
+        67
+      ],
+      "previous_canonical_id": 50
+    },
+    {
+      "checkpoint_slot": 57,
+      "coco_name": "carrot",
+      "canonical_id": 51,
+      "canonical_name": "carrot",
+      "openimages_raw_ids": [
+        92
+      ],
+      "previous_canonical_id": 51
+    },
+    {
+      "checkpoint_slot": 58,
+      "coco_name": "hot dog",
+      "canonical_id": 52,
+      "canonical_name": "hot dog",
+      "openimages_raw_ids": [
+        256
+      ],
+      "previous_canonical_id": 52
+    },
+    {
+      "checkpoint_slot": 59,
+      "coco_name": "pizza",
+      "canonical_id": 53,
+      "canonical_name": "pizza",
+      "openimages_raw_ids": [
+        391
+      ],
+      "previous_canonical_id": 53
+    },
+    {
+      "checkpoint_slot": 60,
+      "coco_name": "donut",
+      "canonical_id": 54,
+      "canonical_name": "donut",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 54
+    },
+    {
+      "checkpoint_slot": 61,
+      "coco_name": "cake",
+      "canonical_id": 55,
+      "canonical_name": "cake",
+      "openimages_raw_ids": [
+        78
+      ],
+      "previous_canonical_id": 55
+    },
+    {
+      "checkpoint_slot": 62,
+      "coco_name": "chair",
+      "canonical_id": 56,
+      "canonical_name": "chair",
+      "openimages_raw_ids": [
+        104
+      ],
+      "previous_canonical_id": 56
+    },
+    {
+      "checkpoint_slot": 63,
+      "coco_name": "couch",
+      "canonical_id": 57,
+      "canonical_name": "couch",
+      "openimages_raw_ids": [
+        136
+      ],
+      "previous_canonical_id": 57
+    },
+    {
+      "checkpoint_slot": 64,
+      "coco_name": "potted plant",
+      "canonical_id": 58,
+      "canonical_name": "potted plant",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 58
+    },
+    {
+      "checkpoint_slot": 65,
+      "coco_name": "bed",
+      "canonical_id": 59,
+      "canonical_name": "bed",
+      "openimages_raw_ids": [
+        34
+      ],
+      "previous_canonical_id": 59
+    },
+    {
+      "checkpoint_slot": 67,
+      "coco_name": "dining table",
+      "canonical_id": 60,
+      "canonical_name": "dining table",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 60
+    },
+    {
+      "checkpoint_slot": 70,
+      "coco_name": "toilet",
+      "canonical_id": 61,
+      "canonical_name": "toilet",
+      "openimages_raw_ids": [
+        538
+      ],
+      "previous_canonical_id": 61
+    },
+    {
+      "checkpoint_slot": 72,
+      "coco_name": "tv",
+      "canonical_id": 62,
+      "canonical_name": "tv",
+      "openimages_raw_ids": [
+        527
+      ],
+      "previous_canonical_id": 62
+    },
+    {
+      "checkpoint_slot": 73,
+      "coco_name": "laptop",
+      "canonical_id": 63,
+      "canonical_name": "laptop",
+      "openimages_raw_ids": [
+        304
+      ],
+      "previous_canonical_id": 63
+    },
+    {
+      "checkpoint_slot": 74,
+      "coco_name": "mouse",
+      "canonical_id": 201,
+      "canonical_name": "computer mouse",
+      "openimages_raw_ids": [
+        129
+      ],
+      "previous_canonical_id": 64
+    },
+    {
+      "checkpoint_slot": 75,
+      "coco_name": "remote",
+      "canonical_id": 65,
+      "canonical_name": "remote",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 65
+    },
+    {
+      "checkpoint_slot": 76,
+      "coco_name": "keyboard",
+      "canonical_id": 66,
+      "canonical_name": "keyboard",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 66
+    },
+    {
+      "checkpoint_slot": 77,
+      "coco_name": "cell phone",
+      "canonical_id": 67,
+      "canonical_name": "cell phone",
+      "openimages_raw_ids": [
+        339
+      ],
+      "previous_canonical_id": 67
+    },
+    {
+      "checkpoint_slot": 78,
+      "coco_name": "microwave",
+      "canonical_id": 68,
+      "canonical_name": "microwave",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 68
+    },
+    {
+      "checkpoint_slot": 79,
+      "coco_name": "oven",
+      "canonical_id": 69,
+      "canonical_name": "oven",
+      "openimages_raw_ids": [
+        360
+      ],
+      "previous_canonical_id": 69
+    },
+    {
+      "checkpoint_slot": 80,
+      "coco_name": "toaster",
+      "canonical_id": 70,
+      "canonical_name": "toaster",
+      "openimages_raw_ids": [
+        537
+      ],
+      "previous_canonical_id": 70
+    },
+    {
+      "checkpoint_slot": 81,
+      "coco_name": "sink",
+      "canonical_id": 71,
+      "canonical_name": "sink",
+      "openimages_raw_ids": [
+        460
+      ],
+      "previous_canonical_id": 71
+    },
+    {
+      "checkpoint_slot": 82,
+      "coco_name": "refrigerator",
+      "canonical_id": 72,
+      "canonical_name": "refrigerator",
+      "openimages_raw_ids": [
+        419
+      ],
+      "previous_canonical_id": 72
+    },
+    {
+      "checkpoint_slot": 84,
+      "coco_name": "book",
+      "canonical_id": 73,
+      "canonical_name": "book",
+      "openimages_raw_ids": [
+        54
+      ],
+      "previous_canonical_id": 73
+    },
+    {
+      "checkpoint_slot": 85,
+      "coco_name": "clock",
+      "canonical_id": 74,
+      "canonical_name": "clock",
+      "openimages_raw_ids": [
+        113
+      ],
+      "previous_canonical_id": 74
+    },
+    {
+      "checkpoint_slot": 86,
+      "coco_name": "vase",
+      "canonical_id": 75,
+      "canonical_name": "vase",
+      "openimages_raw_ids": [
+        565
+      ],
+      "previous_canonical_id": 75
+    },
+    {
+      "checkpoint_slot": 87,
+      "coco_name": "scissors",
+      "canonical_id": 76,
+      "canonical_name": "scissors",
+      "openimages_raw_ids": [
+        438
+      ],
+      "previous_canonical_id": 76
+    },
+    {
+      "checkpoint_slot": 88,
+      "coco_name": "teddy bear",
+      "canonical_id": 77,
+      "canonical_name": "teddy bear",
+      "openimages_raw_ids": [
+        525
+      ],
+      "previous_canonical_id": 77
+    },
+    {
+      "checkpoint_slot": 89,
+      "coco_name": "hair drier",
+      "canonical_id": 78,
+      "canonical_name": "hair drier",
+      "openimages_raw_ids": [],
+      "previous_canonical_id": 78
+    },
+    {
+      "checkpoint_slot": 90,
+      "coco_name": "toothbrush",
+      "canonical_id": 79,
+      "canonical_name": "toothbrush",
+      "openimages_raw_ids": [
+        542
+      ],
+      "previous_canonical_id": 79
+    }
+  ],
+  "corrections": [
+    {
+      "slot": 74,
+      "from_canonical_id": 64,
+      "to_canonical_id": 201,
+      "reason": "COCO mouse is a computer pointing device. Open Images Mouse is the animal; Computer mouse is a distinct existing registry class."
+    }
+  ],
+  "policy": "Copy each of the 80 receipted classifier rows by semantic identity. Initialize other rows explicitly; never tile by row position. Preserve original vocabulary/proposals/probe.",
+  "canonical_class_names": [
+    "person",
+    "bicycle",
+    "car",
+    "motorcycle",
+    "airplane",
+    "bus",
+    "train",
+    "truck",
+    "boat",
+    "traffic light",
+    "fire hydrant",
+    "stop sign",
+    "parking meter",
+    "bench",
+    "bird",
+    "cat",
+    "dog",
+    "horse",
+    "sheep",
+    "cow",
+    "elephant",
+    "bear",
+    "zebra",
+    "giraffe",
+    "backpack",
+    "umbrella",
+    "handbag",
+    "tie",
+    "suitcase",
+    "frisbee",
+    "skis",
+    "snowboard",
+    "sports ball",
+    "kite",
+    "baseball bat",
+    "baseball glove",
+    "skateboard",
+    "surfboard",
+    "tennis racket",
+    "bottle",
+    "wine glass",
+    "cup",
+    "fork",
+    "knife",
+    "spoon",
+    "bowl",
+    "banana",
+    "apple",
+    "sandwich",
+    "orange",
+    "broccoli",
+    "carrot",
+    "hot dog",
+    "pizza",
+    "donut",
+    "cake",
+    "chair",
+    "couch",
+    "potted plant",
+    "bed",
+    "dining table",
+    "toilet",
+    "tv",
+    "laptop",
+    "mouse",
+    "remote",
+    "keyboard",
+    "cell phone",
+    "microwave",
+    "oven",
+    "toaster",
+    "sink",
+    "refrigerator",
+    "book",
+    "clock",
+    "vase",
+    "scissors",
+    "teddy bear",
+    "hair drier",
+    "toothbrush",
+    "fox",
+    "rabbit",
+    "deer",
+    "wolf",
+    "raccoon",
+    "squirrel",
+    "balloon",
+    "lantern",
+    "duck",
+    "goose",
+    "owl",
+    "bat",
+    "butterfly",
+    "bee",
+    "firefly",
+    "traffic cone",
+    "stroller",
+    "wheelchair",
+    "forklift",
+    "shopping cart",
+    "accordion",
+    "adhesive tape",
+    "aircraft",
+    "alarm clock",
+    "alpaca",
+    "ambulance",
+    "animal",
+    "ant",
+    "antelope",
+    "armadillo",
+    "artichoke",
+    "auto part",
+    "axe",
+    "bagel",
+    "baked goods",
+    "balance beam",
+    "ball",
+    "band-aid",
+    "banjo",
+    "barge",
+    "barrel",
+    "bathroom accessory",
+    "bathroom cabinet",
+    "bathtub",
+    "beaker",
+    "beehive",
+    "beer",
+    "beetle",
+    "bell pepper",
+    "belt",
+    "bicycle helmet",
+    "bicycle wheel",
+    "bidet",
+    "billboard",
+    "billiard table",
+    "binoculars",
+    "blender",
+    "blue jay",
+    "bomb",
+    "bookcase",
+    "boot",
+    "bottle opener",
+    "bow and arrow",
+    "bowling equipment",
+    "box",
+    "brassiere",
+    "bread",
+    "briefcase",
+    "bronze sculpture",
+    "brown bear",
+    "building",
+    "bull",
+    "burrito",
+    "bust",
+    "cabbage",
+    "cabinetry",
+    "cake stand",
+    "calculator",
+    "camel",
+    "camera",
+    "can opener",
+    "canary",
+    "candle",
+    "candy",
+    "cannon",
+    "canoe",
+    "cantaloupe",
+    "carnivore",
+    "cart",
+    "cassette deck",
+    "castle",
+    "cat furniture",
+    "caterpillar",
+    "cattle",
+    "ceiling fan",
+    "cello",
+    "centipede",
+    "chainsaw",
+    "cheese",
+    "cheetah",
+    "chest of drawers",
+    "chicken",
+    "chime",
+    "chisel",
+    "chopsticks",
+    "christmas tree",
+    "closet",
+    "clothing",
+    "coat",
+    "cocktail",
+    "cocktail shaker",
+    "coconut",
+    "coffee",
+    "coffee cup",
+    "coffee table",
+    "coffeemaker",
+    "coin",
+    "common fig",
+    "common sunflower",
+    "computer keyboard",
+    "computer monitor",
+    "computer mouse",
+    "container",
+    "convenience store",
+    "cookie",
+    "cooking spray",
+    "corded phone",
+    "cosmetics",
+    "countertop",
+    "cowboy hat",
+    "crab",
+    "cream",
+    "cricket ball",
+    "crocodile",
+    "croissant",
+    "crown",
+    "crutch",
+    "cucumber",
+    "cupboard",
+    "curtain",
+    "cutting board",
+    "dagger",
+    "dairy product",
+    "desk",
+    "dessert",
+    "diaper",
+    "dice",
+    "digital clock",
+    "dinosaur",
+    "dishwasher",
+    "dog bed",
+    "doll",
+    "dolphin",
+    "door",
+    "door handle",
+    "doughnut",
+    "dragonfly",
+    "drawer",
+    "dress",
+    "drill (tool)",
+    "drink",
+    "drinking straw",
+    "drum",
+    "dumbbell",
+    "eagle",
+    "earrings",
+    "egg (food)",
+    "envelope",
+    "eraser",
+    "face powder",
+    "facial tissue holder",
+    "falcon",
+    "fashion accessory",
+    "fast food",
+    "fax",
+    "fedora",
+    "filing cabinet",
+    "fireplace",
+    "fish",
+    "flag",
+    "flashlight",
+    "flower",
+    "flowerpot",
+    "flute",
+    "flying disc",
+    "food",
+    "food processor",
+    "football",
+    "football helmet",
+    "footwear",
+    "fountain",
+    "french fries",
+    "french horn",
+    "frog",
+    "fruit",
+    "frying pan",
+    "furniture",
+    "garden asparagus",
+    "gas stove",
+    "glasses",
+    "glove",
+    "goat",
+    "goggles",
+    "goldfish",
+    "golf ball",
+    "golf cart",
+    "gondola",
+    "grape",
+    "grapefruit",
+    "grinder",
+    "guacamole",
+    "guitar",
+    "hair dryer",
+    "hair spray",
+    "hamburger",
+    "hammer",
+    "hamster",
+    "hand dryer",
+    "handgun",
+    "harbor seal",
+    "harmonica",
+    "harp",
+    "harpsichord",
+    "hat",
+    "headphones",
+    "heater",
+    "hedgehog",
+    "helicopter",
+    "helmet",
+    "high heels",
+    "hiking equipment",
+    "hippopotamus",
+    "home appliance",
+    "honeycomb",
+    "horizontal bar",
+    "house",
+    "houseplant",
+    "human arm",
+    "human beard",
+    "human body",
+    "human ear",
+    "human eye",
+    "human face",
+    "human foot",
+    "human hair",
+    "human hand",
+    "human head",
+    "human leg",
+    "human mouth",
+    "human nose",
+    "humidifier",
+    "ice cream",
+    "indoor rower",
+    "infant bed",
+    "insect",
+    "invertebrate",
+    "ipod",
+    "isopod",
+    "jacket",
+    "jacuzzi",
+    "jaguar (animal)",
+    "jeans",
+    "jellyfish",
+    "jet ski",
+    "jug",
+    "juice",
+    "kangaroo",
+    "kettle",
+    "kitchen & dining room table",
+    "kitchen appliance",
+    "kitchen knife",
+    "kitchen utensil",
+    "kitchenware",
+    "koala",
+    "ladder",
+    "ladle",
+    "ladybug",
+    "lamp",
+    "land vehicle",
+    "lavender (plant)",
+    "lemon",
+    "leopard",
+    "light bulb",
+    "light switch",
+    "lighthouse",
+    "lily",
+    "limousine",
+    "lion",
+    "lipstick",
+    "lizard",
+    "lobster",
+    "loveseat",
+    "luggage and bags",
+    "lynx",
+    "magpie",
+    "mammal",
+    "mango",
+    "maple",
+    "maracas",
+    "marine invertebrates",
+    "marine mammal",
+    "measuring cup",
+    "mechanical fan",
+    "medical equipment",
+    "microphone",
+    "microwave oven",
+    "milk",
+    "miniskirt",
+    "mirror",
+    "missile",
+    "mixer",
+    "mixing bowl",
+    "monkey",
+    "moths and butterflies",
+    "muffin",
+    "mug",
+    "mule",
+    "mushroom",
+    "musical instrument",
+    "musical keyboard",
+    "nail (construction)",
+    "necklace",
+    "nightstand",
+    "oboe",
+    "office building",
+    "office supplies",
+    "organ (musical instrument)",
+    "ostrich",
+    "otter",
+    "oyster",
+    "paddle",
+    "palm tree",
+    "pancake",
+    "panda",
+    "paper cutter",
+    "paper towel",
+    "parachute",
+    "parrot",
+    "pasta",
+    "pastry",
+    "peach",
+    "pear",
+    "pen",
+    "pencil case",
+    "pencil sharpener",
+    "penguin",
+    "perfume",
+    "personal care",
+    "personal flotation device",
+    "piano",
+    "picnic basket",
+    "picture frame",
+    "pig",
+    "pillow",
+    "pineapple",
+    "pitcher (container)",
+    "pizza cutter",
+    "plant",
+    "plastic bag",
+    "plate",
+    "platter",
+    "plumbing fixture",
+    "polar bear",
+    "pomegranate",
+    "popcorn",
+    "porch",
+    "porcupine",
+    "poster",
+    "potato",
+    "power plugs and sockets",
+    "pressure cooker",
+    "pretzel",
+    "printer",
+    "pumpkin",
+    "punching bag",
+    "racket",
+    "radish",
+    "ratchet (device)",
+    "raven",
+    "rays and skates",
+    "red panda",
+    "remote control",
+    "reptile",
+    "rhinoceros",
+    "rifle",
+    "ring binder",
+    "rocket",
+    "roller skates",
+    "rose",
+    "rugby ball",
+    "ruler",
+    "salad",
+    "salt and pepper shakers",
+    "sandal",
+    "saucer",
+    "saxophone",
+    "scale",
+    "scarf",
+    "scoreboard",
+    "scorpion",
+    "screwdriver",
+    "sculpture",
+    "sea lion",
+    "sea turtle",
+    "seafood",
+    "seahorse",
+    "seat belt",
+    "segway",
+    "serving tray",
+    "sewing machine",
+    "shark",
+    "shelf",
+    "shellfish",
+    "shirt",
+    "shorts",
+    "shotgun",
+    "shower",
+    "shrimp",
+    "ski",
+    "skirt",
+    "skull",
+    "skunk",
+    "skyscraper",
+    "slow cooker",
+    "snack",
+    "snail",
+    "snake",
+    "snowman",
+    "snowmobile",
+    "snowplow",
+    "soap dispenser",
+    "sock",
+    "sofa bed",
+    "sombrero",
+    "sparrow",
+    "spatula",
+    "spice rack",
+    "spider",
+    "sports equipment",
+    "sports uniform",
+    "squash (plant)",
+    "squid",
+    "stairs",
+    "stapler",
+    "starfish",
+    "stationary bicycle",
+    "stethoscope",
+    "stool",
+    "strawberry",
+    "street light",
+    "stretcher",
+    "studio couch",
+    "submarine",
+    "submarine sandwich",
+    "suit",
+    "sun hat",
+    "sunglasses",
+    "sushi",
+    "swan",
+    "swim cap",
+    "swimming pool",
+    "swimwear",
+    "sword",
+    "syringe",
+    "table",
+    "table tennis racket",
+    "tablet computer",
+    "tableware",
+    "taco",
+    "tank",
+    "tap",
+    "tart",
+    "taxi",
+    "tea",
+    "teapot",
+    "telephone",
+    "tennis ball",
+    "tent",
+    "tiara",
+    "tick",
+    "tiger",
+    "tin can",
+    "tire",
+    "toilet paper",
+    "tomato",
+    "tool",
+    "torch",
+    "tortoise",
+    "towel",
+    "tower",
+    "toy",
+    "traffic sign",
+    "training bench",
+    "treadmill",
+    "tree",
+    "tree house",
+    "tripod",
+    "trombone",
+    "trousers",
+    "trumpet",
+    "turkey",
+    "turtle",
+    "unicycle",
+    "van",
+    "vegetable",
+    "vehicle",
+    "vehicle registration plate",
+    "violin",
+    "volleyball (ball)",
+    "waffle",
+    "waffle iron",
+    "wall clock",
+    "wardrobe",
+    "washing machine",
+    "waste container",
+    "watch",
+    "watercraft",
+    "watermelon",
+    "weapon",
+    "whale",
+    "wheel",
+    "whisk",
+    "whiteboard",
+    "willow",
+    "window",
+    "window blind",
+    "wine",
+    "wine rack",
+    "winter melon",
+    "wok",
+    "wood-burning stove",
+    "woodpecker",
+    "worm",
+    "wrench",
+    "zucchini"
+  ]
+}

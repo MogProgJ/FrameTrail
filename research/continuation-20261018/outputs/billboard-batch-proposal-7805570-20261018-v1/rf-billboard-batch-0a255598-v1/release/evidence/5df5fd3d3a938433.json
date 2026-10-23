@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "5df5fd3d3a938433",
+  "image_sha256": "6a01e01b9e070521434ad6f0299dbde29af4c8d929eecd1111895bced46c49f7",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "5df5fd3d3a938433",
+    "image_sha256": "6a01e01b9e070521434ad6f0299dbde29af4c8d929eecd1111895bced46c49f7",
+    "selected_category": "fire hydrant",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/snipergirl/5856335333",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/snipergirl/5856335333",
+      "original_url": "https://farm4.staticflickr.com/5227/5856335333_4ff4c8dde4_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Snipergirl",
+      "author_url": "https://www.flickr.com/people/snipergirl/",
+      "title": "Fire Hydrants = Daleks",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Snipergirl",
+      "url": "https://www.flickr.com/photos/snipergirl",
+      "image": "https://live.staticflickr.com/2220/buddyicons/64885532@N00.jpg?1200253202#64885532@N00"
+    },
+    "current_title": "Fire Hydrants = Daleks",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Snipergirl",
+          "url": "https://www.flickr.com/photos/snipergirl",
+          "image": "https://live.staticflickr.com/2220/buddyicons/64885532@N00.jpg?1200253202#64885532@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:64885532@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/snipergirl/5856335333",
+    "html_sha256": "4ae995c5ed1c73c336edbc19e8c3502ac495ce16c45df771ecadf5fd02670fc9",
+    "stored_sha256": "e11a8c1a9df729fe3ce08432f269c034ff525a10ae846149ea56715268fc2ad0",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\5df5fd3d3a938433.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/5df5fd3d3a938433.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,2 @@
+sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
+0,0,29,frisbee,0.878347,654.178,235.434,908.358,354.76,43.6118

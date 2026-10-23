@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "04924b243ce19811",
+  "image_sha256": "fa1036194ae68f8b5890a043127d42fb286bac823def59a2cd14c08fbf16121d",
+  "source_review": {
+    "image_id": "04924b243ce19811",
+    "image_sha256": "fa1036194ae68f8b5890a043127d42fb286bac823def59a2cd14c08fbf16121d",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/79578508@N08/13641092485/",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/79578508@N08/13641092485/",
+      "original_url": "https://farm2.staticflickr.com/5297/13641092485_36af5410ec_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Orde Saunders",
+      "author_url": "https://www.flickr.com/people/79578508@N08/",
+      "title": "&quot;Better together.&quot;",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Orde Saunders",
+      "url": "https://www.flickr.com/photos/79578508@N08",
+      "image": "https://live.staticflickr.com/8145/buddyicons/79578508@N08.jpg?1343302168#79578508@N08"
+    },
+    "current_title": "\"Better together.\"",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Orde Saunders",
+          "url": "https://www.flickr.com/photos/79578508@N08",
+          "image": "https://live.staticflickr.com/8145/buddyicons/79578508@N08.jpg?1343302168#79578508@N08"
+        }
+      },
+      "meta_description": "Galaxy Gear and Note 3 with a contract."
+    },
+    "identity_group": "flickr-nsid:79578508@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/79578508@N08/13641092485",
+    "html_sha256": "852b364c3e5ee42ed71bb7a230d1df4bb393385980c174a2363f0d1efa5b2638",
+    "stored_sha256": "effcdf080696c65712a041702a3bbd70af7eb2f1873baec31c50e9ed7a3ef810",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\04924b243ce19811.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\04924b243ce19811.json",
+    "sha256": "5873b9ae591c5cc918a198974a5dd0019b3d00e5c8f861b83651c3e234268560"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\04924b243ce19811.json",
+    "sha256": "06decd00c7568f57888a74968fbf11196aa6e7139ec4355723341792d77853c7"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/79578508@N08/13641092485/",
+    "original_url": "https://farm2.staticflickr.com/5297/13641092485_36af5410ec_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Orde Saunders",
+    "author_url": "https://www.flickr.com/people/79578508@N08/",
+    "title": "&quot;Better together.&quot;",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

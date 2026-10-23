@@ -1,0 +1,40 @@
+{
+  "image_id": "0c4e2a0564dec658",
+  "image_sha256": "34939bcf92a6f4bece59a7cf380c2da7911a4be858d2e50822e34a254781ced4",
+  "identity_group": "flickr-nsid:44124366475@N01",
+  "scene_group": "scene:classroom-monitors-woman-and-foreground-shoe-on-desk",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\0c4e2a0564dec658.json",
+    "sha256": "e5679f3de79b518898bac9800c3d5d8208c4083b9e109438e90519708e20bd9e"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-train-indoor.json",
+    "sha256": "63a5312fdaa328f03b6bb5ca95173a46e332d7549773563b14eb81b4e6620763"
+  },
+  "content_decision": {
+    "id": "0c4e2a0564dec658",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "indoor-frames-screens-boards",
+    "note": "Full original shows classroom computer desks, monitors, person and consumer bottle/clothing branding; no installed advertising campaign panel.",
+    "scene_description": "Classroom monitors woman and foreground shoe on desk"
+  },
+  "prospective_split": "train",
+  "confuser_family": "indoor-frames-screens-boards",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

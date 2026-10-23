@@ -1,0 +1,71 @@
+{
+  "status": "124-original-fresh-photos-reviewed-draft-overlay-QA-pending",
+  "counts": {
+    "train": {
+      "photos": 60,
+      "scopes": {
+        "absent": 19,
+        "complete": 34,
+        "unknown": 1,
+        "positive_only": 6
+      },
+      "known_positive": 40,
+      "retained_targets": 38,
+      "new_targets": 15,
+      "minimum_absent": 30,
+      "complete_absent": 19,
+      "absent_shortfall": 11
+    },
+    "val": {
+      "photos": 32,
+      "scopes": {
+        "complete": 16,
+        "absent": 14,
+        "positive_only": 1,
+        "unknown": 1
+      },
+      "known_positive": 17,
+      "retained_targets": 14,
+      "new_targets": 14,
+      "minimum_absent": 20,
+      "complete_absent": 14,
+      "absent_shortfall": 6
+    },
+    "test": {
+      "photos": 32,
+      "scopes": {
+        "complete": 13,
+        "absent": 16,
+        "positive_only": 3
+      },
+      "known_positive": 16,
+      "retained_targets": 16,
+      "new_targets": 5,
+      "minimum_absent": 20,
+      "complete_absent": 16,
+      "absent_shortfall": 4
+    }
+  },
+  "source_hashes_verified": 124,
+  "unresolved_photos": [
+    "562d7492978db1be",
+    "92acfd217c54a6c1",
+    "a39dda42b11a5c4c",
+    "b9baad45d76338a0",
+    "c112d5d0c11204c2",
+    "db5023702de03984",
+    "eecb0152c21db860",
+    "5ce07497741762d6",
+    "a4dd3353126f93b4",
+    "243ebb245142e014",
+    "983d7d4d44387095",
+    "df0023910b6759e6"
+  ],
+  "pending_old_review": 199,
+  "approved_for_training": false,
+  "new_fits": 0,
+  "new_inference": 0,
+  "TEST_predictions": 0,
+  "production_adoption": false,
+  "annotations_sha256": "a295bef19eff8712cca39b3fe1b87c64702b261106732621f86eaf4125fd1a50"
+}

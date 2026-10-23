@@ -1,0 +1,71 @@
+{
+  "image_id": "2a8e023449caa728",
+  "image_sha256": "a9bdcb1c5b238dd4d03be10e519c3791bbf6aad89a4d5b388bb306bc7990676e",
+  "publisher_attribution": {
+    "id": "2a8e023449caa728",
+    "landing_url": "https://www.flickr.com/photos/thelivingroominkenmore/4105077012",
+    "original_url": "https://c1.staticflickr.com/3/2782/4105077012_cc85ac45ce_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "The Living Room",
+    "author_url": "https://www.flickr.com/people/thelivingroominkenmore/",
+    "title": "SOLD: Vintage Wash-stand",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "The Living Room",
+    "url": "https://www.flickr.com/photos/thelivingroominkenmore",
+    "image": "https://live.staticflickr.com/2620/buddyicons/36910487@N07.jpg?1253334392#36910487@N07"
+  },
+  "current_title": "SOLD: Vintage Wash-stand",
+  "caption_and_notices": {
+    "image_id": "2a8e023449caa728",
+    "identity_group": "flickr-nsid:36910487@N07",
+    "creator": {
+      "@type": "Person",
+      "name": "The Living Room",
+      "url": "https://www.flickr.com/photos/thelivingroominkenmore",
+      "image": "https://live.staticflickr.com/2620/buddyicons/36910487@N07.jpg?1253334392#36910487@N07"
+    },
+    "current_title": "SOLD: Vintage Wash-stand",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "The Living Room",
+        "url": "https://www.flickr.com/photos/thelivingroominkenmore",
+        "image": "https://live.staticflickr.com/2620/buddyicons/36910487@N07.jpg?1253334392#36910487@N07"
+      }
+    },
+    "meta_description": "The Living Room ~ Consignment &amp; Tea ~\n\t6524 NE 181st, Suite 10, Kenmore, WA  98028\n\t425-877-1074\n\t<a href=\"http://thelivingroominkenmore.com/\" rel=\"noreferrer nofollow\">thelivingroominkenmore.com/</a>"
+  },
+  "source_url": "https://www.flickr.com/photos/thelivingroominkenmore/4105077012",
+  "canonical_page_url": "https://www.flickr.com/photos/thelivingroominkenmore/4105077012",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "2b1e8cac9f0d4ad8bb433010841b97bcfbd1a6dc61ef7cb7dd9653672a8f4d04",
+  "source_gzip_sha256": "551b92edfce08e2fae8ef3e3551733ec5288ebf952e45a71207ec191a8500c61",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false
+}

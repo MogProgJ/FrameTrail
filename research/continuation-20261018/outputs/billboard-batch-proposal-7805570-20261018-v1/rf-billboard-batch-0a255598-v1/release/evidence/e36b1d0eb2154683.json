@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "e36b1d0eb2154683",
+  "image_sha256": "3cd03979ab42b8fd673ec02ab74b82e79400b7187eb0d685dd62ceb840463d24",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "e36b1d0eb2154683",
+    "image_sha256": "3cd03979ab42b8fd673ec02ab74b82e79400b7187eb0d685dd62ceb840463d24",
+    "selected_category": "frying pan",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/kungpaochicken/4267842966",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/kungpaochicken/4267842966",
+      "original_url": "https://farm4.staticflickr.com/2801/4267842966_31b9f5d7bd_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Michael Mooney",
+      "author_url": "https://www.flickr.com/people/kungpaochicken/",
+      "title": "Cooking noodles",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Michael Mooney",
+      "url": "https://www.flickr.com/photos/kungpaochicken",
+      "image": "https://combo.staticflickr.com/pw/images/bbuddyicon11.png#48751247@N00"
+    },
+    "current_title": "Cooking noodles",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Michael Mooney",
+          "url": "https://www.flickr.com/photos/kungpaochicken",
+          "image": "https://combo.staticflickr.com/pw/images/bbuddyicon11.png#48751247@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:48751247@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/kungpaochicken/4267842966",
+    "html_sha256": "ef5240829ecf9a841ad622f5feeba2ab3845048364ef1ad10356afd00a10c2b5",
+    "stored_sha256": "d800a9a73275b39db3eae07d6c7f6d03d0708bf677514321d67b9acfacf4766a",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\e36b1d0eb2154683.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/e36b1d0eb2154683.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

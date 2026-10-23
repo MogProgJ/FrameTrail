@@ -1,0 +1,11 @@
+Codec: png
+Initial dimensions: 1280x720
+Model: YOLOX-Nano
+Detections across frames: 8
+Average CPU detection (ms/frame): 36.297
+Frames decoded: 1
+First timestamp (us): 0
+Last timestamp (us): 0
+Elapsed (s): 0.297
+Decode/detect/export throughput (fps): 3.369
+Stop condition: end of file

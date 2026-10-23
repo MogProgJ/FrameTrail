@@ -1,0 +1,26 @@
+{
+  "image_id": "5b66ef813bafddcf",
+  "source_url": "https://www.flickr.com/photos/hueytaxi/14559920027/",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/hueytaxi/14559920027/",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/5b66ef813bafddcf.html.gz",
+  "html_bytes": 516182,
+  "html_sha256": "ed39ab1dc2ee28f6077e89d295f5ee4bfb324065255e18b73967435a60763343",
+  "stored_sha256": "2d2fca1bb4c4f5ea1a8cc7d4227dbe3f220bcebf58e8e2a38759b4fb24725b6b"
+}

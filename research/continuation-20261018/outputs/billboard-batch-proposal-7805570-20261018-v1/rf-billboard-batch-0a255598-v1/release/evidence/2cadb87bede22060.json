@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "2cadb87bede22060",
+  "image_sha256": "9b71353eaf1bcc13ab07fa66a0c5d724a494777f40118a3afc49a38e556e87a0",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "2cadb87bede22060",
+    "image_sha256": "9b71353eaf1bcc13ab07fa66a0c5d724a494777f40118a3afc49a38e556e87a0",
+    "selected_category": "cat",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/orcmid/3334546474",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/orcmid/3334546474",
+      "original_url": "https://farm1.staticflickr.com/3353/3334546474_7c6045b11e_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Dennis Hamilton",
+      "author_url": "https://www.flickr.com/people/orcmid/",
+      "title": "Cats of Villa Saulina: 1998-11-13",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Dennis Hamilton",
+      "url": "https://www.flickr.com/photos/orcmid",
+      "image": "https://live.staticflickr.com/5539/buddyicons/91555706@N00.jpg?1400214885#91555706@N00"
+    },
+    "current_title": "Cats of Villa Saulina: 1998-11-13",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Dennis Hamilton",
+          "url": "https://www.flickr.com/photos/orcmid",
+          "image": "https://live.staticflickr.com/5539/buddyicons/91555706@N00.jpg?1400214885#91555706@N00"
+        }
+      },
+      "meta_description": "Whenever we come around from the apartment to the porch of the main house, it is as if the kittens are waitng for us.  We've completed our second driving visit to Siena and first exploration of Voltera."
+    },
+    "identity_group": "flickr-nsid:91555706@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/orcmid/3334546474",
+    "html_sha256": "9e8b873f55d0ddb9015c8b8f41ef3d6051f4a8bbeeb7c28d030fb0a91a74fe4c",
+    "stored_sha256": "3f03bd9b498af5a6d6cb205540436bd989748a03a53d59adf44876bfcae8b885",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\2cadb87bede22060.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/2cadb87bede22060.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

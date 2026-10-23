@@ -1,0 +1,25 @@
+[2026-10-18 21:03:08] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-18 21:03:08] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 21:03:08] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 21:03:09] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+{
+  "status": "selector-and-region-mechanics-CPU-verified",
+  "synthetic_contracts": {
+    "synthetic_optimizer_only_two_row133s_changed": true,
+    "reviewed_region_outside_unknown_gradients_zero": true,
+    "dense_region_outside_unknown_gradients_zero": true
+  },
+  "real_positive_main_and_encoder_row_gradients": {
+    "transformer.enc_out_class_embed.0.weight": 82.43778991699219,
+    "transformer.enc_out_class_embed.0.bias": 0.9228050112724304,
+    "class_embed.weight": 125.62521362304688,
+    "class_embed.bias": 1.7027626037597656
+  },
+  "only_permitted_row_gradients": true,
+  "all_actual_model_state_unchanged": true,
+  "real_optimizer_updates": 0,
+  "new_GPU_jobs": 0,
+  "ROI_cache_photos": 8,
+  "all_eight_cache_output_errors_zero": true,
+  "mechanics_sha256": "8f9ac451682de3f610761eb7e6f23e80576d0b223f22e0ee4526c195a172f740"
+}

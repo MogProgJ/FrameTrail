@@ -1,0 +1,71 @@
+{
+  "image_id": "063bfafe3658da21",
+  "image_sha256": "103e917ff3e40ac4fd207de3c2f185c0039809c8a1aa123da1786312b29a9e30",
+  "publisher_attribution": {
+    "id": "063bfafe3658da21",
+    "landing_url": "https://www.flickr.com/photos/kurafire/8232440716/",
+    "original_url": "https://farm2.staticflickr.com/8062/8232440716_9d2e9d0543_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Faruk Ateş",
+    "author_url": "https://www.flickr.com/people/kurafire/",
+    "title": "Flat White. #artinmylatte",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Faruk Ateş",
+    "url": "https://www.flickr.com/photos/kurafire",
+    "image": "https://live.staticflickr.com/7372/buddyicons/62449696@N00.jpg?1369097479#62449696@N00"
+  },
+  "current_title": "Flat White. #artinmylatte",
+  "caption_and_notices": {
+    "image_id": "063bfafe3658da21",
+    "identity_group": "flickr-nsid:62449696@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "Faruk Ateş",
+      "url": "https://www.flickr.com/photos/kurafire",
+      "image": "https://live.staticflickr.com/7372/buddyicons/62449696@N00.jpg?1369097479#62449696@N00"
+    },
+    "current_title": "Flat White. #artinmylatte",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Faruk Ateş",
+        "url": "https://www.flickr.com/photos/kurafire",
+        "image": "https://live.staticflickr.com/7372/buddyicons/62449696@N00.jpg?1369097479#62449696@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "source_url": "https://www.flickr.com/photos/kurafire/8232440716/",
+  "canonical_page_url": "https://www.flickr.com/photos/kurafire/8232440716",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "ca12fbb827149cf1063158c36410ff5ccdfcc31c68c41fc7482099618f43d228",
+  "source_gzip_sha256": "6973e9ddac74f76f8502fabd9244c1b701eabe1c1722629589c241f2f7f055b8",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false
+}

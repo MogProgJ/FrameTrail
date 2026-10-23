@@ -1,0 +1,64 @@
+{
+  "image_id": "9b25a50b380677ef",
+  "image_sha256": "012e75f3226422f75a1120b2dee00df7074d3652d29318fb11f1a184cf539c63",
+  "publisher_attribution": {
+    "id": "9b25a50b380677ef",
+    "landing_url": "https://www.flickr.com/photos/bradhigham/15570957086/",
+    "original_url": "https://c8.staticflickr.com/4/3951/15570957086_73a4653f76_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Brad Higham",
+    "author_url": "https://www.flickr.com/people/bradhigham/",
+    "title": "The Couch",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Brad Higham",
+    "url": "https://www.flickr.com/photos/bradhigham",
+    "image": "https://live.staticflickr.com/5607/buddyicons/83151451@N08.jpg?1412932455#83151451@N08"
+  },
+  "current_title": "The Couch",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Brad Higham",
+        "url": "https://www.flickr.com/photos/bradhigham",
+        "image": "https://live.staticflickr.com/5607/buddyicons/83151451@N08.jpg?1412932455#83151451@N08"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/bradhigham/15570957086/",
+  "canonical_page_url": "https://www.flickr.com/photos/bradhigham/15570957086",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "adfaf4f6c7eafe3e51dfa1ab8916e0f08aae2fccc3d759a0a3032b6a3b26525f",
+  "source_gzip_sha256": "2e12698c03b38b4a61d738a1f66a80f3625b148c77acd81a30c8faf28ce4eeec",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-037",
+  "visual_proof_sha256": "4b34cfcca720fbab4bdf434e54ace449b24d73b7bf628bf0f73edcfba4c95a7d",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

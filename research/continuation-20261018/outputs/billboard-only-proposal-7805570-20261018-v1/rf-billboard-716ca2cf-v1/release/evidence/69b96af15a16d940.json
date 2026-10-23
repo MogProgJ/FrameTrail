@@ -1,0 +1,64 @@
+{
+  "image_id": "69b96af15a16d940",
+  "image_sha256": "07592a5f91186dc501780cbc8f73d015ac12b833bd5c0b25265be27c24501989",
+  "publisher_attribution": {
+    "id": "69b96af15a16d940",
+    "landing_url": "https://www.flickr.com/photos/eggrole/4127489170",
+    "original_url": "https://farm1.staticflickr.com/2497/4127489170_a6749035a2_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Mark",
+    "author_url": "https://www.flickr.com/people/eggrole/",
+    "title": "champagne pool",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Mark",
+    "url": "https://www.flickr.com/photos/eggrole",
+    "image": "https://live.staticflickr.com/2500/buddyicons/35387910@N04.jpg?1290450375#35387910@N04"
+  },
+  "current_title": "champagne pool",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Mark",
+        "url": "https://www.flickr.com/photos/eggrole",
+        "image": "https://live.staticflickr.com/2500/buddyicons/35387910@N04.jpg?1290450375#35387910@N04"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/eggrole/4127489170",
+  "canonical_page_url": "https://www.flickr.com/photos/eggrole/4127489170",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "9d0b8ded2954b8167d1b701c5313a4256751182f0174874b9d27fbdd14927d7e",
+  "source_gzip_sha256": "c4007f0d445a07b90c2b87f3cd3e77ae51e00de845942bf2a7c15207d5d04e44",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-280",
+  "visual_proof_sha256": "8fff8d3f01e1ecc20bf5c7d65b9f17a1d5fe4a1b0848287f4ea4617a9ab38836",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

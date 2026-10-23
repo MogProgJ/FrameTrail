@@ -1,0 +1,26 @@
+{"status": "approved-code-assets-and-scope-verified", "sealed_files": 2921, "photos": 965, "planned_updates": 2000, "GPU_inference": false, "training": false}
+GpuFreq=control_disabled
+[2026-10-18 14:22:22] [INFO] rf-detr - File /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/rf-comparison-v1/assets/rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-18 14:22:22] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 14:22:22] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 14:22:25] [INFO] rf-detr - File /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/rf-comparison-v1/assets/rf-detr-small.pth already exists with correct MD5 hash.
+balanced 100/2000; retention=True; selected=100
+balanced 200/2000; retention=False; selected=100
+balanced 300/2000; retention=False; selected=100
+balanced 400/2000; retention=False; selected=100
+balanced 500/2000; retention=False; selected=100
+balanced 600/2000; retention=False; selected=100
+balanced 700/2000; retention=False; selected=100
+balanced 800/2000; retention=False; selected=100
+balanced 900/2000; retention=False; selected=100
+balanced 1000/2000; retention=False; selected=100
+balanced 1100/2000; retention=False; selected=100
+balanced 1200/2000; retention=False; selected=100
+balanced 1300/2000; retention=False; selected=100
+balanced 1400/2000; retention=False; selected=100
+balanced 1500/2000; retention=False; selected=100
+balanced 1600/2000; retention=False; selected=100
+balanced 1700/2000; retention=False; selected=100
+balanced 1800/2000; retention=False; selected=100
+balanced 1900/2000; retention=False; selected=100
+balanced 2000/2000; retention=False; selected=100

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "d371bb7a8a67f541",
+  "image_sha256": "6780d33750b06bf149b6f07b99c688643a7aa297f66d6dfd644f5f6a8efff5f3",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "d371bb7a8a67f541",
+    "image_sha256": "6780d33750b06bf149b6f07b99c688643a7aa297f66d6dfd644f5f6a8efff5f3",
+    "selected_category": "door handle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/pinayako/3872256115",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/pinayako/3872256115",
+      "original_url": "https://farm2.staticflickr.com/2392/3872256115_f198a73847_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "livininoblivion",
+      "author_url": "https://www.flickr.com/people/pinayako/",
+      "title": "me pasok .. puyat na naman",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "livininoblivion",
+      "url": "https://www.flickr.com/photos/pinayako",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/51928287@N00.jpg?1578205514#51928287@N00"
+    },
+    "current_title": "me pasok .. puyat na naman ",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "livininoblivion",
+          "url": "https://www.flickr.com/photos/pinayako",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/51928287@N00.jpg?1578205514#51928287@N00"
+        }
+      },
+      "meta_description": "nocturnal! "
+    },
+    "identity_group": "flickr-nsid:51928287@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/pinayako/3872256115",
+    "html_sha256": "63d41f82bdac521c9feebf861499127d0ebe18346803f4f6c68601fd3738313b",
+    "stored_sha256": "75aed0450ebd760167c88eaf739b7a169c7cfb4c7282a40cc28d7cf0a7d550dc",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\d371bb7a8a67f541.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/d371bb7a8a67f541.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

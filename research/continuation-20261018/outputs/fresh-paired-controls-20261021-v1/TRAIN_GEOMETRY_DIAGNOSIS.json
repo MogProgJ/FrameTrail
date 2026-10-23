@@ -1,0 +1,399 @@
+{
+  "status": "TRAIN-only-initial-geometry-audited",
+  "plan_sha256": "8f789c6e0bee3d8970ded955f0207560b3cc8d28816df20cf2e7593f9b18c70d",
+  "totals": {
+    "fresh_positive": {
+      "photos": 30,
+      "targets": 38,
+      "one_to_one_geometry_covered": 36,
+      "actual_loss_matches_IoU_at_least_0_5": 36
+    },
+    "old_positive": {
+      "photos": 17,
+      "targets": 50,
+      "one_to_one_geometry_covered": 35,
+      "actual_loss_matches_IoU_at_least_0_5": 35
+    }
+  },
+  "records": [
+    {
+      "image_id": "013037fd8c0daf0a",
+      "pool": "old_positive",
+      "targets": 3,
+      "one_to_one_geometry_covered": 2,
+      "actual_loss_matches_IoU_at_least_0_5": 2,
+      "baseline_max_billboard_score": 0.05870906263589859
+    },
+    {
+      "image_id": "078cc35acabe5e77",
+      "pool": "old_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.054468799382448196
+    },
+    {
+      "image_id": "39ba18171aeb4415",
+      "pool": "old_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.08846516162157059
+    },
+    {
+      "image_id": "7f2be8ccfdf33465",
+      "pool": "old_positive",
+      "targets": 4,
+      "one_to_one_geometry_covered": 0,
+      "actual_loss_matches_IoU_at_least_0_5": 0,
+      "baseline_max_billboard_score": 0.05817811191082001
+    },
+    {
+      "image_id": "867a012fafb5766c",
+      "pool": "old_positive",
+      "targets": 6,
+      "one_to_one_geometry_covered": 4,
+      "actual_loss_matches_IoU_at_least_0_5": 4,
+      "baseline_max_billboard_score": 0.07291899621486664
+    },
+    {
+      "image_id": "88ced829147507c7",
+      "pool": "old_positive",
+      "targets": 2,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.06644371151924133
+    },
+    {
+      "image_id": "89f3b4db87857c8d",
+      "pool": "old_positive",
+      "targets": 10,
+      "one_to_one_geometry_covered": 6,
+      "actual_loss_matches_IoU_at_least_0_5": 6,
+      "baseline_max_billboard_score": 0.05483361706137657
+    },
+    {
+      "image_id": "8d5986ae877b7be4",
+      "pool": "old_positive",
+      "targets": 2,
+      "one_to_one_geometry_covered": 2,
+      "actual_loss_matches_IoU_at_least_0_5": 2,
+      "baseline_max_billboard_score": 0.055750902742147446
+    },
+    {
+      "image_id": "995211dda562c920",
+      "pool": "old_positive",
+      "targets": 3,
+      "one_to_one_geometry_covered": 3,
+      "actual_loss_matches_IoU_at_least_0_5": 3,
+      "baseline_max_billboard_score": 0.0727563351392746
+    },
+    {
+      "image_id": "9b49325466652a54",
+      "pool": "old_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.06806954741477966
+    },
+    {
+      "image_id": "a92833d5a82934db",
+      "pool": "old_positive",
+      "targets": 2,
+      "one_to_one_geometry_covered": 0,
+      "actual_loss_matches_IoU_at_least_0_5": 0,
+      "baseline_max_billboard_score": 0.05810212343931198
+    },
+    {
+      "image_id": "b98bf3ea9eb1b4e0",
+      "pool": "old_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.05245894938707352
+    },
+    {
+      "image_id": "c310febc40974a94",
+      "pool": "old_positive",
+      "targets": 4,
+      "one_to_one_geometry_covered": 3,
+      "actual_loss_matches_IoU_at_least_0_5": 3,
+      "baseline_max_billboard_score": 0.06477775424718857
+    },
+    {
+      "image_id": "c8bb3241ac57b9e2",
+      "pool": "old_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.07030487805604935
+    },
+    {
+      "image_id": "d8fff472678899cf",
+      "pool": "old_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.07347733527421951
+    },
+    {
+      "image_id": "dc2a7c32db059a9e",
+      "pool": "old_positive",
+      "targets": 6,
+      "one_to_one_geometry_covered": 6,
+      "actual_loss_matches_IoU_at_least_0_5": 6,
+      "baseline_max_billboard_score": 0.06547392159700394
+    },
+    {
+      "image_id": "ee4b59dc616c21ad",
+      "pool": "old_positive",
+      "targets": 2,
+      "one_to_one_geometry_covered": 2,
+      "actual_loss_matches_IoU_at_least_0_5": 2,
+      "baseline_max_billboard_score": 0.06577552855014801
+    },
+    {
+      "image_id": "a37b64646cdb1e20",
+      "pool": "fresh_positive",
+      "targets": 2,
+      "one_to_one_geometry_covered": 2,
+      "actual_loss_matches_IoU_at_least_0_5": 2,
+      "baseline_max_billboard_score": 0.07839778065681458
+    },
+    {
+      "image_id": "04924b243ce19811",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.05753946676850319
+    },
+    {
+      "image_id": "bb760b5b12f42f43",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.05207017809152603
+    },
+    {
+      "image_id": "b3cddda00c8dde08",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.05222080275416374
+    },
+    {
+      "image_id": "99c50590c334d1e5",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.06731017678976059
+    },
+    {
+      "image_id": "23ac6df7ada563a3",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.06301712244749069
+    },
+    {
+      "image_id": "75ac7104b8c15a17",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.06322301179170609
+    },
+    {
+      "image_id": "64feab3aaa22fa1b",
+      "pool": "fresh_positive",
+      "targets": 2,
+      "one_to_one_geometry_covered": 2,
+      "actual_loss_matches_IoU_at_least_0_5": 2,
+      "baseline_max_billboard_score": 0.05688014253973961
+    },
+    {
+      "image_id": "bdf66bc984b9720e",
+      "pool": "fresh_positive",
+      "targets": 2,
+      "one_to_one_geometry_covered": 2,
+      "actual_loss_matches_IoU_at_least_0_5": 2,
+      "baseline_max_billboard_score": 0.04445842653512955
+    },
+    {
+      "image_id": "eecb0152c21db860",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.0731525793671608
+    },
+    {
+      "image_id": "a05d74b985d4bc2b",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.04937217757105827
+    },
+    {
+      "image_id": "b619045bda83d108",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.0715634748339653
+    },
+    {
+      "image_id": "27920c9574d34fd9",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.07886701077222824
+    },
+    {
+      "image_id": "a39dda42b11a5c4c",
+      "pool": "fresh_positive",
+      "targets": 4,
+      "one_to_one_geometry_covered": 2,
+      "actual_loss_matches_IoU_at_least_0_5": 2,
+      "baseline_max_billboard_score": 0.0846841111779213
+    },
+    {
+      "image_id": "92acfd217c54a6c1",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.06093469262123108
+    },
+    {
+      "image_id": "13909d11dbe65be8",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.07044238597154617
+    },
+    {
+      "image_id": "db5023702de03984",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.0591244101524353
+    },
+    {
+      "image_id": "03a27395be344ab4",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.07842198759317398
+    },
+    {
+      "image_id": "30cbf2e7a5034abe",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.06897848099470139
+    },
+    {
+      "image_id": "6da6a9c6bdf31c76",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.050028346478939056
+    },
+    {
+      "image_id": "888e37034d215b1c",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.06692337989807129
+    },
+    {
+      "image_id": "b9baad45d76338a0",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.056012969464063644
+    },
+    {
+      "image_id": "f116401d17107895",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.06371519714593887
+    },
+    {
+      "image_id": "5a1cea0bb9f7b721",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.04487038776278496
+    },
+    {
+      "image_id": "ef535834c691726f",
+      "pool": "fresh_positive",
+      "targets": 3,
+      "one_to_one_geometry_covered": 3,
+      "actual_loss_matches_IoU_at_least_0_5": 3,
+      "baseline_max_billboard_score": 0.06462480127811432
+    },
+    {
+      "image_id": "3d01928a39b59560",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.056325506418943405
+    },
+    {
+      "image_id": "218828c2b0ceb0b2",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.0614892840385437
+    },
+    {
+      "image_id": "ee920572c18e9006",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.065457783639431
+    },
+    {
+      "image_id": "1006ce66c4f168ce",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.040885601192712784
+    },
+    {
+      "image_id": "9b1480cf4a006424",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "one_to_one_geometry_covered": 1,
+      "actual_loss_matches_IoU_at_least_0_5": 1,
+      "baseline_max_billboard_score": 0.061545468866825104
+    }
+  ],
+  "test_photos_used": 0,
+  "validation_photos_probed": 0,
+  "optimizer_updates": 0
+}

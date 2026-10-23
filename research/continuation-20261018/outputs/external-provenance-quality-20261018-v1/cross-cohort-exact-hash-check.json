@@ -1,0 +1,35 @@
+{
+  "method": "Compare recorded SHA256 fields in explicitly named manifests; earlier files not rehashed.",
+  "checks": [
+    {
+      "manifest": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\fresh-street-household-20261017-v1\\reviewed-draft.json",
+      "manifest_sha256": "307d43ea1aca3814d7b2cca4132a40b8ebf5eb79496ef73adc6ad44d47f4c0d9",
+      "records": 44,
+      "records_with_sha256": 44,
+      "exact_hash_matches": []
+    },
+    {
+      "manifest": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\new-category-source-pilot-20261017-v1\\intake-v3\\manifest.json",
+      "manifest_sha256": "a34858cb7f11048d6768187b2525aad9b0fd46e45d8274673099c353a6767b3e",
+      "records": 25,
+      "records_with_sha256": 25,
+      "exact_hash_matches": []
+    },
+    {
+      "manifest": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\gap363-catdog-completeness-7787611-v2\\effective-broad-draft-v2.json",
+      "manifest_sha256": "d184d3cdca00dc7688d7de858186c7b1c60fd714452db0fc5c388deccd0c2db8",
+      "records": 291,
+      "records_with_sha256": 291,
+      "exact_hash_matches": []
+    },
+    {
+      "manifest": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\candidate-manifest-v2.json",
+      "manifest_sha256": "e43a2c7a415c4f82209a1fc2471d8677503f51315e71f422ec0d6665eac377b9",
+      "records": 965,
+      "records_with_sha256": 965,
+      "exact_hash_matches": []
+    }
+  ],
+  "matches": [],
+  "limits": "Not a perceptual duplicate, photo-author or scene-family clearance. All evaluation eligibility remains false."
+}

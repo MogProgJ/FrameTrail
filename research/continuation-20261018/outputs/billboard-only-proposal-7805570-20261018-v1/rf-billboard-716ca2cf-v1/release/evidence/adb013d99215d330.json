@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "adb013d99215d330",
+  "image_sha256": "dc592d5e6f5eec028571d92820c3f823111b1280fdfda122a80b0b30e626b1ae",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "adb013d99215d330",
+    "image_sha256": "dc592d5e6f5eec028571d92820c3f823111b1280fdfda122a80b0b30e626b1ae",
+    "selected_category": "van",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/63457916@N00/3248845907",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/63457916@N00/3248845907",
+      "original_url": "https://farm1.staticflickr.com/3307/3248845907_c7f8075358_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "MeRyan",
+      "author_url": "https://www.flickr.com/people/63457916@N00/",
+      "title": "IMG_2086",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "MeRyan",
+      "url": "https://www.flickr.com/photos/63457916@N00",
+      "image": "https://live.staticflickr.com/7844/buddyicons/63457916@N00.jpg?1557180543#63457916@N00"
+    },
+    "current_title": "IMG_2086",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "MeRyan",
+          "url": "https://www.flickr.com/photos/63457916@N00",
+          "image": "https://live.staticflickr.com/7844/buddyicons/63457916@N00.jpg?1557180543#63457916@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:63457916@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/63457916@N00/3248845907",
+    "html_sha256": "f0fb2fffafda290194ce654b55328ada6def7817efbc81eea00d1afa8ed28d57",
+    "stored_sha256": "c034495643298ca2a82348293048c1f038303c12e9723813413ef8b5b57e9f65",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\adb013d99215d330.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/adb013d99215d330.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

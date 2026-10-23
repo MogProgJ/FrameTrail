@@ -46,6 +46,7 @@ set_target_properties(ONNXRuntime PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "${ONNXRUNTIME_ROOT}/include")
 set(FRAMETRAIL_MODEL_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/models" CACHE PATH "Existing detector model directory")
 set(FRAMETRAIL_RF_MODEL "${CMAKE_CURRENT_SOURCE_DIR}/models/rfdetr_scale7758628.onnx" CACHE FILEPATH "Verified experimental RF export")
+set(FRAMETRAIL_BALANCED_RF_MODEL "" CACHE FILEPATH "Verified balanced RF export")
 set(_detector_model "${FRAMETRAIL_MODEL_ROOT}/yolox_nano.onnx")
 set(_detector_small_model "${FRAMETRAIL_MODEL_ROOT}/yolox_s.onnx")
 set(_world_s_model "${FRAMETRAIL_MODEL_ROOT}/yolo_world_s.onnx")
@@ -63,6 +64,7 @@ target_compile_definitions(frametrail_sqlite PRIVATE SQLITE_THREADSAFE=1 SQLITE_
 add_library(frametrail_core
     src/live_session.cpp
     src/run_store.cpp
+    src/playback_cache.cpp
     src/analysis_job.cpp
     src/tracker.cpp
     src/assignment.cpp
@@ -111,7 +113,7 @@ function(frametrail_runtime target)
                 COMMAND ${CMAKE_COMMAND} -E copy_directory "${FRAMETRAIL_DIRECTML_ROOT}/bin" "$<TARGET_FILE_DIR:${target}>/backends/directml"
                 VERBATIM)
         endif()
-        foreach(_model IN ITEMS "${_detector_model}" "${_detector_small_model}" "${_world_s_model}" "${_world_m_model}" "${_openimages_model}" "${FRAMETRAIL_RF_MODEL}")
+        foreach(_model IN ITEMS "${_detector_model}" "${_detector_small_model}" "${_world_s_model}" "${_world_m_model}" "${_openimages_model}" "${FRAMETRAIL_RF_MODEL}" "${FRAMETRAIL_BALANCED_RF_MODEL}")
             if(EXISTS "${_model}")
                 add_custom_command(TARGET ${target} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${target}>/models"
@@ -154,8 +156,8 @@ if(FRAMETRAIL_BUILD_GUI)
                 VERBATIM)
         endif()
     endfunction()
-    add_library(frametrail_preview_ui apps/desktop/preview_layout.ui apps/desktop/preview_window.cpp apps/desktop/saved_run_window.cpp apps/desktop/live_window.cpp)
-    set_target_properties(frametrail_preview_ui PROPERTIES AUTOUIC ON)
+    add_library(frametrail_preview_ui apps/desktop/studio_assets.qrc apps/desktop/guide_workspace.cpp apps/desktop/workspace_chrome.cpp apps/desktop/playback_workspace.cpp apps/desktop/cached_playback_window.cpp apps/desktop/preview_layout.ui apps/desktop/preview_window.cpp apps/desktop/saved_run_window.cpp apps/desktop/live_window.cpp)
+    set_target_properties(frametrail_preview_ui PROPERTIES AUTOUIC ON AUTORCC ON)
     target_include_directories(frametrail_preview_ui PUBLIC apps/desktop)
     target_link_libraries(frametrail_preview_ui PUBLIC frametrail_core Qt6::Widgets)
     if(MSVC)
@@ -398,4 +400,31 @@ if(BUILD_TESTING)
             target_compile_options(frametrail_rf_desktop_tests PRIVATE /W4 /permissive- /utf-8)
         endif()
     endif()
+endif()
+
+if(BUILD_TESTING AND FRAMETRAIL_BUILD_GUI)
+  add_executable(frametrail_guide_tests tests/guide_tests.cpp)
+  target_link_libraries(frametrail_guide_tests PRIVATE frametrail_preview_ui Qt6::Test)
+  target_compile_options(frametrail_guide_tests PRIVATE /utf-8)
+  frametrail_qt_runtime(frametrail_guide_tests)
+  add_custom_command(TARGET frametrail_guide_tests POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:Qt6::Test>" "$<TARGET_FILE_DIR:frametrail_guide_tests>")
+  add_executable(frametrail_cached_playback_tests tests/cached_playback_tests.cpp)
+  target_link_libraries(frametrail_cached_playback_tests PRIVATE frametrail_preview_ui Qt6::Test)
+  target_compile_options(frametrail_cached_playback_tests PRIVATE /utf-8)
+  frametrail_qt_runtime(frametrail_cached_playback_tests)
+  add_executable(frametrail_workflow_diagnostics tests/workflow_diagnostics.cpp)
+  target_link_libraries(frametrail_workflow_diagnostics PRIVATE frametrail_preview_ui Qt6::Test)
+  target_compile_options(frametrail_workflow_diagnostics PRIVATE /utf-8)
+  frametrail_qt_runtime(frametrail_workflow_diagnostics)
+  add_executable(frametrail_unified_workspace_tests tests/unified_workspace_tests.cpp)
+  target_link_libraries(frametrail_unified_workspace_tests PRIVATE frametrail_preview_ui Qt6::Test)
+  target_compile_options(frametrail_unified_workspace_tests PRIVATE /utf-8)
+  frametrail_qt_runtime(frametrail_unified_workspace_tests)
+  add_custom_command(TARGET frametrail_unified_workspace_tests POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:Qt6::Test>" "$<TARGET_FILE_DIR:frametrail_unified_workspace_tests>")
+  add_custom_command(TARGET frametrail_workflow_diagnostics POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:Qt6::Test>" "$<TARGET_FILE_DIR:frametrail_workflow_diagnostics>")
+  add_custom_command(TARGET frametrail_cached_playback_tests POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:Qt6::Test>" "$<TARGET_FILE_DIR:frametrail_cached_playback_tests>")
 endif()

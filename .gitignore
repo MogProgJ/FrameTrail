@@ -34,3 +34,12 @@ Thumbs.db
 
 # Optional exporter local settings
 /Ultralytics/
+
+# User-local demonstration footage and derived analysis; retained locally
+/gemini_generated_video_*.mp4
+/gemini_generated_video_*-analysis.csv
+
+# Keep copied research evidence separate from local runtime artifacts
+/research/**/__pycache__/
+/research/**/.env
+/research/**/.env.*

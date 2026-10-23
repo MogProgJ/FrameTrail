@@ -1,0 +1,53 @@
+{
+  "image_id": "516defad3c380520",
+  "image_sha256": "5f2abc362f175d32ad88e28ceba9336be2e744498de0d03a62709da254812839",
+  "identity_group": "flickr-nsid:8757347@N03",
+  "scene_group": "scene:blue-opel-fahren-sie-zur-hoelle-board-beside-racetrack-curve",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\516defad3c380520.json",
+    "sha256": "2a12127f32fbd9fb2952f1e331bcac5aa675933d88fdb74cf94109cf2b3be30f"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.1075,
+      0.278612,
+      0.358125,
+      0.342402
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-test-01.json",
+    "sha256": "9bc318ba7de6b7b825997065f377ab9abd1df17e6591347f15542069847bc601"
+  },
+  "content_decision": {
+    "id": "516defad3c380520",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.1075,
+        0.278612,
+        0.358125,
+        0.342402
+      ]
+    ],
+    "note": "One Opel campaign board at racetrack edge; original resolves advertising slogan versus road information. Source bounds verified; forest/road contains no other advertising face.",
+    "scene_description": "Blue Opel Fahren Sie zur Hoelle board beside racetrack curve"
+  },
+  "prospective_split": "test",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

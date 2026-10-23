@@ -1,0 +1,4 @@
+﻿Object,Appearance ID,First seen,Last seen,Span seconds,Observations,Peak confidence percent,First frame,Last frame,First timestamp us,Last timestamp us,Video,Analysis status,Model,Run ID,Execution provider,Runtime,Device,CPU fallback
+"dog",1,00:00:00.000,00:00:00.433,0.433,14,85.41,0,13,0,433000,"workflow-long.mkv","cancelled","YOLOX-Nano","76bebb822f16a2a7730fd6d73f969465","CPU","1.30.0","Processor",""
+"car",2,00:00:00.000,00:00:00.433,0.433,14,84.03,0,13,0,433000,"workflow-long.mkv","cancelled","YOLOX-Nano","76bebb822f16a2a7730fd6d73f969465","CPU","1.30.0","Processor",""
+"bicycle",3,00:00:00.000,00:00:00.433,0.433,14,79.66,0,13,0,433000,"workflow-long.mkv","cancelled","YOLOX-Nano","76bebb822f16a2a7730fd6d73f969465","CPU","1.30.0","Processor",""

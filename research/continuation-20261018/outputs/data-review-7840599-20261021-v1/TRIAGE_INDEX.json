@@ -1,0 +1,1035 @@
+{
+  "records": [
+    {
+      "id": "002a124b80fc1fec",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Waterfront directional/tourist information board; no advertising cleared."
+    },
+    {
+      "id": "01b7fbf0cc2dc3a2",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square advertising scene; compare prior and cross-role scenes."
+    },
+    {
+      "id": "0245090a4b81413a",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Piccadilly Circus advertising panels; recurring landmark scene comparison needed."
+    },
+    {
+      "id": "027e7adc476b6505",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Las Vegas Bally's illuminated advertising scene; compare recurring scenes."
+    },
+    {
+      "id": "02c5b49d76d4409c",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square large advertising panels; compare prior and cross-role scenes."
+    },
+    {
+      "id": "04464aae28f04bc1",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Museum or historical-site entrance information board."
+    },
+    {
+      "id": "05d7317e0a954e83",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Weathered/partly removed advertisement; active visible campaign and complete target bounds uncertain."
+    },
+    {
+      "id": "07ec166bed0945e0",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large roadside Hampton Roads regional/business campaign."
+    },
+    {
+      "id": "09fb9f5c86ed56b5",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Property/location map with business promotion and separate figure; inspect physical panels and message."
+    },
+    {
+      "id": "0c20f0c14eafee6e",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Winery name/entry sign; preserve business-lettering boundary."
+    },
+    {
+      "id": "13738fd6baee7352",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Dense illustrated collage on facade; physical advertising board versus mural/stickers uncertain."
+    },
+    {
+      "id": "14739a4907bd6163",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Obey artwork/mural facade; advertising board material/content boundary uncertain."
+    },
+    {
+      "id": "14eb9cc288f6bc91",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed museum exhibition promotional poster on facade."
+    },
+    {
+      "id": "15a3fd584c992981",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Freestanding Milka product campaign billboard."
+    },
+    {
+      "id": "17f1bc32271053f6",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Stadium video screen showing person; advertising-board content uncertain."
+    },
+    {
+      "id": "1d01b5b97125d86f",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Portable library welcome/name board."
+    },
+    {
+      "id": "1de72df0d22439be",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Dry-cleaning business name painted on wall; mural/name-board boundary."
+    },
+    {
+      "id": "243ebb245142e014",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed Prometheus film campaign advertisement."
+    },
+    {
+      "id": "2dee13f2d925574c",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Freestanding political campaign board; inspect bounds and separate photo-caption padding."
+    },
+    {
+      "id": "2fc53e6dd5198105",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square illuminated advertising panels; recurring scene comparison needed."
+    },
+    {
+      "id": "3279158126d6646e",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Roadside pawnshop-name board; business name versus advertising campaign boundary."
+    },
+    {
+      "id": "3a92398ca72016d7",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large museum/exhibition campaign banner: Masterpieces live here."
+    },
+    {
+      "id": "3b15a6e03ad6b488",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large radio-station campaign panel with photographic/graphic message."
+    },
+    {
+      "id": "3bb630316f0e7221",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Theatre title marquee; distinguish information/name display from advertising face."
+    },
+    {
+      "id": "3c7402e215f4f1a8",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square advertising cluster; compare prior and cross-role scenes."
+    },
+    {
+      "id": "3e5ecc84e07f7ff9",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Street shop panels with partly legible prices/messages; original needed for advertising versus name sign."
+    },
+    {
+      "id": "411a932270973982",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed Book of Mormon theatre advertisement in station."
+    },
+    {
+      "id": "49c1e5716bcf2a78",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large retailer/product facade advertising panels; original required for exhaustive separate boxes."
+    },
+    {
+      "id": "4ba82dc9d702d034",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Political candidate campaign banner."
+    },
+    {
+      "id": "531e182ce7b493db",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Large business name/logo facade; preserve business-lettering boundary."
+    },
+    {
+      "id": "5b66ef813bafddcf",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Sports-ground sponsor advertising panels; scoreboard is separate."
+    },
+    {
+      "id": "62d0376700be86a0",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed plumbing-service advertisement with person/contact/service claims."
+    },
+    {
+      "id": "6a1313a7ffd76211",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Stadium AT&T-branded board; campaign face versus permanent venue branding uncertain."
+    },
+    {
+      "id": "7c93d73e4b20ee22",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed street-side Dishonored2 game advertisement."
+    },
+    {
+      "id": "87cad34e351c6487",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large facade campaign panel with product/game graphics and QR code."
+    },
+    {
+      "id": "87e9386c70c5a33a",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Station platform/destination signs."
+    },
+    {
+      "id": "88b4cd5f107251c2",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed commercial rental/retail advertisement with unit details and contact."
+    },
+    {
+      "id": "89a79124d4139fdc",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Las Vegas advertising night scene; compare recurring prior/cross-role scenes."
+    },
+    {
+      "id": "8c7f9b63185c9372",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large roadside swimming-lesson advertisement."
+    },
+    {
+      "id": "94da9709283f6a8f",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Business name/location pole signs; inspect original before absence claim."
+    },
+    {
+      "id": "9afc2cdb3a063a17",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Freestanding roadside advertising panel with image/contact/price; inspect original legibility."
+    },
+    {
+      "id": "9b7289a56b33f3b8",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Primary-school name board and branded welcome/enrolment-style banner; business/information versus campaign boundary."
+    },
+    {
+      "id": "9e2612a3ab532b04",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large photographic advertising panels on urban facade; original needed for complete boxes."
+    },
+    {
+      "id": "9f9e1b7cdf8cc9d5",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square advertising scene; compare prior and cross-role scenes."
+    },
+    {
+      "id": "a05ca9ca50d00afb",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Decorative proverb/message board on red wall; advertising purpose uncertain."
+    },
+    {
+      "id": "a0668caab067233a",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Narrow commercial street with mixed signs; original needed to separate campaigns from name signs."
+    },
+    {
+      "id": "a0d9f4302ef487d0",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large Man of Peace event/campaign banner on pole."
+    },
+    {
+      "id": "a390d1ed9c87b4ac",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large 2XU sports-product campaign with shop-online/service claims."
+    },
+    {
+      "id": "a8ed2c9c17319ea2",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large public/political campaign board with flags/text; inspect all panels."
+    },
+    {
+      "id": "b7448c6ef4c00f74",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Road direction sign for historic destination."
+    },
+    {
+      "id": "b7c90541ccbad22a",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Political party/candidate campaign board."
+    },
+    {
+      "id": "ba92dc0b956ac7e2",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large metro service/opening campaign panels with photographs and messages."
+    },
+    {
+      "id": "df0023910b6759e6",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Political campaign banner at left of public square; original needed for bounds."
+    },
+    {
+      "id": "e0b46a4a13f2de49",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Cinema programme marquee; campaign-versus-information boundary."
+    },
+    {
+      "id": "e1d307153616cbaf",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Hospital name and facility information signage."
+    },
+    {
+      "id": "ea095709abf6e707",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Theme-park name/programme sign; advertising versus venue information uncertain."
+    },
+    {
+      "id": "efbc9e59b90cc7a1",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Sports scoreboard and permanent bank branding; campaign face uncertain."
+    },
+    {
+      "id": "f187871d82b20e7e",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Commercial street with large photographic course/product advertising panels; inspect separate signs."
+    },
+    {
+      "id": "f9683f523504ae56",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Beer-garden name sign; preserve business-lettering boundary."
+    },
+    {
+      "id": "fb9c015bc617c341",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed fashion sale campaign with product photograph and discount claims."
+    },
+    {
+      "id": "fda8bc676d20a1a4",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Public-health campaign on bus rear; advertisement wrap/furniture versus physical billboard boundary."
+    },
+    {
+      "id": "0840c7f8768accc6",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Tall freestanding tourist/shopping campaign board with photographs and contact details."
+    },
+    {
+      "id": "0ead37227d5e2931",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Ferry timetable and fare information board."
+    },
+    {
+      "id": "13909d11dbe65be8",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large bank campaign facade panel; transit timetable in foreground is separate."
+    },
+    {
+      "id": "23ac6df7ada563a3",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed event promotion for VegFest; inspect stage versus board extent."
+    },
+    {
+      "id": "27920c9574d34fd9",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Distant framed product billboard above wall; painted wall message is separate."
+    },
+    {
+      "id": "2b8442e9156921ac",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large illustrated promotional panel on building under scaffolding."
+    },
+    {
+      "id": "34bca1e105282301",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Hollywood view with WALL-E product campaign and distant boards; compare old/cross-role Hollywood scenes."
+    },
+    {
+      "id": "3547d8e7ed6d8111",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Agricultural experiment/treatment information board."
+    },
+    {
+      "id": "37c1b3a6b5c824d4",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Restaurant name and drive-through hours sign; campaign versus business-information boundary."
+    },
+    {
+      "id": "401238ad129c3e87",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square advertising cluster; compare prior/cross-role scenes."
+    },
+    {
+      "id": "75ac7104b8c15a17",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large entertainment/exhibition promotion billboard beyond graveyard."
+    },
+    {
+      "id": "7b599a8af1aaa7fb",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed cupcake-product and family-therapy service promotional panels."
+    },
+    {
+      "id": "8c072e4830a8419c",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Indoor conference video screen showing speakers; no advertising content established."
+    },
+    {
+      "id": "957607b20c3d5bfc",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square theatre campaign billboards at night; compare recurring scene."
+    },
+    {
+      "id": "9b1480cf4a006424",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Restaurant wing-night offer with price and hours on physical board."
+    },
+    {
+      "id": "a05d74b985d4bc2b",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large political/public campaign board at residential buildings."
+    },
+    {
+      "id": "a3ca55f207176b70",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Wall Drug business-name board; business-lettering boundary."
+    },
+    {
+      "id": "a549ecd02129ef8a",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Dark street/car scene with partly legible name/service panels; original needed."
+    },
+    {
+      "id": "bb760b5b12f42f43",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large outdoor Cleveland land/city campaign billboard."
+    },
+    {
+      "id": "bd7fae17003521c6",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Blank billboard structure with graffiti; no active advertising face."
+    },
+    {
+      "id": "c112d5d0c11204c2",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Auto-service business-name roof sign."
+    },
+    {
+      "id": "c2c1c1d3eb3b5c54",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Motel name/vacancy neon sign."
+    },
+    {
+      "id": "ee920572c18e9006",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed fashion/retailer campaign poster."
+    },
+    {
+      "id": "eecb0152c21db860",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large roadside entertainment/show advertisement."
+    },
+    {
+      "id": "ef535834c691726f",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed street advertising posters beside station information; inspect every face."
+    },
+    {
+      "id": "f2a5f7f979164256",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Sports-ground tourism/sponsor advertising panels; scoreboard/name signs separate."
+    },
+    {
+      "id": "f7dbeca8d27a6498",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square campaign panels; compare prior/cross-role scenes."
+    },
+    {
+      "id": "002d7d220a042075",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed restaurant/product offer advertisement with lunch and service claims."
+    },
+    {
+      "id": "00bedd5c2fbf2dff",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Freestanding Yahoo internet-service campaign billboard."
+    },
+    {
+      "id": "0171886e5bd1315a",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Dog training club name/banner; campaign versus organisation name boundary."
+    },
+    {
+      "id": "03da786fb548ddbc",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Casino facade name and partial entertainment promotion; inspect original panels."
+    },
+    {
+      "id": "051d7592051ab985",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square advertising cluster; compare prior/cross-role scenes."
+    },
+    {
+      "id": "0f3801e240c92fb6",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square digital advertising panels; compare prior/cross-role scenes."
+    },
+    {
+      "id": "15b9fc26736f275a",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large Sprite product campaign above storefront."
+    },
+    {
+      "id": "1afb4e618588eb2d",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "City-street scene with large advertising panels; inspect small/distant faces."
+    },
+    {
+      "id": "2222030de222fe39",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Recycling promotional graphic on truck body; flat board versus vehicle wrap boundary."
+    },
+    {
+      "id": "2291ee87165169ac",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Piccadilly Circus Pepsi campaign; same landmark also appears in prospective test."
+    },
+    {
+      "id": "26a0af1b449a290c",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed street-side H&M fashion product advertisement."
+    },
+    {
+      "id": "2bf7c15ed4c9de16",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Empty petrol-price information board."
+    },
+    {
+      "id": "2c1368a802d7324b",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large illustrated footwear/product campaign panels on facade."
+    },
+    {
+      "id": "2c7fb585adcb769d",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Building campaign banners with people/messages; handheld protest placard is separate scope."
+    },
+    {
+      "id": "2d3cdcba514f2249",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large roadside footwear/product billboard."
+    },
+    {
+      "id": "2dd45d8a8abb1c10",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Restaurant name and information/menu sign; inspect any separate advertising face."
+    },
+    {
+      "id": "308fc65998594f8b",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Pub name/logo boards and partial small offer panel; original needed."
+    },
+    {
+      "id": "40c30c1af661b1c3",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed illustrated campaign advertisement above street."
+    },
+    {
+      "id": "45914a5e6f5a9e42",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Motorway destination information signs; full original needed before absence certification."
+    },
+    {
+      "id": "493816f5e25dd687",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Motel name and hospitality information sign; preserve business-lettering boundary."
+    },
+    {
+      "id": "4c916adba93611ad",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large Chick-fil-A product campaign with separate limousine-service advertising."
+    },
+    {
+      "id": "4d0dca2a046d1fe9",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Piccadilly Circus advertising at night; recurring cross-role landmark."
+    },
+    {
+      "id": "5110409f98e95a40",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Building/business name/website and decorative flags."
+    },
+    {
+      "id": "53526ebb675c1c9e",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Portrait monument/display outside public building; campaign versus civic information uncertain."
+    },
+    {
+      "id": "5d34be84c57bba2d",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Rail platform departure information sign."
+    },
+    {
+      "id": "60f29eb6a19e86a7",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Urban road with large facade advertisements; original needed for distant complete boxes."
+    },
+    {
+      "id": "6532e6a4944b0156",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Airport conference welcome/event promotional banner."
+    },
+    {
+      "id": "6d5375412062f4ce",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Wildlife-refuge name/information sign."
+    },
+    {
+      "id": "708b56b3e82e3a58",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed street product advertisement with chef and offer."
+    },
+    {
+      "id": "789d7ac1977e9617",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large photographic product/fashion advertising panel on facade; inspect lower panel separately."
+    },
+    {
+      "id": "78a0115d8c8294e2",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large private-investigator service advertisement with telephone contact."
+    },
+    {
+      "id": "7a7b8b33e51de0e5",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Japanese commercial buildings with product campaign panels; inspect all distant faces."
+    },
+    {
+      "id": "7fa470f4469e5644",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Town welcome sign with event marquee; campaign versus public-information boundary."
+    },
+    {
+      "id": "832800af0a48a691",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Tourism promotional bus wrap; vehicle surface versus physical billboard boundary."
+    },
+    {
+      "id": "8a1d920f169e7f7a",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large photographic fashion/retailer advertisement on facade."
+    },
+    {
+      "id": "8aebd2d37e832dff",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large freestanding Coca-Cola holiday product campaign."
+    },
+    {
+      "id": "8f9c51d76c0e9274",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Ice-cream business name/product-type sign and sculpture; no distinct campaign face cleared."
+    },
+    {
+      "id": "97c4a86fe18afdb8",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large Robin Hood film campaign beside waterfront."
+    },
+    {
+      "id": "9f11f6b4530e8fd7",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large illustrated manga/product campaign board."
+    },
+    {
+      "id": "9f493d9aae27adfd",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Ornate museum/location directional signs."
+    },
+    {
+      "id": "b00a5500f8ae0234",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Electrical supplies business name/address sign."
+    },
+    {
+      "id": "b2c4eb4da9539d67",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Cheese shop business name sign."
+    },
+    {
+      "id": "b34043b0f8303e59",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Glazed building graphic/logos; physical advertising panel versus facade design uncertain."
+    },
+    {
+      "id": "b70da5fc345b106c",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Angled freestanding roadside photographic campaign board."
+    },
+    {
+      "id": "beb1153b54d2b3c1",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Bakery product claim printed on shop window; physical-board/material boundary."
+    },
+    {
+      "id": "bff34db19d7edd47",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Multiple large rooftop/product campaign billboards."
+    },
+    {
+      "id": "c19adb2866fe9a60",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Heineken product/city campaign above airport parking direction signs."
+    },
+    {
+      "id": "c684d8b7a6e8cae8",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large public/state-visit campaign board behind road caution sign."
+    },
+    {
+      "id": "cea218650a100dd0",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Sports-ground product/entertainment advertising faces; original needed to separate screens and panels."
+    },
+    {
+      "id": "db6f76e1fcd366e7",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Small indoor university project information display."
+    },
+    {
+      "id": "dd1074c4e1f58872",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large McDonald's product-and-price roadside billboard."
+    },
+    {
+      "id": "e65bccba7826a02f",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Las Vegas entertainment campaign panels on Excalibur venue sign; compare known recurring structures."
+    },
+    {
+      "id": "e81d4fc6bdb57335",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Business/location direction signs."
+    },
+    {
+      "id": "e894aab4f702c000",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Motel name/vacancy sign."
+    },
+    {
+      "id": "f551d266355bc9b1",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Small indoor conference/title display; physical billboard size/material boundary."
+    },
+    {
+      "id": "f8bc672c8c36acf5",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Separate framed campaign/event board beside robot sculpture; original needed for campaign and bounds."
+    },
+    {
+      "id": "f9b0d5266f944746",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Pub name/logo sign beside building; inspect small information panel."
+    },
+    {
+      "id": "fd9ba4d208562c2f",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "High-pressure danger/information board."
+    },
+    {
+      "id": "fe1a510b5a1c56fc",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large political campaign poster on outdoor advertising structure."
+    }
+  ],
+  "model_predictions_seen": false,
+  "approved_for_training": false
+}

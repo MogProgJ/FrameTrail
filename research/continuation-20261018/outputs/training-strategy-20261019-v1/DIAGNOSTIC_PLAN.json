@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-19",
+  "purpose": "Mechanistic training-only diagnosis, not candidate selection or independent generalization",
+  "inputs": [
+    "Existing TRAIN cached features and boxes",
+    "Current immutable row-133 head",
+    "Existing TRAIN labels/scopes and separately reviewed TRAIN absence overlays"
+  ],
+  "forbidden_inputs": [
+    "validation image/cache reads",
+    "test image/cache reads",
+    "video references",
+    "new cluster access"
+  ],
+  "assignment_probe": "Replay frozen baseline outputs and compare actual Hungarian match to class-agnostic one-to-one TRAIN box coverage; measure score and scope bottlenecks",
+  "capacity_probe": {
+    "folds": 4,
+    "group": "release identity_group; deterministic stratified greedy grouping, no identity overlap between folds",
+    "positive_policy": "17 unambiguous positive TRAIN photos; exclude prior three category-boundary holds",
+    "negative_policy": "35 existing explicit-negative TRAIN photos plus 12 previously reviewed whole-photo TRAIN absence overlays; no unknown/ROI queries relabelled absent",
+    "training_negative_queries_per_photo": "32 highest baseline billboard logits plus 32 evenly spaced other query indices",
+    "evaluation_negative_queries_per_photo": 300,
+    "models": [
+      "standardized 256-to-1 logistic probe",
+      "standardized 256-to-32-ReLU-to-1 MLP probe"
+    ],
+    "initialization_seed": 17,
+    "optimizer": "AdamW lr=.003 weight_decay=.0001",
+    "fixed_updates": 160,
+    "class_balance": "equal positive/negative total mass, equal photo mass within class",
+    "threshold": 0.5,
+    "metrics": [
+      "held TRAIN-fold average precision on queries",
+      "held positive-query recall",
+      "held absent-photo fraction with any positive query",
+      "training fit for optimization sanity"
+    ],
+    "choice_policy": "No tuning or model promotion from these diagnostics; fixed configuration is exploratory and informed by consumed earlier development history",
+    "scope_limit": "Identity disjoint folds do not establish scene-disjoint or independent test accuracy; fixed selected queries condition on geometry coverage"
+  },
+  "resources": {
+    "CPU_threads": 2,
+    "GPUs": 0,
+    "wall_cap_seconds": 480,
+    "new_cluster_jobs": 0
+  },
+  "unchanged": [
+    "source checkpoint",
+    "release manifest",
+    "validation/test gates",
+    "app model files"
+  ],
+  "app_backlog_secondary": [
+    "Measured package/runtime bloat audit before deletions",
+    "Small searchable guide and navigation utility only if useful; no feature work in this pass"
+  ]
+}

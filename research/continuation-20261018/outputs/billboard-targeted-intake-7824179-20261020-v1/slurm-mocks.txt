@@ -1,0 +1,7 @@
+preflight-fails: PASS (mock Slurm only)
+account-missing: PASS (mock Slurm only)
+test-only-reject: PASS (mock Slurm only)
+normal: PASS (mock Slurm only)
+ambiguous: PASS (mock Slurm only)
+batch-entry-normal: PASS (inert local commands only)
+batch-entry-training-failure: PASS (inert local commands only)

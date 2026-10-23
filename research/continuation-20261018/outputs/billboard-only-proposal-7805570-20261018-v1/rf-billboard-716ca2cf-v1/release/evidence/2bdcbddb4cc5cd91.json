@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "2bdcbddb4cc5cd91",
+  "image_sha256": "026cdcc5f6be914c482a35b48fb8d9845258b39bc73bb4b1bfa6f74fe8638b14",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "2bdcbddb4cc5cd91",
+    "image_sha256": "026cdcc5f6be914c482a35b48fb8d9845258b39bc73bb4b1bfa6f74fe8638b14",
+    "selected_category": "fire hydrant",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/mitchell3417/3615211189",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/mitchell3417/3615211189",
+      "original_url": "https://farm2.staticflickr.com/3325/3615211189_4558b3e32e_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Mitch Bennett",
+      "author_url": "https://www.flickr.com/people/mitchell3417/",
+      "title": "Fire Hydrant",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Mitch Bennett",
+      "url": "https://www.flickr.com/photos/mitchell3417",
+      "image": "https://live.staticflickr.com/7865/buddyicons/10157840@N03.jpg?1554848097#10157840@N03"
+    },
+    "current_title": "Fire Hydrant",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Mitch Bennett",
+          "url": "https://www.flickr.com/photos/mitchell3417",
+          "image": "https://live.staticflickr.com/7865/buddyicons/10157840@N03.jpg?1554848097#10157840@N03"
+        }
+      },
+      "meta_description": "The building in the background is City Hall in downtown St. Louis. I did not photoshop the fire hydrant in. All I did was desaturate the background a little bit."
+    },
+    "identity_group": "flickr-nsid:10157840@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/mitchell3417/3615211189",
+    "html_sha256": "a737511d248c525f61d13fb4c2608ae699c68ad953db7ed37f496628f3ad5d26",
+    "stored_sha256": "cc917ba8595ba1162c42cffac5d6e3b5cc41da661e14b0c701a403e2d83c7b04",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\2bdcbddb4cc5cd91.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/2bdcbddb4cc5cd91.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

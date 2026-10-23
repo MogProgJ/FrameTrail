@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "6acd33f82ca9bd68",
+  "image_sha256": "f7e88be86faee481bab652bfe03b18e520afa4298d30471d8a5f56e54ccfb4bd",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "6acd33f82ca9bd68",
+    "image_sha256": "f7e88be86faee481bab652bfe03b18e520afa4298d30471d8a5f56e54ccfb4bd",
+    "selected_category": "towel",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/brendan-c/4983936556",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/brendan-c/4983936556",
+      "original_url": "https://c1.staticflickr.com/5/4086/4983936556_e560e608d9_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Brendan C",
+      "author_url": "https://www.flickr.com/people/brendan-c/",
+      "title": "Vegas Bathroom Towels",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Brendan C",
+      "url": "https://www.flickr.com/photos/brendan-c",
+      "image": "https://live.staticflickr.com/3322/buddyicons/56145589@N00.jpg?1322700977#56145589@N00"
+    },
+    "current_title": "Vegas Bathroom Towels",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Brendan C",
+          "url": "https://www.flickr.com/photos/brendan-c",
+          "image": "https://live.staticflickr.com/3322/buddyicons/56145589@N00.jpg?1322700977#56145589@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:56145589@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/brendan-c/4983936556",
+    "html_sha256": "c84586ad41c582f51dcd14b2be2c76c5704fddd1d59d2fe0e86af62e9734659f",
+    "stored_sha256": "58673663936521f3b905bc5843e296f39a44a6bf27e8001ea08615bc0fa55acb",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\6acd33f82ca9bd68.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/6acd33f82ca9bd68.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

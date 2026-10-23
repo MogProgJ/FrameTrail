@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "43d0ab2bcf0906ae",
+  "image_sha256": "cae76acd285df753149235a243c9ee5e531035b59eb3f274acc1f6757f9bddc9",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "43d0ab2bcf0906ae",
+    "image_sha256": "cae76acd285df753149235a243c9ee5e531035b59eb3f274acc1f6757f9bddc9",
+    "selected_category": "cat",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/thiane/6582426401",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/thiane/6582426401",
+      "original_url": "https://c7.staticflickr.com/8/7166/6582426401_1de460f045_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Thiane",
+      "author_url": "https://www.flickr.com/people/thiane/",
+      "title": "Foto buc\u00f3lica 2 #reykjavik #iceland #travel #trip",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Thiane",
+      "url": "https://www.flickr.com/photos/thiane",
+      "image": "https://live.staticflickr.com/110/buddyicons/17285979@N00.jpg?1164121393#17285979@N00"
+    },
+    "current_title": "Foto buc\u00f3lica 2 #reykjavik #iceland #travel #trip",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Thiane",
+          "url": "https://www.flickr.com/photos/thiane",
+          "image": "https://live.staticflickr.com/110/buddyicons/17285979@N00.jpg?1164121393#17285979@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:17285979@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/thiane/6582426401",
+    "html_sha256": "0dfc5c9854f72d67219109f8773975e71fb0cddb2a16d667e7ea5fbbab50d9f9",
+    "stored_sha256": "6f6bf7b9dc2c2f870802b1bd8417c5ab9455885193d0a6b89d2193670d686d23",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\43d0ab2bcf0906ae.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/43d0ab2bcf0906ae.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

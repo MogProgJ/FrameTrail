@@ -1,0 +1,53 @@
+{
+  "image_id": "066687f8b782ab5b",
+  "image_sha256": "c67bad36cbf964aebd52923b9d544d7081f5abf056ced0cef88b7696f83fca10",
+  "identity_group": "flickr-nsid:43340821@N06",
+  "scene_group": "scene:dansende-daken-housing-bouw-gestart-kies-voor-keuzen-development-board",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\066687f8b782ab5b.json",
+    "sha256": "7435191e444e8d975e25e191598f9c3149986764ef1bc71a822587a3defd09e1"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.03875,
+      0,
+      0.9625,
+      0.963333
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-val-01.json",
+    "sha256": "d1e7d205239e5e4116e71cdbbbdb7315aaffaf8ef138321f2c13e230cf572b22"
+  },
+  "content_decision": {
+    "id": "066687f8b782ab5b",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.03875,
+        0,
+        0.9625,
+        0.963333
+      ]
+    ],
+    "note": "One large housing-development sales campaign. Publisher's tiny extra bottom-left box is direction/identification signage, not separate campaign; main visible campaign bounds verified.",
+    "scene_description": "Dansende Daken housing Bouw Gestart Kies voor Keuzen development board"
+  },
+  "prospective_split": "val",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

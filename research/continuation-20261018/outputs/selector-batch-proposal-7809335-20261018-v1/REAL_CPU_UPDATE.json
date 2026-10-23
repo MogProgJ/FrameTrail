@@ -1,0 +1,33 @@
+{
+  "status": "packaged-four-photo-objective-one-real-CPU-update-passed",
+  "protocol_sha256": "a77d9663fcc898b6a257f6722dd37bc24b1d3a2d3065eb8cce5f0625403f019a",
+  "photos": [
+    "7f2be8ccfdf33465",
+    "5902a1ea0b8d7eb2",
+    "fdc6128a29bf42c9",
+    "d4d369f5f5f1fb43"
+  ],
+  "loss": 14.138288974761963,
+  "dense_per_photo": [
+    2.5204732418060303,
+    0.010634724982082844,
+    0.016493452712893486,
+    0.00030256842728704214
+  ],
+  "gradient_norm": 1.5758918523788452,
+  "changed_state_keys": [
+    "class_embed.bias",
+    "class_embed.weight",
+    "transformer.enc_out_class_embed.0.bias",
+    "transformer.enc_out_class_embed.0.weight"
+  ],
+  "only_two_billboard_rows_changed": true,
+  "frozen_parameters_buffers_and_other_rows_identical": true,
+  "in_memory_updates": 1,
+  "persisted_checkpoint_changes": 0,
+  "source_checkpoint_unchanged": true,
+  "post_update_forward_finite": true,
+  "seconds": 37.26633190000575,
+  "new_GPU_jobs": 0,
+  "production_adoption": false
+}

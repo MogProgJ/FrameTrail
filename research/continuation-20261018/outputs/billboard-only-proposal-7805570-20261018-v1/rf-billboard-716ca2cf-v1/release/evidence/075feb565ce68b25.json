@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "075feb565ce68b25",
+  "image_sha256": "b419b168cdbca182fa62dc568498e42408083ce46c9ff3b1b5bf1102d9067f70",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "075feb565ce68b25",
+    "image_sha256": "b419b168cdbca182fa62dc568498e42408083ce46c9ff3b1b5bf1102d9067f70",
+    "selected_category": "traffic sign",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/sergebystro/8754291559",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/sergebystro/8754291559",
+      "original_url": "https://farm6.staticflickr.com/8557/8754291559_d1d2684466_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Serge Bystro",
+      "author_url": "https://www.flickr.com/people/sergebystro/",
+      "title": "Bicycle",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Serge Bystro",
+      "url": "https://www.flickr.com/photos/sergebystro",
+      "image": "https://live.staticflickr.com/5482/buddyicons/78051511@N03.jpg?1383066391#78051511@N03"
+    },
+    "current_title": "Bicycle",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Serge Bystro",
+          "url": "https://www.flickr.com/photos/sergebystro",
+          "image": "https://live.staticflickr.com/5482/buddyicons/78051511@N03.jpg?1383066391#78051511@N03"
+        }
+      },
+      "meta_description": "Vienna"
+    },
+    "identity_group": "flickr-nsid:78051511@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/sergebystro/8754291559",
+    "html_sha256": "da235d824e8a9b3c9dbfcde12a45619b68de950141d25d2a39a435c3064963a5",
+    "stored_sha256": "920badd30142b8651555e2a9bed1b643595949c018c8b36ec355b89c508d8c1a",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\075feb565ce68b25.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/075feb565ce68b25.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

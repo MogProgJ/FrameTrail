@@ -1,0 +1,92 @@
+Source-evidence CPU job: 7626978
+Host: uc2n872.localdomain
+No photograph downloads, GPU request, training or automatic rights approval.
+1/55 photo 1: retrieved-unreviewed
+2/55 photo 2: retrieved-unreviewed
+3/55 photo 3: retrieved-unreviewed
+4/55 photo 4: retrieved-unreviewed
+5/55 photo 5: unavailable
+6/55 photo 6: retrieved-unreviewed
+7/55 photo 7: retrieved-unreviewed
+8/55 photo 9: unavailable
+9/55 photo 10: retrieved-unreviewed
+10/55 photo 11: unavailable
+11/55 photo 12: retrieved-unreviewed
+12/55 photo 13: retrieved-unreviewed
+13/55 photo 14: retrieved-unreviewed
+14/55 photo 16: retrieved-unreviewed
+15/55 photo 17: unavailable
+16/55 photo 18: retrieved-unreviewed
+17/55 photo 19: unavailable
+18/55 photo 20: retrieved-unreviewed
+19/55 photo 21: retrieved-unreviewed
+20/55 photo 22: retrieved-unreviewed
+21/55 photo 23: retrieved-unreviewed
+22/55 photo 25: retrieved-unreviewed
+23/55 photo 26: unavailable
+24/55 photo 27: retrieved-unreviewed
+25/55 photo 30: retrieved-unreviewed
+26/55 photo 31: retrieved-unreviewed
+27/55 photo 32: retrieved-unreviewed
+28/55 photo 33: retrieved-unreviewed
+29/55 photo 34: retrieved-unreviewed
+30/55 photo 35: retrieved-unreviewed
+31/55 photo 36: retrieved-unreviewed
+32/55 photo 37: retrieved-unreviewed
+33/55 photo 38: unavailable
+34/55 photo 39: unavailable
+35/55 photo 40: retrieved-unreviewed
+36/55 photo 41: retrieved-unreviewed
+37/55 photo 42: retrieved-unreviewed
+38/55 photo 43: retrieved-unreviewed
+39/55 photo 44: retrieved-unreviewed
+40/55 photo 45: retrieved-unreviewed
+41/55 photo 46: unavailable
+42/55 photo 47: retrieved-unreviewed
+43/55 photo 48: retrieved-unreviewed
+44/55 photo 49: retrieved-unreviewed
+45/55 photo 50: unavailable
+46/55 photo 51: retrieved-unreviewed
+47/55 photo 52: unavailable
+48/55 photo 53: retrieved-unreviewed
+49/55 photo 54: retrieved-unreviewed
+50/55 photo 55: retrieved-unreviewed
+51/55 photo 56: retrieved-unreviewed
+52/55 photo 57: retrieved-unreviewed
+53/55 photo 58: retrieved-unreviewed
+54/55 photo 59: retrieved-unreviewed
+55/55 photo 60: retrieved-unreviewed
+{
+  "schema": 1,
+  "purpose": "public-source-evidence-only",
+  "status": "completed-with-unavailable-sources",
+  "started_at_utc": "2026-10-11T08:34:15.606894+00:00",
+  "plan_sha256": "454acd838917b7a0c940e3ebf02907467b0c65541395d34f1dd61a95d3eebced",
+  "annotation_sha256": "843c99c48ea70bdf97fe6a0f00087e5a2e5100c455ad09d6e86e8db26f173ca9",
+  "planned_images": 55,
+  "page_cap_bytes": 2000000,
+  "total_raw_html_cap_bytes": 110000000,
+  "html_bytes": 22947086,
+  "photographs_downloaded": 0,
+  "rights_verified": false,
+  "approved_for_training": false,
+  "limits": "Fetched HTML and extracted links are evidence, not licence or intended-use clearance. Errors do not prove a licence is absent. No login, access-control workaround or alternate endpoint is used.",
+  "finished_at_utc": "2026-10-11T08:34:54.889873+00:00",
+  "retrieved_images": 44,
+  "unavailable_images": 11
+}
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n872
+Job ID: 7626978
+Cluster: uc3
+User/Group: ka_udxvl/ka_stud
+State: FAILED (exit code 2)
+Nodes: 1
+Cores per node: 2
+CPU Utilized: 00:00:05
+CPU Efficiency: 4.10% of 00:02:02 core-walltime
+Job Wall-clock time: 00:01:01
+Memory Utilized: 56.66 MB
+Memory Efficiency: 2.77% of 2.00 GB (2.00 GB/node)

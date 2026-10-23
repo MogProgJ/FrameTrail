@@ -1,0 +1,1 @@
+{"status":"passed","real_scheduler_calls":0,"real_network_calls":0,"cases":["one array submission","recorded job idempotence","missing admission blocks","ambiguous submission retains lock and blocks replacement","all four bash scripts syntax"]}

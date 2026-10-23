@@ -1,0 +1,2 @@
+mkdir: cannot create directory ‘/c/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/billboard-only-proposal-7805570-20261018-v1/submission-fixtures/ambiguous/FrameTrail/output/training-general-v1/tools/submission-lock’: File exists
+Submission lock retained. Inspect Slurm history; do not resubmit automatically.

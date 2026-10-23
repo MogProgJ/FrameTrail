@@ -1,0 +1,26 @@
+{
+  "image_id": "c169d65520795324",
+  "source_url": "https://www.flickr.com/photos/sailor_coruscant/1854445699",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/sailor_coruscant/1854445699",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/c169d65520795324.html.gz",
+  "html_bytes": 519817,
+  "html_sha256": "14ec2bfb4a878e1041213d6bb0cf52a27a8249758905f8e36327629307db4a07",
+  "stored_sha256": "3aa29e4724f32bafd8b7d2ea3196cd8ecd21d22ba1d000bb386e4ef573e12967"
+}

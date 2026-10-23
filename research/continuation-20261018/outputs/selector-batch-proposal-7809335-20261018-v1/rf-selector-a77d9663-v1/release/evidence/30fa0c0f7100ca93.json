@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "30fa0c0f7100ca93",
+  "image_sha256": "d4dff71662cadcd8a86c5acf34108dd34eda02b62be14b3c65a1a9c1b51dbf2d",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "30fa0c0f7100ca93",
+    "image_sha256": "d4dff71662cadcd8a86c5acf34108dd34eda02b62be14b3c65a1a9c1b51dbf2d",
+    "selected_category": "fire hydrant",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/131892273@N03/17025533908",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/131892273@N03/17025533908",
+      "original_url": "https://farm4.staticflickr.com/8707/17025533908_92052805c5_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Camila Amanda",
+      "author_url": "https://www.flickr.com/people/131892273@N03/",
+      "title": "GEDSC DIGITAL CAMERA",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Camila Amanda",
+      "url": "https://www.flickr.com/photos/131892273@N03",
+      "image": "https://live.staticflickr.com/8790/buddyicons/131892273@N03.jpg?1429550975#131892273@N03"
+    },
+    "current_title": "GEDSC DIGITAL CAMERA",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Camila Amanda",
+          "url": "https://www.flickr.com/photos/131892273@N03",
+          "image": "https://live.staticflickr.com/8790/buddyicons/131892273@N03.jpg?1429550975#131892273@N03"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:131892273@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/131892273@N03/17025533908",
+    "html_sha256": "bc11d4a15006f2552db96eb5c8022d26e5e709f39b78a6062b3bb91938739de3",
+    "stored_sha256": "41b9d1552b0beffa88868ac318dcf1e76fb8b987350050b400918865a2a3de9b",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\30fa0c0f7100ca93.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/30fa0c0f7100ca93.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,10 @@
+{
+  "status": "54positive-photo-content-box-reviews-scene-source-release-pending",
+  "counts": {
+    "train": 30,
+    "test": 12,
+    "val": 12
+  },
+  "model_predictions_seen": false,
+  "approved_for_training": false
+}

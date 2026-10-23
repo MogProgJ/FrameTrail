@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "ee920572c18e9006",
+  "image_sha256": "7c4667d9f0ce54352b1c1868da194e9694551cd20acf8f1595a4240bf7b64dc9",
+  "source_review": {
+    "image_id": "ee920572c18e9006",
+    "image_sha256": "7c4667d9f0ce54352b1c1868da194e9694551cd20acf8f1595a4240bf7b64dc9",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/canneswayoflife/6009207849",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/canneswayoflife/6009207849",
+      "original_url": "https://farm7.staticflickr.com/6028/6009207849_007d077a0f_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Cannes Way Of Life",
+      "author_url": "https://www.flickr.com/people/canneswayoflife/",
+      "title": "IMG_2887",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Cannes Way Of Life",
+      "url": "https://www.flickr.com/photos/canneswayoflife",
+      "image": "https://live.staticflickr.com/6126/buddyicons/65909989@N07.jpg?1312487842#65909989@N07"
+    },
+    "current_title": "IMG_2887",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Cannes Way Of Life",
+          "url": "https://www.flickr.com/photos/canneswayoflife",
+          "image": "https://live.staticflickr.com/6126/buddyicons/65909989@N07.jpg?1312487842#65909989@N07"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:65909989@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/canneswayoflife/6009207849",
+    "html_sha256": "46c9d130932895b10fbf81e16245a43a76c7f84e311f1ee588a0aa957dbaa75a",
+    "stored_sha256": "a7742188837b184460bbd9c7edf2fa80f43f221b44b7ab336ee78a6d3d2f9a7a",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\ee920572c18e9006.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\ee920572c18e9006.json",
+    "sha256": "2164cf2919eb2307ad31c92832ef002ba5685df0d864aafb7e1b055d52888034"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\ee920572c18e9006.json",
+    "sha256": "748fcb8240baf17e759ec88c26034b815a61248291d262ea69f5623dbd843d99"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/canneswayoflife/6009207849",
+    "original_url": "https://farm7.staticflickr.com/6028/6009207849_007d077a0f_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Cannes Way Of Life",
+    "author_url": "https://www.flickr.com/people/canneswayoflife/",
+    "title": "IMG_2887",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

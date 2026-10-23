@@ -1,0 +1,53 @@
+{
+  "image_id": "30cbf2e7a5034abe",
+  "image_sha256": "cc1e402451ece4e28329051799bc44789937a463b0ed7ea40dfa23f15db978a4",
+  "identity_group": "flickr-nsid:32627224@N07",
+  "scene_group": "scene:salvation-army-poverty-campaign-in-front-of-farine-five-roses-industrial-building",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\30cbf2e7a5034abe.json",
+    "sha256": "8edc54326d917f2f634d663ca3b1b5a94269542732f5c7143aff10f3c9989360"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.3271,
+      0.4803,
+      0.7178,
+      0.7042
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-batch-04.json",
+    "sha256": "5a67229911c4e0e20bab8bc5e3ad7556762e069b5a12b87bf65ef7b51ce297de"
+  },
+  "content_decision": {
+    "id": "30cbf2e7a5034abe",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.3271,
+        0.4803,
+        0.7178,
+        0.7042
+      ]
+    ],
+    "note": "One Armee du Salut charity campaign billboard. Refined visible face/frame; FARINE FIVE ROSES roof lettering and support poles excluded.",
+    "scene_description": "Salvation Army poverty campaign in front of Farine Five Roses industrial building"
+  },
+  "prospective_split": "train",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

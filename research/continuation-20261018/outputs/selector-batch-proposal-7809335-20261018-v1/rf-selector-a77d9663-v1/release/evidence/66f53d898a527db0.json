@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "66f53d898a527db0",
+  "image_sha256": "d8a13881dea0d930ed1ed839a3b6286d38ff207499062798d812fcc413f0a9ab",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "66f53d898a527db0",
+    "image_sha256": "d8a13881dea0d930ed1ed839a3b6286d38ff207499062798d812fcc413f0a9ab",
+    "selected_category": "washing machine",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/wyrdo/16893343958",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/wyrdo/16893343958",
+      "original_url": "https://farm1.staticflickr.com/7616/16893343958_feac34fe51_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Andrew Girdwood",
+      "author_url": "https://www.flickr.com/people/wyrdo/",
+      "title": "P1100769",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Andrew Girdwood",
+      "url": "https://www.flickr.com/photos/wyrdo",
+      "image": "https://live.staticflickr.com/28/buddyicons/50833784@N00.jpg?1144518406#50833784@N00"
+    },
+    "current_title": "P1100769",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Andrew Girdwood",
+          "url": "https://www.flickr.com/photos/wyrdo",
+          "image": "https://live.staticflickr.com/28/buddyicons/50833784@N00.jpg?1144518406#50833784@N00"
+        }
+      },
+      "meta_description": "The Gadget Show 2015"
+    },
+    "identity_group": "flickr-nsid:50833784@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/wyrdo/16893343958",
+    "html_sha256": "0543cfd34ac61bca9a971817cdf6b74d76a1b5a5740923994cf3b51713d19dbf",
+    "stored_sha256": "e50277a251985ac31e775912e53369fa0d96ba1b64c31d614757224d8d1a8559",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\66f53d898a527db0.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/66f53d898a527db0.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,64 @@
+{
+  "image_id": "321e20f6eac51909",
+  "image_sha256": "93fe0352673b29dd8c5c453320e631b878deb65d9bf0d11c268f86b00a6708c0",
+  "publisher_attribution": {
+    "id": "321e20f6eac51909",
+    "landing_url": "https://www.flickr.com/photos/pat_ossa/4276016312",
+    "original_url": "https://c2.staticflickr.com/5/4044/4276016312_183f860713_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "momentcaptured1",
+    "author_url": "https://www.flickr.com/people/pat_ossa/",
+    "title": "Casa Oniri --  Colombia",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "momentcaptured1",
+    "url": "https://www.flickr.com/photos/pat_ossa",
+    "image": "https://live.staticflickr.com/2845/buddyicons/42391519@N02.jpg?1388257343#42391519@N02"
+  },
+  "current_title": "Casa Oniri --  Colombia",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "momentcaptured1",
+        "url": "https://www.flickr.com/photos/pat_ossa",
+        "image": "https://live.staticflickr.com/2845/buddyicons/42391519@N02.jpg?1388257343#42391519@N02"
+      }
+    },
+    "meta_description": "Beautiful and comfortable hotel rooms.\n\t Barichara, Santander  007"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/pat_ossa/4276016312",
+  "canonical_page_url": "https://www.flickr.com/photos/pat_ossa/4276016312",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "b21dba0525de90aa81fdc6a83e93680f5b03bda455173516bca7e1cfde93a087",
+  "source_gzip_sha256": "2bde1e2cbc2f82ac02ec36527453266ebe70ae7d096dfa88652c8b4e57ea4250",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-225",
+  "visual_proof_sha256": "d32459e17f2d2e93534bc01b72da6dfc5f623d0fdfe5f7314b6f569b77918c78",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

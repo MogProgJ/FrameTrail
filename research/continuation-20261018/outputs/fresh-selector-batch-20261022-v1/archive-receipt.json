@@ -1,0 +1,14 @@
+{
+  "archive": "frametrail-rf-fresh-selector-v1.tar.gz",
+  "archive_sha256": "b569ad8e017ac711ce9f03910de921fc8973210c29575bc28ee4d21eefc23c62",
+  "bytes": 38055608,
+  "cluster_start_script": "START_FRESH_SELECTOR_ON_CLUSTER.sh",
+  "cluster_start_script_sha256": "9c3c99eb6fc7519f9b0be8af5045f05ffd5f7d637c8abc26fe9ec7c6d73b289f",
+  "package_seal_sha256": "b3b48c9ccb5cfe867cbd03e2dbba86ac35b9e26b269f535c343b44168699fcf4",
+  "scope_sha256": "a8cc4ce065bb300869f85e416b48f56fd3ecf8cf00e25db2b08abef9dfaaeb3f",
+  "files": 498,
+  "fresh_upload_photos": 92,
+  "test_pixels_uploaded": 0,
+  "cluster_submitted": false,
+  "production_adoption": false
+}

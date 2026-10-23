@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "purpose": "annotation-draft-only",
+  "approved_for_training": false,
+  "images": 60,
+  "objects_by_state": {
+    "pending": 489,
+    "confirmed": 35,
+    "rejected": 19
+  },
+  "objects_by_origin": {
+    "publisher": 322,
+    "model": 84,
+    "manual": 137
+  },
+  "correction_events": 209,
+  "geometry_passes": 0,
+  "coverage_passes": 0,
+  "images_with_holds": 60,
+  "limits": "Counts describe drafts, not complete annotations, rights clearance, training readiness or accuracy.",
+  "active_exported_boxes": 524,
+  "yolo_files_verified": 60,
+  "coco_photograph_hashes_verified": 60,
+  "training_preflight_rejection": "Invalid split or duplicate image ID",
+  "annotations_sha256": "c932f1e38fd132916b738a56846f12b056282e9b1cab633553bca18534dc928f",
+  "draft_coco_sha256": "5fe623c2b169c717a731fae59deed0ba0ac7c5d6c18be61d283d2ef3ff92c70c",
+  "browser_interaction_verified": false
+}

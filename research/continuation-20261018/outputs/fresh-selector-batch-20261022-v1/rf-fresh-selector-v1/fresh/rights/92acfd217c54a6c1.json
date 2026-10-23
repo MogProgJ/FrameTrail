@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "92acfd217c54a6c1",
+  "image_sha256": "87485996afced7cf9fdf5e2e7e37de10a48babc872b7707a2e76542ab632b199",
+  "source_review": {
+    "image_id": "92acfd217c54a6c1",
+    "image_sha256": "87485996afced7cf9fdf5e2e7e37de10a48babc872b7707a2e76542ab632b199",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/daphnedepasse/15789622370",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/daphnedepasse/15789622370",
+      "original_url": "https://farm2.staticflickr.com/8669/15789622370_0d007b326c_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Daphne Depasse",
+      "author_url": "https://www.flickr.com/people/daphnedepasse/",
+      "title": "Plan B sheep",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Daphne Depasse",
+      "url": "https://www.flickr.com/photos/daphnedepasse",
+      "image": "https://live.staticflickr.com/2921/buddyicons/78839566@N02.jpg?1399729050#78839566@N02"
+    },
+    "current_title": "Plan B sheep",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Daphne Depasse",
+          "url": "https://www.flickr.com/photos/daphnedepasse",
+          "image": "https://live.staticflickr.com/2921/buddyicons/78839566@N02.jpg?1399729050#78839566@N02"
+        }
+      },
+      "meta_description": "We hebben deze al in onze collectie, maar hoe tof om de verschillende foto's te zien! Deze is gemaakt door Simone Tacx. Dank Simone!!"
+    },
+    "identity_group": "flickr-nsid:78839566@N02",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/daphnedepasse/15789622370",
+    "html_sha256": "cedcbcc69de6eb1fc113f7f6f0b40be00827bb92fedf91452f1ff1767b3a69ca",
+    "stored_sha256": "a2f48bebc1e5c5510c81360ad8a1e56b6a081dd9b2e0793708f73f163eb4066c",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\92acfd217c54a6c1.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\92acfd217c54a6c1.json",
+    "sha256": "5e2123843492fb0fb26cb4a0feed1acb0d9757a9ff49821babb08e0fc4d9eb2b"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\92acfd217c54a6c1.json",
+    "sha256": "e8b3301f1bf79bff698ac6dada9efe7536eba3af42f32abedf1c39b8e7b406d3"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/daphnedepasse/15789622370",
+    "original_url": "https://farm2.staticflickr.com/8669/15789622370_0d007b326c_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Daphne Depasse",
+    "author_url": "https://www.flickr.com/people/daphnedepasse/",
+    "title": "Plan B sheep",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

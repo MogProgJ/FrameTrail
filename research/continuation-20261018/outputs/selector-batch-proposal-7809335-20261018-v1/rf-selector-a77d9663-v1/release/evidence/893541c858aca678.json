@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "893541c858aca678",
+  "image_sha256": "a518810285b16bbb1e3015ed91de8e6c4b81e45e423b829ca0c03cc73aba996e",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "893541c858aca678",
+    "image_sha256": "a518810285b16bbb1e3015ed91de8e6c4b81e45e423b829ca0c03cc73aba996e",
+    "selected_category": "fire hydrant",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/waferboard/13990467597",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/waferboard/13990467597",
+      "original_url": "https://c1.staticflickr.com/6/5586/13990467597_83767f85bc_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "waferboard",
+      "author_url": "https://www.flickr.com/people/waferboard/",
+      "title": "140413-045",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "waferboard",
+      "url": "https://www.flickr.com/photos/waferboard",
+      "image": "https://live.staticflickr.com/5335/buddyicons/60944931@N00.jpg?1371442712#60944931@N00"
+    },
+    "current_title": "140413-045",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "waferboard",
+          "url": "https://www.flickr.com/photos/waferboard",
+          "image": "https://live.staticflickr.com/5335/buddyicons/60944931@N00.jpg?1371442712#60944931@N00"
+        }
+      },
+      "meta_description": "Riverview in Coquitlam, BC"
+    },
+    "identity_group": "flickr-nsid:60944931@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/waferboard/13990467597",
+    "html_sha256": "a4aec99b0648b3c3e9ef0c439335fd57a477a930937c8846fe59cace89082758",
+    "stored_sha256": "964537d2dcf751999a62f2463393e2a6073f2be14a6590b02ed80f55affd6703",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\893541c858aca678.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/893541c858aca678.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

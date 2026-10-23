@@ -1,0 +1,13 @@
+{
+  "model_predictions_seen": false,
+  "records": [
+    {
+      "id": "3c49b6fe8d3f1115",
+      "disposition": "hold-possible-prior-scene-overlap",
+      "previous_content_assertion_preserved": true,
+      "reason": "No billboard visible, but could share laundrette venue with prior09c7722c1d5bc718. Different camera angle/machines/owner do not establish different venue. Exclude from fresh release; no inference/predictions seen.",
+      "replacement_id": "cab9065c77e923a6",
+      "role_preserved": "test"
+    }
+  ]
+}

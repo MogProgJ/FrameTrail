@@ -1,0 +1,64 @@
+{
+  "image_id": "3c70d832826bc998",
+  "image_sha256": "078d085a2b9b8b40147996697f720cf31a4e951330bd880496539cbd93c2a267",
+  "publisher_attribution": {
+    "id": "3c70d832826bc998",
+    "landing_url": "https://www.flickr.com/photos/45005153@N07/6391480905",
+    "original_url": "https://c1.staticflickr.com/8/7169/6391480905_aa28333252_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "PWRDF",
+    "author_url": "https://www.flickr.com/people/45005153@N07/",
+    "title": "_IGP2672",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "PWRDF",
+    "url": "https://www.flickr.com/photos/45005153@N07",
+    "image": "https://live.staticflickr.com/2652/buddyicons/45005153@N07.jpg?1259872795#45005153@N07"
+  },
+  "current_title": "_IGP2672",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "PWRDF",
+        "url": "https://www.flickr.com/photos/45005153@N07",
+        "image": "https://live.staticflickr.com/2652/buddyicons/45005153@N07.jpg?1259872795#45005153@N07"
+      }
+    },
+    "meta_description": "beneficiary who received a transitional shelter"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/45005153@N07/6391480905",
+  "canonical_page_url": "https://www.flickr.com/photos/45005153@N07/6391480905",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "bc22169ff5d54a217bb76aff97ca7313c6e82b673f025ff936e7d5aa1415869f",
+  "source_gzip_sha256": "b9dc84349f5f96ed1fd30e4e94034a95d82a15487475be48c9aab56e967103ba",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-184",
+  "visual_proof_sha256": "429008299733809c5a770df56ea323995458072cea965cd12716b9d29df1cc3b",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

@@ -1,0 +1,2 @@
+sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
+0,0,64,mouse,0.4838,92.0105,207.776,548.813,631.014,202.128

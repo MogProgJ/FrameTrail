@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "6da6a9c6bdf31c76",
+  "image_sha256": "4314c16b6cfe4b819782044ff2baf34d8c5c49a0111388c17eb9c30655b99876",
+  "source_review": {
+    "image_id": "6da6a9c6bdf31c76",
+    "image_sha256": "4314c16b6cfe4b819782044ff2baf34d8c5c49a0111388c17eb9c30655b99876",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/poolsafely/8569241134",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/poolsafely/8569241134",
+      "original_url": "https://farm7.staticflickr.com/8238/8569241134_34f9e0408d_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "PoolSafely",
+      "author_url": "https://www.flickr.com/people/poolsafely/",
+      "title": "Billboard PSA",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "PoolSafely",
+      "url": "https://www.flickr.com/photos/poolsafely",
+      "image": "https://live.staticflickr.com/7559/buddyicons/50036088@N05.jpg?1421789524#50036088@N05"
+    },
+    "current_title": "Billboard PSA",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "PoolSafely",
+          "url": "https://www.flickr.com/photos/poolsafely",
+          "image": "https://live.staticflickr.com/7559/buddyicons/50036088@N05.jpg?1421789524#50036088@N05"
+        }
+      },
+      "meta_description": "Have you seen one of our Pool Safely billboards in your community? Tweet us a picture at @PoolSafely!"
+    },
+    "identity_group": "flickr-nsid:50036088@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/poolsafely/8569241134",
+    "html_sha256": "2837a384d3a2f91a04a28873b9c6e79dce4218354db852016dab3ce698674a64",
+    "stored_sha256": "c4b2a0ac6ba5c46f9cb67f32650abb514b4dd1b68c21eac47bca061f9da13056",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\6da6a9c6bdf31c76.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\6da6a9c6bdf31c76.json",
+    "sha256": "e59999b37ce122beeeb6d86c3031d2762d7e73cf349a33314089f1da2adbd282"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\6da6a9c6bdf31c76.json",
+    "sha256": "cd434f0849d80434e72fed7faa0589209e5051484fe0aa760aaf2ee6a196fc44"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/poolsafely/8569241134",
+    "original_url": "https://farm7.staticflickr.com/8238/8569241134_34f9e0408d_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "PoolSafely",
+    "author_url": "https://www.flickr.com/people/poolsafely/",
+    "title": "Billboard PSA",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

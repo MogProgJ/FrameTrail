@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "mode": "headless-only-no-desktop-control",
+  "checks": [
+    "all reviewed images",
+    "current partial draft",
+    "new source hold",
+    "publisher traced",
+    "unknown target scope",
+    "reviewed hanger images",
+    "refined bbox search",
+    "all 58 local images load",
+    "compact viewport",
+    "five publisher photo comparisons load"
+  ],
+  "page_errors": []
+}

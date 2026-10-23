@@ -1,0 +1,56 @@
+{
+  "status": "eight-fixed-TRAIN-only-fits-complete",
+  "fits": 8,
+  "total_updates": 1280,
+  "seconds": 5.187000000001717,
+  "nonlinear_consistent_support_under_frozen_rule": false,
+  "validation_cache_reads": 0,
+  "test_cache_reads": 0,
+  "new_image_inference": 0,
+  "new_cluster_jobs": 0,
+  "models_saved": false,
+  "source_inputs_unchanged": true,
+  "production_adoption": false,
+  "plan_sha256": "439ded7b93cc791116cca2650509959952b52ad87f055669760884b1af465195",
+  "result_refs": [
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-7870268-20261022-v1\\fits\\fold-0-linear.json",
+      "sha256": "0f0a8dcd73394167ffb4b5a3b00b75e0d763358abbc1a0ae2fbe8fd8ebb56b93"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-7870268-20261022-v1\\fits\\fold-0-mlp32.json",
+      "sha256": "5ff080c2e51fe734483b47f2d2bc5c01863cbcb25574d979496c589963705d80"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-7870268-20261022-v1\\fits\\fold-1-linear.json",
+      "sha256": "8146769e73f4849e0866837f4037084945ba9ca71f1138a674c6794491c02243"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-7870268-20261022-v1\\fits\\fold-1-mlp32.json",
+      "sha256": "929b8823192a72d41879b52943f2636be8794cefc03f897ddcb2d61401aaed96"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-7870268-20261022-v1\\fits\\fold-2-linear.json",
+      "sha256": "49875be39afaa3f89cd95cd89ea81ea5b91b20b27718750d859bcb2aeffeeba4"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-7870268-20261022-v1\\fits\\fold-2-mlp32.json",
+      "sha256": "bba1f5cc53d57e0c85bd71eebd7357050db9db66ced1ecdb3837b17c59a91cca"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-7870268-20261022-v1\\fits\\fold-3-linear.json",
+      "sha256": "35312c60d27482c94d9944e279e79d4b9fc9fd218aa2b10e8452c3a5d811ea79"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-7870268-20261022-v1\\fits\\fold-3-mlp32.json",
+      "sha256": "0d7863465627eb97e3d16cbfeab863cde16412ce1da2ea31bf51009edd049c97"
+    }
+  ],
+  "limitations": [
+    "Exploratory TRAIN-only diagnostic after development history, not independent detector performance.",
+    "Conditioned on frozen geometry-covered positive queries; no final decoder/NMS/other-class competition.",
+    "Recorded scene/identity links disjoint, but exhaustive old cross-author scene clearance not claimed.",
+    "TRAIN-fold calibrated thresholds are binary probe scores, not app thresholds or transferable confidence.",
+    "No architecture/model selected or exported by these results."
+  ]
+}

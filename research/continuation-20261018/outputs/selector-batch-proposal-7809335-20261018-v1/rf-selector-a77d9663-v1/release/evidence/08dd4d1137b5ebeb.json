@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "08dd4d1137b5ebeb",
+  "image_sha256": "9c185cef9c068286faef7f66c0638ef4ffcd4136c5af98cefb09031790ede350",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "08dd4d1137b5ebeb",
+    "image_sha256": "9c185cef9c068286faef7f66c0638ef4ffcd4136c5af98cefb09031790ede350",
+    "selected_category": "washing machine",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/crestedcrazy/170834085",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/crestedcrazy/170834085",
+      "original_url": "https://c4.staticflickr.com/1/53/170834085_1979e0b7f0_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Sheri Terris",
+      "author_url": "https://www.flickr.com/people/crestedcrazy/",
+      "title": "Renos complete",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Sheri Terris",
+      "url": "https://www.flickr.com/photos/crestedcrazy",
+      "image": "https://live.staticflickr.com/23/buddyicons/20026379@N00.jpg?1225082235#20026379@N00"
+    },
+    "current_title": "Renos complete",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Sheri Terris",
+          "url": "https://www.flickr.com/photos/crestedcrazy",
+          "image": "https://live.staticflickr.com/23/buddyicons/20026379@N00.jpg?1225082235#20026379@N00"
+        }
+      },
+      "meta_description": "Where once was  tub now is the laundry area"
+    },
+    "identity_group": "flickr-nsid:20026379@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/crestedcrazy/170834085",
+    "html_sha256": "22bab89aaa99ea4a8e0c2868f57bbbd48a0a1f76ef398b240d546e7aa73a92e1",
+    "stored_sha256": "8582e31ce777cb541a5801250b8f770a8933135178396f650195dfc0d85f19b3",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\08dd4d1137b5ebeb.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/08dd4d1137b5ebeb.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

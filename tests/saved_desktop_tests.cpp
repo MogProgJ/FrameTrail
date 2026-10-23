@@ -18,8 +18,8 @@
 
 namespace {
 void require(bool condition,const char* message) {if(!condition)throw std::runtime_error(message);}
-template<class F> void wait(F function) {
-    for(int i=0;i<6000;++i){if(function())return;QTest::qWait(5);}throw std::runtime_error("Saved review desktop timed out");
+template<class F> void wait(F function,const char* stage="Saved review desktop") {
+    for(int i=0;i<6000;++i){if(function())return;QTest::qWait(5);}throw std::runtime_error(std::string(stage)+" timed out");
 }
 std::string bytes(const std::filesystem::path& path) {
     std::ifstream input(path,std::ios::binary);return {std::istreambuf_iterator<char>(input),{}};
@@ -54,9 +54,10 @@ void intake(const std::filesystem::path& fixtures,const std::filesystem::path& s
     require(drop.isAccepted() && analyse->isEnabled(),"Local Unicode video drop did not prepare analysis");
     analyse->click();require(window.analysing() && !analyse->isEnabled() && window.findChild<QProgressBar*>(QStringLiteral("analysisProgress"))->isVisible(),"Analysis did not enter progress state");
     QDragEnterEvent busy(QPoint(150,150),Qt::CopyAction,&mime,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(&window,&busy);require(!busy.isAccepted(),"Busy analysis accepted a replacement drop");
-    wait([&]{return !window.analysing() && save->isEnabled();});
+    wait([&]{return !window.analysing() && (save->isEnabled() || window.findChild<QPushButton*>(QStringLiteral("chooseVideo"))->isEnabled());},"Unicode-source analysis finalization");
+    require(save->isEnabled(),status->text().toUtf8().constData());
     require(list->count()>0 && status->text().contains(QStringLiteral("completed")),"Appearance results were not presented");
-    wait([&]{return window.displayed_timestamp().has_value();});
+    wait([&]{return window.displayed_timestamp().has_value();},"First reviewed Unicode-source frame");
     require(window.grab().save(text(root/"analysis-results.png")),"Results screenshot failed");
     window.resize(920,620);QTest::qWait(25);require(window.grab().save(text(root/"analysis-compact.png")),"Compact analysis screenshot failed");window.resize(1240,820);
     bool prompt_seen=false;

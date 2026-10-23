@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "742f02c167cf2c5a",
+  "image_sha256": "243d875f315d4fd29e3e536cc13e30d24b98304fe1e6f0633faab18e3810127b",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "742f02c167cf2c5a",
+    "image_sha256": "243d875f315d4fd29e3e536cc13e30d24b98304fe1e6f0633faab18e3810127b",
+    "selected_category": "door handle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/briansolis/1173408879",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/briansolis/1173408879",
+      "original_url": "https://c3.staticflickr.com/2/1201/1173408879_96001bd2b0_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Brian Solis",
+      "author_url": "https://www.flickr.com/people/briansolis/",
+      "title": "HP Garage Tour",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Brian Solis",
+      "url": "https://www.flickr.com/photos/briansolis",
+      "image": "https://live.staticflickr.com/58/buddyicons/50698336@N00.jpg?1222096419#50698336@N00"
+    },
+    "current_title": "HP Garage Tour",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Brian Solis",
+          "url": "https://www.flickr.com/photos/briansolis",
+          "image": "https://live.staticflickr.com/58/buddyicons/50698336@N00.jpg?1222096419#50698336@N00"
+        }
+      },
+      "meta_description": "Read the post on <a href=\"http://bub.blicio.us/?p=345\" rel=\"noreferrer nofollow\">bub.blicio.us/?p=345</a>"
+    },
+    "identity_group": "flickr-nsid:50698336@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/briansolis/1173408879",
+    "html_sha256": "470411e651f6f30d00038703e51310cb3c2743771de86074cfeb9dba723f052e",
+    "stored_sha256": "ffff34a3196179e8b10baa04ebfa3611de1e0bea25a1ac6cd24b44e10f7e4cb0",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\742f02c167cf2c5a.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/742f02c167cf2c5a.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

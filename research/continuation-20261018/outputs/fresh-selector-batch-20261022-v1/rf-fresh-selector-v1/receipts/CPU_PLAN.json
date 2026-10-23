@@ -1,0 +1,53 @@
+{
+  "status": "sealed-local-control-plan-pending-loss-gradient-preflight",
+  "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "input_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-paired-controls-20261021-v1\\INPUTS.json",
+    "sha256": "29bfd7774c2073a7b95f0b94997cfcf30ec50e4d2c4b9cfcfee8e369e764e389"
+  },
+  "schedule_refs": [
+    {
+      "seed": 17,
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-paired-controls-20261021-v1\\schedule-17.json",
+      "sha256": "d831162e01329f216a33ce8fa241dfe5f9207fd1a168611befef9d53e3438f5b"
+    },
+    {
+      "seed": 29,
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-paired-controls-20261021-v1\\schedule-29.json",
+      "sha256": "177ccf3955c7df8b8c480a576a9274276abf50da38ade5fdb8ada17a4153fdbd"
+    }
+  ],
+  "execution_order_note_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-paired-controls-20261021-v1\\EXECUTION_ORDER_NOTE.json",
+    "sha256": "b08c58e3e7981af2f820a692c557019b750a940ef36cf4b87508a3ad1e1a5475"
+  },
+  "baseline_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\BASELINE_REPORT.json",
+    "sha256": "05d62e4534ca5ecec37187d2de12c43dd4c3fd320dd31f03f24a40e892811db3"
+  },
+  "strategy_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\EXPERIMENT_DESIGN.json",
+    "sha256": "1287a9eeeb22baa6d45b8a9a9f85180a9b0f8f5b923c63bac24ad8596734edd9"
+  },
+  "method": "M0-main-row133-only",
+  "main_lr": 0.0001,
+  "weight_decay": 0,
+  "clip": 0.1,
+  "AMP": false,
+  "threads": 2,
+  "max_updates": 1500,
+  "active_seconds_per_control": 1800,
+  "finalization_seconds": 480,
+  "sequential": true,
+  "validation_steps": [
+    0,
+    100,
+    250,
+    500,
+    1000,
+    1500
+  ],
+  "loss": "Unchanged scoped Hungarian IA-BCE/box/aux criterion averaged over four photos. Frozen encoder dense objective has zero active-main gradient; constant term omitted from M0 optimization loss only, explicitly reported.",
+  "selection": "freshval gain>=3hits with0extraFP;old perclass bothbaselines;original unknown cap530;bothseeds required. No TESTinference or model adoption.",
+  "scene_grouping": "Fresh124 explicit scene adjudications. Replay: existing photographer groups conservatively merged, plus known five Times Square TRAIN photos merged across owners. No validation/test exposure in TRAIN pools."
+}

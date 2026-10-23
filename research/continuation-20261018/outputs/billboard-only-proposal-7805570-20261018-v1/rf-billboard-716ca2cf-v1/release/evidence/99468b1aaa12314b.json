@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "99468b1aaa12314b",
+  "image_sha256": "0b595836060aa0e4a59fff9cb69ed21edc563a7907ce190c20862dae82986b43",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "99468b1aaa12314b",
+    "image_sha256": "0b595836060aa0e4a59fff9cb69ed21edc563a7907ce190c20862dae82986b43",
+    "selected_category": "cat",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/rikkisrefugeother/16850233965",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/rikkisrefugeother/16850233965",
+      "original_url": "https://c4.staticflickr.com/8/7598/16850233965_e658210b1d_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "RikkisRefuge Other",
+      "author_url": "https://www.flickr.com/people/rikkisrefugeother/",
+      "title": "Sunbathing",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "RikkisRefuge Other",
+      "url": "https://www.flickr.com/photos/rikkisrefugeother",
+      "image": "https://live.staticflickr.com/5219/buddyicons/59048278@N05.jpg?1297689491#59048278@N05"
+    },
+    "current_title": "Sunbathing",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "RikkisRefuge Other",
+          "url": "https://www.flickr.com/photos/rikkisrefugeother",
+          "image": "https://live.staticflickr.com/5219/buddyicons/59048278@N05.jpg?1297689491#59048278@N05"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:59048278@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/rikkisrefugeother/16850233965",
+    "html_sha256": "ed6243f5bdb9e1e00c5b7aa09475fbf31af05255b8bc49a13e542c16246cd3cf",
+    "stored_sha256": "e34a9fa092c813973917288d0ebe6ee25eb1013cd8ebecbfcf046e34b037571e",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\99468b1aaa12314b.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/99468b1aaa12314b.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

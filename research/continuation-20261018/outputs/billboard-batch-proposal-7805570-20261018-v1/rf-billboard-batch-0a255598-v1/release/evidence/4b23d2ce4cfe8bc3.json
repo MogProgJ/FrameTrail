@@ -1,0 +1,64 @@
+{
+  "image_id": "4b23d2ce4cfe8bc3",
+  "image_sha256": "ed6305174de679675abfa98f9cb834329ebedef8282871ecdc0895eda19da5f2",
+  "publisher_attribution": {
+    "id": "4b23d2ce4cfe8bc3",
+    "landing_url": "https://www.flickr.com/photos/kars4kids/15823698564",
+    "original_url": "https://farm4.staticflickr.com/7421/15823698564_de7fcacdf9_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Kars4Kids Car Donation &amp; Educational Programs",
+    "author_url": "https://www.flickr.com/people/kars4kids/",
+    "title": "IMG_4118-199",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Kars For Kids",
+    "url": "https://www.flickr.com/photos/kars4kids",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/41348769@N05.jpg?1644760405#41348769@N05"
+  },
+  "current_title": "IMG_4118-199",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Kars For Kids",
+        "url": "https://www.flickr.com/photos/kars4kids",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/41348769@N05.jpg?1644760405#41348769@N05"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/kars4kids/15823698564",
+  "canonical_page_url": "https://www.flickr.com/photos/kars4kids/15823698564",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "0defc63e56d32a690c292ab1b38dce45a8fe05ce390e5f00f74972470d01116a",
+  "source_gzip_sha256": "c10435766092f854c3d741702603181d0a749cad6d67e15921d87755e3fbefc7",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-307",
+  "visual_proof_sha256": "c0bddec91431d12c418574ab8d92842c4749810ad808343c97ff5a8aa2cbac81",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

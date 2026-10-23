@@ -1,0 +1,64 @@
+{
+  "image_id": "7d4a9313a3b2ba9e",
+  "image_sha256": "cacc70365aa2dc5ecfa4ccf9679113b342570eaba183650bea1de916b38d3ec9",
+  "publisher_attribution": {
+    "id": "7d4a9313a3b2ba9e",
+    "landing_url": "https://www.flickr.com/photos/neeta_lind/3282244611",
+    "original_url": "https://c7.staticflickr.com/4/3469/3282244611_1ed244bc29_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Neeta Lind",
+    "author_url": "https://www.flickr.com/people/neeta_lind/",
+    "title": "IMG_7570",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Neeta Lind",
+    "url": "https://www.flickr.com/photos/neeta_lind",
+    "image": "https://live.staticflickr.com/54/buddyicons/71132408@N00.jpg?1155918541#71132408@N00"
+  },
+  "current_title": "IMG_7570",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Neeta Lind",
+        "url": "https://www.flickr.com/photos/neeta_lind",
+        "image": "https://live.staticflickr.com/54/buddyicons/71132408@N00.jpg?1155918541#71132408@N00"
+      }
+    },
+    "meta_description": "Molly's chocolate mousse cake,  amazingly delicious"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/neeta_lind/3282244611",
+  "canonical_page_url": "https://www.flickr.com/photos/neeta_lind/3282244611",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "0ce89136b1bfd23fdaa82c8acce402539efc9e37b1186b145526791b59bd583f",
+  "source_gzip_sha256": "ccaf2c0134a26ae2aa8d5262aa14f2b1f4a872721d09124092862b779e95ac04",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-130",
+  "visual_proof_sha256": "752700fcfc4b730a0360f63c69998ef7091295b1b448a336c29a625748d2db7b",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

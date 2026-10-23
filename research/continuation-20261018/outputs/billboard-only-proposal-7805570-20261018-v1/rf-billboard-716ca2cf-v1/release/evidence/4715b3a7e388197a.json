@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "4715b3a7e388197a",
+  "image_sha256": "1c07a2cf1a656455d99845f0307a083f64adcb4fe30bdaf18914ae83778bfa6b",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "4715b3a7e388197a",
+    "image_sha256": "1c07a2cf1a656455d99845f0307a083f64adcb4fe30bdaf18914ae83778bfa6b",
+    "selected_category": "washing machine",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/sopper/5496040819",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/sopper/5496040819",
+      "original_url": "https://c3.staticflickr.com/6/5251/5496040819_71cd853041_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Torben Heikel Vinther",
+      "author_url": "https://www.flickr.com/people/sopper/",
+      "title": "Kaare og Miele",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Torben Heikel Vinther",
+      "url": "https://www.flickr.com/photos/sopper",
+      "image": "https://live.staticflickr.com/7102/buddyicons/53254842@N08.jpg?1338538861#53254842@N08"
+    },
+    "current_title": "Kaare og Miele",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Torben Heikel Vinther",
+          "url": "https://www.flickr.com/photos/sopper",
+          "image": "https://live.staticflickr.com/7102/buddyicons/53254842@N08.jpg?1338538861#53254842@N08"
+        }
+      },
+      "meta_description": "Taken with <a href=\"http://picplz.com\" rel=\"noreferrer nofollow\">picplz</a>."
+    },
+    "identity_group": "flickr-nsid:53254842@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/sopper/5496040819",
+    "html_sha256": "ec9559c04285fced82e678092e0fd0c7ed17ee47e8643f6fd3f2da653bf2db8b",
+    "stored_sha256": "f91f12bbade09d7a1088a53f22e6fb395fa1ca0f9f98bb26d9f8a942449e2ec6",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\4715b3a7e388197a.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/4715b3a7e388197a.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,13 @@
+Submitted one fixed two-task array. FRAMETRAIL_JOB_ID=123456
+FRAMETRAIL_JOB_ID=123456
+mock-status
+Task 0 report not ready
+Task 0 archive not ready
+Task 1 report not ready
+Task 1 archive not ready
+FRAMETRAIL_JOB_ID=123456
+mock-status
+Task 0 report not ready
+Task 0 archive not ready
+Task 1 report not ready
+Task 1 archive not ready

@@ -1,0 +1,63 @@
+{
+  "photo": 27,
+  "image_id": "d34f5e0cdace65ee",
+  "publisher_attribution": {
+    "id": "d34f5e0cdace65ee",
+    "landing_url": "https://www.flickr.com/photos/dinnerseries/16038033175",
+    "original_url": "https://c7.staticflickr.com/8/7549/16038033175_7e9ae3339b_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Didriks",
+    "author_url": "https://www.flickr.com/people/dinnerseries/",
+    "title": "Tonale Plates",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Didriks",
+    "url": "https://www.flickr.com/photos/dinnerseries",
+    "image": "https://live.staticflickr.com/7418/buddyicons/49889671@N03.jpg?1399643708#49889671@N03"
+  },
+  "current_title": "Tonale Plates",
+  "source_url": "https://www.flickr.com/photos/dinnerseries/16038033175",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 27,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "Didriks",
+      "url": "https://www.flickr.com/photos/dinnerseries",
+      "image": "https://live.staticflickr.com/7418/buddyicons/49889671@N03.jpg?1399643708#49889671@N03"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Didriks",
+      "url": "https://www.flickr.com/photos/dinnerseries",
+      "image": "https://live.staticflickr.com/7418/buddyicons/49889671@N03.jpg?1399643708#49889671@N03"
+    },
+    "meta_description": ""
+  },
+  "creator_override": null,
+  "image_sha256": "63a9f3c2fae569f15d141d192b9856819db4294e5d75cfcb7b3bae53e28a3576",
+  "source_page_sha256": "d3ffe2c2d79aa9941fa02e10a226bd6ac01cc76d5f0800d63710b1f4a8732e1e",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "a4bc7d402fb5731258244a0599db8714e2614e01c7653cf4c6d834ac9ee7af7d",
+  "source_job": 7626978,
+  "scope_note": "Upper plate retained positive-only; whole table, cup, wooden bowl and clipped apple retained with complete class scopes. Stacked Platter/Saucer representation, serving-utensil Spoon labels and generic drinking Tableware are held without changing prior human outcomes.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

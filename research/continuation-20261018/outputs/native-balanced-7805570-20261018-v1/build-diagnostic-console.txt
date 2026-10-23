@@ -1,0 +1,8 @@
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-balanced-7805570-20261018-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-balanced-7805570-20261018-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-balanced-7805570-20261018-v1\build\Release\frametrail_preview_ui.lib
+  rf_desktop_tests.cpp
+  frametrail_rf_desktop_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-balanced-7805570-20261018-v1\build\Release\frametrail_rf_desktop_tests.exe

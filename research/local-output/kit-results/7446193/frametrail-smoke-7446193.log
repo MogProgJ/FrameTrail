@@ -1,0 +1,242 @@
+GpuFreq=control_disabled
+Training GPU: NVIDIA A100 80GB PCIe
+CUDA runtime: 12.8
+GPU tensor check: 8.0
+GpuFreq=control_disabled
+{
+  "schema": 1,
+  "mode": "smoke",
+  "dataset_lock_sha256": "9c71e1b1d749f1d2c97604fc37aa363c51831e3838e5c7254bd26ba1016cb0b2",
+  "parent_weights_sha256": "4663086e1b8edbc4202a9ec589b03195ed149ef8aa8beeb4b503e0e35ff1731a",
+  "config": {
+    "schema": 1,
+    "family": "yolov8s-openimages",
+    "epochs": 1,
+    "imgsz": 320,
+    "batch": 2,
+    "device": "0",
+    "seed": 17,
+    "lr0": 0.0001,
+    "freeze": 10,
+    "patience": 5
+  },
+  "images": {
+    "train": 70,
+    "val": 11,
+    "test": 15
+  },
+  "raw_labels": 601,
+  "canonical_categories": 597,
+  "limits": "Smoke runs prove mechanics only. A trained artifact needs independent evaluation before adoption."
+}
+GpuFreq=control_disabled
+WARNING ⚠️ user config directory '/pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/.deps/training-settings/Ultralytics' is not writable, using '/tmp/Ultralytics'. Set YOLO_CONFIG_DIR to override.
+Creating new Ultralytics Settings v0.0.6 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/tmp/Ultralytics/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+New https://pypi.org/project/ultralytics/8.4.172 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.3.228 🚀 Python-3.12.11 torch-2.8.0+cu128 CUDA:0 (NVIDIA A100 80GB PCIe, 81153MiB)
+[34m[1mengine/trainer: [0magnostic_nms=False, amp=False, augment=False, auto_augment=randaugment, batch=2, bgr=0.0, box=7.5, cache=False, cfg=None, classes=None, close_mosaic=10, cls=0.5, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=/pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/training-0.13/general-smoke-bundle/data.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=1, erasing=0.4, exist_ok=True, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=10, half=False, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=320, int8=False, iou=0.7, keras=False, kobj=1.0, line_width=None, lr0=0.0001, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=/pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/.deps/world-export/weights/yolov8s-oiv7.pt, momentum=0.937, mosaic=1.0, multi_scale=False, name=cluster-smoke-7446193, nbs=64, nms=False, opset=None, optimize=False, optimizer=AdamW, overlap_mask=True, patience=5, perspective=0.0, plots=False, pose=12.0, pretrained=True, profile=False, project=/pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output, rect=False, resume=False, retina_masks=False, save=True, save_conf=False, save_crop=False, save_dir=/pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/cluster-smoke-7446193, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=17, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=detect, time=None, tracker=botsort.yaml, translate=0.1, val=True, verbose=False, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=0, workspace=None
+[KDownloading https://ultralytics.com/assets/Arial.ttf to '/tmp/Ultralytics/Arial.ttf': 100% ━━━━━━━━━━━━ 755.1KB 42.8MB/s 0.0s[KDownloading https://ultralytics.com/assets/Arial.ttf to '/tmp/Ultralytics/Arial.ttf': 100% ━━━━━━━━━━━━ 755.1KB 42.6MB/s 0.0s
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1       928  ultralytics.nn.modules.conv.Conv             [3, 32, 3, 2]                 
+  1                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]                
+  2                  -1  1     29056  ultralytics.nn.modules.block.C2f             [64, 64, 1, True]             
+  3                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  4                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]           
+  5                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+  6                  -1  2    788480  ultralytics.nn.modules.block.C2f             [256, 256, 2, True]           
+  7                  -1  1   1180672  ultralytics.nn.modules.conv.Conv             [256, 512, 3, 2]              
+  8                  -1  1   1838080  ultralytics.nn.modules.block.C2f             [512, 512, 1, True]           
+  9                  -1  1    656896  ultralytics.nn.modules.block.SPPF            [512, 512, 5]                 
+ 10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 12                  -1  1    591360  ultralytics.nn.modules.block.C2f             [768, 256, 1]                 
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 15                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]                 
+ 16                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+ 17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 18                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]                 
+ 19                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 21                  -1  1   1969152  ultralytics.nn.modules.block.C2f             [768, 512, 1]                 
+ 22        [15, 18, 21]  1   2348635  ultralytics.nn.modules.head.Detect           [601, [128, 256, 512]]        
+YOLOv8s summary: 129 layers, 11,368,187 parameters, 11,368,171 gradients, 29.9 GFLOPs
+
+Transferred 355/355 items from pretrained weights
+Freezing layer 'model.0.conv.weight'
+Freezing layer 'model.0.bn.weight'
+Freezing layer 'model.0.bn.bias'
+Freezing layer 'model.1.conv.weight'
+Freezing layer 'model.1.bn.weight'
+Freezing layer 'model.1.bn.bias'
+Freezing layer 'model.2.cv1.conv.weight'
+Freezing layer 'model.2.cv1.bn.weight'
+Freezing layer 'model.2.cv1.bn.bias'
+Freezing layer 'model.2.cv2.conv.weight'
+Freezing layer 'model.2.cv2.bn.weight'
+Freezing layer 'model.2.cv2.bn.bias'
+Freezing layer 'model.2.m.0.cv1.conv.weight'
+Freezing layer 'model.2.m.0.cv1.bn.weight'
+Freezing layer 'model.2.m.0.cv1.bn.bias'
+Freezing layer 'model.2.m.0.cv2.conv.weight'
+Freezing layer 'model.2.m.0.cv2.bn.weight'
+Freezing layer 'model.2.m.0.cv2.bn.bias'
+Freezing layer 'model.3.conv.weight'
+Freezing layer 'model.3.bn.weight'
+Freezing layer 'model.3.bn.bias'
+Freezing layer 'model.4.cv1.conv.weight'
+Freezing layer 'model.4.cv1.bn.weight'
+Freezing layer 'model.4.cv1.bn.bias'
+Freezing layer 'model.4.cv2.conv.weight'
+Freezing layer 'model.4.cv2.bn.weight'
+Freezing layer 'model.4.cv2.bn.bias'
+Freezing layer 'model.4.m.0.cv1.conv.weight'
+Freezing layer 'model.4.m.0.cv1.bn.weight'
+Freezing layer 'model.4.m.0.cv1.bn.bias'
+Freezing layer 'model.4.m.0.cv2.conv.weight'
+Freezing layer 'model.4.m.0.cv2.bn.weight'
+Freezing layer 'model.4.m.0.cv2.bn.bias'
+Freezing layer 'model.4.m.1.cv1.conv.weight'
+Freezing layer 'model.4.m.1.cv1.bn.weight'
+Freezing layer 'model.4.m.1.cv1.bn.bias'
+Freezing layer 'model.4.m.1.cv2.conv.weight'
+Freezing layer 'model.4.m.1.cv2.bn.weight'
+Freezing layer 'model.4.m.1.cv2.bn.bias'
+Freezing layer 'model.5.conv.weight'
+Freezing layer 'model.5.bn.weight'
+Freezing layer 'model.5.bn.bias'
+Freezing layer 'model.6.cv1.conv.weight'
+Freezing layer 'model.6.cv1.bn.weight'
+Freezing layer 'model.6.cv1.bn.bias'
+Freezing layer 'model.6.cv2.conv.weight'
+Freezing layer 'model.6.cv2.bn.weight'
+Freezing layer 'model.6.cv2.bn.bias'
+Freezing layer 'model.6.m.0.cv1.conv.weight'
+Freezing layer 'model.6.m.0.cv1.bn.weight'
+Freezing layer 'model.6.m.0.cv1.bn.bias'
+Freezing layer 'model.6.m.0.cv2.conv.weight'
+Freezing layer 'model.6.m.0.cv2.bn.weight'
+Freezing layer 'model.6.m.0.cv2.bn.bias'
+Freezing layer 'model.6.m.1.cv1.conv.weight'
+Freezing layer 'model.6.m.1.cv1.bn.weight'
+Freezing layer 'model.6.m.1.cv1.bn.bias'
+Freezing layer 'model.6.m.1.cv2.conv.weight'
+Freezing layer 'model.6.m.1.cv2.bn.weight'
+Freezing layer 'model.6.m.1.cv2.bn.bias'
+Freezing layer 'model.7.conv.weight'
+Freezing layer 'model.7.bn.weight'
+Freezing layer 'model.7.bn.bias'
+Freezing layer 'model.8.cv1.conv.weight'
+Freezing layer 'model.8.cv1.bn.weight'
+Freezing layer 'model.8.cv1.bn.bias'
+Freezing layer 'model.8.cv2.conv.weight'
+Freezing layer 'model.8.cv2.bn.weight'
+Freezing layer 'model.8.cv2.bn.bias'
+Freezing layer 'model.8.m.0.cv1.conv.weight'
+Freezing layer 'model.8.m.0.cv1.bn.weight'
+Freezing layer 'model.8.m.0.cv1.bn.bias'
+Freezing layer 'model.8.m.0.cv2.conv.weight'
+Freezing layer 'model.8.m.0.cv2.bn.weight'
+Freezing layer 'model.8.m.0.cv2.bn.bias'
+Freezing layer 'model.9.cv1.conv.weight'
+Freezing layer 'model.9.cv1.bn.weight'
+Freezing layer 'model.9.cv1.bn.bias'
+Freezing layer 'model.9.cv2.conv.weight'
+Freezing layer 'model.9.cv2.bn.weight'
+Freezing layer 'model.9.cv2.bn.bias'
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mtrain: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 195.5±146.3 MB/s, size: 241.2 KB)
+[K[34m[1mtrain: [0mScanning /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/training-0.13/general-smoke-bundle/train/labels... 1 images, 0 backgrounds, 0 corrupt: 1% ──────────── 1/70 3.0it/s 0.1s<23.3s[K[34m[1mtrain: [0mScanning /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/training-0.13/general-smoke-bundle/train/labels... 70 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 70/70 412.5it/s 0.2s[K[34m[1mtrain: [0mScanning /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/training-0.13/general-smoke-bundle/train/labels... 70 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 70/70 412.4it/s 0.2s
+[34m[1mtrain: [0mNew cache created: /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/training-0.13/general-smoke-bundle/train/labels.cache
+[34m[1mval: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 217.5±103.8 MB/s, size: 285.3 KB)
+[K[34m[1mval: [0mScanning /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/training-0.13/general-smoke-bundle/val/labels... 11 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 11/11 796.3it/s 0.0s[K[34m[1mval: [0mScanning /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/training-0.13/general-smoke-bundle/val/labels... 11 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 11/11 794.7it/s 0.0s
+[34m[1mval: [0mNew cache created: /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/training-0.13/general-smoke-bundle/val/labels.cache
+[34m[1moptimizer:[0m AdamW(lr=0.0001, momentum=0.937) with parameter groups 57 weight(decay=0.0), 64 weight(decay=0.0005), 63 bias(decay=0.0)
+Image sizes 320 train, 320 val
+Using 0 dataloader workers
+Logging results to [1m/pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/cluster-smoke-7446193[0m
+Starting training for 1 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+[K        1/1     0.277G      1.267      5.803        1.4         21        320: 0% ──────────── 0/35  44.2s[K        1/1     0.334G       1.36      4.738      1.527         19        320: 3% ──────────── 1/35 2.6it/s 44.3s<12.9s[K        1/1     0.361G      1.362      4.368      1.505         25        320: 9% ━─────────── 3/35 6.9it/s 44.4s<4.6s[K        1/1     0.361G      1.409      4.214      1.539         10        320: 14% ━╸────────── 5/35 10.8it/s 44.5s<2.8s[K        1/1     0.361G      1.367      4.348       1.49         24        320: 23% ━━╸───────── 8/35 14.0it/s 44.7s<1.9s[K        1/1     0.361G      1.341      4.612      1.463          6        320: 31% ━━━╸──────── 11/35 16.5it/s 44.8s<1.5s[K        1/1     0.361G      1.337       4.66      1.457          3        320: 40% ━━━━╸─────── 14/35 18.1it/s 45.0s<1.2s[K        1/1     0.361G      1.321      4.579      1.453         22        320: 49% ━━━━━╸────── 17/35 19.3it/s 45.1s<0.9s[K        1/1     0.361G      1.339       4.59      1.448         20        320: 57% ━━━━━━╸───── 20/35 19.3it/s 45.2s<0.8s[K        1/1     0.361G      1.307       4.65      1.424         11        320: 66% ━━━━━━━╸──── 23/35 20.8it/s 45.4s<0.6s[K        1/1     0.361G      1.287      4.701      1.412          5        320: 74% ━━━━━━━━╸─── 26/35 21.3it/s 45.5s<0.4s[K        1/1     0.361G      1.278      4.761      1.426         18        320: 83% ━━━━━━━━━╸── 29/35 22.5it/s 45.6s<0.3s[K        1/1     0.361G      1.281      4.802      1.435         16        320: 91% ━━━━━━━━━━╸─ 32/35 22.0it/s 45.8s<0.1s[K        1/1     0.361G      1.272      4.808      1.425         27        320: 100% ━━━━━━━━━━━━ 35/35 1.3s/it 45.8s[K        1/1     0.361G      1.272      4.808      1.425         27        320: 100% ━━━━━━━━━━━━ 35/35 1.3s/it 45.8s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 33% ━━━━──────── 1/3 42.3s/it 12.7s<1:25[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 4.3s/it 12.8s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 4.3s/it 12.8s
+                   all         11         60      0.575      0.762      0.729      0.641
+
+1 epochs completed in 0.019 hours.
+Optimizer stripped from /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/cluster-smoke-7446193/weights/last.pt, 22.9MB
+Optimizer stripped from /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/cluster-smoke-7446193/weights/best.pt, 22.9MB
+
+Validating /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/cluster-smoke-7446193/weights/best.pt...
+Ultralytics 8.3.228 🚀 Python-3.12.11 torch-2.8.0+cu128 CUDA:0 (NVIDIA A100 80GB PCIe, 81153MiB)
+YOLOv8s summary (fused): 72 layers, 11,358,171 parameters, 0 gradients, 29.7 GFLOPs
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 31.0it/s 0.1s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 31.0it/s 0.1s
+                   all         11         60      0.575      0.762      0.729      0.644
+Speed: 0.0ms preprocess, 1.1ms inference, 0.0ms loss, 0.5ms postprocess per image
+{
+  "schema": 1,
+  "mode": "smoke",
+  "dataset_lock_sha256": "9c71e1b1d749f1d2c97604fc37aa363c51831e3838e5c7254bd26ba1016cb0b2",
+  "parent_weights_sha256": "4663086e1b8edbc4202a9ec589b03195ed149ef8aa8beeb4b503e0e35ff1731a",
+  "config": {
+    "schema": 1,
+    "family": "yolov8s-openimages",
+    "epochs": 1,
+    "imgsz": 320,
+    "batch": 2,
+    "device": "0",
+    "seed": 17,
+    "lr0": 0.0001,
+    "freeze": 10,
+    "patience": 5
+  },
+  "images": {
+    "train": 70,
+    "val": 11,
+    "test": 15
+  },
+  "raw_labels": 601,
+  "canonical_categories": 597,
+  "limits": "Smoke runs prove mechanics only. A trained artifact needs independent evaluation before adoption.",
+  "status": "completed",
+  "code_revision": null,
+  "config_sha256": "b3ad5b19a80d46680ee38ba682524068686b1422dc21d1ad3f4ce8d4f87d140d",
+  "source_sha256": {
+    "scripts/train-detector.py": "2970d00162b56ccde5fd18d5a662a63963e33a927d4c817c74f79473b6f2b43b",
+    "scripts/training_data.py": "ec5e6653c959f9fc4192a509a8d3f9b93bad5843ad073c8c810d01dc7452020f"
+  },
+  "environment": {
+    "python": "3.12.11",
+    "platform": "Linux-5.14.0-570.140.1.el9_6.x86_64-x86_64-with-glibc2.34",
+    "torch": "2.8.0+cu128",
+    "ultralytics": "8.3.228",
+    "cuda": "12.8",
+    "packages_sha256": "7bf35881eb6c6980bc7773326cb9d4fde57ad88b54af37b21225a442950ef8f1"
+  },
+  "device": "NVIDIA A100 80GB PCIe",
+  "elapsed_seconds": 106.91026002494618,
+  "checkpoints": {
+    "best.pt": "77723b84f509ed4dba7d78bac60fb4de00250f3b2bd0d5e6e158bc34c68ac37b",
+    "last.pt": "f7f80e66e6bb143bc882baae1c2ff5c6348281151163e6016693a2f417a007e6"
+  },
+  "locked_test_evaluated": false,
+  "approved_for_application": false
+}
+Completed mechanical training check. Results: /pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/cluster-smoke-7446193
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n902
+Job ID: 7446193
+Cluster: uc3
+User/Group: ka_udxvl/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:23
+CPU Efficiency: 0.64% of 00:59:44 core-walltime
+Job Wall-clock time: 00:03:44
+Memory Utilized: 2.06 GB
+Memory Efficiency: 1.65% of 124.51 GB (124.51 GB/node)

@@ -1,0 +1,34 @@
+{
+  "stage": "original-image-boundary-followup-before-predictions",
+  "approved_for_training": false,
+  "model_predictions_seen": false,
+  "scene_comparison_complete": false,
+  "records": [
+    {
+      "id": "0da647ef6a2da927",
+      "disposition": "hold-material-and-scene-boundary",
+      "normalized_xyxy": [],
+      "note": "Four flexible Madame Tussauds promotional pole banners; physical-board boundary and recurring Hollywood view remain held. Do not promote based on quotas."
+    },
+    {
+      "id": "7369a35450ab0266",
+      "disposition": "hold-content-boundary",
+      "normalized_xyxy": [],
+      "note": "Original is a state welcome/tourism name board with portrait; public campaign versus national welcome information boundary unresolved."
+    },
+    {
+      "id": "1006ce66c4f168ce",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.0488,
+          0.1667,
+          0.9844,
+          0.7565
+        ]
+      ],
+      "note": "Original resolves one freestanding illuminated public/political campaign board with party-resolution slogan and illustrated citizens; campaign face distinct from ordinary direction/shop-name sign. Corrected source box to full visible printed face. No other identifiable advertising faces.",
+      "scene_description": "Hoi An political public campaign illustrated citizens boats red flags and town website billboard"
+    }
+  ]
+}

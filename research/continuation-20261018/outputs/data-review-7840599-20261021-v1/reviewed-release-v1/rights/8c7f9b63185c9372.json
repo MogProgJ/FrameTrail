@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "8c7f9b63185c9372",
+  "image_sha256": "4344c0216f24970a2ccaf87ad9b6b3e8dc863c941ae4388be177089453c8e2f6",
+  "source_review": {
+    "image_id": "8c7f9b63185c9372",
+    "image_sha256": "4344c0216f24970a2ccaf87ad9b6b3e8dc863c941ae4388be177089453c8e2f6",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "test",
+    "source_url": "https://www.flickr.com/photos/24236630@N05/8726162286",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/24236630@N05/8726162286",
+      "original_url": "https://farm3.staticflickr.com/7409/8726162286_166cc8992f_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Darren E",
+      "author_url": "https://www.flickr.com/people/24236630@N05/",
+      "title": "Fins Billboard Advertising",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Darren E",
+      "url": "https://www.flickr.com/photos/24236630@N05",
+      "image": "https://live.staticflickr.com/3816/buddyicons/24236630@N05.jpg?1391876772#24236630@N05"
+    },
+    "current_title": "Fins Billboard Advertising",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Darren E",
+          "url": "https://www.flickr.com/photos/24236630@N05",
+          "image": "https://live.staticflickr.com/3816/buddyicons/24236630@N05.jpg?1391876772#24236630@N05"
+        }
+      },
+      "meta_description": "We created a campaign for our client and had it applied to our <a href=\"http://woodlandsadagency.com/marketing-services/outdoor-advertising.html\" rel=\"noreferrer nofollow\">billboard design</a>. This can be seen off of 1960 East"
+    },
+    "identity_group": "flickr-nsid:24236630@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/24236630@N05/8726162286",
+    "html_sha256": "cb3cd3479c540e00cf64ee36f746ae90f08534ac0cde564c69eedc0db7ecb34f",
+    "stored_sha256": "79dffc270c2f1e678543e7927d9e8f28c67e4c7c89824fb8f49938ea77d2a33e",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\8c7f9b63185c9372.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\8c7f9b63185c9372.json",
+    "sha256": "2d338533c20b2b693e289cc6c417c182cbb2f669193f73a184cc1157965c33c7"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\8c7f9b63185c9372.json",
+    "sha256": "4571792b54b4c3ac7252bcb8193f2b92938feb00d01a8b0e6719b2237a0bdec9"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/24236630@N05/8726162286",
+    "original_url": "https://farm3.staticflickr.com/7409/8726162286_166cc8992f_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Darren E",
+    "author_url": "https://www.flickr.com/people/24236630@N05/",
+    "title": "Fins Billboard Advertising",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

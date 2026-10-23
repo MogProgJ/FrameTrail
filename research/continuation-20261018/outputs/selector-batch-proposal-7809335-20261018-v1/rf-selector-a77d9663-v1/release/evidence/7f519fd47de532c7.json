@@ -1,0 +1,68 @@
+{
+  "image_id": "7f519fd47de532c7",
+  "image_sha256": "049af1e161d2de149f00af53a3b5ebeaf34f118fb65f5a8898e5fac94e439fb2",
+  "publisher_attribution": {
+    "id": "7f519fd47de532c7",
+    "landing_url": "https://www.flickr.com/photos/navcent/11959202025/",
+    "original_url": "https://farm8.staticflickr.com/5523/11959202025_b85999b4f8_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "U.S. Naval Forces Central Command/U.S. Fifth Fleet",
+    "author_url": "https://www.flickr.com/people/navcent/",
+    "title": "USS HARRY S. TRUMAN (CVN 75)_140114-N-ZG705-210",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "U.S. Naval Forces Central Command/U.S. Fifth Fleet",
+    "url": "https://www.flickr.com/photos/navcent",
+    "image": "https://live.staticflickr.com/7451/buddyicons/48776503@N05.jpg?1392099408#48776503@N05"
+  },
+  "current_title": "USS HARRY S. TRUMAN (CVN 75)_140114-N-ZG705-210",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "U.S. Naval Forces Central Command/U.S. Fifth Fleet",
+        "url": "https://www.flickr.com/photos/navcent",
+        "image": "https://live.staticflickr.com/7451/buddyicons/48776503@N05.jpg?1392099408#48776503@N05"
+      }
+    },
+    "meta_description": "ARABIAN GULF (Jan. 14, 2014) An E2-C Hawkeye, attached to the French aircraft carrier FS Charles de Gaulle (R 91), lands on the flight deck of the aircraft carrier USS Harry S. Truman (CVN 75) during carrier qualification integration. Harry S. Truman, flagship for the Harry S. Truman Carrier Strike Group, is conducting operations with units assigned to French Task Force 473 to enhance levels of cooperation and interoperability, enhance mutual maritime capabilities and promote long-term regional stability in the U.S. 5th Fleet area of responsibility (U.S. Navy photo by Mass Communication Specialist 3rd Class Karl Anderson/Released)"
+  },
+  "specific_notice_resolution": {
+    "n": 294,
+    "decision": "retain-official-agency-and-photographer-credit",
+    "basis": "Current/publisher creator is U.S. Naval Forces Central Command/U.S. Fifth Fleet; caption identifies released U.S. Navy employee photograph by Karl Anderson. Agency and employee photographic attribution retained together with photo-specific CC evidence; no public-distribution approval."
+  },
+  "source_url": "https://www.flickr.com/photos/navcent/11959202025/",
+  "canonical_page_url": "https://www.flickr.com/photos/navcent/11959202025",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "38abac9436edb76789dd7f26683b6c2e69fe038db79842628675a7fdca85cdf2",
+  "source_gzip_sha256": "7c4f16cf8ddb2f4e119142f688020c3371c775ec670f7543bfaf9245e25d5a0c",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-294",
+  "visual_proof_sha256": "e34150e1c41a2a8c41b249660dc2fa01d6397b4ecf193efd91d6738621a34750",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

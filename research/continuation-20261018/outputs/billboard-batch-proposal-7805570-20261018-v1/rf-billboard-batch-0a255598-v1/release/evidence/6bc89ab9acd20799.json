@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "6bc89ab9acd20799",
+  "image_sha256": "8a6ca93637604dbc92390e034678938cbdf20741a13a87c1064b18673ae1d455",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "6bc89ab9acd20799",
+    "image_sha256": "8a6ca93637604dbc92390e034678938cbdf20741a13a87c1064b18673ae1d455",
+    "selected_category": "dog",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/dogulove/5450213466",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/dogulove/5450213466",
+      "original_url": "https://c2.staticflickr.com/6/5256/5450213466_780a064bf4_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "dogulove",
+      "author_url": "https://www.flickr.com/people/dogulove/",
+      "title": "she's growling for the ball",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "dogulove",
+      "url": "https://www.flickr.com/photos/dogulove",
+      "image": "https://live.staticflickr.com/3461/buddyicons/24175099@N06.jpg?1267258201#24175099@N06"
+    },
+    "current_title": "she's growling for the ball",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "dogulove",
+          "url": "https://www.flickr.com/photos/dogulove",
+          "image": "https://live.staticflickr.com/3461/buddyicons/24175099@N06.jpg?1267258201#24175099@N06"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:24175099@N06",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/dogulove/5450213466",
+    "html_sha256": "47e77f9785678998525e219e86f97921772246606db8655ec3cb73127c64660f",
+    "stored_sha256": "d54fdb4832e5a9356b80c0dc23c19c7375f9ef1b9a78181ecc799226c1401601",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\6bc89ab9acd20799.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/6bc89ab9acd20799.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

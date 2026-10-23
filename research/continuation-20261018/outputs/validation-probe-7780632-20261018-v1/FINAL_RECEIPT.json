@@ -1,0 +1,21 @@
+{
+  "status": "complete-sealed-validation-diagnostic",
+  "job": "7780632",
+  "input_files_rehashed": 28,
+  "input_changes": 0,
+  "photos": 15,
+  "full_model_forwards": 30,
+  "known_misses": 28,
+  "new_class_misses": 24,
+  "new_class_targets_with_distinct_covering_decoder_queries": 24,
+  "new_class_targets_below_required_confidence_on_covering_queries": 24,
+  "cpu_kit_decoded_parity_passed": true,
+  "raw_stage_checks": 168,
+  "gallery_checks_passed": true,
+  "optimizer_updates": 0,
+  "heldout_used": false,
+  "model_export": false,
+  "application_adoption": false,
+  "numerical_training_gradient_check": "prepared-not-executed",
+  "next_best_step": "Training-only classification-loss and row-gradient diagnostic without optimizer updates, before proposing more GPU optimization."
+}

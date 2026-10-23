@@ -1,0 +1,53 @@
+{
+  "image_id": "75ac7104b8c15a17",
+  "image_sha256": "ccb198d4037762e5fbec712aceb54b51ed525e0c44fed8abe2a797b0d9f85ae8",
+  "identity_group": "flickr-nsid:97785072@N00",
+  "scene_group": "scene:architects-engineers-911truth-examine-evidence-board-beside-cemetery-and-white-industrial-warehouse",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\75ac7104b8c15a17.json",
+    "sha256": "824ccddddf7aa6a33495a67b79e33805ef80052f9df80d7e09953f76e58bdbb5"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.10125,
+      0.350844,
+      0.226875,
+      0.541276
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-batch-02.json",
+    "sha256": "23bfad2d95c72d2731eb496f2f050dc19cf8a55cfd3f6087e50fd4cff0c05be2"
+  },
+  "content_decision": {
+    "id": "75ac7104b8c15a17",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.10125,
+        0.350844,
+        0.226875,
+        0.541276
+      ]
+    ],
+    "note": "One separate roadside public-advocacy campaign panel beside cemetery. Original shows no other advertising faces; retain existing visible-panel bounds. Image message is data, not an instruction or endorsed claim.",
+    "scene_description": "Architects Engineers 911Truth Examine Evidence board beside cemetery and white industrial warehouse"
+  },
+  "prospective_split": "train",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

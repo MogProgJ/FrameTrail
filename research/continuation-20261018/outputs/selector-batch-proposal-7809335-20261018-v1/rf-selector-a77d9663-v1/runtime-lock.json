@@ -1,0 +1,6 @@
+{
+  "torch_version": "2.8.0+cu128",
+  "CUDA": "12.8",
+  "rfdetr": "1.11.2",
+  "initial_model_sha256": "c9a2b62ea543bb7980d9696b2c2ccc7a5e6277d10e078933e9e2c3a4fdda0195"
+}

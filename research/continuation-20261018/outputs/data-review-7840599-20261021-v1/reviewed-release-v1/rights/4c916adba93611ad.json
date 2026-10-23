@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "4c916adba93611ad",
+  "image_sha256": "6187401d7104202cc547747e6c7b375386849e0e85d40224aa77123abe493f0f",
+  "source_review": {
+    "image_id": "4c916adba93611ad",
+    "image_sha256": "6187401d7104202cc547747e6c7b375386849e0e85d40224aa77123abe493f0f",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/joshmadison/479182572",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/joshmadison/479182572",
+      "original_url": "https://c6.staticflickr.com/1/173/479182572_4595c648a5_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Josh Madison",
+      "author_url": "https://www.flickr.com/people/joshmadison/",
+      "title": "Chick-fil-a ad",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Josh Madison",
+      "url": "https://www.flickr.com/photos/joshmadison",
+      "image": "https://live.staticflickr.com/7417/buddyicons/25465562@N00.jpg?1384746932#25465562@N00"
+    },
+    "current_title": "Chick-fil-a ad",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Josh Madison",
+          "url": "https://www.flickr.com/photos/joshmadison",
+          "image": "https://live.staticflickr.com/7417/buddyicons/25465562@N00.jpg?1384746932#25465562@N00"
+        }
+      },
+      "meta_description": "\"Chiken 4 brekfust - weer ded serius\"\n\tI love who's putting it up."
+    },
+    "identity_group": "flickr-nsid:25465562@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/joshmadison/479182572",
+    "html_sha256": "1ee7026dda3029bebc6841292d948a9850dc9c32863f0f936105c58d46beb252",
+    "stored_sha256": "a830ffed5ca712098573831e7f3e09e24ea211a83267d3ed9ba1f648cc1dd3d9",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\4c916adba93611ad.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\4c916adba93611ad.json",
+    "sha256": "e7db771c1965a29e878d9c16991f5d1e2a8e88a0ce8f70440a026cfc314d78a6"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\4c916adba93611ad.json",
+    "sha256": "765b3259d89f75bc0ab1afe140526d01d5f6eb33964b427dcd550eb3210ae83c"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/joshmadison/479182572",
+    "original_url": "https://c6.staticflickr.com/1/173/479182572_4595c648a5_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Josh Madison",
+    "author_url": "https://www.flickr.com/people/joshmadison/",
+    "title": "Chick-fil-a ad",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

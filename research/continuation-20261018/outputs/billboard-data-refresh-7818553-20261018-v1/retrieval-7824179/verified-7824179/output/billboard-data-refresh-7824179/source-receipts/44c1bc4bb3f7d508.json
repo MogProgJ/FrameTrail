@@ -1,0 +1,26 @@
+{
+  "image_id": "44c1bc4bb3f7d508",
+  "source_url": "https://www.flickr.com/photos/hitormiss/59816080",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/hitormiss/59816080",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/44c1bc4bb3f7d508.html.gz",
+  "html_bytes": 513957,
+  "html_sha256": "27bf5fbf7687bc38c6a1e868dd43f6e14fcb6bc455580b2cf1e3f3d6e9af1b0e",
+  "stored_sha256": "5464c05f21445a6ea9c2ebe9bc1fbdf06dfe792734db3cf14076ecac7691e8ab"
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "8837b57f8eeaedfb",
+  "image_sha256": "bf415fe5ff1b27d321f565d3f1a591588504a1898389c25df127b5560898b57e",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "8837b57f8eeaedfb",
+    "image_sha256": "bf415fe5ff1b27d321f565d3f1a591588504a1898389c25df127b5560898b57e",
+    "selected_category": "kettle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/gmdeo/308664470",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/gmdeo/308664470",
+      "original_url": "https://c4.staticflickr.com/1/118/308664470_2df0c2ffdb_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Gustavo Montes de Oca",
+      "author_url": "https://www.flickr.com/people/gmdeo/",
+      "title": "gold kettle back in bomb hole",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Gustavo Montes de Oca",
+      "url": "https://www.flickr.com/photos/gmdeo",
+      "image": "https://live.staticflickr.com/123/buddyicons/28357398@N00.jpg?1254956961#28357398@N00"
+    },
+    "current_title": "gold kettle back in bomb hole",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Gustavo Montes de Oca",
+          "url": "https://www.flickr.com/photos/gmdeo",
+          "image": "https://live.staticflickr.com/123/buddyicons/28357398@N00.jpg?1254956961#28357398@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:28357398@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/gmdeo/308664470",
+    "html_sha256": "88651ac31a139de72293cca839d88d6de6fc26fd3419839a8563d5f68f8cc9b6",
+    "stored_sha256": "7927b8e36c6c891ce5120559888893f56a02b998dfe8a31bd523604755d9e940",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\8837b57f8eeaedfb.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/8837b57f8eeaedfb.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

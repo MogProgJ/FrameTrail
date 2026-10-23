@@ -1,0 +1,80 @@
+{
+  "image_id": "562d7492978db1be",
+  "image_sha256": "71a9eee3cfa31986ac1364d4d57e323d20a106d247d20665c381abe2fe2ba7f5",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "562d7492978db1be",
+    "image_sha256": "71a9eee3cfa31986ac1364d4d57e323d20a106d247d20665c381abe2fe2ba7f5",
+    "selected_category": "washing machine",
+    "selected_domain": "contrast",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/calliope/5953131",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/calliope/5953131",
+      "original_url": "https://c7.staticflickr.com/1/5/5953131_44fbbe883c_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "liz west",
+      "author_url": "https://www.flickr.com/people/calliope/",
+      "title": "laundromat 1",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "liz west",
+      "url": "https://www.flickr.com/photos/calliope",
+      "image": "https://live.staticflickr.com/3813/buddyicons/53133240@N00.jpg?1369580169#53133240@N00"
+    },
+    "current_title": "laundromat 1",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "liz west",
+          "url": "https://www.flickr.com/photos/calliope",
+          "image": "https://live.staticflickr.com/3813/buddyicons/53133240@N00.jpg?1369580169#53133240@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:53133240@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/calliope/5953131",
+    "html_sha256": "a5c48837fd014a6a46c616aef12c2cab14c3fae2ea62bc69e52a8e19c04a2ac9",
+    "stored_sha256": "dde7e80eee9a154ee08319c764af4ab8f81f29a143ddd1529a2cf9c96c24449e",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\562d7492978db1be.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\562d7492978db1be.html.gz",
+    "sha256": "dde7e80eee9a154ee08319c764af4ab8f81f29a143ddd1529a2cf9c96c24449e"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

@@ -1,0 +1,80 @@
+{
+  "image_id": "46330787365e39e3",
+  "image_sha256": "44af63836819c1ea50fb6a2908e44998a53e0ffef1d99079529cee3943b2e36d",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "46330787365e39e3",
+    "image_sha256": "44af63836819c1ea50fb6a2908e44998a53e0ffef1d99079529cee3943b2e36d",
+    "selected_category": "traffic sign",
+    "selected_domain": "contrast",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/new_and_used_tires/6549496903",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/new_and_used_tires/6549496903",
+      "original_url": "https://farm4.staticflickr.com/7152/6549496903_b549b7dfcb_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "The Tire Zoo",
+      "author_url": "https://www.flickr.com/people/new_and_used_tires/",
+      "title": "No Trucks Allowed Traffic Sign",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "TireZoo",
+      "url": "https://www.flickr.com/photos/new_and_used_tires",
+      "image": "https://live.staticflickr.com/7662/buddyicons/48722259@N02.jpg?1464189450#48722259@N02"
+    },
+    "current_title": "No Trucks Allowed Traffic Sign",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "TireZoo",
+          "url": "https://www.flickr.com/photos/new_and_used_tires",
+          "image": "https://live.staticflickr.com/7662/buddyicons/48722259@N02.jpg?1464189450#48722259@N02"
+        }
+      },
+      "meta_description": "We blog about tires, safety, travel tips and games, family road trips, money saving, and more at <a href=\"http://tirezoo.com\" rel=\"noreferrer nofollow\">tirezoo.com</a> Stop in and see us in Anoka, MN or Bloomington, MN or check-in on Twitter @tirezoo, or Facebook. Safe travels!"
+    },
+    "identity_group": "flickr-nsid:48722259@N02",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/new_and_used_tires/6549496903",
+    "html_sha256": "c07c4f8037f93dac330dea0e41a826046ac4bbd6cd8e8c3e78cae60cdba48449",
+    "stored_sha256": "7f1017543df4ccd948f195faabc16bdd355799ec40f432590d01861a689a9d0c",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\46330787365e39e3.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\46330787365e39e3.html.gz",
+    "sha256": "7f1017543df4ccd948f195faabc16bdd355799ec40f432590d01861a689a9d0c"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

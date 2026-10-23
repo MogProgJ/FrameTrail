@@ -1,0 +1,8 @@
+"""Add a fixed training-only weighting comparison before any probe validation."""
+import json
+from pathlib import Path
+HERE=Path(__file__).resolve().parent
+assert not (HERE/'local-probes').exists(),'Declare the comparison before fitting or validating probes'
+plan=dict(status='declared-before-any-local-probe-fit-or-validation',base_plan='LOCAL_EXPERIMENT_PLAN.json',local_trials=8,design='2negative-weighting schemes x4predeclared ridge strengths0.1,1,10,100',schemes=['uniform all300negative queries per explicitly absent photo','50%negative mass uniform plus50%on the top20negative queries per photo, ranked by mean classifier row of ALL four rejected last states'],negative_mass=3,positive_mass=1,hard_mining_sources='All four last.pt classifier rows, equal mean; no teacher selected by validation ranking. Query ranking uses only35explicitly absent TRAIN photos.',GT_and_scope_changes=False,new_data=False,new_thresholds=False,regularizer_and_positive_geometry_rule='Unchanged from base plan',selection='Fit all8models before evaluating any probe validation outcome. Same135development photos, both-baseline per-class retention/FP and530unscored cap, strict ranking improvement, stable trial-index tie break, baseline retained for ties. Validation never enters the training objective.',new_GPU_jobs=0,model_promoted=False,limits='Adds8development comparisons; no independent generalization claim. Rejected source states are used only to rank already-absent training queries, not adopted.')
+with (HERE/'HARD_NEGATIVE_ADDENDUM.json').open('x',encoding='utf-8') as f:json.dump(plan,f,indent=2)
+print(json.dumps(plan,indent=2))

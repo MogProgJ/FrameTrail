@@ -1,0 +1,71 @@
+{
+  "image_id": "35c36bd6f7565635",
+  "image_sha256": "4c8ed1637125d8e7bd62e9b8ffd84bba2c9d92b3a09fe0edf6c3047141f519c0",
+  "publisher_attribution": {
+    "id": "35c36bd6f7565635",
+    "landing_url": "https://www.flickr.com/photos/rileyroxx/127381840",
+    "original_url": "https://farm6.staticflickr.com/50/127381840_c2ee64d09d_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Richard Riley",
+    "author_url": "https://www.flickr.com/people/rileyroxx/",
+    "title": "Lianne's Mum's Cat",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Richard Riley",
+    "url": "https://www.flickr.com/photos/rileyroxx",
+    "image": "https://live.staticflickr.com/2829/buddyicons/41216460@N00.jpg?1379962412#41216460@N00"
+  },
+  "current_title": "Lianne's Mum's Cat",
+  "caption_and_notices": {
+    "image_id": "35c36bd6f7565635",
+    "identity_group": "flickr-nsid:41216460@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "Richard Riley",
+      "url": "https://www.flickr.com/photos/rileyroxx",
+      "image": "https://live.staticflickr.com/2829/buddyicons/41216460@N00.jpg?1379962412#41216460@N00"
+    },
+    "current_title": "Lianne's Mum's Cat",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Richard Riley",
+        "url": "https://www.flickr.com/photos/rileyroxx",
+        "image": "https://live.staticflickr.com/2829/buddyicons/41216460@N00.jpg?1379962412#41216460@N00"
+      }
+    },
+    "meta_description": "This cat is cleaning itself, awww cute..."
+  },
+  "source_url": "https://www.flickr.com/photos/rileyroxx/127381840",
+  "canonical_page_url": "https://www.flickr.com/photos/rileyroxx/127381840",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "f99569aa491e4ac3ce65523f1f1a7b1f71b261ccc99685da9b1ac64fb45dc8f3",
+  "source_gzip_sha256": "0ccfb8f6f5d2b3e22a3c3399c0470bee472bcd4c1f35b78b4f659dfbda7d9cef",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false
+}

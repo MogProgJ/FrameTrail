@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "67a0f882425fcbd0",
+  "image_sha256": "f24ade288f997d05c52f2c00bbaeffb84fa62b0ef708757da709e24a07ec0bfc",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "67a0f882425fcbd0",
+    "image_sha256": "f24ade288f997d05c52f2c00bbaeffb84fa62b0ef708757da709e24a07ec0bfc",
+    "selected_category": "traffic sign",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/teagrrl/1627568",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/teagrrl/1627568",
+      "original_url": "https://farm1.staticflickr.com/2/1627568_253e565b01_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "tracy ducasse",
+      "author_url": "https://www.flickr.com/people/teagrrl/",
+      "title": "surreal",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "tracy ducasse",
+      "url": "https://www.flickr.com/photos/teagrrl",
+      "image": "https://live.staticflickr.com/3681/buddyicons/59089068@N00.jpg?1397831122#59089068@N00"
+    },
+    "current_title": "surreal",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "tracy ducasse",
+          "url": "https://www.flickr.com/photos/teagrrl",
+          "image": "https://live.staticflickr.com/3681/buddyicons/59089068@N00.jpg?1397831122#59089068@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:59089068@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/teagrrl/1627568",
+    "html_sha256": "f896aa9d5ca230f0f4d6957c34813575bd865841c1624c8e0b48e482e28890f9",
+    "stored_sha256": "80cb0c6a64e58cc6bdb6bc90ea70c8d16b9c2122b002550d7dc8501f31830126",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\67a0f882425fcbd0.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/67a0f882425fcbd0.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,64 @@
+{
+  "image_id": "aa2e11c2f95b2dec",
+  "image_sha256": "5ea6384749466e9ab98a65175bbdf65fcc4922c08c9a8d999fb33652541c0ec5",
+  "publisher_attribution": {
+    "id": "aa2e11c2f95b2dec",
+    "landing_url": "https://www.flickr.com/photos/grego1402/11537507364",
+    "original_url": "https://c5.staticflickr.com/3/2808/11537507364_4c2ca4482d_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "grego1402",
+    "author_url": "https://www.flickr.com/people/grego1402/",
+    "title": "C'est l'heure du digestif #Vodka #Pologne ... Cul sec !",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "grego1402",
+    "url": "https://www.flickr.com/photos/grego1402",
+    "image": "https://live.staticflickr.com/7155/buddyicons/53908455@N00.jpg?1397804648#53908455@N00"
+  },
+  "current_title": "C'est l'heure du digestif #Vodka #Pologne ... Cul sec !",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "grego1402",
+        "url": "https://www.flickr.com/photos/grego1402",
+        "image": "https://live.staticflickr.com/7155/buddyicons/53908455@N00.jpg?1397804648#53908455@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/grego1402/11537507364",
+  "canonical_page_url": "https://www.flickr.com/photos/grego1402/11537507364",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "0c5e10399eefa0ddde3aabc02ab8283a8dd9b7e32e47114d1ca9ccf6e36ef4c5",
+  "source_gzip_sha256": "76789b9393f7cff4e010a36a1d4e34f254b8e0488a81877d7decb498595e12a9",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-062",
+  "visual_proof_sha256": "3d8a18d73bd342f6c42c856fab5e4ff1a2ae98caadd9fd0c3cba922622a8eb67",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

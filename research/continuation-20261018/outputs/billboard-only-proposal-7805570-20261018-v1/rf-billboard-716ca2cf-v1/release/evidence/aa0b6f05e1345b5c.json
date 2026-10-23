@@ -1,0 +1,64 @@
+{
+  "image_id": "aa0b6f05e1345b5c",
+  "image_sha256": "08682459ab2bf8bf2ff740bd83e5857b32e397d9d6ee232bb35366994e246d49",
+  "publisher_attribution": {
+    "id": "aa0b6f05e1345b5c",
+    "landing_url": "https://www.flickr.com/photos/hugo90/3527002569",
+    "original_url": "https://c5.staticflickr.com/3/2247/3527002569_ddfd8be54d_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "JOHN LLOYD",
+    "author_url": "https://www.flickr.com/people/hugo90/",
+    "title": "1950 Ford",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "JOHN LLOYD",
+    "url": "https://www.flickr.com/photos/hugo90",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/32109282@N00.jpg?1569996530#32109282@N00"
+  },
+  "current_title": "1950 Ford",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "JOHN LLOYD",
+        "url": "https://www.flickr.com/photos/hugo90",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/32109282@N00.jpg?1569996530#32109282@N00"
+      }
+    },
+    "meta_description": "Pioneer Auto Show, Murdo, South Dakota.  Several hundred vehicles in un-restored condition, displayed in dirt floor barns, and much interesting but unidentified machinery."
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/hugo90/3527002569",
+  "canonical_page_url": "https://www.flickr.com/photos/hugo90/3527002569",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "77ab661d822a0f9b98f3a21a058ffeaf8961cf8c67652e60a24f52439285f4c9",
+  "source_gzip_sha256": "9c4ccd63871d03dc5b0a735645f4a68191701177f114fd7d24429982b0e367ae",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-101",
+  "visual_proof_sha256": "2d490d3745d2af5a99ba56b3dc724ab34beb51e50bac8b4ef22570121afbfa6e",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

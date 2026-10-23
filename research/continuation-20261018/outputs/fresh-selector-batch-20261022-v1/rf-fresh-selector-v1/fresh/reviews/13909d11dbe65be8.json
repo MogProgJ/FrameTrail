@@ -1,0 +1,53 @@
+{
+  "image_id": "13909d11dbe65be8",
+  "image_sha256": "7727d6048435db5febb5ff1f5e5da39b53c3753b5300ccce575d9adce497f7e1",
+  "identity_group": "flickr-nsid:42121221@N07",
+  "scene_group": "scene:budapest-ferenciek-tere-bus-display-in-front-of-unicredit-4percent-deposit-campaign",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\13909d11dbe65be8.json",
+    "sha256": "493321a0f2b25acf42f128d6d30de408a233e15599cb6ca8c28e0f480db69e7c"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.5275,
+      0.015009,
+      0.999375,
+      0.958724
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-batch-03.json",
+    "sha256": "58af524cfcecda9e43eb6ea1a60e46003058442785698a377adf5454828158b3"
+  },
+  "content_decision": {
+    "id": "13909d11dbe65be8",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.5275,
+        0.015009,
+        0.999375,
+        0.958724
+      ]
+    ],
+    "note": "One large UniCredit bank product-rate campaign poster behind transit timetable; timetable and building lettering excluded. Visible partly occluded/truncated campaign bounds verified.",
+    "scene_description": "Budapest Ferenciek tere bus display in front of UniCredit 4percent deposit campaign"
+  },
+  "prospective_split": "train",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

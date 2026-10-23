@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "01ea455c3ebbf6ca",
+  "image_sha256": "17e8847e1145d9b41fc3b1d049b874d05f857e382b30a2f0a69bc93a5f22f051",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "01ea455c3ebbf6ca",
+    "image_sha256": "17e8847e1145d9b41fc3b1d049b874d05f857e382b30a2f0a69bc93a5f22f051",
+    "selected_category": "towel",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/douglaspperkins/2395994664",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/douglaspperkins/2395994664",
+      "original_url": "https://c3.staticflickr.com/3/2233/2395994664_d4871e6267_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Douglas Perkins",
+      "author_url": "https://www.flickr.com/people/douglaspperkins/",
+      "title": "Capsule hotel",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Douglas Perkins",
+      "url": "https://www.flickr.com/photos/douglaspperkins",
+      "image": "https://live.staticflickr.com/75/buddyicons/13595158@N00.jpg?1153707158#13595158@N00"
+    },
+    "current_title": "Capsule hotel",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Douglas Perkins",
+          "url": "https://www.flickr.com/photos/douglaspperkins",
+          "image": "https://live.staticflickr.com/75/buddyicons/13595158@N00.jpg?1153707158#13595158@N00"
+        }
+      },
+      "meta_description": "\u30ab\u30d7\u30bb\u30eb\u30db\u30c6\u30eb\u3001\u6771\u4eac\u3002"
+    },
+    "identity_group": "flickr-nsid:13595158@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/douglaspperkins/2395994664",
+    "html_sha256": "2f77bb14adbe2e032b6827e5fce9d3a687caa2b07eed295f338b197bc784a409",
+    "stored_sha256": "3957f2113e6ee860a2507525c36d1dc9a0347ea41daab6373ac09a5cdc92328d",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\01ea455c3ebbf6ca.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/01ea455c3ebbf6ca.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

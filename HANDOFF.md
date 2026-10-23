@@ -1,3 +1,9 @@
+# Latest handoff — 24 October 2026
+
+Read [PROJECT_PROGRESS.md](PROJECT_PROGRESS.md) and [CURRENT_HANDOFF.md](CURRENT_HANDOFF.md) first. The code in the main tree now includes the latest single-window desktop and Quick Guide continuation. Full findings and original versioned handoffs are archived under [research/](research/README.md). The sections below are preserved historical context and do not supersede the latest handoff.
+
+---
+
 # FrameTrail continuation handoff
 
 Updated: 8 October 2026 (Europe/Berlin). Read this first when continuing in a new chat. This records observed results and unresolved work; repository code and any newer user-provided logs take precedence.

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "3dbc9f2537db454e",
+  "image_sha256": "5da0ff2689a836bb485ad58e71058c8e05fb28dddec8ac93aa2f444afa8ee4a3",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "3dbc9f2537db454e",
+    "image_sha256": "5da0ff2689a836bb485ad58e71058c8e05fb28dddec8ac93aa2f444afa8ee4a3",
+    "selected_category": "washing machine",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/tregde/15786785075",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/tregde/15786785075",
+      "original_url": "https://c7.staticflickr.com/8/7482/15786785075_fdcfa9c830_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Tregde Ferie",
+      "author_url": "https://www.flickr.com/people/tregde/",
+      "title": "Bad leilighet B4",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Tregde Ferie",
+      "url": "https://www.flickr.com/photos/tregde",
+      "image": "https://live.staticflickr.com/7448/buddyicons/36294022@N07.jpg?1383126220#36294022@N07"
+    },
+    "current_title": "Bad leilighet B4",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Tregde Ferie",
+          "url": "https://www.flickr.com/photos/tregde",
+          "image": "https://live.staticflickr.com/7448/buddyicons/36294022@N07.jpg?1383126220#36294022@N07"
+        }
+      },
+      "meta_description": "Apartment with seaview, 2 bed rooms, max 6 persons.  "
+    },
+    "identity_group": "flickr-nsid:36294022@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/tregde/15786785075",
+    "html_sha256": "f28728f1e3280746b444938676be1f52cc2ef571d8c39817bfee878bb1c04de7",
+    "stored_sha256": "b1e5154258feab663076e636dd76426ae7c4548de7577741b1b7e5b9e82e0797",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\3dbc9f2537db454e.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/3dbc9f2537db454e.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,29 @@
+{
+  "ready_for_package_preparation": false,
+  "errors": [
+    "fresh_train positive shortfall: 0/30",
+    "fresh_train absent shortfall: 0/30",
+    "fresh_train positive scene shortfall: 0/20",
+    "fresh_train absent scene shortfall: 0/20",
+    "fresh_validation positive shortfall: 0/12",
+    "fresh_validation absent shortfall: 0/20",
+    "fresh_validation positive scene shortfall: 0/12",
+    "fresh_validation absent scene shortfall: 0/20",
+    "fresh_test positive shortfall: 0/12",
+    "fresh_test absent shortfall: 0/20",
+    "fresh_test positive scene shortfall: 0/12",
+    "fresh_test absent scene shortfall: 0/20",
+    "TRAIN absent-family shortfall: shop-business-lettering",
+    "TRAIN absent-family shortfall: traffic-information-signs",
+    "TRAIN absent-family shortfall: indoor-frames-screens-boards",
+    "TRAIN absent-family shortfall: household-laundry"
+  ],
+  "counts": {
+    "fresh_train": {},
+    "fresh_validation": {},
+    "fresh_test": {}
+  },
+  "train_absent_families": {},
+  "eligible_records": [],
+  "scope": "Planning screen only. Semantic/rights reviews are linked assertions, not automatically adjudicated. Existing authoritative source/release/runtime guards remain mandatory. No image decoding, model fitting, cluster access or launch authorization is performed."
+}

@@ -1,0 +1,72 @@
+{
+  "image_id": "06e039d4d15e8a10",
+  "image_sha256": "bae9493a7e22ef96ffb0f7d0ec1d3a63b706d024a36ed6383608f8da18f3486e",
+  "publisher_attribution": {
+    "id": "06e039d4d15e8a10",
+    "landing_url": "https://www.flickr.com/photos/pixofjill/718557947",
+    "original_url": "https://farm1.staticflickr.com/1243/718557947_7876d63fa1_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Jill Hutchison",
+    "author_url": "https://www.flickr.com/people/pixofjill/",
+    "title": "JillBunny1.JPG",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Jill Hutchison",
+    "url": "https://www.flickr.com/photos/pixofjill",
+    "image": "https://live.staticflickr.com/1392/buddyicons/83002582@N00.jpg?1183581866#83002582@N00"
+  },
+  "current_title": "JillBunny1.JPG",
+  "caption_and_notices": {
+    "image_id": "06e039d4d15e8a10",
+    "identity_group": "flickr-nsid:83002582@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "Jill Hutchison",
+      "url": "https://www.flickr.com/photos/pixofjill",
+      "image": "https://live.staticflickr.com/1392/buddyicons/83002582@N00.jpg?1183581866#83002582@N00"
+    },
+    "current_title": "JillBunny1.JPG",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Jill Hutchison",
+        "url": "https://www.flickr.com/photos/pixofjill",
+        "image": "https://live.staticflickr.com/1392/buddyicons/83002582@N00.jpg?1183581866#83002582@N00"
+      }
+    },
+    "meta_description": "Jill holds a 3-week old baby bunny. So soft! Butterfly Creek, Aukland, New Zealand."
+  },
+  "source_url": "https://www.flickr.com/photos/pixofjill/718557947",
+  "canonical_page_url": "https://www.flickr.com/photos/pixofjill/718557947",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "5ded91e5fe058e9de12eedc425e9345c8c920cbbfb17f71da6e3dbab5d7197c7",
+  "source_gzip_sha256": "481c14c0b3b3cbe9f98edb42d1f61262acc00b8700c58231214a174c69d51676",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "fd09d2007cc6688637f3fc0077f706126394920cd7916d4006a7b61ac4d4d229"
+}

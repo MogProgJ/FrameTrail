@@ -1,0 +1,26 @@
+{
+  "image_id": "2a260894e4a4a062",
+  "source_url": "https://www.flickr.com/photos/usfwspacific/7883230062",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/usfwspacific/7883230062",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by-nc/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by-nc/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/2a260894e4a4a062.html.gz",
+  "html_bytes": 517869,
+  "html_sha256": "e8a9c2036707a32e55e0784b6afd9c3f7efcb5bff7a2070c77ffb5e5533aed0e",
+  "stored_sha256": "38b780c75c07725c97777a7575da0da2ff5a1a50a877ed69297607d70dce3a73"
+}

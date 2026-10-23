@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "1b2d983a3b99702c",
+  "image_sha256": "caf50d4013eeeabcfafa157aaedc8a57f1725d179425957abc70e4f4885609bc",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "1b2d983a3b99702c",
+    "image_sha256": "caf50d4013eeeabcfafa157aaedc8a57f1725d179425957abc70e4f4885609bc",
+    "selected_category": "lantern",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/kankan/95719689",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/kankan/95719689",
+      "original_url": "https://c5.staticflickr.com/1/12/95719689_a6a3238477_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Kanko*",
+      "author_url": "https://www.flickr.com/people/kankan/",
+      "title": "Lantern / \u63d0\u706f",
+      "rotation": "0.0"
+    },
+    "intake_holds": [
+      "lantern-title-only-content-and-manual-box-review"
+    ],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Kanko*",
+      "url": "https://www.flickr.com/photos/kankan",
+      "image": "https://live.staticflickr.com/5562/buddyicons/29282750@N00.jpg?1409498438#29282750@N00"
+    },
+    "current_title": "Lantern / \u63d0\u706f",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Kanko*",
+          "url": "https://www.flickr.com/photos/kankan",
+          "image": "https://live.staticflickr.com/5562/buddyicons/29282750@N00.jpg?1409498438#29282750@N00"
+        }
+      },
+      "meta_description": "Nagasaki Lantern Festival 2006"
+    },
+    "identity_group": "flickr-nsid:29282750@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/kankan/95719689",
+    "html_sha256": "3d86f3fd241f5300dee796fb44e453927b14bcdb8f18febf34b3786240799cc8",
+    "stored_sha256": "ff455881ba0975c93b8b9b91d9f90a59382adb9ebd1f30bde348af552c59caad",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\1b2d983a3b99702c.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/1b2d983a3b99702c.html.gz",
+  "manual_content_hold_resolution": "Reviewed individual positive lantern targets only",
+  "independent_human_recheck": false
+}

@@ -1,0 +1,53 @@
+{
+  "image_id": "411a932270973982",
+  "image_sha256": "7d847464550a1c7ba3b76aab9405f63ea2c80084a24bdb29a25ef6c66fde4e24",
+  "identity_group": "flickr-nsid:23237342@N02",
+  "scene_group": "scene:book-of-mormon-musical-campaign-framed-between-oxford-circus-station-roundels",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\411a932270973982.json",
+    "sha256": "803b71fefe4ed96efe88fcc4713da739327c5793643bb7532e1a3e230ba45afb"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.068125,
+      0.160833,
+      0.955,
+      0.674167
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-test-02.json",
+    "sha256": "d16e8dc712fbd49d88b02f38913294705d9980a255f9354c52fe234410d7be8d"
+  },
+  "content_decision": {
+    "id": "411a932270973982",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.068125,
+        0.160833,
+        0.955,
+        0.674167
+      ]
+    ],
+    "note": "One framed Book of Mormon theatre campaign across platform wall. Source bounds verified; Oxford Circus roundels and rails are information/structure, not additional targets.",
+    "scene_description": "Book of Mormon musical campaign framed between Oxford Circus station roundels"
+  },
+  "prospective_split": "test",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

@@ -1,0 +1,80 @@
+{
+  "image_id": "cf6cb3f326b2f890",
+  "image_sha256": "c91f0c5e480d5edcdce5c680d1706b0c574fc34e92d65744f52ec7856cf48e08",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "cf6cb3f326b2f890",
+    "image_sha256": "c91f0c5e480d5edcdce5c680d1706b0c574fc34e92d65744f52ec7856cf48e08",
+    "selected_category": "picture frame",
+    "selected_domain": "contrast",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/boston_public_library/2589610675",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/boston_public_library/2589610675",
+      "original_url": "https://farm1.staticflickr.com/3020/2589610675_f5d448ca58_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Boston Public Library",
+      "author_url": "https://www.flickr.com/people/boston_public_library/",
+      "title": "Large lilac blossoms",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Boston Public Library",
+      "url": "https://www.flickr.com/photos/boston_public_library",
+      "image": "https://live.staticflickr.com/5574/buddyicons/24029425@N06.jpg?1410970150#24029425@N06"
+    },
+    "current_title": "Large lilac blossoms",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Boston Public Library",
+          "url": "https://www.flickr.com/photos/boston_public_library",
+          "image": "https://live.staticflickr.com/5574/buddyicons/24029425@N06.jpg?1410970150#24029425@N06"
+        }
+      },
+      "meta_description": "<b>File name: </b>08_01_000698\n\t\n\t<b>Title: </b>Large lilac blossoms\n\t \n\t<b>Creator/Contributor: </b>Abdalian, Leon H., 1884-1967 (photographer); Braun, George A. (artist)\n\t\n\t<b>Date created: </b>1920-05-30  \n\t\n\t<b>Physical description: </b>1 photographic print : gelatin silver, hand colored \n\t\n\t<b>Genre: </b>Gelatin silver prints\n\t\n\t<b>Notes: </b>Abdalian identifier no. 10025\n\t\n\t<b>Location: </b>Boston Public Library, Print Department\n\t\n\t<b>Rights: </b>No known restrictions \n\t"
+    },
+    "identity_group": "flickr-nsid:24029425@N06",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/boston_public_library/2589610675",
+    "html_sha256": "a4ac014f9bdfc37bdfed32dadfa169b2fe49c367b4ad93399af4670bc7c738f6",
+    "stored_sha256": "ee4ad173eb678538d66bfbfc25ff752d2984200a159689ac1a62b58d468eb48b",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\cf6cb3f326b2f890.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\cf6cb3f326b2f890.html.gz",
+    "sha256": "ee4ad173eb678538d66bfbfc25ff752d2984200a159689ac1a62b58d468eb48b"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

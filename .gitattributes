@@ -3,3 +3,6 @@
 *.svg text eol=lf
 *.sbatch text eol=lf
 *.sh text eol=lf
+
+# Frozen research evidence must retain its original bytes and hashes.
+/research/** -text

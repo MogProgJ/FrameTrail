@@ -1,0 +1,10 @@
+Submitted ONE approved array containing FOUR fixed billboard trials; at most TWO GPUs concurrently.
+FRAMETRAIL_JOB_ID=123456789
+Task 0 report not ready
+Task 0 archive not ready
+Task 1 report not ready
+Task 1 archive not ready
+Task 2 report not ready
+Task 2 archive not ready
+Task 3 report not ready
+Task 3 archive not ready

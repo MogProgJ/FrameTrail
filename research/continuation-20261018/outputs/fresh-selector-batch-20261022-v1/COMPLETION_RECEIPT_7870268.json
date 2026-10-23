@@ -1,0 +1,58 @@
+{
+  "status": "evaluation-audit-TRAIN-diagnosis-and-review-completed",
+  "job": "7870268",
+  "winner": null,
+  "test_photos_used": 0,
+  "production_adoption": false,
+  "all_four_conditions_complete": true,
+  "new_cluster_jobs": 0,
+  "new_optimizer_updates": 0,
+  "no_background_processes": true,
+  "next_scope_decision": "Separate TRAIN-only discrimination study proposed; no new fit started",
+  "source_refs": [
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\postrun-train-diagnosis-7870268-v1\\starting-model.json",
+      "sha256": "314c984dc710ca1350fc1889702a7856203fac7906cb2595cfb76b1f2eb2c507"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\postrun-train-diagnosis-7870268-v1\\M0-17-1500.json",
+      "sha256": "a258e7b00dc7cc35e486b77ce75b0a7f2c43aa5e6aeb242939f826adfaf71c89"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\postrun-train-diagnosis-7870268-v1\\M0-29-1500.json",
+      "sha256": "ca2cc4c94a246eff1dffa45555aa1099dc5bba2c57f29493b61eb6240534e3e7"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\postrun-train-diagnosis-7870268-v1\\M1-17-1500.json",
+      "sha256": "f6a3e98ad68254d8ae86152cd96d4937c7f7c8618aa3b7e37d5ce33948898a6a"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\postrun-train-diagnosis-7870268-v1\\M1-29-1500.json",
+      "sha256": "bdbaf8ba368c7ce29c8d937c85cc569d82d2850dca6588c55192bab1cb0ec7eb"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\POSTRUN_REPORT.md",
+      "sha256": "36379f54c4b48d0dd96e6608a221c9d5bf9b3708a451300ce2e363ff51cb326b"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\NEXT_STUDY_SCOPE.md",
+      "sha256": "108b2f807f8a12c9655ac155ff7d2a96aacff7c473841b04b651a757cfecfb59"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\postrun-audit-7870268-v1\\INDEPENDENT_AUDIT.json",
+      "sha256": "9503945ec84337a63b5e970226a91603dfa38ffef4be47a6bd4688f2cb81bab0"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\retrieval\\local-evaluation\\GLOBAL_SELECTION.json",
+      "sha256": "18c80970768d96c9ea5731f2119a5c7c05aabbeae78053d406268aa06c043957"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\retrieval\\local-evaluation\\FINAL_REPORT.json",
+      "sha256": "e9579220ead6e364c1f1e4e1077c649252436d95ba4de3c2e8a10212eb1a7575"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\postrun-train-diagnosis-7870268-v1\\REPORT.json",
+      "sha256": "643017fc4eda562caffe0eb6ce0a907cebad99a9bbcc650e4a512482308be8eb"
+    }
+  ]
+}

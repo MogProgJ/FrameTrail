@@ -1,0 +1,20 @@
+[2026-10-18 15:31:16] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-18 15:31:16] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 15:31:16] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 15:31:17] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+Traceback (most recent call last):
+  File "C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\export-numerics-7805570-20261018-v1\export_dynamo.py", line 35, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\nazee\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\export-numerics-7805570-20261018-v1\export_dynamo.py", line 23, in main
+    torch.onnx.export(Regular(net),x,str(path),input_names=['input'],output_names=['output'],opset_version=18,dynamo=True,external_data=False,optimize=False)
+  File "C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-cpu\Lib\site-packages\torch\onnx\__init__.py", line 363, in export
+    from torch.onnx._internal.exporter import _compat
+  File "C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-cpu\Lib\site-packages\torch\onnx\_internal\exporter\_compat.py", line 14, in <module>
+    from torch.onnx._internal.exporter import (
+  File "C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-cpu\Lib\site-packages\torch\onnx\_internal\exporter\_core.py", line 18, in <module>
+    import onnxscript
+ModuleNotFoundError: No module named 'onnxscript'

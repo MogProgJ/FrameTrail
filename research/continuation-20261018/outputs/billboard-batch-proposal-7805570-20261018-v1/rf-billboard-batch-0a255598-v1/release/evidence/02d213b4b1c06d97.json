@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "02d213b4b1c06d97",
+  "image_sha256": "2fad1a6ceb4c399454318dc29310368878dc267ae814a63d554dc477ed4e64ba",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "02d213b4b1c06d97",
+    "image_sha256": "2fad1a6ceb4c399454318dc29310368878dc267ae814a63d554dc477ed4e64ba",
+    "selected_category": "kettle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/ciaomrho/16796207106",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/ciaomrho/16796207106",
+      "original_url": "https://farm8.staticflickr.com/8689/16796207106_9ded04af81_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "CiaoHo",
+      "author_url": "https://www.flickr.com/people/ciaomrho/",
+      "title": "a man was cooking water to coffee",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "CiaoHo",
+      "url": "https://www.flickr.com/photos/ciaomrho",
+      "image": "https://live.staticflickr.com/8685/buddyicons/68109941@N03.jpg?1429519144#68109941@N03"
+    },
+    "current_title": "a man was cooking water to coffee",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "CiaoHo",
+          "url": "https://www.flickr.com/photos/ciaomrho",
+          "image": "https://live.staticflickr.com/8685/buddyicons/68109941@N03.jpg?1429519144#68109941@N03"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:68109941@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/ciaomrho/16796207106",
+    "html_sha256": "1ced21a9c74a4acce38c34248372dd5af02cc0d656b2e40494765a3d5b1d8449",
+    "stored_sha256": "415d090ccec5dc4973e45426d3435e05fb5c648e7515a126e35d83fde5a04c30",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\02d213b4b1c06d97.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/02d213b4b1c06d97.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

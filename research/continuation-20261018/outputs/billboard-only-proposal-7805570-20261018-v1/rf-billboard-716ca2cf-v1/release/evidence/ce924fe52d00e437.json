@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "ce924fe52d00e437",
+  "image_sha256": "5db0f43b64a56d0b605973f8666d750288d2455a6749976216b64473864df834",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "ce924fe52d00e437",
+    "image_sha256": "5db0f43b64a56d0b605973f8666d750288d2455a6749976216b64473864df834",
+    "selected_category": "traffic sign",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/perspective/456790001",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/perspective/456790001",
+      "original_url": "https://farm8.staticflickr.com/191/456790001_06cf896da3_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Elvert Barnes",
+      "author_url": "https://www.flickr.com/people/perspective/",
+      "title": "106.ArtsDistrict.Hyattsville.MD.12apr06",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Elvert Barnes",
+      "url": "https://www.flickr.com/photos/perspective",
+      "image": "https://live.staticflickr.com/7427/buddyicons/95413346@N00.jpg?1374461802#95413346@N00"
+    },
+    "current_title": "106.ArtsDistrict.Hyattsville.MD.12apr06",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Elvert Barnes",
+          "url": "https://www.flickr.com/photos/perspective",
+          "image": "https://live.staticflickr.com/7427/buddyicons/95413346@N00.jpg?1374461802#95413346@N00"
+        }
+      },
+      "meta_description": "Arts District Hyattsville . Baltimore Avenue (Route 1) . Hyattville, MD . Wednesday afternoon, 12 April 2006 . <a href=\"http://elvertbarnes-freedom.blogspot.com/2007/04/arts-district-hyattsville-one-year-ago.html\" rel=\"noreferrer nofollow\">elvertbarnes-freedom.blogspot.com/2007/04/arts-district-h...</a> . Elvert Xavier Barnes Photography"
+    },
+    "identity_group": "flickr-nsid:95413346@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/perspective/456790001",
+    "html_sha256": "250415f3988f6823d28267d0fcacec7a9ce45e9376d0fbbf4285358dee2d10c5",
+    "stored_sha256": "87722375d73976793a981971bc76d2a37fdfb8c09ce3731dd78b47a6bdfc4bf8",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\ce924fe52d00e437.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/ce924fe52d00e437.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

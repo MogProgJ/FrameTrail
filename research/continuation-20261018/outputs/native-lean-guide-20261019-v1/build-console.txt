@@ -1,0 +1,109 @@
+CMake is re-running because C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/build/CMakeFiles/generate.stamp is out-of-date.
+  the file 'C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt'
+  is newer than 'C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/build/CMakeFiles/generate.stamp.depend'
+  result='-1'
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26300.
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (0.9s)
+-- Generating done (2.1s)
+-- Build files have been written to: C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/build
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  sqlite3.c
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  association_tests.cpp
+  assignment.cpp
+  Generating Code...
+  frametrail_association_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_association_tests.exe
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_sqlite.lib
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  live_session.cpp
+  run_store.cpp
+  playback_cache.cpp
+  analysis_job.cpp
+  tracker.cpp
+  assignment.cpp
+  frame_tracker.cpp
+  detector.cpp
+  yolo_world.cpp
+  rfdetr.cpp
+  dml_inference.cpp
+  media_reader.cpp
+  frame_export.cpp
+  preview_session.cpp
+  Generating Code...
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_core.lib
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Automatic UIC for target frametrail_preview_ui
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  2>Automatic RCC for apps/desktop/studio_assets.qrc
+  1>
+  main.cpp
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  preview_tests.cpp
+  guide_workspace.cpp
+  frametrail_preview_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_preview_tests.exe
+  rf_native_tests.cpp
+  workspace_chrome.cpp
+  frametrail_rf_native_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_rf_native_tests.exe
+  frametrail.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail.exe
+  playback_workspace.cpp
+  media_tests.cpp
+  tracking_regression.cpp
+  cached_playback_window.cpp
+  frametrail_media_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_media_tests.exe
+  frametrail_tracking_regression.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_tracking_regression.exe
+  live_tests.cpp
+  frame_tracker_tests.cpp
+  preview_window.cpp
+  tracking_tests.cpp
+  frametrail_live_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_live_tests.exe
+  frametrail_frame_tracker_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_frame_tracker_tests.exe
+  frametrail_tracking_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_tracking_tests.exe
+  saved_run_window.cpp
+  detection_tests.cpp
+  backend_tests.cpp
+  frametrail_detection_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_detection_tests.exe
+  run_tests.cpp
+  live_window.cpp
+  frametrail_backend_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_backend_tests.exe
+  frametrail_run_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_run_tests.exe
+  Generating Code...
+  qrc_studio_assets.cpp
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_preview_ui.lib
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt
+  main.cpp
+  rf_desktop_tests.cpp
+  workflow_diagnostics.cpp
+  guide_tests.cpp
+  frametrail_rf_desktop_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_rf_desktop_tests.exe
+  desktop_tests.cpp
+  cached_playback_tests.cpp
+  frametrail_guide_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_guide_tests.exe
+  frametrail_workflow_diagnostics.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_workflow_diagnostics.exe
+  frametrail_cached_playback_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_cached_playback_tests.exe
+  frametrail-desktop.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail-desktop.exe
+  frametrail_desktop_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_desktop_tests.exe
+  unified_workspace_tests.cpp
+  saved_desktop_tests.cpp
+  frametrail_unified_workspace_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_unified_workspace_tests.exe
+  frametrail_saved_desktop_tests.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-lean-guide-20261019-v1\build\Release\frametrail_saved_desktop_tests.exe
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-lean-guide-20261019-v1/source/CMakeLists.txt

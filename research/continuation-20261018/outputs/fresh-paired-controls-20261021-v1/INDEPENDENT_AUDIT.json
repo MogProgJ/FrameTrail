@@ -1,0 +1,130 @@
+{
+  "status": "independently-audited-complete-no-qualifying-M0-candidate",
+  "conditions": [
+    {
+      "seed": 17,
+      "updates": 1500,
+      "decisions": [
+        {
+          "step": 0,
+          "fresh_tp": 0,
+          "fresh_fp": 0,
+          "old_unknown": 528,
+          "retention": true,
+          "qualifies": false
+        },
+        {
+          "step": 100,
+          "fresh_tp": 0,
+          "fresh_fp": 0,
+          "old_unknown": 528,
+          "retention": true,
+          "qualifies": false
+        },
+        {
+          "step": 250,
+          "fresh_tp": 0,
+          "fresh_fp": 0,
+          "old_unknown": 528,
+          "retention": true,
+          "qualifies": false
+        },
+        {
+          "step": 500,
+          "fresh_tp": 4,
+          "fresh_fp": 2,
+          "old_unknown": 532,
+          "retention": false,
+          "qualifies": false
+        },
+        {
+          "step": 1000,
+          "fresh_tp": 9,
+          "fresh_fp": 7,
+          "old_unknown": 534,
+          "retention": false,
+          "qualifies": false
+        },
+        {
+          "step": 1500,
+          "fresh_tp": 11,
+          "fresh_fp": 8,
+          "old_unknown": 538,
+          "retention": false,
+          "qualifies": false
+        }
+      ],
+      "inactive_tensor_bytes_identical": true,
+      "elapsed_active_seconds": 203.66
+    },
+    {
+      "seed": 29,
+      "updates": 1500,
+      "decisions": [
+        {
+          "step": 0,
+          "fresh_tp": 0,
+          "fresh_fp": 0,
+          "old_unknown": 528,
+          "retention": true,
+          "qualifies": false
+        },
+        {
+          "step": 100,
+          "fresh_tp": 0,
+          "fresh_fp": 0,
+          "old_unknown": 528,
+          "retention": true,
+          "qualifies": false
+        },
+        {
+          "step": 250,
+          "fresh_tp": 0,
+          "fresh_fp": 0,
+          "old_unknown": 528,
+          "retention": true,
+          "qualifies": false
+        },
+        {
+          "step": 500,
+          "fresh_tp": 5,
+          "fresh_fp": 2,
+          "old_unknown": 532,
+          "retention": false,
+          "qualifies": false
+        },
+        {
+          "step": 1000,
+          "fresh_tp": 9,
+          "fresh_fp": 7,
+          "old_unknown": 534,
+          "retention": false,
+          "qualifies": false
+        },
+        {
+          "step": 1500,
+          "fresh_tp": 10,
+          "fresh_fp": 8,
+          "old_unknown": 538,
+          "retention": false,
+          "qualifies": false
+        }
+      ],
+      "inactive_tensor_bytes_identical": true,
+      "elapsed_active_seconds": 180.27
+    }
+  ],
+  "total_updates": 3000,
+  "all291_input_cache_hashes_unchanged": true,
+  "all_schedules_unchanged": true,
+  "no_heldout_training_samples": true,
+  "no_fresh_test_inference": true,
+  "both_baseline_perclass_and_original_unknown_cap530_enforced": true,
+  "inactive_classifier_tensor_bytes_identical": true,
+  "production_adoption": false,
+  "execution_order_deviation_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-paired-controls-20261021-v1\\EXECUTION_ORDER_NOTE.json",
+    "sha256": "b08c58e3e7981af2f820a692c557019b750a940ef36cf4b87508a3ad1e1a5475"
+  },
+  "next_step": "Prepare bounded two-seed M1 proposal-row comparison with same schedules/data/LRs, shared CPU scorer and unchanged gates; authenticate account/admission before submission."
+}

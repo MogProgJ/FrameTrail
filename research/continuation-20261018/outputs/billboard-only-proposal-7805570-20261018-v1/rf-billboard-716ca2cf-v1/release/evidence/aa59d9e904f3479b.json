@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "aa59d9e904f3479b",
+  "image_sha256": "c6366cc61d5b0ac37391256bebe499941aa2c867e173c897a2aaabc628afa251",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "aa59d9e904f3479b",
+    "image_sha256": "c6366cc61d5b0ac37391256bebe499941aa2c867e173c897a2aaabc628afa251",
+    "selected_category": "parking meter",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/khouri/5312652591",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/khouri/5312652591",
+      "original_url": "https://c4.staticflickr.com/6/5047/5312652591_c4e5514150_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Michael Cory",
+      "author_url": "https://www.flickr.com/people/khouri/",
+      "title": "00:00",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Michael Cory",
+      "url": "https://www.flickr.com/photos/khouri",
+      "image": "https://live.staticflickr.com/12/buddyicons/80044857@N00.jpg?1118425501#80044857@N00"
+    },
+    "current_title": "00:00",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Michael Cory",
+          "url": "https://www.flickr.com/photos/khouri",
+          "image": "https://live.staticflickr.com/12/buddyicons/80044857@N00.jpg?1118425501#80044857@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:80044857@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/khouri/5312652591",
+    "html_sha256": "46358f498b75e7c205a5ed314f722b3b0c276a2703a99ebd3b36f22a29aa26e0",
+    "stored_sha256": "e56642f2598f9c48af17decedb55ac45a0a5ae5bd83a3a0567d6dcf9b3ae291e",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\aa59d9e904f3479b.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/aa59d9e904f3479b.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,26 @@
+{
+  "image_id": "832800af0a48a691",
+  "source_url": "https://www.flickr.com/photos/embajada_ecuador/17356977213",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/embajada_ecuador/17356977213",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/832800af0a48a691.html.gz",
+  "html_bytes": 515804,
+  "html_sha256": "4d49acdbb0e42873caeae7f271ce375fdef3c7a10b080cf0cf0687edb8fbc13b",
+  "stored_sha256": "aca4558fdbccf8385a33906089cb771eecc942555a8b3a5015f80d994eb1a606"
+}

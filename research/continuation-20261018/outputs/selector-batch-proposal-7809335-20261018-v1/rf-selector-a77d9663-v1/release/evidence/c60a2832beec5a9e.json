@@ -1,0 +1,64 @@
+{
+  "image_id": "c60a2832beec5a9e",
+  "image_sha256": "880c6a4883d456e1bd860afad4e488c3db99d0ec280d8b03fbe4889eceb76146",
+  "publisher_attribution": {
+    "id": "c60a2832beec5a9e",
+    "landing_url": "https://www.flickr.com/photos/tjc/16223585623",
+    "original_url": "https://c7.staticflickr.com/9/8612/16223585623_bc8ce40926_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "TimothyJ",
+    "author_url": "https://www.flickr.com/people/tjc/",
+    "title": "P3140241",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "TimothyJ",
+    "url": "https://www.flickr.com/photos/tjc",
+    "image": "https://live.staticflickr.com/5456/buddyicons/15572047@N00.jpg?1369105325#15572047@N00"
+  },
+  "current_title": "P3140241",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "TimothyJ",
+        "url": "https://www.flickr.com/photos/tjc",
+        "image": "https://live.staticflickr.com/5456/buddyicons/15572047@N00.jpg?1369105325#15572047@N00"
+      }
+    },
+    "meta_description": "Tillies Lounge"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/tjc/16223585623",
+  "canonical_page_url": "https://www.flickr.com/photos/tjc/16223585623",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "88e40d063c2a363652787da14285973cc413b8ee85c07c591fefe167f52a5f6c",
+  "source_gzip_sha256": "07749a92102ff6bd55e2156663001a3a6135cc5aa9705918ee987c6e58438a94",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-121",
+  "visual_proof_sha256": "77f0f37c1543e7e484fe16dfeec98b7747584d2e7f1ec640ab4739bc9c2706ca",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

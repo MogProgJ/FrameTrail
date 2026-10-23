@@ -1,0 +1,80 @@
+test_all_schedules_are_distinct_training_only_batches (__main__.Contracts.test_all_schedules_are_distinct_training_only_batches) ... ok
+test_all_seals_and_local_pinned_runtime (__main__.Contracts.test_all_seals_and_local_pinned_runtime) ... ok
+test_approval_absent_and_early_stop_fixed (__main__.Contracts.test_approval_absent_and_early_stop_fixed) ... ok
+test_index_cannot_silently_default_or_escape (__main__.Contracts.test_index_cannot_silently_default_or_escape) ... ok
+test_paired_schedules_isolate_encoder_lr_and_region_weight (__main__.Contracts.test_paired_schedules_isolate_encoder_lr_and_region_weight) ... ok
+test_regression_guard_detects_loss_and_fp_increase (__main__.Contracts.test_regression_guard_detects_loss_and_fp_increase) ... ok
+test_result_verifier_accepts_full_maximum_completion_task3 (__main__.Contracts.test_result_verifier_accepts_full_maximum_completion_task3) ... ok
+test_result_verifier_accepts_full_no_gain_completion (__main__.Contracts.test_result_verifier_accepts_full_no_gain_completion) ... ok
+test_safe_members_accept_array_identity_reject_traversal_and_links (__main__.Contracts.test_safe_members_accept_array_identity_reject_traversal_and_links) ... ok
+test_synthetic_updates_only_both_row133s (__main__.Contracts.test_synthetic_updates_only_both_row133s) ... ok
+test_validation_selection_ignores_regression_and_retains_ties (__main__.Contracts.test_validation_selection_ignores_regression_and_retains_ties) ... ok
+test_windows_linux_sampler_serialization_and_wrong_variant (__main__.Contracts.test_windows_linux_sampler_serialization_and_wrong_variant) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 186.668s
+
+OK
+{
+  "status": "provisional-validation-comparison-awaiting-independent-local-audit",
+  "trials": [
+    {
+      "index": 0,
+      "status": "complete",
+      "best_step": 100,
+      "strict_gain": true,
+      "validation_ranking": [
+        3,
+        0.5
+      ],
+      "checkpoint_sha256": "f35306ae6049a7d6d6b1b08713628c2207190d9577590e7629a1e0e07f1fd43b",
+      "regression_retained": false,
+      "postprocessing_exit": 0
+    },
+    {
+      "index": 1,
+      "status": "complete",
+      "best_step": 100,
+      "strict_gain": true,
+      "validation_ranking": [
+        3,
+        0.5
+      ],
+      "checkpoint_sha256": "f35306ae6049a7d6d6b1b08713628c2207190d9577590e7629a1e0e07f1fd43b",
+      "regression_retained": true,
+      "postprocessing_exit": 0
+    },
+    {
+      "index": 2,
+      "status": "complete",
+      "best_step": 100,
+      "strict_gain": true,
+      "validation_ranking": [
+        3,
+        0.5
+      ],
+      "checkpoint_sha256": "f35306ae6049a7d6d6b1b08713628c2207190d9577590e7629a1e0e07f1fd43b",
+      "regression_retained": true,
+      "postprocessing_exit": 0
+    },
+    {
+      "index": 3,
+      "status": "complete",
+      "best_step": 100,
+      "strict_gain": true,
+      "validation_ranking": [
+        3,
+        0.5
+      ],
+      "checkpoint_sha256": "f35306ae6049a7d6d6b1b08713628c2207190d9577590e7629a1e0e07f1fd43b",
+      "regression_retained": true,
+      "postprocessing_exit": 0
+    }
+  ],
+  "validation_only_winner_index": 0,
+  "ranking_frozen_before_using_regression": true,
+  "independent_CPU_rescore_and_tensor_audit_required": true,
+  "production_adoption": false,
+  "independent_fresh_test_available": false,
+  "strict_export_hold_from_previous_model_not_waived": true
+}

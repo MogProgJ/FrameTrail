@@ -1,0 +1,10 @@
+{
+  "project": "FrameTrail",
+  "status": "approved-first-submission-pending-corrected-runtime-wrapper",
+  "authorization": "Same already-approved two-row continuation; do not ask for scope approval again.",
+  "observed_attempts": "First failed in checksum transport; second transport worked and preflight failed before submission due to missing inherited overlay. No observed attempt reached sbatch.",
+  "next_best_step": "Run this directory Resume-Approved-Run.ps1, complete KIT login, and obtain an actual Slurm job ID.",
+  "status_helper": "Use Check-Run.ps1 in this runtime-repair directory after submission.",
+  "do_not": "Do not reinstall RF-DETR, re-upload the archive, change the model/scope, or clear an ambiguous submission lock.",
+  "standing_communication_preference": "End every user-facing response with the single best plausible concrete FrameTrail next step and briefly why. Carry this preference into every handoff."
+}

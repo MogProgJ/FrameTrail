@@ -1,0 +1,53 @@
+{
+  "image_id": "b619045bda83d108",
+  "image_sha256": "2a5405fa0f753e64b65fd729a49b0da1ce47b5ed2268b8d97b4cd853843b9ce1",
+  "identity_group": "flickr-nsid:50881309@N08",
+  "scene_group": "scene:rbc-summer-kids-camp-kilimanjaro-and-cross-training-roadside-banner",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\b619045bda83d108.json",
+    "sha256": "83a199f9c5abc2f45962bfec10b4ecc957da4cd5133ad6d27be05f2ecde5093d"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.1533,
+      0.0934,
+      0.8076,
+      0.8189
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-batch-02.json",
+    "sha256": "23bfad2d95c72d2731eb496f2f050dc19cf8a55cfd3f6087e50fd4cff0c05be2"
+  },
+  "content_decision": {
+    "id": "b619045bda83d108",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.1533,
+        0.0934,
+        0.8076,
+        0.8189
+      ]
+    ],
+    "note": "One large Camp Kilimanjaro/Cross Training summer programme campaign banner; single face contains both offers. Box refined to panel, excluding poles.",
+    "scene_description": "RBC summer kids Camp Kilimanjaro and Cross Training roadside banner"
+  },
+  "prospective_split": "train",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

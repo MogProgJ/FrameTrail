@@ -1,0 +1,71 @@
+{
+  "status": "four-trial-batch-prepared-awaiting-exact-human-approval",
+  "protocol_sha256": "0a255598b74eb1d29d83ee1be10d517ae407fbda2c57e4565b51028d615343fd",
+  "package_seal_sha256": "4dd1582ecc6d4c20c4e841b8a6fa5976fd79ef3899c5482675a2db878dd95b58",
+  "sealed_files": 3015,
+  "all_seals_match": true,
+  "Python_AST_files": 19,
+  "CPU_and_structural_tests_passed": 12,
+  "local_mock_submission_and_batch_cases_passed": 6,
+  "powershell_51_syntax_passed": true,
+  "missing_approval_blocks_before_archive_and_SSH": true,
+  "approval_present": false,
+  "archive_created": false,
+  "SSH_contacted": false,
+  "new_cluster_submissions": 0,
+  "real_model_training_updates": 0,
+  "local_GPU_inference": false,
+  "trials": [
+    {
+      "index": 0,
+      "name": "n1-lr0.0001",
+      "negative_presentations": 1,
+      "lr": 0.0001,
+      "accumulation": 2,
+      "maximum_updates": 3000,
+      "schedule_file": "schedules/task-0.json",
+      "schedule_sha256": "5d0711f88a6c072f9ef90c167976ee3409dd163a4d4d42e36292ec0e430c4c1f"
+    },
+    {
+      "index": 1,
+      "name": "n3-lr0.0001",
+      "negative_presentations": 3,
+      "lr": 0.0001,
+      "accumulation": 4,
+      "maximum_updates": 3000,
+      "schedule_file": "schedules/task-1.json",
+      "schedule_sha256": "ecd0143d22d4f2844a663702f42ac497a1ce2ab224beb9144a7bf4f675764908"
+    },
+    {
+      "index": 2,
+      "name": "n1-lr0.0003",
+      "negative_presentations": 1,
+      "lr": 0.0003,
+      "accumulation": 2,
+      "maximum_updates": 3000,
+      "schedule_file": "schedules/task-2.json",
+      "schedule_sha256": "5d0711f88a6c072f9ef90c167976ee3409dd163a4d4d42e36292ec0e430c4c1f"
+    },
+    {
+      "index": 3,
+      "name": "n3-lr0.0003",
+      "negative_presentations": 3,
+      "lr": 0.0003,
+      "accumulation": 4,
+      "maximum_updates": 3000,
+      "schedule_file": "schedules/task-3.json",
+      "schedule_sha256": "ecd0143d22d4f2844a663702f42ac497a1ce2ab224beb9144a7bf4f675764908"
+    }
+  ],
+  "maximum_concurrent_GPUs": 2,
+  "maximum_requested_GPU_hours": 3,
+  "live_account_limits_verified": false,
+  "limit_check": "Authenticated scheduler/account queries plus sbatch --test-only run before the approved real submission; do not equate public partition maxima with account entitlement.",
+  "old_single_trial_proposal": "Preserved, superseded for proposed scope only",
+  "automatic_known_regression": {
+    "reference_sets": 6,
+    "unique_images": 202,
+    "selection_uses_regression": false
+  },
+  "production_adoption": false
+}

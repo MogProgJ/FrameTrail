@@ -1,0 +1,94 @@
+{
+  "stage": "whole-original-negative-content-review-before-predictions",
+  "approved_for_training": false,
+  "scene_comparison_complete": false,
+  "model_predictions_seen": false,
+  "records": [
+    {
+      "id": "f984e14b5d31fe02",
+      "disposition": "hold-whole-photo-absence-completeness",
+      "normalized_xyxy": [],
+      "note": "Original reveals blue sweets/product-photo panel and partial promotional posters on lower storefront; cannot certify whole-photo absence from ordinary name lettering."
+    },
+    {
+      "id": "03b25bab135ebfbf",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "traffic-information-signs",
+      "note": "Full original contains cliff-edge hazard information and sky only; no campaign face.",
+      "scene_description": "Yellow Cliff Edge Approaching warning sign against grey sky"
+    },
+    {
+      "id": "be61b5d691098655",
+      "disposition": "hold-whole-photo-absence-completeness",
+      "normalized_xyxy": [],
+      "note": "Main railway project information board is non-target, but partially visible pasted campaign posters at bottom remain unresolved; preserve whole-photo hold."
+    },
+    {
+      "id": "360ff97104b82129",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows domestic/communal laundry appliances, operating notices and payment units; packaging/operating information is not an advertising board.",
+      "scene_description": "Two white laundry machines with blue and metal wall payment units"
+    },
+    {
+      "id": "5110409f98e95a40",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "shop-business-lettering",
+      "note": "Full original shows headquarters/domain identity lettering, decorative flags and a trolley stop marker; no separate campaign advertising face.",
+      "scene_description": "White Boatnerd headquarters building covered with maritime flags"
+    },
+    {
+      "id": "aaaf120ef247d0cb",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original contains two people writing technical workshop notes on an indoor whiteboard; no advertising face.",
+      "scene_description": "Two men at a workshop whiteboard with red technical notes"
+    },
+    {
+      "id": "b2c4eb4da9539d67",
+      "disposition": "hold-whole-photo-absence-completeness",
+      "normalized_xyxy": [],
+      "note": "Mars Cheese Castle name signs are non-target, but lower wall has product promotion for Wisconsin summer sausage; cannot certify whole-photo absence."
+    },
+    {
+      "id": "3a6dc96a518eb744",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows vintage desktop computers, inventory cards and operational screen text in an exhibition room; no campaign advertising face.",
+      "scene_description": "Vintage beige computers and keyboards on wooden exhibition tables"
+    },
+    {
+      "id": "f9b0d5266f944746",
+      "disposition": "hold-whole-photo-absence-completeness",
+      "normalized_xyxy": [],
+      "note": "Plaza Inn panel advertises pool/playground/garden with illustrated hospitality promotion; not a safe whole-photo absence despite initial traffic candidate family."
+    },
+    {
+      "id": "104c82e95a295ba0",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows handwritten informal speech bubbles and notes on an indoor whiteboard; no advertising face.",
+      "scene_description": "Whiteboard filled with multicolour handwritten speech bubbles"
+    },
+    {
+      "id": "093a3c43152a9742",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original is a personal historical wedding photograph lying on wood; no advertising face.",
+      "scene_description": "Black-and-white printed wedding portrait on wood"
+    },
+    {
+      "id": "db6f76e1fcd366e7",
+      "disposition": "hold-whole-photo-absence-completeness",
+      "normalized_xyxy": [],
+      "note": "Earth Step student display includes reproduced campaign imagery; indoor educational exhibit versus campaign scope unresolved, not accepted as whole-photo absence."
+    }
+  ]
+}

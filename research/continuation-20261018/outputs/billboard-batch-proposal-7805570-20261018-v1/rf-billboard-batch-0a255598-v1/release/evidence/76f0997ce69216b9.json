@@ -1,0 +1,64 @@
+{
+  "image_id": "76f0997ce69216b9",
+  "image_sha256": "e902e5ab77b009f53c49508857af87aecb2d1347f34b482653ee7e636694e301",
+  "publisher_attribution": {
+    "id": "76f0997ce69216b9",
+    "landing_url": "https://www.flickr.com/photos/amenagement_numerique/3293106066",
+    "original_url": "https://c2.staticflickr.com/4/3553/3293106066_b717a69728_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "PAN ANT",
+    "author_url": "https://www.flickr.com/people/amenagement_numerique/",
+    "title": "Signalisation du chantier",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "PAN ANT",
+    "url": "https://www.flickr.com/photos/amenagement_numerique",
+    "image": "https://live.staticflickr.com/8374/buddyicons/11370436@N04.jpg?1359627214#11370436@N04"
+  },
+  "current_title": "Signalisation du chantier",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "PAN ANT",
+        "url": "https://www.flickr.com/photos/amenagement_numerique",
+        "image": "https://live.staticflickr.com/8374/buddyicons/11370436@N04.jpg?1359627214#11370436@N04"
+      }
+    },
+    "meta_description": "Le chantier est un \u00e9l\u00e9ment du d\u00e9ploiement du r\u00e9seau @rmoric initi\u00e9 par le Conseil g\u00e9n\u00e9ral des C\u00f4tes d'Armor dans le cadre d'une d\u00e9l\u00e9gation de service public."
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/amenagement_numerique/3293106066",
+  "canonical_page_url": "https://www.flickr.com/photos/amenagement_numerique/3293106066",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "697e83dcb90c58c4cc3689c8e27ff7456aea9ac7ece057ce8652685d0a7ebe64",
+  "source_gzip_sha256": "2b44f24c7abbe022801203a5aa7b1a4eb92247a87716b5d8846ffad339d656ec",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-144",
+  "visual_proof_sha256": "7a9380a9ce4c793278c0c34da7280e5fdcb651e0b02b0da9533330b0f911616b",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

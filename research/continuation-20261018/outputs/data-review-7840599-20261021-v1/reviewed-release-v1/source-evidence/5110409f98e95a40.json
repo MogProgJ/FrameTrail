@@ -1,0 +1,80 @@
+{
+  "image_id": "5110409f98e95a40",
+  "image_sha256": "72c142f18e55eb151537cdf82313563bb3b3e7a0912def3cf7b7e36c1f3c427e",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\source-review\\source-evidence-review.json",
+    "sha256": "6881fe98e939931c5d708dc20e1828c831c11356f67fabd03ca609e65bd6adf8"
+  },
+  "source_record": {
+    "image_id": "5110409f98e95a40",
+    "image_sha256": "72c142f18e55eb151537cdf82313563bb3b3e7a0912def3cf7b7e36c1f3c427e",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/barndweller/7576786466",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/barndweller/7576786466",
+      "original_url": "https://farm1.staticflickr.com/8026/7576786466_958e87fa87_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "abarndweller",
+      "author_url": "https://www.flickr.com/people/barndweller/",
+      "title": "DSC_0105",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "abarndweller",
+      "url": "https://www.flickr.com/photos/barndweller",
+      "image": "https://live.staticflickr.com/106/buddyicons/53016263@N00.jpg?1164425896#53016263@N00"
+    },
+    "current_title": "DSC_0105",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "abarndweller",
+          "url": "https://www.flickr.com/photos/barndweller",
+          "image": "https://live.staticflickr.com/106/buddyicons/53016263@N00.jpg?1164425896#53016263@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:53016263@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/barndweller/7576786466",
+    "html_sha256": "732aae9b66f348df6a4170346c39cd8f39040880b4e467d54c393ee22e6cfe8d",
+    "stored_sha256": "30b558b957279021ba30faa05c9a87328c44398870041f6de62c635c76847688",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\5110409f98e95a40.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\5110409f98e95a40.html.gz",
+    "sha256": "30b558b957279021ba30faa05c9a87328c44398870041f6de62c635c76847688"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

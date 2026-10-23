@@ -1,0 +1,59 @@
+CMake is re-running because C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/build/CMakeFiles/generate.stamp is out-of-date.
+  the file 'C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/source/CMakeLists.txt'
+  is newer than 'C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/build/CMakeFiles/generate.stamp.depend'
+  result='-1'
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26300.
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (3.4s)
+-- Generating done (2.9s)
+-- Build files have been written to: C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/build
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/source/CMakeLists.txt
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_sqlite.lib
+  Building Custom Rule C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/source/CMakeLists.txt
+  frametrail_core.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  1>Automatic RCC for apps/desktop/studio_assets.qrc
+  Building Custom Rule C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/source/CMakeLists.txt
+  cached_playback_window.cpp
+  live_window.cpp
+  preview_window.cpp
+  saved_run_window.cpp
+  workspace_chrome.cpp
+  Generating Code...
+  qrc_studio_assets.cpp
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_preview_ui.lib
+  Building Custom Rule C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/source/CMakeLists.txt
+  frametrail-desktop.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail-desktop.exe
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_preview_ui.lib
+  Building Custom Rule C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/source/CMakeLists.txt
+  frametrail_cached_playback_tests.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_cached_playback_tests.exe
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_core.lib
+  Building Custom Rule C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/source/CMakeLists.txt
+  frametrail_preview_tests.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_preview_tests.exe
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_preview_ui.lib
+  Building Custom Rule C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/source/CMakeLists.txt
+  frametrail_desktop_tests.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_desktop_tests.exe
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_sqlite.lib
+  frametrail_core.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_preview_ui.lib
+  Building Custom Rule C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/source/CMakeLists.txt
+  frametrail_saved_desktop_tests.vcxproj -> C:\Users\nazee\.codex\visualizations\2026\10\17\01a14c2d-b771-7a40-ba9b-e8277e4905a1\work\gui-studio-20261018-v1\build\Release\frametrail_saved_desktop_tests.exe

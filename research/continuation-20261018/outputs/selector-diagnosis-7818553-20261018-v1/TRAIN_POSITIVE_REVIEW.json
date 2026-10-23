@@ -1,0 +1,148 @@
+{
+  "status": "visual-training-positive-audit-no-label-changes",
+  "reviewer": "assistant full-original-photo review of20TRAINphotos",
+  "definition_source": "nextdata7769109-taxonomy-v1 billboard: large physical advertising boards; distinguish traffic signs/shop lettering",
+  "records": [
+    {
+      "image_id": "2bfeb40d33db01ca",
+      "image_sha256": "9e788d60bc7b8baa8b715f453e104e8aafa21d736996b0774a04c8bc28cb36c6",
+      "positive_targets": 2,
+      "disposition": "category_boundary_hold",
+      "note": "Magic Auto Center and liquor business boards: hold size/shop-sign boundary."
+    },
+    {
+      "image_id": "b98bf3ea9eb1b4e0",
+      "image_sha256": "efbe28f2a262d8bfd36b2590c9ee591b7edeff5dbf9b9be9b2f479f67a6511b6",
+      "positive_targets": 1,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "4ee1c6ca28a1bdb8",
+      "image_sha256": "8b78b5af1e87fe12832b3c2dac4fd4f06323364ec374636b2e401d1d166d1383",
+      "positive_targets": 1,
+      "disposition": "category_boundary_hold",
+      "note": "Cafe business-name sign: hold category boundary."
+    },
+    {
+      "image_id": "c8bb3241ac57b9e2",
+      "image_sha256": "9eba0ed070093ac2df929209ec8ec6580bb99d0f660bf1c2757bef8801bd56fe",
+      "positive_targets": 1,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "d8fff472678899cf",
+      "image_sha256": "e5c7d548591f2ef7702571fa9bf090d572fd42affcd807f67bce03574a16561d",
+      "positive_targets": 1,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "c310febc40974a94",
+      "image_sha256": "eb9a52cc048ea9c56ff5f9e4613ecfae5676fe6e0d19d07528a03cfa988d1958",
+      "positive_targets": 4,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "9382cfa97e1581e0",
+      "image_sha256": "7bd317023bbef3084523f4358fef5db9a3ad62448a3476340e71f68a96dcd58e",
+      "positive_targets": 1,
+      "disposition": "category_boundary_hold",
+      "note": "Bay Cruises business-name/direction board: hold category boundary."
+    },
+    {
+      "image_id": "ee4b59dc616c21ad",
+      "image_sha256": "3f2321b5a061638f1ad5c48df839f21ab70520406d208194f869fa55de324111",
+      "positive_targets": 2,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "dc2a7c32db059a9e",
+      "image_sha256": "1870f191ccceba8adb004a97aabe17060059c6e2409de04ed3b2a73b5ecda06e",
+      "positive_targets": 6,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "39ba18171aeb4415",
+      "image_sha256": "e9f2837c9197b7dfa987762a316b072260994bab948d27f71426c0859e312906",
+      "positive_targets": 1,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "867a012fafb5766c",
+      "image_sha256": "970e88478fe79b02724076f60a4a0604a5d661b4478ec5247b5a59d1c0a9e041",
+      "positive_targets": 6,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "995211dda562c920",
+      "image_sha256": "214ea268f6fe2a1cb2f6b5746f37afebc30219e41fc0f6c44908945f5ed37e31",
+      "positive_targets": 3,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "013037fd8c0daf0a",
+      "image_sha256": "c3429a67e0d25e31fbde6f95b17023f5b2604ce21aad1367c01b538d4f527cb6",
+      "positive_targets": 3,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "88ced829147507c7",
+      "image_sha256": "26304f8ca45f70fa77b6370410a341c71d3f2499900db6a066276595fec08465",
+      "positive_targets": 2,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "9b49325466652a54",
+      "image_sha256": "9563a9d2fe189366d4a4e7969ecd42870e46b438f7cc63422ccf68db227e53d0",
+      "positive_targets": 1,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "7f2be8ccfdf33465",
+      "image_sha256": "7e187e5a78f8b9167f7830c843919bfb8e0fc019294279177ade33f90e3bc80b",
+      "positive_targets": 4,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "89f3b4db87857c8d",
+      "image_sha256": "be596eb900a94f0f2875e60633cb801a2073e796a6b55872366145c997f16467",
+      "positive_targets": 10,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "8d5986ae877b7be4",
+      "image_sha256": "58791145f24fd6add6e9510897949e49f90b2af7d7cc58c92eb6646d9122f466",
+      "positive_targets": 2,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "078cc35acabe5e77",
+      "image_sha256": "116c9756b4a1a6b26f9bb51e072a90430540fade2a0628de91a6dfc80da71e52",
+      "positive_targets": 1,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    },
+    {
+      "image_id": "a92833d5a82934db",
+      "image_sha256": "4b9b85102f00295d157a7297a0d1468fc97e9457876d87aeade41b508bd7c968",
+      "positive_targets": 2,
+      "disposition": "advertising_panel_context_supported",
+      "note": "Visible physical advertising panels support positive image context; no claim of exhaustive instance/box reannotation."
+    }
+  ],
+  "original_release_unchanged": true
+}

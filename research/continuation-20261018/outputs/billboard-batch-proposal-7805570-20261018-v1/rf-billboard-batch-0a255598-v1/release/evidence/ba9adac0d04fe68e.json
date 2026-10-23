@@ -1,0 +1,64 @@
+{
+  "image_id": "ba9adac0d04fe68e",
+  "image_sha256": "a3953521541077eb7fdb496e88bf81bf0389a73de839f195b91be082d85b5e0f",
+  "publisher_attribution": {
+    "id": "ba9adac0d04fe68e",
+    "landing_url": "https://www.flickr.com/photos/eklem/5077594561",
+    "original_url": "https://c7.staticflickr.com/5/4042/5077594561_312fc4b24b_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Espen Klem",
+    "author_url": "https://www.flickr.com/people/eklem/",
+    "title": "Barnevogn- og sykkelbod",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Espen Klem",
+    "url": "https://www.flickr.com/photos/eklem",
+    "image": "https://live.staticflickr.com/4728/buddyicons/23874626@N06.jpg?1513065993#23874626@N06"
+  },
+  "current_title": "Barnevogn- og sykkelbod",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Espen Klem",
+        "url": "https://www.flickr.com/photos/eklem",
+        "image": "https://live.staticflickr.com/4728/buddyicons/23874626@N06.jpg?1513065993#23874626@N06"
+      }
+    },
+    "meta_description": "Christopher Sjuve har snekkret barnevogn- og sykkelbod!"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/eklem/5077594561",
+  "canonical_page_url": "https://www.flickr.com/photos/eklem/5077594561",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "179f53f04dcd8f7bb3fd6f250be45d89440b104c3b6b9d49c99c807ff276f039",
+  "source_gzip_sha256": "c8bfe488252e40c17acca40793cd2689b240375d2a4dcbd2b7f6b89d2c79fb11",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-154",
+  "visual_proof_sha256": "e10f54874474a3d4edef05fe46dbba674a4e2b0206cbb9404d8d93b9e8c57e0b",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

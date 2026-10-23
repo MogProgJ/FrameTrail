@@ -9,7 +9,7 @@ struct AnalysisProgress {
     bool active{};
     std::string status{"idle"}, error;
     std::uint64_t frames{}, events{};
-    std::optional<std::chrono::microseconds> timestamp, duration;
+    std::optional<std::chrono::microseconds> timestamp, duration, first_timestamp;
     std::uint64_t appearances{}, classes{};
     std::shared_ptr<const AnalysisPreview> preview; // Capacity one, throttled; no Qt access.
 };

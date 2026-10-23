@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "75ac7104b8c15a17",
+  "image_sha256": "ccb198d4037762e5fbec712aceb54b51ed525e0c44fed8abe2a797b0d9f85ae8",
+  "source_review": {
+    "image_id": "75ac7104b8c15a17",
+    "image_sha256": "ccb198d4037762e5fbec712aceb54b51ed525e0c44fed8abe2a797b0d9f85ae8",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/ferriday/4946392370",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/ferriday/4946392370",
+      "original_url": "https://farm8.staticflickr.com/4153/4946392370_a9c920a3c8_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Russ Ferriday",
+      "author_url": "https://www.flickr.com/people/ferriday/",
+      "title": "IMG_6589",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Russ Ferriday",
+      "url": "https://www.flickr.com/photos/ferriday",
+      "image": "https://live.staticflickr.com/30/buddyicons/97785072@N00.jpg?1253505273#97785072@N00"
+    },
+    "current_title": "IMG_6589",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Russ Ferriday",
+          "url": "https://www.flickr.com/photos/ferriday",
+          "image": "https://live.staticflickr.com/30/buddyicons/97785072@N00.jpg?1253505273#97785072@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:97785072@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/ferriday/4946392370",
+    "html_sha256": "5c6cde221552f55c5a6e4ceacc4d6deb6ed27c4f0bff9e46c1ec20d1c6654cd7",
+    "stored_sha256": "195a055c9505823b98c1a4ed7222c25eb013dab10172c52a083a8d186d7f2f63",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\75ac7104b8c15a17.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\75ac7104b8c15a17.json",
+    "sha256": "824ccddddf7aa6a33495a67b79e33805ef80052f9df80d7e09953f76e58bdbb5"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\75ac7104b8c15a17.json",
+    "sha256": "118d467c8e4fbe5b664ba8671ef72a3ce1890183dda974ba9cf00c5d0c010401"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/ferriday/4946392370",
+    "original_url": "https://farm8.staticflickr.com/4153/4946392370_a9c920a3c8_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Russ Ferriday",
+    "author_url": "https://www.flickr.com/people/ferriday/",
+    "title": "IMG_6589",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

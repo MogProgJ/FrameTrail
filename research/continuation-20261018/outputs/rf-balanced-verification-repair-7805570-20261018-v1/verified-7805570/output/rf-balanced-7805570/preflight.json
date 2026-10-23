@@ -1,0 +1,19 @@
+{
+  "actual_job_id": "7805570",
+  "previous_job": "7780632",
+  "candidate_sha256": "e43a2c7a415c4f82209a1fc2471d8677503f51315e71f422ec0d6665eac377b9",
+  "protocol_sha256": "ddbb57c60855b5499ecdc039642fb5fd527634767e0575507e15b5774131e8c1",
+  "approval_sha256": "010af1052b8c182f5f99ea2be941355f811591a7cc43de6fe203e7d9f4fe9f99",
+  "starting_checkpoint_sha256": "d280723323b4ae8b07f1631667f2d87a9744c3398a06cc94e71dcef04fae2a02",
+  "original_pretrained_sha256": "d81979a9213a2109345158ce9232668df4c1ae52e9b8db3f2ec0a8cbad959b33",
+  "active_classifier_rows": [
+    133,
+    593
+  ],
+  "train_photos": 700,
+  "validation_photos": 135,
+  "test_photos_used": 0,
+  "fresh_video_frames_used": 0,
+  "independent_human_recheck": false,
+  "approved_for_application": false
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "236717d833fe40ba",
+  "image_sha256": "ae08999ea682469d058c7b68f2524712c3637e9781bd0d21c092efe43a534323",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "236717d833fe40ba",
+    "image_sha256": "ae08999ea682469d058c7b68f2524712c3637e9781bd0d21c092efe43a534323",
+    "selected_category": "door handle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/hate/2163366092",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/hate/2163366092",
+      "original_url": "https://c3.staticflickr.com/3/2294/2163366092_1493fd1f5c_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "ryan",
+      "author_url": "https://www.flickr.com/people/hate/",
+      "title": "drnkhome3",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "ryan",
+      "url": "https://www.flickr.com/photos/hate",
+      "image": "https://live.staticflickr.com/130/buddyicons/34103334@N00.jpg?1199473261#34103334@N00"
+    },
+    "current_title": "drnkhome3",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "ryan",
+          "url": "https://www.flickr.com/photos/hate",
+          "image": "https://live.staticflickr.com/130/buddyicons/34103334@N00.jpg?1199473261#34103334@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:34103334@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/hate/2163366092",
+    "html_sha256": "0dc756c79fa2c06f8193fc1a370a71aa81c85d779bd4495b6fff0551b64031ac",
+    "stored_sha256": "0114df06779e71d644aacbd730087307e086a44fe4a75708a8e9b64d44fa8293",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\236717d833fe40ba.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/236717d833fe40ba.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

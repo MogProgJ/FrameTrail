@@ -1,0 +1,15 @@
+{
+  "schema": "frametrail-billboard-readiness-v1",
+  "taxonomy_id": "nextdata7769109-taxonomy-v1",
+  "protected_release_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\candidate-manifest-v2.json",
+    "sha256": "e43a2c7a415c4f82209a1fc2471d8677503f51315e71f422ec0d6665eac377b9"
+  },
+  "prior_intakes_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\data-tools-v1\\exclusions.json",
+    "sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2"
+  },
+  "records": [],
+  "collection_state": "KIT unavailable per user; latest submission/completion unconfirmed",
+  "local_unused_candidates": "13 scene-triaged, rights/box/scene release checks pending; TRAIN-only candidates, not fresh held-out evidence"
+}

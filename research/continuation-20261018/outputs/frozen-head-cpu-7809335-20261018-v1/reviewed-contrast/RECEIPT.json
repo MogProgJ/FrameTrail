@@ -1,0 +1,75 @@
+{
+  "status": "reviewed-training-region-local-probes-complete",
+  "plan_sha256": "1d5e74007466c5a283de0bf05bc911f58903fb9bc28a69665e57e67e92fc2906",
+  "selected_index": null,
+  "trials": [
+    {
+      "index": 0,
+      "region_weight": 3.0,
+      "ridge": 1.0,
+      "eligible": false,
+      "strict_gain": false,
+      "billboard_known_hits": 9,
+      "billboard_complete_fp": 5,
+      "unscored_predictions": 1215,
+      "ranking": [
+        136,
+        0.4943820224719101
+      ],
+      "validation_seconds": null
+    },
+    {
+      "index": 1,
+      "region_weight": 3.0,
+      "ridge": 10.0,
+      "eligible": false,
+      "strict_gain": false,
+      "billboard_known_hits": 2,
+      "billboard_complete_fp": 0,
+      "unscored_predictions": 543,
+      "ranking": [
+        129,
+        0.5238095238095238
+      ],
+      "validation_seconds": 1.498757299996214
+    },
+    {
+      "index": 2,
+      "region_weight": 10.0,
+      "ridge": 1.0,
+      "eligible": false,
+      "strict_gain": false,
+      "billboard_known_hits": 8,
+      "billboard_complete_fp": 5,
+      "unscored_predictions": 1201,
+      "ranking": [
+        135,
+        0.4943820224719101
+      ],
+      "validation_seconds": 1.7334542999960831
+    },
+    {
+      "index": 3,
+      "region_weight": 10.0,
+      "ridge": 10.0,
+      "eligible": true,
+      "strict_gain": false,
+      "billboard_known_hits": 0,
+      "billboard_complete_fp": 0,
+      "unscored_predictions": 529,
+      "ranking": [
+        127,
+        0.5238095238095238
+      ],
+      "validation_seconds": 1.5908835000009276
+    }
+  ],
+  "original_data_labels_and_scopes_unchanged": true,
+  "new_region_overlay_assistant_reviewed": true,
+  "validation_or_test_used_in_training": false,
+  "all_other_model_weights_unchanged": true,
+  "new_GPU_jobs": 0,
+  "production_adoption": false,
+  "strict_ONNX_hold_not_waived": true,
+  "resumed_after": "Logging NameError after candidate0 validation was saved; all four fitted heads reused without optimizer updates or reselection of recipes."
+}

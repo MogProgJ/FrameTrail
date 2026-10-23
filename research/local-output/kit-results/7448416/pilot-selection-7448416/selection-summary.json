@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "source_catalogue_job": "7447265",
+  "publisher_split": "train",
+  "selected_candidates": 600,
+  "selected_domains": {
+    "people_and_transport": 96,
+    "home_and_furniture": 96,
+    "kitchen_and_food": 108,
+    "electronics_and_work": 96,
+    "personal_and_outdoor": 96,
+    "animals_and_hard_cases": 108
+  },
+  "selected_anchor_categories": 50,
+  "anchor_shortfalls": {
+    "lantern": 0,
+    "balloon": 0
+  },
+  "photographs_downloaded": 0,
+  "approved_for_training": false,
+  "limits": "Selection quotas count acquisition anchors, not complete object annotations or accuracy.",
+  "selection_sha256": "f09990778704c7e51d54295fa88e0b39da0a840f77cc7fa6de01a06e16869d15"
+}

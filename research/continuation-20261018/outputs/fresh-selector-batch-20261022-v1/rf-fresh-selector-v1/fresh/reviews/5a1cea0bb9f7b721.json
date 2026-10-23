@@ -1,0 +1,53 @@
+{
+  "image_id": "5a1cea0bb9f7b721",
+  "image_sha256": "68a911102c7bec7d4b82a417bb8747841d642187bebc920fcce8a19525bc320d",
+  "identity_group": "flickr-nsid:31190896@N08",
+  "scene_group": "scene:western-australian-museum-a-day-in-pompeii-volcanic-facade-exhibition-campaign",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\5a1cea0bb9f7b721.json",
+    "sha256": "0795b6262ac7b321d68687e8d81f05e849169764d4bb423bc37e9c6634e00624"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.0137,
+      0.3099,
+      0.9404,
+      0.8529
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-batch-05.json",
+    "sha256": "1d2412bf566da605def22a66faf0a40b8e423848802ec9673e7d474ad1242b7e"
+  },
+  "content_decision": {
+    "id": "5a1cea0bb9f7b721",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.0137,
+        0.3099,
+        0.9404,
+        0.8529
+      ]
+    ],
+    "note": "One continuous A Day in Pompeii exhibition campaign across facade panels; door/mullions interrupt same campaign face. Refined to full visible campaign area, excluding museum-name lettering above.",
+    "scene_description": "Western Australian Museum A Day in Pompeii volcanic facade exhibition campaign"
+  },
+  "prospective_split": "train",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

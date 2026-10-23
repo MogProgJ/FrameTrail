@@ -1,0 +1,179 @@
+{
+  "status": "all-eight-records-metrics-thresholds-folds-and-source-hashes-independently-audited",
+  "aggregate": {
+    "linear": {
+      "AP": [
+        0.4314112294129405,
+        0.764402040454672,
+        0.5708344961831306,
+        0.22960467338832366
+      ],
+      "fixed_hits": 68,
+      "zero_hits": 1,
+      "positive_queries": 71,
+      "negative_photos": 77,
+      "fixed_alarm_photos": 77,
+      "zero_alarm_photos": 2,
+      "mean_fold_AP": 0.4990631098597667
+    },
+    "mlp32": {
+      "AP": [
+        0.6280354572622273,
+        0.798208232274878,
+        0.7130697422714529,
+        0.6238886948975205
+      ],
+      "fixed_hits": 51,
+      "zero_hits": 22,
+      "positive_queries": 71,
+      "negative_photos": 77,
+      "fixed_alarm_photos": 20,
+      "zero_alarm_photos": 5,
+      "mean_fold_AP": 0.6908005316765197
+    }
+  },
+  "fold_comparisons": [
+    {
+      "fold": 0,
+      "AP_delta": 0.1966242278492868,
+      "zero_hits_delta": 2,
+      "zero_alarm_photos_delta": -1
+    },
+    {
+      "fold": 1,
+      "AP_delta": 0.033806191820206055,
+      "zero_hits_delta": 7,
+      "zero_alarm_photos_delta": 1
+    },
+    {
+      "fold": 2,
+      "AP_delta": 0.14223524608832228,
+      "zero_hits_delta": 9,
+      "zero_alarm_photos_delta": 3
+    },
+    {
+      "fold": 3,
+      "AP_delta": 0.39428402150919684,
+      "zero_hits_delta": 3,
+      "zero_alarm_photos_delta": 0
+    }
+  ],
+  "records": [
+    {
+      "fold": 0,
+      "model": "linear",
+      "AP": 0.4314112294129405,
+      "fixed_hits": 24,
+      "zero_hits": 1,
+      "positive_queries": 27,
+      "fixed_alarm_photos": 19,
+      "zero_alarm_photos": 1,
+      "negative_photos": 19,
+      "fitting_absent_photos_with_any_alarm_at0_5": 58,
+      "fitting_absent_photos": 58,
+      "training_positive_recall_zero_alarm": 0.11363636702299118
+    },
+    {
+      "fold": 0,
+      "model": "mlp32",
+      "AP": 0.6280354572622273,
+      "fixed_hits": 15,
+      "zero_hits": 3,
+      "positive_queries": 27,
+      "fixed_alarm_photos": 3,
+      "zero_alarm_photos": 0,
+      "negative_photos": 19,
+      "fitting_absent_photos_with_any_alarm_at0_5": 4,
+      "fitting_absent_photos": 58,
+      "training_positive_recall_zero_alarm": 0.5909090638160706
+    },
+    {
+      "fold": 1,
+      "model": "linear",
+      "AP": 0.764402040454672,
+      "fixed_hits": 15,
+      "zero_hits": 0,
+      "positive_queries": 15,
+      "fixed_alarm_photos": 20,
+      "zero_alarm_photos": 0,
+      "negative_photos": 20,
+      "fitting_absent_photos_with_any_alarm_at0_5": 57,
+      "fitting_absent_photos": 57,
+      "training_positive_recall_zero_alarm": 0.0
+    },
+    {
+      "fold": 1,
+      "model": "mlp32",
+      "AP": 0.798208232274878,
+      "fixed_hits": 14,
+      "zero_hits": 7,
+      "positive_queries": 15,
+      "fixed_alarm_photos": 5,
+      "zero_alarm_photos": 1,
+      "negative_photos": 20,
+      "fitting_absent_photos_with_any_alarm_at0_5": 6,
+      "fitting_absent_photos": 57,
+      "training_positive_recall_zero_alarm": 0.4285714328289032
+    },
+    {
+      "fold": 2,
+      "model": "linear",
+      "AP": 0.5708344961831306,
+      "fixed_hits": 14,
+      "zero_hits": 0,
+      "positive_queries": 14,
+      "fixed_alarm_photos": 19,
+      "zero_alarm_photos": 0,
+      "negative_photos": 19,
+      "fitting_absent_photos_with_any_alarm_at0_5": 58,
+      "fitting_absent_photos": 58,
+      "training_positive_recall_zero_alarm": 0.035087719559669495
+    },
+    {
+      "fold": 2,
+      "model": "mlp32",
+      "AP": 0.7130697422714529,
+      "fixed_hits": 11,
+      "zero_hits": 9,
+      "positive_queries": 14,
+      "fixed_alarm_photos": 6,
+      "zero_alarm_photos": 3,
+      "negative_photos": 19,
+      "fitting_absent_photos_with_any_alarm_at0_5": 7,
+      "fitting_absent_photos": 58,
+      "training_positive_recall_zero_alarm": 0.9298245906829834
+    },
+    {
+      "fold": 3,
+      "model": "linear",
+      "AP": 0.22960467338832366,
+      "fixed_hits": 15,
+      "zero_hits": 0,
+      "positive_queries": 15,
+      "fixed_alarm_photos": 19,
+      "zero_alarm_photos": 1,
+      "negative_photos": 19,
+      "fitting_absent_photos_with_any_alarm_at0_5": 58,
+      "fitting_absent_photos": 58,
+      "training_positive_recall_zero_alarm": 0.0
+    },
+    {
+      "fold": 3,
+      "model": "mlp32",
+      "AP": 0.6238886948975205,
+      "fixed_hits": 11,
+      "zero_hits": 3,
+      "positive_queries": 15,
+      "fixed_alarm_photos": 6,
+      "zero_alarm_photos": 1,
+      "negative_photos": 19,
+      "fitting_absent_photos_with_any_alarm_at0_5": 6,
+      "fitting_absent_photos": 58,
+      "training_positive_recall_zero_alarm": 0.8928571343421936
+    }
+  ],
+  "nonlinear_consistent_support": false,
+  "validation_or_test_data_used": false,
+  "optimizer_updates_by_audit": 0,
+  "caveat": "All300 absent-photo queries entered each fit with hard/rest50/50mass. Full query traces are audited separately; any remaining fitting alarm is on a supervised query."
+}

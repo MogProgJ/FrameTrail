@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "ac2e6cb990bb0571",
+  "image_sha256": "47f69889e5d3e31a096af1cc161f525fff71e9b4504babc2a55b8540d7c20d44",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "ac2e6cb990bb0571",
+    "image_sha256": "47f69889e5d3e31a096af1cc161f525fff71e9b4504babc2a55b8540d7c20d44",
+    "selected_category": "taxi",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/infinity-d/6362511665",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/infinity-d/6362511665",
+      "original_url": "https://farm2.staticflickr.com/6060/6362511665_4ae095aae6_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Yuichiro Haga",
+      "author_url": "https://www.flickr.com/people/infinity-d/",
+      "title": "IMG_1457_1",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Yuichiro Haga",
+      "url": "https://www.flickr.com/photos/infinity-d",
+      "image": "https://live.staticflickr.com/676/buddyicons/77324941@N00.jpg?1439445443#77324941@N00"
+    },
+    "current_title": "IMG_1457_1",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Yuichiro Haga",
+          "url": "https://www.flickr.com/photos/infinity-d",
+          "image": "https://live.staticflickr.com/676/buddyicons/77324941@N00.jpg?1439445443#77324941@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:77324941@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/infinity-d/6362511665",
+    "html_sha256": "4726f76902d89873ecb3d55cd73ff4f3a17e1aa1260816f0620780dc63b6e72a",
+    "stored_sha256": "b05639d9676a8441050bcef9ca3c88abd563f567410a546f5f45226a2639c0c8",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\ac2e6cb990bb0571.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/ac2e6cb990bb0571.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

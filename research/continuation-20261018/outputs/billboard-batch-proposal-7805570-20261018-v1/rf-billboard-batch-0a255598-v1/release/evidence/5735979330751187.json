@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "5735979330751187",
+  "image_sha256": "603950e704ef91acadd563550da8a57db5d847450264fde989964c0fbd7e29cc",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "5735979330751187",
+    "image_sha256": "603950e704ef91acadd563550da8a57db5d847450264fde989964c0fbd7e29cc",
+    "selected_category": "lamp",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/stanrandom/394032014",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/stanrandom/394032014",
+      "original_url": "https://farm8.staticflickr.com/169/394032014_f50bfb41cf_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "andrew wales",
+      "author_url": "https://www.flickr.com/people/stanrandom/",
+      "title": "I have seen the light",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "andrew wales",
+      "url": "https://www.flickr.com/photos/stanrandom",
+      "image": "https://live.staticflickr.com/30/buddyicons/68731984@N00.jpg?1132095669#68731984@N00"
+    },
+    "current_title": "I have seen the light",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "andrew wales",
+          "url": "https://www.flickr.com/photos/stanrandom",
+          "image": "https://live.staticflickr.com/30/buddyicons/68731984@N00.jpg?1132095669#68731984@N00"
+        }
+      },
+      "meta_description": "Handheld with VR."
+    },
+    "identity_group": "flickr-nsid:68731984@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/stanrandom/394032014",
+    "html_sha256": "882061d10cb41eda82cac581a301559b878b806bf9700e658b1ad46e2238c203",
+    "stored_sha256": "126cc4bcca76374649bcd38ccf8fecc3e2fb3643afbb63df70a19c75b808298e",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\5735979330751187.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/5735979330751187.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

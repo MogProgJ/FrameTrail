@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "f03bc90b9f0e8724",
+  "image_sha256": "ec81f1415d9baa44f339af8a96dbc7988517d72692855d180a1d4ddb4d680c26",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "f03bc90b9f0e8724",
+    "image_sha256": "ec81f1415d9baa44f339af8a96dbc7988517d72692855d180a1d4ddb4d680c26",
+    "selected_category": "waste container",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/ballena/3253325869",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/ballena/3253325869",
+      "original_url": "https://farm5.staticflickr.com/3348/3253325869_21cda595f6_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "fredsharples",
+      "author_url": "https://www.flickr.com/people/ballena/",
+      "title": "Failed State - Graffiti and Garbage in San Francisco",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "fredsharples",
+      "url": "https://www.flickr.com/photos/ballena",
+      "image": "https://live.staticflickr.com/9/buddyicons/91772175@N00.jpg?1305138069#91772175@N00"
+    },
+    "current_title": "Failed State - Graffiti and Garbage in San Francisco",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "fredsharples",
+          "url": "https://www.flickr.com/photos/ballena",
+          "image": "https://live.staticflickr.com/9/buddyicons/91772175@N00.jpg?1305138069#91772175@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:91772175@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/ballena/3253325869",
+    "html_sha256": "0a3ca9de79e0e487d4c3dbd0f22ca26e03f1be345fb78f2240c4b99f0ffe3130",
+    "stored_sha256": "cb56a9f9c2103c830c9f2ba70f3751cf0c48f3abd3b5f40a592ad71299645e95",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\f03bc90b9f0e8724.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/f03bc90b9f0e8724.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

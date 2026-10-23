@@ -1,0 +1,80 @@
+{
+  "image_id": "6d5375412062f4ce",
+  "image_sha256": "1af483d0c57ee4a821f9df16136557195e1c521c393fdda9de4636bcc5e74686",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\source-review\\source-evidence-review.json",
+    "sha256": "6881fe98e939931c5d708dc20e1828c831c11356f67fabd03ca609e65bd6adf8"
+  },
+  "source_record": {
+    "image_id": "6d5375412062f4ce",
+    "image_sha256": "1af483d0c57ee4a821f9df16136557195e1c521c393fdda9de4636bcc5e74686",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/usfwsmtnprairie/9162333836",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/usfwsmtnprairie/9162333836",
+      "original_url": "https://c7.staticflickr.com/4/3820/9162333836_4586a699d7_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "USFWS Mountain-Prairie",
+      "author_url": "https://www.flickr.com/people/usfwsmtnprairie/",
+      "title": "Audubon NWR sign at entrance",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "USFWS Mountain-Prairie",
+      "url": "https://www.flickr.com/photos/usfwsmtnprairie",
+      "image": "https://live.staticflickr.com/4099/buddyicons/51986662@N05.jpg?1279036497#51986662@N05"
+    },
+    "current_title": "Audubon NWR sign at entrance",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "USFWS Mountain-Prairie",
+          "url": "https://www.flickr.com/photos/usfwsmtnprairie",
+          "image": "https://live.staticflickr.com/4099/buddyicons/51986662@N05.jpg?1279036497#51986662@N05"
+        }
+      },
+      "meta_description": "Scenery and wildlife and Audubon National Wildlife Refuge in North Dakota.\n\t\n\tCredit: USFWS"
+    },
+    "identity_group": "flickr-nsid:51986662@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/usfwsmtnprairie/9162333836",
+    "html_sha256": "291081aa99b0feb8a476770424beb98bf3d8f4afcf9acc58100a9831837517c9",
+    "stored_sha256": "13f1f71da8a1a7308daf80fc6dc25003c615b4251fb4d3308e32932f72e779b0",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\6d5375412062f4ce.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\6d5375412062f4ce.html.gz",
+    "sha256": "13f1f71da8a1a7308daf80fc6dc25003c615b4251fb4d3308e32932f72e779b0"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

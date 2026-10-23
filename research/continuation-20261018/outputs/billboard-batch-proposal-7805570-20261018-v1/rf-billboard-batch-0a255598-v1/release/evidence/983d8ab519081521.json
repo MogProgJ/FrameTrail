@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "983d8ab519081521",
+  "image_sha256": "6ac356cc948d768dd39da5d158f306620841c49fb6ff890929c45ab116ae8c48",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "983d8ab519081521",
+    "image_sha256": "6ac356cc948d768dd39da5d158f306620841c49fb6ff890929c45ab116ae8c48",
+    "selected_category": "van",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/16801915@N06/6952365469",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/16801915@N06/6952365469",
+      "original_url": "https://farm2.staticflickr.com/7181/6952365469_ebe4419a05_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Reading Tom",
+      "author_url": "https://www.flickr.com/people/16801915@N06/",
+      "title": "The Star of Bethnal Green",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Reading Tom",
+      "url": "https://www.flickr.com/photos/16801915@N06",
+      "image": "https://live.staticflickr.com/1926/buddyicons/16801915@N06.jpg?1538075013#16801915@N06"
+    },
+    "current_title": "The Star of Bethnal Green",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Reading Tom",
+          "url": "https://www.flickr.com/photos/16801915@N06",
+          "image": "https://live.staticflickr.com/1926/buddyicons/16801915@N06.jpg?1538075013#16801915@N06"
+        }
+      },
+      "meta_description": "359 Bethnal Green Road, Bethnal Green. "
+    },
+    "identity_group": "flickr-nsid:16801915@N06",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/16801915@N06/6952365469",
+    "html_sha256": "038e149b457ee9686cf8d2c85ca2ed6e6e5595fbc0bc8bd72e6e77dde6ebd19d",
+    "stored_sha256": "e6648f05aafcb58ce974b41e88ad7b3f4fc8469678ae81290986ae57632031d1",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\983d8ab519081521.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/983d8ab519081521.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

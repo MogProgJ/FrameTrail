@@ -1,0 +1,72 @@
+{
+  "image_id": "20f3030083b1eafc",
+  "image_sha256": "92202ac4a17d7adcde473e56ab6f5608a777369835ff10b7d757bf82d8057f69",
+  "publisher_attribution": {
+    "id": "20f3030083b1eafc",
+    "landing_url": "https://www.flickr.com/photos/miamism/8914915170",
+    "original_url": "https://c5.staticflickr.com/4/3695/8914915170_e4a26552d1_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Ines Hegedus-Garcia",
+    "author_url": "https://www.flickr.com/people/miamism/",
+    "title": "Schenley Park home by Alfred Browning Parker",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Ines Hegedus-Garcia",
+    "url": "https://www.flickr.com/photos/miamism",
+    "image": "https://live.staticflickr.com/6160/buddyicons/23245739@N02.jpg?1317789137#23245739@N02"
+  },
+  "current_title": "Schenley Park home by Alfred Browning Parker",
+  "caption_and_notices": {
+    "image_id": "20f3030083b1eafc",
+    "identity_group": "flickr-nsid:23245739@N02",
+    "creator": {
+      "@type": "Person",
+      "name": "Ines Hegedus-Garcia",
+      "url": "https://www.flickr.com/photos/miamism",
+      "image": "https://live.staticflickr.com/6160/buddyicons/23245739@N02.jpg?1317789137#23245739@N02"
+    },
+    "current_title": "Schenley Park home by Alfred Browning Parker",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Ines Hegedus-Garcia",
+        "url": "https://www.flickr.com/photos/miamism",
+        "image": "https://live.staticflickr.com/6160/buddyicons/23245739@N02.jpg?1317789137#23245739@N02"
+      }
+    },
+    "meta_description": "<a href=\"http://www.miamism.com/alfred-browning-parker-home-for-sale-in-schenley-park/\" rel=\"noreferrer nofollow\">www.miamism.com/alfred-browning-parker-home-for-sale-in-s...</a>"
+  },
+  "source_url": "https://www.flickr.com/photos/miamism/8914915170",
+  "canonical_page_url": "https://www.flickr.com/photos/miamism/8914915170",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "4ec36a5c31559ba37da223ac36f1fd182fe8c019535879cf5913140a68c39b01",
+  "source_gzip_sha256": "5c21c7bcea5a400615ccae7c81452f9fcca9904c0ce48c4f3db0471b75529a3c",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "9fa6ca5a7816b61a9cc6ab8224072d33283e0381288607a56b59010db4d65c4c"
+}

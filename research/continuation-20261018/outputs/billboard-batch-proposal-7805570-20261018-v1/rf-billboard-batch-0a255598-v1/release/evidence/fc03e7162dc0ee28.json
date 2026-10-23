@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "fc03e7162dc0ee28",
+  "image_sha256": "158b4bb4834a3294e271030cf64cc6acadd82ccd2c4bda6d385c0c7cf63901ec",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "fc03e7162dc0ee28",
+    "image_sha256": "158b4bb4834a3294e271030cf64cc6acadd82ccd2c4bda6d385c0c7cf63901ec",
+    "selected_category": "van",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/feserc/4103344419",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/feserc/4103344419",
+      "original_url": "https://c1.staticflickr.com/3/2774/4103344419_95fd3bf78b_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Chris Feser",
+      "author_url": "https://www.flickr.com/people/feserc/",
+      "title": "Car Accident",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Chris Feser",
+      "url": "https://www.flickr.com/photos/feserc",
+      "image": "https://live.staticflickr.com/21/buddyicons/42602676@N00.jpg?1252098884#42602676@N00"
+    },
+    "current_title": "Car Accident",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Chris Feser",
+          "url": "https://www.flickr.com/photos/feserc",
+          "image": "https://live.staticflickr.com/21/buddyicons/42602676@N00.jpg?1252098884#42602676@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:42602676@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/feserc/4103344419",
+    "html_sha256": "0b1598eff78e628a81732311c760126ec4f0fe87f05ec12f5022accddd55afbe",
+    "stored_sha256": "df2f1434d0b5a7c0ffff6f9af97af2f33e62350b8320ebf24fee7fd4e4bb3d52",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\fc03e7162dc0ee28.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/fc03e7162dc0ee28.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

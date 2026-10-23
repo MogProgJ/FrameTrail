@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "00b5ac570d995133",
+  "image_sha256": "1203898b63aad7bdaef949e2f4f272b37011ed8632bea09a6592ed03bdd836a7",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "00b5ac570d995133",
+    "image_sha256": "1203898b63aad7bdaef949e2f4f272b37011ed8632bea09a6592ed03bdd836a7",
+    "selected_category": "traffic sign",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/geithe/8765555820",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/geithe/8765555820",
+      "original_url": "https://farm4.staticflickr.com/5443/8765555820_01c6f0d757_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Lars Geithe",
+      "author_url": "https://www.flickr.com/people/geithe/",
+      "title": "\u00d8verst i Kjerkgata",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Lars Geithe",
+      "url": "https://www.flickr.com/photos/geithe",
+      "image": "https://live.staticflickr.com/8666/buddyicons/67897244@N07.jpg?1424945846#67897244@N07"
+    },
+    "current_title": "\u00d8verst i Kjerkgata",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Lars Geithe",
+          "url": "https://www.flickr.com/photos/geithe",
+          "image": "https://live.staticflickr.com/8666/buddyicons/67897244@N07.jpg?1424945846#67897244@N07"
+        }
+      },
+      "meta_description": "Motivet ble til to bilder malt av Harald Sohlberg i 1903; \u00abFra R\u00f8ros, Lillegaten\u00bb og \u00abEfter snestorm, Lillegaten R\u00f8ros\u00bb - ogs\u00e5 kjent som \u00abSolbergrekka\u00bb. Foto: Lars Geithe, 2013"
+    },
+    "identity_group": "flickr-nsid:67897244@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/geithe/8765555820",
+    "html_sha256": "a4fe99d3c202725f2a114b357f88131b6e5e09f6bd95b45ff12665d8c840db9e",
+    "stored_sha256": "f7d58f5852b4aa40122ffbe05e8800d0d5b2b672340963654a9322b172ac31c0",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\00b5ac570d995133.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/00b5ac570d995133.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

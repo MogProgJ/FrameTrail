@@ -1,0 +1,53 @@
+{
+  "image_id": "fe1a510b5a1c56fc",
+  "image_sha256": "1e73e75e613e8aad8a3bd527536566d17ba531ee04276aed20d5e42fe2f94596",
+  "identity_group": "flickr-nsid:70148893@N00",
+  "scene_group": "scene:red-garantia-de-progres-president-montilla-campaign-with-small-protest-placard-in-front",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\fe1a510b5a1c56fc.json",
+    "sha256": "f71647a9da6f6e2adc1c2fc9bc61feec5181bfdbbe6b8b35cd7c1621fd5702d3"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0,
+      0.060625,
+      0.999167,
+      0.7
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-val-03.json",
+    "sha256": "7eab0511c4c25897f8683fe343333b8fa2682c264e5d6878c7dbad9e8fdab7b3"
+  },
+  "content_decision": {
+    "id": "fe1a510b5a1c56fc",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0,
+        0.060625,
+        0.999167,
+        0.7
+      ]
+    ],
+    "note": "One large red political campaign wall panel; small foreground protest placard is not an installed advertising board. Source bounds verified; no other campaigns.",
+    "scene_description": "Red Garantia de Progres President Montilla campaign with small protest placard in front"
+  },
+  "prospective_split": "val",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

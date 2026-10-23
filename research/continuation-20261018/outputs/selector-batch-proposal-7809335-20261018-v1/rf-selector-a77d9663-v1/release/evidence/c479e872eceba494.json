@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "c479e872eceba494",
+  "image_sha256": "f7cf24b99b23068769cc7f5f4b69a869333c0c3c22769bfa7faa0978aee5bc78",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "c479e872eceba494",
+    "image_sha256": "f7cf24b99b23068769cc7f5f4b69a869333c0c3c22769bfa7faa0978aee5bc78",
+    "selected_category": "fire hydrant",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/hannafordeducation/16637840220",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/hannafordeducation/16637840220",
+      "original_url": "https://farm5.staticflickr.com/7629/16637840220_3b775d85e3_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Simon Hannaford",
+      "author_url": "https://www.flickr.com/people/hannafordeducation/",
+      "title": "MAD POL Town (18)",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Simon Hannaford",
+      "url": "https://www.flickr.com/photos/hannafordeducation",
+      "image": "https://live.staticflickr.com/7453/buddyicons/88624282@N03.jpg?1395920579#88624282@N03"
+    },
+    "current_title": "MAD POL Town (18)",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Simon Hannaford",
+          "url": "https://www.flickr.com/photos/hannafordeducation",
+          "image": "https://live.staticflickr.com/7453/buddyicons/88624282@N03.jpg?1395920579#88624282@N03"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:88624282@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/hannafordeducation/16637840220",
+    "html_sha256": "be014d94caeff3c5e97cd9560cf9956eb3b62a3b02712f99b3e2278fe9cc18d7",
+    "stored_sha256": "81d64db2bedc3bc20831c483e2015054a8d5a4d08a439bcd63ac72b0ad461084",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\c479e872eceba494.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/c479e872eceba494.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

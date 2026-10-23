@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "bae04307ff224ad8",
+  "image_sha256": "cc07c9b9a67dcc3ccd9f554cba426e0eba60bd886c9b5860d83a6ea898e32f5a",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "bae04307ff224ad8",
+    "image_sha256": "cc07c9b9a67dcc3ccd9f554cba426e0eba60bd886c9b5860d83a6ea898e32f5a",
+    "selected_category": "frying pan",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/stone-soup/3266525206",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/stone-soup/3266525206",
+      "original_url": "https://c1.staticflickr.com/4/3493/3266525206_f6a5006693_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "jules",
+      "author_url": "https://www.flickr.com/people/stone-soup/",
+      "title": "a well seasoned omelette pan",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "jules",
+      "url": "https://www.flickr.com/photos/stone-soup",
+      "image": "https://live.staticflickr.com/60/buddyicons/58367355@N00.jpg?1299149128#58367355@N00"
+    },
+    "current_title": "a well seasoned omelette pan",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "jules",
+          "url": "https://www.flickr.com/photos/stone-soup",
+          "image": "https://live.staticflickr.com/60/buddyicons/58367355@N00.jpg?1299149128#58367355@N00"
+        }
+      },
+      "meta_description": "<a href=\"http://thestonesoup.com/blog/2009/02/food-for-love-the-morning-after/\" rel=\"noreferrer nofollow\">stonesoup recipe</a>"
+    },
+    "identity_group": "flickr-nsid:58367355@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/stone-soup/3266525206",
+    "html_sha256": "0dc43cc6da60eb0537009b00234fce6e3bcadc7a4a3f524c9062ed1936c5e4a4",
+    "stored_sha256": "1623362a4e34991daf0b864aa4f99636085c84c06cd1198e1ac6c904ae7be65d",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\bae04307ff224ad8.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/bae04307ff224ad8.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,64 @@
+{
+  "image_id": "454f54f1758a164c",
+  "image_sha256": "b76578cc4c1eee1ff2068a8285707be8e0489e48fabd374605232bfa100ffc66",
+  "publisher_attribution": {
+    "id": "454f54f1758a164c",
+    "landing_url": "https://www.flickr.com/photos/strupler/3121050444",
+    "original_url": "https://c5.staticflickr.com/4/3192/3121050444_cc50e6b478_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "ND Strupler",
+    "author_url": "https://www.flickr.com/people/strupler/",
+    "title": "R\u00e4b\u00e4liechtliumzug",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "ND Strupler",
+    "url": "https://www.flickr.com/photos/strupler",
+    "image": "https://live.staticflickr.com/5778/buddyicons/9650814@N04.jpg?1442281025#9650814@N04"
+  },
+  "current_title": "R\u00e4b\u00e4liechtliumzug",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "ND Strupler",
+        "url": "https://www.flickr.com/photos/strupler",
+        "image": "https://live.staticflickr.com/5778/buddyicons/9650814@N04.jpg?1442281025#9650814@N04"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/strupler/3121050444",
+  "canonical_page_url": "https://www.flickr.com/photos/strupler/3121050444",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "8666491103e0379e935676f2e056f7998a186c5edaeac8b4d98b6194a4b551ef",
+  "source_gzip_sha256": "734da2077bd2a95be5201a489a2c6e77b33ed5817913454c8a29d18b6205f9e6",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-025",
+  "visual_proof_sha256": "8e81f3dcb0665ac4ebf4d2c634870edefc441c2c8107d2c66b19f2c91ecc5e35",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

@@ -1,0 +1,72 @@
+{
+  "image_id": "071d1275c3abee44",
+  "image_sha256": "91e338ab9765a9fec6a11c618f83e2e65ee04b492cbed1f219de0ecabf26e345",
+  "publisher_attribution": {
+    "id": "071d1275c3abee44",
+    "landing_url": "https://www.flickr.com/photos/andreanna/2837852339",
+    "original_url": "https://farm5.staticflickr.com/3179/2837852339_0f1f151ce3_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Andreanna Moya Photography",
+    "author_url": "https://www.flickr.com/people/andreanna/",
+    "title": "Pizza",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Andreanna Moya Photography",
+    "url": "https://www.flickr.com/photos/andreanna",
+    "image": "https://live.staticflickr.com/7370/buddyicons/13897165@N00.jpg?1399157969#13897165@N00"
+  },
+  "current_title": "Pizza",
+  "caption_and_notices": {
+    "image_id": "071d1275c3abee44",
+    "identity_group": "flickr-nsid:13897165@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "Andreanna Moya Photography",
+      "url": "https://www.flickr.com/photos/andreanna",
+      "image": "https://live.staticflickr.com/7370/buddyicons/13897165@N00.jpg?1399157969#13897165@N00"
+    },
+    "current_title": "Pizza",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Andreanna Moya Photography",
+        "url": "https://www.flickr.com/photos/andreanna",
+        "image": "https://live.staticflickr.com/7370/buddyicons/13897165@N00.jpg?1399157969#13897165@N00"
+      }
+    },
+    "meta_description": "Photo Scavenger Hunt"
+  },
+  "source_url": "https://www.flickr.com/photos/andreanna/2837852339",
+  "canonical_page_url": "https://www.flickr.com/photos/andreanna/2837852339",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "324a9a30caaddf2be82c0f3d3b39afe3e8390645a08cce1dc955653d2b453f61",
+  "source_gzip_sha256": "d3033637115d0c159e3edf50308a4b0cf4a9227f88828a6a59bdd397249b94f4",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "d1a369385a824cd7dfccece3be7951d5132d01b44bc6263734146cfb69d3d693"
+}

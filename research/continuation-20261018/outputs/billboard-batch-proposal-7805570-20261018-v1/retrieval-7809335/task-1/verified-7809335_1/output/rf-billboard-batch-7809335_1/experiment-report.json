@@ -1,0 +1,33 @@
+{
+  "status": "complete-no-improving-candidate",
+  "actual_job_id": "7809335_1",
+  "slurm_job_id": "7809640",
+  "array_task_index": 1,
+  "variant": {
+    "index": 1,
+    "name": "n3-lr0.0001",
+    "negative_presentations": 3,
+    "lr": 0.0001,
+    "accumulation": 4,
+    "maximum_updates": 3000,
+    "schedule_file": "schedules/task-1.json",
+    "schedule_sha256": "ecd0143d22d4f2844a663702f42ac497a1ce2ab224beb9144a7bf4f675764908"
+  },
+  "previous_job": "7805570",
+  "updates": 1500,
+  "completion_reason": "protocol-early-stop-no-gain",
+  "best_step": 0,
+  "new_candidate_selected": false,
+  "best_checkpoint_sha256": "3ffc136b0f33106694a77c28f3c935836a2ba422642c9f5cd2e2eb7559aa8e2b",
+  "last_checkpoint_sha256": "c3043fcca8d917dbffe0eeaca67e0f066175e8d803912364393aea6790e7d407",
+  "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "active_classifier_rows": [
+    133
+  ],
+  "frozen_features_and_boxes_unchanged": true,
+  "inactive_classifier_rows_unchanged": true,
+  "retention_against_both_baselines": true,
+  "elapsed_seconds": 426.46,
+  "test_and_video_used": false,
+  "approved_for_application": false
+}

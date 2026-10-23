@@ -1,0 +1,59 @@
+{
+  "status": "authorized-photo-loss-study-audits-and-next-review-packet-complete",
+  "fits": 8,
+  "updates": 1280,
+  "objective_clean_support_methods": [],
+  "total_three_authorized_studies_fits": 24,
+  "total_probe_updates": 3840,
+  "all_MLP_fitting_queries_clean_at0_5": true,
+  "production_adoption": false,
+  "models_saved": false,
+  "validation_cache_reads": 0,
+  "test_cache_reads": 0,
+  "new_image_inference": 0,
+  "new_cluster_jobs": 0,
+  "next_input": "Independent human/product review of six frozen TRAIN scope examples for the next data/representation plan; no additional automatic fits.",
+  "prior_receipts": {
+    "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-full-query-7870268-20261022-v1\\COMPLETION_RECEIPT.json": "485eb3b5e212c26500bd28ad5f1685f739fbc876a1d450c9494c616c17e74c21",
+    "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-7870268-20261022-v1\\COMPLETION_RECEIPT.json": "fd3aeec198a76ddb62848ca11fbf35990e2146e08d6151a274aa4a6d4cc43b81",
+    "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\COMPLETION_RECEIPT_7870268.json": "8b8b01b94ecc70a3d2babca9ceef4aa8af04668b63b143d0f6937e2a7f45452c"
+  },
+  "refs": [
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-photo-max-loss-7870268-20261022-v1\\AUTHORIZATION.json",
+      "sha256": "5c74f68c0eab6af868729b7bc43f940e14d4f2a28c9ef5860b2db454159d8771"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-photo-max-loss-7870268-20261022-v1\\PLAN.json",
+      "sha256": "82cdb8e1e9f447c4bec825439fbded7e2bdc9610150d1d67c3d77c30f35c952f"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-photo-max-loss-7870268-20261022-v1\\REPORT.json",
+      "sha256": "6a7552fce1c4cdaa8a0074a4223556674a15181c7eb45ce35a44de1f499a8a7b"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-photo-max-loss-7870268-20261022-v1\\INDEPENDENT_AUDIT.json",
+      "sha256": "21194fb8c7233758dfd417fe9e01ce7d1890af1ccbe482e05b607d5c4ac97cc3"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-photo-max-loss-7870268-20261022-v1\\OBJECTIVE_TRACE_AUDIT.json",
+      "sha256": "5c74a6cc13bcd78bbc452f934ba53431990ad637ce6ea34a3c63a69c1e1bd52c"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-photo-max-loss-7870268-20261022-v1\\STUDY_REPORT.md",
+      "sha256": "a7774ed2bb590bca91ac9e404adae356fb8c93ceff0aeabffb838c4a442ddf47"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-photo-max-loss-7870268-20261022-v1\\BOUNDARY_REVIEW_PACKET.md",
+      "sha256": "d3931b2f1baa34b0707877b6dbe60836f00ccad630ff34e4469cf6694a606a25"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-photo-max-loss-7870268-20261022-v1\\BOUNDARY_REVIEW_PACKET.json",
+      "sha256": "a96a08bbf85bf2e982ac75446d384f6175d54f7b3f6ed471a44e8f84e950ba1b"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-photo-max-loss-7870268-20261022-v1\\BOUNDARY_REVIEW.jpg",
+      "sha256": "ce6a103e72b833a4ea0bfe7bc52cac6f223573cb9f4891770509d9bf9f784be2"
+    }
+  ]
+}

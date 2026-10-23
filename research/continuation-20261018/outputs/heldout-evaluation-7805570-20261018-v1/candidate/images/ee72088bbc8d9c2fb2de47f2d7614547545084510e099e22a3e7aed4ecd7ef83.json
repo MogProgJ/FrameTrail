@@ -1,0 +1,32 @@
+{
+  "identity": {
+    "role": "candidate",
+    "checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+    "evaluation_lock_sha256": "362e49cb9001e9a06795c59aafc7df0d6a26700ddaf8f592ef7431251fdcfa10",
+    "backend": "PyTorchCPU/FP32/math-attention"
+  },
+  "image_sha256": "ee72088bbc8d9c2fb2de47f2d7614547545084510e099e22a3e7aed4ecd7ef83",
+  "detections": [
+    {
+      "canonical_id": 7,
+      "confidence": 0.7589249014854431,
+      "box": [
+        0.19928693771362305,
+        153.37714433670044,
+        60.55423021316528,
+        250.90234994888306
+      ]
+    },
+    {
+      "canonical_id": 7,
+      "confidence": 0.6624457836151123,
+      "box": [
+        2.0302391052246094,
+        278.349974155426,
+        443.2717704772949,
+        698.2318568229675
+      ]
+    }
+  ],
+  "seconds": 0.6270875000009255
+}

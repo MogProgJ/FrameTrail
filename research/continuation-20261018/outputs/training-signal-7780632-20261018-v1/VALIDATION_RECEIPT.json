@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "training_photos": 12,
+  "checkpoint_photo_backward_checks": 24,
+  "positive_role_checks": 16,
+  "explicit_negative_role_checks": 16,
+  "scoped_mask_checks_passed": true,
+  "head_gradient_reconstruction_passed": true,
+  "model_state_fingerprints_unchanged": true,
+  "original_input_hashes_unchanged": true,
+  "optimizer_instantiated": false,
+  "optimizer_updates": 0,
+  "validation_inference": false,
+  "heldout_used": false,
+  "proposal_sampler_partition_checks_passed": true,
+  "proposed_update_count": 2000,
+  "new_training_submitted": false
+}

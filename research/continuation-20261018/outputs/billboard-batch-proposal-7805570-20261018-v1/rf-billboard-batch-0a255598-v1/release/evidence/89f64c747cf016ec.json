@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "89f64c747cf016ec",
+  "image_sha256": "852eb14439b783ce8eb431476e5f2a2196859d174675440983397182288cb809",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "89f64c747cf016ec",
+    "image_sha256": "852eb14439b783ce8eb431476e5f2a2196859d174675440983397182288cb809",
+    "selected_category": "waste container",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/gotovan/15523578652",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/gotovan/15523578652",
+      "original_url": "https://c5.staticflickr.com/6/5614/15523578652_f1e0636c31_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "GoToVan",
+      "author_url": "https://www.flickr.com/people/gotovan/",
+      "title": "Street Wall Art",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "GoToVan",
+      "url": "https://www.flickr.com/photos/gotovan",
+      "image": "https://live.staticflickr.com/7463/buddyicons/47022937@N03.jpg?1469468169#47022937@N03"
+    },
+    "current_title": "Street Wall Art",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "GoToVan",
+          "url": "https://www.flickr.com/photos/gotovan",
+          "image": "https://live.staticflickr.com/7463/buddyicons/47022937@N03.jpg?1469468169#47022937@N03"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:47022937@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/gotovan/15523578652",
+    "html_sha256": "377912c2e3ef3b12de9c1077a6f1c3217229d5f1e681638fee44fc83c6e511cd",
+    "stored_sha256": "cce9d9f2c48d483c9a2a48f69a5eb47a60a1339cd926eb025306302eb7772c01",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\89f64c747cf016ec.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/89f64c747cf016ec.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "7c125a9e5c8d2f29",
+  "image_sha256": "b646495d52a7cea74d97280b10ee5e279903eb4fea40e9cd264531662b64f8cc",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "7c125a9e5c8d2f29",
+    "image_sha256": "b646495d52a7cea74d97280b10ee5e279903eb4fea40e9cd264531662b64f8cc",
+    "selected_category": "light switch",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/zieak/4092268886",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/zieak/4092268886",
+      "original_url": "https://c2.staticflickr.com/3/2517/4092268886_19f46d299a_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Ryan McFarland",
+      "author_url": "https://www.flickr.com/people/zieak/",
+      "title": "Motion sensing light control",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Ryan McFarland",
+      "url": "https://www.flickr.com/photos/zieak",
+      "image": "https://live.staticflickr.com/1391/buddyicons/78552401@N00.jpg?1186560984#78552401@N00"
+    },
+    "current_title": "Motion sensing light control",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Ryan McFarland",
+          "url": "https://www.flickr.com/photos/zieak",
+          "image": "https://live.staticflickr.com/1391/buddyicons/78552401@N00.jpg?1186560984#78552401@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:78552401@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/zieak/4092268886",
+    "html_sha256": "73a6fe880090b3ebcaad857dde945b00c5df709fd32938a2321d32701ee1ccd5",
+    "stored_sha256": "72ca20edaa218be5104fe3159ef91e82303c518c2bbdc90f08f39f56bfc48ab3",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\7c125a9e5c8d2f29.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/7c125a9e5c8d2f29.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

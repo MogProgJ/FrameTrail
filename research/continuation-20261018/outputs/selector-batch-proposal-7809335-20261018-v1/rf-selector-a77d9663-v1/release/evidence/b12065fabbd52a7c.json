@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "b12065fabbd52a7c",
+  "image_sha256": "8ee81bd21fe5af216ae16dc1e18e7248e02471851de36821e1e5bec241bdcbb5",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "b12065fabbd52a7c",
+    "image_sha256": "8ee81bd21fe5af216ae16dc1e18e7248e02471851de36821e1e5bec241bdcbb5",
+    "selected_category": "shelf",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/bopuc/530134862",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/bopuc/530134862",
+      "original_url": "https://c5.staticflickr.com/2/1034/530134862_05a82d437b_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Bopuc",
+      "author_url": "https://www.flickr.com/people/bopuc/",
+      "title": "hackdiary",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Bopuc",
+      "url": "https://www.flickr.com/photos/bopuc",
+      "image": "https://live.staticflickr.com/37/buddyicons/32373689382@N01.jpg?1193015378#32373689382@N01"
+    },
+    "current_title": "hackdiary",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Bopuc",
+          "url": "https://www.flickr.com/photos/bopuc",
+          "image": "https://live.staticflickr.com/37/buddyicons/32373689382@N01.jpg?1193015378#32373689382@N01"
+        }
+      },
+      "meta_description": "Matt Biddulph is visiting Montreal for much of the month. Here he is test driving a desk at the BoLab. ;)\r\n\t\r\n\toddly blurry pic. hrm."
+    },
+    "identity_group": "flickr-nsid:32373689382@N01",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/bopuc/530134862",
+    "html_sha256": "e910e83773bbadafff10db4341e6316f56ee8c0d962d924de0d6376e4e519a73",
+    "stored_sha256": "1b324c4e48182f1f15d2edfff481b2bc592d750941a4d2064287419e979d4f14",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\b12065fabbd52a7c.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/b12065fabbd52a7c.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

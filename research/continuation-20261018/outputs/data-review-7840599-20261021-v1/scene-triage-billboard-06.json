@@ -1,0 +1,148 @@
+{
+  "sheet": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\review-sheets\\billboard-06.jpg",
+  "stage": "initial-scene-triage-only-not-label-or-training-clearance",
+  "model_predictions_used": false,
+  "exhaustive_annotation": false,
+  "records": [
+    {
+      "id": "2c1368a802d7324b",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large illustrated footwear/product campaign panels on facade."
+    },
+    {
+      "id": "2c7fb585adcb769d",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Building campaign banners with people/messages; handheld protest placard is separate scope."
+    },
+    {
+      "id": "2d3cdcba514f2249",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large roadside footwear/product billboard."
+    },
+    {
+      "id": "2dd45d8a8abb1c10",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Restaurant name and information/menu sign; inspect any separate advertising face."
+    },
+    {
+      "id": "308fc65998594f8b",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Pub name/logo boards and partial small offer panel; original needed."
+    },
+    {
+      "id": "40c30c1af661b1c3",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed illustrated campaign advertisement above street."
+    },
+    {
+      "id": "45914a5e6f5a9e42",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Motorway destination information signs; full original needed before absence certification."
+    },
+    {
+      "id": "493816f5e25dd687",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Motel name and hospitality information sign; preserve business-lettering boundary."
+    },
+    {
+      "id": "4c916adba93611ad",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large Chick-fil-A product campaign with separate limousine-service advertising."
+    },
+    {
+      "id": "4d0dca2a046d1fe9",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Piccadilly Circus advertising at night; recurring cross-role landmark."
+    },
+    {
+      "id": "5110409f98e95a40",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Building/business name/website and decorative flags."
+    },
+    {
+      "id": "53526ebb675c1c9e",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Portrait monument/display outside public building; campaign versus civic information uncertain."
+    },
+    {
+      "id": "5d34be84c57bba2d",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Rail platform departure information sign."
+    },
+    {
+      "id": "60f29eb6a19e86a7",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Urban road with large facade advertisements; original needed for distant complete boxes."
+    },
+    {
+      "id": "6532e6a4944b0156",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Airport conference welcome/event promotional banner."
+    },
+    {
+      "id": "6d5375412062f4ce",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Wildlife-refuge name/information sign."
+    },
+    {
+      "id": "708b56b3e82e3a58",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed street product advertisement with chef and offer."
+    },
+    {
+      "id": "789d7ac1977e9617",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large photographic product/fashion advertising panel on facade; inspect lower panel separately."
+    },
+    {
+      "id": "78a0115d8c8294e2",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large private-investigator service advertisement with telephone contact."
+    },
+    {
+      "id": "7a7b8b33e51de0e5",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Japanese commercial buildings with product campaign panels; inspect all distant faces."
+    }
+  ]
+}

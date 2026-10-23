@@ -1,0 +1,678 @@
+{
+  "status": "paired-local-controls-completed",
+  "both_seeds_qualify": false,
+  "conditions": [
+    {
+      "status": "complete",
+      "seed": 17,
+      "index": 0,
+      "method": "M0-main-row-only",
+      "updates": 1500,
+      "best_step": 0,
+      "new_candidate_selected": false,
+      "best_fresh": {
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 14,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 77,
+        "complete_precision": 0,
+        "complete_recall": 0.0,
+        "complete_f1": 0.0,
+        "complete_positive_targets": 14,
+        "partial_known_positive_recall": null,
+        "per_image": [
+          {
+            "image_id": "066687f8b782ab5b",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "5671f6f9aed0541a",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 3
+          },
+          {
+            "image_id": "6532e6a4944b0156",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 3
+          },
+          {
+            "image_id": "002d7d220a042075",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 2
+          },
+          {
+            "image_id": "97c4a86fe18afdb8",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 17
+          },
+          {
+            "image_id": "c684d8b7a6e8cae8",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "4c916adba93611ad",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 2,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "cea218650a100dd0",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 2,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 2
+          },
+          {
+            "image_id": "dd1074c4e1f58872",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 2
+          },
+          {
+            "image_id": "fe1a510b5a1c56fc",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "15b9fc26736f275a",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "b70da5fc345b106c",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "2b92851e9cf25196",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 9
+          },
+          {
+            "image_id": "8e68b658ee40cbac",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "1e496c37fb7ff35a",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 4
+          },
+          {
+            "image_id": "5d34be84c57bba2d",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "6d5375412062f4ce",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 3
+          },
+          {
+            "image_id": "5ce07497741762d6",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "e894aab4f702c000",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "e81d4fc6bdb57335",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "a4dd3353126f93b4",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "2bf7c15ed4c9de16",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "4a1a6868eb1dccd8",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "cf6cb3f326b2f890",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "b3e1ae3e7781726e",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "03b25bab135ebfbf",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "360ff97104b82129",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 2
+          },
+          {
+            "image_id": "5110409f98e95a40",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "aaaf120ef247d0cb",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 2
+          },
+          {
+            "image_id": "3a6dc96a518eb744",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 17
+          },
+          {
+            "image_id": "104c82e95a295ba0",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "093a3c43152a9742",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 3
+          }
+        ],
+        "limits": "Scoped development validation; unknown predictions unscored, partial known targets recall only. Not full-vocabulary mAP or independent accuracy."
+      },
+      "best_head_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-paired-controls-20261021-v1\\seed-17\\step-0000.pt",
+        "sha256": "3b9e92fe92c7c740b5158c4e12b15d038203f5248b5444eb4bc21a8456d164c4"
+      },
+      "last_head_sha256": "83c43189d0b44f7d61286481cddd0e4fe089b0d09811042e72831fbee027eab1",
+      "reason": "maximum-updates",
+      "elapsed_active_seconds": 203.66,
+      "inactive_classifier_rows_bitwise_unchanged": true,
+      "all_other_model_weights_and_buffers_unchanged": "Full model was not mutated or trained; only standalone copy of main classifier tensor optimized. Compose only with pinned starting checkpoint.",
+      "selection_device": "pinned-CPU-reference",
+      "test_photos_used": 0,
+      "production_adoption": false,
+      "plan_sha256": "8f789c6e0bee3d8970ded955f0207560b3cc8d28816df20cf2e7593f9b18c70d",
+      "execution_order_deviation_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-paired-controls-20261021-v1\\EXECUTION_ORDER_NOTE.json",
+        "sha256": "b08c58e3e7981af2f820a692c557019b750a940ef36cf4b87508a3ad1e1a5475"
+      },
+      "constant_frozen_encoder_dense_loss_omitted": true
+    },
+    {
+      "status": "complete",
+      "seed": 29,
+      "index": 1,
+      "method": "M0-main-row-only",
+      "updates": 1500,
+      "best_step": 0,
+      "new_candidate_selected": false,
+      "best_fresh": {
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 14,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 77,
+        "complete_precision": 0,
+        "complete_recall": 0.0,
+        "complete_f1": 0.0,
+        "complete_positive_targets": 14,
+        "partial_known_positive_recall": null,
+        "per_image": [
+          {
+            "image_id": "066687f8b782ab5b",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "5671f6f9aed0541a",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 3
+          },
+          {
+            "image_id": "6532e6a4944b0156",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 3
+          },
+          {
+            "image_id": "002d7d220a042075",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 2
+          },
+          {
+            "image_id": "97c4a86fe18afdb8",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 17
+          },
+          {
+            "image_id": "c684d8b7a6e8cae8",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "4c916adba93611ad",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 2,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "cea218650a100dd0",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 2,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 2
+          },
+          {
+            "image_id": "dd1074c4e1f58872",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 2
+          },
+          {
+            "image_id": "fe1a510b5a1c56fc",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "15b9fc26736f275a",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "b70da5fc345b106c",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 1,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "2b92851e9cf25196",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 9
+          },
+          {
+            "image_id": "8e68b658ee40cbac",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "1e496c37fb7ff35a",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 4
+          },
+          {
+            "image_id": "5d34be84c57bba2d",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "6d5375412062f4ce",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 3
+          },
+          {
+            "image_id": "5ce07497741762d6",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "e894aab4f702c000",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "e81d4fc6bdb57335",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "a4dd3353126f93b4",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "2bf7c15ed4c9de16",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "4a1a6868eb1dccd8",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "cf6cb3f326b2f890",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "b3e1ae3e7781726e",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "03b25bab135ebfbf",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "360ff97104b82129",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 2
+          },
+          {
+            "image_id": "5110409f98e95a40",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 0
+          },
+          {
+            "image_id": "aaaf120ef247d0cb",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 2
+          },
+          {
+            "image_id": "3a6dc96a518eb744",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 17
+          },
+          {
+            "image_id": "104c82e95a295ba0",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 1
+          },
+          {
+            "image_id": "093a3c43152a9742",
+            "complete_tp": 0,
+            "complete_fp": 0,
+            "complete_fn": 0,
+            "partial_hits": 0,
+            "partial_misses": 0,
+            "unscored_predictions": 3
+          }
+        ],
+        "limits": "Scoped development validation; unknown predictions unscored, partial known targets recall only. Not full-vocabulary mAP or independent accuracy."
+      },
+      "best_head_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-paired-controls-20261021-v1\\seed-29\\step-0000.pt",
+        "sha256": "7a2a24a38b2bf4bcde667876f2e0a6aa78894200024763c2e102838a94e88304"
+      },
+      "last_head_sha256": "fee556ca7cbc1714367aace96b8397ecce3b172137381038893476fb445ad3e5",
+      "reason": "maximum-updates",
+      "elapsed_active_seconds": 180.27,
+      "inactive_classifier_rows_bitwise_unchanged": true,
+      "all_other_model_weights_and_buffers_unchanged": "Full model was not mutated or trained; only standalone copy of main classifier tensor optimized. Compose only with pinned starting checkpoint.",
+      "selection_device": "pinned-CPU-reference",
+      "test_photos_used": 0,
+      "production_adoption": false,
+      "plan_sha256": "8f789c6e0bee3d8970ded955f0207560b3cc8d28816df20cf2e7593f9b18c70d",
+      "execution_order_deviation_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-paired-controls-20261021-v1\\EXECUTION_ORDER_NOTE.json",
+        "sha256": "b08c58e3e7981af2f820a692c557019b750a940ef36cf4b87508a3ad1e1a5475"
+      },
+      "constant_frozen_encoder_dense_loss_omitted": true
+    }
+  ],
+  "total_updates": 3000,
+  "max_total_updates": 3000,
+  "test_photos_used": 0,
+  "cluster_jobs_submitted": 0,
+  "production_adoption": false,
+  "plan_sha256": "8f789c6e0bee3d8970ded955f0207560b3cc8d28816df20cf2e7593f9b18c70d",
+  "execution_order_deviation_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-paired-controls-20261021-v1\\EXECUTION_ORDER_NOTE.json",
+    "sha256": "b08c58e3e7981af2f820a692c557019b750a940ef36cf4b87508a3ad1e1a5475"
+  }
+}

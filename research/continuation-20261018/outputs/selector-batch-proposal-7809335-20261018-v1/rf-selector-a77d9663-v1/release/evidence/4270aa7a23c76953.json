@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "4270aa7a23c76953",
+  "image_sha256": "b409b6a222a27ae8c7c2a99ff5600935fe64cd3dc9cb43baad94f4923e9b7ac9",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "4270aa7a23c76953",
+    "image_sha256": "b409b6a222a27ae8c7c2a99ff5600935fe64cd3dc9cb43baad94f4923e9b7ac9",
+    "selected_category": "dog",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/sharadaprasad/3333792429",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/sharadaprasad/3333792429",
+      "original_url": "https://farm4.staticflickr.com/3374/3333792429_a204d77686_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Sharada Prasad CS",
+      "author_url": "https://www.flickr.com/people/sharadaprasad/",
+      "title": "CSP_7078.JPG",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Sharada Prasad CS",
+      "url": "https://www.flickr.com/photos/sharadaprasad",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/11124467@N02.jpg?1574484624#11124467@N02"
+    },
+    "current_title": "CSP_7078.JPG",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Sharada Prasad CS",
+          "url": "https://www.flickr.com/photos/sharadaprasad",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/11124467@N02.jpg?1574484624#11124467@N02"
+        }
+      },
+      "meta_description": "Map it: <a href=\"http://www.robogeo.com/Flickr2Map/\" rel=\"noreferrer nofollow\">Google Earth</a> | <a href=\"http://www.robogeo.com/Flickr2Map/?type=map\" rel=\"noreferrer nofollow\">Street</a> | <a href=\"http://www.robogeo.com/Flickr2Map/?type=map&amp;view=satellite\" rel=\"noreferrer nofollow\">Satellite</a> | <a href=\"http://www.robogeo.com/Flickr2Map/?type=map&amp;view=hybrid\" rel=\"noreferrer nofollow\">Hybrid</a> | <a href=\"http://www.robogeo.com/Flickr2Map/?type=nautical\" rel=\"noreferrer nofollow\">Nautical</a>"
+    },
+    "identity_group": "flickr-nsid:11124467@N02",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/sharadaprasad/3333792429",
+    "html_sha256": "107b29d0e3edc7cfe0ed0bed9f22a2727a31169d82fb24f26a5bf2a1e012804d",
+    "stored_sha256": "c11abbf36f7e3c3edf9383eae98d9d762fa5dbc7dec0178425b4497b629958e5",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\4270aa7a23c76953.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/4270aa7a23c76953.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

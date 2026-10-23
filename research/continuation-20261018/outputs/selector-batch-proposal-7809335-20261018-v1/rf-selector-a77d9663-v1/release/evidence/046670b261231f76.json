@@ -1,0 +1,72 @@
+{
+  "image_id": "046670b261231f76",
+  "image_sha256": "1277e05cde727838aabb83e989ebf8875e3dbdc6e742e662b9e970cc84cfab98",
+  "publisher_attribution": {
+    "id": "046670b261231f76",
+    "landing_url": "https://www.flickr.com/photos/mfk-frankfurt/7676615328",
+    "original_url": "https://farm7.staticflickr.com/7116/7676615328_3819e4d976_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Museum für Kommunikation Frankfurt",
+    "author_url": "https://www.flickr.com/people/mfk-frankfurt/",
+    "title": "2012-07-28_11-40-02_1",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Museum für Kommunikation Frankfurt",
+    "url": "https://www.flickr.com/photos/mfk-frankfurt",
+    "image": "https://live.staticflickr.com/2529/buddyicons/37844798@N06.jpg?1257719522#37844798@N06"
+  },
+  "current_title": "2012-07-28_11-40-02_1",
+  "caption_and_notices": {
+    "image_id": "046670b261231f76",
+    "identity_group": "flickr-nsid:37844798@N06",
+    "creator": {
+      "@type": "Person",
+      "name": "Museum für Kommunikation Frankfurt",
+      "url": "https://www.flickr.com/photos/mfk-frankfurt",
+      "image": "https://live.staticflickr.com/2529/buddyicons/37844798@N06.jpg?1257719522#37844798@N06"
+    },
+    "current_title": "2012-07-28_11-40-02_1",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Museum für Kommunikation Frankfurt",
+        "url": "https://www.flickr.com/photos/mfk-frankfurt",
+        "image": "https://live.staticflickr.com/2529/buddyicons/37844798@N06.jpg?1257719522#37844798@N06"
+      }
+    },
+    "meta_description": ""
+  },
+  "source_url": "https://www.flickr.com/photos/mfk-frankfurt/7676615328",
+  "canonical_page_url": "https://www.flickr.com/photos/mfk-frankfurt/7676615328",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "650d87546ae45c53454f0a84c1aebd152ee5886d9f2df4ab0166792d15a83276",
+  "source_gzip_sha256": "532e6771d173508769dbf3cae32b0f9a433030127e24d79e798f56aa4e57ad49",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "32e0d324cfd38ca1787d4bae1e4a7feca9e0186bcdcbdc73a086edaec375f783"
+}

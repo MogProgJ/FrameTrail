@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "ec9461441fb0ad90",
+  "image_sha256": "6dbbb76bc1d39ffbd9923217ba0ce3c6c23b7b4a6da34cf46359ebe7aa772519",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "ec9461441fb0ad90",
+    "image_sha256": "6dbbb76bc1d39ffbd9923217ba0ce3c6c23b7b4a6da34cf46359ebe7aa772519",
+    "selected_category": "dog",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/tonyfaiola/5714444557",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/tonyfaiola/5714444557",
+      "original_url": "https://farm1.staticflickr.com/2475/5714444557_e09c9604ca_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Tony Faiola",
+      "author_url": "https://www.flickr.com/people/tonyfaiola/",
+      "title": "Dexter & Tara",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Tony Faiola",
+      "url": "https://www.flickr.com/photos/tonyfaiola",
+      "image": "https://live.staticflickr.com/2950/buddyicons/24639704@N08.jpg?1412912518#24639704@N08"
+    },
+    "current_title": "Dexter & Tara",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Tony Faiola",
+          "url": "https://www.flickr.com/photos/tonyfaiola",
+          "image": "https://live.staticflickr.com/2950/buddyicons/24639704@N08.jpg?1412912518#24639704@N08"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:24639704@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/tonyfaiola/5714444557",
+    "html_sha256": "ecb9d05ff7aec25755ef07f82d4eaea78f38f647f864c20a549cdc0938f5a2da",
+    "stored_sha256": "d2d4021dfe869f1af45e0fbc62d497897cc194c6f656b3d7e21b5d7e59dfdd28",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\ec9461441fb0ad90.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/ec9461441fb0ad90.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

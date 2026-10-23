@@ -1,0 +1,64 @@
+{
+  "image_id": "750ce4945627e5e7",
+  "image_sha256": "88146e0cb5132fca6f103c3214bc0cabab3e548900626853d0eb0e45b5b96fa6",
+  "publisher_attribution": {
+    "id": "750ce4945627e5e7",
+    "landing_url": "https://www.flickr.com/photos/sillygwailo/1478437750",
+    "original_url": "https://farm8.staticflickr.com/1254/1478437750_2eef37744e_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Richard Eriksson",
+    "author_url": "https://www.flickr.com/people/sillygwailo/",
+    "title": "Bus Outside 22nd St. Station",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Richard Eriksson",
+    "url": "https://www.flickr.com/photos/sillygwailo",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/35034348378@N01.jpg?1680217731#35034348378@N01"
+  },
+  "current_title": "Bus Outside 22nd St. Station",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Richard Eriksson",
+        "url": "https://www.flickr.com/photos/sillygwailo",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/35034348378@N01.jpg?1680217731#35034348378@N01"
+      }
+    },
+    "meta_description": "\n\t - Taken at 6:14 PM on October 02, 2007 - cameraphone upload by ShoZu"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/sillygwailo/1478437750",
+  "canonical_page_url": "https://www.flickr.com/photos/sillygwailo/1478437750",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "d8aac91b6e018aa23ee2eed5552b3fae13b5f7a7980ba3776c78b2e1da7502f9",
+  "source_gzip_sha256": "a9955000c287586e60d9d968b7a6f5b5c77e17d08f02c0ca9ab1ae53ebb8d7e8",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-285",
+  "visual_proof_sha256": "4da5477292ce0f0111d395805137f017a1674a67b9ac4382816876a5f04d2c97",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

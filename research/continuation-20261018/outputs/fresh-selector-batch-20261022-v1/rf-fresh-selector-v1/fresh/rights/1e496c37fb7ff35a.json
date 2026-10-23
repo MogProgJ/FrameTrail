@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "1e496c37fb7ff35a",
+  "image_sha256": "a80dc995245dbb1ea15554cf32517251f9e8f94b6a259f62b433282fc7df583b",
+  "source_review": {
+    "image_id": "1e496c37fb7ff35a",
+    "image_sha256": "a80dc995245dbb1ea15554cf32517251f9e8f94b6a259f62b433282fc7df583b",
+    "selected_category": "computer monitor",
+    "selected_domain": "contrast",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/webcampsi/16211285964",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/webcampsi/16211285964",
+      "original_url": "https://c3.staticflickr.com/9/8569/16211285964_100fb935e2_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "WebCamp",
+      "author_url": "https://www.flickr.com/people/webcampsi/",
+      "title": "WebCamp Ljubljana 2015",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "WebCamp",
+      "url": "https://www.flickr.com/photos/webcampsi",
+      "image": "https://live.staticflickr.com/8624/buddyicons/131137299@N05.jpg?1426434935#131137299@N05"
+    },
+    "current_title": "WebCamp Ljubljana 2015",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "WebCamp",
+          "url": "https://www.flickr.com/photos/webcampsi",
+          "image": "https://live.staticflickr.com/8624/buddyicons/131137299@N05.jpg?1426434935#131137299@N05"
+        }
+      },
+      "meta_description": "Photo by Hana Josic"
+    },
+    "identity_group": "flickr-nsid:131137299@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/webcampsi/16211285964",
+    "html_sha256": "c5dbbf00b655fe4b078fff8b849c76c3ee9841193ec07d35250f1323a3f5b990",
+    "stored_sha256": "fd794bbc63d634a8ee761e2bf286c6ee18ef9af290ee1540f536f4c72f6b50d3",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\1e496c37fb7ff35a.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\1e496c37fb7ff35a.json",
+    "sha256": "41f00f65401cb99dbd0607fe94b930c013b32068b88797ae435976862a540e04"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\1e496c37fb7ff35a.json",
+    "sha256": "9531b45d44329fdcbb1fc12b5e7cb25aa07d606695ccf05a6dee6a071215e590"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/webcampsi/16211285964",
+    "original_url": "https://c3.staticflickr.com/9/8569/16211285964_100fb935e2_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "WebCamp",
+    "author_url": "https://www.flickr.com/people/webcampsi/",
+    "title": "WebCamp Ljubljana 2015",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

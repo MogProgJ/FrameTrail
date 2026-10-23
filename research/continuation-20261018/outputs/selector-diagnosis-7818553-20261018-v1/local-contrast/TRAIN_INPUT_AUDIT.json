@@ -1,0 +1,159 @@
+{
+  "variants": [
+    {
+      "index": 0,
+      "positive_image_ids": [
+        "013037fd8c0daf0a",
+        "078cc35acabe5e77",
+        "39ba18171aeb4415",
+        "4ee1c6ca28a1bdb8",
+        "867a012fafb5766c",
+        "88ced829147507c7",
+        "89f3b4db87857c8d",
+        "8d5986ae877b7be4",
+        "9382cfa97e1581e0",
+        "995211dda562c920",
+        "9b49325466652a54",
+        "b98bf3ea9eb1b4e0",
+        "c310febc40974a94",
+        "c8bb3241ac57b9e2",
+        "d8fff472678899cf",
+        "dc2a7c32db059a9e",
+        "ee4b59dc616c21ad"
+      ],
+      "positive_queries": 37,
+      "negative_photos": 47,
+      "negative_queries": 14100,
+      "region_photos_with_covering_queries": 19,
+      "region_queries": 57
+    },
+    {
+      "index": 1,
+      "positive_image_ids": [
+        "013037fd8c0daf0a",
+        "078cc35acabe5e77",
+        "39ba18171aeb4415",
+        "4ee1c6ca28a1bdb8",
+        "867a012fafb5766c",
+        "88ced829147507c7",
+        "89f3b4db87857c8d",
+        "8d5986ae877b7be4",
+        "9382cfa97e1581e0",
+        "995211dda562c920",
+        "9b49325466652a54",
+        "b98bf3ea9eb1b4e0",
+        "c310febc40974a94",
+        "c8bb3241ac57b9e2",
+        "d8fff472678899cf",
+        "dc2a7c32db059a9e",
+        "ee4b59dc616c21ad"
+      ],
+      "positive_queries": 37,
+      "negative_photos": 47,
+      "negative_queries": 14100,
+      "region_photos_with_covering_queries": 19,
+      "region_queries": 57
+    },
+    {
+      "index": 2,
+      "positive_image_ids": [
+        "013037fd8c0daf0a",
+        "078cc35acabe5e77",
+        "39ba18171aeb4415",
+        "867a012fafb5766c",
+        "88ced829147507c7",
+        "89f3b4db87857c8d",
+        "8d5986ae877b7be4",
+        "995211dda562c920",
+        "9b49325466652a54",
+        "b98bf3ea9eb1b4e0",
+        "c310febc40974a94",
+        "c8bb3241ac57b9e2",
+        "d8fff472678899cf",
+        "dc2a7c32db059a9e",
+        "ee4b59dc616c21ad"
+      ],
+      "positive_queries": 35,
+      "negative_photos": 47,
+      "negative_queries": 14100,
+      "region_photos_with_covering_queries": 19,
+      "region_queries": 57
+    },
+    {
+      "index": 3,
+      "positive_image_ids": [
+        "013037fd8c0daf0a",
+        "078cc35acabe5e77",
+        "39ba18171aeb4415",
+        "867a012fafb5766c",
+        "88ced829147507c7",
+        "89f3b4db87857c8d",
+        "8d5986ae877b7be4",
+        "995211dda562c920",
+        "9b49325466652a54",
+        "b98bf3ea9eb1b4e0",
+        "c310febc40974a94",
+        "c8bb3241ac57b9e2",
+        "d8fff472678899cf",
+        "dc2a7c32db059a9e",
+        "ee4b59dc616c21ad"
+      ],
+      "positive_queries": 35,
+      "negative_photos": 47,
+      "negative_queries": 14100,
+      "region_photos_with_covering_queries": 19,
+      "region_queries": 57
+    }
+  ],
+  "new_region_query_coverage": [
+    {
+      "image_id": "00b5ac570d995133",
+      "queries": 1
+    },
+    {
+      "image_id": "017f45b1410d3ddb",
+      "queries": 1
+    },
+    {
+      "image_id": "075feb565ce68b25",
+      "queries": 2
+    },
+    {
+      "image_id": "0856509cf53b96bd",
+      "queries": 2
+    },
+    {
+      "image_id": "139b3e2764326140",
+      "queries": 2
+    },
+    {
+      "image_id": "14af69b8e6849468",
+      "queries": 0
+    },
+    {
+      "image_id": "1c079fd05e484cb8",
+      "queries": 2
+    },
+    {
+      "image_id": "1d9c82705c765f75",
+      "queries": 3
+    },
+    {
+      "image_id": "2500ff51d4171f4c",
+      "queries": 1
+    },
+    {
+      "image_id": "2a802f25d03a591c",
+      "queries": 2
+    },
+    {
+      "image_id": "4e45f9ded2984a64",
+      "queries": 3
+    },
+    {
+      "image_id": "515bbfe54e9176d6",
+      "queries": 2
+    }
+  ],
+  "all_training_only": true
+}

@@ -1,0 +1,72 @@
+{
+  "image_id": "1429effba967712d",
+  "image_sha256": "0f3b3bcd39c56379e07bbb9197a139e0b8cb4b9e4a273a961ad1fc54bed04c3f",
+  "publisher_attribution": {
+    "id": "1429effba967712d",
+    "landing_url": "https://www.flickr.com/photos/hisgett/8451382352",
+    "original_url": "https://c6.staticflickr.com/9/8381/8451382352_8d7b6343e6_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Tony Hisgett",
+    "author_url": "https://www.flickr.com/people/hisgett/",
+    "title": "West Bromwich Clock",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Tony Hisgett",
+    "url": "https://www.flickr.com/photos/hisgett",
+    "image": "https://live.staticflickr.com/2849/buddyicons/37804979@N00.jpg?1369182154#37804979@N00"
+  },
+  "current_title": "West Bromwich Clock",
+  "caption_and_notices": {
+    "image_id": "1429effba967712d",
+    "identity_group": "flickr-nsid:37804979@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "Tony Hisgett",
+      "url": "https://www.flickr.com/photos/hisgett",
+      "image": "https://live.staticflickr.com/2849/buddyicons/37804979@N00.jpg?1369182154#37804979@N00"
+    },
+    "current_title": "West Bromwich Clock",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Tony Hisgett",
+        "url": "https://www.flickr.com/photos/hisgett",
+        "image": "https://live.staticflickr.com/2849/buddyicons/37804979@N00.jpg?1369182154#37804979@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "source_url": "https://www.flickr.com/photos/hisgett/8451382352",
+  "canonical_page_url": "https://www.flickr.com/photos/hisgett/8451382352",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "8d02d3178bbb6cf2862f73d3300404c2c1ca76de2c72d3330c4cc8008715fe80",
+  "source_gzip_sha256": "ec6f3e5542eea5f70114138ed030789357844e8a321a30f7df9df39328617a04",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "5211bcf22097fbb248755109e2e0c911acf484428b24f0dd50b339ee00ece83c"
+}

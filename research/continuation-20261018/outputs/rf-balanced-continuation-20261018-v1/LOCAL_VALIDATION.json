@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "contract_and_archive_tests": 12,
+  "code_and_965_photo_seals": {
+    "status": "approved-code-assets-and-scope-verified",
+    "sealed_files": 2921,
+    "photos": 965,
+    "planned_updates": 2000,
+    "GPU_inference": false,
+    "training": false
+  },
+  "local_CPU_runtime_and_checkpoint_preflight": "passed Torch2.8.0+cpu RFDETR1.11.2; pinned original and starting checkpoint metadata checked",
+  "Python_syntax_files": 13,
+  "bash_syntax_files": 4,
+  "normal_and_ambiguous_submission_repeat": "each called fake sbatch once; no real Slurm",
+  "powershell_helper_checks": {
+    "status": "pass",
+    "powershell_helpers_parsed": 3,
+    "repeated_launch_uses_existing_job": true,
+    "actual_job_and_hash_capture": true,
+    "changed_archive_blocked": true,
+    "fake_scp_calls": 1,
+    "fake_ssh_calls": 2,
+    "real_network_calls": 0
+  },
+  "real_model_training_updates": 0,
+  "GPU_job_submitted": false
+}

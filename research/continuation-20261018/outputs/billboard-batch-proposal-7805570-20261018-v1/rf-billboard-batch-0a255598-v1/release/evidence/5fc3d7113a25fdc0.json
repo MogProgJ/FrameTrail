@@ -1,0 +1,64 @@
+{
+  "image_id": "5fc3d7113a25fdc0",
+  "image_sha256": "0e292ff0c9eebbebd935e226cca8149f061fc74049b2db502f7dc77ea7062ad0",
+  "publisher_attribution": {
+    "id": "5fc3d7113a25fdc0",
+    "landing_url": "https://www.flickr.com/photos/59523088@N04/8482845977",
+    "original_url": "https://farm1.staticflickr.com/8110/8482845977_6e0fe7f1f0_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Poot The dutch",
+    "author_url": "https://www.flickr.com/people/59523088@N04/",
+    "title": "Enjoy my sausage side view",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Poot The dutch",
+    "url": "https://www.flickr.com/photos/59523088@N04",
+    "image": "https://live.staticflickr.com/2847/buddyicons/59523088@N04.jpg?1373928117#59523088@N04"
+  },
+  "current_title": "Enjoy my sausage side view",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Poot The dutch",
+        "url": "https://www.flickr.com/photos/59523088@N04",
+        "image": "https://live.staticflickr.com/2847/buddyicons/59523088@N04.jpg?1373928117#59523088@N04"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/59523088@N04/8482845977",
+  "canonical_page_url": "https://www.flickr.com/photos/59523088@N04/8482845977",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "aaca3842470e3bfe0045be7341ffc46c1a8203a356214630c0878817a8711f15",
+  "source_gzip_sha256": "03ca237d6612c404d46e51adf9d5b44f7a47b8897a3784394bb06474fcf0f4f6",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-105",
+  "visual_proof_sha256": "2f00c16a3655ba4e4423e6021dfd333675ae8f6ccd5a90865eb0ac57be2c1975",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

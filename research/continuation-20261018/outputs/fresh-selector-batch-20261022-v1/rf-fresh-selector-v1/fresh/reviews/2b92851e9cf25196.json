@@ -1,0 +1,40 @@
+{
+  "image_id": "2b92851e9cf25196",
+  "image_sha256": "3463a2d6bda01dd025af304bb9b50b655b7f5fe65000a8328b8d68e408a3e1c7",
+  "identity_group": "flickr-nsid:66992769@N08",
+  "scene_group": "scene:black-clothes-participants-in-domestic-washing-machine-kitchen",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\2b92851e9cf25196.json",
+    "sha256": "f6158bd09099e42c38e80aa1325275b53cd5d554a554ee56b0626c6fdf311311"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-val-01.json",
+    "sha256": "9d72588728dc58bd65f6126f8939528883807ea5ed3954dc4591ef497e7874bc"
+  },
+  "content_decision": {
+    "id": "2b92851e9cf25196",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "household-laundry",
+    "note": "Full original shows people and domestic kitchen appliances; no advertising board. Appliance branding/consumer packaging stay other-class unknown.",
+    "scene_description": "Black clothes participants in domestic washing-machine kitchen"
+  },
+  "prospective_split": "val",
+  "confuser_family": "household-laundry",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

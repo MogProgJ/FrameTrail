@@ -1,0 +1,64 @@
+{
+  "image_id": "cdb87dbe610e9f63",
+  "image_sha256": "51ac423fecc5ed6ed0b312724a6f4a5ad4dd5e2ab5ac3861816c5a57716d7828",
+  "publisher_attribution": {
+    "id": "cdb87dbe610e9f63",
+    "landing_url": "https://www.flickr.com/photos/61192399@N04/14144489488",
+    "original_url": "https://farm4.staticflickr.com/3904/14144489488_a09d8d5a4b_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Katie",
+    "author_url": "https://www.flickr.com/people/61192399@N04/",
+    "title": "Avocado Ice Cream 1",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Katie",
+    "url": "https://www.flickr.com/photos/61192399@N04",
+    "image": "https://live.staticflickr.com/5174/buddyicons/61192399@N04.jpg?1325545707#61192399@N04"
+  },
+  "current_title": "Avocado Ice Cream 1",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Katie",
+        "url": "https://www.flickr.com/photos/61192399@N04",
+        "image": "https://live.staticflickr.com/5174/buddyicons/61192399@N04.jpg?1325545707#61192399@N04"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/61192399@N04/14144489488",
+  "canonical_page_url": "https://www.flickr.com/photos/61192399@N04/14144489488",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "cf698da51c90e311a80dcbbe9cbdb864791e7fba4f6da0a2a953083539792eee",
+  "source_gzip_sha256": "670514be39552125d88c4ea503992bcf98654bc9d3f06078a62cb4f0e8601145",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-210",
+  "visual_proof_sha256": "c88c3289c9cd6d809f37bd34a90259a6b3f3aa6bd2f02e6db2ff26af817ccd32",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

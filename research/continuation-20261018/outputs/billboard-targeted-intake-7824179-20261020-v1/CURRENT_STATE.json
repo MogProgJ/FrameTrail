@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-20",
+  "status": "package-uploaded-awaiting-launch-in-existing-authenticated-cluster-session",
+  "previous_collection_job": "7824179",
+  "previous_collection_retrieved_verified": true,
+  "new_cohort": {
+    "maximum_photos": 180,
+    "prospective_train": 36,
+    "prospective_validation": 72,
+    "prospective_test": 72,
+    "CPUs": 2,
+    "memory_GiB": 8,
+    "wall_minutes": 45,
+    "GPUs": 0,
+    "inference": false,
+    "training": false,
+    "retries": 0,
+    "requeues": 0,
+    "replacement_jobs": 0,
+    "prior_photo_exclusions": 2171
+  },
+  "local_tests": {
+    "collector": 10,
+    "verifier": 4,
+    "mock_scheduler": 7,
+    "upload_mock_in_Windows_PowerShell": true
+  },
+  "archive_sha256": "3fc415d33c8b0edf3726c02b985a985dfb3d75ccaab13501e21ca4879bbb0653",
+  "plan_sha256": "658b0c2c01627a681c2bdd64482dbc8313caa118ea5543c7ff199c373db5b839",
+  "actual_upload": "completed with direct user OTP/password; one SCP carrying archive and bootstrap; no credentials captured",
+  "upload_preflight_fix": "Initial helper stopped before network because Get-FileHash unavailable; replaced with .NET SHA256 and tested in Windows PowerShell. Original failure preserved.",
+  "remote_directory": "data-refresh-658b0c2c-v1",
+  "launch_command": "bash \"$(ws_find frametrail)/FrameTrail/output/frametrail-start-data-refresh-658b0c2c-v1.sh\"",
+  "new_job_id": null,
+  "new_job_submitted_by_agent": false,
+  "live_scheduler_account_evidence": "Collected and checked by remote submit helper at launch; not claimed available locally yet",
+  "data_training_cleared": false,
+  "production_adoption": false,
+  "human_input_required": "Run the prepared command in the user's existing authenticated KIT terminal and return its recorded job output."
+}

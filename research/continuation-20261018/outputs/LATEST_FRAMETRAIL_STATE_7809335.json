@@ -1,0 +1,16 @@
+{
+  "status": "retrieval-audited-local-research-complete-awaiting-new-selector-batch-approval",
+  "selected_model_job": "7805570",
+  "selected_model_step": 100,
+  "selected_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "completed_array": "7809335",
+  "new_candidate_from_array": false,
+  "local_heads_and_controls": 19,
+  "next_proposal": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\PROPOSAL.md",
+  "next_protocol_sha256": "a77d9663fcc898b6a257f6722dd37bc24b1d3a2d3065eb8cce5f0625403f019a",
+  "new_cluster_approval": false,
+  "new_cluster_job_submitted": false,
+  "strict_ONNX_hold": true,
+  "production_adoption": false,
+  "standing_instructions": "Continue authorized local work autonomously; end responses with concrete next step and why; pause before new cluster submission; batch useful evidence and preserve failures."
+}

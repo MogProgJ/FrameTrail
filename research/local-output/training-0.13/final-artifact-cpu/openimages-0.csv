@@ -1,0 +1,4 @@
+sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
+0,0,322,human face,0.77775,238.757,109.875,716.356,705.395,178.504
+0,0,0,person,0.50622,11.9274,0,1024,754.041,178.504
+0,0,187,clothing,0.431794,118.681,540.314,1021.7,756.019,178.504

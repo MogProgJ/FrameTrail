@@ -1,0 +1,167 @@
+{
+  "status": "local-workflow-fixes-packaged-and-verified",
+  "date": "2026-10-19",
+  "application_sha256": "5183247cc4fa27888ea8886cb03860e72c300d57a724a0f9eb0d0143a6125b06",
+  "default_model": "YOLOX-S",
+  "models_unchanged": 7,
+  "model_integrity": "MODEL_INTEGRITY.json",
+  "source_changes": "source-changes.json",
+  "prior_source_preserved": true,
+  "regression_checks_passed": 13,
+  "workflow_diagnostics": {
+    "balanced": {
+      "analysis_cancel_after_30ms_text": "Stopping analysis\u2026",
+      "analysis_cancel_immediate_text": "Stopping analysis\u2026",
+      "analysis_cancel_ms": 85.8094,
+      "cache_cancel_after_30ms_text": "Stopping preparation\u2026",
+      "cache_cancel_immediate_text": "Stopping preparation\u2026",
+      "cache_cancel_ms": 76.7557,
+      "cache_cancelled_text": "Preparation cancelled \u00b7 no playback cache used",
+      "cache_partial_frames": 10,
+      "cache_preparation_preview": true,
+      "cache_preparing_text": "Preparing \u00b7 10 frames \u00b7 6s elapsed \u00b7 1.6 fps \u00b7 about 10m 37s left \u00b7 CPU",
+      "feedback_and_box_contracts": true,
+      "frame_samples": [
+        {
+          "inference_ms": 510.3546,
+          "postprocess_ms": 1.3229,
+          "preprocess_ms": 9.594,
+          "total_ms": 521.2715
+        },
+        {
+          "inference_ms": 548.7758,
+          "postprocess_ms": 1.2851,
+          "preprocess_ms": 6.8886,
+          "total_ms": 556.9495
+        },
+        {
+          "inference_ms": 503.2875,
+          "postprocess_ms": 2.0209,
+          "preprocess_ms": 7.745,
+          "total_ms": 513.0534
+        },
+        {
+          "inference_ms": 439.6511,
+          "postprocess_ms": 1.3654,
+          "preprocess_ms": 6.891,
+          "total_ms": 447.9075
+        },
+        {
+          "inference_ms": 501.6414,
+          "postprocess_ms": 2.7846,
+          "preprocess_ms": 7.2868,
+          "total_ms": 511.7128
+        }
+      ],
+      "missing_model_failure": true,
+      "model_load_ms": 773.4892,
+      "partial_appearances": 3,
+      "partial_frames": 1,
+      "partial_reopened": true,
+      "partial_status": "cancelled",
+      "status": "passed",
+      "ui_heartbeat_max_gap_ms": 225.5034,
+      "ui_heartbeat_p95_gap_ms": 32.48,
+      "ui_heartbeat_samples": 560
+    },
+    "standard": {
+      "analysis_cancel_after_30ms_text": "Stopping analysis\u2026",
+      "analysis_cancel_immediate_text": "Stopping analysis\u2026",
+      "analysis_cancel_ms": 52.7547,
+      "cache_cancel_after_30ms_text": "Stopping preparation\u2026",
+      "cache_cancel_immediate_text": "Stopping preparation\u2026",
+      "cache_cancel_ms": 38.5666,
+      "cache_cancelled_text": "Preparation cancelled \u00b7 no playback cache used",
+      "cache_partial_frames": 10,
+      "cache_preparation_preview": true,
+      "cache_preparing_text": "Preparing \u00b7 10 frames \u00b7 2s elapsed \u00b7 3.4 fps \u00b7 about 4m 55s left \u00b7 CPU",
+      "feedback_and_box_contracts": true,
+      "frame_samples": [
+        {
+          "inference_ms": 183.2356,
+          "postprocess_ms": 1.8622,
+          "preprocess_ms": 15.7768,
+          "total_ms": 200.8746
+        },
+        {
+          "inference_ms": 217.4049,
+          "postprocess_ms": 2.5509,
+          "preprocess_ms": 15.9646,
+          "total_ms": 235.9204
+        },
+        {
+          "inference_ms": 300.6529,
+          "postprocess_ms": 4.5083,
+          "preprocess_ms": 22.0484,
+          "total_ms": 327.2096
+        },
+        {
+          "inference_ms": 254.1678,
+          "postprocess_ms": 2.6551,
+          "preprocess_ms": 22.2724,
+          "total_ms": 279.0953
+        },
+        {
+          "inference_ms": 248.1388,
+          "postprocess_ms": 2.7496,
+          "preprocess_ms": 22.1991,
+          "total_ms": 273.0875
+        }
+      ],
+      "missing_model_failure": true,
+      "model_load_ms": 276.7127,
+      "partial_appearances": 2,
+      "partial_frames": 1,
+      "partial_reopened": true,
+      "partial_status": "cancelled",
+      "status": "passed",
+      "ui_heartbeat_max_gap_ms": 264.4979,
+      "ui_heartbeat_p95_gap_ms": 21.7155,
+      "ui_heartbeat_samples": 299
+    }
+  },
+  "full_cached_playback": {
+    "status": "passed",
+    "preparation_seconds": 9.18377,
+    "prepared_frames": 16,
+    "cached_overlay_parity": true,
+    "replay_without_model": true,
+    "pause": true,
+    "backend": "CPU"
+  },
+  "packaged_smoke": [
+    {
+      "exit_code": 0,
+      "platform": "offscreen",
+      "visible_window": false,
+      "profile": "standard"
+    },
+    {
+      "exit_code": 0,
+      "platform": "offscreen",
+      "visible_window": false,
+      "profile": "balanced"
+    }
+  ],
+  "fixes": [
+    "Cancellation feedback remains stopping until completion",
+    "Preparation preview is bounded to one worker frame, refreshed at most twice per second",
+    "Elapsed time, measured processing FPS and approximate remaining time",
+    "ETA accounts for timestamp origin; missing/stalled/early timestamps do not produce an estimate",
+    "Detection boxes have no fill; label brush no longer obscures later objects",
+    "Requested cancellation keeps raw diagnostics in saved data/tooltip, with clear partial-result wording",
+    "Missing-model and cancelled-before-preview states replace the misleading preparation placeholder"
+  ],
+  "performance_scope": "Five detector samples per run, repeated sample video, CPU only. Not an accuracy or controlled speedup study.",
+  "ui_heartbeat_scope": "Includes screenshot capture, initial layout, save and reopen. Not a rendering SLA or screen-reader check.",
+  "visible_app_launched": false,
+  "capture_tool": "Qt offscreen QWidget.grab, current run, explicitly loaded system font",
+  "new_cluster_jobs": 0,
+  "SSH_attempts": 0,
+  "cluster_state": "user-reported outage; latest data-job status unconfirmed",
+  "training_updates": 0,
+  "strict_numerical_export_gate_passed": false,
+  "production_adoption": false,
+  "selected_checkpoint": "job 7805570 step 100",
+  "selected_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3"
+}

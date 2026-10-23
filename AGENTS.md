@@ -1,4 +1,16 @@
+## FrameTrail: strict separation from other cluster projects
+
+User instruction recorded on 22 October 2026; applies to all FrameTrail chats, continuations and cluster operations.
+
+- Cluster access is authorized for FrameTrail work only. Ignore Carrington Event and other projects' jobs, files, logs, results, environments and sessions. Sharing an account or appearing in a queue does not authorize inspecting or managing them.
+- Target explicit job IDs verified through FrameTrail submission receipts and project paths. A similar job name or the current terminal folder is not sufficient proof of ownership. Current verified FrameTrail array: 7870268, under FrameTrail/output/training-general-v1/rf-fresh-selector-v1.
+- Prefer job-specific scheduler queries. Do not inspect, download, modify, cancel, hold, requeue, reprioritize or change dependencies for another project's jobs, including to make room for FrameTrail.
+- If account admission requires shared resource information, use only the minimum aggregate quota/usage evidence needed; ignore unrelated job details. Do not treat other projects' queue entries as FrameTrail tasks or report them as FrameTrail failures.
+- Never use account-wide or wildcard job-management commands. Preserve other projects' SSH identities and services. Carry this boundary into every FrameTrail handoff and future cluster package.
+
 ## FrameTrail: standing communication preference
+
+When resuming this continuation, read CURRENT_HANDOFF.md for the latest verified state and approval boundary. Older output status files are preserved historical snapshots.
 
 User instruction recorded on 18 October 2026; applies to every FrameTrail chat, including new chats and continuations, regardless of the current folder or saved project mapping.
 
@@ -6,6 +18,10 @@ User instruction recorded on 18 October 2026; applies to every FrameTrail chat, 
 - Do not wait for the user to ask what to do next. Avoid generic offers such as "let me know if you want to continue."
 - If a true blocker prevents progress, recommend the precise action or information needed to unblock it.
 - Carry this preference into every FrameTrail handoff. Continue already-authorized work autonomously; a recommendation does not grant new authorization for restricted actions.
+
+## FrameTrail: plain-language explanations
+
+User clarification recorded on 19 October 2026: the technical strategy Markdown was difficult to understand; explain the work directly in chat in ordinary language. Give the practical meaning, what changes next, and why. Keep formulas, protocol details and specialist terms in supporting artifacts unless the user asks for them. Do not make a technical file the sole explanation. Carry this preference into handoffs.
 
 ## FrameTrail: local autonomy clarification
 

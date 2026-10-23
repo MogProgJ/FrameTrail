@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "e729a16266276fe5",
+  "image_sha256": "14cb0f9e46a3e2f44ae9085caa69c0ce979a891e536b9683762f5025174ceb45",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "e729a16266276fe5",
+    "image_sha256": "14cb0f9e46a3e2f44ae9085caa69c0ce979a891e536b9683762f5025174ceb45",
+    "selected_category": "kettle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/budawood/4233255156",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/budawood/4233255156",
+      "original_url": "https://farm6.staticflickr.com/4046/4233255156_be1a115090_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "budawood",
+      "author_url": "https://www.flickr.com/people/budawood/",
+      "title": "\u0639\u0645\u0631 \u0627\u0644\u0639\u0648\u0636\u064a \u0628\u0648 \u062e\u0644\u064a\u0641\u0629 \u0644\u062d\u0638\u0629 \u062a\u0623\u0645\u0644",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "budawood",
+      "url": "https://www.flickr.com/photos/budawood",
+      "image": "https://live.staticflickr.com/2506/buddyicons/14522052@N04.jpg?1247664537#14522052@N04"
+    },
+    "current_title": "\u0639\u0645\u0631 \u0627\u0644\u0639\u0648\u0636\u064a \u0628\u0648 \u062e\u0644\u064a\u0641\u0629 \u0644\u062d\u0638\u0629 \u062a\u0623\u0645\u0644",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "budawood",
+          "url": "https://www.flickr.com/photos/budawood",
+          "image": "https://live.staticflickr.com/2506/buddyicons/14522052@N04.jpg?1247664537#14522052@N04"
+        }
+      },
+      "meta_description": "\u0645\u062e\u064a\u0645 \u0627\u0644\u062c\u0645\u0639\u0629 2009"
+    },
+    "identity_group": "flickr-nsid:14522052@N04",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/budawood/4233255156",
+    "html_sha256": "2df41ff48e74af36af6f974476738ac3001b00b48228a08dd311032f0d52c1b2",
+    "stored_sha256": "19681ebd9e39187da1671591e0b7adad6dc93c2e5d902bd2dff2ca812f7eb606",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\e729a16266276fe5.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/e729a16266276fe5.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

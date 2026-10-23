@@ -1,0 +1,122 @@
+{
+  "status": "training-strategy-and-TRAIN-only-diagnostics-complete-fresh-data-blocked",
+  "files": [
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\APP_BLOAT_BASELINE.json",
+      "sha256": "665f77d64382bb70218d71b30a9e5aa77cdca9f5ad9fc07fe8b9c56033c6d6d3"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\ASSIGNMENT_DIAGNOSIS.json",
+      "sha256": "495b6b840a709320715f9aba69436fa9f26d83be95cbc6c58df2fc27399c211b"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\audit_and_queue.py",
+      "sha256": "e4321a04d51fbb301dac1374b9df9c743d83de89480c49c4bbcd8df428f465e6"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\CAPACITY_DIAGNOSIS.json",
+      "sha256": "160f8769300bf1e689ecc4d77dd6fb2ebe8b225c2c5eba1b063bf05269d458f5"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\CAPACITY_PROGRESS.json",
+      "sha256": "2e13c7d641026e61c1eadda741f4c41ce114e30ee080a6fe81b92a0cb22ab459"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\check_data_readiness.py",
+      "sha256": "46a1558a161494160080b9e56d0fd29a75ca93d6073f437785b4fbfca39803ec"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\CURRENT_READINESS.json",
+      "sha256": "403214ac5bd438e1c10a990d481ccd30d981d2571b60f0a38061b42d93e44dd3"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\CURRENT_READINESS_INPUT.json",
+      "sha256": "8cfd85aee4dbc21bf46448244363079b6ab2c4c83b4611595f7b86fca1beb163"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\CURRENT_STATE.json",
+      "sha256": "f7befb1df8586248f3240fb9cf1513eff51f69a660403a526f4234c952106f5d"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\DATA_REVIEW_CONTRACT.md",
+      "sha256": "e23d97c40b208c6c98fbc2c87310380414f0479143242b6b0a4380342920d930"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\DIAGNOSTIC_PLAN.json",
+      "sha256": "7b4440563f476fe8959769809c7199d119dcb93345363dc7d2c3fc109c694ef2"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\diagnostics-console.txt",
+      "sha256": "cce068e4ec644f901951776a7f4f9e695b4bd9d4e87673b6abacc503caa6acd1"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\EXPERIMENT_DESIGN.json",
+      "sha256": "1287a9eeeb22baa6d45b8a9a9f85180a9b0f8f5b923c63bac24ad8596734edd9"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\EXPERIMENT_LEDGER.json",
+      "sha256": "ccead11467f3dfe2945e4e3316664f814083b3fa75d86f5cc420e1f8c8d3755c"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\FINAL_INPUT_INTEGRITY.json",
+      "sha256": "2f0e6b5c8553ace463b017b1762e505af6b0eea0d79bd45e20d4f2638b2c0d76"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\finalize_strategy.py",
+      "sha256": "5ec3c9dfd80385a61564354ecd04dd859ed8da5399879581e1d4ef9acb1a02df"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\FOLDS.json",
+      "sha256": "4c1dbd3993a9ae7fef3b3aecc392241271cedcf822133d7f6fe0ea166a80f6da"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\INDEPENDENT_AUDIT.json",
+      "sha256": "d95490e4e4c2835f2342232e061ee3b228f4d2c03fc984b6b6243c55dcdf229e"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\INPUT_AUDIT.json",
+      "sha256": "20fae8cb0f462096c571654851d75f85c2b28a0be12fb049f318d8162cefff1b"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\LOCAL_REVIEW_QUEUE.json",
+      "sha256": "ab48a2bf27541fe2061069bd34b585542c48e5828e3837e96e14a84fea769ef8"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\LOCAL_SCENE_TRIAGE.json",
+      "sha256": "4db762f3dfaf2e62058ed035c1e861b7f07c740b38b840bf9d1e8c3cb76c3d11"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\PRIOR_HANDOFF.md",
+      "sha256": "78f5aa70889ef9482ace28b9e9fc8d97c767b3b49a4b63f1f9872e501ce3f7c8"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\READINESS_TESTS.json",
+      "sha256": "1e1a32eab1616369741a29ada2a3b08b4b7af892a70821e292dae5d4a5dd9e20"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\record_scene_triage.py",
+      "sha256": "efcd9e61e020562310d38d0518392de9f6df9defaaa96187165be0a9b7c08314"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\run_diagnostics.py",
+      "sha256": "f7167e75a6117eb89d4f942d4298c33edf3740aa537d4171c2259e81f1274f0c"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\STRATEGY.md",
+      "sha256": "712d9cca7471d446197b57323ffa6a6efc4a48524d4dcd6c36ef74320b7415b5"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\test_data_readiness.py",
+      "sha256": "769ff4b209268fd074dbfbe1c9d17010d5e6d963008ad0668ab85b36a03869a5"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\training-strategy-20261019-v1\\TRAIN_FOLD_QUERY_PREDICTIONS.json",
+      "sha256": "1abbe81cfc99b9ece7a34adb0bfa25fdc0cfa79d395c6c80afdc3755240f4e21"
+    }
+  ],
+  "new_cluster_jobs": 0,
+  "model_promotions": 0,
+  "app_changes": 0,
+  "readiness_contracts_passed": 15,
+  "data_gate_correctly_blocked": true
+}

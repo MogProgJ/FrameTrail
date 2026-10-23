@@ -1,0 +1,40 @@
+{
+  "image_id": "ed01c21759d5c1dd",
+  "image_sha256": "4999323b45a90cefcc5cf726b1bea4a50f04bb7c4ac2dbb572e1adac9c9e8096",
+  "identity_group": "flickr-nsid:21218849@N03",
+  "scene_group": "scene:handwritten-metaphors-list-on-recessed-indoor-whiteboard",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\ed01c21759d5c1dd.json",
+    "sha256": "dbe07aa0a23ee93743dba0643a098c6cd72d65151b7b23fa86b9e5ef54726d07"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-train-indoor.json",
+    "sha256": "63a5312fdaa328f03b6bb5ca95173a46e332d7549773563b14eb81b4e6620763"
+  },
+  "content_decision": {
+    "id": "ed01c21759d5c1dd",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "indoor-frames-screens-boards",
+    "note": "Full original shows handwritten phrases on ordinary indoor whiteboard; no advertising campaign.",
+    "scene_description": "Handwritten metaphors list on recessed indoor whiteboard"
+  },
+  "prospective_split": "train",
+  "confuser_family": "indoor-frames-screens-boards",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

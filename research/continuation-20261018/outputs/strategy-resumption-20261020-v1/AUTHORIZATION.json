@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-20",
+  "user_instruction": "The supercluster is available again. So go ahead, apply your new strategy that you built up yesterday with my instructions.",
+  "scope": "Resume the recorded data-first strategy under existing standing authorization and resource bounds. Inspect/retrieve the existing collection before any new training. No duplicate collection, automatic retry or replacement inferred.",
+  "design": "../training-strategy-20261019-v1/EXPERIMENT_DESIGN.json",
+  "scientific_conditions": 4,
+  "local_CPU_controls": 2,
+  "GPU_trials_after_data_readiness": 2,
+  "maximum_allocated_GPU_hours": 1.5,
+  "new_GPU_job_submitted": false,
+  "data_readiness_or_model_qualification_waived": false,
+  "human_input_needed": "A working authenticated KIT terminal/status output, because this agent's SSH transport was reset before authentication. No pasted credentials."
+}

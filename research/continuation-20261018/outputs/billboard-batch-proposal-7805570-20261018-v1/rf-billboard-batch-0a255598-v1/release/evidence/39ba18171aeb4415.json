@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "39ba18171aeb4415",
+  "image_sha256": "e9f2837c9197b7dfa987762a316b072260994bab948d27f71426c0859e312906",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "39ba18171aeb4415",
+    "image_sha256": "e9f2837c9197b7dfa987762a316b072260994bab948d27f71426c0859e312906",
+    "selected_category": "billboard",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/teofilo/3694333763",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/teofilo/3694333763",
+      "original_url": "https://farm6.staticflickr.com/2592/3694333763_2b95390c00_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "teofilo",
+      "author_url": "https://www.flickr.com/people/teofilo/",
+      "title": "Jesus is Watching You Buy Porn",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "teofilo",
+      "url": "https://www.flickr.com/photos/teofilo",
+      "image": "https://live.staticflickr.com/97/buddyicons/72558920@N00.jpg?1160505770#72558920@N00"
+    },
+    "current_title": "Jesus is Watching You Buy Porn",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "teofilo",
+          "url": "https://www.flickr.com/photos/teofilo",
+          "image": "https://live.staticflickr.com/97/buddyicons/72558920@N00.jpg?1160505770#72558920@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:72558920@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/teofilo/3694333763",
+    "html_sha256": "8876b9a88a69ebddde54fb44169a431b0e53dcc3bf58e00491c741591297e4b5",
+    "stored_sha256": "7742de294f22e645e311e6f1f5260ecf5396cced3903156d579c2022c2a2d6cb",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\39ba18171aeb4415.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/39ba18171aeb4415.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,433 @@
+{
+  "schema": 1,
+  "purpose": "explicit-user-authorized-save-confirm-repair",
+  "input_sha256": "24076c82ba6dfa4b611d108ce8326e907fc2b4a2ef10ca8b6549baadc8067b7c",
+  "output_sha256": "5a48d622104c367ee9806d70cef8621f9fb6955dfaefcd8e444f266e8740831f",
+  "preserved_input_events": 318,
+  "linked_proposals": [
+    {
+      "image": 38,
+      "proposal_id": "rf-d5a8a64686d5b51d-81e962871f3088b0-1",
+      "target_id": "publisher-2",
+      "was_active": true
+    },
+    {
+      "image": 38,
+      "proposal_id": "rf-d5a8a64686d5b51d-81e962871f3088b0-4",
+      "target_id": "publisher-5",
+      "was_active": false
+    },
+    {
+      "image": 39,
+      "proposal_id": "rf-d5a8a64686d5b51d-bb6178d05ef56dac-1",
+      "target_id": "publisher-2",
+      "was_active": true
+    },
+    {
+      "image": 39,
+      "proposal_id": "rf-d5a8a64686d5b51d-bb6178d05ef56dac-2",
+      "target_id": "publisher-1",
+      "was_active": false
+    },
+    {
+      "image": 39,
+      "proposal_id": "rf-d5a8a64686d5b51d-bb6178d05ef56dac-3",
+      "target_id": "publisher-3",
+      "was_active": false
+    }
+  ],
+  "newly_confirmed": [
+    {
+      "image": 1,
+      "id": "manual-1-70",
+      "observation": false
+    },
+    {
+      "image": 1,
+      "id": "manual-bbe188a8-7e73-432d-bc5d-598022489939",
+      "observation": false
+    },
+    {
+      "image": 2,
+      "id": "publisher-10",
+      "observation": false
+    },
+    {
+      "image": 2,
+      "id": "manual-2-76",
+      "observation": false
+    },
+    {
+      "image": 2,
+      "id": "rf-d5a8a64686d5b51d-b3af0afa48a3ffb5-18",
+      "observation": false
+    },
+    {
+      "image": 2,
+      "id": "rf-d5a8a64686d5b51d-b3af0afa48a3ffb5-17",
+      "observation": false
+    },
+    {
+      "image": 2,
+      "id": "rf-d5a8a64686d5b51d-b3af0afa48a3ffb5-16",
+      "observation": false
+    },
+    {
+      "image": 2,
+      "id": "observation-rf-d5a8a64686d5b51d-b3af0afa48a3ffb5-11",
+      "observation": true
+    },
+    {
+      "image": 5,
+      "id": "publisher-1",
+      "observation": false
+    },
+    {
+      "image": 5,
+      "id": "rf-d5a8a64686d5b51d-276dee336c643993-6",
+      "observation": false
+    },
+    {
+      "image": 8,
+      "id": "manual-5e9eccc9-cc97-4fa3-a4ff-4fca8205aab0",
+      "observation": false
+    },
+    {
+      "image": 9,
+      "id": "observation-f2a94809-f062-4056-add2-af8efdc6b69f",
+      "observation": true
+    },
+    {
+      "image": 11,
+      "id": "model-3",
+      "observation": false
+    },
+    {
+      "image": 11,
+      "id": "rf-d5a8a64686d5b51d-3f26f7085334ac65-4",
+      "observation": false
+    },
+    {
+      "image": 11,
+      "id": "manual-0b6d6715-d728-4827-94bd-2a1319bf289f",
+      "observation": false
+    },
+    {
+      "image": 11,
+      "id": "manual-e37e93c6-3c75-4151-b6a1-da27c7ae32f6",
+      "observation": false
+    },
+    {
+      "image": 11,
+      "id": "observation-3e7f96e5-b05f-4750-9b36-f46c5d1a4ac3",
+      "observation": true
+    },
+    {
+      "image": 11,
+      "id": "observation-319d2d44-781f-42be-bb73-b25b535a3485",
+      "observation": true
+    },
+    {
+      "image": 11,
+      "id": "observation-dd05b660-5672-4735-94d1-a21835084862",
+      "observation": true
+    },
+    {
+      "image": 11,
+      "id": "observation-009bb60e-a0f9-47d3-aa31-dffd0f053821",
+      "observation": true
+    },
+    {
+      "image": 12,
+      "id": "observation-37b0474a-8071-48f5-9b68-70856ed9b34d",
+      "observation": true
+    },
+    {
+      "image": 13,
+      "id": "observation-f7cf571a-d757-4a4c-849b-6cd4535f191c",
+      "observation": true
+    },
+    {
+      "image": 13,
+      "id": "observation-6aa7d4d6-93c2-4b7d-a082-feb78779afba",
+      "observation": true
+    },
+    {
+      "image": 13,
+      "id": "observation-37111588-b96c-4f80-b8a1-2ec03f8e10a2",
+      "observation": true
+    },
+    {
+      "image": 13,
+      "id": "observation-ac286c22-7df3-43f8-aaf4-2abddb93441e",
+      "observation": true
+    },
+    {
+      "image": 17,
+      "id": "publisher-10",
+      "observation": false
+    },
+    {
+      "image": 17,
+      "id": "rf-d5a8a64686d5b51d-d87ec096a7df907f-11",
+      "observation": false
+    },
+    {
+      "image": 17,
+      "id": "rf-d5a8a64686d5b51d-d87ec096a7df907f-8",
+      "observation": false
+    },
+    {
+      "image": 18,
+      "id": "observation-d2220e5b-0417-4238-aed2-856f849d6646",
+      "observation": true
+    },
+    {
+      "image": 20,
+      "id": "manual-a454239f-fda1-4c93-87c2-2e26847d71b0",
+      "observation": false
+    },
+    {
+      "image": 20,
+      "id": "observation-5e43432b-eb93-4913-b0f5-fb502717b98f",
+      "observation": true
+    },
+    {
+      "image": 20,
+      "id": "observation-d7ff895b-480e-47aa-a671-02c80b97dcf6",
+      "observation": true
+    },
+    {
+      "image": 21,
+      "id": "manual-21-109",
+      "observation": false
+    },
+    {
+      "image": 23,
+      "id": "model-1",
+      "observation": false
+    },
+    {
+      "image": 23,
+      "id": "rf-d5a8a64686d5b51d-071335ec7bce7681-4",
+      "observation": false
+    },
+    {
+      "image": 24,
+      "id": "observation-eb879878-3266-42e9-8837-a3d638585acc",
+      "observation": true
+    },
+    {
+      "image": 24,
+      "id": "observation-0d1f3ab0-d128-40f5-b34f-b727437f5a92",
+      "observation": true
+    },
+    {
+      "image": 24,
+      "id": "observation-af5161c3-1517-4fc2-96d3-658f376ae5a4",
+      "observation": true
+    },
+    {
+      "image": 26,
+      "id": "observation-1ac9943d-bfe9-40f1-aefc-169020eb94f4",
+      "observation": true
+    },
+    {
+      "image": 27,
+      "id": "manual-f4844a4b-b52b-4307-814e-1f4782aa9c81",
+      "observation": false
+    },
+    {
+      "image": 28,
+      "id": "manual-7b3f1ee9-fec4-4e64-a2b4-eae482ff9cfe",
+      "observation": false
+    },
+    {
+      "image": 28,
+      "id": "manual-8c64cc29-d400-41d8-bef9-f1e2e0ae51a1",
+      "observation": false
+    },
+    {
+      "image": 28,
+      "id": "observation-49b4885e-be54-453a-a9ac-c1f492691382",
+      "observation": true
+    },
+    {
+      "image": 31,
+      "id": "observation-bf7b9f33-13c2-4b1e-96fe-a09f1513d5a6",
+      "observation": true
+    },
+    {
+      "image": 31,
+      "id": "observation-57abdd51-ce50-447b-b9b1-fd5c75120f1c",
+      "observation": true
+    },
+    {
+      "image": 31,
+      "id": "observation-a9e4fcca-c42b-4750-b517-fca47ae65788",
+      "observation": true
+    },
+    {
+      "image": 31,
+      "id": "observation-17d362b1-8912-437d-be17-e5715707297d",
+      "observation": true
+    },
+    {
+      "image": 31,
+      "id": "observation-73ac218c-599b-4a76-aa57-30d04c96062d",
+      "observation": true
+    },
+    {
+      "image": 32,
+      "id": "manual-32-136",
+      "observation": false
+    },
+    {
+      "image": 32,
+      "id": "manual-289c2736-8b6c-4c70-803d-9b14be46496d",
+      "observation": false
+    },
+    {
+      "image": 32,
+      "id": "manual-052a778f-72d7-48a7-8ac5-c2e2709e8d94",
+      "observation": false
+    },
+    {
+      "image": 32,
+      "id": "manual-78f9653f-76d5-490d-8c0e-958e669f80d8",
+      "observation": false
+    },
+    {
+      "image": 32,
+      "id": "observation-245e9847-250f-4c4f-8876-2d702509a768",
+      "observation": true
+    },
+    {
+      "image": 32,
+      "id": "observation-f68b16a7-677b-4bcc-b85f-239e23fa0856",
+      "observation": true
+    },
+    {
+      "image": 32,
+      "id": "observation-211c24e1-8353-4eab-854a-e95709aa04d9",
+      "observation": true
+    },
+    {
+      "image": 33,
+      "id": "observation-3bba6d4a-72f5-4a23-b56f-35af5f270ca8",
+      "observation": true
+    },
+    {
+      "image": 35,
+      "id": "observation-60dc7b2d-8c88-4f30-bce9-45e228ff6db2",
+      "observation": true
+    },
+    {
+      "image": 36,
+      "id": "observation-16cadb41-fd4d-4b9d-bc88-e181de9b308a",
+      "observation": true
+    },
+    {
+      "image": 36,
+      "id": "observation-dcff04a5-5ea6-4e4f-b4ca-c30442b2c419",
+      "observation": true
+    },
+    {
+      "image": 37,
+      "id": "manual-eddff4cf-4e66-49ed-af55-cee101e928a3",
+      "observation": false
+    },
+    {
+      "image": 38,
+      "id": "publisher-2",
+      "observation": false
+    },
+    {
+      "image": 38,
+      "id": "publisher-5",
+      "observation": false
+    },
+    {
+      "image": 38,
+      "id": "manual-38-144",
+      "observation": false
+    },
+    {
+      "image": 38,
+      "id": "rf-d5a8a64686d5b51d-81e962871f3088b0-5",
+      "observation": false
+    },
+    {
+      "image": 38,
+      "id": "rf-d5a8a64686d5b51d-81e962871f3088b0-8",
+      "observation": false
+    },
+    {
+      "image": 38,
+      "id": "rf-d5a8a64686d5b51d-81e962871f3088b0-6",
+      "observation": false
+    },
+    {
+      "image": 38,
+      "id": "rf-d5a8a64686d5b51d-81e962871f3088b0-2",
+      "observation": false
+    },
+    {
+      "image": 38,
+      "id": "rf-d5a8a64686d5b51d-81e962871f3088b0-3",
+      "observation": false
+    },
+    {
+      "image": 39,
+      "id": "publisher-1",
+      "observation": false
+    },
+    {
+      "image": 39,
+      "id": "publisher-2",
+      "observation": false
+    },
+    {
+      "image": 39,
+      "id": "publisher-3",
+      "observation": false
+    },
+    {
+      "image": 39,
+      "id": "rf-d5a8a64686d5b51d-bb6178d05ef56dac-4",
+      "observation": false
+    },
+    {
+      "image": 60,
+      "id": "manual-60-202",
+      "observation": false
+    }
+  ],
+  "summary": {
+    "schema": 1,
+    "purpose": "annotation-draft-only",
+    "approved_for_training": false,
+    "images": 60,
+    "objects_by_state": {
+      "pending": 473,
+      "confirmed": 74,
+      "rejected": 27
+    },
+    "objects_by_origin": {
+      "publisher": 322,
+      "model": 103,
+      "manual": 149
+    },
+    "correction_events": 396,
+    "unsupported_observations_by_state": {
+      "pending": 0,
+      "confirmed": 31,
+      "rejected": 0
+    },
+    "geometry_passes": 0,
+    "coverage_passes": 0,
+    "images_with_holds": 60,
+    "limits": "Counts describe drafts, not complete annotations, rights clearance, training readiness or accuracy."
+  },
+  "limits": "User-approved status correction only. No independent visual accuracy, whole-image coverage, rights clearance or training approval."
+}

@@ -1,0 +1,64 @@
+{
+  "image_id": "3f740b469eb3bf73",
+  "image_sha256": "c4b273ffdc5cccbb56707dd5b4f9e6e1fff6fbf49a380b964352d4139daebfd6",
+  "publisher_attribution": {
+    "id": "3f740b469eb3bf73",
+    "landing_url": "https://www.flickr.com/photos/78428166@N00/4216975029",
+    "original_url": "https://farm4.staticflickr.com/4039/4216975029_7089b00ee3_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Tony Alter",
+    "author_url": "https://www.flickr.com/people/78428166@N00/",
+    "title": "Read To Go",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Tony Alter",
+    "url": "https://www.flickr.com/photos/78428166@N00",
+    "image": "https://live.staticflickr.com/3824/buddyicons/78428166@N00.jpg?1377911650#78428166@N00"
+  },
+  "current_title": "Read To Go",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Tony Alter",
+        "url": "https://www.flickr.com/photos/78428166@N00",
+        "image": "https://live.staticflickr.com/3824/buddyicons/78428166@N00.jpg?1377911650#78428166@N00"
+      }
+    },
+    "meta_description": "I had Link, Jimmy Dean, and Frank over at my brother's house today while were were visiting.  Afterwards they all sat quietly in the front seat for our ride back to my friend Debbie's house in Loveland, Ohio."
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/78428166@N00/4216975029",
+  "canonical_page_url": "https://www.flickr.com/photos/78428166@N00/4216975029",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "7d6b73d010619d44fa6fcfd72226c1c1d73f23ae9902d284075434e1c0e8867b",
+  "source_gzip_sha256": "677565059734489e7bce9cc944f0e5b25bbe9fd8862eb1a7a69e49d347586f22",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-089",
+  "visual_proof_sha256": "f3a1c9518493a397332bc3d6bead22f5cc42a03a4557a9c55f5840de948b3bd8",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

@@ -1,0 +1,16 @@
+Fitted local probe 1/8: {'index': 0, 'weighting': 'uniform', 'ridge': 0.1}; train objective only; no validation used
+Fitted local probe 2/8: {'index': 1, 'weighting': 'uniform', 'ridge': 1.0}; train objective only; no validation used
+Fitted local probe 3/8: {'index': 2, 'weighting': 'uniform', 'ridge': 10.0}; train objective only; no validation used
+Fitted local probe 4/8: {'index': 3, 'weighting': 'uniform', 'ridge': 100.0}; train objective only; no validation used
+Fitted local probe 5/8: {'index': 4, 'weighting': 'half-hard-negative', 'ridge': 0.1}; train objective only; no validation used
+Fitted local probe 6/8: {'index': 5, 'weighting': 'half-hard-negative', 'ridge': 1.0}; train objective only; no validation used
+Fitted local probe 7/8: {'index': 6, 'weighting': 'half-hard-negative', 'ridge': 10.0}; train objective only; no validation used
+Fitted local probe 8/8: {'index': 7, 'weighting': 'half-hard-negative', 'ridge': 100.0}; train objective only; no validation used
+{"index": 0, "weighting": "uniform", "ridge": 0.1, "eligible": false, "strict_gain": false, "billboard_known_hits": 10, "billboard_complete_fp": 14, "unscored_predictions": 2207, "washing_known_hits": 8, "ranking": [137, 0.4489795918367347], "validation_replay_seconds": 1.927528500003973}
+{"index": 1, "weighting": "uniform", "ridge": 1.0, "eligible": false, "strict_gain": false, "billboard_known_hits": 11, "billboard_complete_fp": 23, "unscored_predictions": 1629, "washing_known_hits": 8, "ranking": [138, 0.411214953271028], "validation_replay_seconds": 1.8775299999979325}
+{"index": 2, "weighting": "uniform", "ridge": 10.0, "eligible": false, "strict_gain": false, "billboard_known_hits": 9, "billboard_complete_fp": 2, "unscored_predictions": 632, "washing_known_hits": 8, "ranking": [136, 0.5116279069767442], "validation_replay_seconds": 1.9235747000057017}
+{"index": 3, "weighting": "uniform", "ridge": 100.0, "eligible": true, "strict_gain": false, "billboard_known_hits": 0, "billboard_complete_fp": 0, "unscored_predictions": 528, "washing_known_hits": 8, "ranking": [127, 0.5238095238095238], "validation_replay_seconds": 1.8764539999974659}
+{"index": 4, "weighting": "half-hard-negative", "ridge": 0.1, "eligible": false, "strict_gain": false, "billboard_known_hits": 10, "billboard_complete_fp": 4, "unscored_predictions": 1512, "washing_known_hits": 8, "ranking": [137, 0.5], "validation_replay_seconds": 1.871526700000686}
+{"index": 5, "weighting": "half-hard-negative", "ridge": 1.0, "eligible": false, "strict_gain": false, "billboard_known_hits": 10, "billboard_complete_fp": 4, "unscored_predictions": 1050, "washing_known_hits": 8, "ranking": [137, 0.5], "validation_replay_seconds": 1.9378302000041003}
+{"index": 6, "weighting": "half-hard-negative", "ridge": 10.0, "eligible": false, "strict_gain": false, "billboard_known_hits": 7, "billboard_complete_fp": 2, "unscored_predictions": 566, "washing_known_hits": 8, "ranking": [134, 0.5116279069767442], "validation_replay_seconds": 1.7774442000009003}
+{"index": 7, "weighting": "half-hard-negative", "ridge": 100.0, "eligible": true, "strict_gain": false, "billboard_known_hits": 0, "billboard_complete_fp": 0, "unscored_predictions": 528, "washing_known_hits": 8, "ranking": [127, 0.5238095238095238], "validation_replay_seconds": 1.8876361000002362}

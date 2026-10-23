@@ -1,0 +1,374 @@
+{
+  "step": 0,
+  "image_id": "013037fd8c0daf0a",
+  "selection_roles": [
+    {
+      "canonical_id": 133,
+      "role": "positive",
+      "image_id": "013037fd8c0daf0a",
+      "image_sha256": "c3429a67e0d25e31fbde6f95b17023f5b2604ce21aad1367c01b538d4f527cb6"
+    }
+  ],
+  "targets": 3,
+  "loss_components": {
+    "loss_ce": {
+      "value": 1.1088905334472656,
+      "trainable": true
+    },
+    "loss_bbox": {
+      "value": 0.0400233119726181,
+      "trainable": false
+    },
+    "loss_giou": {
+      "value": 0.29233619570732117,
+      "trainable": false
+    },
+    "loss_ce_0": {
+      "value": 0.9683162569999695,
+      "trainable": true
+    },
+    "loss_bbox_0": {
+      "value": 0.09323612600564957,
+      "trainable": false
+    },
+    "loss_giou_0": {
+      "value": 0.41805049777030945,
+      "trainable": false
+    },
+    "loss_ce_1": {
+      "value": 1.0701279640197754,
+      "trainable": true
+    },
+    "loss_bbox_1": {
+      "value": 0.04773206636309624,
+      "trainable": false
+    },
+    "loss_giou_1": {
+      "value": 0.3240015208721161,
+      "trainable": false
+    },
+    "loss_ce_enc": {
+      "value": 1.0029797554016113,
+      "trainable": false
+    },
+    "loss_bbox_enc": {
+      "value": 0.08514115959405899,
+      "trainable": false
+    },
+    "loss_giou_enc": {
+      "value": 0.3891233503818512,
+      "trainable": false
+    }
+  },
+  "weighted_total": 12.478316307067871,
+  "trainable_weighted_classification": 6.2946696281433105,
+  "constant_weighted_loss": 6.183646202087402,
+  "head_gradients": {
+    "15": {
+      "weight_l2": 0.0,
+      "bias": 0.0
+    },
+    "16": {
+      "weight_l2": 0.0,
+      "bias": 0.0
+    },
+    "133": {
+      "weight_l2": 11.612471580505371,
+      "bias": -1.2433364391326904
+    },
+    "593": {
+      "weight_l2": 0.0,
+      "bias": 0.0
+    }
+  },
+  "global_head_gradient_norm": 11.67884349822998,
+  "row_gradient_reconstruction_max_error": 9.5367431640625e-07,
+  "bias_gradient_reconstruction_max_error": 0.0,
+  "stages": [
+    {
+      "stage": "main",
+      "normalizer": 3.0,
+      "classification_loss": 1.1088905334472656,
+      "classification_trainable": true,
+      "classes": {
+        "15": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "16": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "positive_only",
+          "matches": 3,
+          "weight_gradient_l2": 4.318053722381592,
+          "bias_gradient": -0.43363043665885925,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": [
+        {
+          "query": 29,
+          "target_index": 1,
+          "canonical_id": 133,
+          "iou": 0.48583927750587463,
+          "probability": 0.009636281989514828,
+          "soft_target": 0.18232527375221252,
+          "expected_weighted_logit_gradient": -0.11512599140405655,
+          "actual_weighted_logit_gradient": -0.11512595415115356,
+          "descent_would_raise_matched_logit": true
+        },
+        {
+          "query": 112,
+          "target_index": 0,
+          "canonical_id": 133,
+          "iou": 0.8903507590293884,
+          "probability": 0.0058622416108846664,
+          "soft_target": 0.253621906042099,
+          "expected_weighted_logit_gradient": -0.16517311334609985,
+          "actual_weighted_logit_gradient": -0.16517314314842224,
+          "descent_would_raise_matched_logit": true
+        },
+        {
+          "query": 145,
+          "target_index": 2,
+          "canonical_id": 133,
+          "iou": 0.7477666139602661,
+          "probability": 0.0076251705177128315,
+          "soft_target": 0.23762217164039612,
+          "expected_weighted_logit_gradient": -0.15333132445812225,
+          "actual_weighted_logit_gradient": -0.15333133935928345,
+          "descent_would_raise_matched_logit": true
+        }
+      ]
+    },
+    {
+      "stage": "auxiliary-0",
+      "normalizer": 3.0,
+      "classification_loss": 0.9683162569999695,
+      "classification_trainable": true,
+      "classes": {
+        "15": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "16": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "positive_only",
+          "matches": 3,
+          "weight_gradient_l2": 4.054437637329102,
+          "bias_gradient": -0.39518487453460693,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": [
+        {
+          "query": 29,
+          "target_index": 1,
+          "canonical_id": 133,
+          "iou": 0.37603676319122314,
+          "probability": 0.005590484011918306,
+          "soft_target": 0.13130615651607513,
+          "expected_weighted_logit_gradient": -0.08381044864654541,
+          "actual_weighted_logit_gradient": -0.08381044864654541,
+          "descent_would_raise_matched_logit": true
+        },
+        {
+          "query": 112,
+          "target_index": 0,
+          "canonical_id": 133,
+          "iou": 0.64238440990448,
+          "probability": 0.012420877814292908,
+          "soft_target": 0.23954345285892487,
+          "expected_weighted_logit_gradient": -0.15141505002975464,
+          "actual_weighted_logit_gradient": -0.15141505002975464,
+          "descent_would_raise_matched_logit": true
+        },
+        {
+          "query": 145,
+          "target_index": 2,
+          "canonical_id": 133,
+          "iou": 0.7305293083190918,
+          "probability": 0.010011609643697739,
+          "soft_target": 0.2499506175518036,
+          "expected_weighted_logit_gradient": -0.1599593311548233,
+          "actual_weighted_logit_gradient": -0.15995937585830688,
+          "descent_would_raise_matched_logit": true
+        }
+      ]
+    },
+    {
+      "stage": "auxiliary-1",
+      "normalizer": 3.0,
+      "classification_loss": 1.0701279640197754,
+      "classification_trainable": true,
+      "classes": {
+        "15": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "16": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "positive_only",
+          "matches": 3,
+          "weight_gradient_l2": 4.140331268310547,
+          "bias_gradient": -0.41452109813690186,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0.0,
+          "bias_gradient": 0.0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": [
+        {
+          "query": 29,
+          "target_index": 1,
+          "canonical_id": 133,
+          "iou": 0.48574313521385193,
+          "probability": 0.006948002148419619,
+          "soft_target": 0.16798479855060577,
+          "expected_weighted_logit_gradient": -0.10735785961151123,
+          "actual_weighted_logit_gradient": -0.10735785961151123,
+          "descent_would_raise_matched_logit": true
+        },
+        {
+          "query": 112,
+          "target_index": 0,
+          "canonical_id": 133,
+          "iou": 0.8500319123268127,
+          "probability": 0.007023920305073261,
+          "soft_target": 0.2562839090824127,
+          "expected_weighted_logit_gradient": -0.1661733239889145,
+          "actual_weighted_logit_gradient": -0.16617333889007568,
+          "descent_would_raise_matched_logit": true
+        },
+        {
+          "query": 145,
+          "target_index": 2,
+          "canonical_id": 133,
+          "iou": 0.6926640868186951,
+          "probability": 0.0068361819721758366,
+          "soft_target": 0.21832095086574554,
+          "expected_weighted_logit_gradient": -0.14098985493183136,
+          "actual_weighted_logit_gradient": -0.14098989963531494,
+          "descent_would_raise_matched_logit": true
+        }
+      ]
+    },
+    {
+      "stage": "encoder",
+      "normalizer": 3.0,
+      "classification_loss": 1.0029797554016113,
+      "classification_trainable": false,
+      "classes": {
+        "15": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "16": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "133": {
+          "scope": "positive_only",
+          "matches": 3,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        },
+        "593": {
+          "scope": "unknown",
+          "matches": 0,
+          "weight_gradient_l2": 0,
+          "bias_gradient": 0,
+          "unmatched_negative_logit_gradient_sum": null
+        }
+      },
+      "matches": [
+        {
+          "query": 29,
+          "target_index": 1,
+          "canonical_id": 133,
+          "iou": 0.3524547815322876,
+          "probability": 0.00967587623745203,
+          "soft_target": 0.14346638321876526,
+          "expected_weighted_logit_gradient": -0.0891936719417572,
+          "actual_weighted_logit_gradient": null,
+          "descent_would_raise_matched_logit": null
+        },
+        {
+          "query": 145,
+          "target_index": 2,
+          "canonical_id": 133,
+          "iou": 0.8163220882415771,
+          "probability": 0.008155785501003265,
+          "soft_target": 0.2580849230289459,
+          "expected_weighted_logit_gradient": -0.1666194200515747,
+          "actual_weighted_logit_gradient": null,
+          "descent_would_raise_matched_logit": null
+        },
+        {
+          "query": 189,
+          "target_index": 0,
+          "canonical_id": 133,
+          "iou": 0.6730155348777771,
+          "probability": 0.009595838375389576,
+          "soft_target": 0.23256242275238037,
+          "expected_weighted_logit_gradient": -0.14864438772201538,
+          "actual_weighted_logit_gradient": null,
+          "descent_would_raise_matched_logit": null
+        }
+      ]
+    }
+  ],
+  "seconds": 1.7029999999995198
+}

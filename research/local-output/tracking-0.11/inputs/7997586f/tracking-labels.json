@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "width": 1280,
+  "height": 720,
+  "notes": "Frozen selected person labels before export inspection. Generated footage; approximate visible extents, sparse samples, not complete scene/event annotation. Frame images were rendered at half size only for review; boxes below are original pixels.",
+  "frames": [
+    {
+      "sequence": 6,
+      "complete": false,
+      "objects": [
+        {
+          "object_id": "blue_woman",
+          "class_id": 0,
+          "box": [
+            320,
+            340,
+            432,
+            644
+          ]
+        },
+        {
+          "object_id": "teal_walker",
+          "class_id": 0,
+          "box": [
+            652,
+            338,
+            766,
+            648
+          ]
+        },
+        {
+          "object_id": "backpack_right",
+          "class_id": 0,
+          "box": [
+            1082,
+            302,
+            1278,
+            718
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "complete": false,
+      "objects": [
+        {
+          "object_id": "blue_woman",
+          "class_id": 0,
+          "box": [
+            300,
+            338,
+            416,
+            664
+          ]
+        },
+        {
+          "object_id": "teal_walker",
+          "class_id": 0,
+          "box": [
+            660,
+            338,
+            768,
+            648
+          ]
+        },
+        {
+          "object_id": "backpack_right",
+          "class_id": 0,
+          "box": [
+            1042,
+            304,
+            1264,
+            718
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 18,
+      "complete": false,
+      "objects": [
+        {
+          "object_id": "blue_woman",
+          "class_id": 0,
+          "box": [
+            280,
+            336,
+            410,
+            676
+          ]
+        },
+        {
+          "object_id": "teal_walker",
+          "class_id": 0,
+          "box": [
+            672,
+            336,
+            770,
+            640
+          ]
+        },
+        {
+          "object_id": "backpack_right",
+          "class_id": 0,
+          "box": [
+            1008,
+            300,
+            1206,
+            718
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "complete": false,
+    "start_sequence": 1,
+    "end_sequence": 239,
+    "items": []
+  }
+}

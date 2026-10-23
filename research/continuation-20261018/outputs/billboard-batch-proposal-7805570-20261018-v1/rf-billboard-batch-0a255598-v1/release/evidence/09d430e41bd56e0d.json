@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "09d430e41bd56e0d",
+  "image_sha256": "15c424bf05d34dfb0bba27f153c749f3ac6bfdfdb59fa8e9c93d5b1ac9bddad1",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "09d430e41bd56e0d",
+    "image_sha256": "15c424bf05d34dfb0bba27f153c749f3ac6bfdfdb59fa8e9c93d5b1ac9bddad1",
+    "selected_category": "light switch",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/rakerman/9055094101/",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/rakerman/9055094101/",
+      "original_url": "https://c6.staticflickr.com/3/2817/9055094101_21fd639cf7_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Richard Akerman",
+      "author_url": "https://www.flickr.com/people/rakerman/",
+      "title": "IMG_5514",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Richard Akerman",
+      "url": "https://www.flickr.com/photos/rakerman",
+      "image": "https://combo.staticflickr.com/pw/images/bbuddyicon06.png#48889071218@N01"
+    },
+    "current_title": "IMG_5514",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Richard Akerman",
+          "url": "https://www.flickr.com/photos/rakerman",
+          "image": "https://combo.staticflickr.com/pw/images/bbuddyicon06.png#48889071218@N01"
+        }
+      },
+      "meta_description": "Minuterie - a timed light switch.  Normally the lights are off, but when you press the minuterie you get a few minutes of light.  Then the lights switch off again.  Brand: Legrand."
+    },
+    "identity_group": "flickr-nsid:48889071218@N01",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/rakerman/9055094101",
+    "html_sha256": "30c92801c10afffdc5302111136fcfc1b77e62b03df56e10bac50aacd2a8da9b",
+    "stored_sha256": "34ad8a6458116d35199133e46f87d6e447cc8b0327d229a7f2d5918192d84ccd",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\09d430e41bd56e0d.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/09d430e41bd56e0d.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

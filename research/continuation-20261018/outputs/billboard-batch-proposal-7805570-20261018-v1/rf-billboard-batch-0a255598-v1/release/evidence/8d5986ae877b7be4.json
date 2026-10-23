@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "8d5986ae877b7be4",
+  "image_sha256": "58791145f24fd6add6e9510897949e49f90b2af7d7cc58c92eb6646d9122f466",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "8d5986ae877b7be4",
+    "image_sha256": "58791145f24fd6add6e9510897949e49f90b2af7d7cc58c92eb6646d9122f466",
+    "selected_category": "billboard",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/kcjc/446432115",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/kcjc/446432115",
+      "original_url": "https://farm5.staticflickr.com/242/446432115_ce2eda13d3_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Kevin Coles",
+      "author_url": "https://www.flickr.com/people/kcjc/",
+      "title": "Ibiza",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Kevin Coles",
+      "url": "https://www.flickr.com/photos/kcjc",
+      "image": "https://live.staticflickr.com/5464/buddyicons/74376805@N00.jpg?1370460358#74376805@N00"
+    },
+    "current_title": "Ibiza",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Kevin Coles",
+          "url": "https://www.flickr.com/photos/kcjc",
+          "image": "https://live.staticflickr.com/5464/buddyicons/74376805@N00.jpg?1370460358#74376805@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:74376805@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/kcjc/446432115",
+    "html_sha256": "f263c570d2dcd62692ea28937e2d0540c33e2c5340168f234042070c7cb2936b",
+    "stored_sha256": "2e7e339d09321afaecfb33c685cf7e28bee82cd3a129ccd0b3fb244498518605",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\8d5986ae877b7be4.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/8d5986ae877b7be4.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

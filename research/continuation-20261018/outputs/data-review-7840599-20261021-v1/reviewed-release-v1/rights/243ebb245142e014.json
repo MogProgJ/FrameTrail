@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "243ebb245142e014",
+  "image_sha256": "69454957132b4fae2a38a66097abd5790fff1d94cfcdb43f6f4c9b367b527b91",
+  "source_review": {
+    "image_id": "243ebb245142e014",
+    "image_sha256": "69454957132b4fae2a38a66097abd5790fff1d94cfcdb43f6f4c9b367b527b91",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "test",
+    "source_url": "https://www.flickr.com/photos/danielbye/8053863267",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/danielbye/8053863267",
+      "original_url": "https://farm5.staticflickr.com/8451/8053863267_0422969577_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Daniel Bye",
+      "author_url": "https://www.flickr.com/people/danielbye/",
+      "title": "Is one of them &quot;how could this have been allowed to happen?&quot;?",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Daniel Bye",
+      "url": "https://www.flickr.com/photos/danielbye",
+      "image": "https://live.staticflickr.com/7208/buddyicons/76932323@N06.jpg?1330600088#76932323@N06"
+    },
+    "current_title": "Is one of them \"how could this have been allowed to happen?\"?",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Daniel Bye",
+          "url": "https://www.flickr.com/photos/danielbye",
+          "image": "https://live.staticflickr.com/7208/buddyicons/76932323@N06.jpg?1330600088#76932323@N06"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:76932323@N06",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/danielbye/8053863267",
+    "html_sha256": "d907f31fb182dadeb8bb425fcdcaef8d516db300a3974d68b0397f8e3e1908d4",
+    "stored_sha256": "1ba82bda7929b771af8d824255538c944120b1027096ba787c554936e8c2f855",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\243ebb245142e014.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\243ebb245142e014.json",
+    "sha256": "ef5b6d6dbdca9c00e310d66b143b6fffc1eac25a8d23430921d09a386df5ba11"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\243ebb245142e014.json",
+    "sha256": "4fea74f6758d33af09b2f8b720db2e5b847bd6dc1978f62447e0cf2bf56a3e43"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/danielbye/8053863267",
+    "original_url": "https://farm5.staticflickr.com/8451/8053863267_0422969577_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Daniel Bye",
+    "author_url": "https://www.flickr.com/people/danielbye/",
+    "title": "Is one of them &quot;how could this have been allowed to happen?&quot;?",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

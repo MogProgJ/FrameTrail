@@ -2,6 +2,7 @@
 #include "model_selection.hpp"
 #include "preview_window.hpp"
 #include "theme.hpp"
+#include "studio_controls.hpp"
 #include <QFrame>
 #include <QScrollArea>
 #include <QCheckBox>
@@ -16,16 +17,16 @@
 
 LiveWindow::LiveWindow(QString model,frametrail::DetectorModel variant,frametrail::DetectorBackend backend):model_(std::move(model)) {
     setWindowTitle(QStringLiteral("FrameTrail — Live camera")); resize(1280, 820); setMinimumSize(980, 640);
-    setStyleSheet(frametrail_theme());
+    install_studio_style();setStyleSheet(frametrail_theme());
     auto* body = new QWidget; body->setObjectName(QStringLiteral("shell"));
-    auto* layout = new QVBoxLayout(body); layout->setContentsMargins(24,22,24,22); layout->setSpacing(18);
+    auto* layout = new QVBoxLayout(body); layout->setContentsMargins(20,18,20,18); layout->setSpacing(18);
     auto* header = new QHBoxLayout;
-    auto* title = new QLabel(QStringLiteral("Live camera")); title->setObjectName(QStringLiteral("title")); header->addWidget(title);
+    auto* title = new QLabel(QStringLiteral("Live camera")); title->setObjectName(QStringLiteral("title")); header->addWidget(title);studio_heading(header);
     header->addStretch(); camera_indicator_ = new QLabel(QStringLiteral("Camera off"));
     camera_indicator_->setObjectName(QStringLiteral("cameraIndicator")); camera_indicator_->setProperty("role", "badge"); header->addWidget(camera_indicator_); layout->addLayout(header);
     auto* hint = new QLabel(QStringLiteral("Start camera activates your webcam. Frames stay on this device; no audio, recording, or upload."));
     hint->setWordWrap(true); hint->setProperty("role", "muted"); layout->addWidget(hint);
-    auto* workspace = new QHBoxLayout; workspace->setSpacing(20);
+    auto* workspace = new QHBoxLayout; workspace->setSpacing(12);
     auto* video = new QVBoxLayout;
     canvas_ = new FrameCanvas; canvas_->set_empty_text(QStringLiteral("Your camera is off\nChoose a device, then click Start camera")); video->addWidget(canvas_,1);
     auto* transport = new QHBoxLayout;
@@ -34,14 +35,14 @@ LiveWindow::LiveWindow(QString model,frametrail::DetectorModel variant,frametrai
     status_ = new QLabel; status_->setObjectName(QStringLiteral("liveStatus")); status_->setTextFormat(Qt::PlainText); status_->setWordWrap(true); transport->addWidget(status_,1); video->addLayout(transport);
     metrics_ = new QLabel(QStringLiteral("Capture and analysis metrics appear after Start.")); metrics_->setWordWrap(true); metrics_->setProperty("role", "muted"); video->addWidget(metrics_); workspace->addLayout(video,1);
     auto* panel = new QFrame; panel->setObjectName(QStringLiteral("inspector"));
-    auto* options = new QVBoxLayout(panel); options->setContentsMargins(18,20,18,20); options->setSpacing(9);
+    auto* options = new QVBoxLayout(panel); options->setContentsMargins(16,18,16,18); options->setSpacing(9);
     const auto caption = [&](const QString& text) {auto* label = new QLabel(text); label->setProperty("role","section"); options->addWidget(label);};
     caption(QStringLiteral("CAMERA SOURCE"));
     cameras_ = new QComboBox; cameras_->setObjectName(QStringLiteral("cameraDevices")); cameras_->setAccessibleName(QStringLiteral("Camera device")); cameras_->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon); cameras_->setMinimumContentsLength(12); options->addWidget(cameras_);
     format_ = new QComboBox; format_->setAccessibleName(QStringLiteral("Capture format")); format_->addItems({QStringLiteral("Camera default format"),QStringLiteral("640 × 480 / 30 fps"),QStringLiteral("1280 × 720 / 30 fps")}); options->addWidget(format_);
     refresh_ = new QPushButton(QStringLiteral("Refresh cameras")); options->addWidget(refresh_);
     caption(QStringLiteral("ANALYSIS"));
-    model_box_=model_selector(model_,this);
+    model_box_=model_selector(model_,this);model_box_->setMinimumWidth(0);model_box_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
     model_box_->setCurrentIndex(int(variant));
     options->addWidget(model_box_);
     backend_box_=backend_selector(this);backend_box_->setCurrentIndex(backend==frametrail::DetectorBackend::cpu ? 0:1);options->addWidget(backend_box_);
@@ -54,7 +55,7 @@ LiveWindow::LiveWindow(QString model,frametrail::DetectorModel variant,frametrai
     draw_ = new QPushButton(QStringLiteral("Stop && draw line")); draw_->setObjectName(QStringLiteral("drawLiveLine")); options->addWidget(draw_);
     auto* settingsHint = new QLabel(QStringLiteral("Change settings while stopped. Restarting begins fresh IDs and counts.")); settingsHint->setWordWrap(true); settingsHint->setProperty("role","muted"); options->addWidget(settingsHint); options->addStretch();
     caption(QStringLiteral("THIS SESSION")); counts_ = new QLabel(QStringLiteral("Crossings: − → + 0  |  + → − 0")); counts_->setWordWrap(true); counts_->setObjectName(QStringLiteral("liveCounts")); options->addWidget(counts_);
-    auto* scroll = new QScrollArea; scroll->setWidgetResizable(true); scroll->setFixedWidth(320); scroll->setWidget(panel); workspace->addWidget(scroll); layout->addLayout(workspace,1); setCentralWidget(body);
+    auto* scroll = new QScrollArea; scroll->setWidgetResizable(true); scroll->setFixedWidth(304);scroll->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); scroll->setWidget(panel); workspace->addWidget(scroll); layout->addLayout(workspace,1); setCentralWidget(body);studio_button(start_,"camera");studio_button(stop_,"stop");studio_button(draw_,"analyse");
     connect(refresh_,&QPushButton::clicked,this,[this]{refresh();});
     connect(start_,&QPushButton::clicked,this,[this]{start();});
     connect(stop_,&QPushButton::clicked,this,[this]{session_.stop();status_->setText(QStringLiteral("Stopping camera…"));});

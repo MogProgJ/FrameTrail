@@ -1,0 +1,64 @@
+{
+  "image_id": "64b0baaee5817db0",
+  "image_sha256": "aa275e6d2f618560a7261ee058fe20828b528bd311d054a6f917386ef2692091",
+  "publisher_attribution": {
+    "id": "64b0baaee5817db0",
+    "landing_url": "https://www.flickr.com/photos/raver_mikey/16167292152",
+    "original_url": "https://farm1.staticflickr.com/7550/16167292152_c3d0b6ac25_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Mikey",
+    "author_url": "https://www.flickr.com/people/raver_mikey/",
+    "title": "First meal of 2015!",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Mikey",
+    "url": "https://www.flickr.com/photos/raver_mikey",
+    "image": "https://live.staticflickr.com/3831/buddyicons/90384027@N00.jpg?1369088692#90384027@N00"
+  },
+  "current_title": "First meal of 2015!",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Mikey",
+        "url": "https://www.flickr.com/photos/raver_mikey",
+        "image": "https://live.staticflickr.com/3831/buddyicons/90384027@N00.jpg?1369088692#90384027@N00"
+      }
+    },
+    "meta_description": "Nice roast beef, complete with all the veg, stuffing and Yorkshire pudding........and a pint of Boddingtons!\n\t\n\tTaken this afternoon (New Year's Day - Thursday 1st January)"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/raver_mikey/16167292152",
+  "canonical_page_url": "https://www.flickr.com/photos/raver_mikey/16167292152",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "f3914f78fd8fa6ea02eff30e3b55758969ede9932b5cf763705bc81f4df07e40",
+  "source_gzip_sha256": "c8905e23324b009f4262c6ef3bc3f04ce078d5d3672efff2c752d3e682a9aa87",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-133",
+  "visual_proof_sha256": "0aabb98fda429f110ef19b854e7040299f5f152fb9213fea4fecc5969b0680fd",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

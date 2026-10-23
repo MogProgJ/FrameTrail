@@ -1,0 +1,80 @@
+{
+  "image_id": "cab9065c77e923a6",
+  "image_sha256": "e272d132a0f9ec7f536471e989905e32d3686f8fa4e6ca63ef47c9b30179f280",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "cab9065c77e923a6",
+    "image_sha256": "e272d132a0f9ec7f536471e989905e32d3686f8fa4e6ca63ef47c9b30179f280",
+    "selected_category": "traffic sign",
+    "selected_domain": "contrast",
+    "prospective_split": "test",
+    "source_url": "https://www.flickr.com/photos/usfwssoutheast/6405692039",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/usfwssoutheast/6405692039",
+      "original_url": "https://farm7.staticflickr.com/6219/6405692039_53fefe482a_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "U.S. Fish and Wildlife Service Southeast Region",
+      "author_url": "https://www.flickr.com/people/usfwssoutheast/",
+      "title": "Check point",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "U.S. Fish and Wildlife Service Southeast Region",
+      "url": "https://www.flickr.com/photos/usfwssoutheast",
+      "image": "https://live.staticflickr.com/2913/buddyicons/41464593@N02.jpg?1403893560#41464593@N02"
+    },
+    "current_title": "Check point ",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "U.S. Fish and Wildlife Service Southeast Region",
+          "url": "https://www.flickr.com/photos/usfwssoutheast",
+          "image": "https://live.staticflickr.com/2913/buddyicons/41464593@N02.jpg?1403893560#41464593@N02"
+        }
+      },
+      "meta_description": "Refuge Law Enforcement officers conducting a vehicle checkpoint at the Vieques NWR. "
+    },
+    "identity_group": "flickr-nsid:41464593@N02",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/usfwssoutheast/6405692039",
+    "html_sha256": "40f2af63f42ef9b22b85bb46987291eb052e6ba5a9abb2362863566846f0fde9",
+    "stored_sha256": "42d9709666bfb9a9077855c2edf34fe9b49b7bdc447af3d1e1ae06bfa9d8c75f",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\cab9065c77e923a6.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\cab9065c77e923a6.html.gz",
+    "sha256": "42d9709666bfb9a9077855c2edf34fe9b49b7bdc447af3d1e1ae06bfa9d8c75f"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

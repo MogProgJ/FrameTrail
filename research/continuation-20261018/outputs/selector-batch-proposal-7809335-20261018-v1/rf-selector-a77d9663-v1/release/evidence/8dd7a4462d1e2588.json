@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "8dd7a4462d1e2588",
+  "image_sha256": "de45675a664fc9b9496a8b913fc1a6e1f3f83198ea6b11a91c8afabab98a7a4d",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "8dd7a4462d1e2588",
+    "image_sha256": "de45675a664fc9b9496a8b913fc1a6e1f3f83198ea6b11a91c8afabab98a7a4d",
+    "selected_category": "van",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/22746515@N02/2523866311",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/22746515@N02/2523866311",
+      "original_url": "https://c1.staticflickr.com/4/3089/2523866311_3c28f37037_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Bert Kaufmann",
+      "author_url": "https://www.flickr.com/people/22746515@N02/",
+      "title": "Roertunnel A73",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Bert Kaufmann",
+      "url": "https://www.flickr.com/photos/22746515@N02",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/22746515@N02.jpg?1576329061#22746515@N02"
+    },
+    "current_title": "Roertunnel A73",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Bert Kaufmann",
+          "url": "https://www.flickr.com/photos/22746515@N02",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/22746515@N02.jpg?1576329061#22746515@N02"
+        }
+      },
+      "meta_description": "Weekend: testen veiligheidssystemen in Roertunnel A73"
+    },
+    "identity_group": "flickr-nsid:22746515@N02",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/22746515@N02/2523866311",
+    "html_sha256": "5c6c5662f8581712224dceb768d93aa0813f6849e5141447d6254eee28796ec4",
+    "stored_sha256": "83b20ed2d107827b08b3deaf888252e3851156154b05ff97c5ba33dec3586356",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\8dd7a4462d1e2588.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/8dd7a4462d1e2588.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

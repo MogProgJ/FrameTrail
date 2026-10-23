@@ -1,0 +1,64 @@
+{
+  "image_id": "846378bd46057315",
+  "image_sha256": "71820cf57cd46925b99af5d66d97dec75acdb55c7b81a522bbab4c389b2b001e",
+  "publisher_attribution": {
+    "id": "846378bd46057315",
+    "landing_url": "https://www.flickr.com/photos/hipster_doofus/421317331",
+    "original_url": "https://farm6.staticflickr.com/133/421317331_4f6406c2c9_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "lacyrhoades",
+    "author_url": "https://www.flickr.com/people/hipster_doofus/",
+    "title": "253.jpg",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "lacyrhoades",
+    "url": "https://www.flickr.com/photos/hipster_doofus",
+    "image": "https://live.staticflickr.com/5667/buddyicons/24596600@N00.jpg?1476540005#24596600@N00"
+  },
+  "current_title": "253.jpg",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "lacyrhoades",
+        "url": "https://www.flickr.com/photos/hipster_doofus",
+        "image": "https://live.staticflickr.com/5667/buddyicons/24596600@N00.jpg?1476540005#24596600@N00"
+      }
+    },
+    "meta_description": "Ilford XP2 400"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/hipster_doofus/421317331",
+  "canonical_page_url": "https://www.flickr.com/photos/hipster_doofus/421317331",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "90fddcec94972d838c3b6625be50481777b010a40439eadeb814fa325567667f",
+  "source_gzip_sha256": "feea745e81e0a2d5bf0ec3f46faf98bb771829a833deb30d70583e46e1613248",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-006",
+  "visual_proof_sha256": "7f17490480fa16f8be4b54c1ecc4fbb6d4c4e1fda0fa61ebd1c865f6f775f762",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

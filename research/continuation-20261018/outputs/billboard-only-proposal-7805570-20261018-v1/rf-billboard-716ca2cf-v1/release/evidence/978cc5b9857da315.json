@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "978cc5b9857da315",
+  "image_sha256": "9bf5974a82fcaa3904efb69078c7d1e7a4efa7fadc47c38c5990105d7b4c950d",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "978cc5b9857da315",
+    "image_sha256": "9bf5974a82fcaa3904efb69078c7d1e7a4efa7fadc47c38c5990105d7b4c950d",
+    "selected_category": "van",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/electronica02/8983557619/",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/electronica02/8983557619/",
+      "original_url": "https://farm6.staticflickr.com/3710/8983557619_722ed5f1a4_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "electronica02",
+      "author_url": "https://www.flickr.com/people/electronica02/",
+      "title": "Untitled",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "electronica02",
+      "url": "https://www.flickr.com/photos/electronica02",
+      "image": "https://live.staticflickr.com/7771/buddyicons/55401363@N00.jpg?1431098620#55401363@N00"
+    },
+    "current_title": "Untitled",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "electronica02",
+          "url": "https://www.flickr.com/photos/electronica02",
+          "image": "https://live.staticflickr.com/7771/buddyicons/55401363@N00.jpg?1431098620#55401363@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:55401363@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/electronica02/8983557619",
+    "html_sha256": "ef91bfadf70fb52e92acd489e3c5d59dbf0c29ac720dc8c791ce4b2efc845973",
+    "stored_sha256": "67b5476bf32178fb777e2cd1178cb4b09dade6c7f42f73493529f8a0f5abd0a2",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\978cc5b9857da315.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/978cc5b9857da315.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

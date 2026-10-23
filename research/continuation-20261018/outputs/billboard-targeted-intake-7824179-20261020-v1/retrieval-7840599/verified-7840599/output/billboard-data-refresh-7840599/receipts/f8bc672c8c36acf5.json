@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "status": "downloaded",
+  "url": "https://open-images-dataset.s3.amazonaws.com/train/f8bc672c8c36acf5.jpg",
+  "context": {
+    "actual_job_id": "7840599",
+    "plan_sha256": "658b0c2c01627a681c2bdd64482dbc8313caa118ea5543c7ff199c373db5b839",
+    "selection_sha256": "ed1bbda0e2cf9601ccf45d1e295376bf0f9cba42f32159791db7fa0bfb341b06"
+  },
+  "bytes": 183975,
+  "sha256": "1f23daeb1dff0a600f62950ea66c94b05865eb190ef63ff83e15606cf533c856",
+  "decoded": {
+    "width": 1024,
+    "height": 768,
+    "dhash": "0fc5e93c39ddcfc5",
+    "mean_luma": 123.34
+  },
+  "retrieved_at_utc": "2026-10-21T04:05:24.853983+00:00",
+  "etag": "\"ca3dabff65e8793285f8104ace048f27\"",
+  "last_modified": "Wed, 11 Jul 2018 15:44:15 GMT",
+  "verification": "HTTP identity/length, local SHA256 and JPEG decode; no publisher checksum supplied"
+}

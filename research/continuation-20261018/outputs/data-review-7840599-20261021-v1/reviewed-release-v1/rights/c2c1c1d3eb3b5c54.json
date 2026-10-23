@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "c2c1c1d3eb3b5c54",
+  "image_sha256": "9eb02d8dd549103c2557ca1d60d3b5f597ec863c0b72e7a57dc589bf7600e9e4",
+  "source_review": {
+    "image_id": "c2c1c1d3eb3b5c54",
+    "image_sha256": "9eb02d8dd549103c2557ca1d60d3b5f597ec863c0b72e7a57dc589bf7600e9e4",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/huddleston/5154165904",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/huddleston/5154165904",
+      "original_url": "https://farm5.staticflickr.com/1057/5154165904_2a9255b0dc_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Jerry Huddleston",
+      "author_url": "https://www.flickr.com/people/huddleston/",
+      "title": "Oakdale motel",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Jerry Huddleston",
+      "url": "https://www.flickr.com/photos/huddleston",
+      "image": "https://live.staticflickr.com/3841/buddyicons/9265232@N04.jpg?1408478685#9265232@N04"
+    },
+    "current_title": "Oakdale motel",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Jerry Huddleston",
+          "url": "https://www.flickr.com/photos/huddleston",
+          "image": "https://live.staticflickr.com/3841/buddyicons/9265232@N04.jpg?1408478685#9265232@N04"
+        }
+      },
+      "meta_description": "Oakdale Motel, Oakdale, WI  "
+    },
+    "identity_group": "flickr-nsid:9265232@N04",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/huddleston/5154165904",
+    "html_sha256": "b72d80e4c0a552a4ad1b152c3ba01f878b08b80b5ea4e1b08621e2163993946a",
+    "stored_sha256": "fbb59b089493be9b4555e705063c87ca9ea786d66d1ba907e059bda943e4cdc1",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\c2c1c1d3eb3b5c54.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\c2c1c1d3eb3b5c54.json",
+    "sha256": "d8cefb339e0f02dd11828cf60766ab994faee23d6ca1662e145d7d591f1089bc"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\c2c1c1d3eb3b5c54.json",
+    "sha256": "51026f0c3d82edf80afcee200b7e68c807a7cb98c2990ac2af1180758ef33476"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/huddleston/5154165904",
+    "original_url": "https://farm5.staticflickr.com/1057/5154165904_2a9255b0dc_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Jerry Huddleston",
+    "author_url": "https://www.flickr.com/people/huddleston/",
+    "title": "Oakdale motel",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

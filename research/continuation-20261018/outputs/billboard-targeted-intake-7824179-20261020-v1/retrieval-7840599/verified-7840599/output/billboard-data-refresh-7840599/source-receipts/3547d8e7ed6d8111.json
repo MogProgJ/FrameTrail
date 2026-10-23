@@ -1,0 +1,26 @@
+{
+  "image_id": "3547d8e7ed6d8111",
+  "source_url": "https://www.flickr.com/photos/ipi_potash/8612501939",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/ipi_potash/8612501939",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/3547d8e7ed6d8111.html.gz",
+  "html_bytes": 518517,
+  "html_sha256": "01ba7b17ac207b09fa951e074337313aaec21ecf56d8477197787947a40ead9f",
+  "stored_sha256": "22cb1ba7d53f2256f7b02c07f4ef197b86180686a101b2ed0954a366e4195e77"
+}

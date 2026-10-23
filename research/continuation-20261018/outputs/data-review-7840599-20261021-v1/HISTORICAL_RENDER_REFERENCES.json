@@ -1,0 +1,284 @@
+{
+  "purpose": "Scene comparison only; originals unavailable; labelled preserved historical rendered photos identify IDs visually. No reconstructed or substituted training bytes.",
+  "annotation_ref": {
+    "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\11\\01a12a01-d564-7de0-91f4-a16484eea2cb\\photo-qa-closeout-20261011\\annotations-assistant-reviewed-v5.json",
+    "sha256": "a6c1585985ea928aec1145ce8bd2e9b675d4ebcb6171f9bbee5fcfb6becfcdcf"
+  },
+  "references": [
+    {
+      "id": "276dee336c643993",
+      "number": 5,
+      "original_sha256": "4480492041a275f6825dab75f5fcf4e3dfa02b9f24a6bc8f8ef0c978324de499",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-01-06.jpg",
+        "sha256": "99e34f9840f8a08a01635600c7004ddb9c3cd5597dfa322c7389c57dc2fce78d"
+      },
+      "cell_index": 4
+    },
+    {
+      "id": "74d3e8ed4d6a7463",
+      "number": 8,
+      "original_sha256": "25dea40995249628397abb688173dca40ec4490b54367021dedb1382039916d7",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-07-12.jpg",
+        "sha256": "503c30551fac6abfdcc5a4464e4b0e46dac7bb612d8d1c364d75b3dd0eaf7b4a"
+      },
+      "cell_index": 1
+    },
+    {
+      "id": "cd07aea1debd7f99",
+      "number": 9,
+      "original_sha256": "4f58994dad55e28f98ffd57e19ae8c642791b253d30140697b28637b52e4a937",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-07-12.jpg",
+        "sha256": "503c30551fac6abfdcc5a4464e4b0e46dac7bb612d8d1c364d75b3dd0eaf7b4a"
+      },
+      "cell_index": 2
+    },
+    {
+      "id": "3f26f7085334ac65",
+      "number": 11,
+      "original_sha256": "853930c7669a3dcbd6d8fdf96fe71b6215359bb16619a9cef55245216e6237ce",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-07-12.jpg",
+        "sha256": "503c30551fac6abfdcc5a4464e4b0e46dac7bb612d8d1c364d75b3dd0eaf7b4a"
+      },
+      "cell_index": 4
+    },
+    {
+      "id": "f1e36e4d71ff6b57",
+      "number": 13,
+      "original_sha256": "f60a7755cd1c996e89dd860364d22310d95d6c2c4ea952d6f00c9608b1064386",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-13-18.jpg",
+        "sha256": "a74dfd39d08d7af4fe4214bb268e3075c4dbd78564ccd5e20efcc917efc78332"
+      },
+      "cell_index": 0
+    },
+    {
+      "id": "6669c1da381cfac8",
+      "number": 15,
+      "original_sha256": "d47857984a60cc52dfc08e4179fc769d73d7ec1e4b84a4e914bedd306fc7535f",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-13-18.jpg",
+        "sha256": "a74dfd39d08d7af4fe4214bb268e3075c4dbd78564ccd5e20efcc917efc78332"
+      },
+      "cell_index": 2
+    },
+    {
+      "id": "d87ec096a7df907f",
+      "number": 17,
+      "original_sha256": "73db558d86bb8fa346769dbabb7e3efad2e027feffc8f1467ba251f726b2547b",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-13-18.jpg",
+        "sha256": "a74dfd39d08d7af4fe4214bb268e3075c4dbd78564ccd5e20efcc917efc78332"
+      },
+      "cell_index": 4
+    },
+    {
+      "id": "d815260e14e579be",
+      "number": 19,
+      "original_sha256": "5c431911b4e138dd9c9a72793e677b58b0c67317ac3e0d546e131d690ab574ea",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-19-24.jpg",
+        "sha256": "8b1cc955c955da053dcee3878cc1e58c141952b7d4b0d10bf1ca0e4651c6c006"
+      },
+      "cell_index": 0
+    },
+    {
+      "id": "c6cdfca37572b289",
+      "number": 22,
+      "original_sha256": "7be8d67ab1fd76eecac3c7a98654a6399137363c8a86d464aa3cd235253cdece",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-19-24.jpg",
+        "sha256": "8b1cc955c955da053dcee3878cc1e58c141952b7d4b0d10bf1ca0e4651c6c006"
+      },
+      "cell_index": 3
+    },
+    {
+      "id": "d6cbb0a6be0298f7",
+      "number": 24,
+      "original_sha256": "71eb2340472b2d7e233252dcb4140daba8f63c63c1b528e531389966231c8b01",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-19-24.jpg",
+        "sha256": "8b1cc955c955da053dcee3878cc1e58c141952b7d4b0d10bf1ca0e4651c6c006"
+      },
+      "cell_index": 5
+    },
+    {
+      "id": "0fae61f26f9ef1d2",
+      "number": 26,
+      "original_sha256": "d8c8f5d444ba2ce5996be67d0fd3fe2a8a67002383b37fa40ee9b64c76fd6800",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-25-30.jpg",
+        "sha256": "93ced8ccc6d7509516d22039f125b83582cf3ea30b15db3ec39a35fc00bdaae3"
+      },
+      "cell_index": 1
+    },
+    {
+      "id": "b2920354898bc0f3",
+      "number": 28,
+      "original_sha256": "a1e979ec8197687aba1fd70587fc855b040fe12d4db556773a32b00f66da67a2",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-25-30.jpg",
+        "sha256": "93ced8ccc6d7509516d22039f125b83582cf3ea30b15db3ec39a35fc00bdaae3"
+      },
+      "cell_index": 3
+    },
+    {
+      "id": "c1d68295e6a58241",
+      "number": 29,
+      "original_sha256": "ad784f7b6e357f27a681d510122ef546ef0a26552d19b0f7db53c76a392689a4",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-25-30.jpg",
+        "sha256": "93ced8ccc6d7509516d22039f125b83582cf3ea30b15db3ec39a35fc00bdaae3"
+      },
+      "cell_index": 4
+    },
+    {
+      "id": "fe396d920316cdb5",
+      "number": 30,
+      "original_sha256": "f6e0e3d4d398543d7dbd9440c1c1ac69fb6b013483d083a9ab3f73f652a89ff6",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-25-30.jpg",
+        "sha256": "93ced8ccc6d7509516d22039f125b83582cf3ea30b15db3ec39a35fc00bdaae3"
+      },
+      "cell_index": 5
+    },
+    {
+      "id": "5b5c74afd112b112",
+      "number": 34,
+      "original_sha256": "528a3b83204575c767801b9d93e2c8d8fcd509ed42df19a3ced5072b4ee7baf4",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-31-36.jpg",
+        "sha256": "1b404258e48e4476f098e296fe6d1603dda88151578036e5e656b3d3760996ec"
+      },
+      "cell_index": 3
+    },
+    {
+      "id": "81e962871f3088b0",
+      "number": 38,
+      "original_sha256": "b12ae0adaad592e11c8ac27f5de2226bb3c7bd2189186589a4afa8fbaba7c6d1",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-37-42.jpg",
+        "sha256": "cd160ffebaa8a92111bd0239029a733790a5eca33ede2bde4ba0385bf344e9f0"
+      },
+      "cell_index": 1
+    },
+    {
+      "id": "bb6178d05ef56dac",
+      "number": 39,
+      "original_sha256": "e8a1ede0e8dfa56a574feef5a6603c31d8565ea8ab6b69242be6751029c890df",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-37-42.jpg",
+        "sha256": "cd160ffebaa8a92111bd0239029a733790a5eca33ede2bde4ba0385bf344e9f0"
+      },
+      "cell_index": 2
+    },
+    {
+      "id": "dc6e6e8124894b2b",
+      "number": 42,
+      "original_sha256": "213f2cd97cbdd407cba48fd04565d7ac22ca6fc34583d8ea67e2f44f221817db",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-37-42.jpg",
+        "sha256": "cd160ffebaa8a92111bd0239029a733790a5eca33ede2bde4ba0385bf344e9f0"
+      },
+      "cell_index": 5
+    },
+    {
+      "id": "8683e98cce9adf97",
+      "number": 43,
+      "original_sha256": "48a3ab292504e875359dfa7c2e9f346d54985bcf476372e5f6898967d3baa268",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-43-48.jpg",
+        "sha256": "08a7fa87909ed01d95bc4c7830039514587d06c475fa1e9966771ddf56dfd151"
+      },
+      "cell_index": 0
+    },
+    {
+      "id": "3abd5ac8ddc726d7",
+      "number": 46,
+      "original_sha256": "1c47411ff4a996c95d9d8452464d6a0dd638a05f287ecc273821b6b723406ca2",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-43-48.jpg",
+        "sha256": "08a7fa87909ed01d95bc4c7830039514587d06c475fa1e9966771ddf56dfd151"
+      },
+      "cell_index": 3
+    },
+    {
+      "id": "8f16bd429b72575b",
+      "number": 50,
+      "original_sha256": "4d6f42b9a05f64d35f6d6fe76ce58a19ca9add4d393b7aa6f54147c9ae673cc6",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-49-54.jpg",
+        "sha256": "d922e3ce0c1c5a1af7bc97fb0e918362eaf89f4c6c39290519a10800915bc786"
+      },
+      "cell_index": 1
+    },
+    {
+      "id": "48675c86d8bc056d",
+      "number": 52,
+      "original_sha256": "9abb33b4299ab219c69782eb0e1c0671c24bc30ca6bbbbddc51bf8da7a2ebcb2",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-49-54.jpg",
+        "sha256": "d922e3ce0c1c5a1af7bc97fb0e918362eaf89f4c6c39290519a10800915bc786"
+      },
+      "cell_index": 3
+    },
+    {
+      "id": "ea188bd165b7c045",
+      "number": 59,
+      "original_sha256": "ddb6bea6906a93b1eb64d19d330e17630a2d9947830e591fc1fce005739c7a20",
+      "render_ref": {
+        "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\04\\01a10654-052b-7933-b51b-b32609e31e2e\\annotation-proof-20261010\\photos-55-60.jpg",
+        "sha256": "06745bda92eb53c3cce06b6613937b1ad28d43cea3a1ab1fa4f968a3a48cbdef"
+      },
+      "cell_index": 4
+    }
+  ],
+  "sheets": [
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\historical-render-scenes-1.jpg",
+      "ids": [
+        "276dee336c643993",
+        "74d3e8ed4d6a7463",
+        "cd07aea1debd7f99",
+        "3f26f7085334ac65",
+        "f1e36e4d71ff6b57",
+        "6669c1da381cfac8"
+      ]
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\historical-render-scenes-2.jpg",
+      "ids": [
+        "d87ec096a7df907f",
+        "d815260e14e579be",
+        "c6cdfca37572b289",
+        "d6cbb0a6be0298f7",
+        "0fae61f26f9ef1d2",
+        "b2920354898bc0f3"
+      ]
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\historical-render-scenes-3.jpg",
+      "ids": [
+        "c1d68295e6a58241",
+        "fe396d920316cdb5",
+        "5b5c74afd112b112",
+        "81e962871f3088b0",
+        "bb6178d05ef56dac",
+        "dc6e6e8124894b2b"
+      ]
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\historical-render-scenes-4.jpg",
+      "ids": [
+        "8683e98cce9adf97",
+        "3abd5ac8ddc726d7",
+        "8f16bd429b72575b",
+        "48675c86d8bc056d",
+        "ea188bd165b7c045"
+      ]
+    }
+  ]
+}

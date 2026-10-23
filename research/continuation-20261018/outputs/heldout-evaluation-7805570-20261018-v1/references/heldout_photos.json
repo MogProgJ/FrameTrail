@@ -1,0 +1,7388 @@
+{
+  "purpose": "frozen-scoped-evaluation-adapter",
+  "source_sha256": "e43a2c7a415c4f82209a1fc2471d8677503f51315e71f422ec0d6665eac377b9",
+  "frames": [
+    {
+      "id": "3bc55fd11d9dbf88",
+      "sequence": "flickr-nsid:68982768@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "3bc55fd11d9dbf88-0",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            202.29315185546875,
+            137.01947021484375,
+            959.2133178710938,
+            599.8518218994141
+          ]
+        },
+        {
+          "id": "3bc55fd11d9dbf88-1",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            767.4802703857422,
+            503.125431060791,
+            1024.0,
+            763.8605003356934
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\3bc55fd11d9dbf88.jpg",
+      "sha256": "641514b650ac0e153868593b476625f3369c5a36ec36dc8caf3daeb603af364b",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": false
+        }
+      ]
+    },
+    {
+      "id": "d0647952f4f6e734",
+      "sequence": "flickr-nsid:51792270@N03",
+      "width": 1024,
+      "height": 681,
+      "targets": [
+        {
+          "id": "d0647952f4f6e734-0",
+          "canonical_id": 43,
+          "label": "knife",
+          "box": [
+            15.360000000000014,
+            0.0,
+            1023.36,
+            648.9984479999999
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\d0647952f4f6e734.jpg",
+      "sha256": "add40eb98b99c06a8ca3c5dfc69a0da8a747528a1aaa2c7a203f6c6f1840586f",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 43,
+          "complete": true,
+          "absence_confirmed": false
+        }
+      ]
+    },
+    {
+      "id": "f5bab454755c47d0",
+      "sequence": "flickr-nsid:27963141@N00",
+      "width": 1024,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "f5bab454755c47d0-0",
+          "canonical_id": 73,
+          "label": "book",
+          "box": [
+            202.40841674804688,
+            135.89541625976562,
+            634.2156066894531,
+            609.1236877441406
+          ]
+        },
+        {
+          "id": "f5bab454755c47d0-1",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            141.56515502929688,
+            83.83868408203125,
+            1024.0,
+            1011.9258422851562
+          ]
+        },
+        {
+          "id": "f5bab454755c47d0-2",
+          "canonical_id": 325,
+          "label": "human hand",
+          "box": [
+            241.664,
+            409.6000000000001,
+            512.0,
+            642.048
+          ]
+        },
+        {
+          "id": "f5bab454755c47d0-3",
+          "canonical_id": 325,
+          "label": "human hand",
+          "box": [
+            514.048,
+            353.28,
+            676.892,
+            515.159
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\f5bab454755c47d0.jpg",
+      "sha256": "37b04735eb12d7d19db4bb7701b0bf166ab1bb47aae94b1836bfdbe9a910ebee",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 73,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 325,
+          "complete": true,
+          "absence_confirmed": false
+        }
+      ]
+    },
+    {
+      "id": "4f7ffb75c46a12fe",
+      "sequence": "flickr-nsid:90029322@N00",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "4f7ffb75c46a12fe-0",
+          "canonical_id": 535,
+          "label": "sun hat",
+          "box": [
+            683.651,
+            119.77600000000001,
+            955.745,
+            282.143
+          ]
+        },
+        {
+          "id": "4f7ffb75c46a12fe-1",
+          "canonical_id": 73,
+          "label": "book",
+          "box": [
+            188.41599999999997,
+            286.54200000000003,
+            408.279,
+            479.46600000000007
+          ]
+        },
+        {
+          "id": "4f7ffb75c46a12fe-2",
+          "canonical_id": 73,
+          "label": "book",
+          "box": [
+            485.72399999999993,
+            262.08500000000004,
+            642.943,
+            432.1160000000001
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\4f7ffb75c46a12fe.jpg",
+      "sha256": "5e8cd9e09f823be259a6b594e8708def60adde545d17b5ade2dc044ca53a87a6",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 73,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 535,
+          "complete": true,
+          "absence_confirmed": false
+        }
+      ]
+    },
+    {
+      "id": "991d9f77a13e95d2",
+      "sequence": "flickr-nsid:47439717@N05",
+      "width": 1024,
+      "height": 667,
+      "targets": [
+        {
+          "id": "991d9f77a13e95d2-0",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            331.49639892578125,
+            60.64900794625282,
+            1008.7710571289062,
+            541.8495789468288
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\991d9f77a13e95d2.jpg",
+      "sha256": "cf73b38e71854364030a99395dc6c51b28b01f1f8561ca5f72b0e78e3a304ada",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": false
+        }
+      ]
+    },
+    {
+      "id": "7704f6da4e25910c",
+      "sequence": "flickr-nsid:43145783@N00",
+      "width": 1024,
+      "height": 770,
+      "targets": [
+        {
+          "id": "7704f6da4e25910c-0",
+          "canonical_id": 3,
+          "label": "motorcycle",
+          "box": [
+            519.199744,
+            486.94722999999993,
+            799.2002560000001,
+            754.8079
+          ]
+        },
+        {
+          "id": "7704f6da4e25910c-1",
+          "canonical_id": 3,
+          "label": "motorcycle",
+          "box": [
+            762.399744,
+            419.78166999999996,
+            1020.8,
+            706.03302
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\7704f6da4e25910c.jpg",
+      "sha256": "400027bbe37526c802b5f1b49e4d92ea3e2352c614cd8e73dd2b9556b0ed1fab",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "08539f255801e98c",
+      "sequence": "flickr-nsid:12505664@N00",
+      "width": 1024,
+      "height": 833,
+      "targets": [
+        {
+          "id": "08539f255801e98c-0",
+          "canonical_id": 9,
+          "label": "traffic light",
+          "box": [
+            709.12,
+            0.0,
+            793.6,
+            105.564424
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\08539f255801e98c.jpg",
+      "sha256": "4459f0cc72bfd906aa685fb9067b0a7a63464e94fca8fd7102494e2b106f1911",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "2a8e023449caa728",
+      "sequence": "flickr-nsid:36910487@N07",
+      "width": 768,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "2a8e023449caa728-0",
+          "canonical_id": 388,
+          "label": "mirror",
+          "box": [
+            260.0,
+            20.0,
+            483.0,
+            313.0
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\2a8e023449caa728.jpg",
+      "sha256": "a9bdcb1c5b238dd4d03be10e519c3791bbf6aad89a4d5b388bb306bc7990676e",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "f85726b7832c9fdf",
+      "sequence": "flickr-nsid:39281458@N05",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "f85726b7832c9fdf-0",
+          "canonical_id": 159,
+          "label": "camera",
+          "box": [
+            91.52000000000004,
+            98.55974400000007,
+            945.9200000000001,
+            712.3199999999999
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\f85726b7832c9fdf.jpg",
+      "sha256": "c76e6bb34b490df751838148143f2d44fa2e12100abddac22209446e2b71f1cf",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "aefa530267138c65",
+      "sequence": "flickr-nsid:8489692@N03",
+      "width": 471,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "aefa530267138c65-0",
+          "canonical_id": 199,
+          "label": "computer keyboard",
+          "box": [
+            0.0,
+            883.726336,
+            469.598304,
+            1022.5971200000001
+          ]
+        },
+        {
+          "id": "aefa530267138c65-1",
+          "canonical_id": 63,
+          "label": "laptop",
+          "box": [
+            0.0,
+            237.06316799999996,
+            461.187657,
+            1024.0
+          ]
+        },
+        {
+          "id": "aefa530267138c65-2",
+          "canonical_id": 570,
+          "label": "toy",
+          "box": [
+            85.50910799999997,
+            14.027776000000017,
+            349.044441,
+            458.69568
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\aefa530267138c65.jpg",
+      "sha256": "cae743247ecdbe7044d9f8c320ab794dc8a0375760cd81fb2dedbad34b54e3e0",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "5672f683edb90d15",
+      "sequence": "flickr-nsid:93887713@N00",
+      "width": 1024,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "5672f683edb90d15-0",
+          "canonical_id": 147,
+          "label": "briefcase",
+          "box": [
+            128.0,
+            731.200512,
+            491.200512,
+            1014.4
+          ]
+        },
+        {
+          "id": "5672f683edb90d15-1",
+          "canonical_id": 56,
+          "label": "chair",
+          "box": [
+            393.6000000000001,
+            348.80000000000007,
+            899.2,
+            1022.400512
+          ]
+        },
+        {
+          "id": "5672f683edb90d15-2",
+          "canonical_id": 357,
+          "label": "lamp",
+          "box": [
+            251.19948799999997,
+            7.999488000000042,
+            484.799488,
+            766.400512
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\5672f683edb90d15.jpg",
+      "sha256": "ef5749f970c4322bf462f9afdd695cbda8d60f3281e6a6f3fdebb5bd68be4861",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "4345eca6d91ab4a9",
+      "sequence": "flickr-nsid:8358093@N08",
+      "width": 767,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "4345eca6d91ab4a9-0",
+          "canonical_id": 80,
+          "label": "fox",
+          "box": [
+            44.05724700000002,
+            122.23897600000004,
+            744.970993,
+            1021.996032
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\4345eca6d91ab4a9.jpg",
+      "sha256": "7be82039da22967e1f8604a2f0e44eb06e74bea2c26ca8fd0ad2d21fef2bbf77",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "6a9134b5fea4f879",
+      "sequence": "flickr-nsid:93278581@N00",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "6a9134b5fea4f879-0",
+          "canonical_id": 84,
+          "label": "raccoon",
+          "box": [
+            168.96000000000004,
+            81.96000000000008,
+            825.172992,
+            637.75125
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\6a9134b5fea4f879.jpg",
+      "sha256": "858f7090618e82b6b1375fb5c937563d39a045adf087871b34c3411893971b39",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "3b446d92f0ccef45",
+      "sequence": "flickr-nsid:28561560@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "3b446d92f0ccef45-0",
+          "canonical_id": 57,
+          "label": "couch",
+          "box": [
+            256.0631408691406,
+            183.43771362304688,
+            821.0494079589844,
+            656.5599060058594
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\3b446d92f0ccef45.jpg",
+      "sha256": "08b5942b98a7275244aaae823ec70799833b00ff677844588af1adb53542a87c",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "c4b1c380e0b1df74",
+      "sequence": "flickr-nsid:80719942@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "c4b1c380e0b1df74-0",
+          "canonical_id": 43,
+          "label": "knife",
+          "box": [
+            862.08,
+            334.7197439999999,
+            958.08,
+            767.3602559999999
+          ]
+        },
+        {
+          "id": "c4b1c380e0b1df74-1",
+          "canonical_id": 44,
+          "label": "spoon",
+          "box": [
+            53.75999999999999,
+            353.28000000000003,
+            196.48,
+            767.3602560000002
+          ]
+        },
+        {
+          "id": "c4b1c380e0b1df74-2",
+          "canonical_id": 55,
+          "label": "cake",
+          "box": [
+            261.9441223144531,
+            55.25775146484375,
+            801.6404724121094,
+            739.2961120605469
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\c4b1c380e0b1df74.jpg",
+      "sha256": "ef593eadc9913cee720e8b459a6fddcffb776b305fcb370c8d2631648d912041",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "3295fb4074e8cf14",
+      "sequence": "flickr-nsid:54852753@N05",
+      "width": 701,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "3295fb4074e8cf14-0",
+          "canonical_id": 269,
+          "label": "footwear",
+          "box": [
+            162.11396100000002,
+            784.6399999999999,
+            226.19096900000002,
+            884.48
+          ]
+        },
+        {
+          "id": "3295fb4074e8cf14-1",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            115.33833400000003,
+            302.08000000000004,
+            246.69592,
+            886.4
+          ]
+        },
+        {
+          "id": "3295fb4074e8cf14-2",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            211.45314499999995,
+            226.56000000000006,
+            387.023502,
+            767.36
+          ]
+        },
+        {
+          "id": "3295fb4074e8cf14-3",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            335.762176,
+            305.28,
+            476.09045899999995,
+            597.76
+          ]
+        },
+        {
+          "id": "3295fb4074e8cf14-4",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            479.9354440000001,
+            335.36000000000007,
+            620.263026,
+            768.0
+          ]
+        },
+        {
+          "id": "3295fb4074e8cf14-5",
+          "canonical_id": 269,
+          "label": "footwear",
+          "box": [
+            270.5655517578125,
+            712.0079589843751,
+            337.0947998046875,
+            768.676220703125
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\3295fb4074e8cf14.jpg",
+      "sha256": "f0e32a4af40c2192a1ae85e849a7b420d555a9c2d10965ea3d11108518464790",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "63746ed7502b9b6a",
+      "sequence": "flickr-nsid:56682936@N03",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "63746ed7502b9b6a-0",
+          "canonical_id": 388,
+          "label": "mirror",
+          "box": [
+            430.72,
+            135.190288,
+            945.28,
+            554.216935
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\63746ed7502b9b6a.jpg",
+      "sha256": "72b40fb29d472631ab3a37019fd195996d82274bdb6848d053003fde87659dc1",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "ee43a1973a113312",
+      "sequence": "flickr-nsid:37810324@N07",
+      "width": 1024,
+      "height": 680,
+      "targets": [
+        {
+          "id": "ee43a1973a113312-0",
+          "canonical_id": 159,
+          "label": "camera",
+          "box": [
+            72.32000000000005,
+            12.165880000000032,
+            922.88,
+            610.8474
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\ee43a1973a113312.jpg",
+      "sha256": "3a728492e1dd5def42a774d3d53466470aace18920c478bc29194ccee93aa271",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "957d065af085ff4e",
+      "sequence": "flickr-nsid:65303620@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "957d065af085ff4e-0",
+          "canonical_id": 122,
+          "label": "bathroom cabinet",
+          "box": [
+            298.9998079999999,
+            344.00025600000015,
+            871.999488,
+            767.0000640000001
+          ]
+        },
+        {
+          "id": "957d065af085ff4e-1",
+          "canonical_id": 388,
+          "label": "mirror",
+          "box": [
+            547.999744,
+            0.0,
+            926.999552,
+            420.0
+          ]
+        },
+        {
+          "id": "957d065af085ff4e-2",
+          "canonical_id": 71,
+          "label": "sink",
+          "box": [
+            410.00038400000005,
+            379.00031999999993,
+            673.999872,
+            507.9997439999999
+          ]
+        },
+        {
+          "id": "957d065af085ff4e-3",
+          "canonical_id": 39,
+          "label": "bottle",
+          "box": [
+            804.9442176818848,
+            436.55953216552734,
+            852.8837852478027,
+            575.0698013305664
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\957d065af085ff4e.jpg",
+      "sha256": "af1184b8367ea8f0eb6288cdb0f6aa18d54aae250d41b47933ff30dcf0794880",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "bef5737712c2fd0c",
+      "sequence": "flickr-nsid:54752966@N06",
+      "width": 1024,
+      "height": 579,
+      "targets": [
+        {
+          "id": "bef5737712c2fd0c-0",
+          "canonical_id": 82,
+          "label": "deer",
+          "box": [
+            0.0,
+            369.96999900000003,
+            56.32,
+            477.69121200000006
+          ]
+        },
+        {
+          "id": "bef5737712c2fd0c-1",
+          "canonical_id": 82,
+          "label": "deer",
+          "box": [
+            90.23999999999998,
+            275.073057,
+            251.52,
+            478.97369699999996
+          ]
+        },
+        {
+          "id": "bef5737712c2fd0c-2",
+          "canonical_id": 82,
+          "label": "deer",
+          "box": [
+            309.76,
+            381.511785,
+            424.96000000000004,
+            493.0798739999999
+          ]
+        },
+        {
+          "id": "bef5737712c2fd0c-3",
+          "canonical_id": 82,
+          "label": "deer",
+          "box": [
+            533.76,
+            378.946815,
+            662.3999999999999,
+            485.385543
+          ]
+        },
+        {
+          "id": "bef5737712c2fd0c-4",
+          "canonical_id": 82,
+          "label": "deer",
+          "box": [
+            889.6,
+            380.22929999999997,
+            1023.36,
+            498.2092350000001
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\bef5737712c2fd0c.jpg",
+      "sha256": "2e804c9a9b5012c082fadf2a48b33d00678835b4e5b0845938d0a942cb623353",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "b0940cafc52b3e2c",
+      "sequence": "flickr-nsid:13951072@N00",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "b0940cafc52b3e2c-0",
+          "canonical_id": 4,
+          "label": "airplane",
+          "box": [
+            421.12,
+            283.195022,
+            561.28,
+            378.02069300000005
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\b0940cafc52b3e2c.jpg",
+      "sha256": "b2435d9244a7aa410bfb990fbb336efd0269104960e5b40498c02438931f3e35",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "38ebf5f77054aca4",
+      "sequence": "flickr-nsid:7906727@N07",
+      "width": 1024,
+      "height": 684,
+      "targets": [
+        {
+          "id": "38ebf5f77054aca4-0",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            326.4,
+            103.75253999999997,
+            709.12,
+            682.718868
+          ]
+        },
+        {
+          "id": "38ebf5f77054aca4-1",
+          "canonical_id": 56,
+          "label": "chair",
+          "box": [
+            851.3739547729492,
+            427.79757714271545,
+            1023.0778274536133,
+            680.5127742290497
+          ]
+        },
+        {
+          "id": "38ebf5f77054aca4-2",
+          "canonical_id": 322,
+          "label": "human face",
+          "box": [
+            467.582373046875,
+            155.51308593750002,
+            588.054541015625,
+            327.17041015625
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\38ebf5f77054aca4.jpg",
+      "sha256": "590da12a2c29cdf4ffeb2310820608211e7ff4cf7f1c9d5f5f67b42bd44affce",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "27d8ae0ba37d4237",
+      "sequence": "flickr-nsid:25601791@N00",
+      "width": 766,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "27d8ae0ba37d4237-0",
+          "canonical_id": 63,
+          "label": "laptop",
+          "box": [
+            3.843021999999995,
+            465.2799999999999,
+            732.055476,
+            1023.3599999999999
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\27d8ae0ba37d4237.jpg",
+      "sha256": "a78ef3406e2f255c32700c3b5e6b3c3c56fd3c3e5c562c00f574fc713e988390",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "a6aab78b6da9f965",
+      "sequence": "flickr-nsid:16267525@N00",
+      "width": 1024,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "a6aab78b6da9f965-0",
+          "canonical_id": 184,
+          "label": "chopsticks",
+          "box": [
+            78.40051199999999,
+            633.6,
+            404.799488,
+            888.000512
+          ]
+        },
+        {
+          "id": "a6aab78b6da9f965-1",
+          "canonical_id": 184,
+          "label": "chopsticks",
+          "box": [
+            275.19999999999993,
+            358.4,
+            468.799488,
+            540.8
+          ]
+        },
+        {
+          "id": "a6aab78b6da9f965-2",
+          "canonical_id": 440,
+          "label": "platter",
+          "box": [
+            323.19999999999993,
+            683.2005120000001,
+            628.799488,
+            931.2
+          ]
+        },
+        {
+          "id": "a6aab78b6da9f965-3",
+          "canonical_id": 474,
+          "label": "saucer",
+          "box": [
+            684.8,
+            628.7994879999999,
+            839.9994880000002,
+            723.2
+          ]
+        },
+        {
+          "id": "a6aab78b6da9f965-4",
+          "canonical_id": 39,
+          "label": "bottle",
+          "box": [
+            216.14640045166016,
+            0.0,
+            309.12618255615234,
+            247.92547607421875
+          ]
+        },
+        {
+          "id": "a6aab78b6da9f965-5",
+          "canonical_id": 41,
+          "label": "cup",
+          "box": [
+            585.0416030883789,
+            542.9843139648438,
+            687.6146469116211,
+            737.2632446289062
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\a6aab78b6da9f965.jpg",
+      "sha256": "4fbdb91aa9733ca4db05b6ad57cbcf1f782cec8df4dd600b6726ffe489523c9f",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "b8575cce47ed33a1",
+      "sequence": "flickr-nsid:25393258@N07",
+      "width": 1024,
+      "height": 640,
+      "targets": [
+        {
+          "id": "b8575cce47ed33a1-0",
+          "canonical_id": 2,
+          "label": "car",
+          "box": [
+            16.0,
+            57.59999999999998,
+            1001.6,
+            639.36
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\b8575cce47ed33a1.jpg",
+      "sha256": "259105ceaa17c279690c6c512ed3efb216b7a58bc5e7bd34915ffab96c8fa841",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "ece0772a4367366f",
+      "sequence": "flickr-nsid:51558457@N06",
+      "width": 1024,
+      "height": 766,
+      "targets": [
+        {
+          "id": "ece0772a4367366f-0",
+          "canonical_id": 116,
+          "label": "ball",
+          "box": [
+            667.2005120000001,
+            228.680874,
+            867.2,
+            431.774284
+          ]
+        },
+        {
+          "id": "ece0772a4367366f-1",
+          "canonical_id": 59,
+          "label": "bed",
+          "box": [
+            219.19948799999997,
+            361.41105600000003,
+            704.0,
+            764.400592
+          ]
+        },
+        {
+          "id": "ece0772a4367366f-2",
+          "canonical_id": 139,
+          "label": "bookcase",
+          "box": [
+            3.1999999999999886,
+            246.27129799999997,
+            289.600512,
+            686.0418559999999
+          ]
+        },
+        {
+          "id": "ece0772a4367366f-3",
+          "canonical_id": 544,
+          "label": "table",
+          "box": [
+            216.00051200000001,
+            418.98131800000004,
+            376.000512,
+            559.707774
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\ece0772a4367366f.jpg",
+      "sha256": "751d954fb1178627af68248ab7a1e62bca899bbd80ceb58cda7c7b401f000d0a",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "786266fde6ee020f",
+      "sequence": "flickr-nsid:11045073@N05",
+      "width": 1024,
+      "height": 498,
+      "targets": [
+        {
+          "id": "786266fde6ee020f-0",
+          "canonical_id": 43,
+          "label": "knife",
+          "box": [
+            26.24000000000001,
+            87.05388599999999,
+            981.12,
+            446.79165600000005
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\786266fde6ee020f.jpg",
+      "sha256": "b0d36c80d8681555e435cc8224bf68c34622abde86f756beabeb5179db4d8bd5",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "0df3c5894ea1acba",
+      "sequence": "flickr-nsid:35034363287@N01",
+      "width": 1024,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "0df3c5894ea1acba-0",
+          "canonical_id": 24,
+          "label": "backpack",
+          "box": [
+            326.274048,
+            468.49638400000003,
+            781.385728,
+            940.340224
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\0df3c5894ea1acba.jpg",
+      "sha256": "0a263ced62c21318a5043f66821d1ce3825fa03d6a90104cde5cc3570a47372f",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "ba9adac0d04fe68e",
+      "sequence": "flickr-nsid:23874626@N06",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "ba9adac0d04fe68e-0",
+          "canonical_id": 233,
+          "label": "door",
+          "box": [
+            674.56,
+            8.329185000000045,
+            902.4000000000001,
+            631.742899
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\ba9adac0d04fe68e.jpg",
+      "sha256": "a3953521541077eb7fdb496e88bf81bf0389a73de839f195b91be082d85b5e0f",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "7720039857b724ed",
+      "sequence": "flickr-nsid:60109376@N00",
+      "width": 1024,
+      "height": 807,
+      "targets": [
+        {
+          "id": "7720039857b724ed-0",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            119.80595200000005,
+            255.437289,
+            962.966528,
+            549.302304
+          ]
+        },
+        {
+          "id": "7720039857b724ed-1",
+          "canonical_id": 39,
+          "label": "bottle",
+          "box": [
+            862.120475769043,
+            125.46309846639633,
+            990.4419021606445,
+            391.8692868947983
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\7720039857b724ed.jpg",
+      "sha256": "172a4dbf0b9f27133cfce487623a90f9da39e5100d5a397878403b519ae73e39",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "ee4d1dbbf39fbb5e",
+      "sequence": "flickr-nsid:25393258@N07",
+      "width": 1024,
+      "height": 640,
+      "targets": [
+        {
+          "id": "ee4d1dbbf39fbb5e-0",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            849.92,
+            43.51999999999997,
+            968.32,
+            435.84000000000003
+          ]
+        },
+        {
+          "id": "ee4d1dbbf39fbb5e-1",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            136.75631713867188,
+            28.372535705566406,
+            358.4900207519531,
+            635.3215408325195
+          ]
+        },
+        {
+          "id": "ee4d1dbbf39fbb5e-2",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            32.14197540283203,
+            8.498153686523438,
+            191.21654510498047,
+            633.1525421142578
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\ee4d1dbbf39fbb5e.jpg",
+      "sha256": "8ced64b4bd93ace705d5165437825a8bd3cc4c56d91fb29930ddf5bb591cc902",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "acaa7880f1ecb2b9",
+      "sequence": "flickr-nsid:47100061@N07",
+      "width": 1024,
+      "height": 684,
+      "targets": [
+        {
+          "id": "acaa7880f1ecb2b9-0",
+          "canonical_id": 56,
+          "label": "chair",
+          "box": [
+            0.0,
+            404.460828,
+            318.464,
+            682.976052
+          ]
+        },
+        {
+          "id": "acaa7880f1ecb2b9-1",
+          "canonical_id": 56,
+          "label": "chair",
+          "box": [
+            690.176,
+            506.85631199999995,
+            1022.976,
+            682.976052
+          ]
+        },
+        {
+          "id": "acaa7880f1ecb2b9-2",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            134.144,
+            162.80841600000008,
+            277.504,
+            537.5747520000001
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\acaa7880f1ecb2b9.jpg",
+      "sha256": "8cf430d3a9ba9b76ccfc40b62242433a0ac644fb8bb17d8a569f43ce2dba7f04",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "1c409bb08b96723c",
+      "sequence": "flickr-nsid:55497864@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "1c409bb08b96723c-0",
+          "canonical_id": 220,
+          "label": "cutting board",
+          "box": [
+            14.080000000000041,
+            0.0,
+            1023.36,
+            767.360256
+          ]
+        },
+        {
+          "id": "1c409bb08b96723c-1",
+          "canonical_id": 350,
+          "label": "kitchen knife",
+          "box": [
+            0.0,
+            80.00025600000001,
+            839.68,
+            519.0397440000002
+          ]
+        },
+        {
+          "id": "1c409bb08b96723c-2",
+          "canonical_id": 360,
+          "label": "lemon",
+          "box": [
+            351.44377441406255,
+            0.33336181640624574,
+            574.4466552734375,
+            261.3081420898437
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\1c409bb08b96723c.jpg",
+      "sha256": "1c275eb1919a1ad685d9e785c818ad7dbbf8ec0a8545d515d507dde11f88d85c",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "beb17809da077669",
+      "sequence": "flickr-nsid:30048871@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "beb17809da077669-0",
+          "canonical_id": 81,
+          "label": "rabbit",
+          "box": [
+            0.0,
+            0.0,
+            585.6,
+            767.360256
+          ]
+        },
+        {
+          "id": "beb17809da077669-1",
+          "canonical_id": 81,
+          "label": "rabbit",
+          "box": [
+            435.84000000000003,
+            0.0,
+            1023.36,
+            767.360256
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\beb17809da077669.jpg",
+      "sha256": "7f34629f22f8c09ad959dd21c3f4859869c9860ba1c4ab49d11f66bdbefdf3df",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "869b72ad5388b0a8",
+      "sequence": "flickr-nsid:40234118@N00",
+      "width": 1024,
+      "height": 612,
+      "targets": [
+        {
+          "id": "869b72ad5388b0a8-0",
+          "canonical_id": 308,
+          "label": "helmet",
+          "box": [
+            460.1600000000001,
+            177.96654,
+            517.76,
+            229.17992400000003
+          ]
+        },
+        {
+          "id": "869b72ad5388b0a8-1",
+          "canonical_id": 3,
+          "label": "motorcycle",
+          "box": [
+            373.12,
+            270.791028,
+            594.56,
+            412.26768
+          ]
+        },
+        {
+          "id": "869b72ad5388b0a8-2",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            378.88,
+            202.93308,
+            549.76,
+            339.928668
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\869b72ad5388b0a8.jpg",
+      "sha256": "30c637a647123f9e4c07f483e38b43c355ec2952735d48b71e908e7079452489",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "ec749f4dd20e7e84",
+      "sequence": "flickr-nsid:32996142@N05",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "ec749f4dd20e7e84-0",
+          "canonical_id": 87,
+          "label": "lantern",
+          "box": [
+            92.16000000000001,
+            112.76534899999996,
+            296.96,
+            470.283065
+          ]
+        },
+        {
+          "id": "ec749f4dd20e7e84-1",
+          "canonical_id": 87,
+          "label": "lantern",
+          "box": [
+            325.76,
+            83.93318700000003,
+            512.0,
+            392.757101
+          ]
+        },
+        {
+          "id": "ec749f4dd20e7e84-2",
+          "canonical_id": 357,
+          "label": "lamp",
+          "box": [
+            702.7627929687499,
+            197.53349609375002,
+            882.73310546875,
+            628.52275390625
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\ec749f4dd20e7e84.jpg",
+      "sha256": "2d53448a255bbd88b1029a43c397e5c560977ace649ce6095ca3e02330c8f9bc",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "d4d9df799ea735d4",
+      "sequence": "flickr-nsid:56739839@N00",
+      "width": 1024,
+      "height": 681,
+      "targets": [
+        {
+          "id": "d4d9df799ea735d4-0",
+          "canonical_id": 86,
+          "label": "balloon",
+          "box": [
+            536.32,
+            353.633085,
+            808.32,
+            579.7788840000001
+          ]
+        },
+        {
+          "id": "d4d9df799ea735d4-1",
+          "canonical_id": 86,
+          "label": "balloon",
+          "box": [
+            658.56,
+            418.33761899999996,
+            995.8400000000001,
+            680.3591789999999
+          ]
+        },
+        {
+          "id": "d4d9df799ea735d4-2",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            0.0,
+            0.0,
+            697.6,
+            585.544911
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\d4d9df799ea735d4.jpg",
+      "sha256": "29c8d30108e87749285dc5601836ab5d51eb5808ee3f07eea77e8f82111abdcd",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "a4464f0f61f23863",
+      "sequence": "flickr-nsid:29754180@N08",
+      "width": 1024,
+      "height": 1010,
+      "targets": [
+        {
+          "id": "a4464f0f61f23863-0",
+          "canonical_id": 209,
+          "label": "cowboy hat",
+          "box": [
+            674.56,
+            150.41223,
+            868.48,
+            314.26453000000004
+          ]
+        },
+        {
+          "id": "a4464f0f61f23863-1",
+          "canonical_id": 17,
+          "label": "horse",
+          "box": [
+            76.15999999999997,
+            391.07099000000005,
+            1023.36,
+            1009.35966
+          ]
+        },
+        {
+          "id": "a4464f0f61f23863-2",
+          "canonical_id": 322,
+          "label": "human face",
+          "box": [
+            723.84,
+            221.45764999999997,
+            799.36,
+            307.8641599999999
+          ]
+        },
+        {
+          "id": "a4464f0f61f23863-3",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            625.28,
+            182.41407999999998,
+            928.6400000000001,
+            905.67205
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\a4464f0f61f23863.jpg",
+      "sha256": "e0ca2ef8234a2eab1405e040613ce9e61bd0b891c39f5dfdeab3ffabdf8d3496",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "21bdbc182b14d3c7",
+      "sequence": "flickr-nsid:57257459@N05",
+      "width": 1024,
+      "height": 682,
+      "targets": [
+        {
+          "id": "21bdbc182b14d3c7-0",
+          "canonical_id": 269,
+          "label": "footwear",
+          "box": [
+            202.24,
+            546.1128640000001,
+            229.76,
+            580.084648
+          ]
+        },
+        {
+          "id": "21bdbc182b14d3c7-1",
+          "canonical_id": 269,
+          "label": "footwear",
+          "box": [
+            344.31999999999994,
+            601.236878,
+            379.52,
+            636.4908219999999
+          ]
+        },
+        {
+          "id": "21bdbc182b14d3c7-2",
+          "canonical_id": 269,
+          "label": "footwear",
+          "box": [
+            761.6,
+            562.778216,
+            801.92,
+            585.2126060000002
+          ]
+        },
+        {
+          "id": "21bdbc182b14d3c7-3",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            345.7185974121094,
+            353.5273152887821,
+            499.7112121582031,
+            636.0647490918636
+          ]
+        },
+        {
+          "id": "21bdbc182b14d3c7-4",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            737.4399070739746,
+            364.72287371754646,
+            803.7263526916504,
+            586.990364998579
+          ]
+        },
+        {
+          "id": "21bdbc182b14d3c7-5",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            203.6256866455078,
+            378.20897874236107,
+            336.53587341308594,
+            587.2073363363743
+          ]
+        },
+        {
+          "id": "21bdbc182b14d3c7-6",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            801.4455451965332,
+            366.8489286005497,
+            860.0444450378418,
+            557.5850678384304
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\21bdbc182b14d3c7.jpg",
+      "sha256": "387dd90bd3ca44c644d2dcf9187fcb3695d68907526e12e433808fcfd24b2701",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "c1c1915a3c64cf6a",
+      "sequence": "flickr-nsid:10069023@N00",
+      "width": 983,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "c1c1915a3c64cf6a-0",
+          "canonical_id": 56,
+          "label": "chair",
+          "box": [
+            592.151336,
+            481.882112,
+            965.3679289999999,
+            971.1104
+          ]
+        },
+        {
+          "id": "c1c1915a3c64cf6a-1",
+          "canonical_id": 269,
+          "label": "footwear",
+          "box": [
+            145.466306,
+            946.13504,
+            246.85194299999998,
+            1022.53056
+          ]
+        },
+        {
+          "id": "c1c1915a3c64cf6a-2",
+          "canonical_id": 269,
+          "label": "footwear",
+          "box": [
+            263.01541199999997,
+            943.19616,
+            365.8696509999999,
+            1022.5305600000002
+          ]
+        },
+        {
+          "id": "c1c1915a3c64cf6a-3",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            173.38448899999997,
+            129.28512000000006,
+            448.15363199999996,
+            1009.3086720000001
+          ]
+        },
+        {
+          "id": "c1c1915a3c64cf6a-4",
+          "canonical_id": 578,
+          "label": "trousers",
+          "box": [
+            189.54697500000003,
+            525.95712,
+            404.072963,
+            953.480192
+          ]
+        },
+        {
+          "id": "c1c1915a3c64cf6a-5",
+          "canonical_id": 27,
+          "label": "tie",
+          "box": [
+            316.13586817495525,
+            324.1337585449219,
+            348.6924498844892,
+            497.7555847167969
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\c1c1915a3c64cf6a.jpg",
+      "sha256": "93d63e2891d53d94ed05f2d4bc48a4b06140cabe814310a0f2231465704ef780",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "ca2fb9855e0374be",
+      "sequence": "flickr-nsid:46868174@N08",
+      "width": 1024,
+      "height": 634,
+      "targets": [
+        {
+          "id": "ca2fb9855e0374be-0",
+          "canonical_id": 282,
+          "label": "goggles",
+          "box": [
+            22.52800000000002,
+            159.694456,
+            305.152,
+            342.592044
+          ]
+        },
+        {
+          "id": "ca2fb9855e0374be-1",
+          "canonical_id": 308,
+          "label": "helmet",
+          "box": [
+            2.048000000000002,
+            0.0,
+            362.496,
+            373.30237
+          ]
+        },
+        {
+          "id": "ca2fb9855e0374be-2",
+          "canonical_id": 3,
+          "label": "motorcycle",
+          "box": [
+            0.0,
+            0.0,
+            1023.316992,
+            633.317816
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\ca2fb9855e0374be.jpg",
+      "sha256": "8d85b49676266b9732236d53318f33598fd538ccc151d23dfa69e05b7f0345e5",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "c615de989cc11a5f",
+      "sequence": "flickr-nsid:14935610@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "c615de989cc11a5f-0",
+          "canonical_id": 62,
+          "label": "tv",
+          "box": [
+            56.00051199999996,
+            0.0,
+            808.999936,
+            499.00032
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\c615de989cc11a5f.jpg",
+      "sha256": "f492a8ace102b84930a49eb8bca270e73fb81ee1a0b1a261948fe938ea9b04a4",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "b17e4f1319bca98a",
+      "sequence": "flickr-nsid:92908292@N07",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "b17e4f1319bca98a-0",
+          "canonical_id": 388,
+          "label": "mirror",
+          "box": [
+            127.36000000000001,
+            335.36025600000005,
+            817.28,
+            767.360256
+          ]
+        },
+        {
+          "id": "b17e4f1319bca98a-1",
+          "canonical_id": 388,
+          "label": "mirror",
+          "box": [
+            263.0400000000001,
+            1.920000000000023,
+            723.84,
+            270.0802560000001
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\b17e4f1319bca98a.jpg",
+      "sha256": "3fd60586155b1512028ec0bd6bf4aaf6ce88d861ae9924facd4780eb0874b5d1",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "fdc17f9ac37a5295",
+      "sequence": "flickr-nsid:46868174@N08",
+      "width": 1024,
+      "height": 721,
+      "targets": [
+        {
+          "id": "fdc17f9ac37a5295-0",
+          "canonical_id": 17,
+          "label": "horse",
+          "box": [
+            281.03065599999996,
+            141.01606400000006,
+            835.129344,
+            660.727284
+          ]
+        },
+        {
+          "id": "fdc17f9ac37a5295-1",
+          "canonical_id": 0,
+          "label": "person",
+          "box": [
+            373.190656,
+            37.52805000000003,
+            634.88,
+            444.654399
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\fdc17f9ac37a5295.jpg",
+      "sha256": "ff878bdefeb65f968907891b57c71bec33bcc2d93546c80e1ca078dfd07fca45",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "a89abe20c589b702",
+      "sequence": "flickr-nsid:87743767@N07",
+      "width": 1024,
+      "height": 819,
+      "targets": [
+        {
+          "id": "a89abe20c589b702-0",
+          "canonical_id": 44,
+          "label": "spoon",
+          "box": [
+            181.12,
+            252.09884700000003,
+            793.6,
+            376.8677640000001
+          ]
+        },
+        {
+          "id": "a89abe20c589b702-1",
+          "canonical_id": 470,
+          "label": "ruler",
+          "box": [
+            178.68613281250003,
+            452.77995605468755,
+            1024.0,
+            546.0266845703125
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\a89abe20c589b702.jpg",
+      "sha256": "c9627328b7ccc0938e61a05779bef6ee896f9a76c0fba5b85762c3962506f5db",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "00a2d2f1b206b096",
+      "sequence": "flickr-nsid:75879414@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "00a2d2f1b206b096-0",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            226.56000000000003,
+            81.279744,
+            588.16,
+            204.800256
+          ]
+        },
+        {
+          "id": "00a2d2f1b206b096-1",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            578.56,
+            456.320256,
+            754.56,
+            549.7597440000001
+          ]
+        },
+        {
+          "id": "00a2d2f1b206b096-2",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            386.56,
+            602.88,
+            488.96,
+            655.359744
+          ]
+        },
+        {
+          "id": "00a2d2f1b206b096-3",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            103.68000000000002,
+            599.679744,
+            209.92000000000002,
+            639.36
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\00a2d2f1b206b096.jpg",
+      "sha256": "e98f18a64e9a67d01b016275d1b4e9b704a185abe9f5b0259f89e72804319e20",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "8deef0f47270539b",
+      "sequence": "flickr-nsid:47905916@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "8deef0f47270539b-0",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            540.8,
+            514.5600000000001,
+            695.04,
+            592.640256
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\8deef0f47270539b.jpg",
+      "sha256": "47e056d0f345d79e3826b0256a946543f03f60312aa74e6b30789957d2ae3b6c",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "3e94c41351319fc6",
+      "sequence": "flickr-nsid:14336961@N07",
+      "width": 1024,
+      "height": 731,
+      "targets": [
+        {
+          "id": "3e94c41351319fc6-0",
+          "canonical_id": 568,
+          "label": "towel",
+          "box": [
+            811.52,
+            174.10884899999996,
+            878.0799999999999,
+            366.140356
+          ]
+        },
+        {
+          "id": "3e94c41351319fc6-1",
+          "canonical_id": 568,
+          "label": "towel",
+          "box": [
+            778.24,
+            194.5922,
+            829.44,
+            362.299682
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\3e94c41351319fc6.jpg",
+      "sha256": "c8422fdba51a622b4a6b61a537380703c18f3b1a0706d0b118639b750f925282",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "2cadb87bede22060",
+      "sequence": "flickr-nsid:91555706@N00",
+      "width": 687,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "2cadb87bede22060-0",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            453.163749,
+            727.04,
+            661.3975710000001,
+            966.827008
+          ]
+        },
+        {
+          "id": "2cadb87bede22060-1",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            3.4137029999999915,
+            587.947008,
+            94.72905600000001,
+            756.907008
+          ]
+        },
+        {
+          "id": "2cadb87bede22060-2",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            431.828277,
+            698.88,
+            542.772594,
+            831.147008
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\2cadb87bede22060.jpg",
+      "sha256": "9b71353eaf1bcc13ab07fa66a0c5d724a494777f40118a3afc49a38e556e87a0",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "1a8b1fbb478f7fe8",
+      "sequence": "flickr-nsid:10345599@N03",
+      "width": 793,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "1a8b1fbb478f7fe8-0",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            0.0,
+            702.72,
+            316.17623699999996,
+            929.9199999999998
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\1a8b1fbb478f7fe8.jpg",
+      "sha256": "c0d979c5d2982c47b86b33db93a5f2cb48753c12bc190bd23750dec25017a8e9",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "656866cf4647988f",
+      "sequence": "flickr-nsid:40435446@N00",
+      "width": 768,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "656866cf4647988f-0",
+          "canonical_id": 363,
+          "label": "light switch",
+          "box": [
+            494.07974399999995,
+            859.52,
+            666.24,
+            1005.44
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\656866cf4647988f.jpg",
+      "sha256": "4a81b8ad52f6a99446ab3bef0dfb4c33a0f8c0f93158849a7990de0f431c20c3",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "b18aa5c2b0bb3e25",
+      "sequence": "flickr-nsid:82127222@N00",
+      "width": 1024,
+      "height": 717,
+      "targets": [
+        {
+          "id": "b18aa5c2b0bb3e25-0",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            160.83763199999999,
+            189.63646200000008,
+            435.602432,
+            712.309386
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\b18aa5c2b0bb3e25.jpg",
+      "sha256": "4fc4733b8755da2a19daacd5252aad035f629c13275780a23e3a7652895b683d",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "db3723c8d5087439",
+      "sequence": "flickr-nsid:70253321@N00",
+      "width": 1024,
+      "height": 883,
+      "targets": [
+        {
+          "id": "db3723c8d5087439-0",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            0.0,
+            63.99983999999994,
+            1022.999552,
+            882.0004440000001
+          ]
+        },
+        {
+          "id": "db3723c8d5087439-1",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            506.9998079999999,
+            214.99990400000004,
+            883.00032,
+            628.000196
+          ]
+        },
+        {
+          "id": "db3723c8d5087439-2",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            373.0001920000001,
+            270.99976399999997,
+            659.00032,
+            656.999682
+          ]
+        },
+        {
+          "id": "db3723c8d5087439-3",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            227.00032,
+            202.99993399999997,
+            499.00032,
+            588.0002959999999
+          ]
+        },
+        {
+          "id": "db3723c8d5087439-4",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            565.000192,
+            552.0003859999999,
+            762.0003839999999,
+            783.00025
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\db3723c8d5087439.jpg",
+      "sha256": "a0f1b7eb9bc8684d402ed40ca84f3365141c41ea24cd324919a12fc44fb8e64f",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "09e15efd7a028959",
+      "sequence": "flickr-nsid:37606376@N07",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "09e15efd7a028959-0",
+          "canonical_id": 594,
+          "label": "waste container",
+          "box": [
+            231.68000000000004,
+            518.9775500000001,
+            320.0,
+            656.730454
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\09e15efd7a028959.jpg",
+      "sha256": "aab19a5d4829d79d331c68e0c59e566e91b2996593116b4f1040593688110556",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "ee72b48155108827",
+      "sequence": "flickr-nsid:20990338@N05",
+      "width": 1024,
+      "height": 732,
+      "targets": [
+        {
+          "id": "ee72b48155108827-0",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            202.88000000000002,
+            464.304672,
+            376.32000000000005,
+            528.98712
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\ee72b48155108827.jpg",
+      "sha256": "560a9fc339397937154ac0489286cfc5376b13b731306e8dead14cf3086d3700",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "04eb5b0f3a96d07e",
+      "sequence": "flickr-nsid:90809455@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "04eb5b0f3a96d07e-0",
+          "canonical_id": 275,
+          "label": "frying pan",
+          "box": [
+            848.64,
+            543.36,
+            1023.36,
+            645.7597440000002
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\04eb5b0f3a96d07e.jpg",
+      "sha256": "fc5166adac38553b76771863aa1745203f81d367be4606fd8baed4c28c1b0c79",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "7e9fa948d7fe81e1",
+      "sequence": "flickr-nsid:45673145@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "7e9fa948d7fe81e1-0",
+          "canonical_id": 70,
+          "label": "toaster",
+          "box": [
+            687.36,
+            326.4,
+            1023.36,
+            686.7202560000001
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\7e9fa948d7fe81e1.jpg",
+      "sha256": "0082ece38519da64951a58998753e745abde6334c82c8c01fe5487a381c7513f",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "622ccf7a79cff653",
+      "sequence": "flickr-nsid:28697629@N00",
+      "width": 768,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "622ccf7a79cff653-0",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            508.160256,
+            39.68000000000001,
+            623.3602560000002,
+            149.76
+          ]
+        },
+        {
+          "id": "622ccf7a79cff653-1",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            163.839744,
+            220.15999999999997,
+            240.63974399999998,
+            305.28
+          ]
+        },
+        {
+          "id": "622ccf7a79cff653-2",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            47.999999999999986,
+            449.28,
+            167.03999999999996,
+            494.72
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\622ccf7a79cff653.jpg",
+      "sha256": "1a5bfc845318db872bad31ab6b0292726976c2c4b7bffa7ea17d9a565e25975c",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "6f6edb157e2d0926",
+      "sequence": "flickr-nsid:97402086@N00",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "6f6edb157e2d0926-0",
+          "canonical_id": 552,
+          "label": "taxi",
+          "box": [
+            618.24,
+            419.0259640000001,
+            899.2,
+            682.3593460000001
+          ]
+        },
+        {
+          "id": "6f6edb157e2d0926-1",
+          "canonical_id": 552,
+          "label": "taxi",
+          "box": [
+            171.51999999999998,
+            477.971596,
+            395.52,
+            666.34163
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\6f6edb157e2d0926.jpg",
+      "sha256": "34292c005b9aad0355e88492668586c011a12da972513956685797e31e65f2f3",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "d55cd4d4287bb58b",
+      "sequence": "flickr-nsid:27746272@N06",
+      "width": 1024,
+      "height": 682,
+      "targets": [],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\d55cd4d4287bb58b.jpg",
+      "sha256": "808fbe36d8c86ad15dfc940d1126cf1179913120727512b640cd5b3a61e94331",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 70,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "1154e35f1edbdd62",
+      "sequence": "flickr-nsid:52928371@N00",
+      "width": 1024,
+      "height": 682,
+      "targets": [
+        {
+          "id": "1154e35f1edbdd62-0",
+          "canonical_id": 10,
+          "label": "fire hydrant",
+          "box": [
+            736.6400000000001,
+            233.51816399999996,
+            849.28,
+            544.448102
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\1154e35f1edbdd62.jpg",
+      "sha256": "77b32a2a03be3ef4590ee25c1cd6ac4d12d1b8fce68180b477092d729e060607",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "c7d80ca6eb5b0603",
+      "sequence": "flickr-nsid:61434941@N08",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "c7d80ca6eb5b0603-0",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            200.32,
+            167.867057,
+            386.56,
+            409.415471
+          ]
+        },
+        {
+          "id": "c7d80ca6eb5b0603-1",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            760.96,
+            398.52367,
+            865.9200000000001,
+            430.559102
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\c7d80ca6eb5b0603.jpg",
+      "sha256": "d26539ceb890611611bd5024928c42f20e12759ea98ff1bf7dea55dc21f18a06",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "a33973d8a568968e",
+      "sequence": "flickr-nsid:77742560@N06",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "a33973d8a568968e-0",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            0.0,
+            149.92669600000002,
+            259.2,
+            604.192045
+          ]
+        },
+        {
+          "id": "a33973d8a568968e-1",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            243.83999999999997,
+            124.939141,
+            472.96,
+            266.536652
+          ]
+        },
+        {
+          "id": "a33973d8a568968e-2",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            474.24000000000007,
+            126.22044900000003,
+            617.6000000000001,
+            275.506491
+          ]
+        },
+        {
+          "id": "a33973d8a568968e-3",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            655.36,
+            145.44211799999997,
+            821.12,
+            247.955637
+          ]
+        },
+        {
+          "id": "a33973d8a568968e-4",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            936.32,
+            158.896535,
+            1023.36,
+            244.11171299999998
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\a33973d8a568968e.jpg",
+      "sha256": "f6092d5d1dfba2b29955bb744c979a6ea180925c881b85e8d9eb4b408b35e882",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "5431645c1c35e4f6",
+      "sequence": "flickr-nsid:8372040@N06",
+      "width": 1024,
+      "height": 576,
+      "targets": [
+        {
+          "id": "5431645c1c35e4f6-0",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            196.48000000000002,
+            227.19974399999998,
+            271.36,
+            404.47987199999994
+          ]
+        },
+        {
+          "id": "5431645c1c35e4f6-1",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            627.2,
+            153.600192,
+            686.0800000000002,
+            229.76006400000003
+          ]
+        },
+        {
+          "id": "5431645c1c35e4f6-2",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            496.0,
+            167.04000000000002,
+            547.2,
+            245.76019200000002
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\5431645c1c35e4f6.jpg",
+      "sha256": "aa75cdd8e9780ff753968af34c69ed40ba3a34d6f2852da53ed78971b73563e4",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "62116e3aa1814342",
+      "sequence": "flickr-nsid:49978063@N00",
+      "width": 1024,
+      "height": 681,
+      "targets": [
+        {
+          "id": "62116e3aa1814342-0",
+          "canonical_id": 12,
+          "label": "parking meter",
+          "box": [
+            25.600000000000023,
+            0.0,
+            740.48,
+            680.359179
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\62116e3aa1814342.jpg",
+      "sha256": "c6e2d4e7e593194b871558d9541d7cc52ab53436e6b74e5be2482a5c303ea516",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "f904ef6e1303a4d7",
+      "sequence": "flickr-nsid:39415781@N06",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "f904ef6e1303a4d7-0",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            76.79999999999995,
+            198.399744,
+            927.36,
+            759.0397440000002
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\f904ef6e1303a4d7.jpg",
+      "sha256": "774e4aec6386c8d4bb9270ce45264c735da17d87622cf2361782a071c8436531",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "bae04307ff224ad8",
+      "sequence": "flickr-nsid:58367355@N00",
+      "width": 679,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "bae04307ff224ad8-0",
+          "canonical_id": 275,
+          "label": "frying pan",
+          "box": [
+            0.0,
+            195.19999999999993,
+            678.359703,
+            950.4
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\bae04307ff224ad8.jpg",
+      "sha256": "cc07c9b9a67dcc3ccd9f554cba426e0eba60bd886c9b5860d83a6ea898e32f5a",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "3d7da7f42ee57add",
+      "sequence": "flickr-nsid:87703027@N06",
+      "width": 1024,
+      "height": 575,
+      "targets": [
+        {
+          "id": "3d7da7f42ee57add-0",
+          "canonical_id": 234,
+          "label": "door handle",
+          "box": [
+            405.12,
+            516.7962,
+            599.04,
+            551.9747
+          ]
+        },
+        {
+          "id": "3d7da7f42ee57add-1",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            595.8399999999999,
+            168.214525,
+            821.76,
+            456.6742000000001
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\3d7da7f42ee57add.jpg",
+      "sha256": "419fcc25799ed30ade2533533681ed3474d0914101fea8381563c7569df6b2c9",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "02be1bbc1cbb5cfc",
+      "sequence": "flickr-nsid:39415781@N06",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "02be1bbc1cbb5cfc-0",
+          "canonical_id": 529,
+          "label": "street light",
+          "box": [
+            518.3999999999999,
+            74.24025600000009,
+            638.72,
+            767.3602560000002
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\02be1bbc1cbb5cfc.jpg",
+      "sha256": "4a215a3c19f7b34b4f409e9097b3ddf4755a887f610dbcb8c8630fa61e0f2252",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "f553242d35e81b52",
+      "sequence": "flickr-nsid:23409087@N00",
+      "width": 1024,
+      "height": 771,
+      "targets": [
+        {
+          "id": "f553242d35e81b52-0",
+          "canonical_id": 594,
+          "label": "waste container",
+          "box": [
+            479.36,
+            413.035494,
+            933.12,
+            770.359299
+          ]
+        },
+        {
+          "id": "f553242d35e81b52-1",
+          "canonical_id": 594,
+          "label": "waste container",
+          "box": [
+            0.0,
+            381.658107,
+            231.04,
+            770.359299
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\f553242d35e81b52.jpg",
+      "sha256": "6b4065338b6d74d3fa9a6b4640dba2c57705255da1cad73f58f9a04f050c309c",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "a37ed4a8aefca348",
+      "sequence": "flickr-nsid:38278390@N00",
+      "width": 852,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "a37ed4a8aefca348-0",
+          "canonical_id": 552,
+          "label": "taxi",
+          "box": [
+            1.299133300781253,
+            685.3351806640624,
+            304.0222045898437,
+            941.3228271484375
+          ]
+        },
+        {
+          "id": "a37ed4a8aefca348-1",
+          "canonical_id": 552,
+          "label": "taxi",
+          "box": [
+            383.88251953125,
+            708.57373046875,
+            850.2834960937502,
+            891.384765625
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\a37ed4a8aefca348.jpg",
+      "sha256": "5e932434b883b092a80a5a12ce8b4902d66b61433a6275c6378bcec737e56290",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "918040b5d0c073d6",
+      "sequence": "flickr-nsid:48712917@N02",
+      "width": 1024,
+      "height": 678,
+      "targets": [
+        {
+          "id": "918040b5d0c073d6-0",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            272.64,
+            417.42764999999997,
+            403.84000000000003,
+            544.832664
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\918040b5d0c073d6.jpg",
+      "sha256": "5dc4f5cf51576bc67e4017e84681ebe28bd24124e26f7ee27e0c93ce9f980d05",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "131c2b4103df0c37",
+      "sequence": "flickr-nsid:76961277@N08",
+      "width": 683,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "131c2b4103df0c37-0",
+          "canonical_id": 234,
+          "label": "door handle",
+          "box": [
+            182.98758544921878,
+            239.65617675781255,
+            431.15753173828125,
+            995.6297607421875
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\131c2b4103df0c37.jpg",
+      "sha256": "77360df6f04313f5ace4f4ac71a26f031d0d16b0806386493cd2c15d931d5579",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "f2535f8d7d09a5fd",
+      "sequence": "flickr-nsid:7235424@N02",
+      "width": 1024,
+      "height": 869,
+      "targets": [
+        {
+          "id": "f2535f8d7d09a5fd-0",
+          "canonical_id": 70,
+          "label": "toaster",
+          "box": [
+            29.440000000000055,
+            32.01917400000004,
+            995.2,
+            836.980826
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\f2535f8d7d09a5fd.jpg",
+      "sha256": "a993d6da5faa996f25b845fc7cb9c9864996713aeb6c5d59e6a4b266214ff9fe",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 70,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 133,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 593,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 600,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 193,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 322,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 150,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "4e07990005b90201",
+      "sequence": "flickr-nsid:35042004@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "4e07990005b90201-0",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            109.44000000000001,
+            307.839744,
+            252.16000000000003,
+            423.03974400000004
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\4e07990005b90201.jpg",
+      "sha256": "7c772634b8d4dd69e985c3529bbb9213371b243154c3e5f7e25c0763b0c30e87",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "ddba3bcd6fe03957",
+      "sequence": "flickr-nsid:40954726@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "ddba3bcd6fe03957-0",
+          "canonical_id": 357,
+          "label": "lamp",
+          "box": [
+            791.6800000000001,
+            387.84000000000003,
+            913.28,
+            689.2799999999999
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\ddba3bcd6fe03957.jpg",
+      "sha256": "a7487a89486aaafdc5f242dc8d6dba19d5aa373f23ba29538bfc56c442de6933",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "285ae671031953af",
+      "sequence": "flickr-nsid:40132991@N07",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "285ae671031953af-0",
+          "canonical_id": 594,
+          "label": "waste container",
+          "box": [
+            401.92,
+            531.84,
+            498.56,
+            671.360256
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\285ae671031953af.jpg",
+      "sha256": "d3609092cd4a1a45f7b22a207378817285180fe070f1e7e9bc862af6fa3054e2",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "0511a06bb7a4501f",
+      "sequence": "flickr-nsid:48889077511@N01",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "0511a06bb7a4501f-0",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            83.19999999999999,
+            206.39999999999995,
+            323.2,
+            764.7997439999999
+          ]
+        },
+        {
+          "id": "0511a06bb7a4501f-1",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            304.0,
+            224.00025600000004,
+            448.0,
+            766.4002559999999
+          ]
+        },
+        {
+          "id": "0511a06bb7a4501f-2",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            441.6,
+            244.79999999999995,
+            534.4,
+            731.199744
+          ]
+        },
+        {
+          "id": "0511a06bb7a4501f-3",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            529.5994880000001,
+            238.40025600000004,
+            611.2,
+            663.999744
+          ]
+        },
+        {
+          "id": "0511a06bb7a4501f-4",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            600.000512,
+            238.40025600000004,
+            667.200512,
+            615.999744
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\0511a06bb7a4501f.jpg",
+      "sha256": "3d7cf537845f690bf1d09aff6ea2f303dcef9825a60bcfc740ba709237c82e01",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "2f4fa6ea4c4de842",
+      "sequence": "flickr-nsid:9032130@N03",
+      "width": 1024,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "2f4fa6ea4c4de842-0",
+          "canonical_id": 70,
+          "label": "toaster",
+          "box": [
+            208.0,
+            25.600000000000023,
+            769.599488,
+            945.599488
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\2f4fa6ea4c4de842.jpg",
+      "sha256": "6a0b9f0776b940349a80879cef509433819e74d9e4b2f1d1e6dd9f250166cd6f",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 70,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 133,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 593,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 600,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 193,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 322,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 150,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "c8bfc0725f74bff6",
+      "sequence": "flickr-nsid:35555047@N00",
+      "width": 1024,
+      "height": 682,
+      "targets": [
+        {
+          "id": "c8bfc0725f74bff6-0",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            432.64,
+            391.5423379999999,
+            558.08,
+            459.3583719999999
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\c8bfc0725f74bff6.jpg",
+      "sha256": "38f01e2a51cb87a1075cf3161d3e2f0575427f411dc6c9639bdf6be3c501ff9e",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "77a78dc532b7a480",
+      "sequence": "flickr-nsid:78199898@N00",
+      "width": 1024,
+      "height": 684,
+      "targets": [
+        {
+          "id": "77a78dc532b7a480-0",
+          "canonical_id": 87,
+          "label": "lantern",
+          "box": [
+            380.79999999999995,
+            14.730623999999962,
+            615.04,
+            305.494236
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\77a78dc532b7a480.jpg",
+      "sha256": "f1a27980edeffe822fb671747d51ea9c97e7d9b86add3cdec0323f0c2e4f8ba7",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "90aff20818a33b4d",
+      "sequence": "flickr-nsid:13746132@N06",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "90aff20818a33b4d-0",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            145.28000000000003,
+            353.03313799999995,
+            172.8,
+            411.97808699999996
+          ]
+        },
+        {
+          "id": "90aff20818a33b4d-1",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            569.9749755859375,
+            266.1085693359375,
+            686.4101806640624,
+            341.18459472656247
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\90aff20818a33b4d.jpg",
+      "sha256": "eda1556f93ff362abdd0109e17774e16db6716a80d0d14f3030f093a1f912c28",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "13cf7863c192c9f1",
+      "sequence": "flickr-nsid:79865753@N00",
+      "width": 1024,
+      "height": 732,
+      "targets": [
+        {
+          "id": "13cf7863c192c9f1-0",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            645.927936,
+            8.973587999999934,
+            1022.717952,
+            665.338224
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\13cf7863c192c9f1.jpg",
+      "sha256": "e953d59ebe423b2138dabb7fe438edd1009ba1bbf88c2972c0f36550af76665d",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "dea496b6039d3e6c",
+      "sequence": "flickr-nsid:90037546@N00",
+      "width": 1024,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "dea496b6039d3e6c-0",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            0.0,
+            0.0,
+            1002.248192,
+            873.411584
+          ]
+        },
+        {
+          "id": "dea496b6039d3e6c-1",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            254.32678399999998,
+            665.934848,
+            818.19648,
+            1022.326784
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\dea496b6039d3e6c.jpg",
+      "sha256": "3101268ee43b755f8ab085fa22cd9d9c9140331d0ac2213b942f5a3617069dfd",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "52ea5fee2ab37a48",
+      "sequence": "flickr-nsid:68636163@N00",
+      "width": 1024,
+      "height": 765,
+      "targets": [
+        {
+          "id": "52ea5fee2ab37a48-0",
+          "canonical_id": 12,
+          "label": "parking meter",
+          "box": [
+            0.0,
+            0.0,
+            1023.36,
+            764.359695
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\52ea5fee2ab37a48.jpg",
+      "sha256": "abe604d46ad9aae35c7d0062b630a364f753153423a7c0017f9ab1c0b4eb30ec",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "3520c6729cc39251",
+      "sequence": "flickr-nsid:51028924@N04",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "3520c6729cc39251-0",
+          "canonical_id": 529,
+          "label": "street light",
+          "box": [
+            44.800000000000004,
+            229.11974400000008,
+            125.44,
+            672.0
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\3520c6729cc39251.jpg",
+      "sha256": "d8970c7b8b3c7e367a21980afa7ddcf162611334e53653da043611d6761d34d2",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "6047a6a4e4f682e7",
+      "sequence": "flickr-nsid:77742560@N06",
+      "width": 1024,
+      "height": 680,
+      "targets": [
+        {
+          "id": "6047a6a4e4f682e7-0",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            110.07999999999998,
+            435.4046799999999,
+            285.44,
+            602.5235199999998
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\6047a6a4e4f682e7.jpg",
+      "sha256": "b3e674409b6cac799af9a56b6a39e651ace79a90e3af6678dc6398b7ea29bf60",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "13d30e2f33a61af1",
+      "sequence": "flickr-nsid:99649389@N02",
+      "width": 963,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "13d30e2f33a61af1-0",
+          "canonical_id": 363,
+          "label": "light switch",
+          "box": [
+            261.7058429999999,
+            153.60000000000002,
+            684.657369,
+            856.96
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\13d30e2f33a61af1.jpg",
+      "sha256": "ee508e48315d303363a7dfc7ec300416013fbddfcb54131bf8805c9d61743784",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 363,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 133,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 593,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 600,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 193,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 322,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 150,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "848ac811b8db744d",
+      "sequence": "flickr-nsid:46722918@N08",
+      "width": 1024,
+      "height": 680,
+      "targets": [
+        {
+          "id": "848ac811b8db744d-0",
+          "canonical_id": 491,
+          "label": "shelf",
+          "box": [
+            231.04000000000002,
+            337.43912,
+            419.84,
+            583.3142
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\848ac811b8db744d.jpg",
+      "sha256": "f269be37932cb6e83edcf3b80f74d5001f0758947e00dd7f0e01272e32807c67",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "05011ce3385001c7",
+      "sequence": "flickr-nsid:10876923@N06",
+      "width": 685,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "05011ce3385001c7-0",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            360.72853499999997,
+            446.72,
+            448.35168,
+            532.48
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\05011ce3385001c7.jpg",
+      "sha256": "5a2c55d8049d7bfcb34fe264a2108e6deb8dfcd6ac35b6f7f971350b289b9f8b",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "083a7bdb2be61bda",
+      "sequence": "flickr-nsid:43098294@N00",
+      "width": 1024,
+      "height": 399,
+      "targets": [
+        {
+          "id": "083a7bdb2be61bda-0",
+          "canonical_id": 10,
+          "label": "fire hydrant",
+          "box": [
+            599.04,
+            234.66825900000006,
+            667.52,
+            398.360403
+          ]
+        },
+        {
+          "id": "083a7bdb2be61bda-1",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            291.233984375,
+            17.25308837890624,
+            428.501806640625,
+            105.96116943359375
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\083a7bdb2be61bda.jpg",
+      "sha256": "1305be3f6a1734bb9f7d627046c72d6d53bbeadd691538229ff4e16a9ef87396",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "a97703508766a7df",
+      "sequence": "flickr-nsid:90809455@N00",
+      "width": 732,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "a97703508766a7df-0",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            199.81111199999995,
+            11.519999999999982,
+            534.110388,
+            347.52
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\a97703508766a7df.jpg",
+      "sha256": "330ed138589fe59faf8302c2df93a44c68db013dcfc7e31180a5a468fdf15515",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "da90e429c434f244",
+      "sequence": "flickr-nsid:17912374@N06",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "da90e429c434f244-0",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            157.86700800000003,
+            255.413314,
+            395.377664,
+            419.76018899999997
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\da90e429c434f244.jpg",
+      "sha256": "b54249585bc3c242caca42b5e3e4caa3f4d46aae8399c56889a328146ea1d462",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "14873adc1a5c65eb",
+      "sequence": "flickr-nsid:86363925@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "14873adc1a5c65eb-0",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            277.12,
+            318.72,
+            574.72,
+            628.479744
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\14873adc1a5c65eb.jpg",
+      "sha256": "e9305f9e5cf3d76948ab1bf24ef6a66778cc49e78b87d411c49a7abd8b57123a",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "5a8ce7f3c6526bc5",
+      "sequence": "flickr-nsid:27760134@N03",
+      "width": 1024,
+      "height": 685,
+      "targets": [
+        {
+          "id": "5a8ce7f3c6526bc5-0",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            622.72,
+            417.652035,
+            1023.3599999999999,
+            684.36021
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\5a8ce7f3c6526bc5.jpg",
+      "sha256": "e0b3838172de7c5ae55a02d7752d341a3474f804cbdf7f6964e04225f8797387",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "7efc57c347e32eeb",
+      "sequence": "flickr-nsid:97788971@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "7efc57c347e32eeb-0",
+          "canonical_id": 12,
+          "label": "parking meter",
+          "box": [
+            0.0,
+            0.0,
+            1023.36,
+            767.360256
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\7efc57c347e32eeb.jpg",
+      "sha256": "ce3db4a19bf9b4fad28c556b929c6a70fffdd110ddb8e6196c78e7ca0a521890",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "7be85f9b98521af2",
+      "sequence": "flickr-nsid:18832004@N07",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "7be85f9b98521af2-0",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            923.52,
+            366.0802560000001,
+            1023.3600000000001,
+            721.280256
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\7be85f9b98521af2.jpg",
+      "sha256": "20d5075269b7940d4bc05738a6c19ce3848c24d7b0b89de65fdbf5d92a090d05",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "182c0794fa64a5d6",
+      "sequence": "flickr-nsid:67408512@N03",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "182c0794fa64a5d6-0",
+          "canonical_id": 491,
+          "label": "shelf",
+          "box": [
+            48.639999999999986,
+            216.9599999999999,
+            319.36,
+            767.360256
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\182c0794fa64a5d6.jpg",
+      "sha256": "94a8c52b138db4879cbc279647abeea4ed87a733da3af6946dd61e08a69c03c2",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "590b957d45fd8764",
+      "sequence": "flickr-nsid:61237118@N00",
+      "width": 1024,
+      "height": 738,
+      "targets": [
+        {
+          "id": "590b957d45fd8764-0",
+          "canonical_id": 12,
+          "label": "parking meter",
+          "box": [
+            0.0,
+            0.0,
+            865.74592,
+            737.153514
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\590b957d45fd8764.jpg",
+      "sha256": "9e57230baed2467739f0ef7b105393b0be5f1d5b2e212a6825e88a32f17c3ea7",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "aa8938613108bba1",
+      "sequence": "flickr-nsid:11607591@N02",
+      "width": 1024,
+      "height": 680,
+      "targets": [
+        {
+          "id": "aa8938613108bba1-0",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            251.51999999999998,
+            276.6104,
+            696.32,
+            439.24668
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\aa8938613108bba1.jpg",
+      "sha256": "8846f15854e084071de4b8951a7a63d58d99220321091d76e2f49e0e15cefb70",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "ffb7ec1de033740d",
+      "sequence": "flickr-nsid:51777909@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "ffb7ec1de033740d-0",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            486.40000000000003,
+            96.63974400000002,
+            552.96,
+            220.160256
+          ]
+        },
+        {
+          "id": "ffb7ec1de033740d-1",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            747.1189453125,
+            241.90286865234378,
+            875.8517578125,
+            361.87926025390624
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\ffb7ec1de033740d.jpg",
+      "sha256": "03c9bd708aef3276b7d33d4c4b41f75118471ace3d466bd63d21ed7beb015b38",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "978cc5b9857da315",
+      "sequence": "flickr-nsid:55401363@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "978cc5b9857da315-0",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            662.4000000000001,
+            426.87974399999996,
+            900.48,
+            549.12
+          ]
+        },
+        {
+          "id": "978cc5b9857da315-1",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            942.72,
+            394.23974400000003,
+            1023.3599999999999,
+            741.7597440000002
+          ]
+        },
+        {
+          "id": "978cc5b9857da315-2",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            65.92000000000002,
+            430.08000000000004,
+            281.6,
+            515.840256
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\978cc5b9857da315.jpg",
+      "sha256": "9bf5974a82fcaa3904efb69078c7d1e7a4efa7fadc47c38c5990105d7b4c950d",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "6c42e6ea600e3576",
+      "sequence": "flickr-nsid:84488184@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "6c42e6ea600e3576-0",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            186.399744,
+            284.799744,
+            499.2,
+            746.4000000000001
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\6c42e6ea600e3576.jpg",
+      "sha256": "b04b931fc4036c0fd9cb1e35f083730b7e09b59aa60e2fadddcd941a441bafcd",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "7c0b289d1ce70929",
+      "sequence": "flickr-nsid:103050471@N02",
+      "width": 711,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "7c0b289d1ce70929-0",
+          "canonical_id": 234,
+          "label": "door handle",
+          "box": [
+            294.64835400000004,
+            37.75999999999999,
+            547.021359,
+            577.28
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\7c0b289d1ce70929.jpg",
+      "sha256": "57c7e029db7d13da08178c568b0ce2d02dffe90427307def087299d0d04b641b",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 234,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 133,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 593,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 600,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 193,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 322,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 150,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "ea33c65956fc3403",
+      "sequence": "flickr-nsid:28267496@N00",
+      "width": 1024,
+      "height": 819,
+      "targets": [
+        {
+          "id": "ea33c65956fc3403-0",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            478.72,
+            237.3822360000001,
+            798.72,
+            687.8322360000001
+          ]
+        },
+        {
+          "id": "ea33c65956fc3403-1",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            132.02773437500002,
+            169.37873535156245,
+            424.197412109375,
+            555.9066162109374
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\ea33c65956fc3403.jpg",
+      "sha256": "011f41bde6751da7da00d416ec5cffc0eac937476622d88f253397ed9766958a",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "1f6dd2c99803af65",
+      "sequence": "flickr-nsid:128359034@N07",
+      "width": 697,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "1f6dd2c99803af65-0",
+          "canonical_id": 491,
+          "label": "shelf",
+          "box": [
+            100.52900699999996,
+            105.88467200000002,
+            589.769338,
+            820.272128
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\1f6dd2c99803af65.jpg",
+      "sha256": "075cc61fe938984ebb76710225c34f73917fd2a27b7d8ba4b22bb71065f92307",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "df68d9e7bf9666bb",
+      "sequence": "flickr-nsid:12801018@N00",
+      "width": 1024,
+      "height": 687,
+      "targets": [
+        {
+          "id": "df68d9e7bf9666bb-0",
+          "canonical_id": 12,
+          "label": "parking meter",
+          "box": [
+            500.622336,
+            0.0,
+            1022.862336,
+            685.862328
+          ]
+        },
+        {
+          "id": "df68d9e7bf9666bb-1",
+          "canonical_id": 12,
+          "label": "parking meter",
+          "box": [
+            60.30233599999997,
+            0.0,
+            514.275328,
+            672.213699
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\df68d9e7bf9666bb.jpg",
+      "sha256": "9965f0723129b129460ec48ed6d9c4b15151ac608a7fc421b39fa01f80d7965d",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "246696dc78653d03",
+      "sequence": "flickr-nsid:40231253@N05",
+      "width": 1024,
+      "height": 678,
+      "targets": [
+        {
+          "id": "246696dc78653d03-0",
+          "canonical_id": 234,
+          "label": "door handle",
+          "box": [
+            568.377344,
+            367.20208800000006,
+            591.388672,
+            392.526066
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\246696dc78653d03.jpg",
+      "sha256": "dae719a64117ad58306fcad1f85dcd74f3f4f880f0652ef12d611f8874a82134",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 234,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 133,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 593,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 600,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 193,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 322,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "ad24d9a30fff09c7",
+      "sequence": "flickr-nsid:81906469@N00",
+      "width": 1024,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "ad24d9a30fff09c7-0",
+          "canonical_id": 10,
+          "label": "fire hydrant",
+          "box": [
+            630.4,
+            547.2,
+            782.400512,
+            918.3999999999999
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\ad24d9a30fff09c7.jpg",
+      "sha256": "c9bec31018fc1368d8075636db02450f7498cc919f0d1398d92e98634b16dd76",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "2be95fd57818a75a",
+      "sequence": "flickr-nsid:82127222@N00",
+      "width": 1024,
+      "height": 678,
+      "targets": [
+        {
+          "id": "2be95fd57818a75a-0",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            300.1600000000001,
+            385.78064399999994,
+            400.0,
+            506.8978859999999
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\2be95fd57818a75a.jpg",
+      "sha256": "1f9b50a37b906291401105bd111b9bbc12afb24b65a97085f37492ebf4c4f24d",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "c08211faa0184c8a",
+      "sequence": "flickr-nsid:36875575@N00",
+      "width": 1024,
+      "height": 678,
+      "targets": [
+        {
+          "id": "c08211faa0184c8a-0",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            288.64,
+            221.518194,
+            629.76,
+            478.88970600000005
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\c08211faa0184c8a.jpg",
+      "sha256": "ae4a9ef317f47df6df85f83be6e8fc8a4fa9c92a9ac41048f07d88cd3ac7063f",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "486c5067f8a19229",
+      "sequence": "flickr-nsid:52101018@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "486c5067f8a19229-0",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            0.0,
+            0.0,
+            302.72,
+            579.2002560000001
+          ]
+        },
+        {
+          "id": "486c5067f8a19229-1",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            309.12,
+            37.76025600000001,
+            368.64,
+            563.840256
+          ]
+        },
+        {
+          "id": "486c5067f8a19229-2",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            511.36,
+            467.1997439999999,
+            614.4,
+            656.6399999999999
+          ]
+        },
+        {
+          "id": "486c5067f8a19229-3",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            826.24,
+            656.64,
+            1023.3599999999999,
+            706.5600000000002
+          ]
+        },
+        {
+          "id": "486c5067f8a19229-4",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            975.36,
+            376.31999999999994,
+            1023.36,
+            520.3199999999999
+          ]
+        },
+        {
+          "id": "486c5067f8a19229-5",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            192.99876708984374,
+            332.068017578125,
+            305.1840454101563,
+            579.269189453125
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\486c5067f8a19229.jpg",
+      "sha256": "7d931e89114bab227e71ad69d56c26e482eca42216296b92eed2a3189db35549",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "d71ab4ea706b8b67",
+      "sequence": "flickr-nsid:51930963@N02",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "d71ab4ea706b8b67-0",
+          "canonical_id": 594,
+          "label": "waste container",
+          "box": [
+            545.599488,
+            584.000256,
+            667.200512,
+            767.199744
+          ]
+        },
+        {
+          "id": "d71ab4ea706b8b67-1",
+          "canonical_id": 594,
+          "label": "waste container",
+          "box": [
+            897.599488,
+            562.400256,
+            958.400512,
+            649.599744
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\d71ab4ea706b8b67.jpg",
+      "sha256": "0a8f6f655cfec188ea9c0337189075d2af7814cf6530af7fd001a794c946b61b",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "cc0e1154f179b38c",
+      "sequence": "flickr-nsid:63027362@N07",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "cc0e1154f179b38c-0",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            163.85413818359376,
+            200.92293701171877,
+            328.1315063476562,
+            283.10040283203125
+          ]
+        },
+        {
+          "id": "cc0e1154f179b38c-1",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            372.5353759765625,
+            202.43634033203125,
+            532.3312255859375,
+            284.22655029296874
+          ]
+        },
+        {
+          "id": "cc0e1154f179b38c-2",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            457.90266113281245,
+            378.03837890625,
+            543.5524169921875,
+            427.58544921875
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\cc0e1154f179b38c.jpg",
+      "sha256": "136d2914ef039e0c1e1acb48be4cfbad97fe787ba5734195aecac43f6a6eb32d",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "d85501c52f438277",
+      "sequence": "flickr-nsid:51035756584@N01",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "d85501c52f438277-0",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            0.0,
+            0.0,
+            1023.36,
+            767.360256
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\d85501c52f438277.jpg",
+      "sha256": "8cfb5a36a5b2e85f3e2e673af2d9798ebafe1e2b03da6245fee622307b4dec23",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "d371bb7a8a67f541",
+      "sequence": "flickr-nsid:51928287@N00",
+      "width": 768,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "d371bb7a8a67f541-0",
+          "canonical_id": 234,
+          "label": "door handle",
+          "box": [
+            179.71200000000002,
+            769.150976,
+            268.79999999999995,
+            891.969536
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\d371bb7a8a67f541.jpg",
+      "sha256": "6780d33750b06bf149b6f07b99c688643a7aa297f66d6dfd644f5f6a8efff5f3",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "112654de17f98945",
+      "sequence": "flickr-nsid:25064784@N00",
+      "width": 1024,
+      "height": 683,
+      "targets": [
+        {
+          "id": "112654de17f98945-0",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            656.497664,
+            232.22000000000003,
+            911.3600000000001,
+            627.2214389999999
+          ]
+        },
+        {
+          "id": "112654de17f98945-1",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            818.062336,
+            257.26356100000004,
+            1022.8623360000001,
+            656.818561
+          ]
+        },
+        {
+          "id": "112654de17f98945-2",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            575.715328,
+            217.421439,
+            753.2093440000001,
+            603.3164390000001
+          ]
+        },
+        {
+          "id": "112654de17f98945-3",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            398.2223359999999,
+            227.6664389999999,
+            550.684672,
+            523.633561
+          ]
+        },
+        {
+          "id": "112654de17f98945-4",
+          "canonical_id": 593,
+          "label": "washing machine",
+          "box": [
+            485.8306559999999,
+            232.22000000000003,
+            616.675328,
+            548.6764389999998
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\112654de17f98945.jpg",
+      "sha256": "0cdc291bdd2f34eb1be3f1d2af0f624c486e7e14792236805572f4b4ff6c58aa",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "3aea3347339089ad",
+      "sequence": "flickr-nsid:24841050@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "3aea3347339089ad-0",
+          "canonical_id": 363,
+          "label": "light switch",
+          "box": [
+            140.00025600000004,
+            66.39974400000007,
+            626.400256,
+            606.399744
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\3aea3347339089ad.jpg",
+      "sha256": "c1dfe235806e5653695acd0f51af807ef33c2f105acac5c38ca33ff9d6ef850b",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "223a505ea7a95de5",
+      "sequence": "flickr-nsid:98027690@N00",
+      "width": 768,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "223a505ea7a95de5-0",
+          "canonical_id": 234,
+          "label": "door handle",
+          "box": [
+            464.00025600000004,
+            151.03999999999996,
+            755.840256,
+            261.12
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\223a505ea7a95de5.jpg",
+      "sha256": "6e348abf3d67d1acd732b26f93e8969bfe00e536c8307a0b6d34f4aea44cf266",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 234,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 133,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 593,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 600,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 193,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 322,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 150,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "eb6d5f3d9c4ffd11",
+      "sequence": "flickr-nsid:24215621@N08",
+      "width": 1024,
+      "height": 680,
+      "targets": [
+        {
+          "id": "eb6d5f3d9c4ffd11-0",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            300.16,
+            460.37631999999996,
+            408.96,
+            633.25816
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\eb6d5f3d9c4ffd11.jpg",
+      "sha256": "50e9cbe100235ad8779562c422f4bbd4e96a92592e5f44055a7b1b86d3f2d5ca",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "6bc89ab9acd20799",
+      "sequence": "flickr-nsid:24175099@N06",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "6bc89ab9acd20799-0",
+          "canonical_id": 16,
+          "label": "dog",
+          "box": [
+            485.11999999999995,
+            168.96000000000004,
+            770.56,
+            552.96
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\6bc89ab9acd20799.jpg",
+      "sha256": "8a6ca93637604dbc92390e034678938cbdf20741a13a87c1064b18673ae1d455",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "0b12f7cbdc590684",
+      "sequence": "flickr-nsid:87542849@N00",
+      "width": 1024,
+      "height": 680,
+      "targets": [
+        {
+          "id": "0b12f7cbdc590684-0",
+          "canonical_id": 12,
+          "label": "parking meter",
+          "box": [
+            273.28,
+            55.06572000000001,
+            708.48,
+            679.35944
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\0b12f7cbdc590684.jpg",
+      "sha256": "911e841272995416dee856f24248f54a487452cc528a165dca62ca307444d89a",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "c6167ee9ad368e61",
+      "sequence": "flickr-nsid:85318305@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "c6167ee9ad368e61-0",
+          "canonical_id": 529,
+          "label": "street light",
+          "box": [
+            277.12,
+            62.72025600000008,
+            503.0400000000001,
+            766.719744
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\c6167ee9ad368e61.jpg",
+      "sha256": "0959e6f7b62b15b3081acf7be09b1912266c475575553bb15ad3a29b03b0754d",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "480db73ba10e4598",
+      "sequence": "flickr-nsid:32781193@N00",
+      "width": 1024,
+      "height": 575,
+      "targets": [
+        {
+          "id": "480db73ba10e4598-0",
+          "canonical_id": 583,
+          "label": "van",
+          "box": [
+            714.88,
+            499.527225,
+            815.36,
+            559.009825
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\480db73ba10e4598.jpg",
+      "sha256": "e05fe300e8c37b1b26596236c8ecb27c09592064e550f483af4c00151d1632d5",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "645fc9cec5a1c559",
+      "sequence": "flickr-nsid:95854051@N00",
+      "width": 740,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "645fc9cec5a1c559-0",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            372.24219999999997,
+            394.88,
+            545.8698800000001,
+            678.4
+          ]
+        },
+        {
+          "id": "645fc9cec5a1c559-1",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            358.78752000000003,
+            679.6799999999998,
+            538.82286,
+            855.04
+          ]
+        },
+        {
+          "id": "645fc9cec5a1c559-2",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            20.502440000000007,
+            774.4,
+            165.93908,
+            912.64
+          ]
+        },
+        {
+          "id": "645fc9cec5a1c559-3",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            353.02144000000004,
+            902.4000000000001,
+            538.82286,
+            994.56
+          ]
+        },
+        {
+          "id": "645fc9cec5a1c559-4",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            493.33358,
+            13.439999999999998,
+            588.1557,
+            101.12
+          ]
+        },
+        {
+          "id": "645fc9cec5a1c559-5",
+          "canonical_id": 133,
+          "label": "billboard",
+          "box": [
+            598.40692,
+            58.879999999999995,
+            641.97368,
+            151.68
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\645fc9cec5a1c559.jpg",
+      "sha256": "3a80a9f98e566182a7b158a663f3ae1f9c91f23c92a9620b33b004d5431a3624",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "10ddb3ddb4b44add",
+      "sequence": "flickr-nsid:48600098077@N01",
+      "width": 1024,
+      "height": 576,
+      "targets": [
+        {
+          "id": "10ddb3ddb4b44add-0",
+          "canonical_id": 363,
+          "label": "light switch",
+          "box": [
+            309.76,
+            129.920256,
+            650.88,
+            517.120128
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\10ddb3ddb4b44add.jpg",
+      "sha256": "fa6d0a711122c581772b0288f181039b1eb611f10250973a533566a922721684",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 363,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 133,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 593,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 600,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 193,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 322,
+          "complete": true,
+          "absence_confirmed": true
+        },
+        {
+          "canonical_id": 150,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    },
+    {
+      "id": "3f6a34f0124764f2",
+      "sequence": "flickr-nsid:77562960@N00",
+      "width": 768,
+      "height": 1024,
+      "targets": [
+        {
+          "id": "3f6a34f0124764f2-0",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            180.48000000000002,
+            696.96,
+            547.839744,
+            1023.3600000000001
+          ]
+        },
+        {
+          "id": "3f6a34f0124764f2-1",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            78.72000000000003,
+            453.75999999999993,
+            399.36,
+            742.3999999999999
+          ]
+        },
+        {
+          "id": "3f6a34f0124764f2-2",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            446.07974399999995,
+            355.8399999999999,
+            656.0002559999999,
+            644.48
+          ]
+        },
+        {
+          "id": "3f6a34f0124764f2-3",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            0.0,
+            691.2,
+            85.760256,
+            978.56
+          ]
+        },
+        {
+          "id": "3f6a34f0124764f2-4",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            266.240256,
+            266.24,
+            444.800256,
+            402.55999999999995
+          ]
+        },
+        {
+          "id": "3f6a34f0124764f2-5",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            111.99974399999999,
+            308.48,
+            285.4402560000001,
+            427.52
+          ]
+        },
+        {
+          "id": "3f6a34f0124764f2-6",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            381.44025600000003,
+            182.40000000000003,
+            512.64,
+            301.44
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\3f6a34f0124764f2.jpg",
+      "sha256": "1c7f605b55d9c3a3a46809c4af08bfa963b0bcd22b9c686194e6dc44a441de66",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "f69d389a2b269d99",
+      "sequence": "flickr-nsid:90809455@N00",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "f69d389a2b269d99-0",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            42.24000000000001,
+            211.839744,
+            168.32,
+            258.560256
+          ]
+        },
+        {
+          "id": "f69d389a2b269d99-1",
+          "canonical_id": 571,
+          "label": "traffic sign",
+          "box": [
+            132.47999999999996,
+            398.72025600000006,
+            183.68,
+            440.96025599999996
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\f69d389a2b269d99.jpg",
+      "sha256": "afc354cd444560a5681f6189cb85729568419231935741b76431c245e0093dbe",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "026b29bc52be2663",
+      "sequence": "flickr-nsid:27899690@N05",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "026b29bc52be2663-0",
+          "canonical_id": 275,
+          "label": "frying pan",
+          "box": [
+            315.52,
+            346.239744,
+            798.72,
+            454.400256
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\026b29bc52be2663.jpg",
+      "sha256": "2d1866adda151176defab391818e561daa97e63420064719cdbd6e078af85f3a",
+      "original_split": "test",
+      "complete_class_scopes": []
+    },
+    {
+      "id": "dd156d575ce21553",
+      "sequence": "flickr-nsid:46915959@N06",
+      "width": 1024,
+      "height": 768,
+      "targets": [
+        {
+          "id": "dd156d575ce21553-0",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            261.76,
+            447.36,
+            547.84,
+            650.8799999999999
+          ]
+        },
+        {
+          "id": "dd156d575ce21553-1",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            292.48,
+            356.480256,
+            456.31999999999994,
+            515.199744
+          ]
+        },
+        {
+          "id": "dd156d575ce21553-2",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            644.48,
+            251.52,
+            783.3600000000001,
+            357.75974400000007
+          ]
+        },
+        {
+          "id": "dd156d575ce21553-3",
+          "canonical_id": 15,
+          "label": "cat",
+          "box": [
+            534.4,
+            183.03974399999998,
+            577.92,
+            275.840256
+          ]
+        }
+      ],
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\17\\01a14c2d-b771-7a40-ba9b-e8277e4905a1\\work\\rf-balanced-continuation-20261018-v1\\rf-balanced-ddbb57c6-v1\\release\\images\\dd156d575ce21553.jpg",
+      "sha256": "61af2fbb08b302d188ff6baf47a28fc98a9e76a4f4d3fd4a0aa26cd57ff38b0d",
+      "original_split": "test",
+      "complete_class_scopes": [
+        {
+          "canonical_id": 15,
+          "complete": true,
+          "absence_confirmed": false
+        },
+        {
+          "canonical_id": 16,
+          "complete": true,
+          "absence_confirmed": true
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    {
+      "canonical_id": 0,
+      "canonical_name": "person"
+    },
+    {
+      "canonical_id": 1,
+      "canonical_name": "bicycle"
+    },
+    {
+      "canonical_id": 2,
+      "canonical_name": "car"
+    },
+    {
+      "canonical_id": 3,
+      "canonical_name": "motorcycle"
+    },
+    {
+      "canonical_id": 4,
+      "canonical_name": "airplane"
+    },
+    {
+      "canonical_id": 5,
+      "canonical_name": "bus"
+    },
+    {
+      "canonical_id": 6,
+      "canonical_name": "train"
+    },
+    {
+      "canonical_id": 7,
+      "canonical_name": "truck"
+    },
+    {
+      "canonical_id": 8,
+      "canonical_name": "boat"
+    },
+    {
+      "canonical_id": 9,
+      "canonical_name": "traffic light"
+    },
+    {
+      "canonical_id": 10,
+      "canonical_name": "fire hydrant"
+    },
+    {
+      "canonical_id": 11,
+      "canonical_name": "stop sign"
+    },
+    {
+      "canonical_id": 12,
+      "canonical_name": "parking meter"
+    },
+    {
+      "canonical_id": 13,
+      "canonical_name": "bench"
+    },
+    {
+      "canonical_id": 14,
+      "canonical_name": "bird"
+    },
+    {
+      "canonical_id": 15,
+      "canonical_name": "cat"
+    },
+    {
+      "canonical_id": 16,
+      "canonical_name": "dog"
+    },
+    {
+      "canonical_id": 17,
+      "canonical_name": "horse"
+    },
+    {
+      "canonical_id": 18,
+      "canonical_name": "sheep"
+    },
+    {
+      "canonical_id": 19,
+      "canonical_name": "cow"
+    },
+    {
+      "canonical_id": 20,
+      "canonical_name": "elephant"
+    },
+    {
+      "canonical_id": 21,
+      "canonical_name": "bear"
+    },
+    {
+      "canonical_id": 22,
+      "canonical_name": "zebra"
+    },
+    {
+      "canonical_id": 23,
+      "canonical_name": "giraffe"
+    },
+    {
+      "canonical_id": 24,
+      "canonical_name": "backpack"
+    },
+    {
+      "canonical_id": 25,
+      "canonical_name": "umbrella"
+    },
+    {
+      "canonical_id": 26,
+      "canonical_name": "handbag"
+    },
+    {
+      "canonical_id": 27,
+      "canonical_name": "tie"
+    },
+    {
+      "canonical_id": 28,
+      "canonical_name": "suitcase"
+    },
+    {
+      "canonical_id": 29,
+      "canonical_name": "frisbee"
+    },
+    {
+      "canonical_id": 30,
+      "canonical_name": "skis"
+    },
+    {
+      "canonical_id": 31,
+      "canonical_name": "snowboard"
+    },
+    {
+      "canonical_id": 32,
+      "canonical_name": "sports ball"
+    },
+    {
+      "canonical_id": 33,
+      "canonical_name": "kite"
+    },
+    {
+      "canonical_id": 34,
+      "canonical_name": "baseball bat"
+    },
+    {
+      "canonical_id": 35,
+      "canonical_name": "baseball glove"
+    },
+    {
+      "canonical_id": 36,
+      "canonical_name": "skateboard"
+    },
+    {
+      "canonical_id": 37,
+      "canonical_name": "surfboard"
+    },
+    {
+      "canonical_id": 38,
+      "canonical_name": "tennis racket"
+    },
+    {
+      "canonical_id": 39,
+      "canonical_name": "bottle"
+    },
+    {
+      "canonical_id": 40,
+      "canonical_name": "wine glass"
+    },
+    {
+      "canonical_id": 41,
+      "canonical_name": "cup"
+    },
+    {
+      "canonical_id": 42,
+      "canonical_name": "fork"
+    },
+    {
+      "canonical_id": 43,
+      "canonical_name": "knife"
+    },
+    {
+      "canonical_id": 44,
+      "canonical_name": "spoon"
+    },
+    {
+      "canonical_id": 45,
+      "canonical_name": "bowl"
+    },
+    {
+      "canonical_id": 46,
+      "canonical_name": "banana"
+    },
+    {
+      "canonical_id": 47,
+      "canonical_name": "apple"
+    },
+    {
+      "canonical_id": 48,
+      "canonical_name": "sandwich"
+    },
+    {
+      "canonical_id": 49,
+      "canonical_name": "orange"
+    },
+    {
+      "canonical_id": 50,
+      "canonical_name": "broccoli"
+    },
+    {
+      "canonical_id": 51,
+      "canonical_name": "carrot"
+    },
+    {
+      "canonical_id": 52,
+      "canonical_name": "hot dog"
+    },
+    {
+      "canonical_id": 53,
+      "canonical_name": "pizza"
+    },
+    {
+      "canonical_id": 54,
+      "canonical_name": "donut"
+    },
+    {
+      "canonical_id": 55,
+      "canonical_name": "cake"
+    },
+    {
+      "canonical_id": 56,
+      "canonical_name": "chair"
+    },
+    {
+      "canonical_id": 57,
+      "canonical_name": "couch"
+    },
+    {
+      "canonical_id": 58,
+      "canonical_name": "potted plant"
+    },
+    {
+      "canonical_id": 59,
+      "canonical_name": "bed"
+    },
+    {
+      "canonical_id": 60,
+      "canonical_name": "dining table"
+    },
+    {
+      "canonical_id": 61,
+      "canonical_name": "toilet"
+    },
+    {
+      "canonical_id": 62,
+      "canonical_name": "tv"
+    },
+    {
+      "canonical_id": 63,
+      "canonical_name": "laptop"
+    },
+    {
+      "canonical_id": 64,
+      "canonical_name": "mouse"
+    },
+    {
+      "canonical_id": 65,
+      "canonical_name": "remote"
+    },
+    {
+      "canonical_id": 66,
+      "canonical_name": "keyboard"
+    },
+    {
+      "canonical_id": 67,
+      "canonical_name": "cell phone"
+    },
+    {
+      "canonical_id": 68,
+      "canonical_name": "microwave"
+    },
+    {
+      "canonical_id": 69,
+      "canonical_name": "oven"
+    },
+    {
+      "canonical_id": 70,
+      "canonical_name": "toaster"
+    },
+    {
+      "canonical_id": 71,
+      "canonical_name": "sink"
+    },
+    {
+      "canonical_id": 72,
+      "canonical_name": "refrigerator"
+    },
+    {
+      "canonical_id": 73,
+      "canonical_name": "book"
+    },
+    {
+      "canonical_id": 74,
+      "canonical_name": "clock"
+    },
+    {
+      "canonical_id": 75,
+      "canonical_name": "vase"
+    },
+    {
+      "canonical_id": 76,
+      "canonical_name": "scissors"
+    },
+    {
+      "canonical_id": 77,
+      "canonical_name": "teddy bear"
+    },
+    {
+      "canonical_id": 78,
+      "canonical_name": "hair drier"
+    },
+    {
+      "canonical_id": 79,
+      "canonical_name": "toothbrush"
+    },
+    {
+      "canonical_id": 80,
+      "canonical_name": "fox"
+    },
+    {
+      "canonical_id": 81,
+      "canonical_name": "rabbit"
+    },
+    {
+      "canonical_id": 82,
+      "canonical_name": "deer"
+    },
+    {
+      "canonical_id": 83,
+      "canonical_name": "wolf"
+    },
+    {
+      "canonical_id": 84,
+      "canonical_name": "raccoon"
+    },
+    {
+      "canonical_id": 85,
+      "canonical_name": "squirrel"
+    },
+    {
+      "canonical_id": 86,
+      "canonical_name": "balloon"
+    },
+    {
+      "canonical_id": 87,
+      "canonical_name": "lantern"
+    },
+    {
+      "canonical_id": 88,
+      "canonical_name": "duck"
+    },
+    {
+      "canonical_id": 89,
+      "canonical_name": "goose"
+    },
+    {
+      "canonical_id": 90,
+      "canonical_name": "owl"
+    },
+    {
+      "canonical_id": 91,
+      "canonical_name": "bat"
+    },
+    {
+      "canonical_id": 92,
+      "canonical_name": "butterfly"
+    },
+    {
+      "canonical_id": 93,
+      "canonical_name": "bee"
+    },
+    {
+      "canonical_id": 94,
+      "canonical_name": "firefly"
+    },
+    {
+      "canonical_id": 95,
+      "canonical_name": "traffic cone"
+    },
+    {
+      "canonical_id": 96,
+      "canonical_name": "stroller"
+    },
+    {
+      "canonical_id": 97,
+      "canonical_name": "wheelchair"
+    },
+    {
+      "canonical_id": 98,
+      "canonical_name": "forklift"
+    },
+    {
+      "canonical_id": 99,
+      "canonical_name": "shopping cart"
+    },
+    {
+      "canonical_id": 100,
+      "canonical_name": "accordion"
+    },
+    {
+      "canonical_id": 101,
+      "canonical_name": "adhesive tape"
+    },
+    {
+      "canonical_id": 102,
+      "canonical_name": "aircraft"
+    },
+    {
+      "canonical_id": 103,
+      "canonical_name": "alarm clock"
+    },
+    {
+      "canonical_id": 104,
+      "canonical_name": "alpaca"
+    },
+    {
+      "canonical_id": 105,
+      "canonical_name": "ambulance"
+    },
+    {
+      "canonical_id": 106,
+      "canonical_name": "animal"
+    },
+    {
+      "canonical_id": 107,
+      "canonical_name": "ant"
+    },
+    {
+      "canonical_id": 108,
+      "canonical_name": "antelope"
+    },
+    {
+      "canonical_id": 109,
+      "canonical_name": "armadillo"
+    },
+    {
+      "canonical_id": 110,
+      "canonical_name": "artichoke"
+    },
+    {
+      "canonical_id": 111,
+      "canonical_name": "auto part"
+    },
+    {
+      "canonical_id": 112,
+      "canonical_name": "axe"
+    },
+    {
+      "canonical_id": 113,
+      "canonical_name": "bagel"
+    },
+    {
+      "canonical_id": 114,
+      "canonical_name": "baked goods"
+    },
+    {
+      "canonical_id": 115,
+      "canonical_name": "balance beam"
+    },
+    {
+      "canonical_id": 116,
+      "canonical_name": "ball"
+    },
+    {
+      "canonical_id": 117,
+      "canonical_name": "band-aid"
+    },
+    {
+      "canonical_id": 118,
+      "canonical_name": "banjo"
+    },
+    {
+      "canonical_id": 119,
+      "canonical_name": "barge"
+    },
+    {
+      "canonical_id": 120,
+      "canonical_name": "barrel"
+    },
+    {
+      "canonical_id": 121,
+      "canonical_name": "bathroom accessory"
+    },
+    {
+      "canonical_id": 122,
+      "canonical_name": "bathroom cabinet"
+    },
+    {
+      "canonical_id": 123,
+      "canonical_name": "bathtub"
+    },
+    {
+      "canonical_id": 124,
+      "canonical_name": "beaker"
+    },
+    {
+      "canonical_id": 125,
+      "canonical_name": "beehive"
+    },
+    {
+      "canonical_id": 126,
+      "canonical_name": "beer"
+    },
+    {
+      "canonical_id": 127,
+      "canonical_name": "beetle"
+    },
+    {
+      "canonical_id": 128,
+      "canonical_name": "bell pepper"
+    },
+    {
+      "canonical_id": 129,
+      "canonical_name": "belt"
+    },
+    {
+      "canonical_id": 130,
+      "canonical_name": "bicycle helmet"
+    },
+    {
+      "canonical_id": 131,
+      "canonical_name": "bicycle wheel"
+    },
+    {
+      "canonical_id": 132,
+      "canonical_name": "bidet"
+    },
+    {
+      "canonical_id": 133,
+      "canonical_name": "billboard"
+    },
+    {
+      "canonical_id": 134,
+      "canonical_name": "billiard table"
+    },
+    {
+      "canonical_id": 135,
+      "canonical_name": "binoculars"
+    },
+    {
+      "canonical_id": 136,
+      "canonical_name": "blender"
+    },
+    {
+      "canonical_id": 137,
+      "canonical_name": "blue jay"
+    },
+    {
+      "canonical_id": 138,
+      "canonical_name": "bomb"
+    },
+    {
+      "canonical_id": 139,
+      "canonical_name": "bookcase"
+    },
+    {
+      "canonical_id": 140,
+      "canonical_name": "boot"
+    },
+    {
+      "canonical_id": 141,
+      "canonical_name": "bottle opener"
+    },
+    {
+      "canonical_id": 142,
+      "canonical_name": "bow and arrow"
+    },
+    {
+      "canonical_id": 143,
+      "canonical_name": "bowling equipment"
+    },
+    {
+      "canonical_id": 144,
+      "canonical_name": "box"
+    },
+    {
+      "canonical_id": 145,
+      "canonical_name": "brassiere"
+    },
+    {
+      "canonical_id": 146,
+      "canonical_name": "bread"
+    },
+    {
+      "canonical_id": 147,
+      "canonical_name": "briefcase"
+    },
+    {
+      "canonical_id": 148,
+      "canonical_name": "bronze sculpture"
+    },
+    {
+      "canonical_id": 149,
+      "canonical_name": "brown bear"
+    },
+    {
+      "canonical_id": 150,
+      "canonical_name": "building"
+    },
+    {
+      "canonical_id": 151,
+      "canonical_name": "bull"
+    },
+    {
+      "canonical_id": 152,
+      "canonical_name": "burrito"
+    },
+    {
+      "canonical_id": 153,
+      "canonical_name": "bust"
+    },
+    {
+      "canonical_id": 154,
+      "canonical_name": "cabbage"
+    },
+    {
+      "canonical_id": 155,
+      "canonical_name": "cabinetry"
+    },
+    {
+      "canonical_id": 156,
+      "canonical_name": "cake stand"
+    },
+    {
+      "canonical_id": 157,
+      "canonical_name": "calculator"
+    },
+    {
+      "canonical_id": 158,
+      "canonical_name": "camel"
+    },
+    {
+      "canonical_id": 159,
+      "canonical_name": "camera"
+    },
+    {
+      "canonical_id": 160,
+      "canonical_name": "can opener"
+    },
+    {
+      "canonical_id": 161,
+      "canonical_name": "canary"
+    },
+    {
+      "canonical_id": 162,
+      "canonical_name": "candle"
+    },
+    {
+      "canonical_id": 163,
+      "canonical_name": "candy"
+    },
+    {
+      "canonical_id": 164,
+      "canonical_name": "cannon"
+    },
+    {
+      "canonical_id": 165,
+      "canonical_name": "canoe"
+    },
+    {
+      "canonical_id": 166,
+      "canonical_name": "cantaloupe"
+    },
+    {
+      "canonical_id": 167,
+      "canonical_name": "carnivore"
+    },
+    {
+      "canonical_id": 168,
+      "canonical_name": "cart"
+    },
+    {
+      "canonical_id": 169,
+      "canonical_name": "cassette deck"
+    },
+    {
+      "canonical_id": 170,
+      "canonical_name": "castle"
+    },
+    {
+      "canonical_id": 171,
+      "canonical_name": "cat furniture"
+    },
+    {
+      "canonical_id": 172,
+      "canonical_name": "caterpillar"
+    },
+    {
+      "canonical_id": 173,
+      "canonical_name": "cattle"
+    },
+    {
+      "canonical_id": 174,
+      "canonical_name": "ceiling fan"
+    },
+    {
+      "canonical_id": 175,
+      "canonical_name": "cello"
+    },
+    {
+      "canonical_id": 176,
+      "canonical_name": "centipede"
+    },
+    {
+      "canonical_id": 177,
+      "canonical_name": "chainsaw"
+    },
+    {
+      "canonical_id": 178,
+      "canonical_name": "cheese"
+    },
+    {
+      "canonical_id": 179,
+      "canonical_name": "cheetah"
+    },
+    {
+      "canonical_id": 180,
+      "canonical_name": "chest of drawers"
+    },
+    {
+      "canonical_id": 181,
+      "canonical_name": "chicken"
+    },
+    {
+      "canonical_id": 182,
+      "canonical_name": "chime"
+    },
+    {
+      "canonical_id": 183,
+      "canonical_name": "chisel"
+    },
+    {
+      "canonical_id": 184,
+      "canonical_name": "chopsticks"
+    },
+    {
+      "canonical_id": 185,
+      "canonical_name": "christmas tree"
+    },
+    {
+      "canonical_id": 186,
+      "canonical_name": "closet"
+    },
+    {
+      "canonical_id": 187,
+      "canonical_name": "clothing"
+    },
+    {
+      "canonical_id": 188,
+      "canonical_name": "coat"
+    },
+    {
+      "canonical_id": 189,
+      "canonical_name": "cocktail"
+    },
+    {
+      "canonical_id": 190,
+      "canonical_name": "cocktail shaker"
+    },
+    {
+      "canonical_id": 191,
+      "canonical_name": "coconut"
+    },
+    {
+      "canonical_id": 192,
+      "canonical_name": "coffee"
+    },
+    {
+      "canonical_id": 193,
+      "canonical_name": "coffee cup"
+    },
+    {
+      "canonical_id": 194,
+      "canonical_name": "coffee table"
+    },
+    {
+      "canonical_id": 195,
+      "canonical_name": "coffeemaker"
+    },
+    {
+      "canonical_id": 196,
+      "canonical_name": "coin"
+    },
+    {
+      "canonical_id": 197,
+      "canonical_name": "common fig"
+    },
+    {
+      "canonical_id": 198,
+      "canonical_name": "common sunflower"
+    },
+    {
+      "canonical_id": 199,
+      "canonical_name": "computer keyboard"
+    },
+    {
+      "canonical_id": 200,
+      "canonical_name": "computer monitor"
+    },
+    {
+      "canonical_id": 201,
+      "canonical_name": "computer mouse"
+    },
+    {
+      "canonical_id": 202,
+      "canonical_name": "container"
+    },
+    {
+      "canonical_id": 203,
+      "canonical_name": "convenience store"
+    },
+    {
+      "canonical_id": 204,
+      "canonical_name": "cookie"
+    },
+    {
+      "canonical_id": 205,
+      "canonical_name": "cooking spray"
+    },
+    {
+      "canonical_id": 206,
+      "canonical_name": "corded phone"
+    },
+    {
+      "canonical_id": 207,
+      "canonical_name": "cosmetics"
+    },
+    {
+      "canonical_id": 208,
+      "canonical_name": "countertop"
+    },
+    {
+      "canonical_id": 209,
+      "canonical_name": "cowboy hat"
+    },
+    {
+      "canonical_id": 210,
+      "canonical_name": "crab"
+    },
+    {
+      "canonical_id": 211,
+      "canonical_name": "cream"
+    },
+    {
+      "canonical_id": 212,
+      "canonical_name": "cricket ball"
+    },
+    {
+      "canonical_id": 213,
+      "canonical_name": "crocodile"
+    },
+    {
+      "canonical_id": 214,
+      "canonical_name": "croissant"
+    },
+    {
+      "canonical_id": 215,
+      "canonical_name": "crown"
+    },
+    {
+      "canonical_id": 216,
+      "canonical_name": "crutch"
+    },
+    {
+      "canonical_id": 217,
+      "canonical_name": "cucumber"
+    },
+    {
+      "canonical_id": 218,
+      "canonical_name": "cupboard"
+    },
+    {
+      "canonical_id": 219,
+      "canonical_name": "curtain"
+    },
+    {
+      "canonical_id": 220,
+      "canonical_name": "cutting board"
+    },
+    {
+      "canonical_id": 221,
+      "canonical_name": "dagger"
+    },
+    {
+      "canonical_id": 222,
+      "canonical_name": "dairy product"
+    },
+    {
+      "canonical_id": 223,
+      "canonical_name": "desk"
+    },
+    {
+      "canonical_id": 224,
+      "canonical_name": "dessert"
+    },
+    {
+      "canonical_id": 225,
+      "canonical_name": "diaper"
+    },
+    {
+      "canonical_id": 226,
+      "canonical_name": "dice"
+    },
+    {
+      "canonical_id": 227,
+      "canonical_name": "digital clock"
+    },
+    {
+      "canonical_id": 228,
+      "canonical_name": "dinosaur"
+    },
+    {
+      "canonical_id": 229,
+      "canonical_name": "dishwasher"
+    },
+    {
+      "canonical_id": 230,
+      "canonical_name": "dog bed"
+    },
+    {
+      "canonical_id": 231,
+      "canonical_name": "doll"
+    },
+    {
+      "canonical_id": 232,
+      "canonical_name": "dolphin"
+    },
+    {
+      "canonical_id": 233,
+      "canonical_name": "door"
+    },
+    {
+      "canonical_id": 234,
+      "canonical_name": "door handle"
+    },
+    {
+      "canonical_id": 235,
+      "canonical_name": "doughnut"
+    },
+    {
+      "canonical_id": 236,
+      "canonical_name": "dragonfly"
+    },
+    {
+      "canonical_id": 237,
+      "canonical_name": "drawer"
+    },
+    {
+      "canonical_id": 238,
+      "canonical_name": "dress"
+    },
+    {
+      "canonical_id": 239,
+      "canonical_name": "drill (tool)"
+    },
+    {
+      "canonical_id": 240,
+      "canonical_name": "drink"
+    },
+    {
+      "canonical_id": 241,
+      "canonical_name": "drinking straw"
+    },
+    {
+      "canonical_id": 242,
+      "canonical_name": "drum"
+    },
+    {
+      "canonical_id": 243,
+      "canonical_name": "dumbbell"
+    },
+    {
+      "canonical_id": 244,
+      "canonical_name": "eagle"
+    },
+    {
+      "canonical_id": 245,
+      "canonical_name": "earrings"
+    },
+    {
+      "canonical_id": 246,
+      "canonical_name": "egg (food)"
+    },
+    {
+      "canonical_id": 247,
+      "canonical_name": "envelope"
+    },
+    {
+      "canonical_id": 248,
+      "canonical_name": "eraser"
+    },
+    {
+      "canonical_id": 249,
+      "canonical_name": "face powder"
+    },
+    {
+      "canonical_id": 250,
+      "canonical_name": "facial tissue holder"
+    },
+    {
+      "canonical_id": 251,
+      "canonical_name": "falcon"
+    },
+    {
+      "canonical_id": 252,
+      "canonical_name": "fashion accessory"
+    },
+    {
+      "canonical_id": 253,
+      "canonical_name": "fast food"
+    },
+    {
+      "canonical_id": 254,
+      "canonical_name": "fax"
+    },
+    {
+      "canonical_id": 255,
+      "canonical_name": "fedora"
+    },
+    {
+      "canonical_id": 256,
+      "canonical_name": "filing cabinet"
+    },
+    {
+      "canonical_id": 257,
+      "canonical_name": "fireplace"
+    },
+    {
+      "canonical_id": 258,
+      "canonical_name": "fish"
+    },
+    {
+      "canonical_id": 259,
+      "canonical_name": "flag"
+    },
+    {
+      "canonical_id": 260,
+      "canonical_name": "flashlight"
+    },
+    {
+      "canonical_id": 261,
+      "canonical_name": "flower"
+    },
+    {
+      "canonical_id": 262,
+      "canonical_name": "flowerpot"
+    },
+    {
+      "canonical_id": 263,
+      "canonical_name": "flute"
+    },
+    {
+      "canonical_id": 264,
+      "canonical_name": "flying disc"
+    },
+    {
+      "canonical_id": 265,
+      "canonical_name": "food"
+    },
+    {
+      "canonical_id": 266,
+      "canonical_name": "food processor"
+    },
+    {
+      "canonical_id": 267,
+      "canonical_name": "football"
+    },
+    {
+      "canonical_id": 268,
+      "canonical_name": "football helmet"
+    },
+    {
+      "canonical_id": 269,
+      "canonical_name": "footwear"
+    },
+    {
+      "canonical_id": 270,
+      "canonical_name": "fountain"
+    },
+    {
+      "canonical_id": 271,
+      "canonical_name": "french fries"
+    },
+    {
+      "canonical_id": 272,
+      "canonical_name": "french horn"
+    },
+    {
+      "canonical_id": 273,
+      "canonical_name": "frog"
+    },
+    {
+      "canonical_id": 274,
+      "canonical_name": "fruit"
+    },
+    {
+      "canonical_id": 275,
+      "canonical_name": "frying pan"
+    },
+    {
+      "canonical_id": 276,
+      "canonical_name": "furniture"
+    },
+    {
+      "canonical_id": 277,
+      "canonical_name": "garden asparagus"
+    },
+    {
+      "canonical_id": 278,
+      "canonical_name": "gas stove"
+    },
+    {
+      "canonical_id": 279,
+      "canonical_name": "glasses"
+    },
+    {
+      "canonical_id": 280,
+      "canonical_name": "glove"
+    },
+    {
+      "canonical_id": 281,
+      "canonical_name": "goat"
+    },
+    {
+      "canonical_id": 282,
+      "canonical_name": "goggles"
+    },
+    {
+      "canonical_id": 283,
+      "canonical_name": "goldfish"
+    },
+    {
+      "canonical_id": 284,
+      "canonical_name": "golf ball"
+    },
+    {
+      "canonical_id": 285,
+      "canonical_name": "golf cart"
+    },
+    {
+      "canonical_id": 286,
+      "canonical_name": "gondola"
+    },
+    {
+      "canonical_id": 287,
+      "canonical_name": "grape"
+    },
+    {
+      "canonical_id": 288,
+      "canonical_name": "grapefruit"
+    },
+    {
+      "canonical_id": 289,
+      "canonical_name": "grinder"
+    },
+    {
+      "canonical_id": 290,
+      "canonical_name": "guacamole"
+    },
+    {
+      "canonical_id": 291,
+      "canonical_name": "guitar"
+    },
+    {
+      "canonical_id": 292,
+      "canonical_name": "hair dryer"
+    },
+    {
+      "canonical_id": 293,
+      "canonical_name": "hair spray"
+    },
+    {
+      "canonical_id": 294,
+      "canonical_name": "hamburger"
+    },
+    {
+      "canonical_id": 295,
+      "canonical_name": "hammer"
+    },
+    {
+      "canonical_id": 296,
+      "canonical_name": "hamster"
+    },
+    {
+      "canonical_id": 297,
+      "canonical_name": "hand dryer"
+    },
+    {
+      "canonical_id": 298,
+      "canonical_name": "handgun"
+    },
+    {
+      "canonical_id": 299,
+      "canonical_name": "harbor seal"
+    },
+    {
+      "canonical_id": 300,
+      "canonical_name": "harmonica"
+    },
+    {
+      "canonical_id": 301,
+      "canonical_name": "harp"
+    },
+    {
+      "canonical_id": 302,
+      "canonical_name": "harpsichord"
+    },
+    {
+      "canonical_id": 303,
+      "canonical_name": "hat"
+    },
+    {
+      "canonical_id": 304,
+      "canonical_name": "headphones"
+    },
+    {
+      "canonical_id": 305,
+      "canonical_name": "heater"
+    },
+    {
+      "canonical_id": 306,
+      "canonical_name": "hedgehog"
+    },
+    {
+      "canonical_id": 307,
+      "canonical_name": "helicopter"
+    },
+    {
+      "canonical_id": 308,
+      "canonical_name": "helmet"
+    },
+    {
+      "canonical_id": 309,
+      "canonical_name": "high heels"
+    },
+    {
+      "canonical_id": 310,
+      "canonical_name": "hiking equipment"
+    },
+    {
+      "canonical_id": 311,
+      "canonical_name": "hippopotamus"
+    },
+    {
+      "canonical_id": 312,
+      "canonical_name": "home appliance"
+    },
+    {
+      "canonical_id": 313,
+      "canonical_name": "honeycomb"
+    },
+    {
+      "canonical_id": 314,
+      "canonical_name": "horizontal bar"
+    },
+    {
+      "canonical_id": 315,
+      "canonical_name": "house"
+    },
+    {
+      "canonical_id": 316,
+      "canonical_name": "houseplant"
+    },
+    {
+      "canonical_id": 317,
+      "canonical_name": "human arm"
+    },
+    {
+      "canonical_id": 318,
+      "canonical_name": "human beard"
+    },
+    {
+      "canonical_id": 319,
+      "canonical_name": "human body"
+    },
+    {
+      "canonical_id": 320,
+      "canonical_name": "human ear"
+    },
+    {
+      "canonical_id": 321,
+      "canonical_name": "human eye"
+    },
+    {
+      "canonical_id": 322,
+      "canonical_name": "human face"
+    },
+    {
+      "canonical_id": 323,
+      "canonical_name": "human foot"
+    },
+    {
+      "canonical_id": 324,
+      "canonical_name": "human hair"
+    },
+    {
+      "canonical_id": 325,
+      "canonical_name": "human hand"
+    },
+    {
+      "canonical_id": 326,
+      "canonical_name": "human head"
+    },
+    {
+      "canonical_id": 327,
+      "canonical_name": "human leg"
+    },
+    {
+      "canonical_id": 328,
+      "canonical_name": "human mouth"
+    },
+    {
+      "canonical_id": 329,
+      "canonical_name": "human nose"
+    },
+    {
+      "canonical_id": 330,
+      "canonical_name": "humidifier"
+    },
+    {
+      "canonical_id": 331,
+      "canonical_name": "ice cream"
+    },
+    {
+      "canonical_id": 332,
+      "canonical_name": "indoor rower"
+    },
+    {
+      "canonical_id": 333,
+      "canonical_name": "infant bed"
+    },
+    {
+      "canonical_id": 334,
+      "canonical_name": "insect"
+    },
+    {
+      "canonical_id": 335,
+      "canonical_name": "invertebrate"
+    },
+    {
+      "canonical_id": 336,
+      "canonical_name": "ipod"
+    },
+    {
+      "canonical_id": 337,
+      "canonical_name": "isopod"
+    },
+    {
+      "canonical_id": 338,
+      "canonical_name": "jacket"
+    },
+    {
+      "canonical_id": 339,
+      "canonical_name": "jacuzzi"
+    },
+    {
+      "canonical_id": 340,
+      "canonical_name": "jaguar (animal)"
+    },
+    {
+      "canonical_id": 341,
+      "canonical_name": "jeans"
+    },
+    {
+      "canonical_id": 342,
+      "canonical_name": "jellyfish"
+    },
+    {
+      "canonical_id": 343,
+      "canonical_name": "jet ski"
+    },
+    {
+      "canonical_id": 344,
+      "canonical_name": "jug"
+    },
+    {
+      "canonical_id": 345,
+      "canonical_name": "juice"
+    },
+    {
+      "canonical_id": 346,
+      "canonical_name": "kangaroo"
+    },
+    {
+      "canonical_id": 347,
+      "canonical_name": "kettle"
+    },
+    {
+      "canonical_id": 348,
+      "canonical_name": "kitchen & dining room table"
+    },
+    {
+      "canonical_id": 349,
+      "canonical_name": "kitchen appliance"
+    },
+    {
+      "canonical_id": 350,
+      "canonical_name": "kitchen knife"
+    },
+    {
+      "canonical_id": 351,
+      "canonical_name": "kitchen utensil"
+    },
+    {
+      "canonical_id": 352,
+      "canonical_name": "kitchenware"
+    },
+    {
+      "canonical_id": 353,
+      "canonical_name": "koala"
+    },
+    {
+      "canonical_id": 354,
+      "canonical_name": "ladder"
+    },
+    {
+      "canonical_id": 355,
+      "canonical_name": "ladle"
+    },
+    {
+      "canonical_id": 356,
+      "canonical_name": "ladybug"
+    },
+    {
+      "canonical_id": 357,
+      "canonical_name": "lamp"
+    },
+    {
+      "canonical_id": 358,
+      "canonical_name": "land vehicle"
+    },
+    {
+      "canonical_id": 359,
+      "canonical_name": "lavender (plant)"
+    },
+    {
+      "canonical_id": 360,
+      "canonical_name": "lemon"
+    },
+    {
+      "canonical_id": 361,
+      "canonical_name": "leopard"
+    },
+    {
+      "canonical_id": 362,
+      "canonical_name": "light bulb"
+    },
+    {
+      "canonical_id": 363,
+      "canonical_name": "light switch"
+    },
+    {
+      "canonical_id": 364,
+      "canonical_name": "lighthouse"
+    },
+    {
+      "canonical_id": 365,
+      "canonical_name": "lily"
+    },
+    {
+      "canonical_id": 366,
+      "canonical_name": "limousine"
+    },
+    {
+      "canonical_id": 367,
+      "canonical_name": "lion"
+    },
+    {
+      "canonical_id": 368,
+      "canonical_name": "lipstick"
+    },
+    {
+      "canonical_id": 369,
+      "canonical_name": "lizard"
+    },
+    {
+      "canonical_id": 370,
+      "canonical_name": "lobster"
+    },
+    {
+      "canonical_id": 371,
+      "canonical_name": "loveseat"
+    },
+    {
+      "canonical_id": 372,
+      "canonical_name": "luggage and bags"
+    },
+    {
+      "canonical_id": 373,
+      "canonical_name": "lynx"
+    },
+    {
+      "canonical_id": 374,
+      "canonical_name": "magpie"
+    },
+    {
+      "canonical_id": 375,
+      "canonical_name": "mammal"
+    },
+    {
+      "canonical_id": 376,
+      "canonical_name": "mango"
+    },
+    {
+      "canonical_id": 377,
+      "canonical_name": "maple"
+    },
+    {
+      "canonical_id": 378,
+      "canonical_name": "maracas"
+    },
+    {
+      "canonical_id": 379,
+      "canonical_name": "marine invertebrates"
+    },
+    {
+      "canonical_id": 380,
+      "canonical_name": "marine mammal"
+    },
+    {
+      "canonical_id": 381,
+      "canonical_name": "measuring cup"
+    },
+    {
+      "canonical_id": 382,
+      "canonical_name": "mechanical fan"
+    },
+    {
+      "canonical_id": 383,
+      "canonical_name": "medical equipment"
+    },
+    {
+      "canonical_id": 384,
+      "canonical_name": "microphone"
+    },
+    {
+      "canonical_id": 385,
+      "canonical_name": "microwave oven"
+    },
+    {
+      "canonical_id": 386,
+      "canonical_name": "milk"
+    },
+    {
+      "canonical_id": 387,
+      "canonical_name": "miniskirt"
+    },
+    {
+      "canonical_id": 388,
+      "canonical_name": "mirror"
+    },
+    {
+      "canonical_id": 389,
+      "canonical_name": "missile"
+    },
+    {
+      "canonical_id": 390,
+      "canonical_name": "mixer"
+    },
+    {
+      "canonical_id": 391,
+      "canonical_name": "mixing bowl"
+    },
+    {
+      "canonical_id": 392,
+      "canonical_name": "monkey"
+    },
+    {
+      "canonical_id": 393,
+      "canonical_name": "moths and butterflies"
+    },
+    {
+      "canonical_id": 394,
+      "canonical_name": "muffin"
+    },
+    {
+      "canonical_id": 395,
+      "canonical_name": "mug"
+    },
+    {
+      "canonical_id": 396,
+      "canonical_name": "mule"
+    },
+    {
+      "canonical_id": 397,
+      "canonical_name": "mushroom"
+    },
+    {
+      "canonical_id": 398,
+      "canonical_name": "musical instrument"
+    },
+    {
+      "canonical_id": 399,
+      "canonical_name": "musical keyboard"
+    },
+    {
+      "canonical_id": 400,
+      "canonical_name": "nail (construction)"
+    },
+    {
+      "canonical_id": 401,
+      "canonical_name": "necklace"
+    },
+    {
+      "canonical_id": 402,
+      "canonical_name": "nightstand"
+    },
+    {
+      "canonical_id": 403,
+      "canonical_name": "oboe"
+    },
+    {
+      "canonical_id": 404,
+      "canonical_name": "office building"
+    },
+    {
+      "canonical_id": 405,
+      "canonical_name": "office supplies"
+    },
+    {
+      "canonical_id": 406,
+      "canonical_name": "organ (musical instrument)"
+    },
+    {
+      "canonical_id": 407,
+      "canonical_name": "ostrich"
+    },
+    {
+      "canonical_id": 408,
+      "canonical_name": "otter"
+    },
+    {
+      "canonical_id": 409,
+      "canonical_name": "oyster"
+    },
+    {
+      "canonical_id": 410,
+      "canonical_name": "paddle"
+    },
+    {
+      "canonical_id": 411,
+      "canonical_name": "palm tree"
+    },
+    {
+      "canonical_id": 412,
+      "canonical_name": "pancake"
+    },
+    {
+      "canonical_id": 413,
+      "canonical_name": "panda"
+    },
+    {
+      "canonical_id": 414,
+      "canonical_name": "paper cutter"
+    },
+    {
+      "canonical_id": 415,
+      "canonical_name": "paper towel"
+    },
+    {
+      "canonical_id": 416,
+      "canonical_name": "parachute"
+    },
+    {
+      "canonical_id": 417,
+      "canonical_name": "parrot"
+    },
+    {
+      "canonical_id": 418,
+      "canonical_name": "pasta"
+    },
+    {
+      "canonical_id": 419,
+      "canonical_name": "pastry"
+    },
+    {
+      "canonical_id": 420,
+      "canonical_name": "peach"
+    },
+    {
+      "canonical_id": 421,
+      "canonical_name": "pear"
+    },
+    {
+      "canonical_id": 422,
+      "canonical_name": "pen"
+    },
+    {
+      "canonical_id": 423,
+      "canonical_name": "pencil case"
+    },
+    {
+      "canonical_id": 424,
+      "canonical_name": "pencil sharpener"
+    },
+    {
+      "canonical_id": 425,
+      "canonical_name": "penguin"
+    },
+    {
+      "canonical_id": 426,
+      "canonical_name": "perfume"
+    },
+    {
+      "canonical_id": 427,
+      "canonical_name": "personal care"
+    },
+    {
+      "canonical_id": 428,
+      "canonical_name": "personal flotation device"
+    },
+    {
+      "canonical_id": 429,
+      "canonical_name": "piano"
+    },
+    {
+      "canonical_id": 430,
+      "canonical_name": "picnic basket"
+    },
+    {
+      "canonical_id": 431,
+      "canonical_name": "picture frame"
+    },
+    {
+      "canonical_id": 432,
+      "canonical_name": "pig"
+    },
+    {
+      "canonical_id": 433,
+      "canonical_name": "pillow"
+    },
+    {
+      "canonical_id": 434,
+      "canonical_name": "pineapple"
+    },
+    {
+      "canonical_id": 435,
+      "canonical_name": "pitcher (container)"
+    },
+    {
+      "canonical_id": 436,
+      "canonical_name": "pizza cutter"
+    },
+    {
+      "canonical_id": 437,
+      "canonical_name": "plant"
+    },
+    {
+      "canonical_id": 438,
+      "canonical_name": "plastic bag"
+    },
+    {
+      "canonical_id": 439,
+      "canonical_name": "plate"
+    },
+    {
+      "canonical_id": 440,
+      "canonical_name": "platter"
+    },
+    {
+      "canonical_id": 441,
+      "canonical_name": "plumbing fixture"
+    },
+    {
+      "canonical_id": 442,
+      "canonical_name": "polar bear"
+    },
+    {
+      "canonical_id": 443,
+      "canonical_name": "pomegranate"
+    },
+    {
+      "canonical_id": 444,
+      "canonical_name": "popcorn"
+    },
+    {
+      "canonical_id": 445,
+      "canonical_name": "porch"
+    },
+    {
+      "canonical_id": 446,
+      "canonical_name": "porcupine"
+    },
+    {
+      "canonical_id": 447,
+      "canonical_name": "poster"
+    },
+    {
+      "canonical_id": 448,
+      "canonical_name": "potato"
+    },
+    {
+      "canonical_id": 449,
+      "canonical_name": "power plugs and sockets"
+    },
+    {
+      "canonical_id": 450,
+      "canonical_name": "pressure cooker"
+    },
+    {
+      "canonical_id": 451,
+      "canonical_name": "pretzel"
+    },
+    {
+      "canonical_id": 452,
+      "canonical_name": "printer"
+    },
+    {
+      "canonical_id": 453,
+      "canonical_name": "pumpkin"
+    },
+    {
+      "canonical_id": 454,
+      "canonical_name": "punching bag"
+    },
+    {
+      "canonical_id": 455,
+      "canonical_name": "racket"
+    },
+    {
+      "canonical_id": 456,
+      "canonical_name": "radish"
+    },
+    {
+      "canonical_id": 457,
+      "canonical_name": "ratchet (device)"
+    },
+    {
+      "canonical_id": 458,
+      "canonical_name": "raven"
+    },
+    {
+      "canonical_id": 459,
+      "canonical_name": "rays and skates"
+    },
+    {
+      "canonical_id": 460,
+      "canonical_name": "red panda"
+    },
+    {
+      "canonical_id": 461,
+      "canonical_name": "remote control"
+    },
+    {
+      "canonical_id": 462,
+      "canonical_name": "reptile"
+    },
+    {
+      "canonical_id": 463,
+      "canonical_name": "rhinoceros"
+    },
+    {
+      "canonical_id": 464,
+      "canonical_name": "rifle"
+    },
+    {
+      "canonical_id": 465,
+      "canonical_name": "ring binder"
+    },
+    {
+      "canonical_id": 466,
+      "canonical_name": "rocket"
+    },
+    {
+      "canonical_id": 467,
+      "canonical_name": "roller skates"
+    },
+    {
+      "canonical_id": 468,
+      "canonical_name": "rose"
+    },
+    {
+      "canonical_id": 469,
+      "canonical_name": "rugby ball"
+    },
+    {
+      "canonical_id": 470,
+      "canonical_name": "ruler"
+    },
+    {
+      "canonical_id": 471,
+      "canonical_name": "salad"
+    },
+    {
+      "canonical_id": 472,
+      "canonical_name": "salt and pepper shakers"
+    },
+    {
+      "canonical_id": 473,
+      "canonical_name": "sandal"
+    },
+    {
+      "canonical_id": 474,
+      "canonical_name": "saucer"
+    },
+    {
+      "canonical_id": 475,
+      "canonical_name": "saxophone"
+    },
+    {
+      "canonical_id": 476,
+      "canonical_name": "scale"
+    },
+    {
+      "canonical_id": 477,
+      "canonical_name": "scarf"
+    },
+    {
+      "canonical_id": 478,
+      "canonical_name": "scoreboard"
+    },
+    {
+      "canonical_id": 479,
+      "canonical_name": "scorpion"
+    },
+    {
+      "canonical_id": 480,
+      "canonical_name": "screwdriver"
+    },
+    {
+      "canonical_id": 481,
+      "canonical_name": "sculpture"
+    },
+    {
+      "canonical_id": 482,
+      "canonical_name": "sea lion"
+    },
+    {
+      "canonical_id": 483,
+      "canonical_name": "sea turtle"
+    },
+    {
+      "canonical_id": 484,
+      "canonical_name": "seafood"
+    },
+    {
+      "canonical_id": 485,
+      "canonical_name": "seahorse"
+    },
+    {
+      "canonical_id": 486,
+      "canonical_name": "seat belt"
+    },
+    {
+      "canonical_id": 487,
+      "canonical_name": "segway"
+    },
+    {
+      "canonical_id": 488,
+      "canonical_name": "serving tray"
+    },
+    {
+      "canonical_id": 489,
+      "canonical_name": "sewing machine"
+    },
+    {
+      "canonical_id": 490,
+      "canonical_name": "shark"
+    },
+    {
+      "canonical_id": 491,
+      "canonical_name": "shelf"
+    },
+    {
+      "canonical_id": 492,
+      "canonical_name": "shellfish"
+    },
+    {
+      "canonical_id": 493,
+      "canonical_name": "shirt"
+    },
+    {
+      "canonical_id": 494,
+      "canonical_name": "shorts"
+    },
+    {
+      "canonical_id": 495,
+      "canonical_name": "shotgun"
+    },
+    {
+      "canonical_id": 496,
+      "canonical_name": "shower"
+    },
+    {
+      "canonical_id": 497,
+      "canonical_name": "shrimp"
+    },
+    {
+      "canonical_id": 498,
+      "canonical_name": "ski"
+    },
+    {
+      "canonical_id": 499,
+      "canonical_name": "skirt"
+    },
+    {
+      "canonical_id": 500,
+      "canonical_name": "skull"
+    },
+    {
+      "canonical_id": 501,
+      "canonical_name": "skunk"
+    },
+    {
+      "canonical_id": 502,
+      "canonical_name": "skyscraper"
+    },
+    {
+      "canonical_id": 503,
+      "canonical_name": "slow cooker"
+    },
+    {
+      "canonical_id": 504,
+      "canonical_name": "snack"
+    },
+    {
+      "canonical_id": 505,
+      "canonical_name": "snail"
+    },
+    {
+      "canonical_id": 506,
+      "canonical_name": "snake"
+    },
+    {
+      "canonical_id": 507,
+      "canonical_name": "snowman"
+    },
+    {
+      "canonical_id": 508,
+      "canonical_name": "snowmobile"
+    },
+    {
+      "canonical_id": 509,
+      "canonical_name": "snowplow"
+    },
+    {
+      "canonical_id": 510,
+      "canonical_name": "soap dispenser"
+    },
+    {
+      "canonical_id": 511,
+      "canonical_name": "sock"
+    },
+    {
+      "canonical_id": 512,
+      "canonical_name": "sofa bed"
+    },
+    {
+      "canonical_id": 513,
+      "canonical_name": "sombrero"
+    },
+    {
+      "canonical_id": 514,
+      "canonical_name": "sparrow"
+    },
+    {
+      "canonical_id": 515,
+      "canonical_name": "spatula"
+    },
+    {
+      "canonical_id": 516,
+      "canonical_name": "spice rack"
+    },
+    {
+      "canonical_id": 517,
+      "canonical_name": "spider"
+    },
+    {
+      "canonical_id": 518,
+      "canonical_name": "sports equipment"
+    },
+    {
+      "canonical_id": 519,
+      "canonical_name": "sports uniform"
+    },
+    {
+      "canonical_id": 520,
+      "canonical_name": "squash (plant)"
+    },
+    {
+      "canonical_id": 521,
+      "canonical_name": "squid"
+    },
+    {
+      "canonical_id": 522,
+      "canonical_name": "stairs"
+    },
+    {
+      "canonical_id": 523,
+      "canonical_name": "stapler"
+    },
+    {
+      "canonical_id": 524,
+      "canonical_name": "starfish"
+    },
+    {
+      "canonical_id": 525,
+      "canonical_name": "stationary bicycle"
+    },
+    {
+      "canonical_id": 526,
+      "canonical_name": "stethoscope"
+    },
+    {
+      "canonical_id": 527,
+      "canonical_name": "stool"
+    },
+    {
+      "canonical_id": 528,
+      "canonical_name": "strawberry"
+    },
+    {
+      "canonical_id": 529,
+      "canonical_name": "street light"
+    },
+    {
+      "canonical_id": 530,
+      "canonical_name": "stretcher"
+    },
+    {
+      "canonical_id": 531,
+      "canonical_name": "studio couch"
+    },
+    {
+      "canonical_id": 532,
+      "canonical_name": "submarine"
+    },
+    {
+      "canonical_id": 533,
+      "canonical_name": "submarine sandwich"
+    },
+    {
+      "canonical_id": 534,
+      "canonical_name": "suit"
+    },
+    {
+      "canonical_id": 535,
+      "canonical_name": "sun hat"
+    },
+    {
+      "canonical_id": 536,
+      "canonical_name": "sunglasses"
+    },
+    {
+      "canonical_id": 537,
+      "canonical_name": "sushi"
+    },
+    {
+      "canonical_id": 538,
+      "canonical_name": "swan"
+    },
+    {
+      "canonical_id": 539,
+      "canonical_name": "swim cap"
+    },
+    {
+      "canonical_id": 540,
+      "canonical_name": "swimming pool"
+    },
+    {
+      "canonical_id": 541,
+      "canonical_name": "swimwear"
+    },
+    {
+      "canonical_id": 542,
+      "canonical_name": "sword"
+    },
+    {
+      "canonical_id": 543,
+      "canonical_name": "syringe"
+    },
+    {
+      "canonical_id": 544,
+      "canonical_name": "table"
+    },
+    {
+      "canonical_id": 545,
+      "canonical_name": "table tennis racket"
+    },
+    {
+      "canonical_id": 546,
+      "canonical_name": "tablet computer"
+    },
+    {
+      "canonical_id": 547,
+      "canonical_name": "tableware"
+    },
+    {
+      "canonical_id": 548,
+      "canonical_name": "taco"
+    },
+    {
+      "canonical_id": 549,
+      "canonical_name": "tank"
+    },
+    {
+      "canonical_id": 550,
+      "canonical_name": "tap"
+    },
+    {
+      "canonical_id": 551,
+      "canonical_name": "tart"
+    },
+    {
+      "canonical_id": 552,
+      "canonical_name": "taxi"
+    },
+    {
+      "canonical_id": 553,
+      "canonical_name": "tea"
+    },
+    {
+      "canonical_id": 554,
+      "canonical_name": "teapot"
+    },
+    {
+      "canonical_id": 555,
+      "canonical_name": "telephone"
+    },
+    {
+      "canonical_id": 556,
+      "canonical_name": "tennis ball"
+    },
+    {
+      "canonical_id": 557,
+      "canonical_name": "tent"
+    },
+    {
+      "canonical_id": 558,
+      "canonical_name": "tiara"
+    },
+    {
+      "canonical_id": 559,
+      "canonical_name": "tick"
+    },
+    {
+      "canonical_id": 560,
+      "canonical_name": "tiger"
+    },
+    {
+      "canonical_id": 561,
+      "canonical_name": "tin can"
+    },
+    {
+      "canonical_id": 562,
+      "canonical_name": "tire"
+    },
+    {
+      "canonical_id": 563,
+      "canonical_name": "toilet paper"
+    },
+    {
+      "canonical_id": 564,
+      "canonical_name": "tomato"
+    },
+    {
+      "canonical_id": 565,
+      "canonical_name": "tool"
+    },
+    {
+      "canonical_id": 566,
+      "canonical_name": "torch"
+    },
+    {
+      "canonical_id": 567,
+      "canonical_name": "tortoise"
+    },
+    {
+      "canonical_id": 568,
+      "canonical_name": "towel"
+    },
+    {
+      "canonical_id": 569,
+      "canonical_name": "tower"
+    },
+    {
+      "canonical_id": 570,
+      "canonical_name": "toy"
+    },
+    {
+      "canonical_id": 571,
+      "canonical_name": "traffic sign"
+    },
+    {
+      "canonical_id": 572,
+      "canonical_name": "training bench"
+    },
+    {
+      "canonical_id": 573,
+      "canonical_name": "treadmill"
+    },
+    {
+      "canonical_id": 574,
+      "canonical_name": "tree"
+    },
+    {
+      "canonical_id": 575,
+      "canonical_name": "tree house"
+    },
+    {
+      "canonical_id": 576,
+      "canonical_name": "tripod"
+    },
+    {
+      "canonical_id": 577,
+      "canonical_name": "trombone"
+    },
+    {
+      "canonical_id": 578,
+      "canonical_name": "trousers"
+    },
+    {
+      "canonical_id": 579,
+      "canonical_name": "trumpet"
+    },
+    {
+      "canonical_id": 580,
+      "canonical_name": "turkey"
+    },
+    {
+      "canonical_id": 581,
+      "canonical_name": "turtle"
+    },
+    {
+      "canonical_id": 582,
+      "canonical_name": "unicycle"
+    },
+    {
+      "canonical_id": 583,
+      "canonical_name": "van"
+    },
+    {
+      "canonical_id": 584,
+      "canonical_name": "vegetable"
+    },
+    {
+      "canonical_id": 585,
+      "canonical_name": "vehicle"
+    },
+    {
+      "canonical_id": 586,
+      "canonical_name": "vehicle registration plate"
+    },
+    {
+      "canonical_id": 587,
+      "canonical_name": "violin"
+    },
+    {
+      "canonical_id": 588,
+      "canonical_name": "volleyball (ball)"
+    },
+    {
+      "canonical_id": 589,
+      "canonical_name": "waffle"
+    },
+    {
+      "canonical_id": 590,
+      "canonical_name": "waffle iron"
+    },
+    {
+      "canonical_id": 591,
+      "canonical_name": "wall clock"
+    },
+    {
+      "canonical_id": 592,
+      "canonical_name": "wardrobe"
+    },
+    {
+      "canonical_id": 593,
+      "canonical_name": "washing machine"
+    },
+    {
+      "canonical_id": 594,
+      "canonical_name": "waste container"
+    },
+    {
+      "canonical_id": 595,
+      "canonical_name": "watch"
+    },
+    {
+      "canonical_id": 596,
+      "canonical_name": "watercraft"
+    },
+    {
+      "canonical_id": 597,
+      "canonical_name": "watermelon"
+    },
+    {
+      "canonical_id": 598,
+      "canonical_name": "weapon"
+    },
+    {
+      "canonical_id": 599,
+      "canonical_name": "whale"
+    },
+    {
+      "canonical_id": 600,
+      "canonical_name": "wheel"
+    },
+    {
+      "canonical_id": 601,
+      "canonical_name": "whisk"
+    },
+    {
+      "canonical_id": 602,
+      "canonical_name": "whiteboard"
+    },
+    {
+      "canonical_id": 603,
+      "canonical_name": "willow"
+    },
+    {
+      "canonical_id": 604,
+      "canonical_name": "window"
+    },
+    {
+      "canonical_id": 605,
+      "canonical_name": "window blind"
+    },
+    {
+      "canonical_id": 606,
+      "canonical_name": "wine"
+    },
+    {
+      "canonical_id": 607,
+      "canonical_name": "wine rack"
+    },
+    {
+      "canonical_id": 608,
+      "canonical_name": "winter melon"
+    },
+    {
+      "canonical_id": 609,
+      "canonical_name": "wok"
+    },
+    {
+      "canonical_id": 610,
+      "canonical_name": "wood-burning stove"
+    },
+    {
+      "canonical_id": 611,
+      "canonical_name": "woodpecker"
+    },
+    {
+      "canonical_id": 612,
+      "canonical_name": "worm"
+    },
+    {
+      "canonical_id": 613,
+      "canonical_name": "wrench"
+    },
+    {
+      "canonical_id": 614,
+      "canonical_name": "zucchini"
+    }
+  ],
+  "vocabulary_sha256": "f0eec69fdf6f979455429e53dd9ad472a8ac02f3fdcebd9e9530a6cd41b4fa60",
+  "baseline_identity": {
+    "confidence": 0.35,
+    "nms_iou": 0.45,
+    "max_detections": 100
+  },
+  "evaluation": {
+    "iou_threshold": 0.5
+  },
+  "approved_for_training": false,
+  "frozen_label_and_metric_scope": true
+}

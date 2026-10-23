@@ -1,0 +1,64 @@
+{
+  "image_id": "fdc17f9ac37a5295",
+  "image_sha256": "ff878bdefeb65f968907891b57c71bec33bcc2d93546c80e1ca078dfd07fca45",
+  "publisher_attribution": {
+    "id": "fdc17f9ac37a5295",
+    "landing_url": "https://www.flickr.com/photos/parkstreetparrot/4846036575",
+    "original_url": "https://farm6.staticflickr.com/4110/4846036575_f2141f7085_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "PSParrot",
+    "author_url": "https://www.flickr.com/people/parkstreetparrot/",
+    "title": "POLO_ARMY VERSUS STEVE COLLINS ALL STARS_2",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "PSParrot",
+    "url": "https://www.flickr.com/photos/parkstreetparrot",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/46868174@N08.jpg?1607295130#46868174@N08"
+  },
+  "current_title": "POLO_ARMY VERSUS STEVE COLLINS ALL STARS_2",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "PSParrot",
+        "url": "https://www.flickr.com/photos/parkstreetparrot",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/46868174@N08.jpg?1607295130#46868174@N08"
+      }
+    },
+    "meta_description": "POLO_ARMY VERSUS STEVE COLLINS ALL STARS_1"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/parkstreetparrot/4846036575",
+  "canonical_page_url": "https://www.flickr.com/photos/parkstreetparrot/4846036575",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "e179f622c391d7252302f72d5d7cb98f823104aaf019d5e52448117716ab6fe5",
+  "source_gzip_sha256": "c2ae98a109257596640f22d1006e63813e1b409fc57e90892dd58385130e6b25",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-284",
+  "visual_proof_sha256": "8b25986e194abfe0149a576a61a4fbe06feaf28db50c2c1c49abf16671edb649",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

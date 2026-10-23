@@ -1,0 +1,72 @@
+{
+  "image_id": "161b2715d07d7b6d",
+  "image_sha256": "52b29f2c6687f30f3a1e728e1719a1428eb5fea97e2aba28572ce9db6ea8a314",
+  "publisher_attribution": {
+    "id": "161b2715d07d7b6d",
+    "landing_url": "https://www.flickr.com/photos/anniemole/2784933249",
+    "original_url": "https://c6.staticflickr.com/4/3031/2784933249_4a440a9ddd_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Annie Mole",
+    "author_url": "https://www.flickr.com/people/anniemole/",
+    "title": "Clean plate",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Annie Mole",
+    "url": "https://www.flickr.com/photos/anniemole",
+    "image": "https://live.staticflickr.com/23/buddyicons/21309047@N00.jpg?1205092210#21309047@N00"
+  },
+  "current_title": "Clean plate",
+  "caption_and_notices": {
+    "image_id": "161b2715d07d7b6d",
+    "identity_group": "flickr-nsid:21309047@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "Annie Mole",
+      "url": "https://www.flickr.com/photos/anniemole",
+      "image": "https://live.staticflickr.com/23/buddyicons/21309047@N00.jpg?1205092210#21309047@N00"
+    },
+    "current_title": "Clean plate",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Annie Mole",
+        "url": "https://www.flickr.com/photos/anniemole",
+        "image": "https://live.staticflickr.com/23/buddyicons/21309047@N00.jpg?1205092210#21309047@N00"
+      }
+    },
+    "meta_description": "<a href=\"http://london-underground.blogspot.com/2008/08/hugel-live-twitter-tasting.html\" rel=\"noreferrer nofollow\">london-underground.blogspot.com/2008/08/hugel-live-twitte...</a>"
+  },
+  "source_url": "https://www.flickr.com/photos/anniemole/2784933249",
+  "canonical_page_url": "https://www.flickr.com/photos/anniemole/2784933249",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "636b64380bd3b3e764ac2e89fedd2dec66ea7cb3c3817bf58d6dbdb03e7a36fd",
+  "source_gzip_sha256": "cbc1f6e17931a1b9d609ec651950c1cb33153b6f8f635ca67ab609de6fc15bde",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "ea704317de9d3b1ece2de2d6ddf71247a42da799dd47fd599340f97d5011ce5f"
+}

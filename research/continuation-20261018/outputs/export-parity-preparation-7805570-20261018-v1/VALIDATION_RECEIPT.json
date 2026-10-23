@@ -1,0 +1,10 @@
+{
+  "status": "prepared-contracts-and-missing-approval-guard-verified",
+  "synthetic_parity_contracts_passed": 6,
+  "python_sources_parsed": 3,
+  "input_and_code_hashes_rechecked": 418,
+  "missing_approval_guard_passed": true,
+  "model_exported": false,
+  "export_output_directory_exists": false,
+  "export_plan_sha256": "a019c6c3eb57caa3ee35170ac038a3d450ec0a0073e06e9f9145f2e47ffdb158"
+}

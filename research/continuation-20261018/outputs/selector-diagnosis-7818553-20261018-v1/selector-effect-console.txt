@@ -1,0 +1,8 @@
+[2026-10-18 23:05:19] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-18 23:05:19] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 23:05:19] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 23:05:21] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+{"index": 0, "TRAIN_photos": 20, "targets": 54, "baseline_final_box_covered": 37, "final_box_covered": 38, "photos_with_proposal_order_changed": 18, "photos_with_new_selected_proposals": 18, "total_new_proposals": 271}
+{"index": 1, "TRAIN_photos": 20, "targets": 54, "baseline_final_box_covered": 37, "final_box_covered": 38, "photos_with_proposal_order_changed": 18, "photos_with_new_selected_proposals": 17, "total_new_proposals": 185}
+{"index": 2, "TRAIN_photos": 20, "targets": 54, "baseline_final_box_covered": 37, "final_box_covered": 50, "photos_with_proposal_order_changed": 20, "photos_with_new_selected_proposals": 20, "total_new_proposals": 3074}
+{"index": 3, "TRAIN_photos": 20, "targets": 54, "baseline_final_box_covered": 37, "final_box_covered": 50, "photos_with_proposal_order_changed": 20, "photos_with_new_selected_proposals": 20, "total_new_proposals": 2932}

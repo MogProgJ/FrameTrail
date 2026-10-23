@@ -1,0 +1,80 @@
+{
+  "image_id": "64feab3aaa22fa1b",
+  "image_sha256": "22b8c6cd500ea16426eaf4a69d22df2f5e93128aee19df7272e3999b7e47d38e",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "64feab3aaa22fa1b",
+    "image_sha256": "22b8c6cd500ea16426eaf4a69d22df2f5e93128aee19df7272e3999b7e47d38e",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/dullhunk/7632949526",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/dullhunk/7632949526",
+      "original_url": "https://c4.staticflickr.com/9/8428/7632949526_7f0f819582_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Duncan Hull",
+      "author_url": "https://www.flickr.com/people/dullhunk/",
+      "title": "Co-operatives are everywhere",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Dunk  🐝",
+      "url": "https://www.flickr.com/photos/dullhunk",
+      "image": "https://live.staticflickr.com/5453/buddyicons/14829735@N00.jpg?1369295832#14829735@N00"
+    },
+    "current_title": "Co-operatives are everywhere",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Dunk  🐝",
+          "url": "https://www.flickr.com/photos/dullhunk",
+          "image": "https://live.staticflickr.com/5453/buddyicons/14829735@N00.jpg?1369295832#14829735@N00"
+        }
+      },
+      "meta_description": "P1050272\n\t\n\t<a href=\"http://2012.coop/\" rel=\"noreferrer nofollow\">2012.coop/</a>"
+    },
+    "identity_group": "flickr-nsid:14829735@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/dullhunk/7632949526",
+    "html_sha256": "9f59aca7807eaad8c13e2eb81da2ea45d6329666790326aba9f7e39042644c94",
+    "stored_sha256": "19f18f91b9ba86ee3240c8ec5b937bb1df900e19ed58ad79dea5a882c39a4b74",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\64feab3aaa22fa1b.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\64feab3aaa22fa1b.html.gz",
+    "sha256": "19f18f91b9ba86ee3240c8ec5b937bb1df900e19ed58ad79dea5a882c39a4b74"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

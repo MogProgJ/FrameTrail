@@ -1,0 +1,113 @@
+{
+  "sheet": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\review-sheets\\contrast-05.jpg",
+  "stage": "initial-scene-triage-only-not-label-or-training-clearance",
+  "model_predictions_used": false,
+  "exhaustive_annotation": false,
+  "records": [
+    {
+      "id": "b3e1ae3e7781726e",
+      "role": "val",
+      "anchor": "picture frame",
+      "disposition": "billboard-absence-candidate",
+      "note": "Ornate framed painting"
+    },
+    {
+      "id": "cf6cb3f326b2f890",
+      "role": "val",
+      "anchor": "picture frame",
+      "disposition": "billboard-absence-candidate",
+      "note": "Framed blossom picture"
+    },
+    {
+      "id": "03b25bab135ebfbf",
+      "role": "val",
+      "anchor": "traffic sign",
+      "disposition": "billboard-absence-candidate",
+      "note": "Cliff-edge warning sign"
+    },
+    {
+      "id": "1ebbc822851b0953",
+      "role": "val",
+      "anchor": "traffic sign",
+      "disposition": "billboard-absence-candidate",
+      "note": "Traffic prohibitions"
+    },
+    {
+      "id": "cfa2443f391535ec",
+      "role": "val",
+      "anchor": "traffic sign",
+      "disposition": "billboard-absence-candidate",
+      "note": "Otter-crossing warning sign"
+    },
+    {
+      "id": "d9e8beecc85c8c4a",
+      "role": "val",
+      "anchor": "traffic sign",
+      "disposition": "boundary-hold",
+      "note": "Freestanding road-safety campaign display; same advertising versus information boundary as positive public campaigns"
+    },
+    {
+      "id": "2b92851e9cf25196",
+      "role": "val",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Kitchen with washer"
+    },
+    {
+      "id": "360ff97104b82129",
+      "role": "val",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Domestic laundry appliances"
+    },
+    {
+      "id": "8e68b658ee40cbac",
+      "role": "val",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Utility room with washer"
+    },
+    {
+      "id": "feb45b5974c2e630",
+      "role": "val",
+      "anchor": "washing machine",
+      "disposition": "billboard-absence-candidate",
+      "note": "Washer and dryer"
+    },
+    {
+      "id": "104c82e95a295ba0",
+      "role": "val",
+      "anchor": "whiteboard",
+      "disposition": "billboard-absence-candidate",
+      "note": "Written whiteboard"
+    },
+    {
+      "id": "1b6fa76c4b73e9b3",
+      "role": "val",
+      "anchor": "whiteboard",
+      "disposition": "billboard-absence-candidate",
+      "note": "Illustrated planning whiteboard"
+    },
+    {
+      "id": "4a1a6868eb1dccd8",
+      "role": "val",
+      "anchor": "whiteboard",
+      "disposition": "billboard-absence-candidate",
+      "note": "Presenter beside flipchart"
+    },
+    {
+      "id": "6584195871f94980",
+      "role": "val",
+      "anchor": "whiteboard",
+      "disposition": "billboard-absence-candidate",
+      "note": "Written scheduling whiteboard"
+    },
+    {
+      "id": "aaaf120ef247d0cb",
+      "role": "val",
+      "anchor": "whiteboard",
+      "disposition": "billboard-absence-candidate",
+      "note": "People writing on whiteboard"
+    }
+  ]
+}

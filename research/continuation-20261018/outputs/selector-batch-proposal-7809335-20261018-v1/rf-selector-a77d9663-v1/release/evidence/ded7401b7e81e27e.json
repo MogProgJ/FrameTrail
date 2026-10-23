@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "ded7401b7e81e27e",
+  "image_sha256": "b4b402c29b3c5d2ad0e9927c7d66dcf7373d707842f2fd425460aab4807fe4c8",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "ded7401b7e81e27e",
+    "image_sha256": "b4b402c29b3c5d2ad0e9927c7d66dcf7373d707842f2fd425460aab4807fe4c8",
+    "selected_category": "cat",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/zalexandra/8104944658",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/zalexandra/8104944658",
+      "original_url": "https://c7.staticflickr.com/9/8189/8104944658_e01f56621b_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Alexandra Zakharova",
+      "author_url": "https://www.flickr.com/people/zalexandra/",
+      "title": "Feral cats of Montenegro",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Alexandra Zakharova",
+      "url": "https://www.flickr.com/photos/zalexandra",
+      "image": "https://live.staticflickr.com/2740/buddyicons/27887762@N07.jpg?1257707079#27887762@N07"
+    },
+    "current_title": "Feral cats of Montenegro",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Alexandra Zakharova",
+          "url": "https://www.flickr.com/photos/zalexandra",
+          "image": "https://live.staticflickr.com/2740/buddyicons/27887762@N07.jpg?1257707079#27887762@N07"
+        }
+      },
+      "meta_description": "Black and white photo of a black and white colony of cats I've recently found. There are about twelve cats of the same color and patterns. They make life look like one huge mosaic.\n\tMore about cats of Montenegro is here <a href=\"http://usyaka.wordpress.com/feral-cats-of-montenegro/\" rel=\"noreferrer nofollow\">usyaka.wordpress.com/feral-cats-of-montenegro/</a>"
+    },
+    "identity_group": "flickr-nsid:27887762@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/zalexandra/8104944658",
+    "html_sha256": "e9e37c3cd779bb202ad119084695d5a4223186b80848a0157996f3979fb70adb",
+    "stored_sha256": "5183d2b78a0a225d8d03d47261696a501f4f25338742ad90e5c29a3d068dc7f8",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\ded7401b7e81e27e.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/ded7401b7e81e27e.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

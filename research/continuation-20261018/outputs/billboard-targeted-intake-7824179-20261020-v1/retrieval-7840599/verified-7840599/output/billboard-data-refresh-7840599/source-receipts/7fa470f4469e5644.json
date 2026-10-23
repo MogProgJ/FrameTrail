@@ -1,0 +1,26 @@
+{
+  "image_id": "7fa470f4469e5644",
+  "source_url": "https://www.flickr.com/photos/marylandgreenregistry/9526461264/",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/marylandgreenregistry/9526461264/",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/7fa470f4469e5644.html.gz",
+  "html_bytes": 516999,
+  "html_sha256": "d0824e141864cdb2b365a0eebb3466a497859080a7f45f9ad50476d05be618f0",
+  "stored_sha256": "4403946238ba340aa9d7a18b7edec12fe51d24579367c448a815f63150ea0f99"
+}

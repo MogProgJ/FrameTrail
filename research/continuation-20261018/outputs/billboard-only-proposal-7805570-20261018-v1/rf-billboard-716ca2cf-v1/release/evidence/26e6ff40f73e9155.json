@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "26e6ff40f73e9155",
+  "image_sha256": "f1a51a4d014c15c48ec897e40463798b03bf50bc762e953203a8b1614a989c3e",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "26e6ff40f73e9155",
+    "image_sha256": "f1a51a4d014c15c48ec897e40463798b03bf50bc762e953203a8b1614a989c3e",
+    "selected_category": "washing machine",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/livepine/319250762",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/livepine/319250762",
+      "original_url": "https://farm6.staticflickr.com/129/319250762_b93ffc9ff3_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Chen Zhao",
+      "author_url": "https://www.flickr.com/people/livepine/",
+      "title": "\u8c6a\u5b85\u7684\u53a8\u623f / kitchen in the studio",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Chen Zhao",
+      "url": "https://www.flickr.com/photos/livepine",
+      "image": "https://live.staticflickr.com/8691/buddyicons/75275041@N00.jpg?1426519874#75275041@N00"
+    },
+    "current_title": "\u8c6a\u5b85\u7684\u53a8\u623f / kitchen in the studio",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Chen Zhao",
+          "url": "https://www.flickr.com/photos/livepine",
+          "image": "https://live.staticflickr.com/8691/buddyicons/75275041@N00.jpg?1426519874#75275041@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:75275041@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/livepine/319250762",
+    "html_sha256": "a034221d04e4186da8136f174c3726709b8a1572a69cd20d437653e496b9c102",
+    "stored_sha256": "7cc0280eac9a4d8fd9904b1956cfdebd8a348c413c83208aad8b5b2bb4486b21",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\26e6ff40f73e9155.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/26e6ff40f73e9155.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

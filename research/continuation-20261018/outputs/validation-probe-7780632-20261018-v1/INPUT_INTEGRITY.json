@@ -1,0 +1,144 @@
+{
+  "files": [
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\candidate-manifest-v2.json",
+      "sha256": "e43a2c7a415c4f82209a1fc2471d8677503f51315e71f422ec0d6665eac377b9",
+      "bytes": 2461334
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\trial-audit-7780632-20261018-v1\\validation-misses.json",
+      "sha256": "06f961dfc7b916c2f7e9575c66d54d64b965d774bd3d559a82dd1d99e6269b9d",
+      "bytes": 17670
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\All Modules\\FrameTrail\\.deps\\rfdetr-probe-assets\\rf-detr-small.pth",
+      "sha256": "d81979a9213a2109345158ce9232668df4c1ae52e9b8db3f2ec0a8cbad959b33",
+      "bytes": 386045550
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\rf-mapping.json",
+      "sha256": "fe743b7b4182cffc190486ad9dbb576afb4610fb37e1db67b0f93dc4fec02524",
+      "bytes": 29848
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\scoped_engine.py",
+      "sha256": "c26a3088f81d109b2a31a8682e82228b6602abc574aff80fef38b8208a79272c",
+      "bytes": 6803
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\scoped_metrics.py",
+      "sha256": "3d5760eba50ec4403e144f2c39bb1b49512abd16c492a950dd573c512e610a3d",
+      "bytes": 3855
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\scoped_rf.py",
+      "sha256": "a6c0a6c133676ce2340fdebcfb4658d74eda38804028ba0ee8a82c45e28e3489",
+      "bytes": 7111
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-rf-trial-7769109-v1\\rf-nextdata-tools-v1\\determinism_policy.py",
+      "sha256": "966d7cefc507b65b153d78e295001e6b46f02151c545e2774f7ad8eaf7546b5e",
+      "bytes": 2184
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\11\\01a12a01-d564-7de0-91f4-a16484eea2cb\\rf-comparison-package-20261013-v1\\local-assignment-wheel\\torch_hungarian-0.1.0rc0-py3-none-any.whl",
+      "sha256": "1823ae4d37c870b49e1a0fa460dc9a39649f015210cf5bdb7299507d82cccdeb",
+      "bytes": 16894
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\trial-results-7780632-20261018-v1\\retrieval\\verified-7780632\\output\\rf-nextdata-7780632\\best.pt",
+      "sha256": "3a9adf74b11b851fba7393cc41b12b538a7aa1576b0a4e179468cc36c2279389",
+      "bytes": 115226187
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\trial-results-7780632-20261018-v1\\retrieval\\verified-7780632\\output\\rf-nextdata-7780632\\last.pt",
+      "sha256": "d280723323b4ae8b07f1631667f2d87a9744c3398a06cc94e71dcef04fae2a02",
+      "bytes": 115202741
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\trial-results-7780632-20261018-v1\\retrieval\\verified-7780632\\output\\rf-nextdata-7780632\\validation-0000.json",
+      "sha256": "9bc2beb9fd2e00f3e72353a7dd613948a29c9498fee879ad0ec3fdbce532a858",
+      "bytes": 2584001
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\trial-results-7780632-20261018-v1\\retrieval\\verified-7780632\\output\\rf-nextdata-7780632\\validation-0600.json",
+      "sha256": "03ce980022b4eac8ea4a05b8b8b7cd67e53f498ddb32674aabecbd141f343435",
+      "bytes": 2584007
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\c5daf51ea9fb3442.jpg",
+      "sha256": "b2ed6964fda17e7e6c0138f4b3f386e48635fe08db77c979bdad4a646604af25",
+      "bytes": 204058
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\26e6ff40f73e9155.jpg",
+      "sha256": "f1a51a4d014c15c48ec897e40463798b03bf50bc762e953203a8b1614a989c3e",
+      "bytes": 199045
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\496394d40a8afaed.jpg",
+      "sha256": "52cc8806adf2081422652e2037407be65fd5299b5efceb4b4a3ea20db46d53b0",
+      "bytes": 86482
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\0d61873b3bb7ce16.jpg",
+      "sha256": "f2521d520057e3c7cf03b49fff292f947770c2c8a9997201f75f42c685eb2e6c",
+      "bytes": 741714
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\1364562d8d624829.jpg",
+      "sha256": "34feee043c171ab33e37407cd169d8d0232a4f60188f77c300509300f3a866d9",
+      "bytes": 59993
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\e37f74d1e93cdb0f.jpg",
+      "sha256": "19ffb78ce2ce02f929416c2e3e051829b483e501abaa9ecd42318b3caa0ab35d",
+      "bytes": 371142
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\424bc7dbb0f8677d.jpg",
+      "sha256": "3e86624fda64f65b6478b71d47e4cd8dfddf3df8300cbaf860a761f67bcd1613",
+      "bytes": 111517
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\0cc05f0536cf1f92.jpg",
+      "sha256": "0c68d2bfc321ad061641ba69fbb4b94484965340e288d26889e8fdb13eee2a46",
+      "bytes": 94899
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\4270aa7a23c76953.jpg",
+      "sha256": "b409b6a222a27ae8c7c2a99ff5600935fe64cd3dc9cb43baad94f4923e9b7ac9",
+      "bytes": 217733
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\15e8210bd3027289.jpg",
+      "sha256": "06bc41704f85359c67d0f8ce07ae6a2c94702581416dd64c37e6503327253e6e",
+      "bytes": 175311
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\0e2c4f604dcf1f34.jpg",
+      "sha256": "001096507f268da82189bd7d56218919a1b246b305c7c3c60f79ec7323318e05",
+      "bytes": 396688
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\48e5d66d05d40fb9.jpg",
+      "sha256": "00a4575f55a4b58144036e7fe496f5cd23c89dbef920f9c136a9edb1fc4763ec",
+      "bytes": 448923
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\c7948d268fbb4dd9.jpg",
+      "sha256": "7784d8a9d7eafeb76e60fc9e6e56fbc879acfa1e34c4874c4ec4db2921175a39",
+      "bytes": 163438
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\3dd25591083c56cd.jpg",
+      "sha256": "40dad8bc1d339e9b52a86aa2f34cfed16afc31fb97b81ff33b0a96ea62b72a7e",
+      "bytes": 58656
+    },
+    {
+      "path": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-reviewed-release-7769109-v1\\images\\ef21856ee7f7a136.jpg",
+      "sha256": "479a6c6603f27891834a8f3c2dfb0acf65ed54a7e76254bde1c3ca05acd4b7a4",
+      "bytes": 137128
+    }
+  ]
+}

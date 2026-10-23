@@ -1,0 +1,26 @@
+{
+  "model_predictions_seen": false,
+  "approved_for_training": false,
+  "records": [
+    {
+      "id": "a05ca9ca50d00afb",
+      "disposition": "hold-whole-photo-absence-completeness",
+      "normalized_xyxy": [],
+      "note": "Main board is a decorative proverb, but the adjoining cropped text panel cannot be fully interpreted; hold absence completeness."
+    },
+    {
+      "id": "cab9065c77e923a6",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "traffic-information-signs",
+      "note": "Full original shows police checkpoint and speed-bump warnings, Vieques refuge identity/rules/opening hours and a blank van body below the refuge sign; no advertising campaign face.",
+      "scene_description": "Vieques National Wildlife Refuge police checkpoint with yellow warnings and brown visitor rules"
+    },
+    {
+      "id": "1de72df0d22439be",
+      "disposition": "hold-branding-versus-campaign-boundary",
+      "normalized_xyxy": [],
+      "note": "Velvet Touch dry-cleaner board includes cartoon and persuasive This man wants to clean your clothes slogan; preserve campaign/name-sign boundary, not absent."
+    }
+  ]
+}

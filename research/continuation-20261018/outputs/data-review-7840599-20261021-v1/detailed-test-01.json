@@ -1,0 +1,95 @@
+{
+  "stage": "test-original-content-and-box-review-before-model-scoring",
+  "approved_for_training": false,
+  "scene_comparison_complete": false,
+  "model_predictions_seen": false,
+  "records": [
+    {
+      "id": "a390d1ed9c87b4ac",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "note": "One continuous 2XU sports-product campaign panel clipped at multiple image edges. Full visible face enclosure spans image bounds due perspective/truncation; no additional campaign faces.",
+      "scene_description": "Black 2XU Human Performance Multiplied shop online sports campaign"
+    },
+    {
+      "id": "025011e0cec594f3",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.1621,
+          0.0367,
+          0.9932,
+          0.6623
+        ]
+      ],
+      "note": "One framed tanning-service offer campaign on wall. Extended publisher right edge to full visible black frame; surrounding wall/address plate not campaigns.",
+      "scene_description": "Extreme Tanning yellow framed free tanning price offer wall poster"
+    },
+    {
+      "id": "87cad34e351c6487",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Main large dragon-eye product campaign clear, but original reveals additional distant Sarah Jessica Parker fashion billboard and smaller pole displays not in publisher box. Scope not exhaustive."
+    },
+    {
+      "id": "15a3fd584c992981",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Main Milka campaign clear; additional partly cut wall campaigns at bottom are not individually resolved by publisher's broad second box. Hold exhaustive scope."
+    },
+    {
+      "id": "2dee13f2d925574c",
+      "disposition": "hold-source-creator-credit-mismatch",
+      "normalized_xyxy": [],
+      "note": "Source uploader is Pedro/fanega, while both photo overlay and publisher title credit @romeonaples via PhotoRepost. Actual-creator authority/identity is unresolved despite uploader CC-BY metadata. Exclude from qualified release pending genuine creator evidence.",
+      "scene_description": "Che public campaign in blue yellow red freestanding street panel"
+    },
+    {
+      "id": "516defad3c380520",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.1075,
+          0.278612,
+          0.358125,
+          0.342402
+        ]
+      ],
+      "note": "One Opel campaign board at racetrack edge; original resolves advertising slogan versus road information. Source bounds verified; forest/road contains no other advertising face.",
+      "scene_description": "Blue Opel Fahren Sie zur Hoelle board beside racetrack curve"
+    },
+    {
+      "id": "49c1e5716bcf2a78",
+      "disposition": "hold-whole-photo-completeness",
+      "normalized_xyxy": [],
+      "note": "Dense retailer facade has large product campaigns plus many smaller poster/name panels; publisher10 boxes do not resolve all campaign boundaries/scope. Retain complete-scope hold."
+    },
+    {
+      "id": "5b66ef813bafddcf",
+      "disposition": "hold-content-boundary",
+      "normalized_xyxy": [],
+      "note": "Sports-ground sponsor panels largely contain business identities beside scoreboard/video; campaign versus permanent branding boundary unresolved. Do not force them into positive or absent scope."
+    },
+    {
+      "id": "14eb9cc288f6bc91",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.36,
+          0,
+          0.7975,
+          0.455
+        ]
+      ],
+      "note": "One framed El Paso Museum of Art exhibition campaign with dated promotion, truncated at top. Existing bounds verified; no other campaign faces.",
+      "scene_description": "El Paso Museum of Art September2012 January2013 portrait exhibition poster above woman in red"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "image_id": "58ee7bb18fe237ac",
+  "source_url": "https://www.flickr.com/photos/vax-o-matic/11608641416",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/vax-o-matic/11608641416",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/58ee7bb18fe237ac.html.gz",
+  "html_bytes": 519699,
+  "html_sha256": "19835bff7e2f3c69ac56f02df1b0d155f8018941b616054f17136bb8d91158d5",
+  "stored_sha256": "254f327ccc6fea05e7baa9f445e7128568f1f920e453c58dae200912e45d6a5a"
+}

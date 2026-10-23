@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "b7fdd04c8d1a1e0b",
+  "image_sha256": "19ab7a73af8b6e0b967b341742dacafcddc7e5c8855ef5814cb0f0f69324f51f",
+  "source_review": {
+    "image_id": "b7fdd04c8d1a1e0b",
+    "image_sha256": "19ab7a73af8b6e0b967b341742dacafcddc7e5c8855ef5814cb0f0f69324f51f",
+    "selected_category": "traffic sign",
+    "selected_domain": "contrast",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/fsnorthernregion/5187895366",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/fsnorthernregion/5187895366",
+      "original_url": "https://c4.staticflickr.com/5/4107/5187895366_609ebf2d4f_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Forest Service Northern Region",
+      "author_url": "https://www.flickr.com/people/fsnorthernregion/",
+      "title": "East Fork Bitterroot Road Recovery Act Project",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Forest Service Northern Region",
+      "url": "https://www.flickr.com/photos/fsnorthernregion",
+      "image": "https://live.staticflickr.com/8418/buddyicons/40882383@N03.jpg?1371049574#40882383@N03"
+    },
+    "current_title": "East Fork Bitterroot Road Recovery Act Project",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Forest Service Northern Region",
+          "url": "https://www.flickr.com/photos/fsnorthernregion",
+          "image": "https://live.staticflickr.com/8418/buddyicons/40882383@N03.jpg?1371049574#40882383@N03"
+        }
+      },
+      "meta_description": "Motorists pass by a American Recovery and Reinvestment Act (ARRA) sign after the completion of the newly rehabilitated East Fork Bitterroot Road on Nov. 9, 2010. The Federal Highway Administration, Forest Service, Montana Department of Transportation, and Ravalli County officials participated in a ribbon cutting ceremony to serve as the official opening. Highlights of the project include more than 14 miles of new asphalt pavement, culvert and drainage reconditioning to improve water quality and reduce erosion in the river and new traffic and safety signs. Schellinger Construction of Columbia Falls was the contractor on the $4.3 million project that provided 48 local jobs. \n\t"
+    },
+    "identity_group": "flickr-nsid:40882383@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/fsnorthernregion/5187895366",
+    "html_sha256": "b621134f88bea52a78d29150c288f227c8d4a1ad41d6d26ee1cbb5e19626fb20",
+    "stored_sha256": "d366d9e51b08cc7f63681d6d0076671243c0635a9db86955f11b10d22851d2ce",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\b7fdd04c8d1a1e0b.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\b7fdd04c8d1a1e0b.json",
+    "sha256": "b8023392679f1dd076f79aa50a43b287d874c191023f915b85c378860bddef22"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b7fdd04c8d1a1e0b.json",
+    "sha256": "de49210e9312057203f4967788d0eb487145c15f57575b2b63662e9fe2002f42"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/fsnorthernregion/5187895366",
+    "original_url": "https://c4.staticflickr.com/5/4107/5187895366_609ebf2d4f_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Forest Service Northern Region",
+    "author_url": "https://www.flickr.com/people/fsnorthernregion/",
+    "title": "East Fork Bitterroot Road Recovery Act Project",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

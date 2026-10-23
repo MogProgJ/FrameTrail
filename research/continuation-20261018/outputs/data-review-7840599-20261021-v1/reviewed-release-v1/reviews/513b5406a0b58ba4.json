@@ -1,0 +1,40 @@
+{
+  "image_id": "513b5406a0b58ba4",
+  "image_sha256": "6bd950de581b22343671a308deca1865c7b4bf689c6f7f2e00283f22263e52fa",
+  "identity_group": "flickr-nsid:45160304@N02",
+  "scene_group": "scene:game-demonstration-monitor-with-large-white-costume-head-participant",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\513b5406a0b58ba4.json",
+    "sha256": "abaaa48f0d662aa951b7a3721a346f7c2204554dbd3b5e374165e11b7706cf74"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-train-indoor.json",
+    "sha256": "63a5312fdaa328f03b6bb5ca95173a46e332d7549773563b14eb81b4e6620763"
+  },
+  "content_decision": {
+    "id": "513b5406a0b58ba4",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "indoor-frames-screens-boards",
+    "note": "Full original shows video-game demonstration on computer, participants and building-name glazing; no installed advertising campaign panel. Screen content stays a depiction/other-class unknown.",
+    "scene_description": "Game demonstration monitor with large white costume head participant"
+  },
+  "prospective_split": "train",
+  "confuser_family": "indoor-frames-screens-boards",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

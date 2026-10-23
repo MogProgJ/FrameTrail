@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "input_files_rehashed": 626,
+  "input_changes": 0,
+  "validation_checkpoints_rescored": 7,
+  "per_class_records_per_checkpoint": 72,
+  "update_records_verified": 600,
+  "diagnostic_miss_counts_verified": true,
+  "heldout_evaluation_run": false
+}

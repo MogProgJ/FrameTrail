@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "854924ee2de976f3",
+  "image_sha256": "49b59425569a7a519dce2ceb68fd600a99d6d8fcba9448fa81c6378e91c19275",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "854924ee2de976f3",
+    "image_sha256": "49b59425569a7a519dce2ceb68fd600a99d6d8fcba9448fa81c6378e91c19275",
+    "selected_category": "cat",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/deemu/9284184161",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/deemu/9284184161",
+      "original_url": "https://farm4.staticflickr.com/7323/9284184161_b9a21ec384_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Teemu Lehtinen",
+      "author_url": "https://www.flickr.com/people/deemu/",
+      "title": "Kerross\u00e4nky",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Teemu Lehtinen",
+      "url": "https://www.flickr.com/photos/deemu",
+      "image": "https://live.staticflickr.com/3605/buddyicons/35599069@N07.jpg?1235151555#35599069@N07"
+    },
+    "current_title": "Kerross\u00e4nky",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Teemu Lehtinen",
+          "url": "https://www.flickr.com/photos/deemu",
+          "image": "https://live.staticflickr.com/3605/buddyicons/35599069@N07.jpg?1235151555#35599069@N07"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:35599069@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/deemu/9284184161",
+    "html_sha256": "01783f4f1785b9bb395d9f36bd69a0e9388fe34ffafcab67770a13dcda90df9f",
+    "stored_sha256": "8acd8740fcb6109727fd7bd19a21ae5bf0a9498af136f756bcc2402191a60c3a",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\854924ee2de976f3.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/854924ee2de976f3.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

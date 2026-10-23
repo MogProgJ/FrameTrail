@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "078433fcb4d125c2",
+  "image_sha256": "188fc1b5cddbf464a3c6eccfb77e788199a45c1ef943710dc7bd88da4a03a2de",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "078433fcb4d125c2",
+    "image_sha256": "188fc1b5cddbf464a3c6eccfb77e788199a45c1ef943710dc7bd88da4a03a2de",
+    "selected_category": "light switch",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/dplanet/6828088",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/dplanet/6828088",
+      "original_url": "https://farm3.staticflickr.com/6/6828088_ef9684e935_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Dplanet::",
+      "author_url": "https://www.flickr.com/people/dplanet/",
+      "title": "Flower Stars",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Dplanet::",
+      "url": "https://www.flickr.com/photos/dplanet",
+      "image": "https://live.staticflickr.com/7398/buddyicons/32068310@N00.jpg?1375346982#32068310@N00"
+    },
+    "current_title": "Flower Stars",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Dplanet::",
+          "url": "https://www.flickr.com/photos/dplanet",
+          "image": "https://live.staticflickr.com/7398/buddyicons/32068310@N00.jpg?1375346982#32068310@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:32068310@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/dplanet/6828088",
+    "html_sha256": "c850d2d97d98a4924c3f336416a2275e38e67c40593f288402261eca0412f7f5",
+    "stored_sha256": "283ed2570871afe399d6ece867d99a219505593d8047beff4970648fb3d9700f",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\078433fcb4d125c2.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/078433fcb4d125c2.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

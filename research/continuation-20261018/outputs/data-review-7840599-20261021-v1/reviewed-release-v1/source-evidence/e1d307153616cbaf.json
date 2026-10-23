@@ -1,0 +1,80 @@
+{
+  "image_id": "e1d307153616cbaf",
+  "image_sha256": "8c0760b8e0813e5944231832b0d41c9420896443f047c6b5d4cc2fe5ac7cf05a",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\source-review\\source-evidence-review.json",
+    "sha256": "6881fe98e939931c5d708dc20e1828c831c11356f67fabd03ca609e65bd6adf8"
+  },
+  "source_record": {
+    "image_id": "e1d307153616cbaf",
+    "image_sha256": "8c0760b8e0813e5944231832b0d41c9420896443f047c6b5d4cc2fe5ac7cf05a",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "test",
+    "source_url": "https://www.flickr.com/photos/41594728@N08/3826789586",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/41594728@N08/3826789586",
+      "original_url": "https://c8.staticflickr.com/4/3560/3826789586_d406299ee2_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Ajay Ramesh",
+      "author_url": "https://www.flickr.com/people/41594728@N08/",
+      "title": "St.Isabel's Hospital-1",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Ajay Ramesh",
+      "url": "https://www.flickr.com/photos/41594728@N08",
+      "image": "https://combo.staticflickr.com/pw/images/bbuddyicon04.png#41594728@N08"
+    },
+    "current_title": "St.Isabel's Hospital-1",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Ajay Ramesh",
+          "url": "https://www.flickr.com/photos/41594728@N08",
+          "image": "https://combo.staticflickr.com/pw/images/bbuddyicon04.png#41594728@N08"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:41594728@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/41594728@N08/3826789586",
+    "html_sha256": "a82157c5adffa5f35282995fc3e3d87985792debeff3754d3ce848190778ec53",
+    "stored_sha256": "62da399ed5ed1ee3ed39ca0625a0268bb7211efb041119d7cf12db4e9dce614a",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\e1d307153616cbaf.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\e1d307153616cbaf.html.gz",
+    "sha256": "62da399ed5ed1ee3ed39ca0625a0268bb7211efb041119d7cf12db4e9dce614a"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

@@ -1,0 +1,64 @@
+{
+  "image_id": "d6b2706a78a96245",
+  "image_sha256": "2c9231837dfba74ae0ee01a06a17dc64f5c3bf349254754c28964ed3444f52fb",
+  "publisher_attribution": {
+    "id": "d6b2706a78a96245",
+    "landing_url": "https://www.flickr.com/photos/hirata_yasuyuki/3940069929",
+    "original_url": "https://farm6.staticflickr.com/3426/3940069929_2165d56fcc_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Yasuyuki HIRATA",
+    "author_url": "https://www.flickr.com/people/hirata_yasuyuki/",
+    "title": "Tayasu-mon Gate (watari-yagura gate) of Edo Castle",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Yasuyuki Hirata",
+    "url": "https://www.flickr.com/photos/hirata_yasuyuki",
+    "image": "https://live.staticflickr.com/5531/buddyicons/16521641@N04.jpg?1382879038#16521641@N04"
+  },
+  "current_title": "Tayasu-mon Gate (watari-yagura gate) of Edo Castle",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Yasuyuki Hirata",
+        "url": "https://www.flickr.com/photos/hirata_yasuyuki",
+        "image": "https://live.staticflickr.com/5531/buddyicons/16521641@N04.jpg?1382879038#16521641@N04"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/hirata_yasuyuki/3940069929",
+  "canonical_page_url": "https://www.flickr.com/photos/hirata_yasuyuki/3940069929",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "e96ed95e42cb6642ad68f989452fa6aa35f0ee176e773f3f7e191440be65e399",
+  "source_gzip_sha256": "6c8703dcb0f748985ea5ed08f62705b24e564509b8ecf6eb87ff5dbcf5b49883",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-047",
+  "visual_proof_sha256": "2e630388ed4eeea777b887d481d678693e37f43aa6f222b3e32900907898bda0",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

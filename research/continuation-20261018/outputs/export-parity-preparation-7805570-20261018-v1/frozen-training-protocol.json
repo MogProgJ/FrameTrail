@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "status": "proposal-only-awaiting-separate-GPU-scope-approval",
+  "experiment_approved": false,
+  "previous_job": "7780632",
+  "candidate_sha256": "e43a2c7a415c4f82209a1fc2471d8677503f51315e71f422ec0d6665eac377b9",
+  "starting_checkpoint": {
+    "source": "retrieved job 7780632 last.pt, old step 600",
+    "sha256": "d280723323b4ae8b07f1631667f2d87a9744c3398a06cc94e71dcef04fae2a02",
+    "old_step": 600,
+    "new_run_step_zero_is_this_checkpoint": true,
+    "optimizer_state": "fresh AdamW; no optimizer state was saved in the old checkpoint"
+  },
+  "active_classifier_rows": [
+    133,
+    593
+  ],
+  "active_categories": [
+    "billboard",
+    "washing machine"
+  ],
+  "all_other_classifier_rows": "frozen and bitwise checked, including cat and dog",
+  "frozen_components": [
+    "feature extractor",
+    "transformer encoder",
+    "encoder classifier",
+    "decoder features",
+    "all box regressors",
+    "all other parameters and buffers"
+  ],
+  "data": {
+    "candidate_photos": 965,
+    "train_partition": 700,
+    "validation_partition": 135,
+    "test_partition_reserved": 130,
+    "billboard_positive_pool": 20,
+    "washing_machine_positive_pool": 21,
+    "explicit_negative_for_both_pool": 35,
+    "pools_sha256": "507dd052e603dc70a93915885a010140f9c6dafa46cc384fd9e1c6fa92874da6",
+    "schedule_sha256": "60433a8e2fd7e0362410a4c7fbfbdc26e722c8db8f891907db8a112255ba472d",
+    "no_labels_or_scopes_changed": true
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "lr": 0.0001,
+    "weight_decay": 0,
+    "maximum_updates": 2000,
+    "accumulation": 4,
+    "maximum_presentations": 8000,
+    "per_update": "one billboard-positive + one washing-machine-positive + two photos explicitly absent for both categories; preserve all targets/scopes on each photo",
+    "sampling_seeds": [
+      171019,
+      171020,
+      171021
+    ],
+    "model_seed": 17,
+    "AMP": false,
+    "gradient_clip": 0.1,
+    "model_mode": "eval with only two final classifier rows trainable",
+    "validation_steps": [
+      0,
+      100,
+      200,
+      300,
+      400,
+      500,
+      600,
+      700,
+      800,
+      900,
+      1000,
+      1100,
+      1200,
+      1300,
+      1400,
+      1500,
+      1600,
+      1700,
+      1800,
+      1900,
+      2000
+    ],
+    "early_stop": "At update 1000, stop if no eligible strict improvement over new-run step 0 has been selected. Otherwise continue to maximum 2000 updates.",
+    "active_run_elapsed_seconds_cap": 1800,
+    "Slurm_wall_minutes_cap": 45,
+    "GPUs": 1,
+    "partition": "gpu_a100_il",
+    "cpus": 2,
+    "automatic_retries": 0,
+    "new_model_downloads": 0,
+    "validation_margin": "Stop before the elapsed cap with sufficient margin for receipt/checkpoint finalization; a partial run is not a completed fixed-budget trial."
+  },
+  "selection": {
+    "threshold": 0.35,
+    "NMS_IoU": 0.45,
+    "IoU": 0.5,
+    "max_detections": 100,
+    "top_pairs": 300,
+    "guard": "Every reviewed class individually: complete TP cannot decrease, complete FP cannot increase, partial known hits cannot decrease versus step0. Also total unscored predictions may rise by at most5 (drift alarm, not false-positive count).",
+    "ranking": "Among eligible checkpoints, increase total reviewed-positive hits, then complete-scope F1; exact ties retain earlier step. Step0 remains selected if none improves.",
+    "validation_only": true,
+    "test_and_video_in_checkpoint_selection": false
+  },
+  "evaluation": {
+    "after_selected_checkpoint_frozen": true,
+    "heldout_photos": 130,
+    "fresh_video_frames": 24,
+    "fresh_sequences": 6,
+    "fresh_reference_sha256": "3d3f0c6c932bf10a444b78bfce6b3b33261af8060bfedc28cf89a4c636c27762",
+    "adoption": "Separate gate: no complete-scope FP increase or reviewed-positive recall loss on heldout and frozen video evidence; require useful strict gain. No automatic app integration.",
+    "limits": "Small purposive assistant-reviewed evidence; not statistically representative independent accuracy."
+  },
+  "extra_guard": "Reference new-run step 0 and original job 7780632 step 0. The original per-class counts are identical at old steps 0 and 600; verify this preflight. Never relax the original retention guard.",
+  "strict_gain_definition": "An eligible checkpoint must increase the original lexicographic validation ranking. Ties retain new-run step 0. No claim of useful gain from confidence shifts alone.",
+  "limits": [
+    "This tests a continuation with balanced exposure and more updates, not a causal ablation of every change.",
+    "Selected negatives are explicitly absent for both categories; unknown images are never relabeled negative.",
+    "Small assistant-reviewed dataset and repeated exposure can overfit; no general accuracy claim.",
+    "Read-only diagnostic gradients cannot establish the best learning rate or required update count."
+  ],
+  "automatic_export": false,
+  "automatic_application_adoption": false,
+  "heldout_before_frozen_improved_candidate": false,
+  "approval_required_reason": "The recorded approval authorized exactly one four-row 600-update GPU trial. That trial is complete; this proposed two-row continuation is a separate scope and job.",
+  "execution_package_status": "Not created or submitted. These files freeze the reviewable proposed scope and sampler; an implementation must pass its contracts before manual remote submission."
+}

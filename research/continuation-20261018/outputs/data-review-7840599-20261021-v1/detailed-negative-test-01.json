@@ -1,0 +1,186 @@
+{
+  "stage": "whole-original-negative-content-review-before-predictions",
+  "approved_for_training": false,
+  "scene_comparison_complete": false,
+  "model_predictions_seen": false,
+  "records": [
+    {
+      "id": "a4880e33a2079577",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows a domestic kitchen and laundry appliances with a woman at the sink; no advertising face.",
+      "scene_description": "White kitchen with pink-jumper woman at sink and washer below counter"
+    },
+    {
+      "id": "f046b6145d61cc46",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows framed line drawings in a museum/exhibition with literary quotations; no campaign advertising face.",
+      "scene_description": "Acrylic framed line drawings below Spanish literary quotations"
+    },
+    {
+      "id": "e5d879e9e68eaa03",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "traffic-information-signs",
+      "note": "Full original shows wooden cycling/hiking direction arrows and trees only; no campaign face.",
+      "scene_description": "Wooden Storflaatan Spalen Oyangen cycling direction signs in trees"
+    },
+    {
+      "id": "e1d307153616cbaf",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "traffic-information-signs",
+      "note": "Full original shows hospital identity lettering and statutory sex-determination prohibition notices; no advertising campaign face.",
+      "scene_description": "St Isabel hospital red masonry identity column and red statutory notices"
+    },
+    {
+      "id": "59659ff63dad66fc",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows a presenter and handwritten event/people relationship diagrams on a whiteboard; no advertising face.",
+      "scene_description": "Woman pointing at blue event relationship diagrams on whiteboard"
+    },
+    {
+      "id": "a122a9aa839dd2da",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows an educational Uganda budget chart projected from a browser, whiteboard notes and WiFi notice; no advertising campaign face.",
+      "scene_description": "Man presenting projected Uganda budget bubble chart beside whiteboard"
+    },
+    {
+      "id": "5b9b6cc27d0eecd5",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "shop-business-lettering",
+      "note": "Full original shows public library identity lettering and blank lower panel; no campaign advertising face.",
+      "scene_description": "Keshen Goodman Public Library name sign on grey masonry"
+    },
+    {
+      "id": "028555974e8341ad",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows domestic washer/dryer, utility sink and cleaning containers; no advertising face.",
+      "scene_description": "Dark laundry room with beige dryer white washer and utility sink"
+    },
+    {
+      "id": "644b877daa0f9756",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows handwritten interface/workflow diagrams, sticky notes and technical printouts on whiteboards; no campaign face.",
+      "scene_description": "Workshop whiteboards with blue software diagrams and pink sticky notes"
+    },
+    {
+      "id": "1d01b5b97125d86f",
+      "disposition": "hold-whole-photo-absence-completeness",
+      "normalized_xyxy": [],
+      "note": "Freestanding Lit and Phil library welcome panel includes large interior promotional photograph and website; identity versus visitor-promotion campaign ambiguous, held."
+    },
+    {
+      "id": "cfdb76f77a479fea",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows a woman drawing an explanatory diagram on a flipchart in a meeting room; no advertising face.",
+      "scene_description": "Curly-haired woman with black jumper drawing pie diagram on flipchart"
+    },
+    {
+      "id": "002a124b80fc1fec",
+      "disposition": "hold-whole-photo-absence-completeness",
+      "normalized_xyxy": [],
+      "note": "Cardiff Central direction signs coexist with two large Business Answers telephone campaign banners; not whole-photo absent."
+    },
+    {
+      "id": "3c49b6fe8d3f1115",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows a close row of stainless laundry machines and manufacturer/operating markings; no separate advertising face.",
+      "scene_description": "Diagonal close view of stainless Speed Queen front-loading machines"
+    },
+    {
+      "id": "095655d89ea59505",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows people inspecting a row of laundry machines; visible wall and machine labels contain no campaign advertising face.",
+      "scene_description": "Man in dark suit and woman in cream blouse inspecting blue-and-white laundry machines"
+    },
+    {
+      "id": "44c1bc4bb3f7d508",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "household-laundry",
+      "note": "Full original shows washing machine controls and regulatory energy/caution labels; no advertising face.",
+      "scene_description": "Close frontal Malber washer with yellow EnergyGuide label"
+    },
+    {
+      "id": "b7448c6ef4c00f74",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "traffic-information-signs",
+      "note": "Full original shows a historical-district road direction sign, guardrail and road landscape; no advertising campaign face.",
+      "scene_description": "Medinaceli historic district right-arrow roadside sign"
+    },
+    {
+      "id": "2bf5e0a0c30af713",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows personal video conversation/browser content on laptop and desktop screens; no physical advertising face.",
+      "scene_description": "Dark desk with laptop social page and desktop video chat"
+    },
+    {
+      "id": "23a96f89d828cd77",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows engraved flask artwork paired with framed monochrome prints in an exhibition; no price, service offer or campaign advertising face.",
+      "scene_description": "Eight engraved metal flasks displayed below framed monochrome prints"
+    },
+    {
+      "id": "87e9386c70c5a33a",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "traffic-information-signs",
+      "note": "Full original shows railway departure boards and trees; no campaign face.",
+      "scene_description": "Blue Utrecht Centraal Amersfoort railway departure boards"
+    },
+    {
+      "id": "45e33b09dbc5d6ee",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows gold-framed historical paintings and museum inventory cards; no advertising face.",
+      "scene_description": "Gold-framed painting of two archers on museum wall"
+    },
+    {
+      "id": "0cd6403f59f41631",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "indoor-frames-screens-boards",
+      "note": "Full original shows office monitors, newspaper clippings on wall and stationery; no physical campaign advertising face.",
+      "scene_description": "Man at dual-monitor office desk with newspaper-clipping wall"
+    },
+    {
+      "id": "679f52e059e4622f",
+      "disposition": "hold-whole-photo-absence-completeness",
+      "normalized_xyxy": [],
+      "note": "Noticeboard includes large illustrated political/military poster among administrative papers; campaign scope ambiguous, not certified absent."
+    },
+    {
+      "id": "04464aae28f04bc1",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "traffic-information-signs",
+      "note": "Full original shows historical memorial site identification and educational factual text for Topographie des Terrors; no campaign advertising face.",
+      "scene_description": "Topographie des Terrors outdoor historical site information panels"
+    }
+  ]
+}

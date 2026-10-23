@@ -1,0 +1,64 @@
+{
+  "image_id": "fce886a386418311",
+  "image_sha256": "f46d097116a0db3c0e7534adf544070a9eb626bdaa4dda72262196b640ede027",
+  "publisher_attribution": {
+    "id": "fce886a386418311",
+    "landing_url": "https://www.flickr.com/photos/nataliemaynor/7323361190",
+    "original_url": "https://farm2.staticflickr.com/8002/7323361190_a102d4c36d_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "NatalieMaynor",
+    "author_url": "https://www.flickr.com/people/nataliemaynor/",
+    "title": "Testing...",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "NatalieMaynor",
+    "url": "https://www.flickr.com/photos/nataliemaynor",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/93178668@N00.jpg?1574781904#93178668@N00"
+  },
+  "current_title": "Testing...",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "NatalieMaynor",
+        "url": "https://www.flickr.com/photos/nataliemaynor",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/93178668@N00.jpg?1574781904#93178668@N00"
+      }
+    },
+    "meta_description": "This is the same as the previous picture, but that one said I took it this morning, which is not true. The one I uploaded to Flickr this morning I had copied from Facebook, where I had sent it straight from my telephone while still at the garden center yesterday. This one I copied from telephone to computer and am now uploading to Flickr."
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/nataliemaynor/7323361190",
+  "canonical_page_url": "https://www.flickr.com/photos/nataliemaynor/7323361190",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "3feceb8f55c2d08d2ed916bb31d0ec1a20964df28daef3e2e25fef951b0827c8",
+  "source_gzip_sha256": "67338cebfc43ec45ae7093c85bd4f0e9c43f9cb4b0b06814ded66c1f185e1e89",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-191",
+  "visual_proof_sha256": "17de656ca0c66d9ceb3c5f7d76989ca0728f124dd7769c05e8d00feeaa4d1ad3",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

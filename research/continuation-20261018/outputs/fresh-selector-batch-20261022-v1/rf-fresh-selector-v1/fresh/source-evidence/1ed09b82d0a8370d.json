@@ -1,0 +1,80 @@
+{
+  "image_id": "1ed09b82d0a8370d",
+  "image_sha256": "0ccb6d5ad916c91c30376239bbedfcf60c80f58181a7b6e8da98d5e991f3379c",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "1ed09b82d0a8370d",
+    "image_sha256": "0ccb6d5ad916c91c30376239bbedfcf60c80f58181a7b6e8da98d5e991f3379c",
+    "selected_category": "washing machine",
+    "selected_domain": "contrast",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/marleahjoy/14311611151",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/marleahjoy/14311611151",
+      "original_url": "https://c6.staticflickr.com/3/2899/14311611151_82f6c225d8_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "MarLeah Cole",
+      "author_url": "https://www.flickr.com/people/marleahjoy/",
+      "title": "laundry explosion 1",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "MarLeah Cole",
+      "url": "https://www.flickr.com/photos/marleahjoy",
+      "image": "https://live.staticflickr.com/5522/buddyicons/93969271@N03.jpg?1390862436#93969271@N03"
+    },
+    "current_title": "laundry explosion 1",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "MarLeah Cole",
+          "url": "https://www.flickr.com/photos/marleahjoy",
+          "image": "https://live.staticflickr.com/5522/buddyicons/93969271@N03.jpg?1390862436#93969271@N03"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:93969271@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/marleahjoy/14311611151",
+    "html_sha256": "2b193478f7aa072fe0def8baf0b41ad9ac4644fb932f75b78f8d8ebe91e820d4",
+    "stored_sha256": "c37053211684274675c77d5c84d742f51b91438e2f5b8ab2c297f8338d5fbcbd",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\1ed09b82d0a8370d.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\1ed09b82d0a8370d.html.gz",
+    "sha256": "c37053211684274675c77d5c84d742f51b91438e2f5b8ab2c297f8338d5fbcbd"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

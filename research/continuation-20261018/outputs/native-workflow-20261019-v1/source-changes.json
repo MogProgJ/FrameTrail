@@ -1,0 +1,62 @@
+[
+  {
+    "new": false,
+    "sha256": "f523543cf24940ac56abcbccefa13842b3622ba91046843a0d6a80e41b0c9e46",
+    "file": "CMakeLists.txt"
+  },
+  {
+    "new": false,
+    "sha256": "777c0f89acbf195d580d9c5830248b749583ae0f707352a72fc9da7dbfea4ad2",
+    "file": "apps\\desktop\\cached_playback_window.cpp"
+  },
+  {
+    "new": false,
+    "sha256": "b61fc6d7ee7d3f6ee5dbf03c4ded81a5665a00ba3aa03322363348a923e9860f",
+    "file": "apps\\desktop\\cached_playback_window.hpp"
+  },
+  {
+    "new": false,
+    "sha256": "6c63da1dcd2e520f9922857efb6cc5012bc8164d1eecc63389416dc4fa791aa6",
+    "file": "apps\\desktop\\preview_window.cpp"
+  },
+  {
+    "new": true,
+    "sha256": "1f5ce83d4e19e5437dd3c298a3d9d8ee4143fe4693dbbda62d4b66984effce75",
+    "file": "apps\\desktop\\processing_feedback.hpp"
+  },
+  {
+    "new": false,
+    "sha256": "60e1a22f33436df665a3607cc99d6a4723303d249de50ba091789301f3f1aef0",
+    "file": "apps\\desktop\\saved_run_window.cpp"
+  },
+  {
+    "new": false,
+    "sha256": "e44db468e568236cee672b93ce7df79801dc788196e7105a0d80c2e10520a9d5",
+    "file": "apps\\desktop\\saved_run_window.hpp"
+  },
+  {
+    "new": false,
+    "sha256": "d7efa436bd2253828ffcc0fd4ea653e0114dfa206d377c36966f1c2621696187",
+    "file": "include\\frametrail\\analysis_job.hpp"
+  },
+  {
+    "new": false,
+    "sha256": "b7204d17ee0ec35cc338534d947cd49f92dc16bba76ed465c8c9d3e19adaa63f",
+    "file": "include\\frametrail\\playback_cache.hpp"
+  },
+  {
+    "new": false,
+    "sha256": "aabbe8747d9a23a2e761ff9d1494277f584a8c00cc644a891724c1b35f929cb0",
+    "file": "src\\analysis_job.cpp"
+  },
+  {
+    "new": false,
+    "sha256": "9de26aaf60c737e6664ad88dd858bf4eaa3d6c363dcf51df909b256f52a20d60",
+    "file": "src\\playback_cache.cpp"
+  },
+  {
+    "new": true,
+    "sha256": "98972b23915067fd5e20dd14af369c44cf9c9770d1ebe6fc5fd17c43170dd2c1",
+    "file": "tests\\workflow_diagnostics.cpp"
+  }
+]

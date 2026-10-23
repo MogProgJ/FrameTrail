@@ -1,0 +1,64 @@
+{
+  "image_id": "c1c1915a3c64cf6a",
+  "image_sha256": "93d63e2891d53d94ed05f2d4bc48a4b06140cabe814310a0f2231465704ef780",
+  "publisher_attribution": {
+    "id": "c1c1915a3c64cf6a",
+    "landing_url": "https://www.flickr.com/photos/charleskremenak/6423753713",
+    "original_url": "https://c3.staticflickr.com/8/7004/6423753713_8aca66f5e1_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Charles Kremenak",
+    "author_url": "https://www.flickr.com/people/charleskremenak/",
+    "title": "CVK in really bad outfit",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Charles Kremenak",
+    "url": "https://www.flickr.com/photos/charleskremenak",
+    "image": "https://live.staticflickr.com/8753/buddyicons/10069023@N00.jpg?1469503212#10069023@N00"
+  },
+  "current_title": "CVK in really bad outfit",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Charles Kremenak",
+        "url": "https://www.flickr.com/photos/charleskremenak",
+        "image": "https://live.staticflickr.com/8753/buddyicons/10069023@N00.jpg?1469503212#10069023@N00"
+      }
+    },
+    "meta_description": "i distinctly remember that clip-on tie!"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/charleskremenak/6423753713",
+  "canonical_page_url": "https://www.flickr.com/photos/charleskremenak/6423753713",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "aa639f214f8708bc262934810f0a7489a52c979a51b76076251774cd350f85f5",
+  "source_gzip_sha256": "df7cd314705e36eef021963303f130dfafe5f6311274eec2d7b0a02c453e2a89",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-246",
+  "visual_proof_sha256": "b020f6329ba0b8b64ec50896c38560dd7c9efc7f2bf1513997ba5730f955dbbc",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

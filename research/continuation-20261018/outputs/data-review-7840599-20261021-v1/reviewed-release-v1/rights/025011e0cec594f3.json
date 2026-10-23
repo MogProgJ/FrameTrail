@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "025011e0cec594f3",
+  "image_sha256": "ba74dc32fa8b0d7184a9f67541309324fa358a0458c289ca1a3c0f03b3a72b35",
+  "source_review": {
+    "image_id": "025011e0cec594f3",
+    "image_sha256": "ba74dc32fa8b0d7184a9f67541309324fa358a0458c289ca1a3c0f03b3a72b35",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "test",
+    "source_url": "https://www.flickr.com/photos/zach_a/730597962",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/zach_a/730597962",
+      "original_url": "https://farm4.staticflickr.com/1087/730597962_557f558723_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Zach Alexander",
+      "author_url": "https://www.flickr.com/people/zach_a/",
+      "title": "Xtreme Yanning",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Zach A",
+      "url": "https://www.flickr.com/photos/zach_a",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/20557679@N00.jpg?1595876121#20557679@N00"
+    },
+    "current_title": "Xtreme Yanning",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Zach A",
+          "url": "https://www.flickr.com/photos/zach_a",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/20557679@N00.jpg?1595876121#20557679@N00"
+        }
+      },
+      "meta_description": "Subway ad, Porter Square, Boston"
+    },
+    "identity_group": "flickr-nsid:20557679@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/zach_a/730597962",
+    "html_sha256": "2d16ad070278b67a208e21738b36a8ca17e6ed86da256a460dc53f44eae4c437",
+    "stored_sha256": "0ad16fd41db64c9067fc8bdb4faaec55e541ca719ce5ee80f061fa1a4b9be5ce",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\025011e0cec594f3.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\025011e0cec594f3.json",
+    "sha256": "5c3a874eb667164f7e23b9701245b538b32c07b752763e1d14d90026b74b8449"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\025011e0cec594f3.json",
+    "sha256": "bdd6ffd1bbc2c9de6233e6ed58736502bc198631dc862a5aaa0316f0ff355ff5"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/zach_a/730597962",
+    "original_url": "https://farm4.staticflickr.com/1087/730597962_557f558723_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Zach Alexander",
+    "author_url": "https://www.flickr.com/people/zach_a/",
+    "title": "Xtreme Yanning",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

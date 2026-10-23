@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "848ac811b8db744d",
+  "image_sha256": "f269be37932cb6e83edcf3b80f74d5001f0758947e00dd7f0e01272e32807c67",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "848ac811b8db744d",
+    "image_sha256": "f269be37932cb6e83edcf3b80f74d5001f0758947e00dd7f0e01272e32807c67",
+    "selected_category": "shelf",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/46722918@N08/9542224277",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/46722918@N08/9542224277",
+      "original_url": "https://c6.staticflickr.com/6/5489/9542224277_d6ce0ffa91_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Carnivore Locavore",
+      "author_url": "https://www.flickr.com/people/46722918@N08/",
+      "title": "_DSC0316",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Carnivore Locavore",
+      "url": "https://www.flickr.com/photos/46722918@N08",
+      "image": "https://combo.staticflickr.com/pw/images/bbuddyicon06.png#46722918@N08"
+    },
+    "current_title": "_DSC0316",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Carnivore Locavore",
+          "url": "https://www.flickr.com/photos/46722918@N08",
+          "image": "https://combo.staticflickr.com/pw/images/bbuddyicon06.png#46722918@N08"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:46722918@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/46722918@N08/9542224277",
+    "html_sha256": "83f0c4804a3389b2e6caa64b4bf5877b2c78157d7572e7b493067d3973ff2483",
+    "stored_sha256": "ca37d53135882ac83c3515b849950653d3ad5f0d2058b06519c030f3e0b286c7",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\848ac811b8db744d.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/848ac811b8db744d.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

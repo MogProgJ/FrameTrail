@@ -1,0 +1,34 @@
+{
+  "status": "first-pass-complete-not-a-qualified-dataset",
+  "originals_viewed": 323,
+  "explicit_draft_annotation_records": 204,
+  "legacy_unknown_first_pass_records": 119,
+  "legacy_unknown_display_or_boundary_followups": 32,
+  "new_draft_boxes": 41,
+  "inherited_targets_retained_for_provenance": 129,
+  "inherited_targets_explicitly_held_for_semantic_conflict": 1,
+  "old_absent_photos_now_known_positive": 20,
+  "fresh_absent_photos_now_known_positive": 19,
+  "fresh_absent_shortfalls": {
+    "train": 11,
+    "val": 6,
+    "test": 4
+  },
+  "train_family_shortfalls": {
+    "shop-business-lettering": 5,
+    "traffic-information-signs": 1,
+    "indoor-frames-screens-boards": 0,
+    "household-laundry": 0
+  },
+  "unused_local_candidates": 223,
+  "approved_for_training": false,
+  "new_optimizer_updates": 0,
+  "new_model_inference": 0,
+  "TEST_predictions": 0,
+  "new_cluster_jobs": 0,
+  "production_adoption": false,
+  "source_hashes_verified": 323,
+  "original_fresh_release_sha256": "b262af61db8141abadd61cc026454953f6c172bd2fff552334c456170b5feb09",
+  "annotations_sha256": "6bc12636d7d71242527c7742b3a66872f193775bae45a9d95d3c12ed3c0def2d",
+  "structural_integrity_checks": "pass; semantic/rights/scene/role/guard qualification incomplete"
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "77a78dc532b7a480",
+  "image_sha256": "f1a27980edeffe822fb671747d51ea9c97e7d9b86add3cdec0323f0c2e4f8ba7",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "77a78dc532b7a480",
+    "image_sha256": "f1a27980edeffe822fb671747d51ea9c97e7d9b86add3cdec0323f0c2e4f8ba7",
+    "selected_category": "lamp",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/zemlinki/288431111",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/zemlinki/288431111",
+      "original_url": "https://farm1.staticflickr.com/102/288431111_2319153ef7_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Zemlinki!",
+      "author_url": "https://www.flickr.com/people/zemlinki/",
+      "title": "Tiroler",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Zemlinki!",
+      "url": "https://www.flickr.com/photos/zemlinki",
+      "image": "https://live.staticflickr.com/40/buddyicons/78199898@N00.jpg?1253380934#78199898@N00"
+    },
+    "current_title": "Tiroler",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Zemlinki!",
+          "url": "https://www.flickr.com/photos/zemlinki",
+          "image": "https://live.staticflickr.com/40/buddyicons/78199898@N00.jpg?1253380934#78199898@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:78199898@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/zemlinki/288431111",
+    "html_sha256": "4bc5ea3be1a76be3c309eee3ca128fd0c44be885900938b09fd298db0b02caff",
+    "stored_sha256": "07f947dba8eb7cdade5685799f27d4ad81ed52f9a4f73fa6a56d2efe328850d5",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\77a78dc532b7a480.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/77a78dc532b7a480.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

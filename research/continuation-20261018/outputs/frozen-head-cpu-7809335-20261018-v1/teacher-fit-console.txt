@@ -1,0 +1,8 @@
+Fitted teacher-preserved local head 1/4; no development outcome inspected
+Fitted teacher-preserved local head 2/4; no development outcome inspected
+Fitted teacher-preserved local head 3/4; no development outcome inspected
+Fitted teacher-preserved local head 4/4; no development outcome inspected
+{"index": 0, "teacher_weight": 0.01, "eligible": false, "strict_gain": false, "billboard_known_hits": 10, "billboard_complete_fp": 2, "unscored_predictions": 1801, "ranking": [137, 0.5116279069767442], "validation_seconds": 4.446944999996049}
+{"index": 1, "teacher_weight": 0.1, "eligible": false, "strict_gain": false, "billboard_known_hits": 10, "billboard_complete_fp": 5, "unscored_predictions": 1010, "ranking": [137, 0.4943820224719101], "validation_seconds": 5.330785600002855}
+{"index": 2, "teacher_weight": 1.0, "eligible": false, "strict_gain": false, "billboard_known_hits": 10, "billboard_complete_fp": 0, "unscored_predictions": 650, "ranking": [137, 0.5238095238095238], "validation_seconds": 5.134292500006268}
+{"index": 3, "teacher_weight": 10.0, "eligible": false, "strict_gain": false, "billboard_known_hits": 5, "billboard_complete_fp": 0, "unscored_predictions": 541, "ranking": [132, 0.5238095238095238], "validation_seconds": 3.1809416999967652}

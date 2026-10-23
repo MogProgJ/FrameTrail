@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "88405203d613ee5f",
+  "image_sha256": "c9f2c171a65cf45075f1cc2a6cb8a8a5307d46035d2a9afafe99ec30b92329b6",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "88405203d613ee5f",
+    "image_sha256": "c9f2c171a65cf45075f1cc2a6cb8a8a5307d46035d2a9afafe99ec30b92329b6",
+    "selected_category": "lamp",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/sketch22/2651899796",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/sketch22/2651899796",
+      "original_url": "https://c8.staticflickr.com/4/3098/2651899796_dfa428fb56_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Nathan Borror",
+      "author_url": "https://www.flickr.com/people/sketch22/",
+      "title": "Window throw back",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Nathan Borror",
+      "url": "https://www.flickr.com/photos/sketch22",
+      "image": "https://live.staticflickr.com/8136/buddyicons/72897141@N00.jpg?1381346475#72897141@N00"
+    },
+    "current_title": "Window throw back",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Nathan Borror",
+          "url": "https://www.flickr.com/photos/sketch22",
+          "image": "https://live.staticflickr.com/8136/buddyicons/72897141@N00.jpg?1381346475#72897141@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:72897141@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/sketch22/2651899796",
+    "html_sha256": "0fbae6eb6ed299b32c9b7f71c8db335e90e7c8a1ce986fb3d19716faffa06946",
+    "stored_sha256": "7957cc7058b34c234e53eb2be5392d2cab2046866b3eb8dfdd8274b8d0a6c779",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\88405203d613ee5f.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/88405203d613ee5f.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

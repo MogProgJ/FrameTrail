@@ -1,0 +1,63 @@
+{
+  "photo": 1,
+  "image_id": "d411abce2c36e64f",
+  "publisher_attribution": {
+    "id": "d411abce2c36e64f",
+    "landing_url": "https://www.flickr.com/photos/davidstanleytravel/21786295071",
+    "original_url": "https://c8.staticflickr.com/1/594/21786295071_e173ce9529_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "David Stanley",
+    "author_url": "https://www.flickr.com/people/davidstanleytravel/",
+    "title": "Children in Togo",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "David Stanley",
+    "url": "https://www.flickr.com/photos/davidstanleytravel",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/79721788@N00.jpg?1757028669#79721788@N00"
+  },
+  "current_title": "Children in Togo",
+  "source_url": "https://www.flickr.com/photos/davidstanleytravel/21786295071",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 1,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "David Stanley",
+      "url": "https://www.flickr.com/photos/davidstanleytravel",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/79721788@N00.jpg?1757028669#79721788@N00"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "David Stanley",
+      "url": "https://www.flickr.com/photos/davidstanleytravel",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/79721788@N00.jpg?1757028669#79721788@N00"
+    },
+    "meta_description": "Children in Kouma-Konda village near Kpalime, Togo."
+  },
+  "creator_override": null,
+  "image_sha256": "09e3aac56ebc9c3ed6085774851c9085d02631738479d8ee621ceb1d8492f8f0",
+  "source_page_sha256": "1c5ed112744a19aa245817fced6a9954c775a5ceb14bf97fd108901efe1e3f6e",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "240d4ce9ed452b246272d27184054da503b077593da5c5646af1e1a280a9f0bd",
+  "source_job": 7626978,
+  "scope_note": "Three visible people, two faces, four socks and three individual hands retained. Other hands remain unknown. Garment specificity, sandals and necklace extents are held.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

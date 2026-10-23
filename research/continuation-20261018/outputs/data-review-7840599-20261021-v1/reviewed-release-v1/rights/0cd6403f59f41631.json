@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "0cd6403f59f41631",
+  "image_sha256": "47dbd51995e1a4e015772599c2e8621fb7ac16ba27671cfc2ca4d16b0841d0be",
+  "source_review": {
+    "image_id": "0cd6403f59f41631",
+    "image_sha256": "47dbd51995e1a4e015772599c2e8621fb7ac16ba27671cfc2ca4d16b0841d0be",
+    "selected_category": "computer monitor",
+    "selected_domain": "contrast",
+    "prospective_split": "test",
+    "source_url": "https://www.flickr.com/photos/senatormarkwarner/6808615133",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/senatormarkwarner/6808615133",
+      "original_url": "https://farm2.staticflickr.com/7147/6808615133_09b2691724_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Mark Warner",
+      "author_url": "https://www.flickr.com/people/senatormarkwarner/",
+      "title": "photo (1)",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Mark Warner",
+      "url": "https://www.flickr.com/photos/senatormarkwarner",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/34389013@N06.jpg?1621890937#34389013@N06"
+    },
+    "current_title": "photo (1)",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Mark Warner",
+          "url": "https://www.flickr.com/photos/senatormarkwarner",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/34389013@N06.jpg?1621890937#34389013@N06"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:34389013@N06",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/senatormarkwarner/6808615133",
+    "html_sha256": "e220e2555c9eed7f5621bd619883cd2141d3e3759ed6d2b7ca374deb9d25fe87",
+    "stored_sha256": "004a2bc65118cf0d8edc4e2a204bdb96c6cd5392101648805615b3a6b249b4a4",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\0cd6403f59f41631.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\0cd6403f59f41631.json",
+    "sha256": "17bbb75a69d33d41e5922ec2aaa376e36ac027d1e1ec2dd39eba1dd7ee2c51e6"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\0cd6403f59f41631.json",
+    "sha256": "97ef544d0a611fd2f21d2d5c233d4cb469f597629cb6e5160f5573ebfb075c12"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/senatormarkwarner/6808615133",
+    "original_url": "https://farm2.staticflickr.com/7147/6808615133_09b2691724_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Mark Warner",
+    "author_url": "https://www.flickr.com/people/senatormarkwarner/",
+    "title": "photo (1)",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

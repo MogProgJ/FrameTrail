@@ -1,0 +1,11 @@
+{
+  "step": 407,
+  "loss": 7.298034250736237,
+  "gradient_norm": 3.267415761947632,
+  "train_ids": [
+    "8d5986ae877b7be4",
+    "eaa39ad36b4ea9b4",
+    "2c8ac32ffb411ae3",
+    "9404a1942f9cbe2d"
+  ]
+}

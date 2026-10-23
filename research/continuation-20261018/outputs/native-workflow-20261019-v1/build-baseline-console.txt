@@ -1,0 +1,43 @@
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-workflow-20261019-v1/source/CMakeLists.txt
+  sqlite3.c
+  frametrail_sqlite.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_sqlite.lib
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-workflow-20261019-v1/source/CMakeLists.txt
+  live_session.cpp
+  run_store.cpp
+  playback_cache.cpp
+  analysis_job.cpp
+  tracker.cpp
+  assignment.cpp
+  frame_tracker.cpp
+  detector.cpp
+  yolo_world.cpp
+  rfdetr.cpp
+  dml_inference.cpp
+  media_reader.cpp
+  frame_export.cpp
+  preview_session.cpp
+  Generating Code...
+  frametrail_core.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_core.lib
+  Automatic UIC for target frametrail_preview_ui
+  1>
+  2>Automatic RCC for apps/desktop/studio_assets.qrc
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-workflow-20261019-v1/source/CMakeLists.txt
+  workspace_chrome.cpp
+  cached_playback_window.cpp
+  preview_window.cpp
+  saved_run_window.cpp
+  live_window.cpp
+  Generating Code...
+  qrc_studio_assets.cpp
+  frametrail_preview_ui.vcxproj -> C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\Release\frametrail_preview_ui.lib
+  Building Custom Rule C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/native-workflow-20261019-v1/source/CMakeLists.txt
+  workflow_diagnostics.cpp
+C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\source\tests\workflow_diagnostics.cpp(32,143): error C2838: 'small': illegal qualified name in member declaration [C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\frametrail_workflow_diagnostics.vcxproj]
+C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\source\tests\workflow_diagnostics.cpp(32,143): error C2065: 'small': undeclared identifier [C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\frametrail_workflow_diagnostics.vcxproj]
+C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\source\tests\workflow_diagnostics.cpp(32,178): error C2440: 'initializing': cannot convert from 'frametrail::DetectorBackend' to 'frametrail::DetectorModel' [C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\build\frametrail_workflow_diagnostics.vcxproj]
+      C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\native-workflow-20261019-v1\source\tests\workflow_diagnostics.cpp(32,178):
+      Conversion to enumeration type requires an explicit cast (static_cast, C-style cast or parenthesized function-style cast)
+  

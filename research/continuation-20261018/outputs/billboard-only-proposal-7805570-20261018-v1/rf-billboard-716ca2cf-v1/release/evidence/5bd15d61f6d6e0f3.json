@@ -1,0 +1,64 @@
+{
+  "image_id": "5bd15d61f6d6e0f3",
+  "image_sha256": "947306bbe9b8b104a90bc23c14102f61dd7385b48560ec36f7a07e9fb589e2ed",
+  "publisher_attribution": {
+    "id": "5bd15d61f6d6e0f3",
+    "landing_url": "https://www.flickr.com/photos/rbowen/4121917601",
+    "original_url": "https://farm4.staticflickr.com/2693/4121917601_28338f2692_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Rich Bowen",
+    "author_url": "https://www.flickr.com/people/rbowen/",
+    "title": "Schrade USAF issue officer's knife",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Rich Bowen",
+    "url": "https://www.flickr.com/photos/rbowen",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/23889540@N00.jpg?1653212953#23889540@N00"
+  },
+  "current_title": "Schrade USAF issue officer's knife",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Rich Bowen",
+        "url": "https://www.flickr.com/photos/rbowen",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/23889540@N00.jpg?1653212953#23889540@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/rbowen/4121917601",
+  "canonical_page_url": "https://www.flickr.com/photos/rbowen/4121917601",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "472d705d65e4c8411085affaefc79720beec69a45e62410354c3805028021ca9",
+  "source_gzip_sha256": "399a2ace5002bff1d17569f3d77637296edd98985ddcb80b04e11ff6e5caaa5f",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-078",
+  "visual_proof_sha256": "33fd96ad354293f2d2c9c3a03c62e40fb688a08cb5d3370c14d32b5c34fe77ad",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

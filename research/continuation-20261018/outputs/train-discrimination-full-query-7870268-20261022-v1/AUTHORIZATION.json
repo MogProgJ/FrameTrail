@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-22",
+  "status": "explicit-separate-eight-fit-control-authorized",
+  "user_reply": "Run the eight-fit full-query control (recommended)",
+  "exact_scope": "Eight additional fixed CPU fits; all300 fitting-absent queries; same recorded scene/identity folds, weights, settings and1800s cap; noVAL/TEST/GPU/deployment.",
+  "proposal_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-7870268-20261022-v1\\FULL_QUERY_CONTROL_PROPOSAL.md",
+    "sha256": "0f571099d6531a1ee5bcb9c8d8fb88070ceeb0127694f59eadab86544f15ec24"
+  },
+  "parent_receipt_sha256": "fd3aeec198a76ddb62848ca11fbf35990e2146e08d6151a274aa4a6d4cc43b81"
+}

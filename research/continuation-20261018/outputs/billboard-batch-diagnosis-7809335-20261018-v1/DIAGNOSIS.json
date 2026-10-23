@@ -1,0 +1,2768 @@
+{
+  "actual_array_job_id": "7809335",
+  "source": "all64 independently rescored validation records",
+  "validation_photos": 135,
+  "effective_unscored_cap": 530,
+  "trials": [
+    {
+      "index": 0,
+      "variant": {
+        "index": 0,
+        "name": "n1-lr0.0001",
+        "negative_presentations": 1,
+        "lr": 0.0001,
+        "accumulation": 2,
+        "maximum_updates": 3000,
+        "schedule_file": "schedules/task-0.json",
+        "schedule_sha256": "5d0711f88a6c072f9ef90c167976ee3409dd163a4d4d42e36292ec0e430c4c1f"
+      },
+      "selected_step": 0,
+      "max_billboard_hits": 7,
+      "first_billboard_hit_step": 600,
+      "first_rejection": {
+        "step": 600,
+        "eligible": false,
+        "billboard_known_hits": 2,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 1,
+        "billboard_predictions": 10,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 535,
+        "aggregate_known_hits": 129,
+        "failures": [
+          {
+            "baseline": "current",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "current",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 528,
+            "cap": 533,
+            "after": 535
+          },
+          {
+            "baseline": "original",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 535
+          }
+        ]
+      },
+      "best_positive_but_rejected": {
+        "step": 1000,
+        "eligible": false,
+        "billboard_known_hits": 7,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 2,
+        "billboard_predictions": 39,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 558,
+        "aggregate_known_hits": 134,
+        "failures": [
+          {
+            "baseline": "current",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "baseline": "current",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 528,
+            "cap": 533,
+            "after": 558
+          },
+          {
+            "baseline": "original",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 558
+          }
+        ]
+      },
+      "final": {
+        "step": 1500,
+        "eligible": false,
+        "billboard_known_hits": 7,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 2,
+        "billboard_predictions": 58,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 577,
+        "aggregate_known_hits": 134,
+        "failures": [
+          {
+            "baseline": "current",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "baseline": "current",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 528,
+            "cap": 533,
+            "after": 577
+          },
+          {
+            "baseline": "original",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 577
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 0,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 100,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 200,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 300,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 400,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 1,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 529,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 500,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 2,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 530,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 600,
+          "eligible": false,
+          "billboard_known_hits": 2,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 10,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 535,
+          "aggregate_known_hits": 129,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 535
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 535
+            }
+          ]
+        },
+        {
+          "step": 700,
+          "eligible": false,
+          "billboard_known_hits": 4,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 17,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 540,
+          "aggregate_known_hits": 131,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 540
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 540
+            }
+          ]
+        },
+        {
+          "step": 800,
+          "eligible": false,
+          "billboard_known_hits": 5,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 25,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 546,
+          "aggregate_known_hits": 132,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 546
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 546
+            }
+          ]
+        },
+        {
+          "step": 900,
+          "eligible": false,
+          "billboard_known_hits": 5,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 34,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 555,
+          "aggregate_known_hits": 132,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 555
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 555
+            }
+          ]
+        },
+        {
+          "step": 1000,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 39,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 558,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 558
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 558
+            }
+          ]
+        },
+        {
+          "step": 1100,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 45,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 564,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 564
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 564
+            }
+          ]
+        },
+        {
+          "step": 1200,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 49,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 568,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 568
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 568
+            }
+          ]
+        },
+        {
+          "step": 1300,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 53,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 572,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 572
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 572
+            }
+          ]
+        },
+        {
+          "step": 1400,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 55,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 574,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 574
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 574
+            }
+          ]
+        },
+        {
+          "step": 1500,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 58,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 577,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 577
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 577
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "variant": {
+        "index": 1,
+        "name": "n3-lr0.0001",
+        "negative_presentations": 3,
+        "lr": 0.0001,
+        "accumulation": 4,
+        "maximum_updates": 3000,
+        "schedule_file": "schedules/task-1.json",
+        "schedule_sha256": "ecd0143d22d4f2844a663702f42ac497a1ce2ab224beb9144a7bf4f675764908"
+      },
+      "selected_step": 0,
+      "max_billboard_hits": 5,
+      "first_billboard_hit_step": 600,
+      "first_rejection": {
+        "step": 600,
+        "eligible": false,
+        "billboard_known_hits": 1,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 0,
+        "billboard_predictions": 4,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 531,
+        "aggregate_known_hits": 128,
+        "failures": [
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 531
+          }
+        ]
+      },
+      "best_positive_but_rejected": {
+        "step": 1300,
+        "eligible": false,
+        "billboard_known_hits": 5,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 1,
+        "billboard_predictions": 27,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 549,
+        "aggregate_known_hits": 132,
+        "failures": [
+          {
+            "baseline": "current",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "current",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 528,
+            "cap": 533,
+            "after": 549
+          },
+          {
+            "baseline": "original",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 549
+          }
+        ]
+      },
+      "final": {
+        "step": 1500,
+        "eligible": false,
+        "billboard_known_hits": 5,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 1,
+        "billboard_predictions": 29,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 551,
+        "aggregate_known_hits": 132,
+        "failures": [
+          {
+            "baseline": "current",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "current",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 528,
+            "cap": 533,
+            "after": 551
+          },
+          {
+            "baseline": "original",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 551
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 0,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 100,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 200,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 300,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 400,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 500,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 2,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 530,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 600,
+          "eligible": false,
+          "billboard_known_hits": 1,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 4,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 531,
+          "aggregate_known_hits": 128,
+          "failures": [
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 531
+            }
+          ]
+        },
+        {
+          "step": 700,
+          "eligible": false,
+          "billboard_known_hits": 2,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 12,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 537,
+          "aggregate_known_hits": 129,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 537
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 537
+            }
+          ]
+        },
+        {
+          "step": 800,
+          "eligible": false,
+          "billboard_known_hits": 2,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 12,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 537,
+          "aggregate_known_hits": 129,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 537
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 537
+            }
+          ]
+        },
+        {
+          "step": 900,
+          "eligible": false,
+          "billboard_known_hits": 2,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 16,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 541,
+          "aggregate_known_hits": 129,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 541
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 541
+            }
+          ]
+        },
+        {
+          "step": 1000,
+          "eligible": false,
+          "billboard_known_hits": 2,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 15,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 540,
+          "aggregate_known_hits": 129,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 540
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 540
+            }
+          ]
+        },
+        {
+          "step": 1100,
+          "eligible": false,
+          "billboard_known_hits": 3,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 22,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 546,
+          "aggregate_known_hits": 130,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 546
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 546
+            }
+          ]
+        },
+        {
+          "step": 1200,
+          "eligible": false,
+          "billboard_known_hits": 3,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 22,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 546,
+          "aggregate_known_hits": 130,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 546
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 546
+            }
+          ]
+        },
+        {
+          "step": 1300,
+          "eligible": false,
+          "billboard_known_hits": 5,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 27,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 549,
+          "aggregate_known_hits": 132,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 549
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 549
+            }
+          ]
+        },
+        {
+          "step": 1400,
+          "eligible": false,
+          "billboard_known_hits": 5,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 28,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 550,
+          "aggregate_known_hits": 132,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 550
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 550
+            }
+          ]
+        },
+        {
+          "step": 1500,
+          "eligible": false,
+          "billboard_known_hits": 5,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 29,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 551,
+          "aggregate_known_hits": 132,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 551
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 551
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "variant": {
+        "index": 2,
+        "name": "n1-lr0.0003",
+        "negative_presentations": 1,
+        "lr": 0.0003,
+        "accumulation": 2,
+        "maximum_updates": 3000,
+        "schedule_file": "schedules/task-2.json",
+        "schedule_sha256": "5d0711f88a6c072f9ef90c167976ee3409dd163a4d4d42e36292ec0e430c4c1f"
+      },
+      "selected_step": 0,
+      "max_billboard_hits": 9,
+      "first_billboard_hit_step": 200,
+      "first_rejection": {
+        "step": 200,
+        "eligible": false,
+        "billboard_known_hits": 2,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 1,
+        "billboard_predictions": 11,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 536,
+        "aggregate_known_hits": 129,
+        "failures": [
+          {
+            "baseline": "current",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "current",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 528,
+            "cap": 533,
+            "after": 536
+          },
+          {
+            "baseline": "original",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 536
+          }
+        ]
+      },
+      "best_positive_but_rejected": {
+        "step": 1400,
+        "eligible": false,
+        "billboard_known_hits": 9,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 2,
+        "billboard_predictions": 70,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 587,
+        "aggregate_known_hits": 136,
+        "failures": [
+          {
+            "baseline": "current",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "baseline": "current",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 528,
+            "cap": 533,
+            "after": 587
+          },
+          {
+            "baseline": "original",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 587
+          }
+        ]
+      },
+      "final": {
+        "step": 1500,
+        "eligible": false,
+        "billboard_known_hits": 9,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 2,
+        "billboard_predictions": 70,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 587,
+        "aggregate_known_hits": 136,
+        "failures": [
+          {
+            "baseline": "current",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "baseline": "current",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 528,
+            "cap": 533,
+            "after": 587
+          },
+          {
+            "baseline": "original",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 587
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 0,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 100,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 200,
+          "eligible": false,
+          "billboard_known_hits": 2,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 11,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 536,
+          "aggregate_known_hits": 129,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 536
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 536
+            }
+          ]
+        },
+        {
+          "step": 300,
+          "eligible": false,
+          "billboard_known_hits": 6,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 35,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 555,
+          "aggregate_known_hits": 133,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 555
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 555
+            }
+          ]
+        },
+        {
+          "step": 400,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 49,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 568,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 568
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 568
+            }
+          ]
+        },
+        {
+          "step": 500,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 60,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 579,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 579
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 579
+            }
+          ]
+        },
+        {
+          "step": 600,
+          "eligible": false,
+          "billboard_known_hits": 8,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 67,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 585,
+          "aggregate_known_hits": 135,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 585
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 585
+            }
+          ]
+        },
+        {
+          "step": 700,
+          "eligible": false,
+          "billboard_known_hits": 8,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 76,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 594,
+          "aggregate_known_hits": 135,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 594
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 594
+            }
+          ]
+        },
+        {
+          "step": 800,
+          "eligible": false,
+          "billboard_known_hits": 8,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 3,
+          "billboard_predictions": 77,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 594,
+          "aggregate_known_hits": 135,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 3
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 594
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 3
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 594
+            }
+          ]
+        },
+        {
+          "step": 900,
+          "eligible": false,
+          "billboard_known_hits": 9,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 3,
+          "billboard_predictions": 79,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 595,
+          "aggregate_known_hits": 136,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 3
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 595
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 3
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 595
+            }
+          ]
+        },
+        {
+          "step": 1000,
+          "eligible": false,
+          "billboard_known_hits": 9,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 3,
+          "billboard_predictions": 79,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 595,
+          "aggregate_known_hits": 136,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 3
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 595
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 3
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 595
+            }
+          ]
+        },
+        {
+          "step": 1100,
+          "eligible": false,
+          "billboard_known_hits": 9,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 3,
+          "billboard_predictions": 81,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 597,
+          "aggregate_known_hits": 136,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 3
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 597
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 3
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 597
+            }
+          ]
+        },
+        {
+          "step": 1200,
+          "eligible": false,
+          "billboard_known_hits": 9,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 3,
+          "billboard_predictions": 73,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 589,
+          "aggregate_known_hits": 136,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 3
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 589
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 3
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 589
+            }
+          ]
+        },
+        {
+          "step": 1300,
+          "eligible": false,
+          "billboard_known_hits": 9,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 72,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 589,
+          "aggregate_known_hits": 136,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 589
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 589
+            }
+          ]
+        },
+        {
+          "step": 1400,
+          "eligible": false,
+          "billboard_known_hits": 9,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 70,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 587,
+          "aggregate_known_hits": 136,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 587
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 587
+            }
+          ]
+        },
+        {
+          "step": 1500,
+          "eligible": false,
+          "billboard_known_hits": 9,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 70,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 587,
+          "aggregate_known_hits": 136,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 587
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 587
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "variant": {
+        "index": 3,
+        "name": "n3-lr0.0003",
+        "negative_presentations": 3,
+        "lr": 0.0003,
+        "accumulation": 4,
+        "maximum_updates": 3000,
+        "schedule_file": "schedules/task-3.json",
+        "schedule_sha256": "ecd0143d22d4f2844a663702f42ac497a1ce2ab224beb9144a7bf4f675764908"
+      },
+      "selected_step": 0,
+      "max_billboard_hits": 7,
+      "first_billboard_hit_step": 200,
+      "first_rejection": {
+        "step": 200,
+        "eligible": false,
+        "billboard_known_hits": 1,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 0,
+        "billboard_predictions": 4,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 531,
+        "aggregate_known_hits": 128,
+        "failures": [
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 531
+          }
+        ]
+      },
+      "best_positive_but_rejected": {
+        "step": 1200,
+        "eligible": false,
+        "billboard_known_hits": 7,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 1,
+        "billboard_predictions": 40,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 560,
+        "aggregate_known_hits": 134,
+        "failures": [
+          {
+            "baseline": "current",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "current",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 528,
+            "cap": 533,
+            "after": 560
+          },
+          {
+            "baseline": "original",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 560
+          }
+        ]
+      },
+      "final": {
+        "step": 1500,
+        "eligible": false,
+        "billboard_known_hits": 7,
+        "billboard_known_targets": 11,
+        "billboard_complete_fp": 1,
+        "billboard_predictions": 49,
+        "washing_known_hits": 8,
+        "all_unscored_predictions": 569,
+        "aggregate_known_hits": 134,
+        "failures": [
+          {
+            "baseline": "current",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "current",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 528,
+            "cap": 533,
+            "after": 569
+          },
+          {
+            "baseline": "original",
+            "category": "billboard",
+            "metric": "complete_fp",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "baseline": "original",
+            "category": "all",
+            "metric": "unscored_predictions",
+            "before": 525,
+            "cap": 530,
+            "after": 569
+          }
+        ]
+      },
+      "trace": [
+        {
+          "step": 0,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 100,
+          "eligible": true,
+          "billboard_known_hits": 0,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 0,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 528,
+          "aggregate_known_hits": 127,
+          "failures": []
+        },
+        {
+          "step": 200,
+          "eligible": false,
+          "billboard_known_hits": 1,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 0,
+          "billboard_predictions": 4,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 531,
+          "aggregate_known_hits": 128,
+          "failures": [
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 531
+            }
+          ]
+        },
+        {
+          "step": 300,
+          "eligible": false,
+          "billboard_known_hits": 2,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 16,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 541,
+          "aggregate_known_hits": 129,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 541
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 541
+            }
+          ]
+        },
+        {
+          "step": 400,
+          "eligible": false,
+          "billboard_known_hits": 5,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 2,
+          "billboard_predictions": 30,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 551,
+          "aggregate_known_hits": 132,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 551
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 2
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 551
+            }
+          ]
+        },
+        {
+          "step": 500,
+          "eligible": false,
+          "billboard_known_hits": 5,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 29,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 551,
+          "aggregate_known_hits": 132,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 551
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 551
+            }
+          ]
+        },
+        {
+          "step": 600,
+          "eligible": false,
+          "billboard_known_hits": 5,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 30,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 552,
+          "aggregate_known_hits": 132,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 552
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 552
+            }
+          ]
+        },
+        {
+          "step": 700,
+          "eligible": false,
+          "billboard_known_hits": 5,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 33,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 555,
+          "aggregate_known_hits": 132,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 555
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 555
+            }
+          ]
+        },
+        {
+          "step": 800,
+          "eligible": false,
+          "billboard_known_hits": 5,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 34,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 556,
+          "aggregate_known_hits": 132,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 556
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 556
+            }
+          ]
+        },
+        {
+          "step": 900,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 46,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 566,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 566
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 566
+            }
+          ]
+        },
+        {
+          "step": 1000,
+          "eligible": false,
+          "billboard_known_hits": 6,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 40,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 561,
+          "aggregate_known_hits": 133,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 561
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 561
+            }
+          ]
+        },
+        {
+          "step": 1100,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 51,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 571,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 571
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 571
+            }
+          ]
+        },
+        {
+          "step": 1200,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 40,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 560,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 560
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 560
+            }
+          ]
+        },
+        {
+          "step": 1300,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 49,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 569,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 569
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 569
+            }
+          ]
+        },
+        {
+          "step": 1400,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 47,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 567,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 567
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 567
+            }
+          ]
+        },
+        {
+          "step": 1500,
+          "eligible": false,
+          "billboard_known_hits": 7,
+          "billboard_known_targets": 11,
+          "billboard_complete_fp": 1,
+          "billboard_predictions": 49,
+          "washing_known_hits": 8,
+          "all_unscored_predictions": 569,
+          "aggregate_known_hits": 134,
+          "failures": [
+            {
+              "baseline": "current",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "current",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 528,
+              "cap": 533,
+              "after": 569
+            },
+            {
+              "baseline": "original",
+              "category": "billboard",
+              "metric": "complete_fp",
+              "before": 0,
+              "after": 1
+            },
+            {
+              "baseline": "original",
+              "category": "all",
+              "metric": "unscored_predictions",
+              "before": 525,
+              "cap": 530,
+              "after": 569
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "checkpoint_reselected": false,
+  "holdout_or_new_inference_used": false,
+  "model_or_threshold_changed": false,
+  "new_jobs": 0
+}

@@ -1,0 +1,40 @@
+{
+  "image_id": "0ead37227d5e2931",
+  "image_sha256": "b9a3e250224dac862a7c61e31b4b59e9d09281af8c16d80d0683d2535c844475",
+  "identity_group": "flickr-nsid:44124368329@N01",
+  "scene_group": "scene:south-ferry-shelter-island-timetable-and-fares-beside-person",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\0ead37227d5e2931.json",
+    "sha256": "f9569d2542024e187ee831e92e5759d67e8380673fc65e5fae235aabb1bdf2ee"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-train-traffic.json",
+    "sha256": "b6f5e869ddac873983b07cc2f447668cc76d268dd202f42091d8ebfce18749b4"
+  },
+  "content_decision": {
+    "id": "0ead37227d5e2931",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "traffic-information-signs",
+    "note": "Original shows ferry timetable/fares/location information and person; no advertising campaign face.",
+    "scene_description": "South Ferry Shelter Island timetable and fares beside person"
+  },
+  "prospective_split": "train",
+  "confuser_family": "traffic-information-signs",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

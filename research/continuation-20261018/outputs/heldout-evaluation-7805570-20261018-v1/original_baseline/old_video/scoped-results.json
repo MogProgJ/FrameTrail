@@ -1,0 +1,1813 @@
+{
+  "schema": 1,
+  "purpose": "scoped-pilot-baseline-or-candidate-comparison",
+  "reference_sha256": "cd80c08b08b32ed6a5cc66ff1d1dc41aaca41dc6605948b7ac00ac2f2788cc41",
+  "identity": {
+    "role": "original_baseline",
+    "checkpoint_sha256": "3a9adf74b11b851fba7393cc41b12b538a7aa1576b0a4e179468cc36c2279389",
+    "evaluation_lock_sha256": "362e49cb9001e9a06795c59aafc7df0d6a26700ddaf8f592ef7431251fdcfa10",
+    "backend": "PyTorchCPU/FP32/math-attention"
+  },
+  "aggregate": {
+    "complete_tp": 33,
+    "complete_fp": 1,
+    "complete_fn": 44,
+    "complete_precision": 0.9705882352941176,
+    "complete_recall": 0.42857142857142855,
+    "partial_positive_hits": 8,
+    "partial_positive_misses": 26,
+    "partial_known_positive_recall": 0.23529411764705882,
+    "unscored_predictions": 44
+  },
+  "by_sequence": {
+    "00021": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 8,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "00148": {
+      "complete_tp": 2,
+      "complete_fp": 1,
+      "complete_fn": 0,
+      "complete_precision": 0.6666666666666666,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 1
+    },
+    "00232": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 8,
+      "complete_precision": 1.0,
+      "complete_recall": 0.2,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "00336": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 4,
+      "complete_precision": 1.0,
+      "complete_recall": 0.3333333333333333,
+      "partial_positive_hits": 4,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 9
+    },
+    "00342": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 4,
+      "complete_precision": 1.0,
+      "complete_recall": 0.3333333333333333,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 6
+    },
+    "00378": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 2,
+      "partial_positive_misses": 4,
+      "partial_known_positive_recall": 0.3333333333333333,
+      "unscored_predictions": 3
+    },
+    "00385": {
+      "complete_tp": 6,
+      "complete_fp": 0,
+      "complete_fn": 6,
+      "complete_precision": 1.0,
+      "complete_recall": 0.5,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 1
+    },
+    "00495": {
+      "complete_tp": 5,
+      "complete_fp": 0,
+      "complete_fn": 6,
+      "complete_precision": 1.0,
+      "complete_recall": 0.45454545454545453,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "00552": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "00616": {
+      "complete_tp": 4,
+      "complete_fp": 0,
+      "complete_fn": 6,
+      "complete_precision": 1.0,
+      "complete_recall": 0.4,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 4
+    },
+    "00621": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 8,
+      "complete_precision": 1.0,
+      "complete_recall": 0.2,
+      "partial_positive_hits": 2,
+      "partial_positive_misses": 8,
+      "partial_known_positive_recall": 0.2,
+      "unscored_predictions": 9
+    },
+    "00751": {
+      "complete_tp": 6,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": 1.0,
+      "complete_recall": 0.75,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 4,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 11
+    }
+  },
+  "by_class": {
+    "person": {
+      "complete_tp": 13,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 2,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 0
+    },
+    "bicycle": {
+      "complete_tp": 2,
+      "complete_fp": 1,
+      "complete_fn": 0,
+      "complete_precision": 0.6666666666666666,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "boat": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "bird": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 2,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 0
+    },
+    "cat": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "dog": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "suitcase": {
+      "complete_tp": 4,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "spoon": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 2,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 0
+    },
+    "bowl": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 2,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": 1.0,
+      "unscored_predictions": 0
+    },
+    "bed": {
+      "complete_tp": 4,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "oven": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "refrigerator": {
+      "complete_tp": 2,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": 1.0,
+      "complete_recall": 1.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "adhesive tape": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "camera": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "computer keyboard": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "cupboard": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 4,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "curtain": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 4,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "drawer": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 6,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "dress": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "dumbbell": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 4,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "hat": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "kitchen knife": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "mammal": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 4,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "medical equipment": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "necklace": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "nightstand": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "parrot": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "pomegranate": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "ruler": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "screwdriver": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "shirt": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "stethoscope": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "street light": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "table": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "trousers": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 4,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    },
+    "waste container": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "watch": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 2,
+      "complete_precision": null,
+      "complete_recall": 0.0,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 0,
+      "partial_known_positive_recall": null,
+      "unscored_predictions": 0
+    },
+    "wrench": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "complete_precision": null,
+      "complete_recall": null,
+      "partial_positive_hits": 0,
+      "partial_positive_misses": 2,
+      "partial_known_positive_recall": 0.0,
+      "unscored_predictions": 0
+    }
+  },
+  "frames": [
+    {
+      "frame_id": "00336-00013",
+      "counts": {
+        "complete_tp": 1,
+        "partial_tp": 2,
+        "unscored_predictions": 4,
+        "complete_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00336-00013-publisher-1514",
+          "iou": 0.9333911686451621,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00336-00013-publisher-1519",
+          "iou": 0.9026844664036253,
+          "kind": "partial_tp"
+        },
+        {
+          "prediction_index": 5,
+          "target_id": "00336-00013-publisher-1515",
+          "iou": 0.9688176330760785,
+          "kind": "partial_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00336-00013-publisher-1516",
+          "label": "Pomegranate",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00336-00013-publisher-1520",
+          "label": "Kitchen knife",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 6,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00336-00026",
+      "counts": {
+        "complete_tp": 1,
+        "unscored_predictions": 5,
+        "partial_tp": 2,
+        "complete_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00336-00026-publisher-1514",
+          "iou": 0.9821093225259203,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 3,
+          "target_id": "00336-00026-publisher-1519",
+          "iou": 0.867695591293108,
+          "kind": "partial_tp"
+        },
+        {
+          "prediction_index": 7,
+          "target_id": "00336-00026-publisher-1515",
+          "iou": 0.9783450936626503,
+          "kind": "partial_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00336-00026-publisher-1516",
+          "label": "Pomegranate",
+          "kind": "complete_fn",
+          "nearby_other_class": "apple",
+          "nearby_iou": 0.9905484240974758
+        },
+        {
+          "target_id": "00336-00026-publisher-1520",
+          "label": "Kitchen knife",
+          "kind": "complete_fn",
+          "nearby_other_class": "knife",
+          "nearby_iou": 0.95542223864729
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 5,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 6,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00616-00008",
+      "counts": {
+        "complete_tp": 2,
+        "unscored_predictions": 2,
+        "complete_fn": 3
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00616-00008-publisher-2807",
+          "iou": 0.9563407197060991,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00616-00008-publisher-2805",
+          "iou": 0.9778746040737029,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00616-00008-publisher-2806",
+          "label": "Cupboard",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00616-00008-publisher-2808",
+          "label": "Cupboard",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00616-00008-publisher-2810",
+          "label": "Parrot",
+          "kind": "complete_fn",
+          "nearby_other_class": "dog",
+          "nearby_iou": 0.9874552334908571
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00616-00016",
+      "counts": {
+        "complete_tp": 2,
+        "unscored_predictions": 2,
+        "complete_fn": 3
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00616-00016-publisher-2807",
+          "iou": 0.9522437186031792,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00616-00016-publisher-2805",
+          "iou": 0.9637359854140044,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00616-00016-publisher-2806",
+          "label": "Cupboard",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00616-00016-publisher-2808",
+          "label": "Cupboard",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00616-00016-publisher-2810",
+          "label": "Parrot",
+          "kind": "complete_fn",
+          "nearby_other_class": "dog",
+          "nearby_iou": 0.9789462963714006
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00621-00005",
+      "counts": {
+        "partial_tp": 1,
+        "complete_tp": 1,
+        "unscored_predictions": 5,
+        "partial_fn": 4,
+        "complete_fn": 4
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00621-00005-publisher-2821",
+          "iou": 0.9625211382950932,
+          "kind": "partial_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00621-00005-publisher-2820",
+          "iou": 0.970871300153976,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00621-00005-publisher-2822",
+          "label": "Medical equipment",
+          "kind": "partial_fn",
+          "nearby_other_class": "book",
+          "nearby_iou": 0.6863096784488858
+        },
+        {
+          "target_id": "00621-00005-publisher-2823",
+          "label": "Waste container",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00005-publisher-2824",
+          "label": "Drawer",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00005-publisher-2825",
+          "label": "Drawer",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00005-publisher-2826",
+          "label": "Drawer",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00005-publisher-2829",
+          "label": "Stethoscope",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00005-publisher-2830",
+          "label": "Watch",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00005-publisher-2833",
+          "label": "Table",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 5,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 6,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00621-00010",
+      "counts": {
+        "partial_tp": 1,
+        "complete_tp": 1,
+        "unscored_predictions": 4,
+        "partial_fn": 4,
+        "complete_fn": 4
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00621-00010-publisher-2821",
+          "iou": 0.9824973225322834,
+          "kind": "partial_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00621-00010-publisher-2820",
+          "iou": 0.9711878860268536,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00621-00010-publisher-2822",
+          "label": "Medical equipment",
+          "kind": "partial_fn",
+          "nearby_other_class": "book",
+          "nearby_iou": 0.6216230370277529
+        },
+        {
+          "target_id": "00621-00010-publisher-2823",
+          "label": "Waste container",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00010-publisher-2824",
+          "label": "Drawer",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00010-publisher-2825",
+          "label": "Drawer",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00010-publisher-2826",
+          "label": "Drawer",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00010-publisher-2829",
+          "label": "Stethoscope",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00010-publisher-2830",
+          "label": "Watch",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00621-00010-publisher-2833",
+          "label": "Table",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 5,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00751-00006",
+      "counts": {
+        "complete_tp": 3,
+        "unscored_predictions": 5,
+        "complete_fn": 1,
+        "partial_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00751-00006-publisher-3372",
+          "iou": 0.9241637946313926,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00751-00006-publisher-3367",
+          "iou": 0.8560897041159534,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 6,
+          "target_id": "00751-00006-publisher-3373",
+          "iou": 0.9443619924958894,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00751-00006-publisher-3368",
+          "label": "Dumbbell",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00751-00006-publisher-3369",
+          "label": "Trousers",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00751-00006-publisher-3375",
+          "label": "Shirt",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 5,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 7,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00751-00013",
+      "counts": {
+        "complete_tp": 3,
+        "unscored_predictions": 6,
+        "complete_fn": 1,
+        "partial_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00751-00013-publisher-3372",
+          "iou": 0.9704458285718909,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00751-00013-publisher-3367",
+          "iou": 0.8953178566062787,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 5,
+          "target_id": "00751-00013-publisher-3373",
+          "iou": 0.9657926248277353,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00751-00013-publisher-3368",
+          "label": "Dumbbell",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00751-00013-publisher-3369",
+          "label": "Trousers",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00751-00013-publisher-3375",
+          "label": "Shirt",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 6,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 7,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 8,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00495-00005",
+      "counts": {
+        "complete_tp": 2,
+        "complete_fn": 3
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00495-00005-publisher-2222",
+          "iou": 0.9671887568785704,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00495-00005-publisher-2223",
+          "iou": 0.9590857051198018,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00495-00005-publisher-2220",
+          "label": "Trousers",
+          "kind": "complete_fn",
+          "nearby_other_class": "person",
+          "nearby_iou": 0.5603048013496754
+        },
+        {
+          "target_id": "00495-00005-publisher-2221",
+          "label": "Shirt",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00495-00005-publisher-2224",
+          "label": "Dress",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "00495-00010",
+      "counts": {
+        "complete_tp": 3,
+        "complete_fn": 3
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00495-00010-publisher-2222",
+          "iou": 0.9685711010775904,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00495-00010-publisher-2223",
+          "iou": 0.9629591638897018,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 2,
+          "target_id": "00495-00010-publisher-2225",
+          "iou": 0.7923663048780932,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00495-00010-publisher-2220",
+          "label": "Trousers",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00495-00010-publisher-2221",
+          "label": "Shirt",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00495-00010-publisher-2224",
+          "label": "Dress",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "00232-00010",
+      "counts": {
+        "complete_tp": 1,
+        "complete_fn": 4
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00232-00010-publisher-1073",
+          "iou": 0.9765772512782882,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00232-00010-publisher-1071",
+          "label": "Dumbbell",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00232-00010-publisher-1072",
+          "label": "Trousers",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00232-00010-publisher-1075",
+          "label": "Hat",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00232-00010-publisher-1076",
+          "label": "Necklace",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "00232-00020",
+      "counts": {
+        "complete_tp": 1,
+        "complete_fn": 4
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00232-00020-publisher-1073",
+          "iou": 0.9824733784849756,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00232-00020-publisher-1071",
+          "label": "Dumbbell",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00232-00020-publisher-1072",
+          "label": "Trousers",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00232-00020-publisher-1075",
+          "label": "Hat",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00232-00020-publisher-1076",
+          "label": "Necklace",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "00021-00008",
+      "counts": {
+        "partial_fn": 4
+      },
+      "matches_and_complete_scope_false_positives": [],
+      "missed_targets": [
+        {
+          "target_id": "00021-00008-publisher-113",
+          "label": "Wrench",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00021-00008-publisher-115",
+          "label": "Adhesive tape",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00021-00008-publisher-116",
+          "label": "Ruler",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00021-00008-publisher-118",
+          "label": "Screwdriver",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "00021-00016",
+      "counts": {
+        "partial_fn": 4
+      },
+      "matches_and_complete_scope_false_positives": [],
+      "missed_targets": [
+        {
+          "target_id": "00021-00016-publisher-113",
+          "label": "Wrench",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00021-00016-publisher-115",
+          "label": "Adhesive tape",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00021-00016-publisher-116",
+          "label": "Ruler",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00021-00016-publisher-118",
+          "label": "Screwdriver",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "00342-00005",
+      "counts": {
+        "complete_tp": 1,
+        "unscored_predictions": 2,
+        "complete_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00342-00005-publisher-1540",
+          "iou": 0.9865505021880381,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00342-00005-publisher-1541",
+          "label": "Computer keyboard",
+          "kind": "complete_fn",
+          "nearby_other_class": "keyboard",
+          "nearby_iou": 0.9562622519944345
+        },
+        {
+          "target_id": "00342-00005-publisher-1544",
+          "label": "Camera",
+          "kind": "complete_fn",
+          "nearby_other_class": "remote",
+          "nearby_iou": 0.9767220515860144
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00342-00010",
+      "counts": {
+        "complete_tp": 1,
+        "unscored_predictions": 4,
+        "complete_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00342-00010-publisher-1540",
+          "iou": 0.9740041384633628,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00342-00010-publisher-1541",
+          "label": "Computer keyboard",
+          "kind": "complete_fn",
+          "nearby_other_class": "keyboard",
+          "nearby_iou": 0.9789206610538842
+        },
+        {
+          "target_id": "00342-00010-publisher-1544",
+          "label": "Camera",
+          "kind": "complete_fn",
+          "nearby_other_class": "cell phone",
+          "nearby_iou": 0.8145894318219742
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 4,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00385-00008",
+      "counts": {
+        "complete_tp": 3,
+        "complete_fn": 3
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00385-00008-publisher-1737",
+          "iou": 0.9873308001123682,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00385-00008-publisher-1738",
+          "iou": 0.9533284384499101,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 2,
+          "target_id": "00385-00008-publisher-1735",
+          "iou": 0.9683684951849618,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00385-00008-publisher-1733",
+          "label": "Curtain",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00385-00008-publisher-1734",
+          "label": "Curtain",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00385-00008-publisher-1739",
+          "label": "Nightstand",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "00385-00016",
+      "counts": {
+        "complete_tp": 3,
+        "unscored_predictions": 1,
+        "complete_fn": 3
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00385-00016-publisher-1737",
+          "iou": 0.9686293285054403,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "target_id": "00385-00016-publisher-1738",
+          "iou": 0.9771511454468096,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 2,
+          "target_id": "00385-00016-publisher-1735",
+          "iou": 0.9680333208401066,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00385-00016-publisher-1733",
+          "label": "Curtain",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00385-00016-publisher-1734",
+          "label": "Curtain",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00385-00016-publisher-1739",
+          "label": "Nightstand",
+          "kind": "complete_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 3,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00378-00008",
+      "counts": {
+        "partial_tp": 1,
+        "unscored_predictions": 2,
+        "partial_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00378-00008-publisher-1693",
+          "iou": 0.8189984813208696,
+          "kind": "partial_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00378-00008-publisher-1696",
+          "label": "Mammal",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00378-00008-publisher-1697",
+          "label": "Mammal",
+          "kind": "partial_fn",
+          "nearby_other_class": "dog",
+          "nearby_iou": 0.934572996539847
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        },
+        {
+          "prediction_index": 2,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00378-00016",
+      "counts": {
+        "partial_tp": 1,
+        "unscored_predictions": 1,
+        "partial_fn": 2
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00378-00016-publisher-1698",
+          "iou": 0.8225227966468471,
+          "kind": "partial_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00378-00016-publisher-1696",
+          "label": "Mammal",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        },
+        {
+          "target_id": "00378-00016-publisher-1697",
+          "label": "Mammal",
+          "kind": "partial_fn",
+          "nearby_other_class": "dog",
+          "nearby_iou": 0.9463351991271055
+        }
+      ],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00148-00006",
+      "counts": {
+        "complete_tp": 1,
+        "complete_fp": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00148-00006-publisher-677",
+          "iou": 0.9886464095158131,
+          "kind": "complete_tp"
+        },
+        {
+          "prediction_index": 1,
+          "kind": "complete_fp",
+          "label": "bicycle"
+        }
+      ],
+      "missed_targets": [],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "00148-00013",
+      "counts": {
+        "complete_tp": 1,
+        "unscored_predictions": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00148-00013-publisher-677",
+          "iou": 0.6971617552056958,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [],
+      "ignored_predictions": [
+        {
+          "prediction_index": 1,
+          "reason": "class-frame-completeness-not-established"
+        }
+      ]
+    },
+    {
+      "frame_id": "00552-00008",
+      "counts": {
+        "complete_tp": 1,
+        "partial_fn": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00552-00008-publisher-2515",
+          "iou": 0.9196749641952352,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00552-00008-publisher-2516",
+          "label": "Street light",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": []
+    },
+    {
+      "frame_id": "00552-00016",
+      "counts": {
+        "complete_tp": 1,
+        "partial_fn": 1
+      },
+      "matches_and_complete_scope_false_positives": [
+        {
+          "prediction_index": 0,
+          "target_id": "00552-00016-publisher-2515",
+          "iou": 0.8730992179052027,
+          "kind": "complete_tp"
+        }
+      ],
+      "missed_targets": [
+        {
+          "target_id": "00552-00016-publisher-2516",
+          "label": "Street light",
+          "kind": "partial_fn",
+          "nearby_other_class": null,
+          "nearby_iou": null
+        }
+      ],
+      "ignored_predictions": []
+    }
+  ],
+  "limits": "Scoped evaluation at confidence .35, class-wise NMS .45, match IoU .5. Partial labels support known-positive recall only; unmatched unknown predictions are unscored. Small assistant-reviewed evidence, not full-vocabulary AP, tracking performance, or independent representative accuracy."
+}

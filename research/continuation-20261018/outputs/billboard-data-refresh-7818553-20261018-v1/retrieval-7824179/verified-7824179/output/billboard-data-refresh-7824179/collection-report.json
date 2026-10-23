@@ -1,0 +1,97 @@
+{
+  "status": "completed-unreviewed-intake",
+  "actual_job_id": "7824179",
+  "plan_sha256": "2fb87eec20424b4d73fee912f3cf8395404cc11996cd5bced42ebe117c38d340",
+  "selected": 240,
+  "downloaded": 240,
+  "original_bytes": 69645977,
+  "HTML_bytes": 105505409,
+  "failures": [],
+  "shortfalls": [
+    {
+      "anchor": "billboard",
+      "requested": {
+        "train": 72,
+        "val": 24,
+        "test": 24
+      },
+      "selected": {
+        "train": 72,
+        "val": 24,
+        "test": 24
+      }
+    },
+    {
+      "anchor": "traffic sign",
+      "requested": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      },
+      "selected": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      }
+    },
+    {
+      "anchor": "washing machine",
+      "requested": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      },
+      "selected": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      }
+    },
+    {
+      "anchor": "picture frame",
+      "requested": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      },
+      "selected": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      }
+    },
+    {
+      "anchor": "computer monitor",
+      "requested": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      },
+      "selected": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      }
+    },
+    {
+      "anchor": "whiteboard",
+      "requested": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      },
+      "selected": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      }
+    }
+  ],
+  "manifest_sha256": "be48baf7c20e5ead0e211c27cf5e0e12c5ce247a6553fe1d349d30630dc370bd",
+  "model_inference": false,
+  "training": false,
+  "rights_verified": false,
+  "approved_for_training": false,
+  "approved_for_application": false,
+  "elapsed_seconds": 306.6957286330871
+}

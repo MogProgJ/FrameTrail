@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "files": {
+    "INPUT_HASHES.json": "e5067d1b12b413d10370b6bfbf8c6d493444959ccd7aab43214acff0caf6b4d5",
+    "REPORT.md": "6103ff303a195ce50c7a48511f967b1b022247f3e0611039c3e33d00fa1817db",
+    "review-console.txt": "b4d2333853bcab0ba8754bfde785fd753b6799b23ae47bd95fa40b17b6151464",
+    "REVIEW.json": "665dc2f84a034c85afe87fd485aead68dfd79796b032a5036689a452b0d6df5b",
+    "review.py": "bd9d6a478496b371d049b69a02dbfd3937a6521ca8f4c02da60eac55b1c3fda7",
+    "SELECTION.json": "ec92f6abe94f612bc459aee36d4317b6af5c059480d934930ee2c9648b474bb2",
+    "SUMMARY.json": "1f578bd45949b62491a72898ae32ce0dc087c74f29d5f5d90e218bae37ce6080"
+  }
+}

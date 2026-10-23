@@ -1,0 +1,257 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FrameTrail — RF-DETR CPU mechanics comparison</title>
+<style>body{font:16px system-ui;margin:24px;background:#eef1f4;color:#17212c}main{max-width:1500px;margin:auto}
+.warning{padding:16px;background:#fff0bf;border:1px solid #987000}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+article{background:white;padding:12px;border-radius:6px}svg{display:block;width:100%;background:#222}li{margin:4px 0}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}h2{margin-top:36px}</style><main>
+<h1>Pretrained detector comparison — mechanics only</h1>
+<p class="warning">These are model guesses, not corrected annotations or ground truth. Six publisher-train photos cannot establish accuracy. RF-DETR covers 80 COCO classes; Open Images covers 597 canonical classes. More boxes does not mean a better model. No training, model adoption, native RF-DETR integration or DirectML check has occurred.</p>
+<p>Yellow rectangles: predictions at confidence &gt; 0.35. Hover a box for its label/score, or expand the prediction list. This page is read-only; your annotation editor remains separate. All columns use the same clean derived PNG.</p>
+<p>Python/ONNX decoded detections agree on these six inputs. Raw query tensors are <strong>not</strong> positionwise equivalent. See <a href="experiment.json">the experiment record</a> for deltas, provenance and limits.</p>
+<h2>d411abce2c36e64f</h2><div class="grid">
+<article><h3>RF-DETR Small — ONNX CPU</h3><svg viewBox="0 0 1024 768" role="img" aria-label="Unverified model predictions">
+<image href="inputs/d411abce2c36e64f.png" width="1024" height="768"/>
+<rect x="110.66142272949219" y="93.84242248535156" width="448.9972229003906" height="655.0550537109375" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.972</title></rect>
+<rect x="459.20814514160156" y="17.879425048828125" width="391.3494567871094" height="547.6058349609375" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.940</title></rect>
+<rect x="818.3280792236328" y="0.16930389404296875" width="205.6719207763672" height="589.9477844238281" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.915</title></rect></svg><details><summary>3 predictions — not accuracy</summary><ul>
+<li>person: 0.972</li>
+<li>person: 0.940</li>
+<li>person: 0.915</li>
+</ul></details></article>
+<article><h3>YOLOX-S — native CPU</h3><svg viewBox="0 0 1024 768" role="img" aria-label="Unverified model predictions">
+<image href="inputs/d411abce2c36e64f.png" width="1024" height="768"/>
+<rect x="470.689" y="16.332" width="379.896" height="543.965" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.916</title></rect>
+<rect x="110.18" y="81.1043" width="462.791" height="646.8597000000001" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.890</title></rect>
+<rect x="814.126" y="2.76075" width="209.18399999999997" height="575.29225" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.632</title></rect></svg><details><summary>3 predictions — not accuracy</summary><ul>
+<li>person: 0.916</li>
+<li>person: 0.890</li>
+<li>person: 0.632</li>
+</ul></details></article>
+<article><h3>Open Images — native CPU</h3><svg viewBox="0 0 1024 768" role="img" aria-label="Unverified model predictions">
+<image href="inputs/d411abce2c36e64f.png" width="1024" height="768"/>
+<rect x="529.655" y="57.8029" width="141.62" height="178.4771" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>human face: 0.818</title></rect>
+<rect x="212.406" y="178.52" width="150.44" height="173.77399999999997" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>human face: 0.809</title></rect>
+<rect x="386.654" y="593.317" width="172.41999999999996" height="86.274" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>footwear: 0.565</title></rect>
+<rect x="818.182" y="497.551" width="140.74900000000002" height="100.493" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>footwear: 0.517</title></rect>
+<rect x="112.995" y="92.3371" width="446.57899999999995" height="649.5489" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.438</title></rect>
+<rect x="326.834" y="644.764" width="123.27699999999999" height="105.08799999999997" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>footwear: 0.433</title></rect>
+<rect x="464.515" y="15.1221" width="387.01800000000003" height="549.4218999999999" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.389</title></rect>
+<rect x="724.229" y="466.18" width="119.89799999999991" height="70.49899999999997" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>footwear: 0.378</title></rect></svg><details><summary>8 predictions — not accuracy</summary><ul>
+<li>human face: 0.818</li>
+<li>human face: 0.809</li>
+<li>footwear: 0.565</li>
+<li>footwear: 0.517</li>
+<li>person: 0.438</li>
+<li>footwear: 0.433</li>
+<li>person: 0.389</li>
+<li>footwear: 0.378</li>
+</ul></details></article>
+</div>
+<h2>b3af0afa48a3ffb5</h2><div class="grid">
+<article><h3>RF-DETR Small — ONNX CPU</h3><svg viewBox="0 0 1024 683" role="img" aria-label="Unverified model predictions">
+<image href="inputs/b3af0afa48a3ffb5.png" width="1024" height="683"/>
+<rect x="162.19207763671875" y="25.665785282850266" width="739.55322265625" height="651.6789278388023" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.972</title></rect>
+<rect x="780.2912292480469" y="136.38788781315088" width="96.64361572265625" height="125.36299119889736" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.899</title></rect>
+<rect x="609.1084899902344" y="113.05538441985846" width="60.44451904296875" height="120.23693396151066" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.815</title></rect>
+<rect x="945.3040542602539" y="208.7307554781437" width="78.61320495605469" height="81.4502329826355" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.701</title></rect>
+<rect x="164.29712677001953" y="351.9257628619671" width="72.55021667480469" height="131.97322207689285" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.618</title></rect>
+<rect x="305.34769439697266" y="186.07346514239907" width="94.80931091308594" height="66.32357256859541" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.610</title></rect>
+<rect x="968.211347579956" y="276.4006475433707" width="38.02530288696289" height="53.50457729399204" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>cup: 0.594</title></rect>
+<rect x="283.75657653808594" y="213.48089174181223" width="93.88992309570312" height="51.66817079484463" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.543</title></rect>
+<rect x="705.4812164306641" y="399.44996379315853" width="93.09579467773438" height="243.18751326203346" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.474</title></rect>
+<rect x="440.46981048583984" y="619.328465860337" width="154.5844268798828" height="63.5532284155488" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bowl: 0.468</title></rect>
+<rect x="893.0635070800781" y="291.38112353533506" width="130.43768310546875" height="89.58566297590733" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>dining table: 0.422</title></rect>
+<rect x="209.0012435913086" y="185.65177852660418" width="94.25404357910156" height="72.77922259271145" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.418</title></rect>
+<rect x="885.5724678039551" y="233.55335072427988" width="49.830039978027344" height="53.18298886716366" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.402</title></rect>
+<rect x="306.1816062927246" y="561.6856766194105" width="121.26300811767578" height="121.09472361207008" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>knife: 0.384</title></rect>
+<rect x="749.1419372558594" y="361.1013530045748" width="273.12249755859375" height="278.92317482829094" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.383</title></rect>
+<rect x="551.9645462036133" y="256.666106775403" width="54.76231384277344" height="53.99622145295143" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>cell phone: 0.378</title></rect>
+<rect x="742.4052276611328" y="572.9967134520411" width="202.62008666992188" height="68.91452313959599" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>handbag: 0.355</title></rect>
+<rect x="870.3828125" y="196.35205382108688" width="121.5367431640625" height="91.41383588314056" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>couch: 0.354</title></rect>
+<rect x="667.5655212402344" y="218.93342514708638" width="140.69757080078125" height="54.75483652204275" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>dining table: 0.352</title></rect></svg><details><summary>19 predictions — not accuracy</summary><ul>
+<li>person: 0.972</li>
+<li>person: 0.899</li>
+<li>person: 0.815</li>
+<li>person: 0.701</li>
+<li>chair: 0.618</li>
+<li>chair: 0.610</li>
+<li>cup: 0.594</li>
+<li>chair: 0.543</li>
+<li>chair: 0.474</li>
+<li>bowl: 0.468</li>
+<li>dining table: 0.422</li>
+<li>chair: 0.418</li>
+<li>chair: 0.402</li>
+<li>knife: 0.384</li>
+<li>chair: 0.383</li>
+<li>cell phone: 0.378</li>
+<li>handbag: 0.355</li>
+<li>couch: 0.354</li>
+<li>dining table: 0.352</li>
+</ul></details></article>
+<article><h3>YOLOX-S — native CPU</h3><svg viewBox="0 0 1024 683" role="img" aria-label="Unverified model predictions">
+<image href="inputs/b3af0afa48a3ffb5.png" width="1024" height="683"/>
+<rect x="163.512" y="23.942" width="812.9549999999999" height="627.466" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.884</title></rect>
+<rect x="779.237" y="136.678" width="98.04700000000003" height="124.56700000000001" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.873</title></rect>
+<rect x="607.916" y="113.042" width="64.53699999999992" height="117.714" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.784</title></rect>
+<rect x="741.602" y="362.194" width="281.678" height="316.65000000000003" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.755</title></rect>
+<rect x="947.629" y="207.375" width="75.25099999999998" height="79.01799999999997" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.654</title></rect>
+<rect x="136.314" y="256.988" width="175.886" height="105.12400000000002" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.503</title></rect>
+<rect x="164.173" y="351.033" width="71.60300000000001" height="126.56099999999998" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.501</title></rect>
+<rect x="115.523" y="155.22" width="84.555" height="219.28900000000002" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.491</title></rect>
+<rect x="438.726" y="618.366" width="156.81799999999998" height="63.110000000000014" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bowl: 0.419</title></rect>
+<rect x="746.509" y="199.872" width="34.61400000000003" height="55.61499999999998" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>cup: 0.415</title></rect>
+<rect x="893.982" y="280.395" width="130.01800000000003" height="101.84800000000001" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>dining table: 0.390</title></rect>
+<rect x="708.777" y="210.216" width="19.825999999999908" height="31.388000000000005" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>cup: 0.367</title></rect>
+<rect x="149.91" y="352.143" width="86.95600000000002" height="285.551" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>chair: 0.356</title></rect>
+<rect x="972.595" y="277.455" width="30.204999999999927" height="61.79400000000004" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>cup: 0.356</title></rect></svg><details><summary>14 predictions — not accuracy</summary><ul>
+<li>person: 0.884</li>
+<li>person: 0.873</li>
+<li>person: 0.784</li>
+<li>chair: 0.755</li>
+<li>person: 0.654</li>
+<li>chair: 0.503</li>
+<li>chair: 0.501</li>
+<li>chair: 0.491</li>
+<li>bowl: 0.419</li>
+<li>cup: 0.415</li>
+<li>dining table: 0.390</li>
+<li>cup: 0.367</li>
+<li>chair: 0.356</li>
+<li>cup: 0.356</li>
+</ul></details></article>
+<article><h3>Open Images — native CPU</h3><svg viewBox="0 0 1024 683" role="img" aria-label="Unverified model predictions">
+<image href="inputs/b3af0afa48a3ffb5.png" width="1024" height="683"/>
+<rect x="165.162" y="196.63" width="720.6959999999999" height="461.946" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>clothing: 0.504</title></rect>
+<rect x="777.99" y="136.469" width="99.77300000000002" height="127.74000000000001" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.412</title></rect></svg><details><summary>2 predictions — not accuracy</summary><ul>
+<li>clothing: 0.504</li>
+<li>person: 0.412</li>
+</ul></details></article>
+</div>
+<h2>114902a59f068716</h2><div class="grid">
+<article><h3>RF-DETR Small — ONNX CPU</h3><svg viewBox="0 0 1024 1024" role="img" aria-label="Unverified model predictions">
+<image href="inputs/114902a59f068716.png" width="1024" height="1024"/>
+<rect x="390.92620849609375" y="57.55194091796875" width="227.151611328125" height="959.279052734375" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.942</title></rect>
+<rect x="698.0680236816406" y="60.3419189453125" width="257.28863525390625" height="892.3074340820312" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.923</title></rect>
+<rect x="104.09397888183594" y="69.06036376953125" width="207.49172973632812" height="811.122314453125" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.913</title></rect>
+<rect x="918.9076766967773" y="76.61981201171875" width="104.54316711425781" height="756.2545166015625" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.910</title></rect>
+<rect x="567.9536666870117" y="75.09539794921875" width="167.21363830566406" height="824.8458251953125" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.904</title></rect>
+<rect x="43.82441329956055" y="4.121368408203125" width="111.8601303100586" height="762.3834228515625" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.872</title></rect>
+<rect x="298.42372131347656" y="79.04150390625" width="147.80532836914062" height="824.5765380859375" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.856</title></rect>
+<rect x="284.0002975463867" y="88.57815551757812" width="75.68373107910156" height="372.36163330078125" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.585</title></rect>
+<rect x="699.3933181762695" y="66.00970458984375" width="116.85472106933594" height="777.2672119140625" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.531</title></rect>
+<rect x="703.11279296875" y="67.56546020507812" width="113.8546142578125" height="327.43743896484375" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.454</title></rect>
+<rect x="547.3763732910156" y="76.18409729003906" width="45.50030517578125" height="250.38845825195312" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.393</title></rect></svg><details><summary>11 predictions — not accuracy</summary><ul>
+<li>bottle: 0.942</li>
+<li>bottle: 0.923</li>
+<li>bottle: 0.913</li>
+<li>bottle: 0.910</li>
+<li>bottle: 0.904</li>
+<li>bottle: 0.872</li>
+<li>bottle: 0.856</li>
+<li>bottle: 0.585</li>
+<li>bottle: 0.531</li>
+<li>bottle: 0.454</li>
+<li>bottle: 0.393</li>
+</ul></details></article>
+<article><h3>YOLOX-S — native CPU</h3><svg viewBox="0 0 1024 1024" role="img" aria-label="Unverified model predictions">
+<image href="inputs/114902a59f068716.png" width="1024" height="1024"/>
+<rect x="394.184" y="31.1483" width="221.80400000000003" height="936.0127" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.969</title></rect>
+<rect x="741.294" y="68.3328" width="211.68500000000006" height="783.5312" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.962</title></rect>
+<rect x="95.0954" y="40.2332" width="181.55760000000004" height="840.8248" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.953</title></rect>
+<rect x="567.44" y="63.6774" width="168.71399999999994" height="830.2035999999999" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.945</title></rect>
+<rect x="919.487" y="98.9203" width="104.51300000000003" height="702.4117" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.889</title></rect>
+<rect x="278.59" y="81.0448" width="187.02300000000002" height="802.3062" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.882</title></rect>
+<rect x="33.1194" y="5.5123" width="125.1656" height="624.8677" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.623</title></rect>
+<rect x="0.0" y="24.6865" width="964.915" height="968.1514999999999" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>dining table: 0.465</title></rect></svg><details><summary>8 predictions — not accuracy</summary><ul>
+<li>bottle: 0.969</li>
+<li>bottle: 0.962</li>
+<li>bottle: 0.953</li>
+<li>bottle: 0.945</li>
+<li>bottle: 0.889</li>
+<li>bottle: 0.882</li>
+<li>bottle: 0.623</li>
+<li>dining table: 0.465</li>
+</ul></details></article>
+<article><h3>Open Images — native CPU</h3><svg viewBox="0 0 1024 1024" role="img" aria-label="Unverified model predictions">
+<image href="inputs/114902a59f068716.png" width="1024" height="1024"/>
+<rect x="384.897" y="54.4239" width="235.15699999999998" height="969.5761" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.623</title></rect>
+<rect x="713.648" y="63.74" width="242.03199999999993" height="895.958" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.604</title></rect>
+<rect x="556.729" y="73.1877" width="179.10199999999998" height="848.5613000000001" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.552</title></rect>
+<rect x="297.742" y="78.587" width="154.29399999999998" height="789.439" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.496</title></rect>
+<rect x="915.708" y="68.0581" width="108.29200000000003" height="769.1179000000001" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.482</title></rect>
+<rect x="93.3398" y="62.4254" width="189.6412" height="819.7546" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bottle: 0.468</title></rect></svg><details><summary>6 predictions — not accuracy</summary><ul>
+<li>bottle: 0.623</li>
+<li>bottle: 0.604</li>
+<li>bottle: 0.552</li>
+<li>bottle: 0.496</li>
+<li>bottle: 0.482</li>
+<li>bottle: 0.468</li>
+</ul></details></article>
+</div>
+<h2>e12b9abbaac60c1d</h2><div class="grid">
+<article><h3>RF-DETR Small — ONNX CPU</h3><svg viewBox="0 0 1024 680" role="img" aria-label="Unverified model predictions">
+<image href="inputs/e12b9abbaac60c1d.png" width="1024" height="680"/>
+<rect x="2.906097412109375" y="0.6615293025970459" width="1020.0178833007812" height="671.9440674781799" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>keyboard: 0.977</title></rect></svg><details><summary>1 predictions — not accuracy</summary><ul>
+<li>keyboard: 0.977</li>
+</ul></details></article>
+<article><h3>YOLOX-S — native CPU</h3><svg viewBox="0 0 1024 680" role="img" aria-label="Unverified model predictions">
+<image href="inputs/e12b9abbaac60c1d.png" width="1024" height="680"/>
+<rect x="0.0" y="6.94841" width="1017.27" height="673.05159" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>keyboard: 0.958</title></rect></svg><details><summary>1 predictions — not accuracy</summary><ul>
+<li>keyboard: 0.958</li>
+</ul></details></article>
+<article><h3>Open Images — native CPU</h3><svg viewBox="0 0 1024 680" role="img" aria-label="Unverified model predictions">
+<image href="inputs/e12b9abbaac60c1d.png" width="1024" height="680"/>
+<rect x="0.0" y="0.336694" width="1022.22" height="678.1043060000001" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>computer keyboard: 0.847</title></rect></svg><details><summary>1 predictions — not accuracy</summary><ul>
+<li>computer keyboard: 0.847</li>
+</ul></details></article>
+</div>
+<h2>276dee336c643993</h2><div class="grid">
+<article><h3>RF-DETR Small — ONNX CPU</h3><svg viewBox="0 0 766 1024" role="img" aria-label="Unverified model predictions">
+<image href="inputs/276dee336c643993.png" width="766" height="1024"/>
+<rect x="158.27770602703094" y="188.54962158203125" width="570.9496080875397" height="825.40771484375" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>backpack: 0.928</title></rect>
+<rect x="37.20969907939434" y="589.6184387207031" width="77.94917586445808" height="136.34149169921875" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>remote: 0.869</title></rect>
+<rect x="1.3749310672283173" y="0.51806640625" width="358.2081176042557" height="670.2891845703125" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.785</title></rect>
+<rect x="0.4161878228187561" y="564.4415588378906" width="209.91325783729553" height="450.18280029296875" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>handbag: 0.587</title></rect>
+<rect x="371.4976606965065" y="248.66921997070312" width="100.7592750787735" height="286.07928466796875" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>cat: 0.420</title></rect>
+<rect x="481.1319795846939" y="295.7646484375" width="284.24110198020935" height="715.9049072265625" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>couch: 0.396</title></rect></svg><details><summary>6 predictions — not accuracy</summary><ul>
+<li>backpack: 0.928</li>
+<li>remote: 0.869</li>
+<li>person: 0.785</li>
+<li>handbag: 0.587</li>
+<li>cat: 0.420</li>
+<li>couch: 0.396</li>
+</ul></details></article>
+<article><h3>YOLOX-S — native CPU</h3><svg viewBox="0 0 766 1024" role="img" aria-label="Unverified model predictions">
+<image href="inputs/276dee336c643993.png" width="766" height="1024"/>
+<rect x="37.4192" y="587.607" width="78.10679999999999" height="135.18100000000004" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>cell phone: 0.509</title></rect>
+<rect x="0.725937" y="0.875216" width="355.873063" height="727.192784" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>person: 0.471</title></rect>
+<rect x="187.429" y="175.644" width="528.183" height="750.948" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>suitcase: 0.363</title></rect></svg><details><summary>3 predictions — not accuracy</summary><ul>
+<li>cell phone: 0.509</li>
+<li>person: 0.471</li>
+<li>suitcase: 0.363</li>
+</ul></details></article>
+<article><h3>Open Images — native CPU</h3><svg viewBox="0 0 766 1024" role="img" aria-label="Unverified model predictions">
+<image href="inputs/276dee336c643993.png" width="766" height="1024"/></svg><details><summary>0 predictions — not accuracy</summary><ul>
+</ul></details></article>
+</div>
+<h2>d661e13fa2f51a33</h2><div class="grid">
+<article><h3>RF-DETR Small — ONNX CPU</h3><svg viewBox="0 0 1024 685" role="img" aria-label="Unverified model predictions">
+<image href="inputs/d661e13fa2f51a33.png" width="1024" height="685"/>
+<rect x="44.102996826171875" y="101.66982725262642" width="815.0099487304688" height="578.768307864666" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>dog: 0.868</title></rect>
+<rect x="44.102996826171875" y="101.66982725262642" width="815.0099487304688" height="578.768307864666" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>bear: 0.419</title></rect></svg><details><summary>2 predictions — not accuracy</summary><ul>
+<li>dog: 0.868</li>
+<li>bear: 0.419</li>
+</ul></details></article>
+<article><h3>YOLOX-S — native CPU</h3><svg viewBox="0 0 1024 685" role="img" aria-label="Unverified model predictions">
+<image href="inputs/d661e13fa2f51a33.png" width="1024" height="685"/>
+<rect x="84.2853" y="89.5463" width="787.3097" height="586.8317000000001" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>cat: 0.838</title></rect></svg><details><summary>1 predictions — not accuracy</summary><ul>
+<li>cat: 0.838</li>
+</ul></details></article>
+<article><h3>Open Images — native CPU</h3><svg viewBox="0 0 1024 685" role="img" aria-label="Unverified model predictions">
+<image href="inputs/d661e13fa2f51a33.png" width="1024" height="685"/>
+<rect x="43.161" y="97.849" width="825.5509999999999" height="587.151" fill="none" stroke="#ffcf4a" stroke-width="2" vector-effect="non-scaling-stroke"><title>dog: 0.560</title></rect></svg><details><summary>1 predictions — not accuracy</summary><ul>
+<li>dog: 0.560</li>
+</ul></details></article>
+</div>
+</main></html>

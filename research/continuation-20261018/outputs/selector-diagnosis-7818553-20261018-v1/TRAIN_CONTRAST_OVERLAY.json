@@ -1,0 +1,466 @@
+{
+  "status": "reviewed-training-only-contrast-overlay-for-local-probes",
+  "original_manifest_sha256": "e43a2c7a415c4f82209a1fc2471d8677503f51315e71f422ec0d6665eac377b9",
+  "review_inventory_sha256": "40196daf91768ae1765c6e335f8f92d0038127f0beff6fa21e01ac064aa3f087",
+  "original_labels_and_scopes_modified": false,
+  "validation_and_test_photos_used_as_training": false,
+  "records": [
+    {
+      "image_id": "001a4338f140e05e",
+      "image_sha256": "623d862b67e36a330ab0158c364d6c4deab0cf5bcd6379c655f8b5f21d437961",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\001a4338f140e05e.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Utility-room washer, worktop and building materials; no billboard."
+    },
+    {
+      "image_id": "08dd4d1137b5ebeb",
+      "image_sha256": "9c185cef9c068286faef7f66c0638ef4ffcd4136c5af98cefb09031790ede350",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\08dd4d1137b5ebeb.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Domestic laundry closet, shelves and framed small art; no billboard."
+    },
+    {
+      "image_id": "0b5455fbbc912400",
+      "image_sha256": "35656683423ebc6c82d87f76361e2dfbc98319eede4b837bf2038add704fce03",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\0b5455fbbc912400.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Coach luggage compartment with washers; no advertising board visible."
+    },
+    {
+      "image_id": "0cfedba7346611f2",
+      "image_sha256": "c239db2b8778417f5aba8ee5d7b59d14e217d8dbc77109c1f2ffca741fba94eb",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\0cfedba7346611f2.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Bathroom/laundry room and mirror; no billboard."
+    },
+    {
+      "image_id": "0e61cd4a43b03b48",
+      "image_sha256": "9653aa352500a59bf8bb6116be0fb6ac1db7963cedb6e5a010e4a4cdcb66d62a",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\0e61cd4a43b03b48.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Domestic kitchen with small framed kitchen art and fridge notice; no billboard."
+    },
+    {
+      "image_id": "259107b4202e6168",
+      "image_sha256": "323fb1604d412be6297c87b8df01f61ac46da3dfc6cc351d8e829e31d62a872c",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\259107b4202e6168.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Laundry room with framed photograph collage; photos of urban scenes are not physical billboards."
+    },
+    {
+      "image_id": "27396602483f4cb0",
+      "image_sha256": "ab9ee08a3b0ddcd251f3af392022c39d4d2b223e5bd0fb0d35eac5d9d4e22971",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\27396602483f4cb0.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Close-up domestic top-loading washer; no billboard."
+    },
+    {
+      "image_id": "2d9a83c18fe991c8",
+      "image_sha256": "a58078d087e5da53d3111ba424658dabbdb3096d3d97fb3ce14d1545ef7db0ea",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\2d9a83c18fe991c8.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Laundromat with small operating and price notices; no billboard."
+    },
+    {
+      "image_id": "3563dcf2b06b6819",
+      "image_sha256": "bdb0ac25333c107878348db03069aae5375246f4e5884e83a791187299bda7d2",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\3563dcf2b06b6819.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Domestic laundry room with small framed art and cupboards; no billboard."
+    },
+    {
+      "image_id": "399048f892919b4c",
+      "image_sha256": "15b9b1f4a9f092ff06183b830dca40e6881500a965674da888da45186dec7901",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\399048f892919b4c.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Laundromat operating instructions/service notice; not a large advertisement panel."
+    },
+    {
+      "image_id": "3dbc9f2537db454e",
+      "image_sha256": "5da0ff2689a836bb485ad58e71058c8e05fb28dddec8ac93aa2f444afa8ee4a3",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\3dbc9f2537db454e.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Domestic bathroom/laundry interior; no billboard."
+    },
+    {
+      "image_id": "4715b3a7e388197a",
+      "image_sha256": "1c07a2cf1a656455d99845f0307a083f64adcb4fe30bdaf18914ae83778bfa6b",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\4715b3a7e388197a.jpg",
+      "supervision": "whole_photo_billboard_absent",
+      "note": "Domestic laundry floor, child and washer; no billboard."
+    },
+    {
+      "image_id": "00b5ac570d995133",
+      "image_sha256": "1203898b63aad7bdaef949e2f4f272b37011ed8632bea09a6592ed03bdd836a7",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\00b5ac570d995133.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.844375,
+        0.556375,
+        0.10499999999999998,
+        0.05057999999999998
+      ],
+      "original_xyxy": [
+        810.88,
+        322.89968,
+        918.4,
+        353.65232
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "Street direction/parking/one-way sign panels.",
+      "outside_region_scope": "unknown"
+    },
+    {
+      "image_id": "017f45b1410d3ddb",
+      "image_sha256": "3112c262e535ef194ea1510a9801b0e839cdd6c962e8f1b320ab31624eac75f1",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\017f45b1410d3ddb.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.5385087331136068,
+        0.2631582260131836,
+        0.17366288503011074,
+        0.09488518238067628
+      ],
+      "original_xyxy": [
+        346.8881591796875,
+        220.89281005859374,
+        480.2612548828125,
+        318.05523681640625
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "STOP and street-name panels.",
+      "outside_region_scope": "unknown"
+    },
+    {
+      "image_id": "075feb565ce68b25",
+      "image_sha256": "b419b168cdbca182fa62dc568498e42408083ce46c9ff3b1b5bf1102d9067f70",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\075feb565ce68b25.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.333962,
+        0.13125,
+        0.19622599999999998,
+        0.1525
+      ],
+      "original_xyxy": [
+        159.905622,
+        56.32,
+        292.94685,
+        212.48
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "Road warning and no-parking panels.",
+      "outside_region_scope": "unknown"
+    },
+    {
+      "image_id": "0856509cf53b96bd",
+      "image_sha256": "7a13a2ce9e1ee49f6fa4116aa1b8d75304c54f1c8ab83ae2f9e74de46d8c7cdf",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\0856509cf53b96bd.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.504112,
+        0.2664475,
+        0.322368,
+        0.41008700000000003
+      ],
+      "original_xyxy": [
+        351.158272,
+        47.158272,
+        681.263104,
+        362.105088
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "STOP panel only; background property sign remains unknown.",
+      "outside_region_scope": "unknown"
+    },
+    {
+      "image_id": "139b3e2764326140",
+      "image_sha256": "b17f4261d79f6baf9867b7662e771dde1320370c6c2060e0d201b65ba72c6f58",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\139b3e2764326140.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.2625,
+        0.3625705,
+        0.1,
+        0.334897
+      ],
+      "original_xyxy": [
+        217.6,
+        133.268326,
+        320.0,
+        362.002977
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "STOP panel.",
+      "outside_region_scope": "unknown"
+    },
+    {
+      "image_id": "14af69b8e6849468",
+      "image_sha256": "208f6d4104c6fb7a438e296240301be56e746f01244d8cd54efb1b6b75550d4d",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\14af69b8e6849468.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.469375,
+        0.8780485000000001,
+        0.03999999999999998,
+        0.07692300000000017
+      ],
+      "original_xyxy": [
+        460.16,
+        573.437921,
+        501.12,
+        625.9763300000001
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "Road direction/regulatory panel ONLY; clear distant billboard remains unknown and is not negated.",
+      "outside_region_scope": "unknown"
+    },
+    {
+      "image_id": "1c079fd05e484cb8",
+      "image_sha256": "e9d932111a0379c89e51d9602b29fa3219d3682af7b561d2b5badcb979fef58e",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\1c079fd05e484cb8.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.5325,
+        0.3254165,
+        0.08875000000000005,
+        0.16583299999999998
+      ],
+      "original_xyxy": [
+        499.84,
+        186.24,
+        590.72,
+        313.599744
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "STOP panel.",
+      "outside_region_scope": "unknown"
+    },
+    {
+      "image_id": "1d9c82705c765f75",
+      "image_sha256": "b4932ee8f8383fb8750f671d40bcf8340a3a2592ba407a2508824d3409d1fdd6",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\1d9c82705c765f75.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.5021875,
+        0.40208350000000004,
+        0.641875,
+        0.12916699999999995
+      ],
+      "original_xyxy": [
+        185.6,
+        259.20000000000005,
+        842.88,
+        358.400256
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "Street-name/no-through-road panels.",
+      "outside_region_scope": "unknown"
+    },
+    {
+      "image_id": "2500ff51d4171f4c",
+      "image_sha256": "0808df67cfe3a295f474f17d5248c5dc4b7bffebbf021d446cbba81b38caec70",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\2500ff51d4171f4c.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.381502103805542,
+        0.15356222788492838,
+        0.11159648895263674,
+        0.17149362564086915
+      ],
+      "original_xyxy": [
+        333.520751953125,
+        52.08223876953125,
+        447.795556640625,
+        183.78934326171876
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "Cable-car road warning panel.",
+      "outside_region_scope": "unknown"
+    },
+    {
+      "image_id": "2a802f25d03a591c",
+      "image_sha256": "ff11f5beb33c2b12e64f8f495050d225085f83fe37ea36f1cff2751c483e77b9",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\2a802f25d03a591c.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.5003124999999999,
+        0.4570835,
+        0.336875,
+        0.47083300000000006
+      ],
+      "original_xyxy": [
+        339.84,
+        170.240256,
+        684.8,
+        531.84
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "STOP panel ONLY; shop-front advertising remains unknown.",
+      "outside_region_scope": "unknown"
+    },
+    {
+      "image_id": "4e45f9ded2984a64",
+      "image_sha256": "3f9385619fe92a75369241c4bda6a318f99be9afa913ee4e4cecef83d73d2605",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\4e45f9ded2984a64.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.8903125000000001,
+        0.12476549999999999,
+        0.07687499999999992,
+        0.138837
+      ],
+      "original_xyxy": [
+        872.32,
+        37.802001,
+        951.04,
+        132.627672
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "Regulatory access/no-parking panels.",
+      "outside_region_scope": "unknown"
+    },
+    {
+      "image_id": "515bbfe54e9176d6",
+      "image_sha256": "bf090faf04e40f33296e2e201119775407026d24fa2d64c5e64d7ff397f147b8",
+      "split": "train",
+      "reviewer": "assistant full original photo visual review",
+      "independent_human_review": false,
+      "canonical_id": 133,
+      "original_scope": "unknown",
+      "source_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\rf-selector-a77d9663-v1\\release\\images\\515bbfe54e9176d6.jpg",
+      "supervision": "region_billboard_negative_only",
+      "region": [
+        0.4425,
+        0.4070835,
+        0.15375000000000005,
+        0.06583299999999996
+      ],
+      "original_xyxy": [
+        374.4,
+        287.36025600000005,
+        531.84,
+        337.92
+      ],
+      "region_minimum_query_IoU": 0.7,
+      "note": "Street-name/dead-end panels ONLY; background billboard remains unknown and is not negated.",
+      "outside_region_scope": "unknown"
+    }
+  ],
+  "production_adoption": false
+}

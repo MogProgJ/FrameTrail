@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "cb0b3a1a0478f373",
+  "image_sha256": "6c011e0d865f7c786b7f18c9565a0c00cd20f514037bc2cf329075aa91f4a460",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "cb0b3a1a0478f373",
+    "image_sha256": "6c011e0d865f7c786b7f18c9565a0c00cd20f514037bc2cf329075aa91f4a460",
+    "selected_category": "waste container",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/16801915@N06/6784517181",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/16801915@N06/6784517181",
+      "original_url": "https://farm4.staticflickr.com/7007/6784517181_622c01ee51_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Reading Tom",
+      "author_url": "https://www.flickr.com/people/16801915@N06/",
+      "title": "Raines Boys School",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Reading Tom",
+      "url": "https://www.flickr.com/photos/16801915@N06",
+      "image": "https://live.staticflickr.com/1926/buddyicons/16801915@N06.jpg?1538075013#16801915@N06"
+    },
+    "current_title": "Raines Boys School",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Reading Tom",
+          "url": "https://www.flickr.com/photos/16801915@N06",
+          "image": "https://live.staticflickr.com/1926/buddyicons/16801915@N06.jpg?1538075013#16801915@N06"
+        }
+      },
+      "meta_description": "121-123 Cannon Street Road. Built 1883 when the school moved to Wapping, it moved again in 1913 to Shadwell."
+    },
+    "identity_group": "flickr-nsid:16801915@N06",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/16801915@N06/6784517181",
+    "html_sha256": "17edc255bdaacaaab9681e2f9ae240b1650254fd415762f92a9fca310bac6ab9",
+    "stored_sha256": "0805cf0e167566e1c1f0bb01bfd73e3c0ee7aa56b1df5fedcf67513f1a82feec",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\cb0b3a1a0478f373.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/cb0b3a1a0478f373.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

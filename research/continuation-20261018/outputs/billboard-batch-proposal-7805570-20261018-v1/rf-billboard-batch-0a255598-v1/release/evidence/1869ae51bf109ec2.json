@@ -1,0 +1,64 @@
+{
+  "image_id": "1869ae51bf109ec2",
+  "image_sha256": "e6bec38249fb495c5ad39a793dc3639e9d32b44d852a30e2ef0e897aefce40cc",
+  "publisher_attribution": {
+    "id": "1869ae51bf109ec2",
+    "landing_url": "https://www.flickr.com/photos/robandstephanielevy/3070441732",
+    "original_url": "https://farm3.staticflickr.com/3243/3070441732_ba81017bfe_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Rob and Stephanie Levy",
+    "author_url": "https://www.flickr.com/people/robandstephanielevy/",
+    "title": "snoozing dog",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Rob and Stephanie Levy",
+    "url": "https://www.flickr.com/photos/robandstephanielevy",
+    "image": "https://live.staticflickr.com/3782/buddyicons/59773274@N00.jpg?1397172181#59773274@N00"
+  },
+  "current_title": "snoozing dog",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Rob and Stephanie Levy",
+        "url": "https://www.flickr.com/photos/robandstephanielevy",
+        "image": "https://live.staticflickr.com/3782/buddyicons/59773274@N00.jpg?1397172181#59773274@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/robandstephanielevy/3070441732",
+  "canonical_page_url": "https://www.flickr.com/photos/robandstephanielevy/3070441732",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "7db440c309926bae621dea8d4eabce0326fa6b3a3cb2620773b352ade7ea6b93",
+  "source_gzip_sha256": "57d156365090c53f215776207f9fafb6d844b9caea40e70dcae80f3a51c02e04",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-120",
+  "visual_proof_sha256": "50d593dedda87f0554e05d2d4f0f860f71519e4c4fa91701a26624ca149a7d57",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

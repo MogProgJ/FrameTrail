@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "eaa39ad36b4ea9b4",
+  "image_sha256": "69017c2dd7781345d3929545238784950f68ed327962aabbaff9edfafeb765f7",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "eaa39ad36b4ea9b4",
+    "image_sha256": "69017c2dd7781345d3929545238784950f68ed327962aabbaff9edfafeb765f7",
+    "selected_category": "light switch",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/zigazou76/4158994434",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/zigazou76/4158994434",
+      "original_url": "https://farm5.staticflickr.com/4039/4158994434_fe4d7c0195_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Fr\u00e9d\u00e9ric BISSON",
+      "author_url": "https://www.flickr.com/people/zigazou76/",
+      "title": "Sonnette d\u2019appartement",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Fr\u00e9d\u00e9ric BISSON",
+      "url": "https://www.flickr.com/photos/zigazou76",
+      "image": "https://live.staticflickr.com/3741/buddyicons/38712296@N07.jpg?1369086384#38712296@N07"
+    },
+    "current_title": "Sonnette d\u2019appartement",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Fr\u00e9d\u00e9ric BISSON",
+          "url": "https://www.flickr.com/photos/zigazou76",
+          "image": "https://live.staticflickr.com/3741/buddyicons/38712296@N07.jpg?1369086384#38712296@N07"
+        }
+      },
+      "meta_description": "Sonnette d\u2019appartement"
+    },
+    "identity_group": "flickr-nsid:38712296@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/zigazou76/4158994434",
+    "html_sha256": "d4bcda8dd790ee654adb9da4f7b2a5ee5e06969cad820c1ad326cab8633e3bdd",
+    "stored_sha256": "edefc900f6bbe8f0c93b61c6395294759c68f21cbc9aef3ad26d66e755a728cf",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\eaa39ad36b4ea9b4.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/eaa39ad36b4ea9b4.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

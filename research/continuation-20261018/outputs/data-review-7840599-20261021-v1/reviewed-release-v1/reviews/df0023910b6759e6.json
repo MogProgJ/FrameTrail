@@ -1,0 +1,53 @@
+{
+  "image_id": "df0023910b6759e6",
+  "image_sha256": "9b77147dd435b45ba05cf1841e6a6700f733e8f0056b6f8d877ab38a23482084",
+  "identity_group": "flickr-nsid:28395003@N02",
+  "scene_group": "scene:crystal-park-st-sophia-homes-installment-property-campaign-beside-university-building-and-statue",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\df0023910b6759e6.json",
+    "sha256": "bdbc9d8b80c7ab92f2527454d1289870d6ef5dc375670041ea7fd9adfe591ac8"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.0615,
+      0,
+      0.3408,
+      0.6406
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-test-03.json",
+    "sha256": "037720a9461748fd46dfcec1e4f895eb215ba88ea38c94675a56665030692cdd"
+  },
+  "content_decision": {
+    "id": "df0023910b6759e6",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.0615,
+        0,
+        0.3408,
+        0.6406
+      ]
+    ],
+    "note": "One framed property-sales campaign at left, truncated at top. Refined frame extent; publisher extra box is pedestrian crossing information sign and removed.",
+    "scene_description": "Crystal Park St Sophia homes installment property campaign beside university building and statue"
+  },
+  "prospective_split": "test",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

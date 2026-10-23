@@ -1,0 +1,35 @@
+{
+  "stage": "original-image-annotation-findings-not-final-labels",
+  "model_predictions_used": false,
+  "approved_for_training": false,
+  "records": [
+    {
+      "image_id": "03a27395be344ab4",
+      "original_image_inspected": true,
+      "scene": "Redrow housing-development advertising panel",
+      "finding": "Publisher box right edge is slightly inside the visible board; refine against original before final annotation.",
+      "publisher_boxes_accepted_without_change": false
+    },
+    {
+      "image_id": "03ec44a9639b95fd",
+      "original_image_inspected": true,
+      "scene": "Framed Mamma Mia advertisement on street litter-bin housing",
+      "finding": "Advertising face and surrounding furniture are distinct. Physical advertising-board/material/size convention and exact face bounds must be consistently checked; do not accept furniture as a whole target.",
+      "publisher_boxes_accepted_without_change": false
+    },
+    {
+      "image_id": "04924b243ce19811",
+      "original_image_inspected": true,
+      "scene": "Framed mobilcom handset campaign in station",
+      "finding": "Single visible physical advertising face; verify complete frame-versus-face bounds consistently before release.",
+      "publisher_boxes_accepted_without_change": false
+    },
+    {
+      "image_id": "04cb0a69e5e61e33",
+      "original_image_inspected": true,
+      "scene": "Malibu roadside campaign with distant second panel",
+      "finding": "Original reveals a second distant rectangular advertising structure at far left, absent from the one publisher billboard box. Hold whole-photo completeness until resolved/annotated; supplied single box cannot establish completeness.",
+      "publisher_boxes_accepted_without_change": false
+    }
+  ]
+}

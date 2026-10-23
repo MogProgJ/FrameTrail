@@ -1,0 +1,40 @@
+{
+  "image_id": "605daeae27237af9",
+  "image_sha256": "1cac7fd7f09e9ccd89d17d18d1fe5e55bc70bdf44dd8da16f93f2f4296e413e9",
+  "identity_group": "flickr-nsid:83221073@N00",
+  "scene_group": "scene:carlton-dishwasher-control-under-kitchen-counter",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\605daeae27237af9.json",
+    "sha256": "06123d0fd1a01996e493b0630ef583bf06ea665747baad64f382ec72212483b3"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-train-household.json",
+    "sha256": "1d6563dac8183fb4b8db66a0daf663fb78aab4eb1c2d801c75a8d28b3d13eb30"
+  },
+  "content_decision": {
+    "id": "605daeae27237af9",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "household-laundry",
+    "note": "Full original shows domestic dishwasher controls/counter; no campaign. Other appliance class remains unknown.",
+    "scene_description": "Carlton dishwasher control under kitchen counter"
+  },
+  "prospective_split": "train",
+  "confuser_family": "household-laundry",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

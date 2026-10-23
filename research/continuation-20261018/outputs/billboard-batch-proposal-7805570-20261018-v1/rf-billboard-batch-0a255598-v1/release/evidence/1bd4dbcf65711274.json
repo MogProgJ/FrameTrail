@@ -1,0 +1,64 @@
+{
+  "image_id": "1bd4dbcf65711274",
+  "image_sha256": "a20685c93f7be7a5b49dcc0cdb901e52f38096058e455f859adb18ab08c1fafa",
+  "publisher_attribution": {
+    "id": "1bd4dbcf65711274",
+    "landing_url": "https://www.flickr.com/photos/22711505@N05/17502505474",
+    "original_url": "https://farm5.staticflickr.com/8861/17502505474_8e3fb408fa_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Ron Cogswell",
+    "author_url": "https://www.flickr.com/people/22711505@N05/",
+    "title": "'Italian Ristorante' -- National Harbor (MD) May 2015",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Ron Cogswell",
+    "url": "https://www.flickr.com/photos/ronc-photography",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/22711505@N05.jpg?1724434697#22711505@N05"
+  },
+  "current_title": "'Italian Ristorante' -- National Harbor (MD) May 2015",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Ron Cogswell",
+        "url": "https://www.flickr.com/photos/ronc-photography",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/22711505@N05.jpg?1724434697#22711505@N05"
+      }
+    },
+    "meta_description": "Bond 45 -- 149 Waterfront Street Oxon Hill (MD) at National Harbor.\n\t\n\tDSC_0020"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/22711505@N05/17502505474",
+  "canonical_page_url": "https://www.flickr.com/photos/ronc-photography/17502505474",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "94ecc7b6ed474dc2083372fe67d619a734c679b52b6639c4b66341687a18e9df",
+  "source_gzip_sha256": "ecc23d538a2db6a784d03d385b2c886a3a6cb4933321cfb74997439c423dbeea",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-092",
+  "visual_proof_sha256": "9d1b402befae04cc8627a94d5b2794c40fe13921b3a7a19414602a79c9e35f7d",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

@@ -1,0 +1,64 @@
+{
+  "image_id": "720c9cfbf6307de3",
+  "image_sha256": "a7bc50be74293bee29fc21af586800edfbee4aa77c6fc5636cfd06bc17bfa18a",
+  "publisher_attribution": {
+    "id": "720c9cfbf6307de3",
+    "landing_url": "https://www.flickr.com/photos/brent_nashville/239990946",
+    "original_url": "https://farm4.staticflickr.com/91/239990946_52b56a35af_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Brent Moore",
+    "author_url": "https://www.flickr.com/people/brent_nashville/",
+    "title": "2006 TN State Fair rabbit",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Brent Moore",
+    "url": "https://www.flickr.com/photos/brent_nashville",
+    "image": "https://live.staticflickr.com/7303/buddyicons/94502827@N00.jpg?1370210319#94502827@N00"
+  },
+  "current_title": "2006 TN State Fair rabbit",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Brent Moore",
+        "url": "https://www.flickr.com/photos/brent_nashville",
+        "image": "https://live.staticflickr.com/7303/buddyicons/94502827@N00.jpg?1370210319#94502827@N00"
+      }
+    },
+    "meta_description": "This one was resting in a comfortable and cute pose."
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/brent_nashville/239990946",
+  "canonical_page_url": "https://www.flickr.com/photos/brent_nashville/239990946",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "7e8f9f9f2c8c3405ffcf8f4a5a97b0cbd514c74ee02054c03acdd0c5d59ed2b0",
+  "source_gzip_sha256": "33051889f4c30039a03470dfc30b4d3ca2c57cc400581ea2272e6bc6ebd7e585",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-014",
+  "visual_proof_sha256": "f4074ad1df2168d62cbde3aa60cb3eefeb384253a2e5b4b8ca0518b6c82dff7d",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

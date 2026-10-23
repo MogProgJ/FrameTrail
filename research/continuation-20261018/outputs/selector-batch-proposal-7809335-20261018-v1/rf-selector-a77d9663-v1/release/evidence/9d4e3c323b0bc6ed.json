@@ -1,0 +1,64 @@
+{
+  "image_id": "9d4e3c323b0bc6ed",
+  "image_sha256": "dde1313202fa5e4633ea47f35ec51e957a6fa43dad79f043e095891c364a3af3",
+  "publisher_attribution": {
+    "id": "9d4e3c323b0bc6ed",
+    "landing_url": "https://www.flickr.com/photos/manojvasanth/8337267123",
+    "original_url": "https://c6.staticflickr.com/9/8072/8337267123_e172c91498_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Manoj Vasanth",
+    "author_url": "https://www.flickr.com/people/manojvasanth/",
+    "title": "Let your mind start a journey through a strange new world..",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Manoj Vasanth",
+    "url": "https://www.flickr.com/photos/manojvasanth",
+    "image": "https://live.staticflickr.com/2369/buddyicons/11767573@N02.jpg?1259483552#11767573@N02"
+  },
+  "current_title": "Let your mind start a journey through a strange new world..",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Manoj Vasanth",
+        "url": "https://www.flickr.com/photos/manojvasanth",
+        "image": "https://live.staticflickr.com/2369/buddyicons/11767573@N02.jpg?1259483552#11767573@N02"
+      }
+    },
+    "meta_description": "Wishing All a Happy New Year!\n\t\n\tLoc: Mangalore"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/manojvasanth/8337267123",
+  "canonical_page_url": "https://www.flickr.com/photos/manojvasanth/8337267123",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "70a27271824b1b40842d369d3f830ecfc8046f9c6fa39d8b3758440202e5de43",
+  "source_gzip_sha256": "c27f549936ed87acc8fba7206fd724c42a2212fedef5c92f86f5eab46469dcf8",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-042",
+  "visual_proof_sha256": "2646dd059e311e50f12d36b2481bb95e4c3bb9a8a9f5f097a8c61c1df6be2db1",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "publisher-policy-investigation-complete",
+  "publisher_policies_checked": 5,
+  "traced_images": 6,
+  "permission_requests_prepared": 5,
+  "permission_requests_sent": 0,
+  "rights_cleared": 0,
+  "upstream_dataset_license_sufficient": false,
+  "training_started": false,
+  "parent_artifacts_modified": false,
+  "created_at": "2026-10-17T23:39:21.816111+00:00",
+  "next": "Review the unsent permission requests, then explicitly authorize any outreach; continue source tracing for untraced images."
+}

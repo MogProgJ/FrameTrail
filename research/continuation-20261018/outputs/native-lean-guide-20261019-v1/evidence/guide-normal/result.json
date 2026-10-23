@@ -1,0 +1,15 @@
+{
+    "CtrlK_and_F1": true,
+    "core_category_union": 615,
+    "embedded_guide": true,
+    "empty_search": true,
+    "exact_name_ranking": true,
+    "idle_main_polls_observed_in_1_second": 9,
+    "local_model_precedence": true,
+    "missing_optional_disabled": true,
+    "no_model_inference_needed": true,
+    "object_model_lookup": true,
+    "optional_model_resolution": true,
+    "status": "passed",
+    "task_navigation": true
+}

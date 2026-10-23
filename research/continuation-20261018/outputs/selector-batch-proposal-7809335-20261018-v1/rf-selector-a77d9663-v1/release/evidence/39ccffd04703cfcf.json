@@ -1,0 +1,64 @@
+{
+  "image_id": "39ccffd04703cfcf",
+  "image_sha256": "d09f23e410d7730faa6112945db70c24b4b6f7ae2ae5ca8357d0da276dbcb1de",
+  "publisher_attribution": {
+    "id": "39ccffd04703cfcf",
+    "landing_url": "https://www.flickr.com/photos/stevendepolo/16461000279",
+    "original_url": "https://c8.staticflickr.com/9/8623/16461000279_f01ebce2dc_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Steven Depolo",
+    "author_url": "https://www.flickr.com/people/stevendepolo/",
+    "title": "Chef Knife Madeleine Cookies",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Steven Depolo",
+    "url": "https://www.flickr.com/photos/stevendepolo",
+    "image": "https://live.staticflickr.com/8395/buddyicons/10506540@N07.jpg?1369442084#10506540@N07"
+  },
+  "current_title": "Chef Knife Madeleine Cookies",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Steven Depolo",
+        "url": "https://www.flickr.com/photos/stevendepolo",
+        "image": "https://live.staticflickr.com/8395/buddyicons/10506540@N07.jpg?1369442084#10506540@N07"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/stevendepolo/16461000279",
+  "canonical_page_url": "https://www.flickr.com/photos/stevendepolo/16461000279",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "571f7715fdcaf350036c7289c83ae64986d13d7b5d313c632e9946c986f62083",
+  "source_gzip_sha256": "028b36223d0ab6644a1dd1c77c6d1236b586a4029b8697a2c291c98574b160c7",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-102",
+  "visual_proof_sha256": "1c75cfd3d7c64e882ba6b03370b20e16e42e7c19f11c4c351b66d78d1cc09243",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

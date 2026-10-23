@@ -1,0 +1,80 @@
+{
+  "image_id": "c684d8b7a6e8cae8",
+  "image_sha256": "d71c01c43c7a985496749430562c80622b9fe1370bfb77d630fcea40452ded36",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\source-review\\source-evidence-review.json",
+    "sha256": "6881fe98e939931c5d708dc20e1828c831c11356f67fabd03ca609e65bd6adf8"
+  },
+  "source_record": {
+    "image_id": "c684d8b7a6e8cae8",
+    "image_sha256": "d71c01c43c7a985496749430562c80622b9fe1370bfb77d630fcea40452ded36",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/lunasinestrellas/19334967935",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/lunasinestrellas/19334967935",
+      "original_url": "https://c1.staticflickr.com/1/259/19334967935_5f4a2904c7_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Luna sin estrellas",
+      "author_url": "https://www.flickr.com/people/lunasinestrellas/",
+      "title": "Reyes de España visitando México: PRECAUCIÓN! Just saying!",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Luna sin estrellas",
+      "url": "https://www.flickr.com/photos/lunasinestrellas",
+      "image": "https://live.staticflickr.com/1723/buddyicons/44281533@N07.jpg?1527348239#44281533@N07"
+    },
+    "current_title": "Reyes de España visitando México: PRECAUCIÓN! Just saying!",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Luna sin estrellas",
+          "url": "https://www.flickr.com/photos/lunasinestrellas",
+          "image": "https://live.staticflickr.com/1723/buddyicons/44281533@N07.jpg?1527348239#44281533@N07"
+        }
+      },
+      "meta_description": "&quot;What Cortés and his men saw in Tenochtitlán  horrified them. The many Aztec gods demanded human sacrifice — to ensure that the sun would coninue to rise in the morning, to grant fertility, or to guarantee a good harvest. The Aztecs fought wars with neighboring peoples to capture victims for sacrifice. In the most famous ritual, the victim was spread-eagled on a round stone atop a great pyramid while a priest cut out his heart and offered it, still beating, to the god Huitzilopochtli.\n\t...\n\tThe Spanish, more convinced than ever of their superiority, forced most of the people of Mexico to convert to Christianity. Priests burned Aztec books and destroyed idols and temples. Indigenous people were enslaved to work in gold mines. \n\t\n\tMeanwhile, the gold and other riches sent home to Spain financed one of the most powerful empires in the history of the world. Spanish monarchs used this wealth to fight a series of religious wars in Europe, including the attempted invasion of England by the Spanish Armada. By the 1600s, Spain was easily the most powerful kingdom in Europe.\n\t\n\tIn 1519 Hernán Cortés arrived in Mexico from Cuba with 11 galleons, 550 men, and 16 horses — the first horses on the American continent. Within two years his conquistadores, conquerors, had won control of the Aztec kingdom that spanned most of present-day Mexico and Central America.\n\t\n\t..Of course, the conquistadores had other advantages — some of them accidental. One of Cortés’ soldiers had smallpox, and he started an epidemic that killed a third of the population of the Aztec empire. (Disease reduced the population of Mexico from more than 20 million when Cortés arrived in 1519 to about 2 million by 1600).\n\t\n\tThe Aztecs may also have mistaken Cortés for the deity Quetzalcoátl, or Plumed Serpent, who according to prophesy would return from the east to reclaim his kingdom — perhaps in 1519. When Cortés arrived — from the east, with fair skin, riding four-legged creatures never before seen in Mexico, wearing shining armor and looking for all the world like someone who wanted to reclaim a kingdom — Moctezuma feared that he might be Quetzalcoátl and did not immediately meet him in battle. The delay gave Cortés the time he needed to get a foothold. \n\t<a href=\"http://www.learnnc.org/lp/editions/nchist-twoworlds/1677\" rel=\"noreferrer nofollow\">www.learnnc.org/lp/editions/nchist-twoworlds/1677</a>\n\t\n\tAnother factor, perhaps the most important that helped Spaniards to invade México and exploit it for 300 years was that they were supported  by other tribes that hated Mexicas (Aztecs) -with reasons- and wanted to get rid of them yet in the long run the results were not better. \n\t"
+    },
+    "identity_group": "flickr-nsid:44281533@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/lunasinestrellas/19334967935",
+    "html_sha256": "76ab215817260e180cf5df81fe442d7ad80f01f86bfd8c0a736d17cd36549073",
+    "stored_sha256": "57e56028981a9190e117a1a7424cafc11d7d5a243a4c9037b7343f88fb660260",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\c684d8b7a6e8cae8.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\c684d8b7a6e8cae8.html.gz",
+    "sha256": "57e56028981a9190e117a1a7424cafc11d7d5a243a4c9037b7343f88fb660260"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

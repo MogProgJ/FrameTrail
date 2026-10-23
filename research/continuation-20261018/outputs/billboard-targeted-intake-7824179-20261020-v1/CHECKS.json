@@ -1,0 +1,31 @@
+{
+  "status": "local-checks-passed-awaiting-direct-authenticated-upload-and-live-admission",
+  "selection_source_budget_contracts": 10,
+  "safe_result_verifier_contracts": 4,
+  "inert_scheduler_and_batch_cases": 7,
+  "one_SCP_two_files_mock_passed": true,
+  "shell_syntax_passed": true,
+  "archive_members_verified": 13,
+  "evidence": [
+    {
+      "path": "contract-tests.txt",
+      "sha256": "8e2735dcd98b4d7ef7f3b11101aacb25fdc89c8b0e02f6be7a3c3d2620a50259"
+    },
+    {
+      "path": "verifier-tests.txt",
+      "sha256": "3d226acc49a0c1a46b167979f3ccc4adea9fea395e45fa49ac8029aa52972196"
+    },
+    {
+      "path": "slurm-mocks.txt",
+      "sha256": "0f8e7b3020237f8e3c6ee88b74c2041d3e66c4c063264f387c7541fbdba9d8e5"
+    },
+    {
+      "path": "upload-route-test.txt",
+      "sha256": "b7f47411a1588c7e953841ea257e537b63fbb295841a3d87bfe819976662a667"
+    }
+  ],
+  "actual_network_connections_by_tests": 0,
+  "actual_jobs_submitted": 0,
+  "live_account_evidence": "Not yet available; submit.sh requires successful nonempty user association, live partition/config/user queue, plus sbatch --test-only before one submission. Empty/failed evidence blocks. QoS listing is supplemental.",
+  "no_automatic_retry_requeue_or_replacement": true
+}

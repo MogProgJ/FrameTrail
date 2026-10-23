@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "b3cddda00c8dde08",
+  "image_sha256": "5bb58aeb3daf965a2c48935a2f366aed91921eea1a7cb4c69094c2cd41e396a5",
+  "source_review": {
+    "image_id": "b3cddda00c8dde08",
+    "image_sha256": "5bb58aeb3daf965a2c48935a2f366aed91921eea1a7cb4c69094c2cd41e396a5",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/michaelrperry/6597121825",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/michaelrperry/6597121825",
+      "original_url": "https://c1.staticflickr.com/8/7007/6597121825_c089b9fdb4_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Michael R Perry",
+      "author_url": "https://www.flickr.com/people/michaelrperry/",
+      "title": "Hotel Les Tipaniers",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Michael R Perry",
+      "url": "https://www.flickr.com/photos/michaelrperry",
+      "image": "https://live.staticflickr.com/8623/buddyicons/9333548@N04.jpg?1422383848#9333548@N04"
+    },
+    "current_title": "Hotel Les Tipaniers",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Michael R Perry",
+          "url": "https://www.flickr.com/photos/michaelrperry",
+          "image": "https://live.staticflickr.com/8623/buddyicons/9333548@N04.jpg?1422383848#9333548@N04"
+        }
+      },
+      "meta_description": "French Polynesia, December, 2011."
+    },
+    "identity_group": "flickr-nsid:9333548@N04",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/michaelrperry/6597121825",
+    "html_sha256": "39103a37c359e905650a6ac8fab661c6c5a810ac24adaf70300b1b17302c4a65",
+    "stored_sha256": "60c30bad4308bc15f9169475d710d8937e6d72ba68305dc0c315203cc8b67e3c",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\b3cddda00c8dde08.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\b3cddda00c8dde08.json",
+    "sha256": "449aa5ef6b79828fe68ffa6e5490e3ff6a3c58713d11e8a579dacdd090c12e58"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b3cddda00c8dde08.json",
+    "sha256": "4c625af33d28547dd2821ec0c14fdc062aa61d40688deefa35866e373095fea3"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/michaelrperry/6597121825",
+    "original_url": "https://c1.staticflickr.com/8/7007/6597121825_c089b9fdb4_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Michael R Perry",
+    "author_url": "https://www.flickr.com/people/michaelrperry/",
+    "title": "Hotel Les Tipaniers",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

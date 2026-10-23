@@ -2,7 +2,7 @@
 
 A native desktop application being built to turn images and video into detections, object tracks, and reviewable events.
 
-**Status: broader recognition implemented (0.12).** Optional native Open Images recognition expands to 597 categories, including fox; YOLO-World S/M offer an experimental 100-category vocabulary. Small reference-set results improve, while YOLOX-S stays the default after a people/vehicle regression with broader models. See [recognition and evidence](docs/RECOGNITION.md). Optional GPU processing and the existing saved-analysis workflow remain available. Dark-footage accuracy and broader acceptance remain open.
+**Status, 24 October 2026:** the desktop now has one workspace for Preview, Analysis, Smooth Playback, Camera and a searchable Quick Guide. YOLOX-S remains the default; RF-DETR remains an explicit experimental preview with an ONNX hold. The four-trial billboard experiment and three TRAIN-only studies are complete, with no qualifying model. The accepted broader billboard definition is undergoing data qualification. Read [current project progress](PROJECT_PROGRESS.md), [latest handoff](CURRENT_HANDOFF.md) and the [research archive](research/README.md).
 
 FrameTrail accepts local images, prerecorded video, and one Windows webcam through the native processing core. The initial use case is counting people or vehicles crossing a user-defined line in footage from a fixed camera.
 

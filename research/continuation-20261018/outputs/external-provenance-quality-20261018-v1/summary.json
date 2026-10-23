@@ -1,0 +1,20 @@
+{
+  "input_frozen_draft_images": 58,
+  "input_frozen_positive_boxes": 120,
+  "continuation_draft_images": 57,
+  "continuation_positive_boxes": 115,
+  "all_external_files_accounted": 451,
+  "held_or_redundant": 394,
+  "newly_withheld_source_family_files": 3,
+  "publisher_photo_matches": 5,
+  "publisher_scene_associations": 1,
+  "per_image_class_scope_records": 58,
+  "target_completeness_unknown_images": 4,
+  "assistant_visible_target_complete_images": 54,
+  "bbox_refinements": 1,
+  "rights_cleared": 0,
+  "new_jobs_submitted": 0,
+  "trial_7780632_untouched": true,
+  "earlier_artifacts_untouched": true,
+  "created_at": "2026-10-17T23:29:10.155815+00:00"
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "e2a350887599048b",
+  "image_sha256": "be3e6f6dc272fd3919042d8471ffdb8151755c842102e9c5aa17954e39cb97c4",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "e2a350887599048b",
+    "image_sha256": "be3e6f6dc272fd3919042d8471ffdb8151755c842102e9c5aa17954e39cb97c4",
+    "selected_category": "dog",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/blooey/18932354056",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/blooey/18932354056",
+      "original_url": "https://c4.staticflickr.com/1/388/18932354056_a81dd97a94_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Alonso Romero",
+      "author_url": "https://www.flickr.com/people/blooey/",
+      "title": "Beautiful day for hiking",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Alonso Romero",
+      "url": "https://www.flickr.com/photos/blooey",
+      "image": "https://live.staticflickr.com/300/buddyicons/41535657@N03.jpg?1483389712#41535657@N03"
+    },
+    "current_title": "Beautiful day for hiking",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Alonso Romero",
+          "url": "https://www.flickr.com/photos/blooey",
+          "image": "https://live.staticflickr.com/300/buddyicons/41535657@N03.jpg?1483389712#41535657@N03"
+        }
+      },
+      "meta_description": "Processed with VSCOcam with a7 preset"
+    },
+    "identity_group": "flickr-nsid:41535657@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/blooey/18932354056",
+    "html_sha256": "31b30c8192f0bbaa4b02b2825d47c383d26a3e52cdff95aa84830c461fe0bab5",
+    "stored_sha256": "a6dd27c48dfed7eafbf90fe45333600bfbc86d72bedd73d0b1b794a96292b674",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\e2a350887599048b.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/e2a350887599048b.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

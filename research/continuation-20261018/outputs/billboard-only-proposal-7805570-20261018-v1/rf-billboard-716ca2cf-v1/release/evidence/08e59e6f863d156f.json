@@ -1,0 +1,71 @@
+{
+  "image_id": "08e59e6f863d156f",
+  "image_sha256": "a29c1e697a356c42d98dbdc4730afbb9955ad31397f49755b1de57b308aeb178",
+  "publisher_attribution": {
+    "id": "08e59e6f863d156f",
+    "landing_url": "https://www.flickr.com/photos/smemon/20637257286",
+    "original_url": "https://c8.staticflickr.com/6/5731/20637257286_8cde4e3b9a_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Sean MacEntee",
+    "author_url": "https://www.flickr.com/people/smemon/",
+    "title": "Chocolate Pudding",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Sean MacEntee",
+    "url": "https://www.flickr.com/photos/smemon",
+    "image": "https://live.staticflickr.com/3765/buddyicons/18090920@N07.jpg?1393370686#18090920@N07"
+  },
+  "current_title": "Chocolate Pudding",
+  "caption_and_notices": {
+    "image_id": "08e59e6f863d156f",
+    "identity_group": "flickr-nsid:18090920@N07",
+    "creator": {
+      "@type": "Person",
+      "name": "Sean MacEntee",
+      "url": "https://www.flickr.com/photos/smemon",
+      "image": "https://live.staticflickr.com/3765/buddyicons/18090920@N07.jpg?1393370686#18090920@N07"
+    },
+    "current_title": "Chocolate Pudding",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Sean MacEntee",
+        "url": "https://www.flickr.com/photos/smemon",
+        "image": "https://live.staticflickr.com/3765/buddyicons/18090920@N07.jpg?1393370686#18090920@N07"
+      }
+    },
+    "meta_description": "Chocolate Pudding"
+  },
+  "source_url": "https://www.flickr.com/photos/smemon/20637257286",
+  "canonical_page_url": "https://www.flickr.com/photos/smemon/20637257286",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "a51a90b6150b6070bbacaf6c6d704dddc183ea601b520a42cdb5274ae42ce334",
+  "source_gzip_sha256": "a9122ab108949851969e3e1253587497ba9801989d825304ed127d1ef4d7acf4",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false
+}

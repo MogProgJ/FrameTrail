@@ -1,0 +1,11 @@
+{
+  "status": "trial-verified-awaiting-frozen-heldout-evaluation",
+  "actual_job_id": "7805570",
+  "archive_sha256": "7212bd624027deb14de2e81166710177b03765067a2ba65f669a60d75f62fdab",
+  "process_exit_code": 0,
+  "output": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\rf-balanced-verification-repair-7805570-20261018-v1\\verified-7805570\\output\\rf-balanced-7805570",
+  "approved_for_application": false,
+  "updates": 2000,
+  "best_step": 100,
+  "new_candidate_selected": true
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "b1d2a9b92ee88d99",
+  "image_sha256": "87557f2648228d831d90b54f45bb2ae29d445c1645a39d9d101a12f3df4239b1",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "b1d2a9b92ee88d99",
+    "image_sha256": "87557f2648228d831d90b54f45bb2ae29d445c1645a39d9d101a12f3df4239b1",
+    "selected_category": "kettle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/billdamon/9473847947",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/billdamon/9473847947",
+      "original_url": "https://c2.staticflickr.com/6/5491/9473847947_d09a526470_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Bill  Damon",
+      "author_url": "https://www.flickr.com/people/billdamon/",
+      "title": "POTD 2013-08-09 - Ania's living room shelves",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Bill  Damon",
+      "url": "https://www.flickr.com/photos/billdamon",
+      "image": "https://live.staticflickr.com/5493/buddyicons/57325827@N00.jpg?1385654786#57325827@N00"
+    },
+    "current_title": "POTD 2013-08-09 - Ania's living room shelves",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Bill  Damon",
+          "url": "https://www.flickr.com/photos/billdamon",
+          "image": "https://live.staticflickr.com/5493/buddyicons/57325827@N00.jpg?1385654786#57325827@N00"
+        }
+      },
+      "meta_description": "This is one of the shelfs in Ania's apartment that is a pretty big, nice setup. She's filled it with some nice china, various nick nacks, some books, and the Star Wars Legos set I got her for Christmas last year. And there's a little bit of a self portrait in the blue tea kettle. \n\t\n\tTaken with the Sony Cyber-shot DSC-RX100 II (DSC-RX100M2)."
+    },
+    "identity_group": "flickr-nsid:57325827@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/billdamon/9473847947",
+    "html_sha256": "0d2434747376aec36c53c1dfc8028915be635eb003d8cf7a842a7f70e029a1d2",
+    "stored_sha256": "8e64fb20633b6ef5ab3706ef277b367a4e8eae0028c0038fe9e054aa722a2ef2",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\b1d2a9b92ee88d99.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/b1d2a9b92ee88d99.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

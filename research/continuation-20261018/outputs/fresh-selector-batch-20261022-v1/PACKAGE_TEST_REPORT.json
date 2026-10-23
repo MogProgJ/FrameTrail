@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "date": "2026-10-22",
+  "package_seal_sha256": "b3b48c9ccb5cfe867cbd03e2dbba86ac35b9e26b269f535c343b44168699fcf4",
+  "scope_sha256": "a8cc4ce065bb300869f85e416b48f56fd3ecf8cf00e25db2b08abef9dfaaeb3f",
+  "unit_guard_groups": 8,
+  "actual_model_forward_loss_backward_fixtures": 4,
+  "optimizer_updates": 0,
+  "network_calls": 0,
+  "cluster_jobs_submitted": 0,
+  "CUDA_tested": false,
+  "live_KIT_admission_verified": false,
+  "production_adoption": false,
+  "checks": [
+    "BUILT_PACKAGE_CHECK.json",
+    "TRANSPORT_TEST_REPORT.json",
+    "POWERSHELL_TEST_REPORT.json",
+    "unit-test-console.txt"
+  ],
+  "authorization": "Standing continuous-work instruction; human input now required only for KIT authentication"
+}

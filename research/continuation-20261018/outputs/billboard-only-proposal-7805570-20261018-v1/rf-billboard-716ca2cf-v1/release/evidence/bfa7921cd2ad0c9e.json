@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "bfa7921cd2ad0c9e",
+  "image_sha256": "9af9173bf67078bdb94fb319be72d9791db114a29663fc30f80d5017b4f9c59f",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "bfa7921cd2ad0c9e",
+    "image_sha256": "9af9173bf67078bdb94fb319be72d9791db114a29663fc30f80d5017b4f9c59f",
+    "selected_category": "street light",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/eneas/18396027536",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/eneas/18396027536",
+      "original_url": "https://c7.staticflickr.com/8/7753/18396027536_6138b8a4c7_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Eneas De Troya",
+      "author_url": "https://www.flickr.com/people/eneas/",
+      "title": "Guerrero Chimalli",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Eneas De Troya",
+      "url": "https://www.flickr.com/photos/eneas",
+      "image": "https://live.staticflickr.com/7586/buddyicons/99479626@N00.jpg?1427572502#99479626@N00"
+    },
+    "current_title": "Guerrero Chimalli",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Eneas De Troya",
+          "url": "https://www.flickr.com/photos/eneas",
+          "image": "https://live.staticflickr.com/7586/buddyicons/99479626@N00.jpg?1427572502#99479626@N00"
+        }
+      },
+      "meta_description": "Escultura de \"Sebasti\u00e1n\" en Chimalhuac\u00e1n.\n\t"
+    },
+    "identity_group": "flickr-nsid:99479626@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/eneas/18396027536",
+    "html_sha256": "c4da82ab78205188aef9ffcd1b9d5f5689f58f4348210e8dee099d2c7eb31e0f",
+    "stored_sha256": "88f5d0eb2538a5b596fc8d31712617b1f17c6323cdca08a45e5de1f3b4f353b0",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\bfa7921cd2ad0c9e.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/bfa7921cd2ad0c9e.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

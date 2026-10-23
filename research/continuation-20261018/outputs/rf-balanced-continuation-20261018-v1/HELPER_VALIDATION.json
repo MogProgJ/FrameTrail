@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "powershell_helpers_parsed": 3,
+  "repeated_launch_uses_existing_job": true,
+  "actual_job_and_hash_capture": true,
+  "changed_archive_blocked": true,
+  "fake_scp_calls": 1,
+  "fake_ssh_calls": 2,
+  "real_network_calls": 0
+}

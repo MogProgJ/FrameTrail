@@ -1,0 +1,71 @@
+{
+  "image_id": "1dafd0d014f37436",
+  "image_sha256": "6e0af0ce416baf9076db0f40e4242a64b9e813c8454273cee2963ea2c6ee8632",
+  "publisher_attribution": {
+    "id": "1dafd0d014f37436",
+    "landing_url": "https://www.flickr.com/photos/robertnelson/893703015",
+    "original_url": "https://farm7.staticflickr.com/1292/893703015_ebccabf42f_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Robert Nelson",
+    "author_url": "https://www.flickr.com/people/robertnelson/",
+    "title": "Jawbone Bluetooth Headset",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Robert Nelson",
+    "url": "https://www.flickr.com/photos/robertnelson",
+    "image": "https://live.staticflickr.com/1847/buddyicons/67122552@N00.jpg?1537206520#67122552@N00"
+  },
+  "current_title": "Jawbone Bluetooth Headset",
+  "caption_and_notices": {
+    "image_id": "1dafd0d014f37436",
+    "identity_group": "flickr-nsid:67122552@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "Robert Nelson",
+      "url": "https://www.flickr.com/photos/robertnelson",
+      "image": "https://live.staticflickr.com/1847/buddyicons/67122552@N00.jpg?1537206520#67122552@N00"
+    },
+    "current_title": "Jawbone Bluetooth Headset",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Robert Nelson",
+        "url": "https://www.flickr.com/photos/robertnelson",
+        "image": "https://live.staticflickr.com/1847/buddyicons/67122552@N00.jpg?1537206520#67122552@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "source_url": "https://www.flickr.com/photos/robertnelson/893703015",
+  "canonical_page_url": "https://www.flickr.com/photos/robertnelson/893703015",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "07efe04fcc25e8a06ce0c14ce899d462dc4a0eb1323b9c04f823d4e8eb53f55b",
+  "source_gzip_sha256": "d4ae7af5a8fcf98fa4e8521d242a0e41c2ffd16ed8c3aadfdc11f97fbb98ca91",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false
+}

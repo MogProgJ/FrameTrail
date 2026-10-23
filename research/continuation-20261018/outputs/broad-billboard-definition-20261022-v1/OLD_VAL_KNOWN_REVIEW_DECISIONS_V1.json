@@ -1,0 +1,146 @@
+[
+  {
+    "image_id": "0cc05f0536cf1f92",
+    "note": "Retain Ford product/service billboard; road safety sign and rear of small sign excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "0d61873b3bb7ce16",
+    "note": "Retain three advertisements; additional parking service identity/pricing, garage identity and narrow shop panels require exhaustive QA.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "0e2c4f604dcf1f34",
+    "note": "Retain tourism and Tesco advertising targets; additional insurance campaign and shop identity panels require exhaustive QA; bare Bata rooftop letters excluded.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "113531b8d4165a59",
+    "note": "Toaster in shop with appliance-attached price sticker/packaging; equipment/product label excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "1be12cfc1835c7ed",
+    "note": "Domestic toaster/blender; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "3dd25591083c56cd",
+    "note": "Retain resort-community marketing billboard; fixture owner plaque excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "424bc7dbb0f8677d",
+    "note": "Retain two truck protest/campaign panels; additional handheld and cropped campaign placards need complete unit review. Remain partial.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "4efe3dceb381a61c",
+    "note": "Door hardware and letter slot; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "74af22a5dd9f85c4",
+    "note": "No-bicycle sidewalk prohibition plates; excluded.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "88d857ef903e0036",
+    "note": "Fire hydrant and masonry wall; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "8f038763ea453eef",
+    "note": "Retail toaster with separate tabletop product price/brand card; boundary with small retail labels unresolved. Hold unknown, never force absent.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "a0f920abebe623f4",
+    "note": "Wall switches; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "aa002b206c310671",
+    "note": "Wall switches; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "b4a9b963921d2c57",
+    "note": "Wall switch; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "ef21856ee7f7a136",
+    "note": "Retain Game of Thrones main advertisement and lower street-side ad; small distant edge panels need complete review. Fixture owner plaque excluded.",
+    "additions_xyxy": [],
+    "completeness": "unresolved",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  },
+  {
+    "image_id": "fc89c6719591369f",
+    "note": "Wall switch; no billboard.",
+    "additions_xyxy": [],
+    "completeness": "assistant-reviewed-whole-photo-draft",
+    "original_viewed": true,
+    "annotation_qa": "pending-overlay-review",
+    "independent_human_review": false
+  }
+]

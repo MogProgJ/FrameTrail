@@ -1,0 +1,31 @@
+{
+  "parent_unchanged": true,
+  "new_source_family_hold": [
+    "hanger-023",
+    "hanger-024",
+    "hanger-025"
+  ],
+  "newly_withheld_retained_image": "hanger-023",
+  "newly_withheld_boxes": 5,
+  "bbox_refinements": [
+    {
+      "image": "toaster-003",
+      "annotation_id": 80,
+      "old_bbox": [
+        250,
+        333,
+        141.5,
+        84.5
+      ],
+      "new_bbox": [
+        260,
+        350,
+        120,
+        54
+      ],
+      "reason": "Tighten to visible toaster; avoid cup and background overreach."
+    }
+  ],
+  "positive_boxes_added": 0,
+  "app_vocabulary_changed": false
+}

@@ -1,0 +1,2734 @@
+{
+  "state": "starting-model",
+  "source_role": "train",
+  "selection_allowed": false,
+  "metrics": {
+    "complete_tp": 0,
+    "complete_fp": 0,
+    "complete_fn": 38,
+    "partial_hits": 0,
+    "partial_misses": 50,
+    "unscored_predictions": 0,
+    "complete_precision": 0,
+    "complete_recall": 0.0,
+    "complete_f1": 0.0,
+    "complete_positive_targets": 38,
+    "partial_known_positive_recall": 0.0,
+    "per_image": [
+      {
+        "image_id": "013037fd8c0daf0a",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 3,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "078cc35acabe5e77",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 1,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "39ba18171aeb4415",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 1,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "7f2be8ccfdf33465",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 4,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "867a012fafb5766c",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 6,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "88ced829147507c7",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 2,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "89f3b4db87857c8d",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 10,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "8d5986ae877b7be4",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 2,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "995211dda562c920",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 3,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "9b49325466652a54",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 1,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "a92833d5a82934db",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 2,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "b98bf3ea9eb1b4e0",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 1,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "c310febc40974a94",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 4,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "c8bb3241ac57b9e2",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 1,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "d8fff472678899cf",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 1,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "dc2a7c32db059a9e",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 6,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "ee4b59dc616c21ad",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 2,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "001a4338f140e05e",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "062b4f2407f2522d",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "078433fcb4d125c2",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "08dd4d1137b5ebeb",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "09d430e41bd56e0d",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "0b5455fbbc912400",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "0cfedba7346611f2",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "0e61cd4a43b03b48",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "1364c788098d058f",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "17bbc8187c609d54",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "20d7ecf4e991f908",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "259107b4202e6168",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "27396602483f4cb0",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "27c8a391f7be1541",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "28e00ee6e869b29a",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "2c8ac32ffb411ae3",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "2d9a83c18fe991c8",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "3563dcf2b06b6819",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "385cb813b307e28c",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "399048f892919b4c",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "3dbc9f2537db454e",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "46e344332f867034",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "4715b3a7e388197a",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "48cb108620747608",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "4c150075d7b07e13",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "5902a1ea0b8d7eb2",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "5a4eab8ba33e0509",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "6d9c6e5497b1f083",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "6fdb7e49fc8e52a3",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "7170f94d9c51934e",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "7427f046f1a28e5c",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "7c125a9e5c8d2f29",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "7d2959cc5d308b32",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "84772c34d53af92e",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "8df00dfe83bcb022",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "9404a1942f9cbe2d",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "c32ebf3022238d5b",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "c6e7c3e2dee792f8",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "c71372f50fbada13",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "c8031cf68377fc7c",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "ccce84e06e683568",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "cd89f1fc4ab90d38",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "ce1ed62305439430",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "ea847b1425581694",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "eaa39ad36b4ea9b4",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "f5b043fe02f892b9",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "fdc6128a29bf42c9",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "a37b64646cdb1e20",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 2,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "04924b243ce19811",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "bb760b5b12f42f43",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "b3cddda00c8dde08",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "99c50590c334d1e5",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "23ac6df7ada563a3",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "75ac7104b8c15a17",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "64feab3aaa22fa1b",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 2,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "bdf66bc984b9720e",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 2,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "eecb0152c21db860",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "a05d74b985d4bc2b",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "b619045bda83d108",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "27920c9574d34fd9",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "a39dda42b11a5c4c",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 4,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "92acfd217c54a6c1",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "13909d11dbe65be8",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "db5023702de03984",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "03a27395be344ab4",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "30cbf2e7a5034abe",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "6da6a9c6bdf31c76",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "888e37034d215b1c",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "b9baad45d76338a0",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "f116401d17107895",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "5a1cea0bb9f7b721",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "ef535834c691726f",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 3,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "3d01928a39b59560",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "218828c2b0ceb0b2",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "ee920572c18e9006",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "1006ce66c4f168ce",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "9b1480cf4a006424",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 1,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "1ed09b82d0a8370d",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "46330787365e39e3",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "64f48726c64d158b",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "ed01c21759d5c1dd",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "20a3a8cd5733db8c",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "c169d65520795324",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "8a2155fbed2a9b9f",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "060bdd332c2c7055",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "0ead37227d5e2931",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "0c4e2a0564dec658",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "31c585fd77d4d28f",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "757556fbf9393cff",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "c112d5d0c11204c2",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "2de30a20ca6e53b5",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "28b10d0cab704513",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "4693658c0ef57ce1",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "d6bab621c0ddc4ea",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "513b5406a0b58ba4",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "380aab08547bb9d7",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "b7fdd04c8d1a1e0b",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "00198353ef684011",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "1cfc8fd2934d4d5f",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "ef60f47752e17cae",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "562d7492978db1be",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "0c39f6a763ce3ec0",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "605daeae27237af9",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "6060c02183e1a945",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "37c1b3a6b5c824d4",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "b3c84145d7be9b72",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      },
+      {
+        "image_id": "c2c1c1d3eb3b5c54",
+        "complete_tp": 0,
+        "complete_fp": 0,
+        "complete_fn": 0,
+        "partial_hits": 0,
+        "partial_misses": 0,
+        "unscored_predictions": 0
+      }
+    ],
+    "limits": "Scoped development validation; unknown predictions unscored, partial known targets recall only. Not full-vocabulary mAP or independent accuracy."
+  },
+  "pools": {
+    "fresh_absent": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "partial_hits": 0,
+      "partial_misses": 0,
+      "unscored_predictions": 0,
+      "complete_precision": 0,
+      "complete_recall": 0,
+      "complete_f1": 0,
+      "complete_positive_targets": 0,
+      "partial_known_positive_recall": null,
+      "per_image": [
+        {
+          "image_id": "1ed09b82d0a8370d",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "46330787365e39e3",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "64f48726c64d158b",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "ed01c21759d5c1dd",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "20a3a8cd5733db8c",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "c169d65520795324",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "8a2155fbed2a9b9f",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "060bdd332c2c7055",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "0ead37227d5e2931",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "0c4e2a0564dec658",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "31c585fd77d4d28f",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "757556fbf9393cff",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "c112d5d0c11204c2",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "2de30a20ca6e53b5",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "28b10d0cab704513",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "4693658c0ef57ce1",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "d6bab621c0ddc4ea",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "513b5406a0b58ba4",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "380aab08547bb9d7",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "b7fdd04c8d1a1e0b",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "00198353ef684011",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "1cfc8fd2934d4d5f",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "ef60f47752e17cae",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "562d7492978db1be",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "0c39f6a763ce3ec0",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "605daeae27237af9",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "6060c02183e1a945",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "37c1b3a6b5c824d4",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "b3c84145d7be9b72",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "c2c1c1d3eb3b5c54",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        }
+      ],
+      "limits": "Scoped development validation; unknown predictions unscored, partial known targets recall only. Not full-vocabulary mAP or independent accuracy."
+    },
+    "fresh_positive": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 38,
+      "partial_hits": 0,
+      "partial_misses": 0,
+      "unscored_predictions": 0,
+      "complete_precision": 0,
+      "complete_recall": 0.0,
+      "complete_f1": 0.0,
+      "complete_positive_targets": 38,
+      "partial_known_positive_recall": null,
+      "per_image": [
+        {
+          "image_id": "a37b64646cdb1e20",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 2,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "04924b243ce19811",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "bb760b5b12f42f43",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "b3cddda00c8dde08",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "99c50590c334d1e5",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "23ac6df7ada563a3",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "75ac7104b8c15a17",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "64feab3aaa22fa1b",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 2,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "bdf66bc984b9720e",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 2,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "eecb0152c21db860",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "a05d74b985d4bc2b",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "b619045bda83d108",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "27920c9574d34fd9",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "a39dda42b11a5c4c",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 4,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "92acfd217c54a6c1",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "13909d11dbe65be8",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "db5023702de03984",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "03a27395be344ab4",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "30cbf2e7a5034abe",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "6da6a9c6bdf31c76",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "888e37034d215b1c",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "b9baad45d76338a0",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "f116401d17107895",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "5a1cea0bb9f7b721",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "ef535834c691726f",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 3,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "3d01928a39b59560",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "218828c2b0ceb0b2",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "ee920572c18e9006",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "1006ce66c4f168ce",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "9b1480cf4a006424",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 1,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        }
+      ],
+      "limits": "Scoped development validation; unknown predictions unscored, partial known targets recall only. Not full-vocabulary mAP or independent accuracy."
+    },
+    "old_absent": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "partial_hits": 0,
+      "partial_misses": 0,
+      "unscored_predictions": 0,
+      "complete_precision": 0,
+      "complete_recall": 0,
+      "complete_f1": 0,
+      "complete_positive_targets": 0,
+      "partial_known_positive_recall": null,
+      "per_image": [
+        {
+          "image_id": "001a4338f140e05e",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "062b4f2407f2522d",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "078433fcb4d125c2",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "08dd4d1137b5ebeb",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "09d430e41bd56e0d",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "0b5455fbbc912400",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "0cfedba7346611f2",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "0e61cd4a43b03b48",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "1364c788098d058f",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "17bbc8187c609d54",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "20d7ecf4e991f908",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "259107b4202e6168",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "27396602483f4cb0",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "27c8a391f7be1541",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "28e00ee6e869b29a",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "2c8ac32ffb411ae3",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "2d9a83c18fe991c8",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "3563dcf2b06b6819",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "385cb813b307e28c",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "399048f892919b4c",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "3dbc9f2537db454e",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "46e344332f867034",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "4715b3a7e388197a",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "48cb108620747608",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "4c150075d7b07e13",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "5902a1ea0b8d7eb2",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "5a4eab8ba33e0509",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "6d9c6e5497b1f083",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "6fdb7e49fc8e52a3",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "7170f94d9c51934e",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "7427f046f1a28e5c",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "7c125a9e5c8d2f29",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "7d2959cc5d308b32",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "84772c34d53af92e",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "8df00dfe83bcb022",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "9404a1942f9cbe2d",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "c32ebf3022238d5b",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "c6e7c3e2dee792f8",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "c71372f50fbada13",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "c8031cf68377fc7c",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "ccce84e06e683568",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "cd89f1fc4ab90d38",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "ce1ed62305439430",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "ea847b1425581694",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "eaa39ad36b4ea9b4",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "f5b043fe02f892b9",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "fdc6128a29bf42c9",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 0,
+          "unscored_predictions": 0
+        }
+      ],
+      "limits": "Scoped development validation; unknown predictions unscored, partial known targets recall only. Not full-vocabulary mAP or independent accuracy."
+    },
+    "old_positive": {
+      "complete_tp": 0,
+      "complete_fp": 0,
+      "complete_fn": 0,
+      "partial_hits": 0,
+      "partial_misses": 50,
+      "unscored_predictions": 0,
+      "complete_precision": 0,
+      "complete_recall": 0,
+      "complete_f1": 0,
+      "complete_positive_targets": 0,
+      "partial_known_positive_recall": 0.0,
+      "per_image": [
+        {
+          "image_id": "013037fd8c0daf0a",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 3,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "078cc35acabe5e77",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 1,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "39ba18171aeb4415",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 1,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "7f2be8ccfdf33465",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 4,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "867a012fafb5766c",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 6,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "88ced829147507c7",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 2,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "89f3b4db87857c8d",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 10,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "8d5986ae877b7be4",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 2,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "995211dda562c920",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 3,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "9b49325466652a54",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 1,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "a92833d5a82934db",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 2,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "b98bf3ea9eb1b4e0",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 1,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "c310febc40974a94",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 4,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "c8bb3241ac57b9e2",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 1,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "d8fff472678899cf",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 1,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "dc2a7c32db059a9e",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 6,
+          "unscored_predictions": 0
+        },
+        {
+          "image_id": "ee4b59dc616c21ad",
+          "complete_tp": 0,
+          "complete_fp": 0,
+          "complete_fn": 0,
+          "partial_hits": 0,
+          "partial_misses": 2,
+          "unscored_predictions": 0
+        }
+      ],
+      "limits": "Scoped development validation; unknown predictions unscored, partial known targets recall only. Not full-vocabulary mAP or independent accuracy."
+    }
+  },
+  "geometry": [
+    {
+      "image_id": "013037fd8c0daf0a",
+      "pool": "old_positive",
+      "targets": 3,
+      "geometry_covered": 2
+    },
+    {
+      "image_id": "078cc35acabe5e77",
+      "pool": "old_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "39ba18171aeb4415",
+      "pool": "old_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "7f2be8ccfdf33465",
+      "pool": "old_positive",
+      "targets": 4,
+      "geometry_covered": 0
+    },
+    {
+      "image_id": "867a012fafb5766c",
+      "pool": "old_positive",
+      "targets": 6,
+      "geometry_covered": 4
+    },
+    {
+      "image_id": "88ced829147507c7",
+      "pool": "old_positive",
+      "targets": 2,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "89f3b4db87857c8d",
+      "pool": "old_positive",
+      "targets": 10,
+      "geometry_covered": 6
+    },
+    {
+      "image_id": "8d5986ae877b7be4",
+      "pool": "old_positive",
+      "targets": 2,
+      "geometry_covered": 2
+    },
+    {
+      "image_id": "995211dda562c920",
+      "pool": "old_positive",
+      "targets": 3,
+      "geometry_covered": 3
+    },
+    {
+      "image_id": "9b49325466652a54",
+      "pool": "old_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "a92833d5a82934db",
+      "pool": "old_positive",
+      "targets": 2,
+      "geometry_covered": 0
+    },
+    {
+      "image_id": "b98bf3ea9eb1b4e0",
+      "pool": "old_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "c310febc40974a94",
+      "pool": "old_positive",
+      "targets": 4,
+      "geometry_covered": 3
+    },
+    {
+      "image_id": "c8bb3241ac57b9e2",
+      "pool": "old_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "d8fff472678899cf",
+      "pool": "old_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "dc2a7c32db059a9e",
+      "pool": "old_positive",
+      "targets": 6,
+      "geometry_covered": 6
+    },
+    {
+      "image_id": "ee4b59dc616c21ad",
+      "pool": "old_positive",
+      "targets": 2,
+      "geometry_covered": 2
+    },
+    {
+      "image_id": "a37b64646cdb1e20",
+      "pool": "fresh_positive",
+      "targets": 2,
+      "geometry_covered": 2
+    },
+    {
+      "image_id": "04924b243ce19811",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "bb760b5b12f42f43",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "b3cddda00c8dde08",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "99c50590c334d1e5",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "23ac6df7ada563a3",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "75ac7104b8c15a17",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "64feab3aaa22fa1b",
+      "pool": "fresh_positive",
+      "targets": 2,
+      "geometry_covered": 2
+    },
+    {
+      "image_id": "bdf66bc984b9720e",
+      "pool": "fresh_positive",
+      "targets": 2,
+      "geometry_covered": 2
+    },
+    {
+      "image_id": "eecb0152c21db860",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "a05d74b985d4bc2b",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "b619045bda83d108",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "27920c9574d34fd9",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "a39dda42b11a5c4c",
+      "pool": "fresh_positive",
+      "targets": 4,
+      "geometry_covered": 2
+    },
+    {
+      "image_id": "92acfd217c54a6c1",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "13909d11dbe65be8",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "db5023702de03984",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "03a27395be344ab4",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "30cbf2e7a5034abe",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "6da6a9c6bdf31c76",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "888e37034d215b1c",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "b9baad45d76338a0",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "f116401d17107895",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "5a1cea0bb9f7b721",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "ef535834c691726f",
+      "pool": "fresh_positive",
+      "targets": 3,
+      "geometry_covered": 3
+    },
+    {
+      "image_id": "3d01928a39b59560",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "218828c2b0ceb0b2",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "ee920572c18e9006",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "1006ce66c4f168ce",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    },
+    {
+      "image_id": "9b1480cf4a006424",
+      "pool": "fresh_positive",
+      "targets": 1,
+      "geometry_covered": 1
+    }
+  ],
+  "predictions": {
+    "013037fd8c0daf0a": [],
+    "078cc35acabe5e77": [],
+    "39ba18171aeb4415": [],
+    "7f2be8ccfdf33465": [],
+    "867a012fafb5766c": [],
+    "88ced829147507c7": [],
+    "89f3b4db87857c8d": [],
+    "8d5986ae877b7be4": [],
+    "995211dda562c920": [],
+    "9b49325466652a54": [],
+    "a92833d5a82934db": [],
+    "b98bf3ea9eb1b4e0": [],
+    "c310febc40974a94": [],
+    "c8bb3241ac57b9e2": [],
+    "d8fff472678899cf": [],
+    "dc2a7c32db059a9e": [],
+    "ee4b59dc616c21ad": [],
+    "001a4338f140e05e": [],
+    "062b4f2407f2522d": [],
+    "078433fcb4d125c2": [],
+    "08dd4d1137b5ebeb": [],
+    "09d430e41bd56e0d": [],
+    "0b5455fbbc912400": [],
+    "0cfedba7346611f2": [],
+    "0e61cd4a43b03b48": [],
+    "1364c788098d058f": [],
+    "17bbc8187c609d54": [],
+    "20d7ecf4e991f908": [],
+    "259107b4202e6168": [],
+    "27396602483f4cb0": [],
+    "27c8a391f7be1541": [],
+    "28e00ee6e869b29a": [],
+    "2c8ac32ffb411ae3": [],
+    "2d9a83c18fe991c8": [],
+    "3563dcf2b06b6819": [],
+    "385cb813b307e28c": [],
+    "399048f892919b4c": [],
+    "3dbc9f2537db454e": [],
+    "46e344332f867034": [],
+    "4715b3a7e388197a": [],
+    "48cb108620747608": [],
+    "4c150075d7b07e13": [],
+    "5902a1ea0b8d7eb2": [],
+    "5a4eab8ba33e0509": [],
+    "6d9c6e5497b1f083": [],
+    "6fdb7e49fc8e52a3": [],
+    "7170f94d9c51934e": [],
+    "7427f046f1a28e5c": [],
+    "7c125a9e5c8d2f29": [],
+    "7d2959cc5d308b32": [],
+    "84772c34d53af92e": [],
+    "8df00dfe83bcb022": [],
+    "9404a1942f9cbe2d": [],
+    "c32ebf3022238d5b": [],
+    "c6e7c3e2dee792f8": [],
+    "c71372f50fbada13": [],
+    "c8031cf68377fc7c": [],
+    "ccce84e06e683568": [],
+    "cd89f1fc4ab90d38": [],
+    "ce1ed62305439430": [],
+    "ea847b1425581694": [],
+    "eaa39ad36b4ea9b4": [],
+    "f5b043fe02f892b9": [],
+    "fdc6128a29bf42c9": [],
+    "a37b64646cdb1e20": [],
+    "04924b243ce19811": [],
+    "bb760b5b12f42f43": [],
+    "b3cddda00c8dde08": [],
+    "99c50590c334d1e5": [],
+    "23ac6df7ada563a3": [],
+    "75ac7104b8c15a17": [],
+    "64feab3aaa22fa1b": [],
+    "bdf66bc984b9720e": [],
+    "eecb0152c21db860": [],
+    "a05d74b985d4bc2b": [],
+    "b619045bda83d108": [],
+    "27920c9574d34fd9": [],
+    "a39dda42b11a5c4c": [],
+    "92acfd217c54a6c1": [],
+    "13909d11dbe65be8": [],
+    "db5023702de03984": [],
+    "03a27395be344ab4": [],
+    "30cbf2e7a5034abe": [],
+    "6da6a9c6bdf31c76": [],
+    "888e37034d215b1c": [],
+    "b9baad45d76338a0": [],
+    "f116401d17107895": [],
+    "5a1cea0bb9f7b721": [],
+    "ef535834c691726f": [],
+    "3d01928a39b59560": [],
+    "218828c2b0ceb0b2": [],
+    "ee920572c18e9006": [],
+    "1006ce66c4f168ce": [],
+    "9b1480cf4a006424": [],
+    "1ed09b82d0a8370d": [],
+    "46330787365e39e3": [],
+    "64f48726c64d158b": [],
+    "ed01c21759d5c1dd": [],
+    "20a3a8cd5733db8c": [],
+    "c169d65520795324": [],
+    "8a2155fbed2a9b9f": [],
+    "060bdd332c2c7055": [],
+    "0ead37227d5e2931": [],
+    "0c4e2a0564dec658": [],
+    "31c585fd77d4d28f": [],
+    "757556fbf9393cff": [],
+    "c112d5d0c11204c2": [],
+    "2de30a20ca6e53b5": [],
+    "28b10d0cab704513": [],
+    "4693658c0ef57ce1": [],
+    "d6bab621c0ddc4ea": [],
+    "513b5406a0b58ba4": [],
+    "380aab08547bb9d7": [],
+    "b7fdd04c8d1a1e0b": [],
+    "00198353ef684011": [],
+    "1cfc8fd2934d4d5f": [],
+    "ef60f47752e17cae": [],
+    "562d7492978db1be": [],
+    "0c39f6a763ce3ec0": [],
+    "605daeae27237af9": [],
+    "6060c02183e1a945": [],
+    "37c1b3a6b5c824d4": [],
+    "b3c84145d7be9b72": [],
+    "c2c1c1d3eb3b5c54": []
+  },
+  "false_alarm_details": [],
+  "elapsed_seconds": 0.5,
+  "validation_photos_probed": 0,
+  "test_photos_used": 0,
+  "optimizer_updates": 0
+}

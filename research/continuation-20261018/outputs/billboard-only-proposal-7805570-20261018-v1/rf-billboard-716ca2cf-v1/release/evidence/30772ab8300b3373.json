@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "30772ab8300b3373",
+  "image_sha256": "1c9220f094ceaa9b564327bd062a7445a6a9f3ed5806e4a763d29776ab6e1de3",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "30772ab8300b3373",
+    "image_sha256": "1c9220f094ceaa9b564327bd062a7445a6a9f3ed5806e4a763d29776ab6e1de3",
+    "selected_category": "kettle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/cameronnordholm/1520769824",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/cameronnordholm/1520769824",
+      "original_url": "https://farm4.staticflickr.com/2102/1520769824_817dee5e9c_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Cameron Nordholm",
+      "author_url": "https://www.flickr.com/people/cameronnordholm/",
+      "title": "Apartment on Park",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Cameron Nordholm",
+      "url": "https://www.flickr.com/photos/cameronnordholm",
+      "image": "https://live.staticflickr.com/2340/buddyicons/75425394@N00.jpg?1208877119#75425394@N00"
+    },
+    "current_title": "Apartment on Park",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Cameron Nordholm",
+          "url": "https://www.flickr.com/photos/cameronnordholm",
+          "image": "https://live.staticflickr.com/2340/buddyicons/75425394@N00.jpg?1208877119#75425394@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:75425394@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/cameronnordholm/1520769824",
+    "html_sha256": "26ced121a8e0840d825a0a2ffc73d808a9b12f22a736457a569c2282ed4c5668",
+    "stored_sha256": "80ea666ee735e3c7e952b74c07bcaf3d15c89efb0833f37224d46f2a43688ce1",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\30772ab8300b3373.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/30772ab8300b3373.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

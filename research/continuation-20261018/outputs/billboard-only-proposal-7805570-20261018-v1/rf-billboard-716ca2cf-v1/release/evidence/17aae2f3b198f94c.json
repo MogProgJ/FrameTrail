@@ -1,0 +1,71 @@
+{
+  "image_id": "17aae2f3b198f94c",
+  "image_sha256": "7ae6ebf4be1a16d2f76a768973ad6a562c1c9ee8bcf1489ba915b2394d2480e0",
+  "publisher_attribution": {
+    "id": "17aae2f3b198f94c",
+    "landing_url": "https://www.flickr.com/photos/75001512@N00/6039511123",
+    "original_url": "https://c5.staticflickr.com/7/6080/6039511123_c5d7e50425_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Joel Kramer",
+    "author_url": "https://www.flickr.com/people/75001512@N00/",
+    "title": "two small leeks",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Joel Kramer",
+    "url": "https://www.flickr.com/photos/75001512@N00",
+    "image": "https://live.staticflickr.com/44/buddyicons/75001512@N00.jpg?1145944438#75001512@N00"
+  },
+  "current_title": "two small leeks",
+  "caption_and_notices": {
+    "image_id": "17aae2f3b198f94c",
+    "identity_group": "flickr-nsid:75001512@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "Joel Kramer",
+      "url": "https://www.flickr.com/photos/75001512@N00",
+      "image": "https://live.staticflickr.com/44/buddyicons/75001512@N00.jpg?1145944438#75001512@N00"
+    },
+    "current_title": "two small leeks",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Joel Kramer",
+        "url": "https://www.flickr.com/photos/75001512@N00",
+        "image": "https://live.staticflickr.com/44/buddyicons/75001512@N00.jpg?1145944438#75001512@N00"
+      }
+    },
+    "meta_description": "For my frittata."
+  },
+  "source_url": "https://www.flickr.com/photos/75001512@N00/6039511123",
+  "canonical_page_url": "https://www.flickr.com/photos/75001512@N00/6039511123",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "9fe9f20e8d74b0579f6178f569e39526b61674fa3b5195fcee9d7ed0ad6925f5",
+  "source_gzip_sha256": "311dcac00e978fe2bc45eee204e936003e1a993ec684351c7682eff83671bed9",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false
+}

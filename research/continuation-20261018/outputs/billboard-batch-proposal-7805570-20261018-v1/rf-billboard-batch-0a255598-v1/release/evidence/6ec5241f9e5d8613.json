@@ -1,0 +1,64 @@
+{
+  "image_id": "6ec5241f9e5d8613",
+  "image_sha256": "f84ed9c59ae494eb20210a79b92e49e58f66c17d192c9e69f33d9db4c3e9e11e",
+  "publisher_attribution": {
+    "id": "6ec5241f9e5d8613",
+    "landing_url": "https://www.flickr.com/photos/39551170@N02/9434215447",
+    "original_url": "https://farm4.staticflickr.com/2868/9434215447_3dca0984e6_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Simon_sees",
+    "author_url": "https://www.flickr.com/people/39551170@N02/",
+    "title": "Sydney Bus",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Simon_sees",
+    "url": "https://www.flickr.com/photos/39551170@N02",
+    "image": "https://live.staticflickr.com/7344/buddyicons/39551170@N02.jpg?1376663119#39551170@N02"
+  },
+  "current_title": "Sydney Bus",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Simon_sees",
+        "url": "https://www.flickr.com/photos/39551170@N02",
+        "image": "https://live.staticflickr.com/7344/buddyicons/39551170@N02.jpg?1376663119#39551170@N02"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/39551170@N02/9434215447",
+  "canonical_page_url": "https://www.flickr.com/photos/39551170@N02/9434215447",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "fac776bd84c2bf2c52b5689affee917edbacd62db1a980415694b446a6baa227",
+  "source_gzip_sha256": "d0cb204dcb4c523fe2473df0e1de9e5474a23e1025d46b9cde0b76904b313a89",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-007",
+  "visual_proof_sha256": "11730c4020611e353adf1e641a2a46aacb0fe5a9cfa862eed8af118bcc46f701",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

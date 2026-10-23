@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "legacy_observed_stdout": "sha26sum\nawk {print $}\n2346789\n",
+  "new_observed_stdout": "sha256sum\nawk {print $1}\n0123456789\n",
+  "fixture_only": true,
+  "network_calls": 0,
+  "job_submissions": 0
+}

@@ -1,0 +1,64 @@
+{
+  "image_id": "efb9a0d5cc8cb339",
+  "image_sha256": "ef59f7b2e5a9634fef336926440aff928c4f61bd79fa7eb0b1d514b76ab7649b",
+  "publisher_attribution": {
+    "id": "efb9a0d5cc8cb339",
+    "landing_url": "https://www.flickr.com/photos/jamiedfw/19689292689",
+    "original_url": "https://c2.staticflickr.com/1/360/19689292689_cc49f72716_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Jim Bowen",
+    "author_url": "https://www.flickr.com/people/jamiedfw/",
+    "title": "Male Elk in Yellowstone",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Jim Bowen",
+    "url": "https://www.flickr.com/photos/jamiedfw",
+    "image": "https://live.staticflickr.com/8140/buddyicons/82538566@N00.jpg?1369125107#82538566@N00"
+  },
+  "current_title": "Male Elk in Yellowstone",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Jim Bowen",
+        "url": "https://www.flickr.com/photos/jamiedfw",
+        "image": "https://live.staticflickr.com/8140/buddyicons/82538566@N00.jpg?1369125107#82538566@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/jamiedfw/19689292689",
+  "canonical_page_url": "https://www.flickr.com/photos/jamiedfw/19689292689",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "ca349a33b2cb6c890d17de5555cc57b27a28609a5732ceb3a4dafc587f958149",
+  "source_gzip_sha256": "f8d549d413699811cc7f5343bb6f08faee505b56d124ffe869ac243ac92914a1",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-176",
+  "visual_proof_sha256": "598dc7be82389bbef943ba1f0368e1cc5a5d2eea1b26dbff2f2de5e93fa50f5b",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

@@ -1,0 +1,77 @@
+{
+  "image_id": "ef535834c691726f",
+  "image_sha256": "ffd7135c6023f66811cd808ed851f0504d90b73ba33eaddc648727e8e48ba2bc",
+  "identity_group": "flickr-nsid:35637563@N00",
+  "scene_group": "scene:binningen-tram-stop-political-hemp-law-poster-concert-event-and-blue-wohnen-am-schlosspark-property-panel",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\ef535834c691726f.json",
+    "sha256": "c5138bebdd1b7fc26576ce21505359471d0c9f042e5f26aa18b5b436f6a23003"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.3789,
+      0.3685,
+      0.5654,
+      0.7044
+    ],
+    [
+      0.613125,
+      0.215833,
+      0.72,
+      0.541667
+    ],
+    [
+      0.6289,
+      0.0885,
+      0.8799,
+      0.418
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-batch-05.json",
+    "sha256": "1d2412bf566da605def22a66faf0a40b8e423848802ec9673e7d474ad1242b7e"
+  },
+  "content_decision": {
+    "id": "ef535834c691726f",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.3789,
+        0.3685,
+        0.5654,
+        0.7044
+      ],
+      [
+        0.613125,
+        0.215833,
+        0.72,
+        0.541667
+      ],
+      [
+        0.6289,
+        0.0885,
+        0.8799,
+        0.418
+      ]
+    ],
+    "note": "Three separate campaign faces: referendum poster, Binningen klingt concert/event poster and blue housing sales panel. Refined primary/blue bounds; traffic and school-safety signs are separate information.",
+    "scene_description": "Binningen tram stop political hemp law poster concert event and blue Wohnen am Schlosspark property panel"
+  },
+  "prospective_split": "train",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

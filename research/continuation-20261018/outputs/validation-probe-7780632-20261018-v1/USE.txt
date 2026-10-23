@@ -1,0 +1,4 @@
+Read REPORT.md for the conclusion and index.html for the 28 visual target diagnostics.
+This is a sealed evidence bundle, not an app installer or trained model. No weights are included.
+To reproduce, copy the scripts into a fresh work directory and use the pinned local CPU runtime and original inputs. Do not rerun scripts inside this sealed directory.
+The follow-up training-only gradient diagnostic is prepared, not executed; it makes no optimizer updates.

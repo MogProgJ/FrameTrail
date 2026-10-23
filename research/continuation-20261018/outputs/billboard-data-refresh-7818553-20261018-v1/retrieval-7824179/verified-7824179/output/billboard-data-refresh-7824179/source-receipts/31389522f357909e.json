@@ -1,0 +1,26 @@
+{
+  "image_id": "31389522f357909e",
+  "source_url": "https://www.flickr.com/photos/scrapbooksbyvanessa/5183504299",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/scrapbooksbyvanessa/5183504299",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/31389522f357909e.html.gz",
+  "html_bytes": 517355,
+  "html_sha256": "115ca1dda7b373e1b2426f911a9d81c8ce90b858eabfe4181b8244e6329998d0",
+  "stored_sha256": "7d61d500f748789b0a1c0db0470969adba0f0ea8c0a77abaedb95a1dfd672753"
+}

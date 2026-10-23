@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "0256394be89b2d9f",
+  "image_sha256": "7a6c9ad73a99862b3fa32cdc58267e6aaf5452b2bab290ec879b368f9863844f",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "0256394be89b2d9f",
+    "image_sha256": "7a6c9ad73a99862b3fa32cdc58267e6aaf5452b2bab290ec879b368f9863844f",
+    "selected_category": "cat",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/geminigst/15308527090",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/geminigst/15308527090",
+      "original_url": "https://c8.staticflickr.com/4/3950/15308527090_63017e7635_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Gemini st.",
+      "author_url": "https://www.flickr.com/people/geminigst/",
+      "title": "bar's morning",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "SAGA Gem",
+      "url": "https://www.flickr.com/photos/geminigst",
+      "image": "https://live.staticflickr.com/2870/buddyicons/79635710@N05.jpg?1369131832#79635710@N05"
+    },
+    "current_title": "bar's morning",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "SAGA Gem",
+          "url": "https://www.flickr.com/photos/geminigst",
+          "image": "https://live.staticflickr.com/2870/buddyicons/79635710@N05.jpg?1369131832#79635710@N05"
+        }
+      },
+      "meta_description": "BESSA R3A + Serenar 50mm F1.8 I, Lomography Color Negative 800"
+    },
+    "identity_group": "flickr-nsid:79635710@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/geminigst/15308527090",
+    "html_sha256": "ed2a3793b6e2819d210ce1f1b7fd9288d0c97d053e7f8a608046bf79dd080f0f",
+    "stored_sha256": "dc10566c723f32363ae1a7996b7e84c2265a43619badf2fb2684189d06a1980e",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\0256394be89b2d9f.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/0256394be89b2d9f.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

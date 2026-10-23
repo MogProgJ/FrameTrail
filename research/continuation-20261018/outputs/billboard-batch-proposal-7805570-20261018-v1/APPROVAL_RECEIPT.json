@@ -1,0 +1,12 @@
+{
+  "status": "exact-four-trial-cluster-scope-approved-local-package-preparation-authorized",
+  "approval_path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-batch-proposal-7805570-20261018-v1\\rf-billboard-batch-0a255598-v1\\approval.json",
+  "approval_sha256": "e9147b2a8f0838c061622f6d22ebba6ba5b022cf8411718c12f2de8dda65e4df",
+  "protocol_sha256": "0a255598b74eb1d29d83ee1be10d517ae407fbda2c57e4565b51028d615343fd",
+  "proposal_sha256": "d898ea66a0bcaf9fc3ed7ed29afa29f57c3ebff15cde3f12ad9f027adeaaf64d",
+  "package_seal_sha256": "4dd1582ecc6d4c20c4e841b8a6fa5976fd79ef3899c5482675a2db878dd95b58",
+  "proposal_snapshots_preserved": true,
+  "cluster_submitted": false,
+  "SSH_contacted": false,
+  "credentials_required": "User must enter KIT OTP/password directly in terminal prompts; never paste them into chat."
+}

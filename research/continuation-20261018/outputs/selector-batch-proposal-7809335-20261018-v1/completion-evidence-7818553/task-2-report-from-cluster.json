@@ -1,0 +1,40 @@
+{
+  "status": "complete-no-improving-candidate",
+  "actual_job_id": "7818553_2",
+  "slurm_job_id": "7820299",
+  "array_task_index": 2,
+  "variant": {
+    "index": 2,
+    "name": "enc3e-05-region1",
+    "main_lr": 0.0001,
+    "encoder_lr": 3e-05,
+    "region_weight": 1,
+    "negative_presentations": 2,
+    "accumulation": 4,
+    "maximum_updates": 3000,
+    "schedule_file": "schedules/task-2.json",
+    "schedule_sha256": "38e757e7d296fa239712e50c60d8c031066206b00bd8ae5a7d9e75910f22e521"
+  },
+  "previous_job": "7805570",
+  "updates": 1500,
+  "completion_reason": "protocol-early-stop-no-gain",
+  "best_step": 0,
+  "new_candidate_selected": false,
+  "best_checkpoint_sha256": "3a6b0096b48357cc3e0c2569d64a0d464d4d8c25d52e59dc49265d68b1f6c0c1",
+  "last_checkpoint_sha256": "98869bd1d1f3ac18adfaae5441345e2525c40f373ecce12c6739e5f34f25df94",
+  "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "active_classifier_rows": [
+    133
+  ],
+  "active_classifier_heads": [
+    "class_embed",
+    "transformer.enc_out_class_embed.0"
+  ],
+  "frozen_parameters_and_buffers_unchanged": true,
+  "box_outputs_may_change": true,
+  "inactive_classifier_rows_unchanged": true,
+  "retention_against_both_baselines": true,
+  "elapsed_seconds": 504.68,
+  "test_and_video_used": false,
+  "approved_for_application": false
+}

@@ -1,0 +1,30 @@
+{
+  "plan_sha256": "2fb87eec20424b4d73fee912f3cf8395404cc11996cd5bced42ebe117c38d340",
+  "core_seal_sha256": "b509f3dbabbff41397d2228b204e583fd9ce25584c0503ae48e3d027897d7302",
+  "archive_sha256": "3b639df7064cefa9e15f99f9b2061c9c45c00aae53a27453cf2d9b42a852ae3e",
+  "files": {
+    "archive-receipt.json": "831bff1b68191fd2121cb93e2bcfda2de0b0d1a0385bbedc916dc96c5ccbbea0",
+    "CHECKS.json": "6d507273f7f6640870328cbfe10fb349d0983d9cf5cf53054c19ae2ecb5ea768",
+    "CLUSTER_COMMAND.txt": "d7579b9491512aae946725d815ffa77d8eee0d3b109b86531f66aef16a8237d3",
+    "contract-tests.txt": "673278e9040db19ecebfb2c7ee9c9e00c6649ba15997fbfe7aaaab72c2d57491",
+    "frametrail-data-refresh-2fb87eec-v1-r2.tar.gz": "3b639df7064cefa9e15f99f9b2061c9c45c00aae53a27453cf2d9b42a852ae3e",
+    "frametrail-data-refresh-2fb87eec-v1-r2.tar.gz.sha256": "606e611f5393c200530ddf2de2827e2be01d760cab135adcecb091aeb53487cf",
+    "frametrail-data-refresh-2fb87eec-v1.tar.gz": "baf50018efc399b6e0c18df0c6ce0bd4a4d113578b015dd47226c465c6ae63a3",
+    "frametrail-data-refresh-2fb87eec-v1.tar.gz.sha256": "8cc6db240d14bd1b18c7a5d2095e814f7898550883d51b836a04aae0d7c61d79",
+    "frametrail-start-data-refresh-2fb87eec-v1.sh": "ca407d4783fcee96a3201730699a7660a815dee07f240d1a8143e50e973a27ce",
+    "PACKAGE_IDENTITY.json": "3ef1911118e9720cab0fc5fb0c2e4dc60b731e39530c1d7bedd8e9bfe855879c",
+    "README.md": "c6b3e18dc91658867cfbbc47708e17900a9b951efcb58fab129ea373d78cd598",
+    "Retrieve-Data.ps1": "ee0ebc712d61e6303fe486cd98195d5a0d5e07dbc7957aa2039fd28d54655012",
+    "SCOPE.json": "2fb87eec20424b4d73fee912f3cf8395404cc11996cd5bced42ebe117c38d340",
+    "slurm-mocks.txt": "b3fa0dbbdae889823be0db994d605a117e72fe16973bfe4974e0d2cce7fc041a",
+    "START_ON_CLUSTER.sh": "ca407d4783fcee96a3201730699a7660a815dee07f240d1a8143e50e973a27ce",
+    "test-slurm-mocks.sh": "6dc7765c365d6695ac5e7f4c9ee2bc43616512396985c2c9f9c9697c0a5ed713",
+    "Test-Upload-Route.ps1": "36fcde4805cc1d1f17c2d3cdacb3dc0a5540c49d8a0f7e17c9252ccc1b88eff4",
+    "test_data_verifier.py": "b500da56c02c346fae32038d0a149d9c74c1d29686126d6005dac9d7cd693896",
+    "Upload-Data-Package.ps1": "1d468075bc34e545fff4400493b2a82582f551258a218000798e3491826ed251",
+    "upload-route-test.txt": "f2a33509ac470c641823c17bfdbcc8e86b5da454b6238b2785aa2bc42b92d09c",
+    "USER_AUTHORIZATION.json": "e2a8f110c2afc7d2dc7acbf36c5aeb06cdd1a52cbc6fdb8f746be14d3d84e38a",
+    "verifier-tests.txt": "afd340e57dcb01637d0650dd326a97e706f9933fec40e32fa6fb4d75ebf52230",
+    "verify_results.py": "1fc021a842528b9f7c635da6b7be772f89a87212395dba4a39e4c7ee4a40d40a"
+  }
+}

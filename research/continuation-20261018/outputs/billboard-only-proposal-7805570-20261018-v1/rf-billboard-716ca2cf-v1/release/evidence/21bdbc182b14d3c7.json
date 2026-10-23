@@ -1,0 +1,64 @@
+{
+  "image_id": "21bdbc182b14d3c7",
+  "image_sha256": "387dd90bd3ca44c644d2dcf9187fcb3695d68907526e12e433808fcfd24b2701",
+  "publisher_attribution": {
+    "id": "21bdbc182b14d3c7",
+    "landing_url": "https://www.flickr.com/photos/ajesplugues/11834065126",
+    "original_url": "https://farm8.staticflickr.com/5529/11834065126_86155e655a_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Ajuntament d&#x27;Esplugues de Llobregat",
+    "author_url": "https://www.flickr.com/people/ajesplugues/",
+    "title": "XVTorneig de B\u00e0squet cadet mascul\u00ed",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Ajuntament d&#x27;Esplugues de Llobregat",
+    "url": "https://www.flickr.com/photos/ajesplugues",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/57257459@N05.jpg?1654001245#57257459@N05"
+  },
+  "current_title": "XVTorneig de B\u00e0squet cadet mascul\u00ed",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Ajuntament d&#x27;Esplugues de Llobregat",
+        "url": "https://www.flickr.com/photos/ajesplugues",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/57257459@N05.jpg?1654001245#57257459@N05"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/ajesplugues/11834065126",
+  "canonical_page_url": "https://www.flickr.com/photos/ajesplugues/11834065126",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "6ab9da8a59b4678ad3a7ba96dd2b545f0dfd7f77f937ae27feb628ea6feee1a7",
+  "source_gzip_sha256": "06ff1312fdf68845d0b353782fbc2c664a94f9af69d1770fa233f2275a9ba224",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-234",
+  "visual_proof_sha256": "c00e14245da36c24221f06542a940eb81cb3944960aa1c09180bb263980683ca",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

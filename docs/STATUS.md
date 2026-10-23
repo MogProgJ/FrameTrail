@@ -1,5 +1,7 @@
 # Current status
 
+> Current update (24 October 2026): see [project progress](../PROJECT_PROGRESS.md) and [latest handoff](../CURRENT_HANDOFF.md). Older dated sections below preserve the development history.
+
 Updated: 3 October 2026.
 
 ## What exists

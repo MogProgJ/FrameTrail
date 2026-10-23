@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "79a7eb81c404dfe9",
+  "image_sha256": "158e1ecb2be449d127028078828034d2d48ff5a1a5afb60c4bb573197bd36afb",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "79a7eb81c404dfe9",
+    "image_sha256": "158e1ecb2be449d127028078828034d2d48ff5a1a5afb60c4bb573197bd36afb",
+    "selected_category": "fire hydrant",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/mrpolyonymous/5943423828",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/mrpolyonymous/5943423828",
+      "original_url": "https://c2.staticflickr.com/7/6001/5943423828_4cf1ddfefd_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "mrpolyonymous",
+      "author_url": "https://www.flickr.com/people/mrpolyonymous/",
+      "title": "Fire hydrant",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "mrpolyonymous",
+      "url": "https://www.flickr.com/photos/mrpolyonymous",
+      "image": "https://live.staticflickr.com/1109/buddyicons/8961540@N07.jpg?1182016802#8961540@N07"
+    },
+    "current_title": "Fire hydrant",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "mrpolyonymous",
+          "url": "https://www.flickr.com/photos/mrpolyonymous",
+          "image": "https://live.staticflickr.com/1109/buddyicons/8961540@N07.jpg?1182016802#8961540@N07"
+        }
+      },
+      "meta_description": "A fire hydrant on Sparks Street, just outside the CBC. This picture makes me feel off-balance."
+    },
+    "identity_group": "flickr-nsid:8961540@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/mrpolyonymous/5943423828",
+    "html_sha256": "88f3d560c7ab318e09b46b8ddf3c963db834a0bda1e8060d7c6b16fc34960cec",
+    "stored_sha256": "8cff159d170f31188c59277c2b92b7d13a4f402ea93b50a4716ce55eb052abe1",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\79a7eb81c404dfe9.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/79a7eb81c404dfe9.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

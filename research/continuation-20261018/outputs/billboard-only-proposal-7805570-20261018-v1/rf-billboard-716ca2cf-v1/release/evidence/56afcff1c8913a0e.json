@@ -1,0 +1,64 @@
+{
+  "image_id": "56afcff1c8913a0e",
+  "image_sha256": "b7a93d2ba61e5502858d294c85bd2b4fd77be83b89ec544bb3e9ab11b4aecea0",
+  "publisher_attribution": {
+    "id": "56afcff1c8913a0e",
+    "landing_url": "https://www.flickr.com/photos/yalelawlibrary/8248106948",
+    "original_url": "https://c7.staticflickr.com/9/8059/8248106948_031c96df1d_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Yale Law Library",
+    "author_url": "https://www.flickr.com/people/yalelawlibrary/",
+    "title": "MssG +R29 no.21 v.2",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Yale Law Library",
+    "url": "https://www.flickr.com/photos/yalelawlibrary",
+    "image": "https://live.staticflickr.com/3120/buddyicons/29570076@N06.jpg?1218806402#29570076@N06"
+  },
+  "current_title": "MssG +R29 no.21 v.2",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Yale Law Library",
+        "url": "https://www.flickr.com/photos/yalelawlibrary",
+        "image": "https://live.staticflickr.com/3120/buddyicons/29570076@N06.jpg?1218806402#29570076@N06"
+      }
+    },
+    "meta_description": "Source: England and Wales. Court of King's Bench. [The reports of Henry Rolle of divers cases in the Court of King's bench from Hilary term, 15 James I, to Hilary term, 22 James I, 1618-1625]. 2 v. ; 32 x 21 cm. CALL# MssG +R29 no.21.\n\tContains autograph of Matthew Hale."
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/yalelawlibrary/8248106948",
+  "canonical_page_url": "https://www.flickr.com/photos/yalelawlibrary/8248106948",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "38cd21e98a36b99b93b06385d36962cd5f0a7025b9d7914d8dd06e51e1127d20",
+  "source_gzip_sha256": "78aff16f2280c8f9afb3f643605fa845ddfe072fb718aeddadafa8767c6b7aed",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-208",
+  "visual_proof_sha256": "9eda08dad91ef310772423a1afee79a51fa7c06e0d64b28668983d0a88248cf3",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

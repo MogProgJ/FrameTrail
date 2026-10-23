@@ -1,0 +1,4 @@
+sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
+0,0,67,cell phone,0.508915,37.4192,587.607,115.526,722.788,160.444
+0,0,0,person,0.470714,0.725937,0.875216,356.599,728.068,160.444
+0,0,28,suitcase,0.36262,187.429,175.644,715.612,926.592,160.444

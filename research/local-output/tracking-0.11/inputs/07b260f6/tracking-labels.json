@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "width": 1280,
+  "height": 720,
+  "notes": "Frozen selected person labels before export inspection. Generated footage; approximate visible extents, sparse samples, not complete scene/event annotation. Frame images were rendered at half size only for review; boxes below are original pixels.",
+  "frames": [
+    {
+      "sequence": 6,
+      "complete": false,
+      "objects": [
+        {
+          "object_id": "forest_person",
+          "class_id": 0,
+          "box": [
+            580,
+            300,
+            698,
+            604
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 12,
+      "complete": false,
+      "objects": [
+        {
+          "object_id": "forest_person",
+          "class_id": 0,
+          "box": [
+            572,
+            296,
+            700,
+            604
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 18,
+      "complete": false,
+      "objects": [
+        {
+          "object_id": "forest_person",
+          "class_id": 0,
+          "box": [
+            564,
+            294,
+            696,
+            604
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "complete": false,
+    "start_sequence": 1,
+    "end_sequence": 239,
+    "items": []
+  }
+}

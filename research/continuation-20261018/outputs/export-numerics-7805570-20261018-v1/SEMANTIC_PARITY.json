@@ -1,0 +1,105 @@
+{
+  "status": "semantic-metrics-identical-strict-numerical-parity-still-held",
+  "unique_images": 202,
+  "reference_sets": 6,
+  "all_metrics_and_frame_counts_identical": true,
+  "strict_confidence_failures": 3,
+  "confidence_tolerance": 0.002,
+  "maximum_observed_confidence_difference": 0.004229903221130371,
+  "raw_query_array_probe_failures": 3,
+  "weights_or_thresholds_changed": false,
+  "strict_export_gate_passed": false,
+  "approved_for_application": false,
+  "reports": {
+    "heldout_photos": {
+      "aggregate": {
+        "complete_tp": 23,
+        "complete_fp": 3,
+        "complete_fn": 15,
+        "complete_precision": 0.8846153846153846,
+        "complete_recall": 0.6052631578947368,
+        "partial_positive_hits": 82,
+        "partial_positive_misses": 139,
+        "partial_known_positive_recall": 0.37104072398190047,
+        "unscored_predictions": 686
+      },
+      "all_class_and_sequence_metrics_identical": true,
+      "all_frame_counts_identical": true
+    },
+    "reserved_video": {
+      "aggregate": {
+        "complete_tp": 30,
+        "complete_fp": 3,
+        "complete_fn": 25,
+        "complete_precision": 0.9090909090909091,
+        "complete_recall": 0.5454545454545454,
+        "partial_positive_hits": 7,
+        "partial_positive_misses": 23,
+        "partial_known_positive_recall": 0.23333333333333334,
+        "unscored_predictions": 44
+      },
+      "all_class_and_sequence_metrics_identical": true,
+      "all_frame_counts_identical": true
+    },
+    "internal_regression": {
+      "aggregate": {
+        "complete_tp": 4,
+        "complete_fp": 0,
+        "complete_fn": 5,
+        "complete_precision": 1.0,
+        "complete_recall": 0.4444444444444444,
+        "partial_positive_hits": 5,
+        "partial_positive_misses": 1,
+        "partial_known_positive_recall": 0.8333333333333334,
+        "unscored_predictions": 48
+      },
+      "all_class_and_sequence_metrics_identical": true,
+      "all_frame_counts_identical": true
+    },
+    "old_video": {
+      "aggregate": {
+        "complete_tp": 33,
+        "complete_fp": 1,
+        "complete_fn": 44,
+        "complete_precision": 0.9705882352941176,
+        "complete_recall": 0.42857142857142855,
+        "partial_positive_hits": 8,
+        "partial_positive_misses": 26,
+        "partial_known_positive_recall": 0.23529411764705882,
+        "unscored_predictions": 44
+      },
+      "all_class_and_sequence_metrics_identical": true,
+      "all_frame_counts_identical": true
+    },
+    "recent_video": {
+      "aggregate": {
+        "complete_tp": 10,
+        "complete_fp": 2,
+        "complete_fn": 17,
+        "complete_precision": 0.8333333333333334,
+        "complete_recall": 0.37037037037037035,
+        "partial_positive_hits": 1,
+        "partial_positive_misses": 4,
+        "partial_known_positive_recall": 0.2,
+        "unscored_predictions": 10
+      },
+      "all_class_and_sequence_metrics_identical": true,
+      "all_frame_counts_identical": true
+    },
+    "scale_video": {
+      "aggregate": {
+        "complete_tp": 19,
+        "complete_fp": 0,
+        "complete_fn": 11,
+        "complete_precision": 1.0,
+        "complete_recall": 0.6333333333333333,
+        "partial_positive_hits": 0,
+        "partial_positive_misses": 6,
+        "partial_known_positive_recall": 0.0,
+        "unscored_predictions": 13
+      },
+      "all_class_and_sequence_metrics_identical": true,
+      "all_frame_counts_identical": true
+    }
+  }
+}

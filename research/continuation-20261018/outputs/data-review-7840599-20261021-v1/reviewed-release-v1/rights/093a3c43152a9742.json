@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "093a3c43152a9742",
+  "image_sha256": "072ec9ffe1b94a3089a810267e04b1ed0ab49778f7838085cae1ae753dde25e7",
+  "source_review": {
+    "image_id": "093a3c43152a9742",
+    "image_sha256": "072ec9ffe1b94a3089a810267e04b1ed0ab49778f7838085cae1ae753dde25e7",
+    "selected_category": "picture frame",
+    "selected_domain": "contrast",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/andypowe11/3226390026",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/andypowe11/3226390026",
+      "original_url": "https://farm3.staticflickr.com/3315/3226390026_31a2dc2064_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Andy Powell",
+      "author_url": "https://www.flickr.com/people/andypowe11/",
+      "title": "Granny and Grandad's wedding",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Andy Powell",
+      "url": "https://www.flickr.com/photos/andypowe11",
+      "image": "https://live.staticflickr.com/1167/buddyicons/63749317@N00.jpg?1284551722#63749317@N00"
+    },
+    "current_title": "Granny and Grandad's wedding",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Andy Powell",
+          "url": "https://www.flickr.com/photos/andypowe11",
+          "image": "https://live.staticflickr.com/1167/buddyicons/63749317@N00.jpg?1284551722#63749317@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:63749317@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/andypowe11/3226390026",
+    "html_sha256": "2818905441444a0f4daf5db6950043f51b4ef9c162eb7ea064ed27e77a70e4e7",
+    "stored_sha256": "b220ebac67843505386049bd735b9eb03e5d4298705ee42f373062a35eee9889",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\093a3c43152a9742.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\093a3c43152a9742.json",
+    "sha256": "baa4fb775cb8c0c52ca280352bb1273d8808fe8f5f4c153f09140fe8da217ea8"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\093a3c43152a9742.json",
+    "sha256": "94d6b5fd3cea6c0d977f873accf5149e8ba0e95ef039012fefd02dfd624a70d8"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/andypowe11/3226390026",
+    "original_url": "https://farm3.staticflickr.com/3315/3226390026_31a2dc2064_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Andy Powell",
+    "author_url": "https://www.flickr.com/people/andypowe11/",
+    "title": "Granny and Grandad's wedding",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

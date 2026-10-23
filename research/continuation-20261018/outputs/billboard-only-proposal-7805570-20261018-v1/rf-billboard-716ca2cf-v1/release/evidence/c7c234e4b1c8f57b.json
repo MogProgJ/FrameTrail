@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "c7c234e4b1c8f57b",
+  "image_sha256": "0e43d93c0a3b0e7f8e148350fe6cfc9f997bc4028bfa3d43718ba03f38705994",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "c7c234e4b1c8f57b",
+    "image_sha256": "0e43d93c0a3b0e7f8e148350fe6cfc9f997bc4028bfa3d43718ba03f38705994",
+    "selected_category": "dog",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/toms/5619280476",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/toms/5619280476",
+      "original_url": "https://c4.staticflickr.com/6/5230/5619280476_4f77503c3f_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Toms Baugis",
+      "author_url": "https://www.flickr.com/people/toms/",
+      "title": "Untitled",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Toms Baugis",
+      "url": "https://www.flickr.com/photos/toms",
+      "image": "https://live.staticflickr.com/8409/buddyicons/35342879@N00.jpg?1369087953#35342879@N00"
+    },
+    "current_title": "Untitled",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Toms Baugis",
+          "url": "https://www.flickr.com/photos/toms",
+          "image": "https://live.staticflickr.com/8409/buddyicons/35342879@N00.jpg?1369087953#35342879@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:35342879@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/toms/5619280476",
+    "html_sha256": "8824cf5f50df19b502fe915b75c14e42fb118591627a2d5db3aa605d9ed7afe9",
+    "stored_sha256": "27c2b8446fb629e00b44d0093e47d3ab43f6b1a7f91be01f81afcee0260733c2",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\c7c234e4b1c8f57b.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/c7c234e4b1c8f57b.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

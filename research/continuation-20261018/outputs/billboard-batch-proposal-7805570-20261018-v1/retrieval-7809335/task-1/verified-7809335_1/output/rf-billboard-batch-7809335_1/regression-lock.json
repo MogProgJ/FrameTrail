@@ -1,0 +1,7 @@
+{
+  "best_checkpoint_sha256": "3ffc136b0f33106694a77c28f3c935836a2ba422642c9f5cd2e2eb7559aa8e2b",
+  "best_step": 0,
+  "selection": "already frozen by validation alone",
+  "references": "known, consumed; not fresh heldout",
+  "production_adoption": false
+}

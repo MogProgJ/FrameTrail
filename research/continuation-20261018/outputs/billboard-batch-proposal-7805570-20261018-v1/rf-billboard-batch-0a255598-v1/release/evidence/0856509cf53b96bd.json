@@ -1,0 +1,72 @@
+{
+  "image_id": "0856509cf53b96bd",
+  "image_sha256": "7a13a2ce9e1ee49f6fa4116aa1b8d75304c54f1c8ab83ae2f9e74de46d8c7cdf",
+  "publisher_attribution": {
+    "id": "0856509cf53b96bd",
+    "landing_url": "https://www.flickr.com/photos/walmartmovie/34281398",
+    "original_url": "https://c6.staticflickr.com/1/21/34281398_82006cd737_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Brave New Films",
+    "author_url": "https://www.flickr.com/people/walmartmovie/",
+    "title": "Colorado Springs (abandoned)",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Brave New Films",
+    "url": "https://www.flickr.com/photos/walmartmovie",
+    "image": "https://live.staticflickr.com/14/buddyicons/32256591@N00.jpg?1159871782#32256591@N00"
+  },
+  "current_title": "Colorado Springs (abandoned)",
+  "caption_and_notices": {
+    "image_id": "0856509cf53b96bd",
+    "identity_group": "flickr-nsid:32256591@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "Brave New Films",
+      "url": "https://www.flickr.com/photos/walmartmovie",
+      "image": "https://live.staticflickr.com/14/buddyicons/32256591@N00.jpg?1159871782#32256591@N00"
+    },
+    "current_title": "Colorado Springs (abandoned)",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Brave New Films",
+        "url": "https://www.flickr.com/photos/walmartmovie",
+        "image": "https://live.staticflickr.com/14/buddyicons/32256591@N00.jpg?1159871782#32256591@N00"
+      }
+    },
+    "meta_description": "These two shots were taken at the abandoned WAL-MART in the Citadel Crossing\n\t(Academy Blvd.) in Colorado Springs, Colorado.\n\tryan.bobafett@gmail.com"
+  },
+  "source_url": "https://www.flickr.com/photos/walmartmovie/34281398",
+  "canonical_page_url": "https://www.flickr.com/photos/walmartmovie/34281398",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "a619cbcc9db4470559992da34cd5e62305c9d1b181b6d1838f7b97a12f0418f4",
+  "source_gzip_sha256": "ae96d3d95de745fc93cd004d3a4f73ff63df10901dbf3fc6912efc7fbe84b5c1",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "71c6e6d9b2673124f6aa62da245512a011b659f43578c62217109842dec61152"
+}

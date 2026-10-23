@@ -1,0 +1,63 @@
+{
+  "photo": 23,
+  "image_id": "071335ec7bce7681",
+  "publisher_attribution": {
+    "id": "071335ec7bce7681",
+    "landing_url": "https://www.flickr.com/photos/fohlin/7717876468",
+    "original_url": "https://farm2.staticflickr.com/7114/7717876468_94c65b3eb5_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Fredrik Ohlin",
+    "author_url": "https://www.flickr.com/people/fohlin/",
+    "title": "Knomo Kobe",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Fredrik Ohlin",
+    "url": "https://www.flickr.com/photos/fohlin",
+    "image": "https://live.staticflickr.com/80/buddyicons/31349545@N00.jpg?1251149004#31349545@N00"
+  },
+  "current_title": "Knomo Kobe",
+  "source_url": "https://www.flickr.com/photos/fohlin/7717876468",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 23,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "Fredrik Ohlin",
+      "url": "https://www.flickr.com/photos/fohlin",
+      "image": "https://live.staticflickr.com/80/buddyicons/31349545@N00.jpg?1251149004#31349545@N00"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Fredrik Ohlin",
+      "url": "https://www.flickr.com/photos/fohlin",
+      "image": "https://live.staticflickr.com/80/buddyicons/31349545@N00.jpg?1251149004#31349545@N00"
+    },
+    "meta_description": "Rear slip pocket with zipper at the bottom, enabling handy trolley placement."
+  },
+  "creator_override": null,
+  "image_sha256": "789ff4923509a7d920588d28e52b65519a27a955c4ac42135e4d3ba2bc804482",
+  "source_page_sha256": "78747be6d9ff442588111ac552b2ad1c04cdea06860105a96442161afa30a237",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "b24e0db96060c9f8e8894c7cf659af95c25a69b517632475b94ee1728278764f",
+  "source_job": 7626978,
+  "scope_note": "Single handbag, clipped white chair and clipped left couch retained. Suitcase box omits its extended handle and is held.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

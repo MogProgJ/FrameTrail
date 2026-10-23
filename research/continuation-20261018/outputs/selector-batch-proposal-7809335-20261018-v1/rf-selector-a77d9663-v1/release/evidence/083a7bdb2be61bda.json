@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "083a7bdb2be61bda",
+  "image_sha256": "1305be3f6a1734bb9f7d627046c72d6d53bbeadd691538229ff4e16a9ef87396",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "083a7bdb2be61bda",
+    "image_sha256": "1305be3f6a1734bb9f7d627046c72d6d53bbeadd691538229ff4e16a9ef87396",
+    "selected_category": "fire hydrant",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/syriloth/3875174945",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/syriloth/3875174945",
+      "original_url": "https://c3.staticflickr.com/3/2425/3875174945_c7334268bf_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Gabriel",
+      "author_url": "https://www.flickr.com/people/syriloth/",
+      "title": "Blonde Girl Waiting",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Gabriel",
+      "url": "https://www.flickr.com/photos/syriloth",
+      "image": "https://live.staticflickr.com/30/buddyicons/43098294@N00.jpg?1342910143#43098294@N00"
+    },
+    "current_title": "Blonde Girl Waiting",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Gabriel",
+          "url": "https://www.flickr.com/photos/syriloth",
+          "image": "https://live.staticflickr.com/30/buddyicons/43098294@N00.jpg?1342910143#43098294@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:43098294@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/syriloth/3875174945",
+    "html_sha256": "3341d3d9ec92271e9cd0808564155495cbc4f1385ee012ed63d14a258a6416e1",
+    "stored_sha256": "27bd78993b93d9c25aed1ce2a9cabaa6929f9b2fdc66f6c23b2501062e7b230d",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\083a7bdb2be61bda.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/083a7bdb2be61bda.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

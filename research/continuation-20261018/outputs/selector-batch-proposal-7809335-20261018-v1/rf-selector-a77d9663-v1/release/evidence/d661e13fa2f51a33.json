@@ -1,0 +1,63 @@
+{
+  "photo": 6,
+  "image_id": "d661e13fa2f51a33",
+  "publisher_attribution": {
+    "id": "d661e13fa2f51a33",
+    "landing_url": "https://www.flickr.com/photos/golfandfun/14842959910",
+    "original_url": "https://farm4.staticflickr.com/5559/14842959910_72d6d1cd19_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Gaetano Rap",
+    "author_url": "https://www.flickr.com/people/golfandfun/",
+    "title": "DSC_5211",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Gaetano Rap",
+    "url": "https://www.flickr.com/photos/golfandfun",
+    "image": "https://live.staticflickr.com/2913/buddyicons/7645680@N06.jpg?1403791887#7645680@N06"
+  },
+  "current_title": "DSC_5211",
+  "source_url": "https://www.flickr.com/photos/golfandfun/14842959910",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 6,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "Gaetano Rap",
+      "url": "https://www.flickr.com/photos/golfandfun",
+      "image": "https://live.staticflickr.com/2913/buddyicons/7645680@N06.jpg?1403791887#7645680@N06"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Gaetano Rap",
+      "url": "https://www.flickr.com/photos/golfandfun",
+      "image": "https://live.staticflickr.com/2913/buddyicons/7645680@N06.jpg?1403791887#7645680@N06"
+    },
+    "meta_description": "pupi"
+  },
+  "creator_override": null,
+  "image_sha256": "ecf082aa1ecf2e46e1663284e568f7f5bec6a36b7562b4f58d0169933c34b9fb",
+  "source_page_sha256": "5afeb8fcbb0934c31d63c2fdd9f11a813fb9b616123a1ea96f4f2ec7450a725f",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "c874f6efca3cda44164c450b2ca228d5f58429d5fd51ab8797b1d9cca7c028a0",
+  "source_job": 7626978,
+  "scope_note": "Single clipped dog silhouette verified; no second dog is visible.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

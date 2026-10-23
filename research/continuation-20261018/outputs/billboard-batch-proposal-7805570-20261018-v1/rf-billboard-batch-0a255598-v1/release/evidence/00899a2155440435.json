@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "00899a2155440435",
+  "image_sha256": "4e6935f9c29c4f078d5215500731a38d4189437a7da2347473d2438691cc7df7",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "00899a2155440435",
+    "image_sha256": "4e6935f9c29c4f078d5215500731a38d4189437a7da2347473d2438691cc7df7",
+    "selected_category": "taxi",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/bjvs/4405932394",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/bjvs/4405932394",
+      "original_url": "https://farm6.staticflickr.com/4038/4405932394_d2ef21e74d_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Benjamin Vander Steen",
+      "author_url": "https://www.flickr.com/people/bjvs/",
+      "title": "RTW2009-1092Bangkok",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "plusgood",
+      "url": "https://www.flickr.com/photos/bjvs",
+      "image": "https://live.staticflickr.com/102/buddyicons/26036542@N00.jpg?1159053988#26036542@N00"
+    },
+    "current_title": "RTW2009-1092Bangkok",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "plusgood",
+          "url": "https://www.flickr.com/photos/bjvs",
+          "image": "https://live.staticflickr.com/102/buddyicons/26036542@N00.jpg?1159053988#26036542@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:26036542@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/bjvs/4405932394",
+    "html_sha256": "cc070ca17557dd90ab6a4f611e1c82196b644776453b9db589904a3312ea39cd",
+    "stored_sha256": "82e5e69e79f69bc08db66fb8a7e89203f745dcf4c14ad6d68f8f7f4b32a252ea",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\00899a2155440435.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/00899a2155440435.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

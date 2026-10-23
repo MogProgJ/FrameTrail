@@ -1,0 +1,63 @@
+{
+  "photo": 37,
+  "image_id": "9452c2879f1585ab",
+  "publisher_attribution": {
+    "id": "9452c2879f1585ab",
+    "landing_url": "https://www.flickr.com/photos/ajpope/15100452878",
+    "original_url": "https://c4.staticflickr.com/4/3920/15100452878_d19c9afcdf_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Alison Pope",
+    "author_url": "https://www.flickr.com/people/ajpope/",
+    "title": "Leaving Venice city by water taxi",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Alison Pope",
+    "url": "https://www.flickr.com/photos/ajpope",
+    "image": "https://live.staticflickr.com/1677/buddyicons/98887424@N00.jpg?1457547309#98887424@N00"
+  },
+  "current_title": "Leaving Venice city by water taxi",
+  "source_url": "https://www.flickr.com/photos/ajpope/15100452878",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 37,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "Alison Pope",
+      "url": "https://www.flickr.com/photos/ajpope",
+      "image": "https://live.staticflickr.com/1677/buddyicons/98887424@N00.jpg?1457547309#98887424@N00"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Alison Pope",
+      "url": "https://www.flickr.com/photos/ajpope",
+      "image": "https://live.staticflickr.com/1677/buddyicons/98887424@N00.jpg?1457547309#98887424@N00"
+    },
+    "meta_description": "Exiting from the canals of Venice and out into the lagoon.  A bit like being in a James Bond movie."
+  },
+  "creator_override": null,
+  "image_sha256": "e14274449e7f2c39d089ed90099c99538dfbf99a1f7ab6cb696904dbf3e18139",
+  "source_page_sha256": "0244d964e7463a923509006a26899cb3f480e080665c330cf7aafc59dcb9799c",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "5dbffb5ef85fedf5e3129f6cae56edfc9f20c722581de17042a2f901c5727e9d",
+  "source_job": 7626978,
+  "scope_note": "Three clear boat instances retained: approaching craft, foreground camera boat, and right-hand craft. Smaller boats remain held, so Boat is positive-only. Flag and tower-as-Building scope/extent held.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

@@ -1,0 +1,15 @@
+[2026-10-18 20:25:21] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+[2026-10-18 20:25:21] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 20:25:21] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
+[2026-10-18 20:25:22] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
+Traceback (most recent call last):
+  File "C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\frozen-head-cpu-7809335-20261018-v1\build_cache.py", line 46, in <module>
+    if __name__=='__main__':run()
+                            ^^^^^
+  File "C:\Users\nazee\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\contextlib.py", line 81, in inner
+    return func(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\frozen-head-cpu-7809335-20261018-v1\build_cache.py", line 39, in run
+    with torch.no_grad():assert max_output_error(dict(pred_logits=live['pred_logits'],pred_boxes=live['pred_boxes']) if row['split']=='val' else live,replay(cached,w,b))==0
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

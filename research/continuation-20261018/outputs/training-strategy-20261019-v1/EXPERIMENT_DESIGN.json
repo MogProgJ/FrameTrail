@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "status": "conditional-design-not-sealed-not-runnable",
+  "date": "2026-10-19",
+  "priority": "training-strategy-primary-app-secondary",
+  "authorization": "Standing 18 October continuous-work instruction permits bounded continuation; no routine approval requested. KIT outage, missing reviewed release and unverified live account admission block submission.",
+  "cluster_contact_this_pass": false,
+  "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "data_required": {
+    "fresh_train": {
+      "positive_photos": 30,
+      "absent_photos": 30,
+      "positive_scenes": 20,
+      "absent_scenes": 20,
+      "max_photos_per_scene": 2
+    },
+    "fresh_validation": {
+      "positive_photos": 12,
+      "absent_photos": 20,
+      "max_photos_per_scene": 1
+    },
+    "fresh_test": {
+      "positive_photos": 12,
+      "absent_photos": 20,
+      "max_photos_per_scene": 1
+    },
+    "minimum_train_absent_photos_per_family": 5,
+    "train_absent_families": [
+      "shop-business-lettering",
+      "traffic-information-signs",
+      "indoor-frames-screens-boards",
+      "household-laundry"
+    ],
+    "rights_and_source_evidence": true,
+    "whole_photo_billboard_completeness": true,
+    "other_unknown_classes_never_background": true,
+    "identity_scene_session_disjoint_roles": true,
+    "training_reuse_of_old_validation_or_test": false,
+    "purpose": "Engineering pilot minima; not a power calculation or guarantee of real-world performance"
+  },
+  "trials": [
+    {
+      "index": 0,
+      "method": "main-row-only",
+      "sampling_seed": 17,
+      "execution": "local-CPU-exact-layout-cache-control"
+    },
+    {
+      "index": 1,
+      "method": "main-row-only",
+      "sampling_seed": 29,
+      "execution": "local-CPU-exact-layout-cache-control"
+    },
+    {
+      "index": 2,
+      "method": "main-plus-encoder-row",
+      "sampling_seed": 17,
+      "execution": "GPU-array-task-0"
+    },
+    {
+      "index": 3,
+      "method": "main-plus-encoder-row",
+      "sampling_seed": 29,
+      "execution": "GPU-array-task-1"
+    }
+  ],
+  "optimizer": {
+    "name": "AdamW",
+    "main_lr": 0.0001,
+    "encoder_lr": 0.00003,
+    "weight_decay": 0,
+    "AMP": false,
+    "joint_gradient_clip": 0.1
+  },
+  "sampling": {
+    "per_update": [
+      "fresh-train-positive",
+      "boundary-cleared-original-train-positive",
+      "fresh-train-whole-photo-absent",
+      "original-train-whole-photo-absent"
+    ],
+    "paired_between_methods": true,
+    "scene_fair": true,
+    "schedules_frozen_before_predictions": true,
+    "init_seed_not_replication": "Identical pretrained initialization; stochasticity must come from distinct recorded sampling schedules"
+  },
+  "frozen": "All weights/buffers except billboard row133 in listed heads; original label scopes preserved",
+  "training": {
+    "max_updates_per_task": 1500,
+    "max_updates_total": 6000,
+    "active_seconds_per_task_including_validation": 1800,
+    "finalization_seconds_per_task": 480,
+    "validation_steps": [
+      0,
+      100,
+      250,
+      500,
+      1000,
+      1500
+    ],
+    "maximum_validation_records": 24,
+    "early_budget_stop": "Partial trial is incomplete; preserve, never replace",
+    "max_GPU_updates_total": 3000,
+    "local_controls": {
+      "CPU_threads": 2,
+      "run_sequentially": true,
+      "active_seconds_per_control": 1800
+    },
+    "selection_scoring_device": "Common pinned CPU Torch reference for all methods; cached replay only after exact full-layout parity. GPU scores diagnostic."
+  },
+  "resources": {
+    "partition": "gpu_a100_il",
+    "array": "0-1%2",
+    "GPUs_per_task": 1,
+    "max_concurrent_GPUs": 2,
+    "CPUs_per_task": 2,
+    "host_memory_GiB_per_task": 8,
+    "wall_minutes_per_task": 45,
+    "max_allocated_GPU_hours": 1.5,
+    "automatic_retries": 0,
+    "requeues": 0,
+    "replacement_jobs": 0,
+    "entitlements": "Unknown during outage; authenticated scheduler/account/admission evidence required before submission",
+    "GPU_tasks": 2,
+    "local_CPU_controls": 2
+  },
+  "decode": {
+    "confidence": 0.35,
+    "nms_iou": 0.45,
+    "matching_iou": 0.5,
+    "top_pairs": 300,
+    "max_detections": 100
+  },
+  "selection": {
+    "old_guards": "unchanged per-class against BOTH original and current baselines",
+    "old_development_unknown_cap": 530,
+    "fresh_validation_minimum_additional_hits": 3,
+    "fresh_validation_extra_FP_allowed": 0,
+    "both_seeds_must_qualify": true,
+    "ranking": [
+      "fresh complete billboard F1",
+      "hits",
+      "fewer false positives",
+      "earlier step",
+      "lower trial index"
+    ],
+    "test_reselection": false,
+    "fresh_test_uses": "One locked winner once; veto only, no runner-up substitution"
+  },
+  "gates": [
+    "Actual reviewed scene-diverse release and pinned sources",
+    "Frozen-design current-model TRAIN/validation baseline: do not launch if fewer than three missed fresh-validation targets; do not replace validation photos",
+    "Source-verified scoped loss, deterministic schedule and step-zero reproduction",
+    "Both-baseline retention and paired-seed fresh-validation gain",
+    "Locked winner known-regression and fresh-test veto",
+    "Separate strict ONNX numerical, CPU cost and app qualification"
+  ],
+  "unchanged": {
+    "selected_RF_checkpoint": true,
+    "YOLOX_default": true,
+    "ONNX_hold": true,
+    "production_adoption": false
+  },
+  "automation_scope": "Two local CPU cache controls and audits first, then one upload/launch for two non-cacheable GPU selector trials plus bounded diagnostics, audits, common CPU-reference scoring, four-condition validation selection and locked-winner follow-up. No runnable package until reviewed release/schema/loss/cache preflight is implemented and verified."
+}

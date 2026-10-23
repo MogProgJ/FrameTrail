@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-22",
+  "status": "submitted-as-reported-by-user-awaiting-actual-job-receipt",
+  "evidence": "User: the job has been submitted.",
+  "actual_job_id": null,
+  "scheduler_state_independently_verified": false,
+  "scope_sha256": "a8cc4ce065bb300869f85e416b48f56fd3ecf8cf00e25db2b08abef9dfaaeb3f",
+  "archive_sha256": "b569ad8e017ac711ce9f03910de921fc8973210c29575bc28ee4d21eefc23c62",
+  "replacement_submission_permitted": false,
+  "historical_receipts_preserved": true,
+  "production_adoption": false
+}

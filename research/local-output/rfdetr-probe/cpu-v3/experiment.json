@@ -1,0 +1,2335 @@
+{
+  "schema": 1,
+  "purpose": "pretrained-inference-export-mechanics-only",
+  "status": "completed",
+  "approved_for_application": false,
+  "training_performed": false,
+  "accuracy_evaluated": false,
+  "native_rf_adapter_implemented": false,
+  "directml_evaluated": false,
+  "started_at_utc": "2026-10-06T22:15:55.455973+00:00",
+  "source_manifest_sha256": "a7f1cd4e65482eeae54b691dc24f8d18f6b52cb06e3ca5045ed0801aee0aeea0",
+  "checkpoint": {
+    "path": "C:\\Users\\nazee\\Documents\\All Modules\\FrameTrail\\.deps\\rfdetr-probe-assets\\rf-detr-small.pth",
+    "bytes": 386045550,
+    "sha256": "d81979a9213a2109345158ce9232668df4c1ae52e9b8db3f2ec0a8cbad959b33",
+    "publisher_md5": "fb37061c1af7bace359c91b723a8d5c1",
+    "url": "https://storage.googleapis.com/rfdetr/small_coco/checkpoint_best_regular.pth",
+    "publisher_commit": "7433d5919d0f7e72cc6cb78663e0a731afd499e0",
+    "verification": "Publisher MD5 and local SHA256; MD5 is an integrity check, not a cryptographic authenticity guarantee."
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "rfdetr": "1.11.2",
+      "torch": "2.8.0+cpu",
+      "torchvision": "0.23.0+cpu",
+      "onnx": "1.19.1",
+      "onnxruntime": "1.30.0",
+      "numpy": "2.2.6",
+      "pillow": "12.3.0"
+    }
+  },
+  "environment_snapshot_sha256": "f74de06c1a2ad1f1569ad73128b4fed8e656a15459184153186dfbe50e210cf8",
+  "source_hashes": {
+    "rfdetr_probe.py": "3769095085f7d3af3ab393855e616fedfaa27f426e43d601e55221efb4cd5b2c",
+    "probe-rfdetr.py": "41d8d68b1b05102710b59eacfa1fc65080ff06c20c571ffeda9248572b9227ed",
+    "requirements-rfdetr-probe.txt": "3a3798d84af0763c7486fc86c491c9ff72f35d4f5110812e0711165095cd8d31"
+  },
+  "contract": {
+    "schema": 1,
+    "purpose": "rfdetr-small-pretrained-mechanics-only",
+    "approved_for_application": false,
+    "trained_by_frametrail": false,
+    "rfdetr_version": "1.11.2",
+    "resolution": 512,
+    "input": {
+      "name": "input",
+      "shape": [
+        1,
+        3,
+        512,
+        512
+      ],
+      "dtype": "float32",
+      "color": "RGB",
+      "resize": "bilinear tensor resize, antialias=False, no letterbox",
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "outputs": {
+      "boxes": "dets",
+      "logits": "labels",
+      "logit_slots": 91,
+      "background_class_id": null,
+      "activation": "per-class sigmoid",
+      "box_format": "normalized cxcywh"
+    },
+    "classes": [
+      {
+        "raw_slot": 1,
+        "canonical_id": 0,
+        "name": "person"
+      },
+      {
+        "raw_slot": 2,
+        "canonical_id": 1,
+        "name": "bicycle"
+      },
+      {
+        "raw_slot": 3,
+        "canonical_id": 2,
+        "name": "car"
+      },
+      {
+        "raw_slot": 4,
+        "canonical_id": 3,
+        "name": "motorcycle"
+      },
+      {
+        "raw_slot": 5,
+        "canonical_id": 4,
+        "name": "airplane"
+      },
+      {
+        "raw_slot": 6,
+        "canonical_id": 5,
+        "name": "bus"
+      },
+      {
+        "raw_slot": 7,
+        "canonical_id": 6,
+        "name": "train"
+      },
+      {
+        "raw_slot": 8,
+        "canonical_id": 7,
+        "name": "truck"
+      },
+      {
+        "raw_slot": 9,
+        "canonical_id": 8,
+        "name": "boat"
+      },
+      {
+        "raw_slot": 10,
+        "canonical_id": 9,
+        "name": "traffic light"
+      },
+      {
+        "raw_slot": 11,
+        "canonical_id": 10,
+        "name": "fire hydrant"
+      },
+      {
+        "raw_slot": 13,
+        "canonical_id": 11,
+        "name": "stop sign"
+      },
+      {
+        "raw_slot": 14,
+        "canonical_id": 12,
+        "name": "parking meter"
+      },
+      {
+        "raw_slot": 15,
+        "canonical_id": 13,
+        "name": "bench"
+      },
+      {
+        "raw_slot": 16,
+        "canonical_id": 14,
+        "name": "bird"
+      },
+      {
+        "raw_slot": 17,
+        "canonical_id": 15,
+        "name": "cat"
+      },
+      {
+        "raw_slot": 18,
+        "canonical_id": 16,
+        "name": "dog"
+      },
+      {
+        "raw_slot": 19,
+        "canonical_id": 17,
+        "name": "horse"
+      },
+      {
+        "raw_slot": 20,
+        "canonical_id": 18,
+        "name": "sheep"
+      },
+      {
+        "raw_slot": 21,
+        "canonical_id": 19,
+        "name": "cow"
+      },
+      {
+        "raw_slot": 22,
+        "canonical_id": 20,
+        "name": "elephant"
+      },
+      {
+        "raw_slot": 23,
+        "canonical_id": 21,
+        "name": "bear"
+      },
+      {
+        "raw_slot": 24,
+        "canonical_id": 22,
+        "name": "zebra"
+      },
+      {
+        "raw_slot": 25,
+        "canonical_id": 23,
+        "name": "giraffe"
+      },
+      {
+        "raw_slot": 27,
+        "canonical_id": 24,
+        "name": "backpack"
+      },
+      {
+        "raw_slot": 28,
+        "canonical_id": 25,
+        "name": "umbrella"
+      },
+      {
+        "raw_slot": 31,
+        "canonical_id": 26,
+        "name": "handbag"
+      },
+      {
+        "raw_slot": 32,
+        "canonical_id": 27,
+        "name": "tie"
+      },
+      {
+        "raw_slot": 33,
+        "canonical_id": 28,
+        "name": "suitcase"
+      },
+      {
+        "raw_slot": 34,
+        "canonical_id": 29,
+        "name": "frisbee"
+      },
+      {
+        "raw_slot": 35,
+        "canonical_id": 30,
+        "name": "skis"
+      },
+      {
+        "raw_slot": 36,
+        "canonical_id": 31,
+        "name": "snowboard"
+      },
+      {
+        "raw_slot": 37,
+        "canonical_id": 32,
+        "name": "sports ball"
+      },
+      {
+        "raw_slot": 38,
+        "canonical_id": 33,
+        "name": "kite"
+      },
+      {
+        "raw_slot": 39,
+        "canonical_id": 34,
+        "name": "baseball bat"
+      },
+      {
+        "raw_slot": 40,
+        "canonical_id": 35,
+        "name": "baseball glove"
+      },
+      {
+        "raw_slot": 41,
+        "canonical_id": 36,
+        "name": "skateboard"
+      },
+      {
+        "raw_slot": 42,
+        "canonical_id": 37,
+        "name": "surfboard"
+      },
+      {
+        "raw_slot": 43,
+        "canonical_id": 38,
+        "name": "tennis racket"
+      },
+      {
+        "raw_slot": 44,
+        "canonical_id": 39,
+        "name": "bottle"
+      },
+      {
+        "raw_slot": 46,
+        "canonical_id": 40,
+        "name": "wine glass"
+      },
+      {
+        "raw_slot": 47,
+        "canonical_id": 41,
+        "name": "cup"
+      },
+      {
+        "raw_slot": 48,
+        "canonical_id": 42,
+        "name": "fork"
+      },
+      {
+        "raw_slot": 49,
+        "canonical_id": 43,
+        "name": "knife"
+      },
+      {
+        "raw_slot": 50,
+        "canonical_id": 44,
+        "name": "spoon"
+      },
+      {
+        "raw_slot": 51,
+        "canonical_id": 45,
+        "name": "bowl"
+      },
+      {
+        "raw_slot": 52,
+        "canonical_id": 46,
+        "name": "banana"
+      },
+      {
+        "raw_slot": 53,
+        "canonical_id": 47,
+        "name": "apple"
+      },
+      {
+        "raw_slot": 54,
+        "canonical_id": 48,
+        "name": "sandwich"
+      },
+      {
+        "raw_slot": 55,
+        "canonical_id": 49,
+        "name": "orange"
+      },
+      {
+        "raw_slot": 56,
+        "canonical_id": 50,
+        "name": "broccoli"
+      },
+      {
+        "raw_slot": 57,
+        "canonical_id": 51,
+        "name": "carrot"
+      },
+      {
+        "raw_slot": 58,
+        "canonical_id": 52,
+        "name": "hot dog"
+      },
+      {
+        "raw_slot": 59,
+        "canonical_id": 53,
+        "name": "pizza"
+      },
+      {
+        "raw_slot": 60,
+        "canonical_id": 54,
+        "name": "donut"
+      },
+      {
+        "raw_slot": 61,
+        "canonical_id": 55,
+        "name": "cake"
+      },
+      {
+        "raw_slot": 62,
+        "canonical_id": 56,
+        "name": "chair"
+      },
+      {
+        "raw_slot": 63,
+        "canonical_id": 57,
+        "name": "couch"
+      },
+      {
+        "raw_slot": 64,
+        "canonical_id": 58,
+        "name": "potted plant"
+      },
+      {
+        "raw_slot": 65,
+        "canonical_id": 59,
+        "name": "bed"
+      },
+      {
+        "raw_slot": 67,
+        "canonical_id": 60,
+        "name": "dining table"
+      },
+      {
+        "raw_slot": 70,
+        "canonical_id": 61,
+        "name": "toilet"
+      },
+      {
+        "raw_slot": 72,
+        "canonical_id": 62,
+        "name": "tv"
+      },
+      {
+        "raw_slot": 73,
+        "canonical_id": 63,
+        "name": "laptop"
+      },
+      {
+        "raw_slot": 74,
+        "canonical_id": 64,
+        "name": "mouse"
+      },
+      {
+        "raw_slot": 75,
+        "canonical_id": 65,
+        "name": "remote"
+      },
+      {
+        "raw_slot": 76,
+        "canonical_id": 66,
+        "name": "keyboard"
+      },
+      {
+        "raw_slot": 77,
+        "canonical_id": 67,
+        "name": "cell phone"
+      },
+      {
+        "raw_slot": 78,
+        "canonical_id": 68,
+        "name": "microwave"
+      },
+      {
+        "raw_slot": 79,
+        "canonical_id": 69,
+        "name": "oven"
+      },
+      {
+        "raw_slot": 80,
+        "canonical_id": 70,
+        "name": "toaster"
+      },
+      {
+        "raw_slot": 81,
+        "canonical_id": 71,
+        "name": "sink"
+      },
+      {
+        "raw_slot": 82,
+        "canonical_id": 72,
+        "name": "refrigerator"
+      },
+      {
+        "raw_slot": 84,
+        "canonical_id": 73,
+        "name": "book"
+      },
+      {
+        "raw_slot": 85,
+        "canonical_id": 74,
+        "name": "clock"
+      },
+      {
+        "raw_slot": 86,
+        "canonical_id": 75,
+        "name": "vase"
+      },
+      {
+        "raw_slot": 87,
+        "canonical_id": 76,
+        "name": "scissors"
+      },
+      {
+        "raw_slot": 88,
+        "canonical_id": 77,
+        "name": "teddy bear"
+      },
+      {
+        "raw_slot": 89,
+        "canonical_id": 78,
+        "name": "hair drier"
+      },
+      {
+        "raw_slot": 90,
+        "canonical_id": 79,
+        "name": "toothbrush"
+      }
+    ],
+    "limits": "80 COCO categories, not the 597-category broad profile. Not a production/native adapter. No quality claims from unreviewed photographs."
+  },
+  "images": [
+    {
+      "image_id": "d411abce2c36e64f",
+      "original_sha256": "09e3aac56ebc9c3ed6085774851c9085d02631738479d8ee621ceb1d8492f8f0",
+      "width": 1024,
+      "height": 768,
+      "rf_sdk_predictions": [
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "name": "person",
+          "confidence": 0.9716446995735168,
+          "box": [
+            110.66143798828125,
+            93.84242248535156,
+            559.6586303710938,
+            748.8973999023438
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "name": "person",
+          "confidence": 0.9400954246520996,
+          "box": [
+            459.208251953125,
+            17.87944793701172,
+            850.5577392578125,
+            565.485107421875
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "name": "person",
+          "confidence": 0.9145677089691162,
+          "box": [
+            818.3280639648438,
+            0.1692352294921875,
+            1024,
+            590.1171875
+          ]
+        }
+      ],
+      "rf_sdk_end_to_end_ms_excluding_file_decode": 519.2339999994147,
+      "rf_torch_forward_only_ms": 417.1572000013839,
+      "sdk_decoder_parity": {
+        "directional_strong_matches": 6,
+        "minimum_iou": 0.9999998244936876,
+        "maximum_score_delta": 0.0,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "baselines": [
+        {
+          "profile": "small",
+          "model_sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [
+            {
+              "class_id": 0,
+              "confidence": 0.916385,
+              "box": [
+                470.689,
+                16.332,
+                850.585,
+                560.297
+              ]
+            },
+            {
+              "class_id": 0,
+              "confidence": 0.890087,
+              "box": [
+                110.18,
+                81.1043,
+                572.971,
+                727.964
+              ]
+            },
+            {
+              "class_id": 0,
+              "confidence": 0.631852,
+              "box": [
+                814.126,
+                2.76075,
+                1023.31,
+                578.053
+              ]
+            }
+          ],
+          "wall_seconds_including_process_model_load_and_decode": 0.5577058000017132,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        },
+        {
+          "profile": "openimages",
+          "model_sha256": "02d86542101dafe75d593287d6c814d9cc95c595c172a7c5a743ec5719a79cf1",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [
+            {
+              "class_id": 322,
+              "confidence": 0.818408,
+              "box": [
+                529.655,
+                57.8029,
+                671.275,
+                236.28
+              ]
+            },
+            {
+              "class_id": 322,
+              "confidence": 0.808851,
+              "box": [
+                212.406,
+                178.52,
+                362.846,
+                352.294
+              ]
+            },
+            {
+              "class_id": 269,
+              "confidence": 0.565122,
+              "box": [
+                386.654,
+                593.317,
+                559.074,
+                679.591
+              ]
+            },
+            {
+              "class_id": 269,
+              "confidence": 0.517295,
+              "box": [
+                818.182,
+                497.551,
+                958.931,
+                598.044
+              ]
+            },
+            {
+              "class_id": 0,
+              "confidence": 0.43817,
+              "box": [
+                112.995,
+                92.3371,
+                559.574,
+                741.886
+              ]
+            },
+            {
+              "class_id": 269,
+              "confidence": 0.432643,
+              "box": [
+                326.834,
+                644.764,
+                450.111,
+                749.852
+              ]
+            },
+            {
+              "class_id": 0,
+              "confidence": 0.388541,
+              "box": [
+                464.515,
+                15.1221,
+                851.533,
+                564.544
+              ]
+            },
+            {
+              "class_id": 269,
+              "confidence": 0.377988,
+              "box": [
+                724.229,
+                466.18,
+                844.127,
+                536.679
+              ]
+            }
+          ],
+          "wall_seconds_including_process_model_load_and_decode": 0.5704178000014508,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        }
+      ],
+      "rf_ort_forward_only_ms": 391.8599999997241,
+      "rf_onnx_predictions": [
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "confidence": 0.9716446995735168,
+          "box": [
+            110.66142272949219,
+            93.84242248535156,
+            559.6586456298828,
+            748.8974761962891
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "confidence": 0.9400954246520996,
+          "box": [
+            459.20814514160156,
+            17.879425048828125,
+            850.5576019287109,
+            565.4852600097656
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "confidence": 0.9145684838294983,
+          "box": [
+            818.3280792236328,
+            0.16930389404296875,
+            1024,
+            590.1170883178711
+          ]
+        }
+      ],
+      "export_parity": {
+        "directional_strong_matches": 6,
+        "minimum_iou": 0.9999990557152146,
+        "maximum_score_delta": 7.748603820800781e-07,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "export_all_threshold_parity": {
+        "directional_strong_matches": 6,
+        "minimum_iou": 0.9999990557152146,
+        "maximum_score_delta": 7.748603820800781e-07,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "raw_box_max_abs_delta": 0.0004685819149017334,
+      "raw_logit_max_abs_delta": 0.001415252685546875,
+      "raw_positionwise_tolerance_passed": false
+    },
+    {
+      "image_id": "b3af0afa48a3ffb5",
+      "original_sha256": "bd8a99bd65cff08b7238735c153f277a5e25d2277c29c73ecbe7c061cf380abb",
+      "width": 1024,
+      "height": 683,
+      "rf_sdk_predictions": [
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "name": "person",
+          "confidence": 0.9723594188690186,
+          "box": [
+            162.19210815429688,
+            25.66580581665039,
+            901.7452392578125,
+            677.3446655273438
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "name": "person",
+          "confidence": 0.8986603617668152,
+          "box": [
+            780.291259765625,
+            136.3878936767578,
+            876.934814453125,
+            261.7508850097656
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "name": "person",
+          "confidence": 0.8153213858604431,
+          "box": [
+            609.1085205078125,
+            113.05538177490234,
+            669.552978515625,
+            233.29232788085938
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "name": "person",
+          "confidence": 0.7011463046073914,
+          "box": [
+            945.3040771484375,
+            208.73077392578125,
+            1023.917236328125,
+            290.18096923828125
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "name": "chair",
+          "confidence": 0.6180835962295532,
+          "box": [
+            164.297119140625,
+            351.9257507324219,
+            236.84735107421875,
+            483.8990173339844
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "name": "chair",
+          "confidence": 0.6102203130722046,
+          "box": [
+            305.3476867675781,
+            186.07347106933594,
+            400.1570129394531,
+            252.39706420898438
+          ]
+        },
+        {
+          "class_id": 41,
+          "raw_slot": 47,
+          "name": "cup",
+          "confidence": 0.5942749977111816,
+          "box": [
+            968.2113647460938,
+            276.400634765625,
+            1006.2366333007812,
+            329.9052429199219
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "name": "chair",
+          "confidence": 0.543212354183197,
+          "box": [
+            283.7565612792969,
+            213.48089599609375,
+            377.6465148925781,
+            265.1490478515625
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "name": "chair",
+          "confidence": 0.47397497296333313,
+          "box": [
+            705.481201171875,
+            399.449951171875,
+            798.5770263671875,
+            642.6375122070312
+          ]
+        },
+        {
+          "class_id": 45,
+          "raw_slot": 51,
+          "name": "bowl",
+          "confidence": 0.4676694869995117,
+          "box": [
+            440.4698181152344,
+            619.3284912109375,
+            595.0542602539062,
+            682.8817138671875
+          ]
+        },
+        {
+          "class_id": 60,
+          "raw_slot": 67,
+          "name": "dining table",
+          "confidence": 0.421648234128952,
+          "box": [
+            893.0634765625,
+            291.38104248046875,
+            1023.501220703125,
+            380.9667663574219
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "name": "chair",
+          "confidence": 0.4176359474658966,
+          "box": [
+            209.0011749267578,
+            185.65176391601562,
+            303.25531005859375,
+            258.4310302734375
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "name": "chair",
+          "confidence": 0.4021393060684204,
+          "box": [
+            885.5724487304688,
+            233.55335998535156,
+            935.4025268554688,
+            286.736328125
+          ]
+        },
+        {
+          "class_id": 43,
+          "raw_slot": 49,
+          "name": "knife",
+          "confidence": 0.3837725520133972,
+          "box": [
+            306.181640625,
+            561.6856689453125,
+            427.44464111328125,
+            682.7803955078125
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "name": "chair",
+          "confidence": 0.3825318515300751,
+          "box": [
+            749.1419067382812,
+            361.1014099121094,
+            1022.2644653320312,
+            640.0245361328125
+          ]
+        },
+        {
+          "class_id": 67,
+          "raw_slot": 77,
+          "name": "cell phone",
+          "confidence": 0.37842050194740295,
+          "box": [
+            551.96435546875,
+            256.66607666015625,
+            606.726806640625,
+            310.6624450683594
+          ]
+        },
+        {
+          "class_id": 26,
+          "raw_slot": 31,
+          "name": "handbag",
+          "confidence": 0.35497990250587463,
+          "box": [
+            742.4052124023438,
+            572.9967041015625,
+            945.0253295898438,
+            641.9111938476562
+          ]
+        },
+        {
+          "class_id": 57,
+          "raw_slot": 63,
+          "name": "couch",
+          "confidence": 0.3539091944694519,
+          "box": [
+            870.3828125,
+            196.35205078125,
+            991.9195556640625,
+            287.7658996582031
+          ]
+        },
+        {
+          "class_id": 60,
+          "raw_slot": 67,
+          "name": "dining table",
+          "confidence": 0.3519682288169861,
+          "box": [
+            667.5656127929688,
+            218.9334259033203,
+            808.2631225585938,
+            273.6882629394531
+          ]
+        }
+      ],
+      "rf_sdk_end_to_end_ms_excluding_file_decode": 452.1731000022555,
+      "rf_torch_forward_only_ms": 423.89290000210167,
+      "sdk_decoder_parity": {
+        "directional_strong_matches": 14,
+        "minimum_iou": 0.9999988892243628,
+        "maximum_score_delta": 0.0,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "baselines": [
+        {
+          "profile": "small",
+          "model_sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [
+            {
+              "class_id": 0,
+              "confidence": 0.883803,
+              "box": [
+                163.512,
+                23.942,
+                976.467,
+                651.408
+              ]
+            },
+            {
+              "class_id": 0,
+              "confidence": 0.873253,
+              "box": [
+                779.237,
+                136.678,
+                877.284,
+                261.245
+              ]
+            },
+            {
+              "class_id": 0,
+              "confidence": 0.783797,
+              "box": [
+                607.916,
+                113.042,
+                672.453,
+                230.756
+              ]
+            },
+            {
+              "class_id": 56,
+              "confidence": 0.755171,
+              "box": [
+                741.602,
+                362.194,
+                1023.28,
+                678.844
+              ]
+            },
+            {
+              "class_id": 0,
+              "confidence": 0.65362,
+              "box": [
+                947.629,
+                207.375,
+                1022.88,
+                286.393
+              ]
+            },
+            {
+              "class_id": 56,
+              "confidence": 0.503153,
+              "box": [
+                136.314,
+                256.988,
+                312.2,
+                362.112
+              ]
+            },
+            {
+              "class_id": 56,
+              "confidence": 0.500779,
+              "box": [
+                164.173,
+                351.033,
+                235.776,
+                477.594
+              ]
+            },
+            {
+              "class_id": 56,
+              "confidence": 0.491035,
+              "box": [
+                115.523,
+                155.22,
+                200.078,
+                374.509
+              ]
+            },
+            {
+              "class_id": 45,
+              "confidence": 0.419055,
+              "box": [
+                438.726,
+                618.366,
+                595.544,
+                681.476
+              ]
+            },
+            {
+              "class_id": 41,
+              "confidence": 0.415099,
+              "box": [
+                746.509,
+                199.872,
+                781.123,
+                255.487
+              ]
+            },
+            {
+              "class_id": 60,
+              "confidence": 0.389967,
+              "box": [
+                893.982,
+                280.395,
+                1024.0,
+                382.243
+              ]
+            },
+            {
+              "class_id": 41,
+              "confidence": 0.366538,
+              "box": [
+                708.777,
+                210.216,
+                728.603,
+                241.604
+              ]
+            },
+            {
+              "class_id": 56,
+              "confidence": 0.356436,
+              "box": [
+                149.91,
+                352.143,
+                236.866,
+                637.694
+              ]
+            },
+            {
+              "class_id": 41,
+              "confidence": 0.356233,
+              "box": [
+                972.595,
+                277.455,
+                1002.8,
+                339.249
+              ]
+            }
+          ],
+          "wall_seconds_including_process_model_load_and_decode": 0.4535685000009835,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        },
+        {
+          "profile": "openimages",
+          "model_sha256": "02d86542101dafe75d593287d6c814d9cc95c595c172a7c5a743ec5719a79cf1",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [
+            {
+              "class_id": 187,
+              "confidence": 0.50396,
+              "box": [
+                165.162,
+                196.63,
+                885.858,
+                658.576
+              ]
+            },
+            {
+              "class_id": 0,
+              "confidence": 0.412396,
+              "box": [
+                777.99,
+                136.469,
+                877.763,
+                264.209
+              ]
+            }
+          ],
+          "wall_seconds_including_process_model_load_and_decode": 0.5116531999992731,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        }
+      ],
+      "rf_ort_forward_only_ms": 364.96729999998934,
+      "rf_onnx_predictions": [
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "confidence": 0.972359299659729,
+          "box": [
+            162.19207763671875,
+            25.665785282850266,
+            901.7453002929688,
+            677.3447131216526
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "confidence": 0.8986605405807495,
+          "box": [
+            780.2912292480469,
+            136.38788781315088,
+            876.9348449707031,
+            261.75087901204824
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "confidence": 0.8153215050697327,
+          "box": [
+            609.1084899902344,
+            113.05538441985846,
+            669.5530090332031,
+            233.2923183813691
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "confidence": 0.7011466026306152,
+          "box": [
+            945.3040542602539,
+            208.7307554781437,
+            1023.9172592163086,
+            290.1809884607792
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "confidence": 0.6180829405784607,
+          "box": [
+            164.29712677001953,
+            351.9257628619671,
+            236.84734344482422,
+            483.89898493885994
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "confidence": 0.6102203130722046,
+          "box": [
+            305.34769439697266,
+            186.07346514239907,
+            400.1570053100586,
+            252.39703771099448
+          ]
+        },
+        {
+          "class_id": 41,
+          "raw_slot": 47,
+          "confidence": 0.5942739844322205,
+          "box": [
+            968.211347579956,
+            276.4006475433707,
+            1006.236650466919,
+            329.90522483736277
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "confidence": 0.5432119965553284,
+          "box": [
+            283.75657653808594,
+            213.48089174181223,
+            377.64649963378906,
+            265.14906253665686
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "confidence": 0.47397592663764954,
+          "box": [
+            705.4812164306641,
+            399.44996379315853,
+            798.5770111083984,
+            642.637477055192
+          ]
+        },
+        {
+          "class_id": 45,
+          "raw_slot": 51,
+          "confidence": 0.46767041087150574,
+          "box": [
+            440.46981048583984,
+            619.328465860337,
+            595.0542373657227,
+            682.8816942758858
+          ]
+        },
+        {
+          "class_id": 60,
+          "raw_slot": 67,
+          "confidence": 0.421647846698761,
+          "box": [
+            893.0635070800781,
+            291.38112353533506,
+            1023.5011901855469,
+            380.9667865112424
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "confidence": 0.4176366627216339,
+          "box": [
+            209.0012435913086,
+            185.65177852660418,
+            303.25528717041016,
+            258.4310011193156
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "confidence": 0.40213772654533386,
+          "box": [
+            885.5724678039551,
+            233.55335072427988,
+            935.4025077819824,
+            286.73633959144354
+          ]
+        },
+        {
+          "class_id": 43,
+          "raw_slot": 49,
+          "confidence": 0.3837724030017853,
+          "box": [
+            306.1816062927246,
+            561.6856766194105,
+            427.4446144104004,
+            682.7804002314806
+          ]
+        },
+        {
+          "class_id": 56,
+          "raw_slot": 62,
+          "confidence": 0.382530152797699,
+          "box": [
+            749.1419372558594,
+            361.1013530045748,
+            1022.2644348144531,
+            640.0245278328657
+          ]
+        },
+        {
+          "class_id": 67,
+          "raw_slot": 77,
+          "confidence": 0.3784240782260895,
+          "box": [
+            551.9645462036133,
+            256.666106775403,
+            606.7268600463867,
+            310.66232822835445
+          ]
+        },
+        {
+          "class_id": 26,
+          "raw_slot": 31,
+          "confidence": 0.35497891902923584,
+          "box": [
+            742.4052276611328,
+            572.9967134520411,
+            945.0253143310547,
+            641.9112365916371
+          ]
+        },
+        {
+          "class_id": 57,
+          "raw_slot": 63,
+          "confidence": 0.3539089560508728,
+          "box": [
+            870.3828125,
+            196.35205382108688,
+            991.9195556640625,
+            287.76588970422745
+          ]
+        },
+        {
+          "class_id": 60,
+          "raw_slot": 67,
+          "confidence": 0.35196834802627563,
+          "box": [
+            667.5655212402344,
+            218.93342514708638,
+            808.2630920410156,
+            273.68826166912913
+          ]
+        }
+      ],
+      "export_parity": {
+        "directional_strong_matches": 14,
+        "minimum_iou": 0.999998520342859,
+        "maximum_score_delta": 1.0132789611816406e-06,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "export_all_threshold_parity": {
+        "directional_strong_matches": 38,
+        "minimum_iou": 0.9999928202669291,
+        "maximum_score_delta": 3.5762786865234375e-06,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "raw_box_max_abs_delta": 0.00011345744132995605,
+      "raw_logit_max_abs_delta": 0.0003421306610107422,
+      "raw_positionwise_tolerance_passed": false
+    },
+    {
+      "image_id": "114902a59f068716",
+      "original_sha256": "babf788eb5e3a619958d55a5a0c35e74a545b2338bf23421e0aa8101352e3640",
+      "width": 1024,
+      "height": 1024,
+      "rf_sdk_predictions": [
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "name": "bottle",
+          "confidence": 0.9421067237854004,
+          "box": [
+            390.92620849609375,
+            57.55194091796875,
+            618.077880859375,
+            1016.8309936523438
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "name": "bottle",
+          "confidence": 0.9225368499755859,
+          "box": [
+            698.0679931640625,
+            60.341949462890625,
+            955.356689453125,
+            952.6492919921875
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "name": "bottle",
+          "confidence": 0.91295325756073,
+          "box": [
+            104.09398651123047,
+            69.06024169921875,
+            311.585693359375,
+            880.1826171875
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "name": "bottle",
+          "confidence": 0.9102010726928711,
+          "box": [
+            918.9076538085938,
+            76.61981201171875,
+            1023.4508666992188,
+            832.8743286132812
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "name": "bottle",
+          "confidence": 0.903896152973175,
+          "box": [
+            567.95361328125,
+            75.09539794921875,
+            735.1673583984375,
+            899.9412841796875
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "name": "bottle",
+          "confidence": 0.8716682195663452,
+          "box": [
+            43.824432373046875,
+            4.121368408203125,
+            155.68453979492188,
+            766.5047607421875
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "name": "bottle",
+          "confidence": 0.8555984497070312,
+          "box": [
+            298.4237365722656,
+            79.04153442382812,
+            446.2290344238281,
+            903.6180419921875
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "name": "bottle",
+          "confidence": 0.5847532749176025,
+          "box": [
+            284.00030517578125,
+            88.57814025878906,
+            359.68402099609375,
+            460.939453125
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "name": "bottle",
+          "confidence": 0.5307396054267883,
+          "box": [
+            699.3933715820312,
+            66.00973510742188,
+            816.2481079101562,
+            843.2764892578125
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "name": "bottle",
+          "confidence": 0.4541276693344116,
+          "box": [
+            703.11279296875,
+            67.56546020507812,
+            816.9674072265625,
+            395.00286865234375
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "name": "bottle",
+          "confidence": 0.3927512764930725,
+          "box": [
+            547.3763427734375,
+            76.18408203125,
+            592.876708984375,
+            326.57244873046875
+          ]
+        }
+      ],
+      "rf_sdk_end_to_end_ms_excluding_file_decode": 427.61180000161403,
+      "rf_torch_forward_only_ms": 423.8823000014236,
+      "sdk_decoder_parity": {
+        "directional_strong_matches": 16,
+        "minimum_iou": 0.9999994891513256,
+        "maximum_score_delta": 0.0,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "baselines": [
+        {
+          "profile": "small",
+          "model_sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [
+            {
+              "class_id": 39,
+              "confidence": 0.968543,
+              "box": [
+                394.184,
+                31.1483,
+                615.988,
+                967.161
+              ]
+            },
+            {
+              "class_id": 39,
+              "confidence": 0.961803,
+              "box": [
+                741.294,
+                68.3328,
+                952.979,
+                851.864
+              ]
+            },
+            {
+              "class_id": 39,
+              "confidence": 0.952911,
+              "box": [
+                95.0954,
+                40.2332,
+                276.653,
+                881.058
+              ]
+            },
+            {
+              "class_id": 39,
+              "confidence": 0.944868,
+              "box": [
+                567.44,
+                63.6774,
+                736.154,
+                893.881
+              ]
+            },
+            {
+              "class_id": 39,
+              "confidence": 0.888891,
+              "box": [
+                919.487,
+                98.9203,
+                1024.0,
+                801.332
+              ]
+            },
+            {
+              "class_id": 39,
+              "confidence": 0.881872,
+              "box": [
+                278.59,
+                81.0448,
+                465.613,
+                883.351
+              ]
+            },
+            {
+              "class_id": 39,
+              "confidence": 0.623315,
+              "box": [
+                33.1194,
+                5.5123,
+                158.285,
+                630.38
+              ]
+            },
+            {
+              "class_id": 60,
+              "confidence": 0.465397,
+              "box": [
+                0.0,
+                24.6865,
+                964.915,
+                992.838
+              ]
+            }
+          ],
+          "wall_seconds_including_process_model_load_and_decode": 0.4354269999967073,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        },
+        {
+          "profile": "openimages",
+          "model_sha256": "02d86542101dafe75d593287d6c814d9cc95c595c172a7c5a743ec5719a79cf1",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [
+            {
+              "class_id": 39,
+              "confidence": 0.622783,
+              "box": [
+                384.897,
+                54.4239,
+                620.054,
+                1024.0
+              ]
+            },
+            {
+              "class_id": 39,
+              "confidence": 0.604101,
+              "box": [
+                713.648,
+                63.74,
+                955.68,
+                959.698
+              ]
+            },
+            {
+              "class_id": 39,
+              "confidence": 0.55248,
+              "box": [
+                556.729,
+                73.1877,
+                735.831,
+                921.749
+              ]
+            },
+            {
+              "class_id": 39,
+              "confidence": 0.495777,
+              "box": [
+                297.742,
+                78.587,
+                452.036,
+                868.026
+              ]
+            },
+            {
+              "class_id": 39,
+              "confidence": 0.481986,
+              "box": [
+                915.708,
+                68.0581,
+                1024.0,
+                837.176
+              ]
+            },
+            {
+              "class_id": 39,
+              "confidence": 0.468102,
+              "box": [
+                93.3398,
+                62.4254,
+                282.981,
+                882.18
+              ]
+            }
+          ],
+          "wall_seconds_including_process_model_load_and_decode": 0.5475817000005918,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        }
+      ],
+      "rf_ort_forward_only_ms": 363.3336999992025,
+      "rf_onnx_predictions": [
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "confidence": 0.9421067237854004,
+          "box": [
+            390.92620849609375,
+            57.55194091796875,
+            618.0778198242188,
+            1016.8309936523438
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "confidence": 0.9225370287895203,
+          "box": [
+            698.0680236816406,
+            60.3419189453125,
+            955.3566589355469,
+            952.6493530273438
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "confidence": 0.9129528403282166,
+          "box": [
+            104.09397888183594,
+            69.06036376953125,
+            311.58570861816406,
+            880.1826782226562
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "confidence": 0.9102013111114502,
+          "box": [
+            918.9076766967773,
+            76.61981201171875,
+            1023.4508438110352,
+            832.8743286132812
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "confidence": 0.9038960337638855,
+          "box": [
+            567.9536666870117,
+            75.09539794921875,
+            735.1673049926758,
+            899.9412231445312
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "confidence": 0.8716676831245422,
+          "box": [
+            43.82441329956055,
+            4.121368408203125,
+            155.68454360961914,
+            766.5047912597656
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "confidence": 0.855597734451294,
+          "box": [
+            298.42372131347656,
+            79.04150390625,
+            446.2290496826172,
+            903.6180419921875
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "confidence": 0.5847523212432861,
+          "box": [
+            284.0002975463867,
+            88.57815551757812,
+            359.6840286254883,
+            460.9397888183594
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "confidence": 0.5307368636131287,
+          "box": [
+            699.3933181762695,
+            66.00970458984375,
+            816.2480392456055,
+            843.2769165039062
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "confidence": 0.4541294276714325,
+          "box": [
+            703.11279296875,
+            67.56546020507812,
+            816.9674072265625,
+            395.0028991699219
+          ]
+        },
+        {
+          "class_id": 39,
+          "raw_slot": 44,
+          "confidence": 0.3927512764930725,
+          "box": [
+            547.3763732910156,
+            76.18409729003906,
+            592.8766784667969,
+            326.5725555419922
+          ]
+        }
+      ],
+      "export_parity": {
+        "directional_strong_matches": 16,
+        "minimum_iou": 0.999998855884184,
+        "maximum_score_delta": 9.5367431640625e-07,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "export_all_threshold_parity": {
+        "directional_strong_matches": 22,
+        "minimum_iou": 0.9999981710563274,
+        "maximum_score_delta": 2.7418136596679688e-06,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "raw_box_max_abs_delta": 0.0007266998291015625,
+      "raw_logit_max_abs_delta": 0.0004401206970214844,
+      "raw_positionwise_tolerance_passed": false
+    },
+    {
+      "image_id": "e12b9abbaac60c1d",
+      "original_sha256": "ab4badbe8003b0548a7f4ab001d137f636fbbfeb1a2b7f0e0d143bd92c1c51a9",
+      "width": 1024,
+      "height": 680,
+      "rf_sdk_predictions": [
+        {
+          "class_id": 66,
+          "raw_slot": 76,
+          "name": "keyboard",
+          "confidence": 0.9772502779960632,
+          "box": [
+            2.905975341796875,
+            0.6615495681762695,
+            1022.923828125,
+            672.6055297851562
+          ]
+        }
+      ],
+      "rf_sdk_end_to_end_ms_excluding_file_decode": 446.87850000264007,
+      "rf_torch_forward_only_ms": 406.46790000027977,
+      "sdk_decoder_parity": {
+        "directional_strong_matches": 2,
+        "minimum_iou": 0.9999999608560335,
+        "maximum_score_delta": 0.0,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "baselines": [
+        {
+          "profile": "small",
+          "model_sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [
+            {
+              "class_id": 66,
+              "confidence": 0.958129,
+              "box": [
+                0.0,
+                6.94841,
+                1017.27,
+                680.0
+              ]
+            }
+          ],
+          "wall_seconds_including_process_model_load_and_decode": 0.44972100000086357,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        },
+        {
+          "profile": "openimages",
+          "model_sha256": "02d86542101dafe75d593287d6c814d9cc95c595c172a7c5a743ec5719a79cf1",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [
+            {
+              "class_id": 199,
+              "confidence": 0.847191,
+              "box": [
+                0.0,
+                0.336694,
+                1022.22,
+                678.441
+              ]
+            }
+          ],
+          "wall_seconds_including_process_model_load_and_decode": 0.5752830000019458,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        }
+      ],
+      "rf_ort_forward_only_ms": 359.7737000018242,
+      "rf_onnx_predictions": [
+        {
+          "class_id": 66,
+          "raw_slot": 76,
+          "confidence": 0.9772503972053528,
+          "box": [
+            2.906097412109375,
+            0.6615293025970459,
+            1022.9239807128906,
+            672.605596780777
+          ]
+        }
+      ],
+      "export_parity": {
+        "directional_strong_matches": 2,
+        "minimum_iou": 0.9999996008682708,
+        "maximum_score_delta": 1.1920928955078125e-07,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "export_all_threshold_parity": {
+        "directional_strong_matches": 2,
+        "minimum_iou": 0.9999996008682708,
+        "maximum_score_delta": 1.1920928955078125e-07,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "raw_box_max_abs_delta": 9.21487808227539e-05,
+      "raw_logit_max_abs_delta": 0.0002193450927734375,
+      "raw_positionwise_tolerance_passed": true
+    },
+    {
+      "image_id": "276dee336c643993",
+      "original_sha256": "4480492041a275f6825dab75f5fcf4e3dfa02b9f24a6bc8f8ef0c978324de499",
+      "width": 766,
+      "height": 1024,
+      "rf_sdk_predictions": [
+        {
+          "class_id": 24,
+          "raw_slot": 27,
+          "name": "backpack",
+          "confidence": 0.927939772605896,
+          "box": [
+            158.25218200683594,
+            188.52093505859375,
+            729.2247924804688,
+            1013.9535522460938
+          ]
+        },
+        {
+          "class_id": 65,
+          "raw_slot": 75,
+          "name": "remote",
+          "confidence": 0.8683212995529175,
+          "box": [
+            37.20576858520508,
+            589.611328125,
+            115.16204071044922,
+            725.9615478515625
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "name": "person",
+          "confidence": 0.7846750617027283,
+          "box": [
+            1.376392126083374,
+            0.51824951171875,
+            359.5782470703125,
+            670.82080078125
+          ]
+        },
+        {
+          "class_id": 26,
+          "raw_slot": 31,
+          "name": "handbag",
+          "confidence": 0.5871346592903137,
+          "box": [
+            0.4148523509502411,
+            564.440185546875,
+            210.33216857910156,
+            1014.6318359375
+          ]
+        },
+        {
+          "class_id": 15,
+          "raw_slot": 17,
+          "name": "cat",
+          "confidence": 0.419653058052063,
+          "box": [
+            371.4996643066406,
+            248.6792755126953,
+            472.2552795410156,
+            534.8216552734375
+          ]
+        },
+        {
+          "class_id": 57,
+          "raw_slot": 63,
+          "name": "couch",
+          "confidence": 0.3960111439228058,
+          "box": [
+            481.13641357421875,
+            295.7900085449219,
+            765.3751220703125,
+            1011.6815185546875
+          ]
+        }
+      ],
+      "rf_sdk_end_to_end_ms_excluding_file_decode": 401.55850000155624,
+      "rf_torch_forward_only_ms": 397.6124000000709,
+      "sdk_decoder_parity": {
+        "directional_strong_matches": 8,
+        "minimum_iou": 0.9999997799508981,
+        "maximum_score_delta": 1.1920928955078125e-07,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "baselines": [
+        {
+          "profile": "small",
+          "model_sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [
+            {
+              "class_id": 67,
+              "confidence": 0.508915,
+              "box": [
+                37.4192,
+                587.607,
+                115.526,
+                722.788
+              ]
+            },
+            {
+              "class_id": 0,
+              "confidence": 0.470714,
+              "box": [
+                0.725937,
+                0.875216,
+                356.599,
+                728.068
+              ]
+            },
+            {
+              "class_id": 28,
+              "confidence": 0.36262,
+              "box": [
+                187.429,
+                175.644,
+                715.612,
+                926.592
+              ]
+            }
+          ],
+          "wall_seconds_including_process_model_load_and_decode": 0.451419299999543,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        },
+        {
+          "profile": "openimages",
+          "model_sha256": "02d86542101dafe75d593287d6c814d9cc95c595c172a7c5a743ec5719a79cf1",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [],
+          "wall_seconds_including_process_model_load_and_decode": 0.5363429999997607,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        }
+      ],
+      "rf_ort_forward_only_ms": 389.87709999855724,
+      "rf_onnx_predictions": [
+        {
+          "class_id": 24,
+          "raw_slot": 27,
+          "confidence": 0.9277228116989136,
+          "box": [
+            158.27770602703094,
+            188.54962158203125,
+            729.2273141145706,
+            1013.9573364257812
+          ]
+        },
+        {
+          "class_id": 65,
+          "raw_slot": 75,
+          "confidence": 0.8686153888702393,
+          "box": [
+            37.20969907939434,
+            589.6184387207031,
+            115.15887494385242,
+            725.9599304199219
+          ]
+        },
+        {
+          "class_id": 0,
+          "raw_slot": 1,
+          "confidence": 0.7845820188522339,
+          "box": [
+            1.3749310672283173,
+            0.51806640625,
+            359.583048671484,
+            670.8072509765625
+          ]
+        },
+        {
+          "class_id": 26,
+          "raw_slot": 31,
+          "confidence": 0.5867771506309509,
+          "box": [
+            0.4161878228187561,
+            564.4415588378906,
+            210.3294456601143,
+            1014.6243591308594
+          ]
+        },
+        {
+          "class_id": 15,
+          "raw_slot": 17,
+          "confidence": 0.4197201728820801,
+          "box": [
+            371.4976606965065,
+            248.66921997070312,
+            472.25693577528,
+            534.7485046386719
+          ]
+        },
+        {
+          "class_id": 57,
+          "raw_slot": 63,
+          "confidence": 0.3963274359703064,
+          "box": [
+            481.1319795846939,
+            295.7646484375,
+            765.3730815649033,
+            1011.6695556640625
+          ]
+        }
+      ],
+      "export_parity": {
+        "directional_strong_matches": 8,
+        "minimum_iou": 0.9998449652606745,
+        "maximum_score_delta": 0.00035750865936279297,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "export_all_threshold_parity": {
+        "directional_strong_matches": 12,
+        "minimum_iou": 0.9996729214816864,
+        "maximum_score_delta": 0.00035750865936279297,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "raw_box_max_abs_delta": 0.4805859923362732,
+      "raw_logit_max_abs_delta": 3.8749256134033203,
+      "raw_positionwise_tolerance_passed": false
+    },
+    {
+      "image_id": "d661e13fa2f51a33",
+      "original_sha256": "ecf082aa1ecf2e46e1663284e568f7f5bec6a36b7562b4f58d0169933c34b9fb",
+      "width": 1024,
+      "height": 685,
+      "rf_sdk_predictions": [
+        {
+          "class_id": 16,
+          "raw_slot": 18,
+          "name": "dog",
+          "confidence": 0.8683197498321533,
+          "box": [
+            44.103271484375,
+            101.66989135742188,
+            859.1138916015625,
+            680.4385375976562
+          ]
+        },
+        {
+          "class_id": 21,
+          "raw_slot": 23,
+          "name": "bear",
+          "confidence": 0.4194110631942749,
+          "box": [
+            44.103271484375,
+            101.66989135742188,
+            859.1138916015625,
+            680.4385375976562
+          ]
+        }
+      ],
+      "rf_sdk_end_to_end_ms_excluding_file_decode": 449.3702999970992,
+      "rf_torch_forward_only_ms": 406.57680000003893,
+      "sdk_decoder_parity": {
+        "directional_strong_matches": 2,
+        "minimum_iou": 0.9999999497431911,
+        "maximum_score_delta": 0.0,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "baselines": [
+        {
+          "profile": "small",
+          "model_sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [
+            {
+              "class_id": 15,
+              "confidence": 0.837765,
+              "box": [
+                84.2853,
+                89.5463,
+                871.595,
+                676.378
+              ]
+            }
+          ],
+          "wall_seconds_including_process_model_load_and_decode": 0.41447790000165696,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        },
+        {
+          "profile": "openimages",
+          "model_sha256": "02d86542101dafe75d593287d6c814d9cc95c595c172a7c5a743ec5719a79cf1",
+          "cli_sha256": "77addad368679cac623993316b2d621066af2b608fda9e4de1b72f906e77cdfa",
+          "execution": {
+            "Execution provider": "CPU",
+            "Fallback": ""
+          },
+          "predictions": [
+            {
+              "class_id": 16,
+              "confidence": 0.559695,
+              "box": [
+                43.161,
+                97.849,
+                868.712,
+                685.0
+              ]
+            }
+          ],
+          "wall_seconds_including_process_model_load_and_decode": 0.5133960999992269,
+          "limits": "Separate prediction output, not accuracy or comparable warm model-only latency."
+        }
+      ],
+      "rf_ort_forward_only_ms": 369.78979999912553,
+      "rf_onnx_predictions": [
+        {
+          "class_id": 16,
+          "raw_slot": 18,
+          "confidence": 0.8683154582977295,
+          "box": [
+            44.102996826171875,
+            101.66982725262642,
+            859.1129455566406,
+            680.4381351172924
+          ]
+        },
+        {
+          "class_id": 21,
+          "raw_slot": 23,
+          "confidence": 0.41941940784454346,
+          "box": [
+            44.102996826171875,
+            101.66982725262642,
+            859.1129455566406,
+            680.4381351172924
+          ]
+        }
+      ],
+      "export_parity": {
+        "directional_strong_matches": 2,
+        "minimum_iou": 0.9999976960577498,
+        "maximum_score_delta": 4.291534423828125e-06,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "export_all_threshold_parity": {
+        "directional_strong_matches": 4,
+        "minimum_iou": 0.9999976960577498,
+        "maximum_score_delta": 8.344650268554688e-06,
+        "limits": "Numerical integration agreement, not annotation completeness or recognition accuracy."
+      },
+      "raw_box_max_abs_delta": 0.4903796315193176,
+      "raw_logit_max_abs_delta": 1.2046732902526855,
+      "raw_positionwise_tolerance_passed": false
+    }
+  ],
+  "limits": "These unreviewed publisher-train photographs are mechanics inputs, not independent deployment evaluation. Prediction counts, confidence and export parity are not accuracy.",
+  "model_load_seconds": 4.028512199998659,
+  "export_seconds": 5.222495899997739,
+  "export": {
+    "path": "C:\\Users\\nazee\\Documents\\All Modules\\FrameTrail\\output\\rfdetr-probe\\cpu-v3\\onnx\\rfdetr-small.onnx",
+    "sha256": "a7d8e54b0e8aebc67c0de798f0e8951f9566d82e0ffa0a9cd4b4a22a3138d46d",
+    "bytes": 114434018,
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "outputs": {
+      "dets": [
+        1,
+        300,
+        4
+      ],
+      "labels": [
+        1,
+        300,
+        91
+      ]
+    }
+  },
+  "finished_at_utc": "2026-10-06T22:16:36.053702+00:00",
+  "sdk_and_onnx_cpu_parity_passed": true,
+  "directional_strong_matches": 48,
+  "raw_positionwise_tolerance_passed": false,
+  "parity_acceptance": {
+    "prediction_threshold": 0.35,
+    "strong_threshold": 0.55,
+    "minimum_iou": 0.98,
+    "maximum_score_delta": 0.003,
+    "rule": "Bidirectional one-to-one class/box/score agreement for all returned predictions, plus non-vacuous strong matches.",
+    "raw_limits": "Positionwise raw-query deltas are diagnostics, not claimed equivalent. Query ordering is not an object identity; low-confidence queries differ on these inputs. This does not establish equivalence on other inputs."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "image_id": "a4880e33a2079577",
+  "image_sha256": "531987f8978a7a8f470892e64aa1e415e6389e22a00c1efa6efea5fa401a7237",
+  "identity_group": "flickr-nsid:27887748@N00",
+  "scene_group": "scene:white-kitchen-with-pink-jumper-woman-at-sink-and-washer-below-counter",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\a4880e33a2079577.json",
+    "sha256": "2c4c0eb6afa9873b4ae1ca9c869b84668a051a1b815950830304ce1bd7bdaf72"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-test-01.json",
+    "sha256": "fffa623bb2c2a007a905941a8e5bb3bdf50e01df7e6b772ad3a55277a307320a"
+  },
+  "content_decision": {
+    "id": "a4880e33a2079577",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "household-laundry",
+    "note": "Full original shows a domestic kitchen and laundry appliances with a woman at the sink; no advertising face.",
+    "scene_description": "White kitchen with pink-jumper woman at sink and washer below counter"
+  },
+  "prospective_split": "test",
+  "confuser_family": "household-laundry",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

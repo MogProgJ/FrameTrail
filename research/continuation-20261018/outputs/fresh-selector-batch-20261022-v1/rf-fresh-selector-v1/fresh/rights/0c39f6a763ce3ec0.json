@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "0c39f6a763ce3ec0",
+  "image_sha256": "e0a49cc6db517a259e7ec8b037ad1cab7deddc14d0909fcbacc2cdefa25ca5a7",
+  "source_review": {
+    "image_id": "0c39f6a763ce3ec0",
+    "image_sha256": "e0a49cc6db517a259e7ec8b037ad1cab7deddc14d0909fcbacc2cdefa25ca5a7",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/lox/9330021499",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/lox/9330021499",
+      "original_url": "https://farm1.staticflickr.com/5494/9330021499_44dfa68b5e_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Lachlan Donald",
+      "author_url": "https://www.flickr.com/people/lox/",
+      "title": "DSC02355.jpg",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Lachlan Donald",
+      "url": "https://www.flickr.com/photos/lox",
+      "image": "https://live.staticflickr.com/5333/buddyicons/43117091@N00.jpg?1369089052#43117091@N00"
+    },
+    "current_title": "DSC02355.jpg",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Lachlan Donald",
+          "url": "https://www.flickr.com/photos/lox",
+          "image": "https://live.staticflickr.com/5333/buddyicons/43117091@N00.jpg?1369089052#43117091@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:43117091@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/lox/9330021499",
+    "html_sha256": "45257d6327ae6647f8a556519278e067a0c26dcd9fc8026c5f15b060a87eff3f",
+    "stored_sha256": "c2843803f85e7c022a1f2ca47fad826bac6ac9e5edfc5c3d8a495119d7d0f9ce",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\0c39f6a763ce3ec0.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\0c39f6a763ce3ec0.json",
+    "sha256": "eed76480c391d7ce3f636efd07955336e68abccc7e0142f4b8ad150d80d69310"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\0c39f6a763ce3ec0.json",
+    "sha256": "738ec8d4186225983fd460ce7065558647b1b1cc19ddd8214e152c7258f7b8e6"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/lox/9330021499",
+    "original_url": "https://farm1.staticflickr.com/5494/9330021499_44dfa68b5e_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Lachlan Donald",
+    "author_url": "https://www.flickr.com/people/lox/",
+    "title": "DSC02355.jpg",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

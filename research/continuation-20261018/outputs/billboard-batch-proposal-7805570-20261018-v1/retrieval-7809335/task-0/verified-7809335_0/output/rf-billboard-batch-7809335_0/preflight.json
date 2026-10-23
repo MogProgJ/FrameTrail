@@ -1,0 +1,30 @@
+{
+  "actual_job_id": "7809335_0",
+  "slurm_job_id": "7809413",
+  "array_task_index": 0,
+  "variant": {
+    "index": 0,
+    "name": "n1-lr0.0001",
+    "negative_presentations": 1,
+    "lr": 0.0001,
+    "accumulation": 2,
+    "maximum_updates": 3000,
+    "schedule_file": "schedules/task-0.json",
+    "schedule_sha256": "5d0711f88a6c072f9ef90c167976ee3409dd163a4d4d42e36292ec0e430c4c1f"
+  },
+  "previous_job": "7805570",
+  "candidate_sha256": "e43a2c7a415c4f82209a1fc2471d8677503f51315e71f422ec0d6665eac377b9",
+  "protocol_sha256": "0a255598b74eb1d29d83ee1be10d517ae407fbda2c57e4565b51028d615343fd",
+  "approval_sha256": "e9147b2a8f0838c061622f6d22ebba6ba5b022cf8411718c12f2de8dda65e4df",
+  "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "original_pretrained_sha256": "d81979a9213a2109345158ce9232668df4c1ae52e9b8db3f2ec0a8cbad959b33",
+  "active_classifier_rows": [
+    133
+  ],
+  "train_photos": 700,
+  "validation_photos": 135,
+  "test_photos_used": 0,
+  "fresh_video_frames_used": 0,
+  "independent_human_recheck": false,
+  "approved_for_application": false
+}

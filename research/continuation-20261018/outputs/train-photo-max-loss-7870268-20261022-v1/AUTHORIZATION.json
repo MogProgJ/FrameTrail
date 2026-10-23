@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-22",
+  "status": "explicit-separate-photo-level-loss-study-authorized",
+  "user_reply": "Run the eight-fit photo-level loss study (recommended)",
+  "exact_scope": "Eight new fixed CPU fits; positive-photo mean softplus + absent-photo max300logit softplus; same TRAINfolds/features/normalization/models/160updates/1800s2CPUcap;noVAL/TEST/GPU/deployment.",
+  "proposal_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\train-discrimination-full-query-7870268-20261022-v1\\NEXT_OBJECTIVE_STUDY_PROPOSAL.md",
+    "sha256": "fc6b1fafba822ce30f46d91ba51523a878ea91e56a0e294222dfca224648eefd"
+  },
+  "parent_receipt_sha256": "485eb3b5e212c26500bd28ad5f1685f739fbc876a1d450c9494c616c17e74c21"
+}

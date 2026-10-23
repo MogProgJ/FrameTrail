@@ -8,6 +8,13 @@
 #include <QComboBox>
 #include <QDoubleSpinBox>
 #include <QFileInfo>
+#include <QMimeData>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QUrl>
+#include <QTabWidget>
+#include <QScrollArea>
+#include <QSplitter>
 #include <QtTest/QTest>
 #include <iostream>
 #include <stdexcept>
@@ -56,6 +63,37 @@ int main(int argc, char* argv[]) {
         window.findChild<QCheckBox*>(QStringLiteral("detectObjects"))->setChecked(false);
         window.show();
         require(window.grab().save(root+QStringLiteral("/desktop-empty.png")),"Empty workspace screenshot failed");
+        auto* tabs=window.findChild<QTabWidget*>(QStringLiteral("inspectorTabs"));
+        auto* inspector=window.findChild<QScrollArea*>(QStringLiteral("settingsScroll"));
+        auto* toggle=window.findChild<QPushButton*>(QStringLiteral("toggleInspector"));
+        auto* splitter=window.findChild<QSplitter*>(QStringLiteral("workspaceSplitter"));
+        require(tabs && tabs->count()==2 && toggle && splitter,"Modular workspace controls missing");
+        const auto initial_confidence=window.findChild<QDoubleSpinBox*>(QStringLiteral("confidence"))->value();
+        tabs->setCurrentIndex(1);QTest::qWait(20);
+        require(window.findChild<QPushButton*>(QStringLiteral("drawLine"))->isVisible(),"Tracking page hides counting tools");
+        require(window.grab().save(root+QStringLiteral("/desktop-tracking-module.png")),"Tracking module capture failed");
+        tabs->setCurrentIndex(0);
+        require(window.findChild<QDoubleSpinBox*>(QStringLiteral("confidence"))->value()==initial_confidence,"Tab navigation changed detection settings");
+        QTest::mouseClick(toggle,Qt::LeftButton);QTest::qWait(20);require(inspector->isHidden(),"Inspector cannot be hidden");
+        require(window.grab().save(root+QStringLiteral("/desktop-focus.png")),"Focus workspace capture failed");
+        QTest::mouseClick(toggle,Qt::LeftButton);QTest::qWait(20);require(!inspector->isHidden(),"Inspector did not restore");
+        window.resize(1000,680);QTest::qWait(30);
+        require(window.findChild<QWidget*>(QStringLiteral("frameCanvas"))->width()>=320,"Compact layout clipped video canvas");
+        require(window.grab().save(root+QStringLiteral("/desktop-compact.png")),"Compact workspace capture failed");
+        auto* models=window.findChild<QComboBox*>(QStringLiteral("modelSelection"));
+        const auto original_model=models->currentIndex();models->setCurrentIndex(5);QTest::qWait(30);
+        require(models->mapTo(inspector->viewport(),QPoint(models->width(),0)).x()<=inspector->viewport()->width(),"Long model label clips inspector controls");
+        require(window.grab().save(root+QStringLiteral("/desktop-rf-compact.png")),"RF compact capture failed");models->setCurrentIndex(original_model);
+
+        window.resize(1360,860);QTest::qWait(20);
+        models->setCurrentIndex(5);auto* backend=window.findChild<QComboBox*>(QStringLiteral("backendSelection"));backend->setCurrentIndex(1);
+        window.findChild<QDoubleSpinBox*>(QStringLiteral("confidence"))->setValue(.70);QTest::qWait(20);
+        window.findChild<QCheckBox*>(QStringLiteral("detectObjects"))->setChecked(true);
+        require(window.grab().save(root+QStringLiteral("/desktop-rf-workspace.png")),"RF workspace capture failed");
+        window.findChild<QCheckBox*>(QStringLiteral("detectObjects"))->setChecked(false);
+        models->setCurrentIndex(original_model);backend->setCurrentIndex(0);window.findChild<QDoubleSpinBox*>(QStringLiteral("confidence"))->setValue(initial_confidence);
+
+
         auto* play = window.findChild<QPushButton*>(QStringLiteral("play"));
         auto* stop = window.findChild<QPushButton*>(QStringLiteral("stop"));
         auto* replay = window.findChild<QPushButton*>(QStringLiteral("replay"));
@@ -133,7 +171,7 @@ int main(int argc, char* argv[]) {
             QTest::mouseClick(video_canvas,Qt::LeftButton,{},point(.8,.6));
             applied();
             auto* model=window.findChild<QComboBox*>(QStringLiteral("modelSelection"));
-            require(model && model->count()==6,"Model selector missing");
+            require(model && model->count()==7,"Model selector missing");
             if(QFileInfo::exists(model->itemData(1).toString())) {
                 model->setCurrentIndex(1);applied();
                 require(window.grab().save(root+QStringLiteral("/desktop-small-model.png")),"S selection screenshot failed");
@@ -178,6 +216,15 @@ int main(int argc, char* argv[]) {
             return 0;
         }
 
+        QMimeData remote_drop;remote_drop.setUrls({QUrl(QStringLiteral("https://example.invalid/video.mp4"))});
+        QDragEnterEvent remote_enter(QPoint(100,100),Qt::CopyAction,&remote_drop,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(&window,&remote_enter);
+        require(!remote_enter.isAccepted(),"Preview accepted a remote file drop");
+        QMimeData local_drop;local_drop.setUrls({QUrl::fromLocalFile(root+QStringLiteral("/still.png"))});
+        QDragEnterEvent local_enter(QPoint(100,100),Qt::CopyAction,&local_drop,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(&window,&local_enter);
+        require(local_enter.isAccepted(),"Preview rejected local file drag");
+        QDropEvent dropped(QPointF(100,100),Qt::CopyAction,&local_drop,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(&window,&dropped);
+        wait_for([&]{return window.displayed_sequence()==0 && window.preview_image().width()==18;});
+        require(dropped.isAccepted(),"Preview local-file drop did not load image");
         window.open_file(root + QStringLiteral("/variable.mkv"));
         wait_for([&] { return window.displayed_sequence().has_value(); });
         QTest::mouseClick(play, Qt::LeftButton);

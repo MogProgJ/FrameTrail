@@ -1,0 +1,8 @@
+{
+  "approved": true,
+  "export_plan_sha256": "a019c6c3eb57caa3ee35170ac038a3d450ec0a0073e06e9f9145f2e47ffdb158",
+  "user_authorization_evidence": "Okay, then proceed to that next step. Again, always keep working until my input is really, really required. ... My input could be when you want to post a job on the cluster. ... anything other than that, you keep working on.",
+  "scope": "Local ONNX export, parity, runtime checks and continued reversible local app work; pause before cluster submission.",
+  "date": "2026-10-18",
+  "supersedes_automatic_export_pause": true
+}

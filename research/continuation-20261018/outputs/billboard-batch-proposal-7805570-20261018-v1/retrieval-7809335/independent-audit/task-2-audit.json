@@ -1,0 +1,164 @@
+{
+  "index": 2,
+  "status": "training-and-selection-independently-audited",
+  "selected_step": 0,
+  "strict_gain": false,
+  "ranking": [
+    127,
+    0.5238095238095238
+  ],
+  "checkpoint_sha256": "ef5a3765e2d49209cfc9146d1c7f33cab1e10311ba0731cd1a48955383976d0d",
+  "validation_records_rescored": 16,
+  "tensor_checks": [
+    {
+      "file": "best.pt",
+      "step": 0,
+      "changed_state_keys": [],
+      "frozen_features_boxes_and_inactive_rows_identical": true
+    },
+    {
+      "file": "last.pt",
+      "step": 1500,
+      "changed_state_keys": [
+        "class_embed.weight",
+        "class_embed.bias"
+      ],
+      "frozen_features_boxes_and_inactive_rows_identical": true
+    }
+  ],
+  "known_regression": {
+    "status": "unchanged-model-current-scores-reused",
+    "passed": true,
+    "new_inference": false
+  },
+  "trace": [
+    {
+      "step": 0,
+      "eligible": true,
+      "ranking": [
+        127,
+        0.5238095238095238
+      ]
+    },
+    {
+      "step": 100,
+      "eligible": true,
+      "ranking": [
+        127,
+        0.5238095238095238
+      ]
+    },
+    {
+      "step": 200,
+      "eligible": false,
+      "ranking": [
+        129,
+        0.5176470588235295
+      ]
+    },
+    {
+      "step": 300,
+      "eligible": false,
+      "ranking": [
+        133,
+        0.5116279069767442
+      ]
+    },
+    {
+      "step": 400,
+      "eligible": false,
+      "ranking": [
+        134,
+        0.5116279069767442
+      ]
+    },
+    {
+      "step": 500,
+      "eligible": false,
+      "ranking": [
+        134,
+        0.5116279069767442
+      ]
+    },
+    {
+      "step": 600,
+      "eligible": false,
+      "ranking": [
+        135,
+        0.5116279069767442
+      ]
+    },
+    {
+      "step": 700,
+      "eligible": false,
+      "ranking": [
+        135,
+        0.5116279069767442
+      ]
+    },
+    {
+      "step": 800,
+      "eligible": false,
+      "ranking": [
+        135,
+        0.5057471264367817
+      ]
+    },
+    {
+      "step": 900,
+      "eligible": false,
+      "ranking": [
+        136,
+        0.5057471264367817
+      ]
+    },
+    {
+      "step": 1000,
+      "eligible": false,
+      "ranking": [
+        136,
+        0.5057471264367817
+      ]
+    },
+    {
+      "step": 1100,
+      "eligible": false,
+      "ranking": [
+        136,
+        0.5057471264367817
+      ]
+    },
+    {
+      "step": 1200,
+      "eligible": false,
+      "ranking": [
+        136,
+        0.5057471264367817
+      ]
+    },
+    {
+      "step": 1300,
+      "eligible": false,
+      "ranking": [
+        136,
+        0.5116279069767442
+      ]
+    },
+    {
+      "step": 1400,
+      "eligible": false,
+      "ranking": [
+        136,
+        0.5116279069767442
+      ]
+    },
+    {
+      "step": 1500,
+      "eligible": false,
+      "ranking": [
+        136,
+        0.5116279069767442
+      ]
+    }
+  ]
+}

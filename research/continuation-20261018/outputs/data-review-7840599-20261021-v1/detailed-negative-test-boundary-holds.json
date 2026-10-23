@@ -1,0 +1,18 @@
+{
+  "model_predictions_seen": false,
+  "approved_for_training": false,
+  "records": [
+    {
+      "id": "531e182ce7b493db",
+      "disposition": "hold-branding-versus-campaign-boundary",
+      "normalized_xyxy": [],
+      "note": "Full original is large Maryland cigarette-brand roof advertising; not accepted as ordinary business-name negative. Preserve unresolved target-board boundary."
+    },
+    {
+      "id": "0c20f0c14eafee6e",
+      "disposition": "hold-branding-versus-campaign-boundary",
+      "normalized_xyxy": [],
+      "note": "Winery entry sign combines identity/opening hours with unique exceptional wine promotion; no confident absence assertion."
+    }
+  ]
+}

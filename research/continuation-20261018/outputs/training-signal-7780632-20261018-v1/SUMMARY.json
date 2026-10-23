@@ -1,0 +1,143 @@
+{
+  "status": "complete",
+  "classes": [
+    {
+      "canonical_id": 15,
+      "name": "Cat",
+      "steps": [
+        {
+          "step": 0,
+          "positive_photos": 2,
+          "explicit_negative_photos": 2,
+          "matched_targets": 4,
+          "median_matched_iou": 0.9190121293067932,
+          "median_matched_probability": 0.8913239240646362,
+          "median_soft_target": 0.9119427800178528,
+          "matched_logits_with_upward_descent_direction": 3,
+          "mean_full_head_row_weight_gradient_norm_on_positive_photos": 1.8038748800754547,
+          "median_matched_weighted_logit_gradient": -0.013745870441198349,
+          "explicit_negatives_suppress_class": true
+        },
+        {
+          "step": 600,
+          "positive_photos": 2,
+          "explicit_negative_photos": 2,
+          "matched_targets": 4,
+          "median_matched_iou": 0.9190121293067932,
+          "median_matched_probability": 0.8578661978244781,
+          "median_soft_target": 0.9032672643661499,
+          "matched_logits_with_upward_descent_direction": 4,
+          "mean_full_head_row_weight_gradient_norm_on_positive_photos": 3.151735305786133,
+          "median_matched_weighted_logit_gradient": -0.030267393216490746,
+          "explicit_negatives_suppress_class": true
+        }
+      ]
+    },
+    {
+      "canonical_id": 16,
+      "name": "Dog",
+      "steps": [
+        {
+          "step": 0,
+          "positive_photos": 2,
+          "explicit_negative_photos": 2,
+          "matched_targets": 2,
+          "median_matched_iou": 0.9511430561542511,
+          "median_matched_probability": 0.9578973948955536,
+          "median_soft_target": 0.9528235197067261,
+          "matched_logits_with_upward_descent_direction": 0,
+          "mean_full_head_row_weight_gradient_norm_on_positive_photos": 0.44785650074481964,
+          "median_matched_weighted_logit_gradient": 0.010147765278816223,
+          "explicit_negatives_suppress_class": true
+        },
+        {
+          "step": 600,
+          "positive_photos": 2,
+          "explicit_negative_photos": 2,
+          "matched_targets": 2,
+          "median_matched_iou": 0.9511430561542511,
+          "median_matched_probability": 0.9679924249649048,
+          "median_soft_target": 0.9553276598453522,
+          "matched_logits_with_upward_descent_direction": 0,
+          "mean_full_head_row_weight_gradient_norm_on_positive_photos": 0.8200803101062775,
+          "median_matched_weighted_logit_gradient": 0.025329574942588806,
+          "explicit_negatives_suppress_class": true
+        }
+      ]
+    },
+    {
+      "canonical_id": 133,
+      "name": "Billboard",
+      "steps": [
+        {
+          "step": 0,
+          "positive_photos": 2,
+          "explicit_negative_photos": 2,
+          "matched_targets": 4,
+          "median_matched_iou": 0.7879296243190765,
+          "median_matched_probability": 0.007020522374659777,
+          "median_soft_target": 0.24165203422307968,
+          "matched_logits_with_upward_descent_direction": 4,
+          "mean_full_head_row_weight_gradient_norm_on_positive_photos": 13.797306060791016,
+          "median_matched_weighted_logit_gradient": -0.15925224125385284,
+          "explicit_negatives_suppress_class": true
+        },
+        {
+          "step": 600,
+          "positive_photos": 2,
+          "explicit_negative_photos": 2,
+          "matched_targets": 4,
+          "median_matched_iou": 0.7879296243190765,
+          "median_matched_probability": 0.025252720341086388,
+          "median_soft_target": 0.33663319051265717,
+          "matched_logits_with_upward_descent_direction": 4,
+          "mean_full_head_row_weight_gradient_norm_on_positive_photos": 17.995604515075684,
+          "median_matched_weighted_logit_gradient": -0.21633680164813995,
+          "explicit_negatives_suppress_class": true
+        }
+      ]
+    },
+    {
+      "canonical_id": 593,
+      "name": "Washing machine",
+      "steps": [
+        {
+          "step": 0,
+          "positive_photos": 2,
+          "explicit_negative_photos": 2,
+          "matched_targets": 2,
+          "median_matched_iou": 0.9213092625141144,
+          "median_matched_probability": 0.020504972897469997,
+          "median_soft_target": 0.3533240556716919,
+          "matched_logits_with_upward_descent_direction": 2,
+          "mean_full_head_row_weight_gradient_norm_on_positive_photos": 19.775304794311523,
+          "median_matched_weighted_logit_gradient": -0.6656382083892822,
+          "explicit_negatives_suppress_class": true
+        },
+        {
+          "step": 600,
+          "positive_photos": 2,
+          "explicit_negative_photos": 2,
+          "matched_targets": 2,
+          "median_matched_iou": 0.8941546082496643,
+          "median_matched_probability": 0.3161385804414749,
+          "median_soft_target": 0.6892284452915192,
+          "matched_logits_with_upward_descent_direction": 2,
+          "mean_full_head_row_weight_gradient_norm_on_positive_photos": 24.783002853393555,
+          "median_matched_weighted_logit_gradient": -0.7461796998977661,
+          "explicit_negatives_suppress_class": true
+        }
+      ]
+    }
+  ],
+  "mean_constant_loss_fraction": {
+    "0": 0.45205099323417786,
+    "600": 0.4658015401374751
+  },
+  "inactive_row_gradient_mask_passed": true,
+  "unknown_logit_gradient_mask_passed": true,
+  "explicit_negative_suppression_passed": true,
+  "classification_gradient_reconstruction_passed": true,
+  "optimizer_updates": 0,
+  "limits": "Two positive photos per class and selected explicit negatives. This diagnoses signal direction, not convergence, generalization, optimal learning rate or sufficient training duration."
+}

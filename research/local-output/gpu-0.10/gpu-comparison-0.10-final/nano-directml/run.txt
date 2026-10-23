@@ -1,0 +1,18 @@
+Codec: h264
+Initial dimensions: 1280x720
+Execution provider: DirectML
+Runtime: 1.24.4
+Device: NVIDIA GeForce GTX 1650 Ti
+Fallback: 
+Model: YOLOX-Nano
+Detections across frames: 523
+Average detection (ms/frame): 10.2445
+Crossings (- to +): 0
+Crossings (+ to -): 0
+Average tracking/rules (ms/frame): 0.00807333
+Frames decoded: 120
+First timestamp (us): 0
+Last timestamp (us): 4958333
+Elapsed (s): 3.936
+Decode/detect/track/export throughput (fps): 30.488
+Stop condition: frame limit

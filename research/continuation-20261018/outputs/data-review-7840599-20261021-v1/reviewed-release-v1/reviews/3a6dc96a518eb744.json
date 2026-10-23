@@ -1,0 +1,40 @@
+{
+  "image_id": "3a6dc96a518eb744",
+  "image_sha256": "0379459331dbf230117c695d9bf97e659b8150856846a16d21d7661811e35473",
+  "identity_group": "flickr-nsid:8399025@N07",
+  "scene_group": "scene:vintage-beige-computers-and-keyboards-on-wooden-exhibition-tables",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\3a6dc96a518eb744.json",
+    "sha256": "54422db84c789a84f07200cff91aee70352651584b74a42d6957ebb584eb0cfc"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-val-02.json",
+    "sha256": "f82ee31dfe661131e9e4fcf55b35701afce493472b73fc5a605d0c1246a56f8d"
+  },
+  "content_decision": {
+    "id": "3a6dc96a518eb744",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "indoor-frames-screens-boards",
+    "note": "Full original shows vintage desktop computers, inventory cards and operational screen text in an exhibition room; no campaign advertising face.",
+    "scene_description": "Vintage beige computers and keyboards on wooden exhibition tables"
+  },
+  "prospective_split": "val",
+  "confuser_family": "indoor-frames-screens-boards",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

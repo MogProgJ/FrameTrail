@@ -1,0 +1,23 @@
+const { chromium } = require('C:/Users/nazee/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const { pathToFileURL } = require('node:url');
+const path = require('node:path');
+const fs = require('node:fs');
+(async()=>{
+ const browser=await chromium.launch({headless:true,executablePath:'C:/Users/nazee/AppData/Local/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-win64/chrome-headless-shell.exe'});
+ const page=await browser.newPage({viewport:{width:1280,height:1000},deviceScaleFactor:1});
+ const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('requestfailed',r=>errors.push(r.url()));
+ await page.goto(pathToFileURL(path.join(__dirname,'index.html')).href);await page.locator('article.case').last().waitFor();
+ const cards=await page.locator('article.case').count();
+ if(cards!==28)throw Error('Expected all 28 target cards');
+ const links=await page.locator('a').evaluateAll(as=>as.map(a=>a.getAttribute('href')));
+ for(const link of links)if(!fs.existsSync(path.join(__dirname,link)))throw Error('Missing linked evidence '+link);
+ const photoRefs=await page.locator('svg image').evaluateAll(is=>is.map(i=>i.getAttribute('href')));
+ for(const src of photoRefs)if(!fs.existsSync(path.join(__dirname,src)))throw Error('Missing photo '+src);
+ await page.screenshot({path:path.join(__dirname,'gallery-preview.png')});
+ const desktopOverflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
+ await page.setViewportSize({width:390,height:844});
+ const mobileOverflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
+ if(desktopOverflow||mobileOverflow||errors.length)throw Error(JSON.stringify({desktopOverflow,mobileOverflow,errors}));
+ fs.writeFileSync(path.join(__dirname,'GALLERY_VALIDATION.json'),JSON.stringify({status:'pass',target_cards:cards,photo_references:photoRefs.length,evidence_links:links.length,desktop_overflow:false,mobile_overflow:false,page_errors:errors,headless:true},null,2));
+ console.log('Gallery checks passed: 28 target cards, photos/links present, desktop/mobile fit.');await browser.close();
+})().catch(e=>{console.error(e);process.exitCode=1});

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "ce1ed62305439430",
+  "image_sha256": "ac0333482ac79c4883eb7632ad562473bd62e913d8f23f17c7bd59b14bb95e86",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "ce1ed62305439430",
+    "image_sha256": "ac0333482ac79c4883eb7632ad562473bd62e913d8f23f17c7bd59b14bb95e86",
+    "selected_category": "toaster",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/zepfanman/7311812366",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/zepfanman/7311812366",
+      "original_url": "https://farm1.staticflickr.com/7227/7311812366_50620e19b5_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Zepfanman.com",
+      "author_url": "https://www.flickr.com/people/zepfanman/",
+      "title": "The spray butter encrusted toaster at work",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Zepfanman.com",
+      "url": "https://www.flickr.com/photos/zepfanman",
+      "image": "https://live.staticflickr.com/3775/buddyicons/83233184@N00.jpg?1390178270#83233184@N00"
+    },
+    "current_title": "The spray butter encrusted toaster at work",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Zepfanman.com",
+          "url": "https://www.flickr.com/photos/zepfanman",
+          "image": "https://live.staticflickr.com/3775/buddyicons/83233184@N00.jpg?1390178270#83233184@N00"
+        }
+      },
+      "meta_description": "I am confident that some day, someone will clean it.\n\tIMG_3334"
+    },
+    "identity_group": "flickr-nsid:83233184@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/zepfanman/7311812366",
+    "html_sha256": "dc91ad980cf7add723fce81058639203cc7798b6dd8ca87de3d2c6da7e333c61",
+    "stored_sha256": "4a488437049a10210405e4402c598ddc6ce852d2ab83df96a9b4a60722d03ab8",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\ce1ed62305439430.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/ce1ed62305439430.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

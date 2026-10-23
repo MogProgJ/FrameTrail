@@ -1,0 +1,148 @@
+{
+  "sheet": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\review-sheets\\billboard-01.jpg",
+  "stage": "initial-scene-triage-only-not-label-or-training-clearance",
+  "model_predictions_used": false,
+  "exhaustive_annotation": false,
+  "records": [
+    {
+      "id": "002a124b80fc1fec",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Waterfront directional/tourist information board; no advertising cleared."
+    },
+    {
+      "id": "01b7fbf0cc2dc3a2",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square advertising scene; compare prior and cross-role scenes."
+    },
+    {
+      "id": "0245090a4b81413a",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Piccadilly Circus advertising panels; recurring landmark scene comparison needed."
+    },
+    {
+      "id": "027e7adc476b6505",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Las Vegas Bally's illuminated advertising scene; compare recurring scenes."
+    },
+    {
+      "id": "02c5b49d76d4409c",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square large advertising panels; compare prior and cross-role scenes."
+    },
+    {
+      "id": "04464aae28f04bc1",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Museum or historical-site entrance information board."
+    },
+    {
+      "id": "05d7317e0a954e83",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Weathered/partly removed advertisement; active visible campaign and complete target bounds uncertain."
+    },
+    {
+      "id": "07ec166bed0945e0",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large roadside Hampton Roads regional/business campaign."
+    },
+    {
+      "id": "09fb9f5c86ed56b5",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Property/location map with business promotion and separate figure; inspect physical panels and message."
+    },
+    {
+      "id": "0c20f0c14eafee6e",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Winery name/entry sign; preserve business-lettering boundary."
+    },
+    {
+      "id": "13738fd6baee7352",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Dense illustrated collage on facade; physical advertising board versus mural/stickers uncertain."
+    },
+    {
+      "id": "14739a4907bd6163",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Obey artwork/mural facade; advertising board material/content boundary uncertain."
+    },
+    {
+      "id": "14eb9cc288f6bc91",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed museum exhibition promotional poster on facade."
+    },
+    {
+      "id": "15a3fd584c992981",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Freestanding Milka product campaign billboard."
+    },
+    {
+      "id": "17f1bc32271053f6",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Stadium video screen showing person; advertising-board content uncertain."
+    },
+    {
+      "id": "1d01b5b97125d86f",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Portable library welcome/name board."
+    },
+    {
+      "id": "1de72df0d22439be",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Dry-cleaning business name painted on wall; mural/name-board boundary."
+    },
+    {
+      "id": "243ebb245142e014",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed Prometheus film campaign advertisement."
+    },
+    {
+      "id": "2dee13f2d925574c",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Freestanding political campaign board; inspect bounds and separate photo-caption padding."
+    },
+    {
+      "id": "2fc53e6dd5198105",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square illuminated advertising panels; recurring scene comparison needed."
+    }
+  ]
+}

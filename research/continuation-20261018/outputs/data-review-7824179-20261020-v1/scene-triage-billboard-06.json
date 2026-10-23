@@ -1,0 +1,43 @@
+{
+  "sheet": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\review-sheets\\billboard-06.jpg",
+  "stage": "initial-scene-triage-only-not-label-or-training-clearance",
+  "model_predictions_used": false,
+  "exhaustive_annotation": false,
+  "records": [
+    {
+      "id": "a88758658eed9da6",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed outdoor Hannah Montana film advertisement."
+    },
+    {
+      "id": "be61b5d691098655",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Government railway construction information board."
+    },
+    {
+      "id": "c97bdf744a18eb19",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Restaurant name and cooking tagline; business sign versus campaign advertisement."
+    },
+    {
+      "id": "d256c3097f857d7a",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Small paper parody advertisement on construction structure; physical board and size uncertain."
+    },
+    {
+      "id": "f984e14b5d31fe02",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Building and ordinary shop or institute name signs; inspect complete original."
+    }
+  ]
+}

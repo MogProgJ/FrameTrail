@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "c32ebf3022238d5b",
+  "image_sha256": "979f6819ac5b496f45cc02b0564a166265dcedb523e2d3cac664dd4c72a635bf",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "c32ebf3022238d5b",
+    "image_sha256": "979f6819ac5b496f45cc02b0564a166265dcedb523e2d3cac664dd4c72a635bf",
+    "selected_category": "door handle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/8047705@N02/5353796090",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/8047705@N02/5353796090",
+      "original_url": "https://c4.staticflickr.com/6/5082/5353796090_c748f16eb0_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "John Liu",
+      "author_url": "https://www.flickr.com/people/8047705@N02/",
+      "title": "Feeling lazy (13/365)",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "John Liu",
+      "url": "https://www.flickr.com/photos/8047705@N02",
+      "image": "https://live.staticflickr.com/2731/buddyicons/8047705@N02.jpg?1289319076#8047705@N02"
+    },
+    "current_title": "Feeling lazy (13/365)",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "John Liu",
+          "url": "https://www.flickr.com/photos/8047705@N02",
+          "image": "https://live.staticflickr.com/2731/buddyicons/8047705@N02.jpg?1289319076#8047705@N02"
+        }
+      },
+      "meta_description": "<strong>&quot;Whenever I feel like exercise, I lie down until the feeling passes.&quot; - Robert M. Hutchins</strong>\n\t\n\tDay 13:  I'm feeling fairly lazy today.  I hate being lazy.  Actually, I think what I'm feeling is more like mental fatigue.  I was thinking about going to the gym, but I thought better of it.  Although I exert quite a bit of energy when I do go, I feel more energetic afterwards.  If I know that I'll have that pay-off, why aren't I going this evening?  Enough of my rambling.  Good night.  : )"
+    },
+    "identity_group": "flickr-nsid:8047705@N02",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/8047705@N02/5353796090",
+    "html_sha256": "98213dfbd8101480854d5968a0166a22a0cfa21b3e92a0e31db824b0fb87a37a",
+    "stored_sha256": "93e93e074c85794a5f1999c21b70bb104c514053d135829615830a0aa913eba5",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\c32ebf3022238d5b.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/c32ebf3022238d5b.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

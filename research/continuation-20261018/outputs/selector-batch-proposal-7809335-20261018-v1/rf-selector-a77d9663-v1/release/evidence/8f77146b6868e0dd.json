@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "8f77146b6868e0dd",
+  "image_sha256": "c70b0a720a2091b7d33e7912a4ae15048c9964d8081c899f45d3831235fabd9a",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "8f77146b6868e0dd",
+    "image_sha256": "c70b0a720a2091b7d33e7912a4ae15048c9964d8081c899f45d3831235fabd9a",
+    "selected_category": "dog",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/briangratwicke/12696243895",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/briangratwicke/12696243895",
+      "original_url": "https://c6.staticflickr.com/3/2876/12696243895_f519dcaf3b_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Brian Gratwicke",
+      "author_url": "https://www.flickr.com/people/briangratwicke/",
+      "title": "IMG_3548",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Brian Gratwicke",
+      "url": "https://www.flickr.com/photos/briangratwicke",
+      "image": "https://live.staticflickr.com/8133/buddyicons/19731486@N07.jpg?1369144035#19731486@N07"
+    },
+    "current_title": "IMG_3548",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Brian Gratwicke",
+          "url": "https://www.flickr.com/photos/briangratwicke",
+          "image": "https://live.staticflickr.com/8133/buddyicons/19731486@N07.jpg?1369144035#19731486@N07"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:19731486@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/briangratwicke/12696243895",
+    "html_sha256": "1d8adec5139d9f2dba7d382ed42fecc8b6d8059d4baf3b0d7028bc91e903da36",
+    "stored_sha256": "f719de2efdc91691d2457162d7273befbba2ed5270601292006ef43afc2a2336",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\8f77146b6868e0dd.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/8f77146b6868e0dd.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

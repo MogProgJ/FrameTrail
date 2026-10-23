@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "5ce07497741762d6",
+  "image_sha256": "d0348e38f0edf4882c3ebda2416797f391192d5adc017de159b3c3f51eca8d39",
+  "source_review": {
+    "image_id": "5ce07497741762d6",
+    "image_sha256": "d0348e38f0edf4882c3ebda2416797f391192d5adc017de159b3c3f51eca8d39",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/56832361@N00/245955589",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/56832361@N00/245955589",
+      "original_url": "https://farm7.staticflickr.com/96/245955589_09b971e5cc_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Karen",
+      "author_url": "https://www.flickr.com/people/56832361@N00/",
+      "title": "Dolores Restaurant",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Karen",
+      "url": "https://www.flickr.com/photos/56832361@N00",
+      "image": "https://live.staticflickr.com/5511/buddyicons/56832361@N00.jpg?1380303493#56832361@N00"
+    },
+    "current_title": "Dolores Restaurant",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Karen",
+          "url": "https://www.flickr.com/photos/56832361@N00",
+          "image": "https://live.staticflickr.com/5511/buddyicons/56832361@N00.jpg?1380303493#56832361@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:56832361@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/56832361@N00/245955589",
+    "html_sha256": "e914e9aaaf286b263f69930cd2c984dfb09e7b306be82988a4fc96bacfc2523f",
+    "stored_sha256": "22a1fd4808b106ecc102274ebd8c0d74211f85761ce0d3de1bdf76120973f86c",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\5ce07497741762d6.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\5ce07497741762d6.json",
+    "sha256": "7ddb67b8d9b29a8c56800316c87588860341c860686333059a3163838d032fd1"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\5ce07497741762d6.json",
+    "sha256": "1b7b3cf49e596a7b659bfe375a35c654af7f50e3f400336d60d7539c5cbc2ed7"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/56832361@N00/245955589",
+    "original_url": "https://farm7.staticflickr.com/96/245955589_09b971e5cc_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Karen",
+    "author_url": "https://www.flickr.com/people/56832361@N00/",
+    "title": "Dolores Restaurant",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

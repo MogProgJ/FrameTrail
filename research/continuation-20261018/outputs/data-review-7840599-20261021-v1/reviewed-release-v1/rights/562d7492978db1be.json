@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "562d7492978db1be",
+  "image_sha256": "71a9eee3cfa31986ac1364d4d57e323d20a106d247d20665c381abe2fe2ba7f5",
+  "source_review": {
+    "image_id": "562d7492978db1be",
+    "image_sha256": "71a9eee3cfa31986ac1364d4d57e323d20a106d247d20665c381abe2fe2ba7f5",
+    "selected_category": "washing machine",
+    "selected_domain": "contrast",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/calliope/5953131",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/calliope/5953131",
+      "original_url": "https://c7.staticflickr.com/1/5/5953131_44fbbe883c_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "liz west",
+      "author_url": "https://www.flickr.com/people/calliope/",
+      "title": "laundromat 1",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "liz west",
+      "url": "https://www.flickr.com/photos/calliope",
+      "image": "https://live.staticflickr.com/3813/buddyicons/53133240@N00.jpg?1369580169#53133240@N00"
+    },
+    "current_title": "laundromat 1",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "liz west",
+          "url": "https://www.flickr.com/photos/calliope",
+          "image": "https://live.staticflickr.com/3813/buddyicons/53133240@N00.jpg?1369580169#53133240@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:53133240@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/calliope/5953131",
+    "html_sha256": "a5c48837fd014a6a46c616aef12c2cab14c3fae2ea62bc69e52a8e19c04a2ac9",
+    "stored_sha256": "dde7e80eee9a154ee08319c764af4ab8f81f29a143ddd1529a2cf9c96c24449e",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\562d7492978db1be.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\562d7492978db1be.json",
+    "sha256": "70aeb1c2b6ede823bfb21cb8131aa7ae17799822f5e5e44758ee48349fbf0a80"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\562d7492978db1be.json",
+    "sha256": "22723c8630ee9605c525beafa4fb0fa93da7820e72eeaf7f624d861f1c73fa53"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/calliope/5953131",
+    "original_url": "https://c7.staticflickr.com/1/5/5953131_44fbbe883c_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "liz west",
+    "author_url": "https://www.flickr.com/people/calliope/",
+    "title": "laundromat 1",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

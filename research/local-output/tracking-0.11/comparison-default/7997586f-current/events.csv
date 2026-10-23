@@ -1,0 +1,15 @@
+event_id,sequence,timestamp_us,track_id,class_id,label,direction,x_normalized,y_normalized
+1,32,1333333,5,0,person,negative_to_positive,0.5,0.877015
+2,35,1458333,4,0,person,negative_to_positive,0.5,0.873668
+3,43,1791667,7,0,person,negative_to_positive,0.5,0.621423
+4,45,1875000,19,0,person,negative_to_positive,0.5,0.618355
+5,47,1958333,24,0,person,negative_to_positive,0.5,0.771999
+6,50,2083333,26,0,person,negative_to_positive,0.5,0.703428
+7,83,3458333,26,0,person,positive_to_negative,0.5,0.696955
+8,103,4291667,37,0,person,positive_to_negative,0.5,0.53973
+9,106,4416667,19,0,person,positive_to_negative,0.5,0.541959
+10,121,5041667,39,0,person,positive_to_negative,0.5,0.578694
+11,156,6500000,39,0,person,negative_to_positive,0.5,0.832072
+12,162,6750000,43,0,person,negative_to_positive,0.5,0.884081
+13,170,7083333,37,0,person,negative_to_positive,0.5,0.695496
+14,208,8666667,57,0,person,positive_to_negative,0.5,0.654369

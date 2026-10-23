@@ -1,0 +1,111 @@
+{
+  "status": "six-native-CPU-probes-complete",
+  "all_decoded_parity_passed": true,
+  "probes": [
+    {
+      "image_sha256": "641514b650ac0e153868593b476625f3369c5a36ec36dc8caf3daeb603af364b",
+      "comparison": {
+        "passed": true,
+        "detections": 2,
+        "classes_match": true,
+        "minimum_iou": 0.9999926852292652,
+        "maximum_confidence_difference": 4.452469442750573e-05,
+        "maximum_normalized_box_difference": 2.86102905278085e-06
+      },
+      "timing": {
+        "preprocess_ms": 6.9744,
+        "inference_ms": 720.666,
+        "postprocess_ms": 2.5221,
+        "detections": 2
+      }
+    },
+    {
+      "image_sha256": "cf73b38e71854364030a99395dc6c51b28b01f1f8561ca5f72b0e78e3a304ada",
+      "comparison": {
+        "passed": true,
+        "detections": 1,
+        "classes_match": true,
+        "minimum_iou": 0.9999996874683384,
+        "maximum_confidence_difference": 3.524780467500932e-11,
+        "maximum_normalized_box_difference": 8.94313812449532e-08
+      },
+      "timing": {
+        "preprocess_ms": 6.5544,
+        "inference_ms": 717.375,
+        "postprocess_ms": 2.6316,
+        "detections": 1
+      }
+    },
+    {
+      "image_sha256": "e98f18a64e9a67d01b016275d1b4e9b704a185abe9f5b0259f89e72804319e20",
+      "comparison": {
+        "passed": true,
+        "detections": 12,
+        "classes_match": true,
+        "minimum_iou": 0.9999943726022941,
+        "maximum_confidence_difference": 1.102708294675736e-06,
+        "maximum_normalized_box_difference": 1.0240581038711838e-07
+      },
+      "timing": {
+        "preprocess_ms": 6.7874,
+        "inference_ms": 618.518,
+        "postprocess_ms": 2.1991,
+        "detections": 12
+      }
+    },
+    {
+      "image_sha256": "3d7cf537845f690bf1d09aff6ea2f303dcef9825a60bcfc740ba709237c82e01",
+      "comparison": {
+        "passed": true,
+        "detections": 8,
+        "classes_match": true,
+        "minimum_iou": 0.9999961732853582,
+        "maximum_confidence_difference": 3.695535131797989e-06,
+        "maximum_normalized_box_difference": 2.6816368103865784e-07
+      },
+      "timing": {
+        "preprocess_ms": 9.0044,
+        "inference_ms": 606.069,
+        "postprocess_ms": 1.3102,
+        "detections": 8
+      }
+    },
+    {
+      "image_sha256": "3cb3f4a22c3f284271e48faf0fe9496ac6b932ab6f2b86972e16bf1df2ad5e99",
+      "comparison": {
+        "passed": true,
+        "detections": 11,
+        "classes_match": true,
+        "minimum_iou": 0.9999970114716575,
+        "maximum_confidence_difference": 1.1623154144158043e-06,
+        "maximum_normalized_box_difference": 1.966627756644357e-07
+      },
+      "timing": {
+        "preprocess_ms": 7.0958,
+        "inference_ms": 562.218,
+        "postprocess_ms": 1.1453,
+        "detections": 11
+      }
+    },
+    {
+      "image_sha256": "2443149950e8f3f929b78a12ae32d34f356f1dbc0417ea7405d0605d934b6f1f",
+      "comparison": {
+        "passed": true,
+        "detections": 4,
+        "classes_match": true,
+        "minimum_iou": 0.9999611102442449,
+        "maximum_confidence_difference": 0.00015884642614749644,
+        "maximum_normalized_box_difference": 1.5021014582335586e-05
+      },
+      "timing": {
+        "preprocess_ms": 8.4622,
+        "inference_ms": 587.041,
+        "postprocess_ms": 1.232,
+        "detections": 4
+      }
+    }
+  ],
+  "median_inference_ms": 612.2935,
+  "scope": "Six engineering probes only; full ONNX export gate remains held.",
+  "visible_window_opened": false
+}

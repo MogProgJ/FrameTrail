@@ -1,0 +1,26 @@
+{
+  "image_id": "095655d89ea59505",
+  "source_url": "https://www.flickr.com/photos/buenosairesprensa/5589143855",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/buenosairesprensa/5589143855",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/095655d89ea59505.html.gz",
+  "html_bytes": 521624,
+  "html_sha256": "6eff3e42fd8a65a037bdcb575c966d474034563adf9d26cde758a53a3c24f21c",
+  "stored_sha256": "50ea7bfb9d9d271aeaaf5bbc2c6932c330eb1aabdc80d23f591098dfb00ba9f6"
+}

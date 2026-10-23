@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "c5bad2ac27466fe3",
+  "image_sha256": "ffdb1d0a341e667d01fed510c7479dcec3683ec8a4167d11eee69218683972ac",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "c5bad2ac27466fe3",
+    "image_sha256": "ffdb1d0a341e667d01fed510c7479dcec3683ec8a4167d11eee69218683972ac",
+    "selected_category": "dog",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/jeffreyww/4023085424",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/jeffreyww/4023085424",
+      "original_url": "https://farm4.staticflickr.com/2622/4023085424_9c74edba52_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "jeffreyw",
+      "author_url": "https://www.flickr.com/people/jeffreyww/",
+      "title": "jack",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "jeffreyw",
+      "url": "https://www.flickr.com/photos/jeffreyww",
+      "image": "https://live.staticflickr.com/5467/buddyicons/7927684@N03.jpg?1369179339#7927684@N03"
+    },
+    "current_title": "jack",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "jeffreyw",
+          "url": "https://www.flickr.com/photos/jeffreyww",
+          "image": "https://live.staticflickr.com/5467/buddyicons/7927684@N03.jpg?1369179339#7927684@N03"
+        }
+      },
+      "meta_description": "catchin up from a short \"gotta sniff that thing\" delay"
+    },
+    "identity_group": "flickr-nsid:7927684@N03",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/jeffreyww/4023085424",
+    "html_sha256": "ee658636b4a323b629436c74ff5a426fc589e247f9084e1b28d72869a82e8224",
+    "stored_sha256": "9f35b6d582b90c57a8e528622265dd225fcce031fee72e8f253aaf9846b40f74",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\c5bad2ac27466fe3.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/c5bad2ac27466fe3.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

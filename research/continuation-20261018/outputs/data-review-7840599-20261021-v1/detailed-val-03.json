@@ -1,0 +1,50 @@
+{
+  "stage": "validation-original-content-and-box-review-before-predictions",
+  "approved_for_training": false,
+  "scene_comparison_complete": false,
+  "model_predictions_seen": false,
+  "records": [
+    {
+      "id": "fe1a510b5a1c56fc",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0,
+          0.060625,
+          0.999167,
+          0.7
+        ]
+      ],
+      "note": "One large red political campaign wall panel; small foreground protest placard is not an installed advertising board. Source bounds verified; no other campaigns.",
+      "scene_description": "Red Garantia de Progres President Montilla campaign with small protest placard in front"
+    },
+    {
+      "id": "15b9fc26736f275a",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.004375,
+          0.35,
+          0.785,
+          0.7275
+        ]
+      ],
+      "note": "One continuous Sprite product campaign with drinker/bottle and shop partnership message; source bounds verified for whole advertising face.",
+      "scene_description": "Sprite Mysore Hot Spot green beverage campaign above red storefront awning"
+    },
+    {
+      "id": "b70da5fc345b106c",
+      "disposition": "complete-positive-content-reviewed",
+      "normalized_xyxy": [
+        [
+          0.51875,
+          0.1575,
+          0.78375,
+          0.596667
+        ]
+      ],
+      "note": "One oblique roadside television/product campaign including integrated flat head cutout; rear structure and poles excluded. Source advertising extent verified.",
+      "scene_description": "Oblique red television entertainment campaign with protruding portrait over grassy roadside"
+    }
+  ]
+}

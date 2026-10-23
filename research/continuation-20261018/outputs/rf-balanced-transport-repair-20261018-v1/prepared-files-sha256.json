@@ -1,0 +1,72 @@
+[
+  {
+    "file": "approval.json",
+    "bytes": 873,
+    "sha256": "010af1052b8c182f5f99ea2be941355f811591a7cc43de6fe203e7d9f4fe9f99"
+  },
+  {
+    "file": "BASH_TRANSPORT_VALIDATION.json",
+    "bytes": 235,
+    "sha256": "27d7e0682af6c3183dfb8946106228e4753fdac743f7706795b1089fa101a66d"
+  },
+  {
+    "file": "Check-Run.ps1",
+    "bytes": 1276,
+    "sha256": "54258e38e3098304e20c40c36f0b0e6417a7e1bedaf257fc2eea3d8d5a1aaa16"
+  },
+  {
+    "file": "CONTINUATION_STATE.json",
+    "bytes": 995,
+    "sha256": "bbdf9594511783a4eff5ab3f6e3ca902def4783bf5b583bb96e034bdad1395bc"
+  },
+  {
+    "file": "FINAL_RECEIPT.json",
+    "bytes": 1111,
+    "sha256": "e1648989f28368ad29f06d7021664ac1b73202592c2a9dda02d1f9528342c37e"
+  },
+  {
+    "file": "HELPER_VALIDATION.json",
+    "bytes": 441,
+    "sha256": "81c5f5244d0abade86a273fbb175f4b6df42eecb26ba34096e80120340b7f42c"
+  },
+  {
+    "file": "Invoke-KitScript.ps1",
+    "bytes": 913,
+    "sha256": "c8eaa502133e2ea31cabcafbf0f0e0924bf940f7e8240dd9fa385c9d178f6dd5"
+  },
+  {
+    "file": "NATIVE_TRANSPORT_VALIDATION.json",
+    "bytes": 284,
+    "sha256": "b0fcd98491bd2571acf57c4fa30b3d2307984e6029fa14dcaa26176ad2fff5ee"
+  },
+  {
+    "file": "protocol.json",
+    "bytes": 5512,
+    "sha256": "ddbb57c60855b5499ecdc039642fb5fd527634767e0575507e15b5774131e8c1"
+  },
+  {
+    "file": "READ-ME.md",
+    "bytes": 2452,
+    "sha256": "f4f7e9fc6bc663fc508d7142e7f79d4b886eebbddbc72ab71e25146b8eeef5ab"
+  },
+  {
+    "file": "Resume-Approved-Run.ps1",
+    "bytes": 2003,
+    "sha256": "4b6b7ecafaba28075e16fbdf8efeec0e1874d49924b2d007b7728250712db801"
+  },
+  {
+    "file": "resume-kit.sh",
+    "bytes": 1304,
+    "sha256": "f04ef1acf92ebdf9e88b03f18c54476976ca086328951ded0324f363e2065b67"
+  },
+  {
+    "file": "Retrieve-Results.ps1",
+    "bytes": 2049,
+    "sha256": "0a97e59d3cec79e4133aa44e46e285b49c2ca40ef45dc117b1cd66101c42ce19"
+  },
+  {
+    "file": "verify_results.py",
+    "bytes": 5415,
+    "sha256": "8b073e1c6cbb3cdbc9f0d4d45b8de99c0659db6fbb101b914be9cd31da69f912"
+  }
+]

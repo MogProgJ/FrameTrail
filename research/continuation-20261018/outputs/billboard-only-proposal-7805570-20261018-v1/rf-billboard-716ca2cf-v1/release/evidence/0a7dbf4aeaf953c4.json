@@ -1,0 +1,64 @@
+{
+  "image_id": "0a7dbf4aeaf953c4",
+  "image_sha256": "4fb192595aec8b4d041bcc2c292827790dfdd7c6196c22a3c598edfc56fa7cb7",
+  "publisher_attribution": {
+    "id": "0a7dbf4aeaf953c4",
+    "landing_url": "https://www.flickr.com/photos/phalinn/13310595103",
+    "original_url": "https://farm5.staticflickr.com/3701/13310595103_f6d04b392d_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Phalinn Ooi",
+    "author_url": "https://www.flickr.com/people/phalinn/",
+    "title": "Zoo Negara",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Mohd Fazlin Mohd Effendy Ooi",
+    "url": "https://www.flickr.com/photos/phalinn",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/17868205@N00.jpg?1681831995#17868205@N00"
+  },
+  "current_title": "Zoo Negara",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Mohd Fazlin Mohd Effendy Ooi",
+        "url": "https://www.flickr.com/photos/phalinn",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/17868205@N00.jpg?1681831995#17868205@N00"
+      }
+    },
+    "meta_description": "8th March 2014"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/phalinn/13310595103",
+  "canonical_page_url": "https://www.flickr.com/photos/phalinn/13310595103",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "fb61159cb6a04568f977450cf1ad4d7b82aab045219402b682700374b9ef017d",
+  "source_gzip_sha256": "1825944969e77e22be76aca911ecafca6dfc4fbbab2a298e1ec888ed0ab1128b",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-241",
+  "visual_proof_sha256": "642ec081041e94d5886157eb13ce5467c6cae3f0c738ca1f2313c74caa8902b5",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

@@ -1,0 +1,24 @@
+{
+  "status": "four-task-archives-ready-recovered-from-saved-successful-status",
+  "actual_job_id": "7809335",
+  "protocol_sha256": "0a255598b74eb1d29d83ee1be10d517ae407fbda2c57e4565b51028d615343fd",
+  "archives": [
+    {
+      "index": 0,
+      "sha256": "f2f2b62b9ffc9098b563fe7df6906fe460bea69da0824be30b07094859d68f26"
+    },
+    {
+      "index": 1,
+      "sha256": "112c9a1ca497061435b2e27b40875a4d792b98b9011abff8d14a89c221b031b2"
+    },
+    {
+      "index": 2,
+      "sha256": "37a0e0babde1c6fc4fb9c815c074d956252a8973cfe5e26087bf13fe2c1088f0"
+    },
+    {
+      "index": 3,
+      "sha256": "38e92b6062f37fa6429ef9eecb62ee43a896f37dcc99571c75c00e4e648a1a17"
+    }
+  ],
+  "approved_for_application": false
+}

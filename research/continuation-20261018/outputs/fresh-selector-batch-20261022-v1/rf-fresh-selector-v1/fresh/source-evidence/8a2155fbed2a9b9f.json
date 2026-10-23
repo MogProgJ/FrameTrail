@@ -1,0 +1,80 @@
+{
+  "image_id": "8a2155fbed2a9b9f",
+  "image_sha256": "1769253ca2336ca5d0ccb26bb6d15ef19229c02e265c5564252c2116fd16f96c",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "8a2155fbed2a9b9f",
+    "image_sha256": "1769253ca2336ca5d0ccb26bb6d15ef19229c02e265c5564252c2116fd16f96c",
+    "selected_category": "computer monitor",
+    "selected_domain": "contrast",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/oddwick/4468926438",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/oddwick/4468926438",
+      "original_url": "https://c8.staticflickr.com/3/2683/4468926438_e37f330851_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Todd Huffman",
+      "author_url": "https://www.flickr.com/people/oddwick/",
+      "title": "Clinic Visit",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Todd Huffman",
+      "url": "https://www.flickr.com/photos/oddwick",
+      "image": "https://live.staticflickr.com/26/buddyicons/99287245@N00.jpg?1176248631#99287245@N00"
+    },
+    "current_title": "Clinic Visit",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Todd Huffman",
+          "url": "https://www.flickr.com/photos/oddwick",
+          "image": "https://live.staticflickr.com/26/buddyicons/99287245@N00.jpg?1176248631#99287245@N00"
+        }
+      },
+      "meta_description": "One of colleagues is helping out a doctor in Jalalabad, who has a diagnostics clinic (CAT, X-ray, ultrasound) etc...  but doesn't have internet for moving files.  I snapped photos of the equipment because we're researching the best way to move the data around"
+    },
+    "identity_group": "flickr-nsid:99287245@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/oddwick/4468926438",
+    "html_sha256": "73e8a03f69c0b5e491c75b8cdc1a301e44ea2443e04dc40a573875a6d458a76b",
+    "stored_sha256": "2167de02cb6110df620544c30f6abe669aee74bb029abffc26bcf24fed7e1e12",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\8a2155fbed2a9b9f.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\8a2155fbed2a9b9f.html.gz",
+    "sha256": "2167de02cb6110df620544c30f6abe669aee74bb029abffc26bcf24fed7e1e12"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

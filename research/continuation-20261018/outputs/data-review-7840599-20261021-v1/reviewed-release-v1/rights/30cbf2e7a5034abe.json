@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "30cbf2e7a5034abe",
+  "image_sha256": "cc1e402451ece4e28329051799bc44789937a463b0ed7ea40dfa23f15db978a4",
+  "source_review": {
+    "image_id": "30cbf2e7a5034abe",
+    "image_sha256": "cc1e402451ece4e28329051799bc44789937a463b0ed7ea40dfa23f15db978a4",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/asqc/3570402872",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/asqc/3570402872",
+      "original_url": "https://c7.staticflickr.com/4/3362/3570402872_11f0743093_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Armée du Salut - Division Québec",
+      "author_url": "https://www.flickr.com/people/asqc/",
+      "title": "Superpanneau autoroute 10 - Mai 2009 006",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Armée du Salut - Division Québec",
+      "url": "https://www.flickr.com/photos/asqc",
+      "image": "https://live.staticflickr.com/3190/buddyicons/32627224@N07.jpg?1227293392#32627224@N07"
+    },
+    "current_title": "Superpanneau autoroute 10 - Mai 2009 006",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Armée du Salut - Division Québec",
+          "url": "https://www.flickr.com/photos/asqc",
+          "image": "https://live.staticflickr.com/3190/buddyicons/32627224@N07.jpg?1227293392#32627224@N07"
+        }
+      },
+      "meta_description": "Publicité de l'Armée du Salut - campagne du printemps 2009 - affichée sur un superpanneau visible de l'autoroute 10, à Montréal."
+    },
+    "identity_group": "flickr-nsid:32627224@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/asqc/3570402872",
+    "html_sha256": "7aeeb688dfea966e305dcc0f5ee8059297fb173495a9ffd4607c1aeb0c643a25",
+    "stored_sha256": "9f7d17e0d85c38da5d2a2edc0d3b4633104adc0f67f17ad10b2e53bee1e8daff",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\30cbf2e7a5034abe.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\30cbf2e7a5034abe.json",
+    "sha256": "8edc54326d917f2f634d663ca3b1b5a94269542732f5c7143aff10f3c9989360"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\30cbf2e7a5034abe.json",
+    "sha256": "64790e124ee35fcab63a0682a5f32e26f836575306a16eb7e295e7c3e5aeb560"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/asqc/3570402872",
+    "original_url": "https://c7.staticflickr.com/4/3362/3570402872_11f0743093_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Armée du Salut - Division Québec",
+    "author_url": "https://www.flickr.com/people/asqc/",
+    "title": "Superpanneau autoroute 10 - Mai 2009 006",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

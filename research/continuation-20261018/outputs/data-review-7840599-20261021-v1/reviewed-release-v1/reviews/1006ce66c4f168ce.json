@@ -1,0 +1,53 @@
+{
+  "image_id": "1006ce66c4f168ce",
+  "image_sha256": "8391b60c3e73fbc8eb28f8cfa191c04fcb189a64b29d3ee41249ef331f8660b9",
+  "identity_group": "flickr-nsid:95172615@N00",
+  "scene_group": "scene:hoi-an-political-public-campaign-illustrated-citizens-boats-red-flags-and-town-website-billboard",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\1006ce66c4f168ce.json",
+    "sha256": "72c2e2232f87d5b8e685033f04f87c4d1c8360fd42c5672b4acf80fbfdc85ffd"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.0488,
+      0.1667,
+      0.9844,
+      0.7565
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-batch-06.json",
+    "sha256": "2f69d72a3f026296ddab1a999456dd624a168a83a54a45fffd88a55e1f849dcf"
+  },
+  "content_decision": {
+    "id": "1006ce66c4f168ce",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.0488,
+        0.1667,
+        0.9844,
+        0.7565
+      ]
+    ],
+    "note": "Original resolves one freestanding illuminated public/political campaign board with party-resolution slogan and illustrated citizens; campaign face distinct from ordinary direction/shop-name sign. Corrected source box to full visible printed face. No other identifiable advertising faces.",
+    "scene_description": "Hoi An political public campaign illustrated citizens boats red flags and town website billboard"
+  },
+  "prospective_split": "train",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

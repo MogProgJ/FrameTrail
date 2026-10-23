@@ -1,0 +1,217 @@
+{
+  "status": "pass",
+  "new_class_targets_with_distinct_covering_decoder_queries": 24,
+  "assignments": [
+    {
+      "step": 0,
+      "image_id": "0cc05f0536cf1f92",
+      "canonical_id": 133,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 0,
+      "image_id": "0d61873b3bb7ce16",
+      "canonical_id": 133,
+      "targets": 3,
+      "targets_with_distinct_covering_query": 3
+    },
+    {
+      "step": 0,
+      "image_id": "0e2c4f604dcf1f34",
+      "canonical_id": 133,
+      "targets": 2,
+      "targets_with_distinct_covering_query": 2
+    },
+    {
+      "step": 0,
+      "image_id": "1364562d8d624829",
+      "canonical_id": 593,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 0,
+      "image_id": "15e8210bd3027289",
+      "canonical_id": 593,
+      "targets": 2,
+      "targets_with_distinct_covering_query": 2
+    },
+    {
+      "step": 0,
+      "image_id": "26e6ff40f73e9155",
+      "canonical_id": 593,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 0,
+      "image_id": "3dd25591083c56cd",
+      "canonical_id": 133,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 0,
+      "image_id": "424bc7dbb0f8677d",
+      "canonical_id": 133,
+      "targets": 2,
+      "targets_with_distinct_covering_query": 2
+    },
+    {
+      "step": 0,
+      "image_id": "4270aa7a23c76953",
+      "canonical_id": 16,
+      "targets": 3,
+      "targets_with_distinct_covering_query": 3
+    },
+    {
+      "step": 0,
+      "image_id": "48e5d66d05d40fb9",
+      "canonical_id": 593,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 0,
+      "image_id": "496394d40a8afaed",
+      "canonical_id": 593,
+      "targets": 5,
+      "targets_with_distinct_covering_query": 5
+    },
+    {
+      "step": 0,
+      "image_id": "c5daf51ea9fb3442",
+      "canonical_id": 593,
+      "targets": 2,
+      "targets_with_distinct_covering_query": 2
+    },
+    {
+      "step": 0,
+      "image_id": "c7948d268fbb4dd9",
+      "canonical_id": 593,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 0,
+      "image_id": "e37f74d1e93cdb0f",
+      "canonical_id": 16,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 0,
+      "image_id": "ef21856ee7f7a136",
+      "canonical_id": 133,
+      "targets": 2,
+      "targets_with_distinct_covering_query": 2
+    },
+    {
+      "step": 600,
+      "image_id": "0cc05f0536cf1f92",
+      "canonical_id": 133,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 600,
+      "image_id": "0d61873b3bb7ce16",
+      "canonical_id": 133,
+      "targets": 3,
+      "targets_with_distinct_covering_query": 3
+    },
+    {
+      "step": 600,
+      "image_id": "0e2c4f604dcf1f34",
+      "canonical_id": 133,
+      "targets": 2,
+      "targets_with_distinct_covering_query": 2
+    },
+    {
+      "step": 600,
+      "image_id": "1364562d8d624829",
+      "canonical_id": 593,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 600,
+      "image_id": "15e8210bd3027289",
+      "canonical_id": 593,
+      "targets": 2,
+      "targets_with_distinct_covering_query": 2
+    },
+    {
+      "step": 600,
+      "image_id": "26e6ff40f73e9155",
+      "canonical_id": 593,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 600,
+      "image_id": "3dd25591083c56cd",
+      "canonical_id": 133,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 600,
+      "image_id": "424bc7dbb0f8677d",
+      "canonical_id": 133,
+      "targets": 2,
+      "targets_with_distinct_covering_query": 2
+    },
+    {
+      "step": 600,
+      "image_id": "4270aa7a23c76953",
+      "canonical_id": 16,
+      "targets": 3,
+      "targets_with_distinct_covering_query": 3
+    },
+    {
+      "step": 600,
+      "image_id": "48e5d66d05d40fb9",
+      "canonical_id": 593,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 600,
+      "image_id": "496394d40a8afaed",
+      "canonical_id": 593,
+      "targets": 5,
+      "targets_with_distinct_covering_query": 5
+    },
+    {
+      "step": 600,
+      "image_id": "c5daf51ea9fb3442",
+      "canonical_id": 593,
+      "targets": 2,
+      "targets_with_distinct_covering_query": 2
+    },
+    {
+      "step": 600,
+      "image_id": "c7948d268fbb4dd9",
+      "canonical_id": 593,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 600,
+      "image_id": "e37f74d1e93cdb0f",
+      "canonical_id": 16,
+      "targets": 1,
+      "targets_with_distinct_covering_query": 1
+    },
+    {
+      "step": 600,
+      "image_id": "ef21856ee7f7a136",
+      "canonical_id": 133,
+      "targets": 2,
+      "targets_with_distinct_covering_query": 2
+    }
+  ],
+  "limits": "Oracle class-agnostic geometry assignment on failure subset, not detection accuracy."
+}

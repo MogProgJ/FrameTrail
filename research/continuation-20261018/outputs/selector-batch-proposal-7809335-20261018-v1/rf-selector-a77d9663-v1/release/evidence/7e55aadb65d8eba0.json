@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "7e55aadb65d8eba0",
+  "image_sha256": "5de6da4fc8c9eba438108e84cca7d94d6a2aa7ad6bd3e90ed07377e3c640b121",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "7e55aadb65d8eba0",
+    "image_sha256": "5de6da4fc8c9eba438108e84cca7d94d6a2aa7ad6bd3e90ed07377e3c640b121",
+    "selected_category": "lamp",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/andydr/417315863/",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/andydr/417315863/",
+      "original_url": "https://farm1.staticflickr.com/124/417315863_4f8a0d8bdb_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Andrew Ratto",
+      "author_url": "https://www.flickr.com/people/andydr/",
+      "title": "IMG_6985.JPG",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Andrew Ratto",
+      "url": "https://www.flickr.com/photos/andydr",
+      "image": "https://live.staticflickr.com/1/buddyicons/94989596@N00.jpg?1104116367#94989596@N00"
+    },
+    "current_title": "IMG_6985.JPG",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Andrew Ratto",
+          "url": "https://www.flickr.com/photos/andydr",
+          "image": "https://live.staticflickr.com/1/buddyicons/94989596@N00.jpg?1104116367#94989596@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:94989596@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/andydr/417315863",
+    "html_sha256": "3626b777c65f6cf3ffa81c1f984976251f24e2c35f9ed1b2c0978c12fb306106",
+    "stored_sha256": "9dbd68accfad3cc83e6f900a870d0bb527750509f6c33d79374c67cf89201d77",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\7e55aadb65d8eba0.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/7e55aadb65d8eba0.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

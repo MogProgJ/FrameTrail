@@ -1,0 +1,80 @@
+{
+  "image_id": "b7448c6ef4c00f74",
+  "image_sha256": "56761f855a27c7055297382713be0b9f327820cfaabbd6e29c6a65d3a59dece3",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\source-review\\source-evidence-review.json",
+    "sha256": "6881fe98e939931c5d708dc20e1828c831c11356f67fabd03ca609e65bd6adf8"
+  },
+  "source_record": {
+    "image_id": "b7448c6ef4c00f74",
+    "image_sha256": "56761f855a27c7055297382713be0b9f327820cfaabbd6e29c6a65d3a59dece3",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "test",
+    "source_url": "https://www.flickr.com/photos/mpeinadopa/8354359065/",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/mpeinadopa/8354359065/",
+      "original_url": "https://farm5.staticflickr.com/8192/8354359065_c213650f07_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "M.Peinado",
+      "author_url": "https://www.flickr.com/people/mpeinadopa/",
+      "title": "007082 - Medinaceli",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "M.Peinado",
+      "url": "https://www.flickr.com/photos/mpeinadopa",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/12066793@N05.jpg?1637046756#12066793@N05"
+    },
+    "current_title": "007082 - Medinaceli",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "M.Peinado",
+          "url": "https://www.flickr.com/photos/mpeinadopa",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/12066793@N05.jpg?1637046756#12066793@N05"
+        }
+      },
+      "meta_description": "<b>Medinaceli</b>\n\tProvincia de Soria\n\tCastilla y León\n\tEspaña"
+    },
+    "identity_group": "flickr-nsid:12066793@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/mpeinadopa/8354359065",
+    "html_sha256": "67b7f70878309376d3ba32ec815f01a4325798e614c3523a4f301d29b086adfb",
+    "stored_sha256": "de6d2df692ab92b868da274566e07f96a57383a4b9b9c27ddb5fbe58e4a57c0b",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\b7448c6ef4c00f74.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\b7448c6ef4c00f74.html.gz",
+    "sha256": "de6d2df692ab92b868da274566e07f96a57383a4b9b9c27ddb5fbe58e4a57c0b"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

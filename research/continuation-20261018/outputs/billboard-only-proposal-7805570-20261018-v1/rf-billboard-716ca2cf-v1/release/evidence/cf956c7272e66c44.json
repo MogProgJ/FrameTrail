@@ -1,0 +1,64 @@
+{
+  "image_id": "cf956c7272e66c44",
+  "image_sha256": "2400fc06d28a8a1676b831a91be4c7a62c393af3167fd09bb4b9cd63d92523b1",
+  "publisher_attribution": {
+    "id": "cf956c7272e66c44",
+    "landing_url": "https://www.flickr.com/photos/tanaka_juuyoh/6677046759",
+    "original_url": "https://farm5.staticflickr.com/7151/6677046759_133d7e6742_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "TANAKA Juuyoh (\u7530\u4e2d\u5341\u6d0b)",
+    "author_url": "https://www.flickr.com/people/tanaka_juuyoh/",
+    "title": "Rufous-legged Owl / Strix rufipes / \u8d64\u8db3\u68ee\u689f(\u30a2\u30ab\u30a2\u30b7\u30e2\u30ea\u30d5\u30af\u30ed\u30a6)",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "TANAKA Juuyoh (\u7530\u4e2d\u5341\u6d0b)",
+    "url": "https://www.flickr.com/photos/tanaka_juuyoh",
+    "image": "https://live.staticflickr.com/2875/buddyicons/13910409@N05.jpg?1369394824#13910409@N05"
+  },
+  "current_title": "Rufous-legged Owl / Strix rufipes / \u8d64\u8db3\u68ee\u689f(\u30a2\u30ab\u30a2\u30b7\u30e2\u30ea\u30d5\u30af\u30ed\u30a6)",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "TANAKA Juuyoh (\u7530\u4e2d\u5341\u6d0b)",
+        "url": "https://www.flickr.com/photos/tanaka_juuyoh",
+        "image": "https://live.staticflickr.com/2875/buddyicons/13910409@N05.jpg?1369394824#13910409@N05"
+      }
+    },
+    "meta_description": "<a href=\"http://www.kamoltd.co.jp/fuji/english/\" rel=\"noreferrer nofollow\">Fuji Kachou-en(zoo and garden)</a>, Fujinomiya-shi(city) Shizuoka-ken(Prefecture), Japan\n\t\n\t\u9759\u5ca1\u770c\u5bcc\u58eb\u5bae\u5e02(\u3057\u305a\u304a\u304b\u3051\u3093 \u3075\u3058\u306e\u307f\u3084\u3057)  <a href=\"http://www.kamoltd.co.jp/fuji/index.html\" rel=\"noreferrer nofollow\">\u5bcc\u58eb\u82b1\u9ce5\u5712\uff08\u3075\u3058\u304b\u3061\u3087\u3046\u3048\u3093\uff09</a>\n\t\n\t"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/tanaka_juuyoh/6677046759",
+  "canonical_page_url": "https://www.flickr.com/photos/tanaka_juuyoh/6677046759",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "e457778df9ddf173073f6f9ce497080c930c871b4b2a8b69008be1e9d683e288",
+  "source_gzip_sha256": "264603dd70326ef4770431dd46c369aabe649304376f90b41ded9b4eba8f1777",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-213",
+  "visual_proof_sha256": "e2910a70732c3e40e4082643b144021cc8cac0c8030b8b46927fac6056e9660b",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

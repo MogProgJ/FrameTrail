@@ -1,0 +1,26 @@
+{
+  "status": "frozen-before-further-local-model-fit-or-validation",
+  "method": "Preserve selected-model row133 logits on unknown TRAIN cells using their frozen-feature covariance. This is a teacher regularizer, NOT negative ground truth.",
+  "training_unknown_photos": 645,
+  "all_existing_train_photos": 700,
+  "test_and_validation_in_covariance": false,
+  "excluded_supervision": "Existing20billboard-positive and35explicit-absence photos are supervised; reviewed traffic-sign query regions are excluded from unknown preservation and supervised separately.",
+  "data_loss": "Same37geometry-covered positive-query BCE +3*mean existing explicit-negative BCE +3*mean reviewed-region negative BCE.",
+  "teacher_penalty": "0.5*lambda*(theta-theta0).T*C*(theta-theta0); C is equal-photo mean of query-feature outer products with appended bias1, unknown TRAIN queries only.",
+  "parameter_ridge": 0.0001,
+  "teacher_weights": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "maximum_fit_iterations": 200,
+  "maximum_fit_seconds_each": 120,
+  "selection": "Fit allfour before development evaluation. Same both-baseline strict gain/FP/retention/unscored530 rules and stable tie break.",
+  "original_labels_scopes_and_thresholds_unchanged": true,
+  "threshold": 0.35,
+  "all_other_model_state_frozen": true,
+  "new_GPU_jobs": 0,
+  "production_adoption": false,
+  "limits": "Conservative teacher preservation may suppress unlabelled true billboards too. It does not establish absence or independent accuracy. Development references are reused and no production/generalization claim is permitted."
+}

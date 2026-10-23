@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "97aaf76bd6fad8a9",
+  "image_sha256": "ad21b942669085d50c84fa21b82aad5cd9c1ba0b2705b50e28ee90bffd2014b5",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "97aaf76bd6fad8a9",
+    "image_sha256": "ad21b942669085d50c84fa21b82aad5cd9c1ba0b2705b50e28ee90bffd2014b5",
+    "selected_category": "door handle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/maong/2361389843",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/maong/2361389843",
+      "original_url": "https://c2.staticflickr.com/4/3286/2361389843_a5bd496bfc_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Monica Arellano-Ongpin",
+      "author_url": "https://www.flickr.com/people/maong/",
+      "title": "La porte bleue",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Monica Arellano-Ongpin",
+      "url": "https://www.flickr.com/photos/maong",
+      "image": "https://live.staticflickr.com/5016/buddyicons/22118036@N00.jpg?1296942481#22118036@N00"
+    },
+    "current_title": "La porte bleue",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Monica Arellano-Ongpin",
+          "url": "https://www.flickr.com/photos/maong",
+          "image": "https://live.staticflickr.com/5016/buddyicons/22118036@N00.jpg?1296942481#22118036@N00"
+        }
+      },
+      "meta_description": "They do have a sense of colour, these French! The photo was taken in St Tropez"
+    },
+    "identity_group": "flickr-nsid:22118036@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/maong/2361389843",
+    "html_sha256": "09f4074c00065592d0dc5c74f76091f4bd2da8c092a4bc8ba6924fc5cedf91f5",
+    "stored_sha256": "be0444dc9a398e2dac7959a4d90b7ccc31035da78d26acec07451b645cdb675e",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\97aaf76bd6fad8a9.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/97aaf76bd6fad8a9.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

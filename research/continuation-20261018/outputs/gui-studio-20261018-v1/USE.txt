@@ -1,0 +1,10 @@
+FrameTrail — refreshed native desktop interface
+
+Run-FrameTrail.cmd opens the separate redesigned app with the same existing experimental RF model used by the previous isolated GUI.
+Run-FrameTrail-Standard.cmd opens the standard model selection. Neither launcher has been run visibly by Codex.
+
+Open preview-gallery.html to inspect real offscreen screenshots.
+Ctrl+O opens media; Space plays/pauses; Ctrl+I toggles the inspector. Drag local media into the window. Analysis, cached Playback and Camera are available in the left navigation. Camera capture starts only after Start camera.
+
+The app directory contains its executable, runtime libraries and copies of the already-installed models. Source and the local build helper are included. Earlier apps and model files remain preserved.
+Job 7780632 completed according to the user-pasted output; its results have not been downloaded or adopted. The GUI continues using the earlier approved experimental model from job 7758628.

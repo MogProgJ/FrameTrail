@@ -1,0 +1,38 @@
+{
+  "stage": "whole-original-negative-content-review-before-predictions",
+  "approved_for_training": false,
+  "scene_comparison_complete": false,
+  "model_predictions_seen": false,
+  "records": [
+    {
+      "id": "b3c84145d7be9b72",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "shop-business-lettering",
+      "note": "Full original contains only Restaurant neon directional identification and sky/wires; no advertising campaign face.",
+      "scene_description": "Black Restaurant neon name and arrow sign against blue sky"
+    },
+    {
+      "id": "0c39f6a763ce3ec0",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "shop-business-lettering",
+      "note": "Full original contains Felix's Fish Camp restaurant name/logo identification only, plus poles/sky; no advertising campaign offer/product face.",
+      "scene_description": "Felix Fish Camp restaurant identity sign with fish illustration under grey sky"
+    },
+    {
+      "id": "37c1b3a6b5c824d4",
+      "disposition": "whole-photo-billboard-absent-content-reviewed",
+      "normalized_xyxy": [],
+      "confuser_family": "shop-business-lettering",
+      "note": "Full original contains restaurant name/cuisine identity and drive-through opening hours; no separate product/offer/event campaign face.",
+      "scene_description": "Los Robertos Mexican Food name board below drive through open24hours information"
+    },
+    {
+      "id": "1cbd02645b6fc7ac",
+      "disposition": "hold-content-boundary",
+      "normalized_xyxy": [],
+      "note": "Freestanding Technogym brand/company slogan board has ambiguous location-identification versus brand-campaign purpose; preserve hold."
+    }
+  ]
+}

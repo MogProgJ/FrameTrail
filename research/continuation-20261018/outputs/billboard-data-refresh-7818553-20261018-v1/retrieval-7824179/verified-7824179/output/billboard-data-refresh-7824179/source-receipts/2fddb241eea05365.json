@@ -1,0 +1,26 @@
+{
+  "image_id": "2fddb241eea05365",
+  "source_url": "https://www.flickr.com/photos/congresoeticasevilla/5584623427",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/congresoeticasevilla/5584623427",
+  "content_type": "text/html",
+  "candidate_license_links": [
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-icons",
+      "rel": "license noopener noreferrer"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "class": "license-text",
+      "rel": "license noopener noreferrer"
+    }
+  ],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/2fddb241eea05365.html.gz",
+  "html_bytes": 516605,
+  "html_sha256": "c739111f71fd20cee9025c6cdea489796eb59d446e8bc204e8870519c91693e5",
+  "stored_sha256": "7545cc086a79ecdad07bb74f1335fc1ebd5b68d7cd5dae78a1d233b1c70c5e98"
+}

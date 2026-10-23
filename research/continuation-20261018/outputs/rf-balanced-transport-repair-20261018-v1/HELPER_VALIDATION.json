@@ -1,0 +1,14 @@
+﻿{
+    "status":  "pass",
+    "powershell":  "5.1.26100.9711",
+    "helper_syntax":  "pass",
+    "scenarios":  [
+                      "normal resume then status",
+                      "remote error after job ID preserves receipt and switches repeat to status"
+                  ],
+    "fake_resume_calls":  2,
+    "fake_status_calls":  2,
+    "SCP_calls":  0,
+    "real_network_calls":  0,
+    "real_job_submissions":  0
+}

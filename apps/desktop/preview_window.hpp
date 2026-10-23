@@ -7,12 +7,20 @@
 #include <chrono>
 #include <functional>
 
+class QDragEnterEvent;
+class QDropEvent;
 class QLabel;
 class QPushButton;
 class QCheckBox;
 class QDoubleSpinBox;
 class QComboBox;
 class QPropertyAnimation;
+class QStackedWidget;
+class QShortcut;
+class SavedRunWindow;
+class PlaybackWorkspace;
+class LiveWindow;
+class GuideWorkspace;
 
 class FrameCanvas : public QWidget {
 public:
@@ -56,8 +64,13 @@ public:
     [[nodiscard]] bool playing() const { return playing_; }
     [[nodiscard]] const auto& detections() const { return canvas_->detections(); }
     [[nodiscard]] const auto& tracks() const { return canvas_->tracks(); }
+    SavedRunWindow* analysis_workspace() const{return analysis_workspace_;}
+    PlaybackWorkspace* playback_workspace() const{return playback_workspace_;}
+    LiveWindow* camera_workspace() const{return camera_workspace_;}
 protected:
     void closeEvent(QCloseEvent* event) override;
+    void dragEnterEvent(QDragEnterEvent* event) override;
+    void dropEvent(QDropEvent* event) override;
 private:
     void tick();
     void toggle_playback();
@@ -66,6 +79,9 @@ private:
     void begin_pending_source();
     void reconfigure_analysis();
     void update_controls();
+    void activate_workspace(int section);
+    void begin_workspace_shutdown();
+    void update_workspace_activity();
     std::pair<std::optional<frametrail::DetectorOptions>, std::optional<frametrail::TrackingOptions>> analysis_options();
 
     frametrail::PreviewSession session_;
@@ -84,6 +100,14 @@ private:
     QComboBox* model_box_{};
     QComboBox* backend_box_{};
     QPropertyAnimation* source_transition_{};
+    QStackedWidget* workspace_pages_{};
+    QShortcut* preview_play_shortcut_{};
+    SavedRunWindow* analysis_workspace_{};
+    PlaybackWorkspace* playback_workspace_{};
+    LiveWindow* camera_workspace_{};
+    GuideWorkspace* guide_workspace_{};
+    int workspace_section_{};
+    bool workspace_close_requested_{},workspace_close_ready_{};
     QComboBox* classes_box_{};
     QPushButton* line_button_{};
     QLabel* counts_label_{};

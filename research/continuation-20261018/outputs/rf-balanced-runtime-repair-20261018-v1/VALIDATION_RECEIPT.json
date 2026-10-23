@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "missing_metadata_reproduced_without_overlay": true,
+  "existing_overlay_restores_metadata": true,
+  "original_failed_preflight_created_no_fixture_submission_lock": true,
+  "guarded_repeat_fake_sbatch_calls": 1,
+  "real_network_calls": 0,
+  "real_job_submissions": 0,
+  "exact_module_and_PYTHONPATH_match_sealed_batch_script": true,
+  "full_payload_preserved_through_Windows_PowerShell_51_native_arguments": true,
+  "published_PowerShell_syntax": "pass",
+  "published_Bash_syntax": "pass",
+  "dependency_installations": 0
+}

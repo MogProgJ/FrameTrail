@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "112654de17f98945",
+  "image_sha256": "0cdc291bdd2f34eb1be3f1d2af0f624c486e7e14792236805572f4b4ff6c58aa",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "112654de17f98945",
+    "image_sha256": "0cdc291bdd2f34eb1be3f1d2af0f624c486e7e14792236805572f4b4ff6c58aa",
+    "selected_category": "washing machine",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/snotch/2320049881",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/snotch/2320049881",
+      "original_url": "https://farm6.staticflickr.com/2008/2320049881_51907eb12d_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "snotch",
+      "author_url": "https://www.flickr.com/people/snotch/",
+      "title": "0412-0501_Euro",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Motohiro Sunouchi",
+      "url": "https://www.flickr.com/photos/snotch",
+      "image": "https://live.staticflickr.com/5805/buddyicons/25064784@N00.jpg?1448255422#25064784@N00"
+    },
+    "current_title": "0412-0501_Euro",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Motohiro Sunouchi",
+          "url": "https://www.flickr.com/photos/snotch",
+          "image": "https://live.staticflickr.com/5805/buddyicons/25064784@N00.jpg?1448255422#25064784@N00"
+        }
+      },
+      "meta_description": "amsterdam, paris, london\n\t"
+    },
+    "identity_group": "flickr-nsid:25064784@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/snotch/2320049881",
+    "html_sha256": "938d022aeff1f0e9613ba04aa181a0b8bf6dfa87c40e4c7a9ef04f9bfd8ba240",
+    "stored_sha256": "6ebf21b837f860423d001e095c6036ce8fa4acc63e13d1d5ec885e818db6cf1c",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\112654de17f98945.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/112654de17f98945.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

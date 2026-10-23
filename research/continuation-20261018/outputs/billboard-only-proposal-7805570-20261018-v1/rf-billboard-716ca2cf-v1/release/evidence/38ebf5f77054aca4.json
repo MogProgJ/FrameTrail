@@ -1,0 +1,64 @@
+{
+  "image_id": "38ebf5f77054aca4",
+  "image_sha256": "590da12a2c29cdf4ffeb2310820608211e7ff4cf7f1c9d5f5f67b42bd44affce",
+  "publisher_attribution": {
+    "id": "38ebf5f77054aca4",
+    "landing_url": "https://www.flickr.com/photos/cumidanciki/14524066614",
+    "original_url": "https://farm5.staticflickr.com/2940/14524066614_6369e94f38_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "CCFoodTravel.com",
+    "author_url": "https://www.flickr.com/people/cumidanciki/",
+    "title": "P6287010",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "CCFoodTravel.com",
+    "url": "https://www.flickr.com/photos/cumidanciki",
+    "image": "https://live.staticflickr.com/2320/buddyicons/7906727@N07.jpg?1257813376#7906727@N07"
+  },
+  "current_title": "P6287010",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "CCFoodTravel.com",
+        "url": "https://www.flickr.com/photos/cumidanciki",
+        "image": "https://live.staticflickr.com/2320/buddyicons/7906727@N07.jpg?1257813376#7906727@N07"
+      }
+    },
+    "meta_description": "OLYMPUS DIGITAL CAMERA"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/cumidanciki/14524066614",
+  "canonical_page_url": "https://www.flickr.com/photos/cumidanciki/14524066614",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "ddcb7d3158b8f0d343f82075b31c06dcc444eda3ff8f5a0dfbea461a7ae46dcb",
+  "source_gzip_sha256": "a5be65bf76ccf1320513ec69831beed066343a8a181b77264bdf096cc89dbf56",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-117",
+  "visual_proof_sha256": "ae3e6d3bfb67a6ecee1e14414a90d816d8156bc7ecb08599512a3485ad8ff6b7",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

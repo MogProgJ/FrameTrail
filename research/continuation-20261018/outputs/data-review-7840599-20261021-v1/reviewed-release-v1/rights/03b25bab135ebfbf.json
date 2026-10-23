@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "03b25bab135ebfbf",
+  "image_sha256": "b05fe2d52fec6b71fe5f7dacba7b731363cf2c4ab10679fed16316ae410092aa",
+  "source_review": {
+    "image_id": "03b25bab135ebfbf",
+    "image_sha256": "b05fe2d52fec6b71fe5f7dacba7b731363cf2c4ab10679fed16316ae410092aa",
+    "selected_category": "traffic sign",
+    "selected_domain": "contrast",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/130768092@N05/15702943844",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/130768092@N05/15702943844",
+      "original_url": "https://c8.staticflickr.com/9/8677/15702943844_616a92f92a_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "stephen mccowage",
+      "author_url": "https://www.flickr.com/people/130768092@N05/",
+      "title": "'Edge'",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "stephen mccowage",
+      "url": "https://www.flickr.com/photos/130768092@N05",
+      "image": "https://live.staticflickr.com/7483/buddyicons/130768092@N05.jpg?1421760595#130768092@N05"
+    },
+    "current_title": "'Edge'",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "stephen mccowage",
+          "url": "https://www.flickr.com/photos/130768092@N05",
+          "image": "https://live.staticflickr.com/7483/buddyicons/130768092@N05.jpg?1421760595#130768092@N05"
+        }
+      },
+      "meta_description": "A sign of danger"
+    },
+    "identity_group": "flickr-nsid:130768092@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/130768092@N05/15702943844",
+    "html_sha256": "6ea1d1ec44f22d69d161773917c08e805716eb7cae372ee2cf66ca233914e5f9",
+    "stored_sha256": "cc8a359b26b06f7180492ea700158d27e32e16d691f055ad474d476234469295",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\03b25bab135ebfbf.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\03b25bab135ebfbf.json",
+    "sha256": "fafde3934fb1a5d6ccfa7ee884d8b482b8047a9d8f4018adfcdbe8576cf78f8f"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\03b25bab135ebfbf.json",
+    "sha256": "4460536ff085d36832ce90a46f3904b1766a23a613bb7236094c09282a813651"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/130768092@N05/15702943844",
+    "original_url": "https://c8.staticflickr.com/9/8677/15702943844_616a92f92a_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "stephen mccowage",
+    "author_url": "https://www.flickr.com/people/130768092@N05/",
+    "title": "'Edge'",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

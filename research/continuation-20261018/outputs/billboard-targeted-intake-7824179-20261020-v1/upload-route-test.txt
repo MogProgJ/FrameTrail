@@ -1,0 +1,1 @@
+PASS: one inert SCP invocation containing both files; zero network connections or submissions.

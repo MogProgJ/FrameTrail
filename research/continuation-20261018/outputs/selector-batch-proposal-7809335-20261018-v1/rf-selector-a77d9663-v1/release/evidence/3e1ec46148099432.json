@@ -1,0 +1,64 @@
+{
+  "image_id": "3e1ec46148099432",
+  "image_sha256": "646e693a576ab171e3b851f5b14c4a667cc0bf5fe04acc62d8544fb8670baece",
+  "publisher_attribution": {
+    "id": "3e1ec46148099432",
+    "landing_url": "https://www.flickr.com/photos/jessicamullen/3202960756",
+    "original_url": "https://farm3.staticflickr.com/3098/3202960756_7f7df8db30_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "jessica mullen",
+    "author_url": "https://www.flickr.com/people/jessicamullen/",
+    "title": "photo.jpg",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "jessica mullen",
+    "url": "https://www.flickr.com/photos/jessicamullen",
+    "image": "https://live.staticflickr.com/8804/buddyicons/94348950@N00.jpg?1468981512#94348950@N00"
+  },
+  "current_title": "photo.jpg",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "jessica mullen",
+        "url": "https://www.flickr.com/photos/jessicamullen",
+        "image": "https://live.staticflickr.com/8804/buddyicons/94348950@N00.jpg?1468981512#94348950@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/jessicamullen/3202960756",
+  "canonical_page_url": "https://www.flickr.com/photos/jessicamullen/3202960756",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "9d5802e7bab9e62cde874d2ba0bd946525e1fef38dbf1448c8f467c8d985eed7",
+  "source_gzip_sha256": "a90858a0ff3b44da97f3afa9e95a1b68a59fa90ee223ec01bee100014bf7d256",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-050",
+  "visual_proof_sha256": "5136fe88f45fe851f8768f26750fe2d2a4269cc060966457b1b632537a742834",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

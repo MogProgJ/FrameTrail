@@ -1,0 +1,1 @@
+{"status": "local-CPU-preflight-passed-no-GPU-submission", "local_cpu": true, "GPU_inference": false, "training": false, "weights_sha256": "d81979a9213a2109345158ce9232668df4c1ae52e9b8db3f2ec0a8cbad959b33", "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3"}

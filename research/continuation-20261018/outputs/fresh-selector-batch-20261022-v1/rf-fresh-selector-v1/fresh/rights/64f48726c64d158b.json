@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "64f48726c64d158b",
+  "image_sha256": "f059ce6610e2d8afae40bc0e7fff151e6c3c91945d50bd9685ff6f1302d808d1",
+  "source_review": {
+    "image_id": "64f48726c64d158b",
+    "image_sha256": "f059ce6610e2d8afae40bc0e7fff151e6c3c91945d50bd9685ff6f1302d808d1",
+    "selected_category": "washing machine",
+    "selected_domain": "contrast",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/55997298@N06/10799621434",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/55997298@N06/10799621434",
+      "original_url": "https://c4.staticflickr.com/4/3774/10799621434_75de5f6631_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "sinergizado",
+      "author_url": "https://www.flickr.com/people/55997298@N06/",
+      "title": "2013-10-13 14.17.07",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "sinergizado",
+      "url": "https://www.flickr.com/photos/55997298@N06",
+      "image": "https://combo.staticflickr.com/pw/images/bbuddyicon02.png#55997298@N06"
+    },
+    "current_title": "2013-10-13 14.17.07",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "sinergizado",
+          "url": "https://www.flickr.com/photos/55997298@N06",
+          "image": "https://combo.staticflickr.com/pw/images/bbuddyicon02.png#55997298@N06"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:55997298@N06",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/55997298@N06/10799621434",
+    "html_sha256": "00f2ce534327891c91a0ecdd620bf45d563a5bb38ec88176cf4aa9db32918234",
+    "stored_sha256": "2fac1c63b5e8dd8bd1f21c808855fb92c0ee8cec40d298ea8a81f8bca171440f",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\64f48726c64d158b.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\64f48726c64d158b.json",
+    "sha256": "93f719a672888053aa83c651c276524e8dc046e2ecf024c0d412aaaa33fee645"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\64f48726c64d158b.json",
+    "sha256": "0d7dd54d1d6edfff9ab5505f54b2d14d0df4f08a86cc4ff556e2ab8366ef3baa"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/55997298@N06/10799621434",
+    "original_url": "https://c4.staticflickr.com/4/3774/10799621434_75de5f6631_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "sinergizado",
+    "author_url": "https://www.flickr.com/people/55997298@N06/",
+    "title": "2013-10-13 14.17.07",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

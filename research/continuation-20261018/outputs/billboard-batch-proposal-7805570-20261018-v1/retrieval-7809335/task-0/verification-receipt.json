@@ -1,0 +1,11 @@
+{
+  "status": "trial-verified-no-improving-candidate",
+  "actual_job_id": "7809335_0",
+  "archive_sha256": "f2f2b62b9ffc9098b563fe7df6906fe460bea69da0824be30b07094859d68f26",
+  "process_exit_code": 0,
+  "output": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-batch-proposal-7805570-20261018-v1\\retrieval-7809335\\task-0\\verified-7809335_0\\output\\rf-billboard-batch-7809335_0",
+  "approved_for_application": false,
+  "updates": 1500,
+  "best_step": 0,
+  "new_candidate_selected": false
+}

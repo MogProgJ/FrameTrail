@@ -1,0 +1,22 @@
+Internal ctest changing into directory: C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/build
+Test project C:/Users/nazee/.codex/visualizations/2026/10/17/01a14c2d-b771-7a40-ba9b-e8277e4905a1/work/gui-studio-20261018-v1/build
+    Start  8: generate_media_fixtures
+1/8 Test  #8: generate_media_fixtures ..........   Passed    0.51 sec
+    Start 11: generate_analysis_fixture
+2/8 Test #11: generate_analysis_fixture ........   Passed    0.19 sec
+    Start 30: preview_lifecycle
+3/8 Test #30: preview_lifecycle ................   Passed    0.43 sec
+    Start 31: preview_reconfiguration
+4/8 Test #31: preview_reconfiguration ..........   Passed    0.38 sec
+    Start 33: desktop_analysis_intake
+5/8 Test #33: desktop_analysis_intake ..........   Passed    1.92 sec
+    Start 34: desktop_saved_review
+6/8 Test #34: desktop_saved_review .............   Passed    2.89 sec
+    Start 35: desktop_controls
+7/8 Test #35: desktop_controls .................   Passed    4.33 sec
+    Start 36: desktop_detection
+8/8 Test #36: desktop_detection ................   Passed    5.10 sec
+
+100% tests passed, 0 tests failed out of 8
+
+Total Test time (real) =  15.78 sec

@@ -1,5 +1,7 @@
 # Roadmap and acceptance evidence
 
+> Current update (24 October 2026): see [project progress](../PROJECT_PROGRESS.md) and [latest handoff](../CURRENT_HANDOFF.md). Older dated sections below preserve the development history.
+
 These milestones are ordered by dependencies, not estimated calendar dates. Implementation has begun with the native media library and CLI; see [current status](STATUS.md) and the [development guide](DEVELOPMENT.md).
 
 ## Phase map

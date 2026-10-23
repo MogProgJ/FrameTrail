@@ -1,0 +1,43 @@
+{
+  "status": "selector-four-trial-batch-approved-packaged-content-verified-awaiting-direct-KIT-authentication",
+  "protocol_sha256": "a77d9663fcc898b6a257f6722dd37bc24b1d3a2d3065eb8cce5f0625403f019a",
+  "approval_sha256": "85aa28b8ad3f8e5f76f1fa4746496cb32163c63ae15ec3de98568ed9a280a81f",
+  "archive_sha256": "18e774efc73f126ffb5e5de2f648e2a5385c06ff4dffd422e309a27d0bc3235c",
+  "archive": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\frametrail-rf-selector-a77d9663-v1.tar.gz",
+  "archive_bytes": 531669695,
+  "verified_archive_files": 3023,
+  "batch": {
+    "tasks": 4,
+    "array": "0-3%2",
+    "maximum_concurrent_GPUs": 2,
+    "maximum_requested_GPU_hours": 3,
+    "per_task": {
+      "GPUs": 1,
+      "CPU_cores": 2,
+      "host_memory_GiB": 8,
+      "maximum_updates": 3000,
+      "Slurm_wall_minutes": 45,
+      "training_process_seconds": 1800,
+      "known_regression_seconds": 480
+    },
+    "automatic_retries": 0
+  },
+  "approval_recorded": true,
+  "archive_verified": true,
+  "SSH_contacted": false,
+  "cluster_submitted": false,
+  "real_array_job_id": null,
+  "live_account_limits_verified": false,
+  "launch_command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\Launch-Approved-Run.ps1\"",
+  "current_model_job": "7805570",
+  "current_model_step": 100,
+  "strict_ONNX_hold": true,
+  "production_adoption": false,
+  "standing_preference": "Continue bounded FrameTrail project work without routine approval prompts. Latest user supersedes the older mandatory cluster-approval pause. Preserve resource limits, exact scope/provenance, scheduler checks, batching, model/data gates and no retries/replacements. Ask only when human input is truly required; direct KIT authentication is currently required. End responses with a concrete next step and why.",
+  "supersedes": [
+    "unapproved status snapshots in protocol/proposal/preparation/identity files",
+    "previous CURRENT_HANDOFF approval-needed statement",
+    "older standing requirement to pause solely for new cluster approval"
+  ],
+  "credentials": "User enters KIT OTP/password directly into their own terminal prompts; never into chat."
+}

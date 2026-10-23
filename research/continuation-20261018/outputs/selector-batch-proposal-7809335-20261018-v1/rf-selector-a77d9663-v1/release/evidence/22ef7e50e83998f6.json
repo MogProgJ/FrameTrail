@@ -1,0 +1,72 @@
+{
+  "image_id": "22ef7e50e83998f6",
+  "image_sha256": "d8fd275ef17b8f03c396252de0e737d9b0ada535626b8610ab0652990f2b7ddb",
+  "publisher_attribution": {
+    "id": "22ef7e50e83998f6",
+    "landing_url": "https://www.flickr.com/photos/frederickmdrocks/3851014357",
+    "original_url": "https://farm7.staticflickr.com/2617/3851014357_e5254820ac_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "David Bruce Jr.",
+    "author_url": "https://www.flickr.com/people/frederickmdrocks/",
+    "title": "Gilberts Restaurant Equipment",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "David Bruce Jr.",
+    "url": "https://www.flickr.com/photos/frederickmdrocks",
+    "image": "https://live.staticflickr.com/3278/buddyicons/31036313@N04.jpg?1251005577#31036313@N04"
+  },
+  "current_title": "Gilberts Restaurant Equipment",
+  "caption_and_notices": {
+    "image_id": "22ef7e50e83998f6",
+    "identity_group": "flickr-nsid:31036313@N04",
+    "creator": {
+      "@type": "Person",
+      "name": "David Bruce Jr.",
+      "url": "https://www.flickr.com/photos/frederickmdrocks",
+      "image": "https://live.staticflickr.com/3278/buddyicons/31036313@N04.jpg?1251005577#31036313@N04"
+    },
+    "current_title": "Gilberts Restaurant Equipment",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "David Bruce Jr.",
+        "url": "https://www.flickr.com/photos/frederickmdrocks",
+        "image": "https://live.staticflickr.com/3278/buddyicons/31036313@N04.jpg?1251005577#31036313@N04"
+      }
+    },
+    "meta_description": "<a href=\"http://gilbertsrestaurantequipment.com\" rel=\"noreferrer nofollow\">Used restaurant equipment</a>\n\t\n\t"
+  },
+  "source_url": "https://www.flickr.com/photos/frederickmdrocks/3851014357",
+  "canonical_page_url": "https://www.flickr.com/photos/frederickmdrocks/3851014357",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "7cc515d6df15ef4e26cf51d68d80659535507ba8c2fd835d0173a6d0ea1db9ac",
+  "source_gzip_sha256": "8dca25f05780240e21bc83f16613feb2ba3768e8b7e2148d5eaffce0e464d0f8",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "2ecfb15fcb1688947ad2ae3ea6005369976e1b3d207c847b83e875fba34ded2c"
+}

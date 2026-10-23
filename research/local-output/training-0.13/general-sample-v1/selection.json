@@ -1,0 +1,593 @@
+{
+  "scope": {
+    "schema": 1,
+    "id": "general-recognition-v1",
+    "goal": "Broad everyday-object recognition, with difficult conditions and animal distinctions as evaluation slices.",
+    "vocabulary": "openimages-v1",
+    "max_images": 96,
+    "images_per_category": 2,
+    "seed": 17,
+    "max_download_bytes": 150000000,
+    "domains": {
+      "people_and_transport": [
+        "person",
+        "bicycle",
+        "car",
+        "motorcycle",
+        "bus",
+        "truck",
+        "boat",
+        "airplane"
+      ],
+      "home_and_furniture": [
+        "chair",
+        "couch",
+        "bed",
+        "kitchen & dining room table",
+        "lamp",
+        "door",
+        "mirror",
+        "clock"
+      ],
+      "kitchen_and_food": [
+        "bottle",
+        "coffee cup",
+        "bowl",
+        "fork",
+        "spoon",
+        "knife",
+        "apple",
+        "banana",
+        "pizza"
+      ],
+      "electronics_and_work": [
+        "laptop",
+        "cell phone",
+        "computer keyboard",
+        "mouse",
+        "tv",
+        "camera",
+        "book",
+        "scissors"
+      ],
+      "personal_and_outdoor": [
+        "backpack",
+        "umbrella",
+        "handbag",
+        "suitcase",
+        "ball",
+        "bench",
+        "traffic light",
+        "stop sign"
+      ],
+      "animals_and_hard_cases": [
+        "dog",
+        "cat",
+        "bird",
+        "horse",
+        "fox",
+        "rabbit",
+        "deer",
+        "owl",
+        "raccoon",
+        "lantern",
+        "balloon"
+      ]
+    },
+    "hard_slices": [
+      "low_light_rgb",
+      "small_objects",
+      "occlusion",
+      "blur",
+      "fox_dog_confusion"
+    ],
+    "shortlist": [
+      {
+        "family": "YOLOv8s Open Images",
+        "role": "existing broad baseline and first compatible training smoke"
+      },
+      {
+        "family": "RF-DETR Small",
+        "role": "challenger; compare only after dataset review and native adapter validation"
+      },
+      {
+        "family": "YOLO-World",
+        "role": "existing experimental vocabulary baseline; future vocabulary expansion"
+      }
+    ]
+  },
+  "source": {
+    "schema": 1,
+    "publisher_split": "validation",
+    "source": "https://storage.googleapis.com/openimages/web/download_v7.html",
+    "annotation_license": "CC BY 4.0",
+    "vocabulary_sha256": "4add59233e843ee655a9937c793f19b61c24854ea84e7c10fc5c2b21a63a5bbc",
+    "files": {
+      "boxes.csv": "d8bbd59410af14835d7733165a7bb8a3f0213981b22dd5077b0b9f7878991ff2",
+      "classes.csv": "2fa47fb1b87e71c90b9fbee2dc1184eb8c59601bb811ea4424b200653cedff8e",
+      "validation-images-with-rotation.csv": "ed93a0e121fe345effdfc7359b848dbc64a1ff6778c8c73563157cb500b33a17"
+    }
+  },
+  "images": [
+    {
+      "id": "8e5c886ae394337f",
+      "selected_domain": "people_and_transport",
+      "selected_category": "person"
+    },
+    {
+      "id": "f24701c0a56fd30e",
+      "selected_domain": "people_and_transport",
+      "selected_category": "person"
+    },
+    {
+      "id": "29def08271143710",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "chair"
+    },
+    {
+      "id": "522e36b16a1539a6",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "chair"
+    },
+    {
+      "id": "f5b09fbe99e13691",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "bottle"
+    },
+    {
+      "id": "c1e0bbb5268a0497",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "bottle"
+    },
+    {
+      "id": "d38e1365450ab89e",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "laptop"
+    },
+    {
+      "id": "14be91e9e9170798",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "laptop"
+    },
+    {
+      "id": "bf6233a2802c96c8",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "backpack"
+    },
+    {
+      "id": "2edc0212721c4f22",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "backpack"
+    },
+    {
+      "id": "248013bfc6555250",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "dog"
+    },
+    {
+      "id": "2fe698ca53f5c3be",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "dog"
+    },
+    {
+      "id": "b1b9df89276a198b",
+      "selected_domain": "people_and_transport",
+      "selected_category": "bicycle"
+    },
+    {
+      "id": "4436d0c764a799d6",
+      "selected_domain": "people_and_transport",
+      "selected_category": "bicycle"
+    },
+    {
+      "id": "9afab31afacbba12",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "couch"
+    },
+    {
+      "id": "4c12b0b56d0064e0",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "couch"
+    },
+    {
+      "id": "780a4baa7c50d6e8",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "coffee cup"
+    },
+    {
+      "id": "c9432db7ea9f3d86",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "coffee cup"
+    },
+    {
+      "id": "0c5dc73c4cb7559b",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "cell phone"
+    },
+    {
+      "id": "5c3b156a7de138d8",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "cell phone"
+    },
+    {
+      "id": "2dfb0cd7ac014fc1",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "umbrella"
+    },
+    {
+      "id": "12b999f7e3b75de1",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "umbrella"
+    },
+    {
+      "id": "0d63660f48902dc5",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "cat"
+    },
+    {
+      "id": "707742c71cffd0ac",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "cat"
+    },
+    {
+      "id": "88ecf9c540f28229",
+      "selected_domain": "people_and_transport",
+      "selected_category": "car"
+    },
+    {
+      "id": "8ab2a7ef48c13a65",
+      "selected_domain": "people_and_transport",
+      "selected_category": "car"
+    },
+    {
+      "id": "b6f26c9d7c6667c5",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "bed"
+    },
+    {
+      "id": "c2b9ea7fa6acb336",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "bed"
+    },
+    {
+      "id": "e3f5c26de2e5735f",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "bowl"
+    },
+    {
+      "id": "1fc8f41dad194e06",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "bowl"
+    },
+    {
+      "id": "e918ca45aa73171c",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "computer keyboard"
+    },
+    {
+      "id": "defb4911c2df3880",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "computer keyboard"
+    },
+    {
+      "id": "a534195b0cd7ef3d",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "handbag"
+    },
+    {
+      "id": "2a50424b3263655e",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "handbag"
+    },
+    {
+      "id": "c743ff61edb5f224",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "bird"
+    },
+    {
+      "id": "44e9f82ee0a10d2f",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "bird"
+    },
+    {
+      "id": "8618ec6384468b52",
+      "selected_domain": "people_and_transport",
+      "selected_category": "motorcycle"
+    },
+    {
+      "id": "60671ebdfaeca124",
+      "selected_domain": "people_and_transport",
+      "selected_category": "motorcycle"
+    },
+    {
+      "id": "c8a4a4786eea0ec5",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "kitchen & dining room table"
+    },
+    {
+      "id": "d224c4e1ea5c3d49",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "kitchen & dining room table"
+    },
+    {
+      "id": "5314058b185908c6",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "fork"
+    },
+    {
+      "id": "873628ec277af241",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "fork"
+    },
+    {
+      "id": "6532daa2ed06d558",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "mouse"
+    },
+    {
+      "id": "825ceb5ebac34756",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "mouse"
+    },
+    {
+      "id": "c16ef3bba88dcd60",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "suitcase"
+    },
+    {
+      "id": "75f96adcf051332b",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "suitcase"
+    },
+    {
+      "id": "2c6d0a2a26c0488b",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "horse"
+    },
+    {
+      "id": "f98a01e056b70647",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "horse"
+    },
+    {
+      "id": "3f10138eb086f2e9",
+      "selected_domain": "people_and_transport",
+      "selected_category": "bus"
+    },
+    {
+      "id": "70a8d8c7b542849c",
+      "selected_domain": "people_and_transport",
+      "selected_category": "bus"
+    },
+    {
+      "id": "7b4e6ecafed7bb6a",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "lamp"
+    },
+    {
+      "id": "d8da33b1f6957b03",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "lamp"
+    },
+    {
+      "id": "fa9de6b1c3598680",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "spoon"
+    },
+    {
+      "id": "e6346217c5944361",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "spoon"
+    },
+    {
+      "id": "d3ef31f7e41411e2",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "tv"
+    },
+    {
+      "id": "24e4a46f7ce04aa6",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "tv"
+    },
+    {
+      "id": "31957706f94af9d3",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "ball"
+    },
+    {
+      "id": "9183484c24b29df3",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "ball"
+    },
+    {
+      "id": "1dc9a4d983024705",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "fox"
+    },
+    {
+      "id": "26a220dc46e5e56c",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "fox"
+    },
+    {
+      "id": "5d7b650efae831f9",
+      "selected_domain": "people_and_transport",
+      "selected_category": "truck"
+    },
+    {
+      "id": "a81c0f3fce94dd29",
+      "selected_domain": "people_and_transport",
+      "selected_category": "truck"
+    },
+    {
+      "id": "d4d6e17af12234a8",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "door"
+    },
+    {
+      "id": "5a330274338e4ac5",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "door"
+    },
+    {
+      "id": "72d912496b71dc4d",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "knife"
+    },
+    {
+      "id": "12b9323540615016",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "knife"
+    },
+    {
+      "id": "ab15e0cc7115fce8",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "camera"
+    },
+    {
+      "id": "3886fce0c5c81f1e",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "camera"
+    },
+    {
+      "id": "6df570ac37ed9d80",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "bench"
+    },
+    {
+      "id": "767f0a7861cabc5b",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "rabbit"
+    },
+    {
+      "id": "7e384a226bd8055c",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "rabbit"
+    },
+    {
+      "id": "4454d43b9198a2e6",
+      "selected_domain": "people_and_transport",
+      "selected_category": "boat"
+    },
+    {
+      "id": "98b8134b38bb0fd6",
+      "selected_domain": "people_and_transport",
+      "selected_category": "boat"
+    },
+    {
+      "id": "3e420574e8ca0ea6",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "mirror"
+    },
+    {
+      "id": "bafecb74232402fe",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "mirror"
+    },
+    {
+      "id": "6e9f89a2758892d3",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "apple"
+    },
+    {
+      "id": "53912158f0b7dfce",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "apple"
+    },
+    {
+      "id": "0a3873442ad329c2",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "book"
+    },
+    {
+      "id": "e823885c5fe5400a",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "book"
+    },
+    {
+      "id": "71c3eb3687efa946",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "traffic light"
+    },
+    {
+      "id": "7f41370fa8018909",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "traffic light"
+    },
+    {
+      "id": "91cbd5359a81e30b",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "deer"
+    },
+    {
+      "id": "4634962c3db4e309",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "deer"
+    },
+    {
+      "id": "43272f46080bb341",
+      "selected_domain": "people_and_transport",
+      "selected_category": "airplane"
+    },
+    {
+      "id": "27565184a11aa549",
+      "selected_domain": "people_and_transport",
+      "selected_category": "airplane"
+    },
+    {
+      "id": "e181b78f7deee9e6",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "clock"
+    },
+    {
+      "id": "ad217923d50b2ed3",
+      "selected_domain": "home_and_furniture",
+      "selected_category": "clock"
+    },
+    {
+      "id": "da3235cd7afa51f7",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "banana"
+    },
+    {
+      "id": "b70a978ef4325508",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "banana"
+    },
+    {
+      "id": "310192cb7c99bd11",
+      "selected_domain": "electronics_and_work",
+      "selected_category": "scissors"
+    },
+    {
+      "id": "359cf178d5d71e1e",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "stop sign"
+    },
+    {
+      "id": "7607c938b6d5f873",
+      "selected_domain": "personal_and_outdoor",
+      "selected_category": "stop sign"
+    },
+    {
+      "id": "542a725b6cc3bde7",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "owl"
+    },
+    {
+      "id": "1d3d4030ac5678b0",
+      "selected_domain": "animals_and_hard_cases",
+      "selected_category": "owl"
+    },
+    {
+      "id": "a27f8ecc9204f7ec",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "pizza"
+    },
+    {
+      "id": "46862805a3f41c39",
+      "selected_domain": "kitchen_and_food",
+      "selected_category": "pizza"
+    }
+  ]
+}

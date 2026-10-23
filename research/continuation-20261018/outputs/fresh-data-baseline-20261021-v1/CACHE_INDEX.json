@@ -1,0 +1,1204 @@
+{
+  "checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "release_sha256": "b262af61db8141abadd61cc026454953f6c172bd2fff552334c456170b5feb09",
+  "records": [
+    {
+      "image_id": "a37b64646cdb1e20",
+      "split": "train",
+      "sha256": "a98d1961ff332a6ed7a941f6f9375c65900b39616a875e9d947c92e24029923c",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\a37b64646cdb1e20.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "04924b243ce19811",
+      "split": "train",
+      "sha256": "379459957c6a95aa5224b8936e3502bb4fc630c0ad1597c8157396df2d1ea536",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\04924b243ce19811.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "bb760b5b12f42f43",
+      "split": "train",
+      "sha256": "07cb159b578855203e28ee959c866a8c35e139314b27ab07132196d12471c6ab",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\bb760b5b12f42f43.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "b3cddda00c8dde08",
+      "split": "train",
+      "sha256": "0ec96d7654974666cdc61f23b5d96ed554f3b2520c522fc33873e7257f3d4228",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\b3cddda00c8dde08.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "99c50590c334d1e5",
+      "split": "train",
+      "sha256": "9df816cb84dc0187c36d8d469147dfd8808075a2dc7d60ca0fb6b92bba0657fc",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\99c50590c334d1e5.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "23ac6df7ada563a3",
+      "split": "train",
+      "sha256": "b9d5db859e829bde3ea3341e09a069d72ac786b6946fe2b86a55f0cf106944f1",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\23ac6df7ada563a3.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "75ac7104b8c15a17",
+      "split": "train",
+      "sha256": "6debbbcf2ef8ce50e0bcb5194fe0ec3a93ebdbbdca1013cadbae67fbbcb6b1e3",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\75ac7104b8c15a17.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "64feab3aaa22fa1b",
+      "split": "train",
+      "sha256": "3145d238f904345fed7d671aa28790b60492fcd0ecefd1d04499fcd0ebf4a842",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\64feab3aaa22fa1b.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "bdf66bc984b9720e",
+      "split": "train",
+      "sha256": "d1804375e294a8bb52d7fe22ad49c23fdff36dd2532bac067c3ea6211558db29",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\bdf66bc984b9720e.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "eecb0152c21db860",
+      "split": "train",
+      "sha256": "f00d1b38c4f02c9ffd31b2cec1120070577321ce394da01bc188d2fb79293f32",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\eecb0152c21db860.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "a05d74b985d4bc2b",
+      "split": "train",
+      "sha256": "ca0a63137f187fc387acb6aee72a5770818b09e2141a21448d6ea2c61275e82b",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\a05d74b985d4bc2b.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "b619045bda83d108",
+      "split": "train",
+      "sha256": "d918143b99b06c39bee464e934c9908090edafa298c037fba1b933c2854c58d9",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\b619045bda83d108.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "27920c9574d34fd9",
+      "split": "train",
+      "sha256": "74277d620c850e94c408ab9ad0cbb6b77045308dac3cdaddc86b7ba1d37f1cfa",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\27920c9574d34fd9.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "a39dda42b11a5c4c",
+      "split": "train",
+      "sha256": "012308d0ff83b058b7adbd11cddbca5192cf18ef07251ffc38ea2ff71487348e",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\a39dda42b11a5c4c.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "92acfd217c54a6c1",
+      "split": "train",
+      "sha256": "1c3eab069c516d1d87c58bed589d54b26716639fd8f8ca5effe20a3aa9b61213",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\92acfd217c54a6c1.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "13909d11dbe65be8",
+      "split": "train",
+      "sha256": "895e56fbc39835a848e528f97e89ee386af456de7a10808c08b31641d74fefdf",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\13909d11dbe65be8.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "db5023702de03984",
+      "split": "train",
+      "sha256": "ef2a5074437429e03d788b96727870a968cba43806b336967c2ac5612121985f",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\db5023702de03984.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "03a27395be344ab4",
+      "split": "train",
+      "sha256": "84f25567d7ec0ca39858ac4240f82924e7c85ad64912574abac445852eeb47f8",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\03a27395be344ab4.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "30cbf2e7a5034abe",
+      "split": "train",
+      "sha256": "9ddc686fa492acc2b9974a7f6d4526e4225cf9524dd7dc89265370b18e01b48e",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\30cbf2e7a5034abe.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "6da6a9c6bdf31c76",
+      "split": "train",
+      "sha256": "40e2d66ab72b81e677d7f24354d971f5ff213e811b4aa9e67ae5fcbcae8b5a4d",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\6da6a9c6bdf31c76.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "888e37034d215b1c",
+      "split": "train",
+      "sha256": "6debc1a26fe111f1656b1679459cefd1f5764961ea96f9dc0b18124340985442",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\888e37034d215b1c.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "b9baad45d76338a0",
+      "split": "train",
+      "sha256": "634f5d357b22782087641bad292895cf22dca39e2f0d171b69a753f68c169c7a",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\b9baad45d76338a0.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "f116401d17107895",
+      "split": "train",
+      "sha256": "ff29b848bae702ffaf2aecb2edaa381f4c105d1e03305d94d6d6651db404048d",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\f116401d17107895.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "5a1cea0bb9f7b721",
+      "split": "train",
+      "sha256": "fe9a2e0c990ff9915972a6bdf21b16f06dbfa6329570a068a50add27584fd886",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\5a1cea0bb9f7b721.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "ef535834c691726f",
+      "split": "train",
+      "sha256": "ae8345f78bf67cf53f6ac2e591e49537c5f7add11fe83111fd7bb7015ec5da0b",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\ef535834c691726f.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "3d01928a39b59560",
+      "split": "train",
+      "sha256": "451ff3c6d74749adf79bce74e391243442543cfaf3fac0290f88b34176ac1d72",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\3d01928a39b59560.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "218828c2b0ceb0b2",
+      "split": "train",
+      "sha256": "1434206994a400434170077496468ccae1b9d69858018305b59b06ea843970f4",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\218828c2b0ceb0b2.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "ee920572c18e9006",
+      "split": "train",
+      "sha256": "47f4b1c3aa32e5415b81c283bcab8d622bcc0678956ccd1757206ef3dca033bf",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\ee920572c18e9006.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "1006ce66c4f168ce",
+      "split": "train",
+      "sha256": "868e67e5266fff91ea29367a3ed85b929d691f7afabfb4afe0f0bb477304f183",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\1006ce66c4f168ce.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "9b1480cf4a006424",
+      "split": "train",
+      "sha256": "19685274213eca8bb8f625f07e9ab35e6e0fbb033cb98d449c7f7bb33789a950",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\9b1480cf4a006424.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "1ed09b82d0a8370d",
+      "split": "train",
+      "sha256": "52af343054ea5059dd8aa45b715ddda41033681935fc7b0a9dba3e7d22afbeef",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\1ed09b82d0a8370d.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "46330787365e39e3",
+      "split": "train",
+      "sha256": "98c9b2693af27acd67a177b37c7ec30e8b909e09cd66e34c5f89dfb5e8aff3c6",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\46330787365e39e3.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "64f48726c64d158b",
+      "split": "train",
+      "sha256": "d9228a2d575d489ddffabc5f8bd76ec47729a3545c47aeb7e546f8e16a634399",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\64f48726c64d158b.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "ed01c21759d5c1dd",
+      "split": "train",
+      "sha256": "7f477577284b7499a0f4a6e6264865674d27e65c6b953a3ec0d9591dacc7bab7",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\ed01c21759d5c1dd.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "20a3a8cd5733db8c",
+      "split": "train",
+      "sha256": "a1fd0221416b50c9157ace9030e683d820f7cac11d098ba6bf9ed8a233faaeb9",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\20a3a8cd5733db8c.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "c169d65520795324",
+      "split": "train",
+      "sha256": "9732cf7a0db60d5c727bd22a45b55957e499041f0c398e90b150e05d93cd1abb",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\c169d65520795324.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "8a2155fbed2a9b9f",
+      "split": "train",
+      "sha256": "a1e1e81161344c412c468a45d9a3a58cb95f53cf22e250b3e678d38741ca125a",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\8a2155fbed2a9b9f.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "060bdd332c2c7055",
+      "split": "train",
+      "sha256": "7d28bda037c7486e87f095dde5b6b8295a184b743d010d73ff30086c5834f208",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\060bdd332c2c7055.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "0ead37227d5e2931",
+      "split": "train",
+      "sha256": "a4b50b035cfb23228f1d246521885a85ab5c3b0546c1afd0aa13104c42cc2c4a",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\0ead37227d5e2931.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "0c4e2a0564dec658",
+      "split": "train",
+      "sha256": "e90035a134264d72aff6a0a9aab3bff5784946c459cb06f5f7b7470a00efb31d",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\0c4e2a0564dec658.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "31c585fd77d4d28f",
+      "split": "train",
+      "sha256": "ff7176f292b3e636bdb0172f2418ef428dcf6b282ef9b3b0fc4fb34111026414",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\31c585fd77d4d28f.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "757556fbf9393cff",
+      "split": "train",
+      "sha256": "0af3bd44458aa264a55c303b1492a9ddb2973c0dbc475a4dce62b11f273d12c0",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\757556fbf9393cff.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "c112d5d0c11204c2",
+      "split": "train",
+      "sha256": "7093886a02adf1d4da01fd43c357f84ca141d6bfbb3dc03bd5290e4abc44d144",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\c112d5d0c11204c2.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "2de30a20ca6e53b5",
+      "split": "train",
+      "sha256": "37a198f54ebf4a3dafb6452108479e83a3ff167f76559cdefc5fffbd4024e11b",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\2de30a20ca6e53b5.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "28b10d0cab704513",
+      "split": "train",
+      "sha256": "6adfaa7c55a6d5fbae5b7d2fedd0c8d23f9419c89b35f155fb91f0e4deab57c8",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\28b10d0cab704513.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "4693658c0ef57ce1",
+      "split": "train",
+      "sha256": "14b66cc94850973ea631ad936e5519cee7c4396838db61af346ec64c1d25e3c7",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\4693658c0ef57ce1.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "d6bab621c0ddc4ea",
+      "split": "train",
+      "sha256": "f6a98da00f67430f83fcf2bcd29c1cab180f0afc642ce48a1e8a54e52555b04f",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\d6bab621c0ddc4ea.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "513b5406a0b58ba4",
+      "split": "train",
+      "sha256": "273e3ae0ea2bf3619c9cc0942a5db53eb3f3f9d5456a2121181c925c1700b53b",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\513b5406a0b58ba4.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "380aab08547bb9d7",
+      "split": "train",
+      "sha256": "5ad0235090e9c8a7918db340540bf7592370918a686b22fd6ae9148827d5b365",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\380aab08547bb9d7.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "b7fdd04c8d1a1e0b",
+      "split": "train",
+      "sha256": "7f8ee41b9425372350098989aff3c306e258757d8cefe67d9ba56a7f4699c139",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\b7fdd04c8d1a1e0b.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "00198353ef684011",
+      "split": "train",
+      "sha256": "76b090ba4a48aaa88447dc4244b4e773badccbb2a84e29486a77de44c3ad8ec2",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\00198353ef684011.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "1cfc8fd2934d4d5f",
+      "split": "train",
+      "sha256": "d388a4bd8d480707b4cf2e7abd380f4a7817d36c44ef0beccc2f17573fd5deac",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\1cfc8fd2934d4d5f.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "ef60f47752e17cae",
+      "split": "train",
+      "sha256": "046474329a6bb15d2e23075ca0727f999e095093f550d51918ab7e318da257a0",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\ef60f47752e17cae.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "562d7492978db1be",
+      "split": "train",
+      "sha256": "1f2ead7efd70f090815059e181af95227cb1f0de38358202d01752edd5c0bf9b",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\562d7492978db1be.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "0c39f6a763ce3ec0",
+      "split": "train",
+      "sha256": "fbe359373e14c4dcb240c5812715e64e75bc5483e7727be0c791db6cbfe363bb",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\0c39f6a763ce3ec0.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "605daeae27237af9",
+      "split": "train",
+      "sha256": "4f9938e5cac36779029ae919c962702cec89fd1f2518ac17eb903361f8020533",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\605daeae27237af9.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "6060c02183e1a945",
+      "split": "train",
+      "sha256": "340834b00d07400c286c9719bb9ec80754da8c02dbc6bd0ed14fa4e928c118a1",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\6060c02183e1a945.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "37c1b3a6b5c824d4",
+      "split": "train",
+      "sha256": "fdd0b59823bfee8cfdb86d4bd603895f4b8b92a58ff2632085a3dc7b9e48a0a5",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\37c1b3a6b5c824d4.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "b3c84145d7be9b72",
+      "split": "train",
+      "sha256": "d06887315dab2785bd1fd93b67cf03214777c77c68613727de91f465a96e03b3",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\b3c84145d7be9b72.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "c2c1c1d3eb3b5c54",
+      "split": "train",
+      "sha256": "7ba173c21ebda12fbba8b502663b3dd4d81814b3778d3b0eebd19c62ded872af",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\c2c1c1d3eb3b5c54.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "066687f8b782ab5b",
+      "split": "val",
+      "sha256": "2cda3239818b7e9efb14406288952e506ba35d52dd592fe9f98f4d1c83234de8",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\066687f8b782ab5b.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "5671f6f9aed0541a",
+      "split": "val",
+      "sha256": "f880b22b0b05188d2ff8bd99eef86aab43eaeeb7f3aebe2200a6d93bb44f4e29",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\5671f6f9aed0541a.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "6532e6a4944b0156",
+      "split": "val",
+      "sha256": "bdb74407837dc33eea8a6af5b0637c3bc16bc087cd2df30d4799a81f404443dc",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\6532e6a4944b0156.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "002d7d220a042075",
+      "split": "val",
+      "sha256": "94203180a77bba4120bd7f9d84dc0cbb1282fc4d6b7d96c2e62f64c0f051ce29",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\002d7d220a042075.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "97c4a86fe18afdb8",
+      "split": "val",
+      "sha256": "249e9fab8501b250cf35a1b9772809aa286dc16546f780f60b493a42228db282",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\97c4a86fe18afdb8.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "c684d8b7a6e8cae8",
+      "split": "val",
+      "sha256": "a8b1c511e8a13cd84ece22093b348e43fbf2afb30662f84f59d66276724943b5",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\c684d8b7a6e8cae8.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "4c916adba93611ad",
+      "split": "val",
+      "sha256": "1d704760940bbed990c6ace4a0e4bf14ba058fdd8e2a54ed239791c9f1eeee92",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\4c916adba93611ad.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "cea218650a100dd0",
+      "split": "val",
+      "sha256": "adab3ec349e4ddc3e0d69fb21e05bf2c0820ef0849c0eb7fd1ae83b93b23d234",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\cea218650a100dd0.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "dd1074c4e1f58872",
+      "split": "val",
+      "sha256": "d81d2ff30b36c5ded035c351670f314e7a8a3d5ebad649ba32f46f595de572c3",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\dd1074c4e1f58872.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "fe1a510b5a1c56fc",
+      "split": "val",
+      "sha256": "e8ae25b0cb53cd204a93873dc7e5b2ca5bbc8aab1b1ffc7b76f2b5d327c1e272",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\fe1a510b5a1c56fc.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "15b9fc26736f275a",
+      "split": "val",
+      "sha256": "0cf2aaf6f9e381fb05c04df13f1ca26fcfd3d9233fa79433db189efae971ead4",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\15b9fc26736f275a.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "b70da5fc345b106c",
+      "split": "val",
+      "sha256": "a58a90da6d096b1bf014ee9b9e50990d9345ef295d33047e60ee6ea70a9738f5",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\b70da5fc345b106c.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "2b92851e9cf25196",
+      "split": "val",
+      "sha256": "11afebb94e1bba972f1aecdff3298f7eccdcf8a5f73b0a6d5a9cfb5e309b2c11",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\2b92851e9cf25196.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "8e68b658ee40cbac",
+      "split": "val",
+      "sha256": "6805a122a8b99c7931b65f8e82faa56e5f8dac14dbd91ffbee221be769395e6f",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\8e68b658ee40cbac.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "1e496c37fb7ff35a",
+      "split": "val",
+      "sha256": "9bc955294857bdb911d40671d5f22c82bb883e3587561e4b882c51bff6b11fbf",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\1e496c37fb7ff35a.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "5d34be84c57bba2d",
+      "split": "val",
+      "sha256": "8a12d6fef96bad03052c931ccd3c45555473fcdc94e409cd290ad2af46cfd954",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\5d34be84c57bba2d.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "6d5375412062f4ce",
+      "split": "val",
+      "sha256": "ce54112aeb931687cd2c7d2632c3f2d277eea29dc3bcf1d22566e1c7a96d852a",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\6d5375412062f4ce.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "5ce07497741762d6",
+      "split": "val",
+      "sha256": "77e44816e2e1c337183d66a2e98d7bc41f87962411dbbf1f589686985cbac981",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\5ce07497741762d6.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "e894aab4f702c000",
+      "split": "val",
+      "sha256": "1f3f42a97e6056b4b69bbb6d597088fcd0c9161d3dab248cb946beebd8cf3082",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\e894aab4f702c000.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "e81d4fc6bdb57335",
+      "split": "val",
+      "sha256": "ae678c9d3ba22fc301d18b6c31a44f0f4f191a4f10b7856c2f862e83b39ff915",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\e81d4fc6bdb57335.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "a4dd3353126f93b4",
+      "split": "val",
+      "sha256": "657fbf72bc4c1cb8e26e34f394dd692f749628759b385e3704d558ca15b75503",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\a4dd3353126f93b4.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "2bf7c15ed4c9de16",
+      "split": "val",
+      "sha256": "6cde94174c5c2ba0b4c5fbcf04a64a2c0004943f3bce26bc1a2f2a239501f519",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\2bf7c15ed4c9de16.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "4a1a6868eb1dccd8",
+      "split": "val",
+      "sha256": "348365aac27135d3a0ee067e75a13be9887be8afa943f0a555ae9bd6ace72338",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\4a1a6868eb1dccd8.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "cf6cb3f326b2f890",
+      "split": "val",
+      "sha256": "4fcd83b5b88eb06f16baca9bd57b4af8a49a3f294804501d85fc4f5131441c9a",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\cf6cb3f326b2f890.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "b3e1ae3e7781726e",
+      "split": "val",
+      "sha256": "62770ca83b506059efda9202b65619c3ff707b495f32a6488a725a7d78ecaa8c",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\b3e1ae3e7781726e.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "03b25bab135ebfbf",
+      "split": "val",
+      "sha256": "3f713f04b2d1c4f384cea8149267969bfc303a875663f696635abbf85bc66aa9",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\03b25bab135ebfbf.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "360ff97104b82129",
+      "split": "val",
+      "sha256": "2d4fdd144ba5d913b19c9afa6061080a67e3e6d561c145a4ecc698c60ae6422a",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\360ff97104b82129.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "5110409f98e95a40",
+      "split": "val",
+      "sha256": "eeea4a7c7a80567aabd83dffafddd605ef7db91940accd20a6921b11f871fa1b",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\5110409f98e95a40.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "aaaf120ef247d0cb",
+      "split": "val",
+      "sha256": "b2d629578a7960eebc5cba78c5c73b650bc0ca56e8e603f9af1affa1e2b7c37b",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\aaaf120ef247d0cb.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "3a6dc96a518eb744",
+      "split": "val",
+      "sha256": "d0e51eacb5b35f4491ab448db20e32d5a47e576d057817e880d216f90c419cd0",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\3a6dc96a518eb744.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "104c82e95a295ba0",
+      "split": "val",
+      "sha256": "e0604e996c586eb3083e0741b107bffb3f123cc56a9be5f9d48ccea36d2699d7",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\104c82e95a295ba0.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    },
+    {
+      "image_id": "093a3c43152a9742",
+      "split": "val",
+      "sha256": "526a255b2986a2a0e730aa26e2bc3711389c3fdf512f95d6f337fec9d7ac5bcd",
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-data-baseline-20261021-v1\\cache\\093a3c43152a9742.pt",
+      "features_shape": [
+        3,
+        1,
+        300,
+        256
+      ],
+      "max_replay_output_error": 0.0
+    }
+  ],
+  "test_photos_used": 0,
+  "training": false
+}

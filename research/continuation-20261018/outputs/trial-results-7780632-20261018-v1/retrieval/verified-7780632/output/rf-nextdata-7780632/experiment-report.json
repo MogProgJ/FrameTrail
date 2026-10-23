@@ -1,0 +1,14 @@
+{
+  "status": "complete-awaiting-frozen-heldout-evaluation",
+  "actual_job_id": "7780632",
+  "updates": 600,
+  "best_step": 0,
+  "new_candidate_selected": false,
+  "best_checkpoint_sha256": "3a9adf74b11b851fba7393cc41b12b538a7aa1576b0a4e179468cc36c2279389",
+  "last_checkpoint_sha256": "d280723323b4ae8b07f1631667f2d87a9744c3398a06cc94e71dcef04fae2a02",
+  "frozen_features_and_boxes_unchanged": true,
+  "inactive_classifier_rows_unchanged": true,
+  "elapsed_seconds": 214.38,
+  "test_and_video_used": false,
+  "approved_for_application": false
+}

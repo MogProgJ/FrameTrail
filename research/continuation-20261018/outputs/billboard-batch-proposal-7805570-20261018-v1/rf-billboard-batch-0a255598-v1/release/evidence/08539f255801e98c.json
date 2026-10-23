@@ -1,0 +1,71 @@
+{
+  "image_id": "08539f255801e98c",
+  "image_sha256": "4459f0cc72bfd906aa685fb9067b0a7a63464e94fca8fd7102494e2b106f1911",
+  "publisher_attribution": {
+    "id": "08539f255801e98c",
+    "landing_url": "https://www.flickr.com/photos/alper/10402478535",
+    "original_url": "https://c5.staticflickr.com/4/3686/10402478535_6f62c940c6_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Alper Çuğun",
+    "author_url": "https://www.flickr.com/people/alper/",
+    "title": "The inevitable Galeria",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Alper Çuğun",
+    "url": "https://www.flickr.com/photos/alper",
+    "image": "https://live.staticflickr.com/27/buddyicons/12505664@N00.jpg?1187122087#12505664@N00"
+  },
+  "current_title": "The inevitable Galeria",
+  "caption_and_notices": {
+    "image_id": "08539f255801e98c",
+    "identity_group": "flickr-nsid:12505664@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "Alper Çuğun",
+      "url": "https://www.flickr.com/photos/alper",
+      "image": "https://live.staticflickr.com/27/buddyicons/12505664@N00.jpg?1187122087#12505664@N00"
+    },
+    "current_title": "The inevitable Galeria",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Alper Çuğun",
+        "url": "https://www.flickr.com/photos/alper",
+        "image": "https://live.staticflickr.com/27/buddyicons/12505664@N00.jpg?1187122087#12505664@N00"
+      }
+    },
+    "meta_description": "                               "
+  },
+  "source_url": "https://www.flickr.com/photos/alper/10402478535",
+  "canonical_page_url": "https://www.flickr.com/photos/alper/10402478535",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "be396c97ea02ee551c483835f0e96b916ca55e5201de892d97d78bbe42d8774d",
+  "source_gzip_sha256": "35f0f481bf0fa776426537155970b7f4afe2a9f5b3ad0d2e8060437d38e74a2d",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false
+}

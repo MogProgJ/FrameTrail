@@ -1,0 +1,77 @@
+test_all_schedules_are_distinct_training_only_batches (test_batch.Contracts.test_all_schedules_are_distinct_training_only_batches) ... ok
+test_all_seals_and_local_pinned_runtime (test_batch.Contracts.test_all_seals_and_local_pinned_runtime) ... ok
+test_approval_absent_and_early_stop_fixed (test_batch.Contracts.test_approval_absent_and_early_stop_fixed) ... ok
+test_index_cannot_silently_default_or_escape (test_batch.Contracts.test_index_cannot_silently_default_or_escape) ... ok
+test_paired_schedules_isolate_negative_share_and_learning_rate (test_batch.Contracts.test_paired_schedules_isolate_negative_share_and_learning_rate) ... ok
+test_regression_guard_detects_loss_and_fp_increase (test_batch.Contracts.test_regression_guard_detects_loss_and_fp_increase) ... ok
+test_safe_members_accept_array_identity_reject_traversal_and_links (test_batch.Contracts.test_safe_members_accept_array_identity_reject_traversal_and_links) ... ok
+test_synthetic_updates_only_row133_for_both_learning_rates (test_batch.Contracts.test_synthetic_updates_only_row133_for_both_learning_rates) ... ok
+test_validation_selection_ignores_regression_and_retains_ties (test_batch.Contracts.test_validation_selection_ignores_regression_and_retains_ties) ... ok
+test_windows_linux_sampler_serialization_and_wrong_variant (test_batch.Contracts.test_windows_linux_sampler_serialization_and_wrong_variant) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 28.929s
+
+OK
+{
+  "status": "validation-comparison-complete",
+  "trials": [
+    {
+      "index": 0,
+      "status": "complete",
+      "best_step": 100,
+      "strict_gain": true,
+      "validation_ranking": [
+        3,
+        0.5
+      ],
+      "checkpoint_sha256": "f35306ae6049a7d6d6b1b08713628c2207190d9577590e7629a1e0e07f1fd43b",
+      "regression_retained": false,
+      "postprocessing_exit": 0
+    },
+    {
+      "index": 1,
+      "status": "complete",
+      "best_step": 100,
+      "strict_gain": true,
+      "validation_ranking": [
+        3,
+        0.5
+      ],
+      "checkpoint_sha256": "f35306ae6049a7d6d6b1b08713628c2207190d9577590e7629a1e0e07f1fd43b",
+      "regression_retained": true,
+      "postprocessing_exit": 0
+    },
+    {
+      "index": 2,
+      "status": "complete",
+      "best_step": 100,
+      "strict_gain": true,
+      "validation_ranking": [
+        3,
+        0.5
+      ],
+      "checkpoint_sha256": "f35306ae6049a7d6d6b1b08713628c2207190d9577590e7629a1e0e07f1fd43b",
+      "regression_retained": true,
+      "postprocessing_exit": 0
+    },
+    {
+      "index": 3,
+      "status": "complete",
+      "best_step": 100,
+      "strict_gain": true,
+      "validation_ranking": [
+        3,
+        0.5
+      ],
+      "checkpoint_sha256": "f35306ae6049a7d6d6b1b08713628c2207190d9577590e7629a1e0e07f1fd43b",
+      "regression_retained": true,
+      "postprocessing_exit": 0
+    }
+  ],
+  "validation_only_winner_index": 0,
+  "ranking_frozen_before_using_regression": true,
+  "production_adoption": false,
+  "independent_fresh_test_available": false,
+  "strict_export_hold_from_previous_model_not_waived": true
+}

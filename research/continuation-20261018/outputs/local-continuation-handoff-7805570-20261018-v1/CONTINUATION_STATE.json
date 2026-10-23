@@ -1,0 +1,40 @@
+{
+  "status": "local-work-complete-awaiting-cluster-scope-approval",
+  "actual_completed_jobs": [
+    "7780632",
+    "7805570"
+  ],
+  "selected_job": "7805570",
+  "selected_step": 100,
+  "checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "ONNX_sha256": "3556492fd4915408e10ea773dff095f74871f6a640c15e9514d078fe7a03f479",
+  "heldout_known_targets": {
+    "washing_machine": "3/15 vs 0/15 for both baselines",
+    "billboard": "0/19"
+  },
+  "references_consumed": true,
+  "strict_export_gate_passed": false,
+  "production_adoption": false,
+  "explicit_local_preview_available": true,
+  "default_model": "YOLOX-S",
+  "default_model_changed": false,
+  "new_cluster_job_approved": false,
+  "new_cluster_job_submitted": false,
+  "proposal_protocol_sha256": "716ca2cf411984698e6d096f00fd5ef01995bee9ed4fe0c82a742e26c4bc6e1c",
+  "next_action": "Obtain human approval for exactly one A100 billboard-only trial: <=3000 updates, <=1800s active, 45min wall, no retries; then record approval and prepare the sealed archive. KIT authentication must be entered directly by the user.",
+  "artifacts": {
+    "native": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1",
+    "numerics": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\export-numerics-7805570-20261018-v1",
+    "training_review": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-training-review-7805570-20261018-v1",
+    "proposal": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-only-proposal-7805570-20261018-v1",
+    "heldout": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\heldout-evaluation-7805570-20261018-v1"
+  },
+  "standing_preferences": [
+    "End every user-facing response with the single best concrete next step and why.",
+    "Continue authorized local exports, tests, integration, packaging and fixes autonomously.",
+    "Pause before a NEW cluster job with its exact scope; unavailable credentials or restricted consequential actions can also require input.",
+    "Older assistant automatic_export flags are superseded as local approval barriers; preserve their historical bytes.",
+    "No visible desktop/app control or visible launches.",
+    "Preserve old data, labels, builds, checkpoints and receipts; do not touch MiniERP/Carrington."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "rights_verified": false,
+  "independent_human_review": false,
+  "approved_for_training": false,
+  "evaluation_eligible": false,
+  "complete_all_class_annotation": false,
+  "standard_coco_training_safe": false,
+  "negative_supervision_allowed": false,
+  "training_started": false,
+  "pending_trial": {
+    "job_id": "7780632",
+    "last_report": "pending; no newer scheduler evidence received",
+    "scheduler_checked": false,
+    "export_or_adoption": "deferred"
+  },
+  "blockers": [
+    "Upstream-image rights unresolved for all 58 source images.",
+    "Independent annotation review pending.",
+    "Only target classes scoped; other classes and hidden instances unknown.",
+    "Cross-cohort author/scene and perceptual-duplicate checks incomplete.",
+    "No concrete future training protocol approved."
+  ]
+}

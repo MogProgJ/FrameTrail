@@ -1,0 +1,6 @@
+Submission already recorded; no second job.
+FRAMETRAIL_JOB_ID=123456789
+MOCK status only
+Job log not created yet.
+Final report not ready yet.
+Result archive not ready yet.

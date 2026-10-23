@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "0ae7e00c79e5350f",
+  "image_sha256": "5354615ba1ecd249a7363a4455f34ad4664002b91cd646d2aef920f3b0bfc51a",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "0ae7e00c79e5350f",
+    "image_sha256": "5354615ba1ecd249a7363a4455f34ad4664002b91cd646d2aef920f3b0bfc51a",
+    "selected_category": "lantern",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/marcus_hansson/87914661",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/marcus_hansson/87914661",
+      "original_url": "https://c8.staticflickr.com/1/36/87914661_2fa38d7a8a_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Marcus Hansson",
+      "author_url": "https://www.flickr.com/people/marcus_hansson/",
+      "title": "Red lantern",
+      "rotation": "0.0"
+    },
+    "intake_holds": [
+      "lantern-title-only-content-and-manual-box-review"
+    ],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Marcus Hansson",
+      "url": "https://www.flickr.com/photos/marcus_hansson",
+      "image": "https://live.staticflickr.com/5329/buddyicons/87603889@N00.jpg?1369090070#87603889@N00"
+    },
+    "current_title": "Red lantern",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Marcus Hansson",
+          "url": "https://www.flickr.com/photos/marcus_hansson",
+          "image": "https://live.staticflickr.com/5329/buddyicons/87603889@N00.jpg?1369090070#87603889@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:87603889@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/marcus_hansson/87914661",
+    "html_sha256": "020b0fdcd150c0689e3a70570cb86c73e552095b9b4ff3470853cfc4a5f60efc",
+    "stored_sha256": "f872d25b870743974bd01c1ed01d33eafff2aac337f7f7854d64f1217ec5aba5",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\0ae7e00c79e5350f.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/0ae7e00c79e5350f.html.gz",
+  "manual_content_hold_resolution": "Reviewed individual positive lantern targets only",
+  "independent_human_recheck": false
+}

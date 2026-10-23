@@ -1,0 +1,32 @@
+string(RANDOM LENGTH 12 ALPHABET 0123456789abcdef suffix)
+set(database "${FIXTURES}/cli-${suffix}.frametrail")
+set(csv "${FIXTURES}/cli-${suffix}.csv")
+execute_process(COMMAND "${CLI}" inspect "${SOURCE}" --detect "${MODEL}" --track --classes 16
+    --line 0.1,0.75,0.9,0.75 --save-run "${database}"
+    RESULT_VARIABLE result OUTPUT_VARIABLE output ERROR_VARIABLE error TIMEOUT 30)
+if(NOT result EQUAL 0)
+    message(FATAL_ERROR "CLI saved analysis failed: ${output} ${error}")
+endif()
+execute_process(COMMAND "${CLI}" run "${database}" --export "${csv}"
+    RESULT_VARIABLE result OUTPUT_VARIABLE output ERROR_VARIABLE error TIMEOUT 10)
+if(NOT result EQUAL 0 OR NOT output MATCHES "Run status: completed" OR NOT output MATCHES "Events saved: 1")
+    message(FATAL_ERROR "Saved CLI inspect/export failed: ${output} ${error}")
+endif()
+file(READ "${csv}" content)
+if(NOT content MATCHES "\"completed\",1,4,400000,1,16,\"dog\",\"negative_to_positive\"")
+    message(FATAL_ERROR "Saved CSV changed timestamp/class/direction: ${content}")
+endif()
+execute_process(COMMAND "${CLI}" run "${database}" --export "${csv}" RESULT_VARIABLE result OUTPUT_QUIET ERROR_QUIET)
+if(result EQUAL 0)
+    message(FATAL_ERROR "CSV overwrite was accepted")
+endif()
+execute_process(COMMAND "${CLI}" inspect "${SOURCE}" --detect "${MODEL}" --track --save-run "${database}"
+    RESULT_VARIABLE result OUTPUT_QUIET ERROR_QUIET)
+if(result EQUAL 0)
+    message(FATAL_ERROR "Saved run overwrite was accepted")
+endif()
+execute_process(COMMAND "${CLI}" inspect "${SOURCE}" --detect "${MODEL}" --track --max-frames 2 --save-run "${FIXTURES}/bad-${suffix}.frametrail"
+    RESULT_VARIABLE result OUTPUT_QUIET ERROR_QUIET)
+if(result EQUAL 0 OR EXISTS "${FIXTURES}/bad-${suffix}.frametrail")
+    message(FATAL_ERROR "Frame-limited run became a complete analysis")
+endif()

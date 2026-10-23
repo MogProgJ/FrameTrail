@@ -1,0 +1,6 @@
+{
+  "human_approved_exact_selector_scope": true,
+  "protocol_sha256": "a77d9663fcc898b6a257f6722dd37bc24b1d3a2d3065eb8cce5f0625403f019a",
+  "verbatim_user_authorization": "Yeah, it's approved, man. You don't have to ask for my approval on this. All right, always just keep working and working and working.",
+  "superseding_preference": "Continue FrameTrail work without routine approval prompts, including bounded cluster work within the established project scope and resource limits. Stop only for a real need for human input, such as direct KIT authentication or a consequential unresolved change. Preserve model/data gates, scheduler checks and no automatic retries/replacement jobs."
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "943d1171b95ff564",
+  "image_sha256": "a3a04659e9c9bece708a81fa6bdec390b74e7e10fe366d6a1cc275d3a15c1cda",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "943d1171b95ff564",
+    "image_sha256": "a3a04659e9c9bece708a81fa6bdec390b74e7e10fe366d6a1cc275d3a15c1cda",
+    "selected_category": "traffic sign",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/decade_null/2066474034",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/decade_null/2066474034",
+      "original_url": "https://farm5.staticflickr.com/2249/2066474034_5d4fb0ad44_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Aapo Haapanen",
+      "author_url": "https://www.flickr.com/people/decade_null/",
+      "title": "Tallinn tram",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Aapo Haapanen",
+      "url": "https://www.flickr.com/photos/decade_null",
+      "image": "https://live.staticflickr.com/8395/buddyicons/39952962@N00.jpg?1369091599#39952962@N00"
+    },
+    "current_title": "Tallinn tram",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Aapo Haapanen",
+          "url": "https://www.flickr.com/photos/decade_null",
+          "image": "https://live.staticflickr.com/8395/buddyicons/39952962@N00.jpg?1369091599#39952962@N00"
+        }
+      },
+      "meta_description": "I really should have taken that tram instead of lugging my very heavy backpack across Tallinn on foot."
+    },
+    "identity_group": "flickr-nsid:39952962@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/decade_null/2066474034",
+    "html_sha256": "f7f59803cefc252a7eddbe61df4db48e1453a47886c12d2f874a082b4e382950",
+    "stored_sha256": "7f45c6d8ed639a5a5fb48a2e6bd6487d76cf9b99892a7b4e73316bdfe6463f08",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\943d1171b95ff564.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/943d1171b95ff564.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

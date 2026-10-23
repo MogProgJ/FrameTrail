@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "21fa5e559adfb874",
+  "image_sha256": "aefb913655bd42be775b8924ecfafad65372c6c228ee2663efb56a6c7ea792df",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "21fa5e559adfb874",
+    "image_sha256": "aefb913655bd42be775b8924ecfafad65372c6c228ee2663efb56a6c7ea792df",
+    "selected_category": "taxi",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/andreas/2991280237",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/andreas/2991280237",
+      "original_url": "https://farm5.staticflickr.com/3195/2991280237_7f1f067f39_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "andreas",
+      "author_url": "https://www.flickr.com/people/andreas/",
+      "title": "Taipei by night",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "andreas",
+      "url": "https://www.flickr.com/photos/andreas",
+      "image": "https://live.staticflickr.com/1/buddyicons/44124449414@N01.jpg?1093789397#44124449414@N01"
+    },
+    "current_title": "Taipei by night",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "andreas",
+          "url": "https://www.flickr.com/photos/andreas",
+          "image": "https://live.staticflickr.com/1/buddyicons/44124449414@N01.jpg?1093789397#44124449414@N01"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:44124449414@N01",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/andreas/2991280237",
+    "html_sha256": "3cce99f4a5dbf9d28917a35b8ca8664f01349a921b74562202e307b062471bf4",
+    "stored_sha256": "27442d51a56261871ab1f4ff387dc5498a3033b3e7d1e97ec5031e3c91343f79",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\21fa5e559adfb874.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/21fa5e559adfb874.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

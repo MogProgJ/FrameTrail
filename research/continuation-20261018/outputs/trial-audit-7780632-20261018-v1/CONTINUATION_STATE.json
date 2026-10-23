@@ -1,0 +1,18 @@
+{
+  "project": "FrameTrail",
+  "latest_job": "7780632",
+  "status": "audited-no-improving-checkpoint-selected",
+  "selected_step": 0,
+  "approved_for_application": false,
+  "heldout_evaluation": "not run; no improved validation candidate",
+  "gui": "gui-studio-20261018-v1 remains packaged separately; no 7780632 adoption",
+  "next_best_step": "Validation-only raw-logit and query-localization probe on the 24 billboard/washing-machine misses, then 4 dog misses; compare step 0 and 600 before proposing new training.",
+  "standing_communication_preference": "End every user-facing response with the single best plausible concrete next step for FrameTrail and briefly explain why; carry this into every handoff.",
+  "restrictions": [
+    "No new GPU job or automatic retry",
+    "No automatic model export or adoption",
+    "Preserve held-out photos/video for a frozen useful candidate",
+    "No annotation, vocabulary, source or prior package changes",
+    "No desktop takeover or visible app launch"
+  ]
+}

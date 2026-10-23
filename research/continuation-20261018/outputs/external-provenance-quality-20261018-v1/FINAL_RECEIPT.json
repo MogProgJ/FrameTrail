@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "status": "provenance-and-annotation-scope-continuation-sealed",
+  "created_at": "2026-10-17T23:30:17.203424+00:00",
+  "parent_filtering_preserved": {
+    "images": 58,
+    "positive_boxes": 120,
+    "input_files": 451,
+    "verified_hashes": 73
+  },
+  "current_partial_draft": {
+    "images": 57,
+    "positive_boxes": 115,
+    "held_or_redundant_source_files": 394,
+    "newly_withheld_retained_image": "hanger-023",
+    "family_hold_ids": [
+      "hanger-023",
+      "hanger-024",
+      "hanger-025"
+    ],
+    "bbox_refinement": "toaster-003 / annotation 80"
+  },
+  "provenance": {
+    "exact_publisher_photo_matches": 5,
+    "same_scene_associations": 1,
+    "rights_cleared": 0
+  },
+  "annotation_scope": {
+    "images_reviewed": 58,
+    "scope_cells": 290,
+    "assistant_identifiable_visible_target_complete_images": 54,
+    "target_completeness_unknown_images": 4,
+    "independent_human_review": false,
+    "negative_supervision_allowed": false
+  },
+  "approved_for_training": false,
+  "evaluation_eligible": false,
+  "new_jobs_submitted": 0,
+  "training_started": false,
+  "trial_7780632_export_adoption": "deferred; no newer result received",
+  "gallery": "index.html",
+  "publisher_evidence": "publisher-evidence.html",
+  "validation": "VALIDATION_RECEIPT.json",
+  "next_handoff": "CONTINUATION_STATE.json"
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "b4cc15350a7c2547",
+  "image_sha256": "75017d8be266133db7b5eaea9a1e911db64164c2241564499288c01a173dfee6",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "b4cc15350a7c2547",
+    "image_sha256": "75017d8be266133db7b5eaea9a1e911db64164c2241564499288c01a173dfee6",
+    "selected_category": "street light",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/40713859@N00/237652462",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/40713859@N00/237652462",
+      "original_url": "https://farm8.staticflickr.com/97/237652462_abe0667063_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Gabriele Battaglia",
+      "author_url": "https://www.flickr.com/people/40713859@N00/",
+      "title": "IMG_6043",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Gabriele Battaglia",
+      "url": "https://www.flickr.com/photos/40713859@N00",
+      "image": "https://live.staticflickr.com/44/buddyicons/40713859@N00.jpg?1270569241#40713859@N00"
+    },
+    "current_title": "IMG_6043",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Gabriele Battaglia",
+          "url": "https://www.flickr.com/photos/40713859@N00",
+          "image": "https://live.staticflickr.com/44/buddyicons/40713859@N00.jpg?1270569241#40713859@N00"
+        }
+      },
+      "meta_description": "Datong, a three millions people city\n\tDatong, una citt\u00e0 con tre milioni di abitanti\n\tBeijing 2006"
+    },
+    "identity_group": "flickr-nsid:40713859@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/40713859@N00/237652462",
+    "html_sha256": "a981069a5fb2adfb68cc59161400328f731604e50ad3ed9521f60b81db58df38",
+    "stored_sha256": "31eb0b0181b15fbe936636ba7fe05f7fd6151be7d3db21a89e1b8babcb6f0286",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\b4cc15350a7c2547.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/b4cc15350a7c2547.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "9621f8a0a2c06b6c",
+  "image_sha256": "1f99d59331fb5acd514e4928de9e8a48884d84d3d06a047e5a71e3d7577337dd",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "9621f8a0a2c06b6c",
+    "image_sha256": "1f99d59331fb5acd514e4928de9e8a48884d84d3d06a047e5a71e3d7577337dd",
+    "selected_category": "street light",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/26557483@N08/16177457766",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/26557483@N08/16177457766",
+      "original_url": "https://c5.staticflickr.com/8/7488/16177457766_71ef42ec24_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "haymarketrebel",
+      "author_url": "https://www.flickr.com/people/26557483@N08/",
+      "title": "Traffic and Snowcaps",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "haymarketrebel",
+      "url": "https://www.flickr.com/photos/26557483@N08",
+      "image": "https://live.staticflickr.com/6027/buddyicons/26557483@N08.jpg?1311302100#26557483@N08"
+    },
+    "current_title": "Traffic and Snowcaps",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "haymarketrebel",
+          "url": "https://www.flickr.com/photos/26557483@N08",
+          "image": "https://live.staticflickr.com/6027/buddyicons/26557483@N08.jpg?1311302100#26557483@N08"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:26557483@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/26557483@N08/16177457766",
+    "html_sha256": "70a058d2b3241e2bec035be0db0918b704a2e7ef8d896e1329b16a262c9ae775",
+    "stored_sha256": "49020ccb31b897ec2aa10622f92a56eec4ed30b97b161f2feb2f692e81e8fc1e",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\9621f8a0a2c06b6c.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/9621f8a0a2c06b6c.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

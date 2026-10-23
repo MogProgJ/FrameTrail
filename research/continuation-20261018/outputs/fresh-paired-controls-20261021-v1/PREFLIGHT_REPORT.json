@@ -1,0 +1,56 @@
+{
+  "status": "loss-gradient-full-layout-and-selector-mask-preflight-passed",
+  "plan_sha256": "8f789c6e0bee3d8970ded955f0207560b3cc8d28816df20cf2e7593f9b18c70d",
+  "tests": [
+    {
+      "image_id": "5a1cea0bb9f7b721",
+      "pool": "fresh_positive",
+      "full_cached_output_error": 0.0,
+      "loss": 12.994256973266602,
+      "loss_equal": true,
+      "main_weight_and_bias_gradients_equal": true,
+      "inactive_parameter_gradients_zero": true
+    },
+    {
+      "image_id": "dc2a7c32db059a9e",
+      "pool": "old_positive",
+      "full_cached_output_error": 0.0,
+      "loss": 12.003983497619629,
+      "loss_equal": true,
+      "main_weight_and_bias_gradients_equal": true,
+      "inactive_parameter_gradients_zero": true
+    },
+    {
+      "image_id": "757556fbf9393cff",
+      "pool": "fresh_absent",
+      "full_cached_output_error": 0.0,
+      "loss": 0.10628627240657806,
+      "loss_equal": true,
+      "main_weight_and_bias_gradients_equal": true,
+      "inactive_parameter_gradients_zero": true
+    },
+    {
+      "image_id": "001a4338f140e05e",
+      "pool": "old_absent",
+      "full_cached_output_error": 0.0,
+      "loss": 8.830129623413086,
+      "loss_equal": true,
+      "main_weight_and_bias_gradients_equal": true,
+      "inactive_parameter_gradients_zero": true
+    }
+  ],
+  "fresh_unknown_logit_gradients_zero": true,
+  "selector_main_and_encoder_active_rows": [
+    133
+  ],
+  "selector_inactive_gradients_zero": true,
+  "dense_unknown_scope_loss_and_gradient_zero": true,
+  "all_frozen_state_unchanged": true,
+  "optimizer_updates": 0,
+  "test_photos_used": 0,
+  "execution_order_deviation_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-paired-controls-20261021-v1\\EXECUTION_ORDER_NOTE.json",
+    "sha256": "b08c58e3e7981af2f820a692c557019b750a940ef36cf4b87508a3ad1e1a5475"
+  },
+  "elapsed_seconds": 15.56
+}

@@ -1,0 +1,11 @@
+{
+  "status": "trial-verified-no-improving-candidate",
+  "actual_job_id": "7818553_0",
+  "archive_sha256": "33fe470e3ae7faeff7a829f97bdf834cef17d93f42444b24c9a2d7543e704ef3",
+  "process_exit_code": 0,
+  "output": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\retrieval-7818553\\task-0\\verified-7818553_0\\output\\rf-selector-7818553_0",
+  "approved_for_application": false,
+  "updates": 1500,
+  "best_step": 0,
+  "new_candidate_selected": false
+}

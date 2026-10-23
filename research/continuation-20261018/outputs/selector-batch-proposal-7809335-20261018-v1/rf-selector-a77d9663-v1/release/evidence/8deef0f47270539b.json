@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "8deef0f47270539b",
+  "image_sha256": "47e056d0f345d79e3826b0256a946543f03f60312aa74e6b30789957d2ae3b6c",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "8deef0f47270539b",
+    "image_sha256": "47e056d0f345d79e3826b0256a946543f03f60312aa74e6b30789957d2ae3b6c",
+    "selected_category": "van",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/bea-y-fredi/2629021881",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/bea-y-fredi/2629021881",
+      "original_url": "https://c4.staticflickr.com/4/3033/2629021881_14566a290b_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Bea y Fredi",
+      "author_url": "https://www.flickr.com/people/bea-y-fredi/",
+      "title": "Belfast",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Bea y Fredi",
+      "url": "https://www.flickr.com/photos/bea-y-fredi",
+      "image": "https://live.staticflickr.com/24/buddyicons/47905916@N00.jpg?1188387773#47905916@N00"
+    },
+    "current_title": "Belfast",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Bea y Fredi",
+          "url": "https://www.flickr.com/photos/bea-y-fredi",
+          "image": "https://live.staticflickr.com/24/buddyicons/47905916@N00.jpg?1188387773#47905916@N00"
+        }
+      },
+      "meta_description": "En Belfast"
+    },
+    "identity_group": "flickr-nsid:47905916@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/bea-y-fredi/2629021881",
+    "html_sha256": "c2301a8564cc6268c1a1832f53707bd0a0d9e8241a28d3b51a8bf4cd419cd649",
+    "stored_sha256": "6991ce6023d7a6a28cd6d63a1e9cf1797c67cfb368fa168f802ce82f12b4fe34",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\8deef0f47270539b.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/8deef0f47270539b.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

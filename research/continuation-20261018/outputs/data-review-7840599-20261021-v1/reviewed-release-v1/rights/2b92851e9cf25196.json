@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "2b92851e9cf25196",
+  "image_sha256": "3463a2d6bda01dd025af304bb9b50b655b7f5fe65000a8328b8d68e408a3e1c7",
+  "source_review": {
+    "image_id": "2b92851e9cf25196",
+    "image_sha256": "3463a2d6bda01dd025af304bb9b50b655b7f5fe65000a8328b8d68e408a3e1c7",
+    "selected_category": "washing machine",
+    "selected_domain": "contrast",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/66992769@N08/7569174110",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/66992769@N08/7569174110",
+      "original_url": "https://farm7.staticflickr.com/8151/7569174110_d14325dabc_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Weronika",
+      "author_url": "https://www.flickr.com/people/66992769@N08/",
+      "title": "img_9593",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Weronika",
+      "url": "https://www.flickr.com/photos/66992769@N08",
+      "image": "https://live.staticflickr.com/7147/buddyicons/66992769@N08.jpg?1323564425#66992769@N08"
+    },
+    "current_title": "img_9593",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Weronika",
+          "url": "https://www.flickr.com/photos/66992769@N08",
+          "image": "https://live.staticflickr.com/7147/buddyicons/66992769@N08.jpg?1323564425#66992769@N08"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:66992769@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/66992769@N08/7569174110",
+    "html_sha256": "50d932c6e3feaddb109214a4e018a19abbe2f42659891b332fd8fabdbd6df523",
+    "stored_sha256": "7d2711114741550f17cfe746f019703072740836452a49f4f608a30a43503177",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\2b92851e9cf25196.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\2b92851e9cf25196.json",
+    "sha256": "f6158bd09099e42c38e80aa1325275b53cd5d554a554ee56b0626c6fdf311311"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\2b92851e9cf25196.json",
+    "sha256": "6e8866251ad438c6ff6f7ec6be1b9fd20e130808da4e429eafd9c623b90c2dc0"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/66992769@N08/7569174110",
+    "original_url": "https://farm7.staticflickr.com/8151/7569174110_d14325dabc_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Weronika",
+    "author_url": "https://www.flickr.com/people/66992769@N08/",
+    "title": "img_9593",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

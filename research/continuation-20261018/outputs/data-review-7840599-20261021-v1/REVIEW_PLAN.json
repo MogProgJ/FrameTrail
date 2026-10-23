@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-21",
+  "actual_job_id": "7840599",
+  "archive_sha256": "846a6b26e8f1afcc22af24a2004035e713f3f27807631bbaccd47d3a3a2074e3",
+  "manifest_sha256": "0bd27558ab9ae9f5005492db719e90af37883ee9b9577e5fb0a3afa51028fbd8",
+  "photos": 180,
+  "prospective_roles": {
+    "train": 36,
+    "val": 72,
+    "test": 72
+  },
+  "definition": "nextdata7769109-taxonomy-v1: large physical advertising boards; distinguish traffic signs and shop lettering",
+  "frozen_before_predictions": true,
+  "model_predictions_seen": false,
+  "required_reviews": [
+    "All original and source bytes/hash/plan linkage",
+    "Photo-specific source license/owner/notice checks",
+    "2171 prior images, resolved owners, exact/perceptual duplicates",
+    "Original prospective roles; cross-cohort identity/scene/session disjointness",
+    "Initial whole-image scene triage, original resolution for uncertainty",
+    "Exhaustive billboard boxes or explicit whole-photo absence; other categories unknown",
+    "Frozen fresh-data readiness minima from19October; no threshold reduction"
+  ],
+  "prior_job": "7824179",
+  "old_intake_preserved": true,
+  "role_changes_permitted": false,
+  "boundary_holds_preserved": true,
+  "training": false,
+  "new_jobs": false,
+  "approved_for_training": false,
+  "no_independent_human_review_claim": true
+}

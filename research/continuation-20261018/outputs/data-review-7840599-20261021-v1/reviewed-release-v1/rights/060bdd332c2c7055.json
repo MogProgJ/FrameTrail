@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "060bdd332c2c7055",
+  "image_sha256": "fd52f0d602816c90f1ffd2caf35d980337bdfccaf77546178d5b458a9b321a1d",
+  "source_review": {
+    "image_id": "060bdd332c2c7055",
+    "image_sha256": "fd52f0d602816c90f1ffd2caf35d980337bdfccaf77546178d5b458a9b321a1d",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/jlcernadas/6805889049",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/jlcernadas/6805889049",
+      "original_url": "https://farm6.staticflickr.com/7164/6805889049_3a87177fc1_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Jose Luis Cernadas Iglesias",
+      "author_url": "https://www.flickr.com/people/jlcernadas/",
+      "title": "2471-Pazo de Trasariz en Vimianzo (Coruña)",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Jose Luis Cernadas Iglesias",
+      "url": "https://www.flickr.com/photos/jlcernadas",
+      "image": "https://live.staticflickr.com/3751/buddyicons/38035878@N07.jpg?1369769219#38035878@N07"
+    },
+    "current_title": "2471-Pazo de Trasariz en Vimianzo (Coruña)",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Jose Luis Cernadas Iglesias",
+          "url": "https://www.flickr.com/photos/jlcernadas",
+          "image": "https://live.staticflickr.com/3751/buddyicons/38035878@N07.jpg?1369769219#38035878@N07"
+        }
+      },
+      "meta_description": "Antonio de Caamaño y Quintana, alcaide de la Casa de Altamira en la segunda mitad del S. XVII, mandó construir la Capilla anexa de la Virgen de la Soledad, y se le atribuye igualmente el resto del Pazo. En el S.XIX perteneció a las familias Ardeleiros y Teixeiro hasta que, en 1880, fue adquirido por D. Andrés Paz Fernández.\n\t\n\tForma un conjunto de gran atractivo y especial armonía, con elementos aparentemente dispares que, sin embargo, ofrecen la sugestiva realidad de determinados momentos fuertemente impregnados de cierto sabor romántico, ya históricos. Así, mientras unas palmeras caracterizan inequívocamente el \"gusto indiano\" típico de los emigrantes con fortuna del S. XIX, unas características chimeneas nos hablan con una elocuencia arquitectónica poco frecuente del poder económico y social de sus habitantes, a quienes resulta innegable el acierto del conjunto y particularmente, la arquería con arcos de medio punto y capiteles neo-dóricos, que soporta una solaina o galería balconada con capiteles neo-jónicos en un conjunto de clara inspiración claustral, propio del renacimiento tardío, característico en la Galicia del S. XVII. \n\t"
+    },
+    "identity_group": "flickr-nsid:38035878@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/jlcernadas/6805889049",
+    "html_sha256": "96de1cf97ea451607683e9fef2d99ecd6a7f8196fe147e59d6c26a6e218eeb2a",
+    "stored_sha256": "1764b35696b58083211435cb073c3fea25d267a277d9480d974e027fbc263bde",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\060bdd332c2c7055.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\060bdd332c2c7055.json",
+    "sha256": "2ac84c642fa0cc0156c014d986a5ec952738161038339ebcebf5ffd1974b05c1"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\060bdd332c2c7055.json",
+    "sha256": "4d4c264fd2e296e0564a37cd91861d94da6a9218c3a6afdfd4a899241956b9d7"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/jlcernadas/6805889049",
+    "original_url": "https://farm6.staticflickr.com/7164/6805889049_3a87177fc1_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Jose Luis Cernadas Iglesias",
+    "author_url": "https://www.flickr.com/people/jlcernadas/",
+    "title": "2471-Pazo de Trasariz en Vimianzo (Coruña)",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

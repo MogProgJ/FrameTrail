@@ -1,0 +1,50 @@
+[
+  {
+    "index": 0,
+    "image_sha256": "641514b650ac0e153868593b476625f3369c5a36ec36dc8caf3daeb603af364b",
+    "width": 1024,
+    "height": 768,
+    "PNG": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-0.png",
+    "RGB": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-0.rgb"
+  },
+  {
+    "index": 1,
+    "image_sha256": "cf73b38e71854364030a99395dc6c51b28b01f1f8561ca5f72b0e78e3a304ada",
+    "width": 1024,
+    "height": 667,
+    "PNG": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-1.png",
+    "RGB": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-1.rgb"
+  },
+  {
+    "index": 2,
+    "image_sha256": "e98f18a64e9a67d01b016275d1b4e9b704a185abe9f5b0259f89e72804319e20",
+    "width": 1024,
+    "height": 768,
+    "PNG": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-2.png",
+    "RGB": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-2.rgb"
+  },
+  {
+    "index": 3,
+    "image_sha256": "3d7cf537845f690bf1d09aff6ea2f303dcef9825a60bcfc740ba709237c82e01",
+    "width": 1024,
+    "height": 768,
+    "PNG": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-3.png",
+    "RGB": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-3.rgb"
+  },
+  {
+    "index": 4,
+    "image_sha256": "3cb3f4a22c3f284271e48faf0fe9496ac6b932ab6f2b86972e16bf1df2ad5e99",
+    "width": 1280,
+    "height": 720,
+    "PNG": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-4.png",
+    "RGB": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-4.rgb"
+  },
+  {
+    "index": 5,
+    "image_sha256": "2443149950e8f3f929b78a12ae32d34f356f1dbc0417ea7405d0605d934b6f1f",
+    "width": 720,
+    "height": 1280,
+    "PNG": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-5.png",
+    "RGB": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-balanced-7805570-20261018-v1\\evidence\\probes\\probe-5.rgb"
+  }
+]

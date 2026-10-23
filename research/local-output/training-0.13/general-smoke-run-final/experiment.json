@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "mode": "smoke",
+  "dataset_lock_sha256": "9c71e1b1d749f1d2c97604fc37aa363c51831e3838e5c7254bd26ba1016cb0b2",
+  "parent_weights_sha256": "4663086e1b8edbc4202a9ec589b03195ed149ef8aa8beeb4b503e0e35ff1731a",
+  "config": {
+    "schema": 1,
+    "family": "yolov8s-openimages",
+    "epochs": 1,
+    "imgsz": 320,
+    "batch": 2,
+    "device": "cpu",
+    "seed": 17,
+    "lr0": 0.0001,
+    "freeze": 10,
+    "patience": 5
+  },
+  "images": {
+    "train": 70,
+    "val": 11,
+    "test": 15
+  },
+  "raw_labels": 601,
+  "canonical_categories": 597,
+  "limits": "Smoke runs prove mechanics only. A trained artifact needs independent evaluation before adoption.",
+  "status": "completed",
+  "code_revision": "65a3f6de4f833d445eabbdc86c21e00103d90cc1",
+  "config_sha256": "4eaef05a93b2c7654906f8673267dfbde478adaa3531990d1579b79ae99ed8ef",
+  "source_sha256": {
+    "scripts/train-detector.py": "2970d00162b56ccde5fd18d5a662a63963e33a927d4c817c74f79473b6f2b43b",
+    "scripts/training_data.py": "ec5e6653c959f9fc4192a509a8d3f9b93bad5843ad073c8c810d01dc7452020f"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.8.0+cpu",
+    "ultralytics": "8.3.228",
+    "cuda": null,
+    "packages_sha256": "126b4332254623e983c50e68dd37c4f8f885d51d35535f1388786784ce051757"
+  },
+  "device": "CPU",
+  "elapsed_seconds": 20.68800000000192,
+  "checkpoints": {
+    "best.pt": "d6ff5eb9ef0e16d7a7f02b384fa0c0412975d833cabd5645ead61d5507afb336",
+    "last.pt": "8418a92231d9c795def9a9652e1f5fd2d49fe838bf57378be3e3bbb3ad2b5215"
+  },
+  "locked_test_evaluated": false,
+  "approved_for_application": false
+}

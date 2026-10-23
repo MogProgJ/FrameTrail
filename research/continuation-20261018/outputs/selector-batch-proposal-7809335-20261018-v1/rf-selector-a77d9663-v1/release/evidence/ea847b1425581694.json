@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "ea847b1425581694",
+  "image_sha256": "54033da487e906d3f1a7be3fa861afcbc620edfe37b738c3472c033a7ff32cf7",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "ea847b1425581694",
+    "image_sha256": "54033da487e906d3f1a7be3fa861afcbc620edfe37b738c3472c033a7ff32cf7",
+    "selected_category": "towel",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/carmenlidia/9707057573",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/carmenlidia/9707057573",
+      "original_url": "https://farm5.staticflickr.com/3833/9707057573_1ff735286e_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Carmen L\u00eddia",
+      "author_url": "https://www.flickr.com/people/carmenlidia/",
+      "title": "Toalhas",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Carmen L\u00eddia",
+      "url": "https://www.flickr.com/photos/carmenlidia",
+      "image": "https://live.staticflickr.com/7383/buddyicons/33912998@N05.jpg?1376437547#33912998@N05"
+    },
+    "current_title": "Toalhas",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Carmen L\u00eddia",
+          "url": "https://www.flickr.com/photos/carmenlidia",
+          "image": "https://live.staticflickr.com/7383/buddyicons/33912998@N05.jpg?1376437547#33912998@N05"
+        }
+      },
+      "meta_description": "                               "
+    },
+    "identity_group": "flickr-nsid:33912998@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/carmenlidia/9707057573",
+    "html_sha256": "6e8f3d5b6071db38364dbdfb08a691e6c036b4dc780de33628213e91a24d5a45",
+    "stored_sha256": "04950ecbf063893f7f623abeb0e2b5d42179ca3bfa5aab96a07f9def58b71573",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\ea847b1425581694.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/ea847b1425581694.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

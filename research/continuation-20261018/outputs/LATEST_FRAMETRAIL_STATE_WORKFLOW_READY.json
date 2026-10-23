@@ -1,0 +1,7 @@
+{
+  "status": "local-workflow-fixes-packaged-and-verified",
+  "package": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-workflow-20261019-v1",
+  "cluster": "user-reported outage; latest data-job status unconfirmed",
+  "production_adoption": false,
+  "next_step": "Use a representative project video to assess the verified local workflow; retain existing cluster tasks during outage."
+}

@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-17T23:30:17.203424+00:00",
+  "preserved_input_hashes_verified": 73,
+  "all_451_dispositions_accounted": true,
+  "current_draft_images": 57,
+  "current_draft_boxes": 115,
+  "class_box_counts": {
+    "mop": 20,
+    "broom": 12,
+    "bucket": 4,
+    "clothes hanger": 36,
+    "toaster": 43
+  },
+  "byte_identical_image_copies": 57,
+  "bounded_boxes": 115,
+  "scope_records": 58,
+  "scope_cells": 290,
+  "all_negative_supervision_disabled": true,
+  "cohort_hash_records_compared": 1325,
+  "exact_hash_collisions": 0,
+  "publisher_visual_matches": 5,
+  "publisher_scene_associations": 1,
+  "gallery": {
+    "status": "passed",
+    "mode": "headless-only-no-desktop-control",
+    "checks": [
+      "all reviewed images",
+      "current partial draft",
+      "new source hold",
+      "publisher traced",
+      "unknown target scope",
+      "reviewed hanger images",
+      "refined bbox search",
+      "all 58 local images load",
+      "compact viewport",
+      "five publisher photo comparisons load"
+    ],
+    "page_errors": []
+  },
+  "independent_human_review": false,
+  "rights_verified": false,
+  "new_jobs_submitted": 0,
+  "gpu_training_started": false,
+  "trial_7780632_modified": false,
+  "app_or_weights_modified": false,
+  "desktop_control_used": false,
+  "limitation": "This is an assistant quality/provenance continuation; no rights, training, evaluation or application release."
+}

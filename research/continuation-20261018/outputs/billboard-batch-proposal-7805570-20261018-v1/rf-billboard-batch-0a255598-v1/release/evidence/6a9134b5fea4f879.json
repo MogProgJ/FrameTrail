@@ -1,0 +1,64 @@
+{
+  "image_id": "6a9134b5fea4f879",
+  "image_sha256": "858f7090618e82b6b1375fb5c937563d39a045adf087871b34c3411893971b39",
+  "publisher_attribution": {
+    "id": "6a9134b5fea4f879",
+    "landing_url": "https://www.flickr.com/photos/wscullin/3660221862",
+    "original_url": "https://c2.staticflickr.com/4/3334/3660221862_73ea3cf96b_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Will Scullin",
+    "author_url": "https://www.flickr.com/people/wscullin/",
+    "title": "Raccoon",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Will Scullin",
+    "url": "https://www.flickr.com/photos/wscullin",
+    "image": "https://live.staticflickr.com/7392/buddyicons/93278581@N00.jpg?1369087552#93278581@N00"
+  },
+  "current_title": "Raccoon",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Will Scullin",
+        "url": "https://www.flickr.com/photos/wscullin",
+        "image": "https://live.staticflickr.com/7392/buddyicons/93278581@N00.jpg?1369087552#93278581@N00"
+      }
+    },
+    "meta_description": "Oh hai"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/wscullin/3660221862",
+  "canonical_page_url": "https://www.flickr.com/photos/wscullin/3660221862",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "f533f0e1308e4acfa90073a9d3f600d9b1478575e4a0d6fea8b9bae41e51612d",
+  "source_gzip_sha256": "99d59532fab9c8de44889a678c4f948cf9d71d904f6da2ee7e17cf213eca9c5e",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-058",
+  "visual_proof_sha256": "73a01ab931e2f2f96a6c1fd957be172ab99c62937c3bb843e2a7b79655e5c93f",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

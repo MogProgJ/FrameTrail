@@ -1,0 +1,15 @@
+{
+  "image_id": "d31e547ece62eee0",
+  "source_url": "https://www.flickr.com/photos/biodivlibrary/6816212738",
+  "rights_verified": false,
+  "approved_for_training": false,
+  "http_status": 200,
+  "final_url": "https://www.flickr.com/photos/biodivlibrary/6816212738",
+  "content_type": "text/html",
+  "candidate_license_links": [],
+  "status": "retrieved-unreviewed",
+  "page_file": "pages/d31e547ece62eee0.html.gz",
+  "html_bytes": 519853,
+  "html_sha256": "c7b12ae0dddab72b6a6d0c62f3d16081417d2f02cd6533dee43b34aa62d2936c",
+  "stored_sha256": "4c4cc867896d8a0156a7bfe3f732874efeb1fc41ba8ff799abfd5ee78d618f52"
+}

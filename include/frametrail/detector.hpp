@@ -26,7 +26,8 @@ struct DetectionResult {
     double preprocess_ms{}, inference_ms{}, postprocess_ms{};
     ExecutionInfo execution;
 };
-enum class DetectorModel { nano, yolox_s, world_s, world_m, openimages, rf_scale7758628 };
+enum class DetectorModel { nano, yolox_s, world_s, world_m, openimages, rf_scale7758628, rf_balanced7805570 };
+bool is_rf_model(DetectorModel model);
 std::string_view model_id(DetectorModel model);
 std::string_view model_name(DetectorModel model);
 DetectorModel parse_model(std::string_view id);
@@ -84,6 +85,7 @@ std::vector<Detection> postprocess(std::span<const float> output, const Input& i
 namespace rfdetr {
 inline constexpr int input_size=512, queries=300, attributes=619;
 inline constexpr std::string_view checkpoint_sha256="1b72fc6474780a6805e919db5b1393d7e78b95209debafafce98c929c633f0d7";
+std::string_view checkpoint_for(DetectorModel model);
 std::vector<float> preprocess(const Frame& frame);
 std::vector<Detection> postprocess(std::span<const float> output,int width,int height,float confidence,float nms_iou);
 }

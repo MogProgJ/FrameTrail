@@ -1,0 +1,40 @@
+{
+  "image_id": "e5d879e9e68eaa03",
+  "image_sha256": "3d606fb2c47f282a2883eb0873aae0e947c32ee3db34d6684e3879312e1b38c4",
+  "identity_group": "flickr-nsid:16900221@N04",
+  "scene_group": "scene:wooden-storflaatan-spalen-oyangen-cycling-direction-signs-in-trees",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\e5d879e9e68eaa03.json",
+    "sha256": "33f38f296e14b8ba7b37623effbb8391b687ae7237c8eb5f6b9d328758d480f0"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-test-01.json",
+    "sha256": "fffa623bb2c2a007a905941a8e5bb3bdf50e01df7e6b772ad3a55277a307320a"
+  },
+  "content_decision": {
+    "id": "e5d879e9e68eaa03",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "traffic-information-signs",
+    "note": "Full original shows wooden cycling/hiking direction arrows and trees only; no campaign face.",
+    "scene_description": "Wooden Storflaatan Spalen Oyangen cycling direction signs in trees"
+  },
+  "prospective_split": "test",
+  "confuser_family": "traffic-information-signs",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

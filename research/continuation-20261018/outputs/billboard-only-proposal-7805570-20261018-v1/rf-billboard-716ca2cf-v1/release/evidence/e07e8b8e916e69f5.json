@@ -1,0 +1,64 @@
+{
+  "image_id": "e07e8b8e916e69f5",
+  "image_sha256": "97df8a8e5c969d40e83d560a64a964d37ecd1c50ee2273dd32990727ce939c27",
+  "publisher_attribution": {
+    "id": "e07e8b8e916e69f5",
+    "landing_url": "https://www.flickr.com/photos/jonomueller/6906420190",
+    "original_url": "https://farm6.staticflickr.com/7128/6906420190_744908c313_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Jonathan Mueller",
+    "author_url": "https://www.flickr.com/people/jonomueller/",
+    "title": "Dolce chilling on the couch",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Jonathan Mueller",
+    "url": "https://www.flickr.com/photos/jonomueller",
+    "image": "https://live.staticflickr.com/2854/buddyicons/45939540@N05.jpg?1369134769#45939540@N05"
+  },
+  "current_title": "Dolce chilling on the couch",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Jonathan Mueller",
+        "url": "https://www.flickr.com/photos/jonomueller",
+        "image": "https://live.staticflickr.com/2854/buddyicons/45939540@N05.jpg?1369134769#45939540@N05"
+      }
+    },
+    "meta_description": "Thought it was time to give Dolce another B&W photoshoot. She was just hanging out on the couch. She is a miniature Siberian Husky (28lbs). The sweetest dog ever! As always old Nikon glass looks great! This pic looks a little deceptive. Her eyes suggest that I had a single strobe on her when actually it was natural light with a wind behind me as the sun was setting.\n\t\n\tEOS 5D\n\tNikkor-S 55 f1.2 at 2.0\n\tPost in Aperture"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/jonomueller/6906420190",
+  "canonical_page_url": "https://www.flickr.com/photos/jonomueller/6906420190",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "25e3a99b6c3abcb48567979b52e63fec7ea24590ed657e168b92751d2fb0f9ba",
+  "source_gzip_sha256": "27f958dbb0723fb265071e4b7845cd64655dda536651fdd606dcf8e7caf8d82d",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-306",
+  "visual_proof_sha256": "32826b415e86f5820d254d98f4b238ddcdfe97558c42576fc8fe267c01a8ca64",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

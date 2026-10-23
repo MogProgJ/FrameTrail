@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "021211ec05394ab9",
+  "image_sha256": "d329ea7be86acf7e767ada0403d5ee6edd63f8d43444523231fffe1bb4c3a8d5",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "021211ec05394ab9",
+    "image_sha256": "d329ea7be86acf7e767ada0403d5ee6edd63f8d43444523231fffe1bb4c3a8d5",
+    "selected_category": "kettle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/44321195@N08/4155244793",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/44321195@N08/4155244793",
+      "original_url": "https://c2.staticflickr.com/3/2589/4155244793_55223c6605_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "jaynamana",
+      "author_url": "https://www.flickr.com/people/44321195@N08/",
+      "title": "Make a Wish 2",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "jaynamana",
+      "url": "https://www.flickr.com/photos/44321195@N08",
+      "image": "https://live.staticflickr.com/3482/buddyicons/44321195@N08.jpg?1257201492#44321195@N08"
+    },
+    "current_title": "Make a Wish 2",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "jaynamana",
+          "url": "https://www.flickr.com/photos/44321195@N08",
+          "image": "https://live.staticflickr.com/3482/buddyicons/44321195@N08.jpg?1257201492#44321195@N08"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:44321195@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/44321195@N08/4155244793",
+    "html_sha256": "91252423dec5a730b0675b7fcf6ea00a5635a023fe17f73fadd23e3554d9a920",
+    "stored_sha256": "da2dee9a4d2d91afbe86910e1f5574765658464855da174f9bb2b0e3a0dfaf1d",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\021211ec05394ab9.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/021211ec05394ab9.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

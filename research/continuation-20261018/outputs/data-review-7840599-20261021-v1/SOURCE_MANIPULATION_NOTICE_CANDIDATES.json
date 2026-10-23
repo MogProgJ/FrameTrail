@@ -1,0 +1,29 @@
+{
+  "candidates": [
+    {
+      "id": "9b5635760011caeb",
+      "role": "train",
+      "hits": [
+        "Created with",
+        "bighugelabs",
+        "Flickr Toys"
+      ],
+      "title": "Disco Flickr Ad",
+      "notices": {
+        "structured": {
+          "description": null,
+          "copyrightNotice": null,
+          "creditText": null,
+          "creator": {
+            "@type": "Person",
+            "name": "Clyde Robinson",
+            "url": "https://www.flickr.com/photos/crobj",
+            "image": "https://live.staticflickr.com/211/buddyicons/85549619@N00.jpg?1213280962#85549619@N00"
+          }
+        },
+        "meta_description": "Created with <a href=\"http://bighugelabs.com/flickr/\" rel=\"noreferrer nofollow\">fd's Flickr Toys</a>."
+      }
+    }
+  ],
+  "flags_are_manual_review_candidates_not_automatic_exclusions": true
+}

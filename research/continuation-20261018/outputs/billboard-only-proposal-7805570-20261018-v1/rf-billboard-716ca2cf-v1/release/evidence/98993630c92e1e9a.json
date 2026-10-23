@@ -1,0 +1,64 @@
+{
+  "image_id": "98993630c92e1e9a",
+  "image_sha256": "1317f4af157a9918466b9216e8a293f451c49422595881124e008b8393a619e2",
+  "publisher_attribution": {
+    "id": "98993630c92e1e9a",
+    "landing_url": "https://www.flickr.com/photos/spilt-milk/377148102",
+    "original_url": "https://c3.staticflickr.com/1/128/377148102_e32d297ed2_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "yoppy",
+    "author_url": "https://www.flickr.com/people/spilt-milk/",
+    "title": "overhauled my HHK lite (4)",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "yoppy",
+    "url": "https://www.flickr.com/photos/spilt-milk",
+    "image": "https://live.staticflickr.com/1/buddyicons/44124362019@N01.jpg?1130285167#44124362019@N01"
+  },
+  "current_title": "overhauled my HHK lite (4)",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "yoppy",
+        "url": "https://www.flickr.com/photos/spilt-milk",
+        "image": "https://live.staticflickr.com/1/buddyicons/44124362019@N01.jpg?1130285167#44124362019@N01"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/spilt-milk/377148102",
+  "canonical_page_url": "https://www.flickr.com/photos/spilt-milk/377148102",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "746eed22512c2b4837e075bf9b35b8d918835c0073ce24ccaa5374d7a7a7da7e",
+  "source_gzip_sha256": "decc06952d8475faf81824d51e2d100c591cd13c96201b9f1cb949c14eb0c0e2",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-226",
+  "visual_proof_sha256": "dcc84adbc3d2bd35abb418a4a1fd3fc66f755d8d3b9ca7150ced6744b988b03b",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

@@ -1,0 +1,33 @@
+{
+  "status": "frozen-before-new-contrast-fit-or-validation",
+  "hypothesis": "Additional reviewed training-sign contrast may teach billboard-vs-traffic-sign specificity that the35-image absence pool underrepresents.",
+  "source_of_new_regions": "Eight existing TRAIN photos visually inspected by assistant; retain unknown billboard scope outside reviewed panels. No validation/test image or new downloaded photo used.",
+  "fit": "Same positive/full-absence BCE as prior uniform probes; add mean per-reviewed-region negative BCE at weight3or10; anchor ridge1or10.",
+  "recipes": [
+    {
+      "index": 0,
+      "region_weight": 3.0,
+      "ridge": 1.0
+    },
+    {
+      "index": 1,
+      "region_weight": 3.0,
+      "ridge": 10.0
+    },
+    {
+      "index": 2,
+      "region_weight": 10.0,
+      "ridge": 1.0
+    },
+    {
+      "index": 3,
+      "region_weight": 10.0,
+      "ridge": 10.0
+    }
+  ],
+  "selection": "Fit allfour before evaluation. Same135development photos and both-baseline retention/FP/unscored530 guard, strict ranking gain; baseline and earlier recipe retain ties.",
+  "threshold": 0.35,
+  "annotation_limit": "New assistant-reviewed region exclusions, not independently human verified. Original release/validation/heldout annotations remain untouched. Whole-image absence is not inferred.",
+  "new_GPU_jobs": 0,
+  "production_adoption": false
+}

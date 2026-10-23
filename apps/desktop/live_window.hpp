@@ -13,6 +13,8 @@ class LiveWindow:public QMainWindow {
 public:
     explicit LiveWindow(QString model, frametrail::DetectorModel variant=frametrail::DetectorModel::nano,
         frametrail::DetectorBackend backend=frametrail::DetectorBackend::cpu);
+    void request_stop(){session_.stop();}
+    bool active() const{return session_.snapshot().active;}
 protected:
     void closeEvent(QCloseEvent*) override;
 private:

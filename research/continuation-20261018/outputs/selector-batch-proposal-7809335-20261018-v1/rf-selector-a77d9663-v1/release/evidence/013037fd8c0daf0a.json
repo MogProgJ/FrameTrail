@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "013037fd8c0daf0a",
+  "image_sha256": "c3429a67e0d25e31fbde6f95b17023f5b2604ce21aad1367c01b538d4f527cb6",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "013037fd8c0daf0a",
+    "image_sha256": "c3429a67e0d25e31fbde6f95b17023f5b2604ce21aad1367c01b538d4f527cb6",
+    "selected_category": "billboard",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/luigi_and_linda/4250701345",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/luigi_and_linda/4250701345",
+      "original_url": "https://c3.staticflickr.com/5/4032/4250701345_79bb8e7f68_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Luigi Guarino",
+      "author_url": "https://www.flickr.com/people/luigi_and_linda/",
+      "title": "Christmas in Nairobi",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Luigi Guarino",
+      "url": "https://www.flickr.com/photos/luigi_and_linda",
+      "image": "https://live.staticflickr.com/1544/buddyicons/51035803402@N01.jpg?1452168738#51035803402@N01"
+    },
+    "current_title": "Christmas in Nairobi",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Luigi Guarino",
+          "url": "https://www.flickr.com/photos/luigi_and_linda",
+          "image": "https://live.staticflickr.com/1544/buddyicons/51035803402@N01.jpg?1452168738#51035803402@N01"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:51035803402@N01",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/luigi_and_linda/4250701345",
+    "html_sha256": "9163ebd167e2add18152b172a5acdb3776b5138674417fe9b7e0bbee324c2756",
+    "stored_sha256": "c2a2307a5c5d5169efd28e2228016dee37c42eb62a3e374239dd1684abc830e0",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\013037fd8c0daf0a.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/013037fd8c0daf0a.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

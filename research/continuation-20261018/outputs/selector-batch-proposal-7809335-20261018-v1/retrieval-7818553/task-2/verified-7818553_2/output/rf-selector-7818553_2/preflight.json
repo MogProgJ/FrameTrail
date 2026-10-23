@@ -1,0 +1,38 @@
+{
+  "actual_job_id": "7818553_2",
+  "slurm_job_id": "7820299",
+  "array_task_index": 2,
+  "variant": {
+    "index": 2,
+    "name": "enc3e-05-region1",
+    "main_lr": 0.0001,
+    "encoder_lr": 3e-05,
+    "region_weight": 1,
+    "negative_presentations": 2,
+    "accumulation": 4,
+    "maximum_updates": 3000,
+    "schedule_file": "schedules/task-2.json",
+    "schedule_sha256": "38e757e7d296fa239712e50c60d8c031066206b00bd8ae5a7d9e75910f22e521"
+  },
+  "previous_job": "7805570",
+  "candidate_sha256": "e43a2c7a415c4f82209a1fc2471d8677503f51315e71f422ec0d6665eac377b9",
+  "protocol_sha256": "a77d9663fcc898b6a257f6722dd37bc24b1d3a2d3065eb8cce5f0625403f019a",
+  "approval_sha256": "85aa28b8ad3f8e5f76f1fa4746496cb32163c63ae15ec3de98568ed9a280a81f",
+  "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "original_pretrained_sha256": "d81979a9213a2109345158ce9232668df4c1ae52e9b8db3f2ec0a8cbad959b33",
+  "active_classifier_rows": [
+    133
+  ],
+  "active_classifier_heads": [
+    "class_embed",
+    "transformer.enc_out_class_embed.0"
+  ],
+  "region_overlay_sha256": "c1cd708dfd7ae6528f04ca5ae2c2a078a0d3010ea7d00ed130a8c80ad0a6c14d",
+  "train_photos": 700,
+  "sampled_training_photos": 63,
+  "validation_photos": 135,
+  "test_photos_used": 0,
+  "fresh_video_frames_used": 0,
+  "independent_human_recheck": false,
+  "approved_for_application": false
+}

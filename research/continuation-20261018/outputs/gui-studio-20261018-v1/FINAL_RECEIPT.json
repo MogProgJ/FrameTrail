@@ -1,0 +1,17 @@
+{
+  "status": "isolated-GUI-revamp-packaged-and-verified",
+  "created_at": "2026-10-18T02:10:41.005515+00:00",
+  "launcher": "Run-FrameTrail.cmd",
+  "preview": "preview-gallery.html",
+  "executable_sha256": "c8314a8200506127c0dbdf727fdb363470f289f687dc82829f951618827bbcd4",
+  "RF_weights_sha256": "5a5ea0754c11cb664a1b5962efb40071173a6b837e8cbcc490617c4cd227a1f5",
+  "original_app_preserved": true,
+  "source_parent_preserved": true,
+  "new_trial_weights_adopted": false,
+  "new_jobs_submitted": 0,
+  "visible_app_launched": false,
+  "validation": "VALIDATION_RECEIPT.json",
+  "publisher_permissions": "../publisher-permissions-20261018-v1/index.html",
+  "packaged_app_smoke_passed": true,
+  "preview_gallery_passed": true
+}

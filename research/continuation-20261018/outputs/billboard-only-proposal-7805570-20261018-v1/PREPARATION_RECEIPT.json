@@ -1,0 +1,20 @@
+{
+  "status": "prepared-awaiting-exact-human-cluster-approval",
+  "protocol_sha256": "716ca2cf411984698e6d096f00fd5ef01995bee9ed4fe0c82a742e26c4bc6e1c",
+  "package_seal_sha256": "0a0316609ca6f8ddb2c62bfc09027dd2449bda645b99bc8d3f8e97529fb5f112",
+  "sealed_files": 2921,
+  "all_sealed_files_match": true,
+  "python_AST_files": 16,
+  "contract_tests_passed": 5,
+  "result_verifier_tests_passed": 6,
+  "mock_submission_cases_passed": 3,
+  "inert_batch_entry_passed": true,
+  "powershell_51_syntax_passed": true,
+  "missing_approval_blocks_before_archive_and_SSH": true,
+  "stale_batch_path_corrected_before_submission": true,
+  "known_references_are_not_fresh_heldout": true,
+  "approval_present": false,
+  "archive_created": false,
+  "SSH_contacted": false,
+  "new_GPU_jobs": 0
+}

@@ -1,0 +1,25 @@
+{
+  "image_sha256": "b2435d9244a7aa410bfb990fbb336efd0269104960e5b40498c02438931f3e35",
+  "comparison": {
+    "passed": true,
+    "detections": 1,
+    "classes_match": true,
+    "minimum_iou": 0.9999994410654003,
+    "maximum_confidence_difference": 1.1920928955078125e-07,
+    "maximum_normalized_box_difference": 3.725290298461914e-08
+  },
+  "raw_parity": null,
+  "ORT_seconds": 0.42927099999724305,
+  "detections": [
+    {
+      "canonical_id": 4,
+      "confidence": 0.8992464542388916,
+      "box": [
+        424.66526794433594,
+        285.17582457512617,
+        557.4281158447266,
+        376.86452401429415
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "image_id": "0c39f6a763ce3ec0",
+  "image_sha256": "e0a49cc6db517a259e7ec8b037ad1cab7deddc14d0909fcbacc2cdefa25ca5a7",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "0c39f6a763ce3ec0",
+    "image_sha256": "e0a49cc6db517a259e7ec8b037ad1cab7deddc14d0909fcbacc2cdefa25ca5a7",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/lox/9330021499",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/lox/9330021499",
+      "original_url": "https://farm1.staticflickr.com/5494/9330021499_44dfa68b5e_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Lachlan Donald",
+      "author_url": "https://www.flickr.com/people/lox/",
+      "title": "DSC02355.jpg",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Lachlan Donald",
+      "url": "https://www.flickr.com/photos/lox",
+      "image": "https://live.staticflickr.com/5333/buddyicons/43117091@N00.jpg?1369089052#43117091@N00"
+    },
+    "current_title": "DSC02355.jpg",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Lachlan Donald",
+          "url": "https://www.flickr.com/photos/lox",
+          "image": "https://live.staticflickr.com/5333/buddyicons/43117091@N00.jpg?1369089052#43117091@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:43117091@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/lox/9330021499",
+    "html_sha256": "45257d6327ae6647f8a556519278e067a0c26dcd9fc8026c5f15b060a87eff3f",
+    "stored_sha256": "c2843803f85e7c022a1f2ca47fad826bac6ac9e5edfc5c3d8a495119d7d0f9ce",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\0c39f6a763ce3ec0.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\0c39f6a763ce3ec0.html.gz",
+    "sha256": "c2843803f85e7c022a1f2ca47fad826bac6ac9e5edfc5c3d8a495119d7d0f9ce"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

@@ -1,0 +1,80 @@
+{
+  "image_id": "a39dda42b11a5c4c",
+  "image_sha256": "e756112a3eb45277010e374921efbc3e154a236296737bf2cc94ef9b43c0fecd",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\source-review\\source-evidence-review.json",
+    "sha256": "cb167e232b12af07d3ac37739873b93f447bbf2483d569f42a38a27be6a8d47d"
+  },
+  "source_record": {
+    "image_id": "a39dda42b11a5c4c",
+    "image_sha256": "e756112a3eb45277010e374921efbc3e154a236296737bf2cc94ef9b43c0fecd",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/63169042@N00/2599870671",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/63169042@N00/2599870671",
+      "original_url": "https://c5.staticflickr.com/4/3014/2599870671_ac2a545044_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Dave Long",
+      "author_url": "https://www.flickr.com/people/63169042@N00/",
+      "title": "My own business Billboard 1992",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Dave Long",
+      "url": "https://www.flickr.com/photos/63169042@N00",
+      "image": "https://combo.staticflickr.com/pw/images/bbuddyicon06.png#63169042@N00"
+    },
+    "current_title": "My own business Billboard 1992",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Dave Long",
+          "url": "https://www.flickr.com/photos/63169042@N00",
+          "image": "https://combo.staticflickr.com/pw/images/bbuddyicon06.png#63169042@N00"
+        }
+      },
+      "meta_description": "The Connecting Line BBS 1992, Beloit Wisconsin"
+    },
+    "identity_group": "flickr-nsid:63169042@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/63169042@N00/2599870671",
+    "html_sha256": "02d60382774a579d29c28008013f35f63f0166dadbaa99bc9a1bdca01d6c6257",
+    "stored_sha256": "e324bdaf9a208094da67820cba05ff2e0cbdce42e8b8d7acca180408f6eb500c",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\a39dda42b11a5c4c.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\a39dda42b11a5c4c.html.gz",
+    "sha256": "e324bdaf9a208094da67820cba05ff2e0cbdce42e8b8d7acca180408f6eb500c"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

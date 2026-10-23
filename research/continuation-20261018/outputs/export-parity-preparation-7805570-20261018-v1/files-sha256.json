@@ -1,0 +1,11 @@
+{
+  "approval-guard-check.txt": "cd05e913ce1bd9e4836cd77450eb998e967e6e36964bf24b1256cc2a53acc8c5",
+  "CONTINUATION_STATE.json": "3d3986b942689de96f7b283020b1cb6bc017e291ec093977fad1d9901ce25e40",
+  "export_and_check.py": "0145155a36b1368bfa93e5fffbd8749a340ea1a8151cdde1eb1a6397d34fb0ec",
+  "EXPORT_PLAN.json": "a019c6c3eb57caa3ee35170ac038a3d450ec0a0073e06e9f9145f2e47ffdb158",
+  "frozen-training-protocol.json": "ddbb57c60855b5499ecdc039642fb5fd527634767e0575507e15b5774131e8c1",
+  "parity_contract.py": "9ef0875cca8117cf88f9f50658dc19683cd86a0e9f37fd9a566ca7b3de5ac521",
+  "PROPOSAL.md": "431ee161b49c4652545b938049db74f7640b1ba76fe39c37450d571bcea1bebe",
+  "test_parity_contract.py": "7e604e0bf4b0e7b98ceede45f6583db0d15e80307311b796093bb3b99742decc",
+  "VALIDATION_RECEIPT.json": "e4219139cd6166f712f0f7b49868671f125ee7c7cfe9deb7dee9ed6caa572b8d"
+}

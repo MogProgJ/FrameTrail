@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "6b8878aab6261376",
+  "image_sha256": "154a860714b35749a8d3230298e8ffb84e7572c7b1baf07ccde249d076035fde",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "6b8878aab6261376",
+    "image_sha256": "154a860714b35749a8d3230298e8ffb84e7572c7b1baf07ccde249d076035fde",
+    "selected_category": "towel",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/firstbaptistnashville/14694234974",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/firstbaptistnashville/14694234974",
+      "original_url": "https://farm7.staticflickr.com/2899/14694234974_4ac908bfa7_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "First Baptist Nashville",
+      "author_url": "https://www.flickr.com/people/firstbaptistnashville/",
+      "title": "Camp2014Monday037",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Nashville First Baptist",
+      "url": "https://www.flickr.com/photos/firstbaptistnashville",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/91156848@N00.jpg?1661365292#91156848@N00"
+    },
+    "current_title": "Camp2014Monday037",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Nashville First Baptist",
+          "url": "https://www.flickr.com/photos/firstbaptistnashville",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/91156848@N00.jpg?1661365292#91156848@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:91156848@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/firstbaptistnashville/14694234974",
+    "html_sha256": "5fe6c32933e84f02060e40fa00b2c5f90289a87ebb07472fffcc5f54164d2017",
+    "stored_sha256": "1854f6818eee278da886fb37430db81c30e1d872678217739455b31f43adb18f",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\6b8878aab6261376.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/6b8878aab6261376.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

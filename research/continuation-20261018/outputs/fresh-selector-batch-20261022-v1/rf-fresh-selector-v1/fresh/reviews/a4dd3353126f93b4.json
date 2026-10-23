@@ -1,0 +1,40 @@
+{
+  "image_id": "a4dd3353126f93b4",
+  "image_sha256": "d916251f4e8c58b06766911e206d1ce4f1e7c5e616659787e0354b0a51e6e714",
+  "identity_group": "flickr-nsid:67663596@N03",
+  "scene_group": "scene:red-campervan-beside-western-australia-welcome-information-marker",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\a4dd3353126f93b4.json",
+    "sha256": "5145ebf4a5f251c4390e9aa970e8d50f1d0b7da8471487cd4dd7bb1b0feec3c7"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-val-02.json",
+    "sha256": "26e6ea8c0a176e969ac8cdab4e9166e73b11d3356f8051d981e1ecfd82454b3a"
+  },
+  "content_decision": {
+    "id": "a4dd3353126f93b4",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "traffic-information-signs",
+    "note": "Full original resolves Welcome to Western Australia location information marker, not an advertisement. Van/window writing and road stop sign do not contain advertising campaign faces. Initial positive triage corrected before any predictions.",
+    "scene_description": "Red campervan beside Western Australia welcome information marker"
+  },
+  "prospective_split": "val",
+  "confuser_family": "traffic-information-signs",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

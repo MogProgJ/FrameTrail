@@ -1,0 +1,80 @@
+{
+  "image_id": "97c4a86fe18afdb8",
+  "image_sha256": "fd4702dcdb379568da11e74feda1e7ebc16afcda9eeb81173be734ad6ff4ee42",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\source-review\\source-evidence-review.json",
+    "sha256": "6881fe98e939931c5d708dc20e1828c831c11356f67fabd03ca609e65bd6adf8"
+  },
+  "source_record": {
+    "image_id": "97c4a86fe18afdb8",
+    "image_sha256": "fd4702dcdb379568da11e74feda1e7ebc16afcda9eeb81173be734ad6ff4ee42",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/jamiejohn/4615884676",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/jamiejohn/4615884676",
+      "original_url": "https://c1.staticflickr.com/4/3311/4615884676_c674929f27_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Jamie Davies",
+      "author_url": "https://www.flickr.com/people/jamiejohn/",
+      "title": "Robin Hood Poster - Cannes Film Festival 2010",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Jamie Davies",
+      "url": "https://www.flickr.com/photos/jamiejohn",
+      "image": "https://live.staticflickr.com/212/buddyicons/8374005@N02.jpg?1179589792#8374005@N02"
+    },
+    "current_title": "Robin Hood Poster - Cannes Film Festival 2010",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Jamie Davies",
+          "url": "https://www.flickr.com/photos/jamiejohn",
+          "image": "https://live.staticflickr.com/212/buddyicons/8374005@N02.jpg?1179589792#8374005@N02"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:8374005@N02",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/jamiejohn/4615884676",
+    "html_sha256": "81b5c3946da831bd2624bcc796ab5838bd87a43fd0732eaed345927580aa5342",
+    "stored_sha256": "9f04c5f82ea1e371b351258dd00f7acbdc6be885a6282e237e87309d87933c83",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\97c4a86fe18afdb8.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\97c4a86fe18afdb8.html.gz",
+    "sha256": "9f04c5f82ea1e371b351258dd00f7acbdc6be885a6282e237e87309d87933c83"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

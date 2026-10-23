@@ -1,0 +1,72 @@
+{
+  "image_id": "3a3509bdce907e61",
+  "image_sha256": "15c9425dee28048ead0cc801849d5b08b89c03d22cf40bd2f84d567d41bca024",
+  "publisher_attribution": {
+    "id": "3a3509bdce907e61",
+    "landing_url": "https://www.flickr.com/photos/husseinabdallah/4400254672",
+    "original_url": "https://farm2.staticflickr.com/4058/4400254672_ca4f3240fe_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "abdallahh",
+    "author_url": "https://www.flickr.com/people/husseinabdallah/",
+    "title": "Air Canada Airbus A319 C-GITR",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "abdallahh",
+    "url": "https://www.flickr.com/photos/husseinabdallah",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/22168167@N00.jpg?1721029017#22168167@N00"
+  },
+  "current_title": "Air Canada Airbus A319 C-GITR",
+  "caption_and_notices": {
+    "image_id": "3a3509bdce907e61",
+    "identity_group": "flickr-nsid:22168167@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "abdallahh",
+      "url": "https://www.flickr.com/photos/husseinabdallah",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/22168167@N00.jpg?1721029017#22168167@N00"
+    },
+    "current_title": "Air Canada Airbus A319 C-GITR",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "abdallahh",
+        "url": "https://www.flickr.com/photos/husseinabdallah",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/22168167@N00.jpg?1721029017#22168167@N00"
+      }
+    },
+    "meta_description": ""
+  },
+  "source_url": "https://www.flickr.com/photos/husseinabdallah/4400254672",
+  "canonical_page_url": "https://www.flickr.com/photos/husseinabdallah/4400254672",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "4add61519269636b1c2c9befbcaf8424a568e65b6d2f110baaa2a83e6e3f46fd",
+  "source_gzip_sha256": "fc5de0a3f12bcc21eea52e0338a7dd3507be07f1b04cbd27a19b0ace0fb21cae",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "0029f59be7066516d92ce86e7d29093e697eb8b1475cfd92caf46cfa7dc64479"
+}

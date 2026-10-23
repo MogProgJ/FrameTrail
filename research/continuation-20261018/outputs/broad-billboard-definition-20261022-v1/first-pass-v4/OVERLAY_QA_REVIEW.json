@@ -1,0 +1,64 @@
+{
+  "reviewer": "assistant-same-session-not-independent-human",
+  "sheets_viewed": [
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\fresh-role-draft-v2\\TEST_QA_SHEET_01.jpg",
+      "sha256": "f9ffd4b28f4e752cf29969352a1a75b291a62fcc0b97f6799cb0a4f5edaa0a80"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\fresh-role-draft-v2\\TEST_QA_SHEET_02.jpg",
+      "sha256": "32a3d6ab20b90b631997dd97440b37ef35944bdad01a01cc7162193b0a582310"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\fresh-role-draft-v2\\TRAIN_QA_SHEET_01.jpg",
+      "sha256": "e99280017bb6b115e5c1abc1954aea9cef699fa0e9132b90ddbc23a5d74121bd"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\fresh-role-draft-v2\\TRAIN_QA_SHEET_02.jpg",
+      "sha256": "fcbc4baf3e290ace39a83ba6773ce2215507d367b2d04aff1c15d82de613f648"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\fresh-role-draft-v2\\TRAIN_QA_SHEET_03.jpg",
+      "sha256": "03f9da942991b091e37664663593f54082c1c9504b6e7b27b331862d21d0350d"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\fresh-role-draft-v2\\VAL_QA_SHEET_01.jpg",
+      "sha256": "961397acdb08f700b239b98ebd489707ef2b15315e173bfe3cd3282d9fb88aec"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\fresh-role-draft-v2\\VAL_QA_SHEET_02.jpg",
+      "sha256": "db275b309e4de6fe1a8bd255a38248ef279acd322f21f0154390f6c86e154ba6"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\fresh-train-draft-v1\\QA_SHEET_01.jpg",
+      "sha256": "5e0fbbedc288313c187c1e44b557711fd6dcae4f3671a41167d6164526291fb3"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\fresh-train-draft-v1\\QA_SHEET_02.jpg",
+      "sha256": "c7ab79c7a655cc6b1395776198968e739c7f4fba6a1423b594df02d855f33f7d"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\fresh-train-draft-v1\\QA_SHEET_03.jpg",
+      "sha256": "4db047c93dba2852b3463e9a05715c6b1788932671366f1a5a5931b11dbd6ff8"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\review-stage-v3\\OLD_QA_SHEET_01.jpg",
+      "sha256": "7637f004755c3d5e5883a3e4f886181968355426284ba88554af57ebe860e1f5"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\review-stage-v3\\OLD_QA_SHEET_02.jpg",
+      "sha256": "3c14fbfff04e1799d5a652858363777d230811ee8c210cc238c233bff857d500"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\review-stage-v3\\OLD_QA_SHEET_03.jpg",
+      "sha256": "42bd947e5a27007c155e0d60d080bc94cbdbc5e9d2106db8f5a33872d8f2aba8"
+    },
+    {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\broad-billboard-definition-20261022-v1\\review-stage-v3\\OLD_QA_SHEET_04.jpg",
+      "sha256": "c0c459d28e6ccd8abf55a0b535485522a2cc5cb158018d4a2837da80aa57f46b"
+    }
+  ],
+  "result": "Draft additions visually checked; unresolved/dense/segmentation cases remain held. One inherited street-name target conflict found and explicitly held. No blanket semantic approval.",
+  "source_originals_viewed": 323,
+  "approved_for_training": false
+}

@@ -1,0 +1,63 @@
+{
+  "photo": 25,
+  "image_id": "8f569f1c1ba55076",
+  "publisher_attribution": {
+    "id": "8f569f1c1ba55076",
+    "landing_url": "https://www.flickr.com/photos/dariuspinkston/15504250979/",
+    "original_url": "https://farm7.staticflickr.com/7581/15504250979_95e6b882b5_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Darius Pinkston",
+    "author_url": "https://www.flickr.com/people/dariuspinkston/",
+    "title": "This morning at my job!!",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Darius Pinkston",
+    "url": "https://www.flickr.com/photos/dariuspinkston",
+    "image": "https://live.staticflickr.com/3947/buddyicons/30221248@N04.jpg?1492547137#30221248@N04"
+  },
+  "current_title": "This morning at my job!!",
+  "source_url": "https://www.flickr.com/photos/dariuspinkston/15504250979/",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 25,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "Darius Pinkston",
+      "url": "https://www.flickr.com/photos/dariuspinkston",
+      "image": "https://live.staticflickr.com/3947/buddyicons/30221248@N04.jpg?1492547137#30221248@N04"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Darius Pinkston",
+      "url": "https://www.flickr.com/photos/dariuspinkston",
+      "image": "https://live.staticflickr.com/3947/buddyicons/30221248@N04.jpg?1492547137#30221248@N04"
+    },
+    "meta_description": ""
+  },
+  "creator_override": null,
+  "image_sha256": "4856b21ce67ef584c9ed2824d123c0183316beeae8f34fa083ed3c7d2a09d178",
+  "source_page_sha256": "ad89c725aa80d5985fff067018ca4e95a901134b77cf623968809bdcf980383a",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "cd5d9d8105056029c5e7d2d680a32890fb6e055dbff26ca044f94538dc2c3a0e",
+  "source_job": 7626978,
+  "scope_note": "One bus and its two visible road wheels retained. Body windows/doors and background remain unknown.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

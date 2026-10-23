@@ -1,0 +1,80 @@
+{
+  "image_id": "ef535834c691726f",
+  "image_sha256": "ffd7135c6023f66811cd808ed851f0504d90b73ba33eaddc648727e8e48ba2bc",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "scope": "Private research on user PC/KIT; attribution retained; no public redistribution authorized by this release.",
+  "status": "photo-specific-source-license-and-creator-review-cleared-for-private-research",
+  "source_review_bundle_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\source-review\\source-evidence-review.json",
+    "sha256": "6881fe98e939931c5d708dc20e1828c831c11356f67fabd03ca609e65bd6adf8"
+  },
+  "source_record": {
+    "image_id": "ef535834c691726f",
+    "image_sha256": "ffd7135c6023f66811cd808ed851f0504d90b73ba33eaddc648727e8e48ba2bc",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "train",
+    "source_url": "https://www.flickr.com/photos/patsch/38508930",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/patsch/38508930",
+      "original_url": "https://c8.staticflickr.com/1/31/38508930_0068421a56_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Patrik Tschudin",
+      "author_url": "https://www.flickr.com/people/patsch/",
+      "title": "CIMG2127",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Patrik Tschudin",
+      "url": "https://www.flickr.com/photos/patsch",
+      "image": "https://live.staticflickr.com/14/buddyicons/35637563@N00.jpg?1117392472#35637563@N00"
+    },
+    "current_title": "CIMG2127",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Patrik Tschudin",
+          "url": "https://www.flickr.com/photos/patsch",
+          "image": "https://live.staticflickr.com/14/buddyicons/35637563@N00.jpg?1117392472#35637563@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:35637563@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/patsch/38508930",
+    "html_sha256": "acd841d4f2443ec25cd753e0c28e9ed75d661e5a162b589a73439b7adc546e81",
+    "stored_sha256": "3587dcbdf605e3a805a4cef03ff6388461c15fd83d030c6707e7414438925b33",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\ef535834c691726f.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\ef535834c691726f.html.gz",
+    "sha256": "3587dcbdf605e3a805a4cef03ff6388461c15fd83d030c6707e7414438925b33"
+  },
+  "intended_use_authorization": "Standing FrameTrail instructions18Oct2026, autonomous local review and bounded research continuation",
+  "decision": "Publisher and current photo-specific CC BY2.0 metadata, photo identifiers, NSID owner and attribution corroborate. No identified conflicting source notice, repost or mockup evidence in selected record or inspected photo.",
+  "limits": "Source evidence corroboration is not a blanket legal warranty about independently held rights in depicted material."
+}

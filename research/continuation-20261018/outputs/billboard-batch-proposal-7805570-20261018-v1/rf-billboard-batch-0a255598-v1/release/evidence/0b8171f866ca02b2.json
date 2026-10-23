@@ -1,0 +1,72 @@
+{
+  "image_id": "0b8171f866ca02b2",
+  "image_sha256": "e4a0a29ce8516bd774b040fb08d9559845df8dd37c68a2a0c4ce7e414aa23c69",
+  "publisher_attribution": {
+    "id": "0b8171f866ca02b2",
+    "landing_url": "https://www.flickr.com/photos/zeevveez/8519676659",
+    "original_url": "https://farm3.staticflickr.com/8235/8519676659_7589b8c76c_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "zeevveez",
+    "author_url": "https://www.flickr.com/people/zeevveez/",
+    "title": "Banana Shape - Circle Arc",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "zeevveez",
+    "url": "https://www.flickr.com/photos/zeevveez",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/29001414@N00.jpg?1571248486#29001414@N00"
+  },
+  "current_title": "Banana Shape - Circle Arc",
+  "caption_and_notices": {
+    "image_id": "0b8171f866ca02b2",
+    "identity_group": "flickr-nsid:29001414@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "zeevveez",
+      "url": "https://www.flickr.com/photos/zeevveez",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/29001414@N00.jpg?1571248486#29001414@N00"
+    },
+    "current_title": "Banana Shape - Circle Arc",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "zeevveez",
+        "url": "https://www.flickr.com/photos/zeevveez",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/29001414@N00.jpg?1571248486#29001414@N00"
+      }
+    },
+    "meta_description": "צורת הבננה- קשת בעיגול"
+  },
+  "source_url": "https://www.flickr.com/photos/zeevveez/8519676659",
+  "canonical_page_url": "https://www.flickr.com/photos/zeevveez/8519676659",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "285b60ff87645066ddaf60e84f3dfd04ac92ce1d6a240ffe46e84e58df5794b7",
+  "source_gzip_sha256": "cbff2408c3ef03c5575db74af8e2f4dacc7dc5f725ecf927434dbc5349cff2dd",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "afe5e8c8f69af9577fbf33b0691497c3185990ea9d39c29d12a2d7ba5aee441a"
+}

@@ -1,0 +1,105 @@
+[
+  {
+    "ids": [
+      "toaster-028",
+      "toaster-029"
+    ],
+    "publisher": "Satori Design for Living / Shauna Oberg",
+    "url": "https://satoridesignforliving.com/small-kitchen-appliances-youll-use-and-love-i-do/",
+    "proof_id": "satori-2",
+    "exact_photo_matches": [
+      "toaster-028"
+    ],
+    "scene_associations": [
+      "toaster-029"
+    ],
+    "evidence": "Toaster-028 matches the appliance, hand, bread board, dishes, flowers and chair in the publisher photo. Toaster-029 is the existing confirmed same-scene partner; exact file match remains unresolved. The page attributes the photography to its author.",
+    "photo_url": "https://satoridesignforliving.com/wp-content/uploads/2020/09/Breville-Toaster-Luxe-Damson-Blue-3.jpg",
+    "retrieved_at": "2026-10-17T23:29:10.155815+00:00",
+    "rights_verified": false,
+    "reusable_license_found": false,
+    "permission_status": "unresolved",
+    "method": "assistant visual comparison of local retained image against headlessly rendered publisher photo",
+    "independent_human_review": false
+  },
+  {
+    "ids": [
+      "toaster-021"
+    ],
+    "publisher": "Design Dazzle / Toni Roberts",
+    "url": "https://www.designdazzle.com/kitchen-remodel-final-reveal/",
+    "proof_id": "design-dazzle-4",
+    "exact_photo_matches": [
+      "toaster-021"
+    ],
+    "scene_associations": [],
+    "evidence": "Matching raised cabinet door, support, blender, toaster, outlet and visible Design Dazzle mark.",
+    "photo_url": "https://www.designdazzle.com/wp-content/uploads/2016/11/DSC_0330.jpg",
+    "retrieved_at": "2026-10-17T23:29:10.155815+00:00",
+    "rights_verified": false,
+    "reusable_license_found": false,
+    "permission_status": "unresolved",
+    "method": "assistant visual comparison of local retained image against headlessly rendered publisher photo",
+    "independent_human_review": false
+  },
+  {
+    "ids": [
+      "toaster-022"
+    ],
+    "publisher": "ZDesign At Home / Bree",
+    "url": "https://www.zdesignathome.com/kitchen-tour/",
+    "proof_id": "zdesign-1",
+    "exact_photo_matches": [
+      "toaster-022"
+    ],
+    "scene_associations": [],
+    "evidence": "Matching appliance cabinet, refrigerator edge, slow cooker, toaster and cabinet handles.",
+    "photo_url": "https://www.zdesignathome.com/wp-content/uploads/2016/03/white-kitchen-carrara-marble-counter-tops-appliance-cabinet.jpg",
+    "retrieved_at": "2026-10-17T23:29:10.155815+00:00",
+    "rights_verified": false,
+    "reusable_license_found": false,
+    "permission_status": "unresolved",
+    "method": "assistant visual comparison of local retained image against headlessly rendered publisher photo",
+    "independent_human_review": false
+  },
+  {
+    "ids": [
+      "toaster-031"
+    ],
+    "publisher": "Thou Swell",
+    "url": "https://thouswell.com/smart-toaster-toast-recipes-revolution-cooking/",
+    "proof_id": "thou-swell-1",
+    "exact_photo_matches": [
+      "toaster-031"
+    ],
+    "scene_associations": [],
+    "evidence": "Matching touchscreen toaster, outlet plates, tile pattern, blue jar, flowers and sliced-bread board.",
+    "photo_url": "https://thouswell.com/wp-content/uploads/2019/12/revolution-cooking-high-speed-touchscreen-toaster-kevin-ogara-thou-swell-1-683x1024.jpg",
+    "retrieved_at": "2026-10-17T23:29:10.155815+00:00",
+    "rights_verified": false,
+    "reusable_license_found": false,
+    "permission_status": "unresolved",
+    "method": "assistant visual comparison of local retained image against headlessly rendered publisher photo",
+    "independent_human_review": false
+  },
+  {
+    "ids": [
+      "toaster-043"
+    ],
+    "publisher": "Philippe Beauparlant / Hocken Avenue",
+    "url": "https://www.beauparlant.ca/spaces/hocken-avenue",
+    "proof_id": "beauparlant-8",
+    "exact_photo_matches": [
+      "toaster-043"
+    ],
+    "scene_associations": [],
+    "evidence": "Matching cabinet niche, espresso machine, toaster, cups, shelf, doorway and island edge. Page identifies the design project, not the photographer.",
+    "photo_url": "https://images.squarespace-cdn.com/content/v1/5e7cf3a1840b0b0610aedf5a/1585362071321-7R8ITX4FLLJXZGJ7H1VB/Hocken6.jpg",
+    "retrieved_at": "2026-10-17T23:29:10.155815+00:00",
+    "rights_verified": false,
+    "reusable_license_found": false,
+    "permission_status": "unresolved",
+    "method": "assistant visual comparison of local retained image against headlessly rendered publisher photo",
+    "independent_human_review": false
+  }
+]

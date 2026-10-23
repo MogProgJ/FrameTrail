@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "3e9dcb8242f9196b",
+  "image_sha256": "70544e002ac2572fa86503b27c616280f99c27eee8a6465f63d162078bf7991c",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "3e9dcb8242f9196b",
+    "image_sha256": "70544e002ac2572fa86503b27c616280f99c27eee8a6465f63d162078bf7991c",
+    "selected_category": "dog",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/88723904@N05/19508263358",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/88723904@N05/19508263358",
+      "original_url": "https://c4.staticflickr.com/1/465/19508263358_80c32f5c36_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "thecoolspringpack",
+      "author_url": "https://www.flickr.com/people/88723904@N05/",
+      "title": "louie",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "thecoolspringpack",
+      "url": "https://www.flickr.com/photos/88723904@N05",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/88723904@N05.jpg?1748711009#88723904@N05"
+    },
+    "current_title": "louie",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "thecoolspringpack",
+          "url": "https://www.flickr.com/photos/88723904@N05",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/88723904@N05.jpg?1748711009#88723904@N05"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:88723904@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/88723904@N05/19508263358",
+    "html_sha256": "cc2fd8e4560c469df2ea5f6741319f0c55d3a7ea7134b83028cb3a491efe40b2",
+    "stored_sha256": "1cedc1aa91fdb53c77c72acc061a36b3ca88a807cf053c3c16557839659a7f4b",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\3e9dcb8242f9196b.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/3e9dcb8242f9196b.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

@@ -1,0 +1,66 @@
+{
+  "status": "synthetic-planning-contracts-passed",
+  "checks": [
+    {
+      "case": "complete synthetic contract accepted",
+      "passed": true
+    },
+    {
+      "case": "empty/unreturned data fails minima",
+      "passed": true
+    },
+    {
+      "case": "unknown class scope cannot become absence",
+      "passed": true
+    },
+    {
+      "case": "ROI-only negative is insufficient",
+      "passed": true
+    },
+    {
+      "case": "unknown multiclass labels preserved",
+      "passed": true
+    },
+    {
+      "case": "reversed/invalid boxes rejected",
+      "passed": true
+    },
+    {
+      "case": "uncleared rights rejected",
+      "passed": true
+    },
+    {
+      "case": "changed source bytes rejected",
+      "passed": true
+    },
+    {
+      "case": "identity role leakage rejected",
+      "passed": true
+    },
+    {
+      "case": "scene/session role leakage rejected",
+      "passed": true
+    },
+    {
+      "case": "consumed predictions cannot count fresh",
+      "passed": true
+    },
+    {
+      "case": "old held identity cannot enter TRAIN",
+      "passed": true
+    },
+    {
+      "case": "unused old intake is not a fresh addition",
+      "passed": true
+    },
+    {
+      "case": "review for wrong image rejected",
+      "passed": true
+    },
+    {
+      "case": "duplicate review coverage required",
+      "passed": true
+    }
+  ],
+  "limitations": "Byte/hash fixture contracts only; no semantic accuracy, legal determination, image decode, training eligibility or cluster admission established."
+}

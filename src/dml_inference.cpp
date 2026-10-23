@@ -117,7 +117,7 @@ struct DmlInference::Impl {
             OrtModelMetadata* raw_metadata{};check(api->SessionGetModelMetadata(session.get(),&raw_metadata));
             Owned<OrtModelMetadata> metadata(raw_metadata,api->ReleaseModelMetadata);
             std::vector<const char*> keys{"frametrail.profile","frametrail.vocabulary"};
-            if(variant==DetectorModel::rf_scale7758628) {
+            if(is_rf_model(variant)) {
                 keys.push_back("frametrail.checkpoint_sha256");keys.push_back("frametrail.preprocessing");
             }
             for(const auto* key:keys) {
@@ -128,7 +128,7 @@ struct DmlInference::Impl {
                 const std::string_view field(key);
                 const auto expected=field=="frametrail.profile" ? std::string(model_id(variant)):
                     field=="frametrail.vocabulary" ? model_vocabulary(variant):
-                    field=="frametrail.checkpoint_sha256" ? std::string(rfdetr::checkpoint_sha256):std::string("rf-rgb512-normalized-v1");
+                    field=="frametrail.checkpoint_sha256" ? std::string(rfdetr::checkpoint_for(variant)):std::string("rf-rgb512-normalized-v1");
                 if(text!=expected)throw std::runtime_error("DirectML recognition profile/vocabulary or RF identity/preprocessing mismatch");
             }
         }

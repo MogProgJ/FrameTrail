@@ -1,0 +1,64 @@
+{
+  "image_id": "ac544407fa299d67",
+  "image_sha256": "d4114577351957d9a224158713e07c9509a9ac27eb685bd9f84cb1c646d166b3",
+  "publisher_attribution": {
+    "id": "ac544407fa299d67",
+    "landing_url": "https://www.flickr.com/photos/craftyfoxes/4072150733",
+    "original_url": "https://farm8.staticflickr.com/2445/4072150733_03c7163db7_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Crafty Fox",
+    "author_url": "https://www.flickr.com/people/craftyfoxes/",
+    "title": "tea and biscuits",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Crafty Fox",
+    "url": "https://www.flickr.com/photos/craftyfoxes",
+    "image": "https://live.staticflickr.com/6239/buddyicons/40640276@N04.jpg?1319921011#40640276@N04"
+  },
+  "current_title": "tea and biscuits",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Crafty Fox",
+        "url": "https://www.flickr.com/photos/craftyfoxes",
+        "image": "https://live.staticflickr.com/6239/buddyicons/40640276@N04.jpg?1319921011#40640276@N04"
+      }
+    },
+    "meta_description": "New Pantone colour mugs and colourful bowls of biscuits. I had to take a picture!"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/craftyfoxes/4072150733",
+  "canonical_page_url": "https://www.flickr.com/photos/craftyfoxes/4072150733",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "69df97b3eb705608a6ee2bffac2ceff1cbd694e6ab5227b79ed1d1c25139f94c",
+  "source_gzip_sha256": "b00888900ace036012184195b664f02f5c8d290b3d8a627b309d85e3ff2053a6",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-068",
+  "visual_proof_sha256": "37c880c371dffd94f22d824f5bfde944382b1e7504aea45897c0e9b3dd28089f",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

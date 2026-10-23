@@ -1,0 +1,64 @@
+{
+  "image_id": "da1476f060b43c84",
+  "image_sha256": "06237cf57ca02370aaac3b4c3d1217c9a489917a3dceb83869fe53d5d2b7928b",
+  "publisher_attribution": {
+    "id": "da1476f060b43c84",
+    "landing_url": "https://www.flickr.com/photos/erichtk/6806412689",
+    "original_url": "https://farm5.staticflickr.com/7010/6806412689_1ba67b50b7_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Erich Kirchubel",
+    "author_url": "https://www.flickr.com/people/erichtk/",
+    "title": "Chicago Night",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Erich Kirchubel",
+    "url": "https://www.flickr.com/photos/erichtk",
+    "image": "https://live.staticflickr.com/3265/buddyicons/33569057@N07.jpg?1328189401#33569057@N07"
+  },
+  "current_title": "Chicago Night",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Erich Kirchubel",
+        "url": "https://www.flickr.com/photos/erichtk",
+        "image": "https://live.staticflickr.com/3265/buddyicons/33569057@N07.jpg?1328189401#33569057@N07"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/erichtk/6806412689",
+  "canonical_page_url": "https://www.flickr.com/photos/erichtk/6806412689",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "b93c8c045eb5abd476ada652b1de4a4848c9c2ac199ed74629f64b399f1d48a0",
+  "source_gzip_sha256": "8f095d75cfee1ac3cd2547a496dd537ef12ef595578999dbe9b703f98938a686",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-240",
+  "visual_proof_sha256": "5076190a063957eefccdb9b8ebbb7251f4ca2b3c3e89dad089e610e98db562f2",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

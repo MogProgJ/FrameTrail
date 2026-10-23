@@ -1,0 +1,26 @@
+{
+  "status": "fixed-before-postrun-TRAIN-inference",
+  "job": "7870268",
+  "states": [
+    "starting-model-cached",
+    "M0-seed17-step1500-cached",
+    "M0-seed29-step1500-cached",
+    "M1-seed17-step1500-fullforward",
+    "M1-seed29-step1500-fullforward"
+  ],
+  "photos": 124,
+  "positive_photos": 47,
+  "absent_photos": 77,
+  "target_class": 133,
+  "optimizer_updates": 0,
+  "validation_photos_probed": 0,
+  "test_photos_used": 0,
+  "max_active_seconds_per_fullforward_state": 900,
+  "threads": 2,
+  "selection_allowed": false,
+  "checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "inputs_sha256": "29bfd7774c2073a7b95f0b94997cfcf30ec50e4d2c4b9cfcfee8e369e764e389",
+  "diagnostic_script_sha256": "1bbcc6ccd88e93a1d0a4e69802b812e8840f41bdf44fc6e03d33ee3e59392f25",
+  "purpose": "Distinguish fixed final TRAIN recognition/geometry behavior from generalization; no sweep or selection.",
+  "scoring_adapter": "Deep copies of TRAIN rows use split=val only for unchanged score primitive; source rows and release untouched."
+}

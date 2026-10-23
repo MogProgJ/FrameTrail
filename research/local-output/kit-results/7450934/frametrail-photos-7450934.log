@@ -1,0 +1,128 @@
+Photo acquisition job: 7450934
+Selection job: 7449188
+{
+  "status": "preflight",
+  "module": "photo-pilot-v1",
+  "job_id": "7450934",
+  "selection_job": "7449188",
+  "requested_photographs": 60,
+  "anchors": 52,
+  "intake_directory": "/pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/training-general-v1/photo-pilot-7449188-first60",
+  "job_report_directory": "/pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/training-general-v1/photo-job-7450934",
+  "approved_for_training": false
+}
+Photo pilot: 1/60 decoded originals; 0 failures
+Photo pilot: 2/60 decoded originals; 0 failures
+Photo pilot: 3/60 decoded originals; 0 failures
+Photo pilot: 4/60 decoded originals; 0 failures
+Photo pilot: 5/60 decoded originals; 0 failures
+Photo pilot: 6/60 decoded originals; 0 failures
+Photo pilot: 7/60 decoded originals; 0 failures
+Photo pilot: 8/60 decoded originals; 0 failures
+Photo pilot: 9/60 decoded originals; 0 failures
+Photo pilot: 10/60 decoded originals; 0 failures
+Photo pilot: 11/60 decoded originals; 0 failures
+Photo pilot: 12/60 decoded originals; 0 failures
+Photo pilot: 13/60 decoded originals; 0 failures
+Photo pilot: 14/60 decoded originals; 0 failures
+Photo pilot: 15/60 decoded originals; 0 failures
+Photo pilot: 16/60 decoded originals; 0 failures
+Photo pilot: 17/60 decoded originals; 0 failures
+Photo pilot: 18/60 decoded originals; 0 failures
+Photo pilot: 19/60 decoded originals; 0 failures
+Photo pilot: 20/60 decoded originals; 0 failures
+Photo pilot: 21/60 decoded originals; 0 failures
+Photo pilot: 22/60 decoded originals; 0 failures
+Photo pilot: 23/60 decoded originals; 0 failures
+Photo pilot: 24/60 decoded originals; 0 failures
+Photo pilot: 25/60 decoded originals; 0 failures
+Photo pilot: 26/60 decoded originals; 0 failures
+Photo pilot: 27/60 decoded originals; 0 failures
+Photo pilot: 28/60 decoded originals; 0 failures
+Photo pilot: 29/60 decoded originals; 0 failures
+Photo pilot: 30/60 decoded originals; 0 failures
+Photo pilot: 31/60 decoded originals; 0 failures
+Photo pilot: 32/60 decoded originals; 0 failures
+Photo pilot: 33/60 decoded originals; 0 failures
+Photo pilot: 34/60 decoded originals; 0 failures
+Photo pilot: 35/60 decoded originals; 0 failures
+Photo pilot: 36/60 decoded originals; 0 failures
+Photo pilot: 37/60 decoded originals; 0 failures
+Photo pilot: 38/60 decoded originals; 0 failures
+Photo pilot: 39/60 decoded originals; 0 failures
+Photo pilot: 40/60 decoded originals; 0 failures
+Photo pilot: 41/60 decoded originals; 0 failures
+Photo pilot: 42/60 decoded originals; 0 failures
+Photo pilot: 43/60 decoded originals; 0 failures
+Photo pilot: 44/60 decoded originals; 0 failures
+Photo pilot: 45/60 decoded originals; 0 failures
+Photo pilot: 46/60 decoded originals; 0 failures
+Photo pilot: 47/60 decoded originals; 0 failures
+Photo pilot: 48/60 decoded originals; 0 failures
+Photo pilot: 49/60 decoded originals; 0 failures
+Photo pilot: 50/60 decoded originals; 0 failures
+Photo pilot: 51/60 decoded originals; 0 failures
+Photo pilot: 52/60 decoded originals; 0 failures
+Photo pilot: 53/60 decoded originals; 0 failures
+Photo pilot: 54/60 decoded originals; 0 failures
+Photo pilot: 55/60 decoded originals; 0 failures
+Photo pilot: 56/60 decoded originals; 0 failures
+Photo pilot: 57/60 decoded originals; 0 failures
+Photo pilot: 58/60 decoded originals; 0 failures
+Photo pilot: 59/60 decoded originals; 0 failures
+Photo pilot: 60/60 decoded originals; 0 failures
+{
+  "schema": 1,
+  "module": "photo-pilot-v1",
+  "status": "completed",
+  "job_id": "7450934",
+  "selection_job": "7449188",
+  "source_catalogue_job": "7447265",
+  "updated_at_utc": "2026-10-04T15:46:17.289014+00:00",
+  "context": {
+    "selection_sha256": "69d67561b87f4efad265f4713a415ff985e7bc551fa01b931c574c1e16d68ef5",
+    "catalogue_sha256": "bd42dbb1129406c16cda37401670ecba04d6d956cde0071ab79de6190162e78d",
+    "scope_sha256": "2b0c50ae45db08322291b498babae33ac3d2f93d8ea58368d132ae1ddda5329a",
+    "vocabulary_sha256": "4add59233e843ee655a9937c793f19b61c24854ea84e7c10fc5c2b21a63a5bbc",
+    "exclusion_manifest_sha256": "afaf19d24f3d31d8ff267141e585832943ac9eaf82aac99c921c353b4c876054",
+    "module": "photo-pilot-v1",
+    "runner_sha256": "f7e0093ec00dbcc3c1eb7c19647418d1fa8bb6c4fceb9e96c19020bb948b792a"
+  },
+  "requested_photographs": 60,
+  "photographs_downloaded": 60,
+  "failed_images": [],
+  "original_bytes": 17984698,
+  "stored_payload_bytes_including_partials": 17984698,
+  "max_original_bytes": 1000000000,
+  "max_image_bytes": 10000000,
+  "downloaded_anchor_categories": 52,
+  "downloaded_domains": {
+    "people_and_transport": 10,
+    "home_and_furniture": 10,
+    "kitchen_and_food": 10,
+    "electronics_and_work": 9,
+    "personal_and_outdoor": 9,
+    "animals_and_hard_cases": 12
+  },
+  "duplicate_candidates": [],
+  "approved_for_training": false,
+  "manifest_sha256": "a7f1cd4e65482eeae54b691dc24f8d18f6b52cb06e3ca5045ed0801aee0aeea0",
+  "intake_directory": "/pfs/work9/workspace/scratch/ka_udxvl-frametrail/FrameTrail/output/training-general-v1/photo-pilot-7449188-first60",
+  "limits": "Acquisition status only, not annotation/rights approval or accuracy. Payload cap excludes small receipts/review metadata; HTTP retransmissions may add network traffic."
+}
+Photo job report: output/training-general-v1/photo-job-7450934/acquisition.json
+
+============================= JOB FEEDBACK =============================
+
+NodeName=uc2n718
+Job ID: 7450934
+Cluster: uc3
+User/Group: ka_udxvl/ka_stud
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 2
+CPU Utilized: 00:00:07
+CPU Efficiency: 5.22% of 00:02:14 core-walltime
+Job Wall-clock time: 00:01:07
+Memory Utilized: 42.71 MB
+Memory Efficiency: 1.04% of 4.00 GB (4.00 GB/node)

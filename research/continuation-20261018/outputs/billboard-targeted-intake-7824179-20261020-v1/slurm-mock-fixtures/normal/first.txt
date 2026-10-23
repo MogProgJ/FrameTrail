@@ -1,0 +1,4 @@
+Submitted one bounded CPU data collection job; zero GPUs and no training.
+FRAMETRAIL_JOB_ID=123456789
+Collection report not ready.
+Archive not ready.

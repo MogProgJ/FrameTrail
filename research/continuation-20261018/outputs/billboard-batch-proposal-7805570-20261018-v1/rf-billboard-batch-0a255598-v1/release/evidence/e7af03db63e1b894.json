@@ -1,0 +1,64 @@
+{
+  "image_id": "e7af03db63e1b894",
+  "image_sha256": "ed49e067d5033a1247551a48216c169decb06d081b2d800a832635c3b9e28d6f",
+  "publisher_attribution": {
+    "id": "e7af03db63e1b894",
+    "landing_url": "https://www.flickr.com/photos/johnniewalker/9579533750",
+    "original_url": "https://farm5.staticflickr.com/7304/9579533750_f9ebe57c40_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "John Tregoning",
+    "author_url": "https://www.flickr.com/people/johnniewalker/",
+    "title": "Phil's Firing Squad",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "John Tregoning",
+    "url": "https://www.flickr.com/photos/johnniewalker",
+    "image": "https://live.staticflickr.com/5445/buddyicons/77923930@N00.jpg?1372371934#77923930@N00"
+  },
+  "current_title": "Phil's Firing Squad",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "John Tregoning",
+        "url": "https://www.flickr.com/photos/johnniewalker",
+        "image": "https://live.staticflickr.com/5445/buddyicons/77923930@N00.jpg?1372371934#77923930@N00"
+      }
+    },
+    "meta_description": "There is a reason why people hand held their cameras in this sort of situation... lesson learnt (sorry for the clipping)"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/johnniewalker/9579533750",
+  "canonical_page_url": "https://www.flickr.com/photos/johnniewalker/9579533750",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "f8775d034df85d8e222140aac903fd347df6af55616773c108ef37ca8f6480ab",
+  "source_gzip_sha256": "82aea7bcebcf4e0fe1bd15ee686493aeda777eaf3422f587d4c51a1cb4a2c2b2",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-166",
+  "visual_proof_sha256": "df97bd2034248b2667a076506c539d321ff954df2754f8d6ef70b176317cf88b",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

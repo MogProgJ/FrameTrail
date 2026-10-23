@@ -1,0 +1,91 @@
+{
+  "status": "single-window-workspace-packaged-and-verified",
+  "date": "2026-10-19",
+  "package": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\native-unified-20261019-v1",
+  "canonical_launcher": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\Run-FrameTrail.cmd",
+  "application_sha256": "def147f3c4ab2cbeb651d8b5d60e44cfff908d0134316656c8559cc04f1c6c64",
+  "sections": [
+    "Preview",
+    "Analysis",
+    "Playback",
+    "Camera"
+  ],
+  "single_visible_main_window_asserted": true,
+  "navigation": "Persistent checked sidebar, shared breadcrumb, Ctrl+1\u20134, per-section state",
+  "background_policy": "Analysis and preparation continue with activity badge; preview/review/cached playback pauses when hidden; camera stop is requested on leaving",
+  "quit_policy": "Await active analysis, preserve partial output, honor Save/Discard/Cancel, then stop all remaining workers before closing",
+  "normal_integration": {
+    "active_analysis_quit_cancel_preserved": true,
+    "active_analysis_quit_discard_shutdown": true,
+    "analysis_state_preserved": true,
+    "background_activity_visible": true,
+    "background_preparation_and_quit": true,
+    "cache_retained_across_navigation": true,
+    "camera_not_acquired_on_navigation": true,
+    "hidden_playback_paused": true,
+    "keyboard_navigation": true,
+    "lazy_section_order": true,
+    "prepared_frames": 16,
+    "save_csv_reopen": true,
+    "saved_appearances": 3,
+    "single_top_level_workspace": true,
+    "source_replacement_releases_old_cache": true,
+    "status": "passed"
+  },
+  "Qt_scale125_integration": {
+    "active_analysis_quit_cancel_preserved": true,
+    "active_analysis_quit_discard_shutdown": true,
+    "analysis_state_preserved": true,
+    "background_activity_visible": true,
+    "background_preparation_and_quit": true,
+    "cache_retained_across_navigation": true,
+    "camera_not_acquired_on_navigation": true,
+    "hidden_playback_paused": true,
+    "keyboard_navigation": true,
+    "lazy_section_order": true,
+    "prepared_frames": 16,
+    "save_csv_reopen": true,
+    "saved_appearances": 3,
+    "single_top_level_workspace": true,
+    "source_replacement_releases_old_cache": true,
+    "status": "passed"
+  },
+  "existing_regression_checks_passed": 13,
+  "RF_full_cache": {
+    "status": "passed",
+    "preparation_seconds": 7.39171,
+    "prepared_frames": 16,
+    "cached_overlay_parity": true,
+    "replay_without_model": true,
+    "pause": true,
+    "backend": "CPU"
+  },
+  "packaged_smoke": [
+    {
+      "profile": "standard",
+      "exit_code": 0,
+      "platform": "offscreen"
+    },
+    {
+      "profile": "balanced",
+      "exit_code": 0,
+      "platform": "offscreen"
+    }
+  ],
+  "models_unchanged": 7,
+  "inference_and_core_sources_unchanged_from_workflow_package": true,
+  "default_model": "YOLOX-S",
+  "production_adoption": false,
+  "strict_numerical_export_gate_passed": false,
+  "selected_RF_checkpoint": "job 7805570 step 100",
+  "selected_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "new_cluster_jobs": 0,
+  "SSH_attempts": 0,
+  "cluster": "User-reported outage; latest data task remains unconfirmed, no replacement or retry",
+  "verification_limits": [
+    "Current-run Qt offscreen captures, including simulated 125% scaling",
+    "No live-camera acquisition or physical monitor/screen-reader certification",
+    "No inference speedup or new accuracy claim",
+    "Legacy explicit RF smooth-launch flag routes to the shared window; that GPU preference was not exercised in this CPU pass"
+  ]
+}

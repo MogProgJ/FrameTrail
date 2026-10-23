@@ -1,0 +1,14 @@
+[
+  {
+    "exit_code": 0,
+    "platform": "offscreen",
+    "visible_window": false,
+    "profile": "standard"
+  },
+  {
+    "exit_code": 0,
+    "platform": "offscreen",
+    "visible_window": false,
+    "profile": "balanced"
+  }
+]

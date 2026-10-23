@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "87e9386c70c5a33a",
+  "image_sha256": "8477367dc1262b825ca20b8118b70cfd0359b0cf09c78333ed95798c7ca17209",
+  "source_review": {
+    "image_id": "87e9386c70c5a33a",
+    "image_sha256": "8477367dc1262b825ca20b8118b70cfd0359b0cf09c78333ed95798c7ca17209",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "test",
+    "source_url": "https://www.flickr.com/photos/dankamminga/119813353",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/dankamminga/119813353",
+      "original_url": "https://c3.staticflickr.com/1/51/119813353_b431ad0045_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Dan Kamminga",
+      "author_url": "https://www.flickr.com/people/dankamminga/",
+      "title": "FromandTo",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Dan Kamminga",
+      "url": "https://www.flickr.com/photos/dankamminga",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/42126397@N00.jpg?1683482889#42126397@N00"
+    },
+    "current_title": "FromandTo",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Dan Kamminga",
+          "url": "https://www.flickr.com/photos/dankamminga",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/42126397@N00.jpg?1683482889#42126397@N00"
+        }
+      },
+      "meta_description": "De trein van Utrecht en de trein naar Utrecht vanaf Den Dolder."
+    },
+    "identity_group": "flickr-nsid:42126397@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/dankamminga/119813353",
+    "html_sha256": "24bf66c4d2f848ef5317f41dbfd821265cc4dfcd7d18426f939ff6d4136882f6",
+    "stored_sha256": "5e65e4a77a679831a89bd4a367d2a6dbeec647cbcb6e0c46d76ff62679448780",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-targeted-intake-7824179-20261020-v1\\retrieval-7840599\\verified-7840599\\output\\billboard-data-refresh-7840599\\pages\\87e9386c70c5a33a.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\87e9386c70c5a33a.json",
+    "sha256": "68367dd2e253a99726fea1e90c6a2b1e3ad5b515c09208ec8412d3f2509a0abb"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\87e9386c70c5a33a.json",
+    "sha256": "352b9df41e29a5cc69d75af81d45ec1849d1c7a5a55d5e8d289c77935c2a42f6"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/dankamminga/119813353",
+    "original_url": "https://c3.staticflickr.com/1/51/119813353_b431ad0045_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Dan Kamminga",
+    "author_url": "https://www.flickr.com/people/dankamminga/",
+    "title": "FromandTo",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

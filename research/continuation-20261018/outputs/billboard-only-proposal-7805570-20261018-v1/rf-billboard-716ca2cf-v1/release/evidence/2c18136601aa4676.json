@@ -1,0 +1,72 @@
+{
+  "image_id": "2c18136601aa4676",
+  "image_sha256": "faa7653ec503ed11c3bb3ce5e69840a20c2a2b829d982842d48788c3727e5ddb",
+  "publisher_attribution": {
+    "id": "2c18136601aa4676",
+    "landing_url": "https://www.flickr.com/photos/bonitalabanane/2241775633",
+    "original_url": "https://farm7.staticflickr.com/2352/2241775633_8f72b8198f_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Bonita de Boer",
+    "author_url": "https://www.flickr.com/people/bonitalabanane/",
+    "title": "The living room",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Bonita la Banane",
+    "url": "https://www.flickr.com/photos/bonitalabanane",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/7307231@N06.jpg?1621636820#7307231@N06"
+  },
+  "current_title": "The living room",
+  "caption_and_notices": {
+    "image_id": "2c18136601aa4676",
+    "identity_group": "flickr-nsid:7307231@N06",
+    "creator": {
+      "@type": "Person",
+      "name": "Bonita la Banane",
+      "url": "https://www.flickr.com/photos/bonitalabanane",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/7307231@N06.jpg?1621636820#7307231@N06"
+    },
+    "current_title": "The living room",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Bonita la Banane",
+        "url": "https://www.flickr.com/photos/bonitalabanane",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/7307231@N06.jpg?1621636820#7307231@N06"
+      }
+    },
+    "meta_description": ""
+  },
+  "source_url": "https://www.flickr.com/photos/bonitalabanane/2241775633",
+  "canonical_page_url": "https://www.flickr.com/photos/bonitalabanane/2241775633",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "0f0ad9554fc2d0fc6e7474452d98832e1499a0b275c8af0f650c8ae656f406f9",
+  "source_gzip_sha256": "e620b38ec85a0e4e877f9ae8b3064ec2850e82287ec2ed5a4cf5162dd3305446",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false,
+  "proposal_record_sha256": "f133a2eb0f2d24d87a9f48eba57d7acde830b2702013dfd83ec08f291b2ef2d5"
+}

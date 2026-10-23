@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "12d639f3bbbc48ce",
+  "image_sha256": "33d710eba99fc966b50fc7763c6ca3c8db49b7ca6214cbb5d6c440d61621ca39",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "12d639f3bbbc48ce",
+    "image_sha256": "33d710eba99fc966b50fc7763c6ca3c8db49b7ca6214cbb5d6c440d61621ca39",
+    "selected_category": "parking meter",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/gogostevie/527637935",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/gogostevie/527637935",
+      "original_url": "https://c7.staticflickr.com/2/1063/527637935_4161835c2c_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Stephen Harlan",
+      "author_url": "https://www.flickr.com/people/gogostevie/",
+      "title": "Perve Viels",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Stephen Harlan",
+      "url": "https://www.flickr.com/photos/gogostevie",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/17647948@N00.jpg?1675824045#17647948@N00"
+    },
+    "current_title": "Perve Viels",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Stephen Harlan",
+          "url": "https://www.flickr.com/photos/gogostevie",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/17647948@N00.jpg?1675824045#17647948@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:17647948@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/gogostevie/527637935",
+    "html_sha256": "b8420a48e3e500bdf47fa2355eea385721dbb834a7d1c569aab5e8f5d5ddfc40",
+    "stored_sha256": "4b300dfc2755f2db3b74f1a7cb7a22a0ccb270c339e7982dfa5bf268f7670df0",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\12d639f3bbbc48ce.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/12d639f3bbbc48ce.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

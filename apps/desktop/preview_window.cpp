@@ -1,8 +1,20 @@
 #include "preview_window.hpp"
+#include "guide_workspace.hpp"
 #include "model_selection.hpp"
 #include "saved_run_window.hpp"
+#include "cached_playback_window.hpp"
 #include "live_window.hpp"
 #include "theme.hpp"
+#include "studio_controls.hpp"
+#include "workspace_chrome.hpp"
+#include "playback_workspace.hpp"
+#include <QStackedWidget>
+#include <QStyle>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QMimeData>
+#include <QUrl>
+#include <QShortcut>
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
 #include "ui_preview_layout.h"
@@ -18,6 +30,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPainter>
+#include <QPainterPath>
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <algorithm>
@@ -92,10 +105,26 @@ void FrameCanvas::mousePressEvent(QMouseEvent* event) {
 
 void FrameCanvas::paintEvent(QPaintEvent*) {
     QPainter painter(this);
-    painter.fillRect(rect(), QColor("#0c1118"));
+    painter.setRenderHint(QPainter::Antialiasing);
+    QPainterPath surface;surface.addRoundedRect(QRectF(rect()).adjusted(1,1,-1,-1),12,12);
+    painter.fillPath(surface,QColor("#17181c"));painter.setPen(QPen(QColor("#2b2c33"),1));painter.drawPath(surface);
+    painter.setClipPath(surface);
     if (image_.isNull()) {
-        painter.setPen(QColor("#8796a8"));
-        painter.drawText(rect(), Qt::AlignCenter, empty_text_);
+        const auto center=rect().center();
+        const QRectF icon(center.x()-32,center.y()-108,64,64);
+        painter.setPen(QPen(QColor("#45424f"),1));painter.setBrush(QColor("#25232e"));painter.drawRoundedRect(icon,17,17);
+        painter.setPen(QPen(QColor("#c4bcfa"),2,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin));
+        const int cx=center.x(),cy=center.y()-76;
+        painter.drawLine(cx-12,cy-4,cx-12,cy+10);painter.drawLine(cx-12,cy+10,cx+12,cy+10);painter.drawLine(cx+12,cy+10,cx+12,cy-4);
+        painter.drawLine(cx,cy+2,cx,cy-13);painter.drawLine(cx,cy-13,cx-5,cy-8);painter.drawLine(cx,cy-13,cx+5,cy-8);
+        const bool preview=empty_text_==QStringLiteral("Open an image or video to begin");
+        const auto lines=empty_text_.split('\n');
+        auto title_font=painter.font();title_font.setPixelSize(width()<540?19:23);title_font.setWeight(QFont::DemiBold);painter.setFont(title_font);painter.setPen(QColor("#e9e8ee"));
+        painter.drawText(QRect(22,center.y()-18,width()-44,64),Qt::AlignHCenter|Qt::AlignTop|Qt::TextWordWrap,preview?QStringLiteral("Open a video or image"):lines.first());
+        auto hint_font=painter.font();hint_font.setPixelSize(13);hint_font.setWeight(QFont::Normal);painter.setFont(hint_font);painter.setPen(QColor("#a3a0ad"));
+        const auto hint=preview?QStringLiteral("Drop a file into your workspace, or choose Open media."):lines.mid(1).join('\n');
+        painter.drawText(QRect(28,center.y()+32,width()-56,68),Qt::AlignHCenter|Qt::AlignTop|Qt::TextWordWrap,hint);
+        if(preview){painter.setPen(QColor("#767480"));hint_font.setPixelSize(11);painter.setFont(hint_font);painter.drawText(QRect(20,center.y()+87,width()-40,25),Qt::AlignCenter,QStringLiteral("MP4 · MOV · MKV · Images    /    Ctrl+O"));}
         return;
     }
     const QRect target = image_rect();
@@ -112,7 +141,8 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
         const QRectF box(target.left()+object.left*sx, target.top()+object.top*sy,
             (object.right-object.left)*sx, (object.bottom-object.top)*sy);
         painter.setPen(QPen(color,2,temporal_style_ && matched && !matched->confirmed ? Qt::DashLine:Qt::SolidLine));
-        painter.drawRect(box);
+        painter.setBrush(Qt::NoBrush);
+        painter.drawRoundedRect(box,3,3);
         auto label=QStringLiteral("%1 %2%")
             .arg(QString::fromUtf8(frametrail::class_name(object.class_id).data()))
             .arg(qRound(object.confidence*100));
@@ -122,8 +152,8 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
             std::max(double(target.left()),double(target.right()-text_size.width()-8)));
         const double label_y=std::max(double(target.top()),box.top()-text_size.height()-6);
         const QRectF label_box(label_x,label_y,text_size.width()+8,text_size.height()+6);
-        painter.fillRect(label_box,color);
-        painter.setPen(QColor("#09131a"));
+        painter.setBrush(QColor("#ec16171d"));painter.setPen(QPen(color,1));painter.drawRoundedRect(label_box,4,4);
+        painter.setPen(QColor("#f3f1f8"));
         painter.drawText(label_box,Qt::AlignCenter,label);
     }
     const auto screen = [&](frametrail::Point p) {
@@ -163,7 +193,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     ui.setupUi(this);
     setWindowTitle(QStringLiteral("FrameTrail — Video workspace"));
     setMinimumSize(900, 600);
-    setStyleSheet(frametrail_theme()+QStringLiteral("QLabel#details { color: #9fbff2; }"));
+    install_studio_style();setStyleSheet(frametrail_theme()+QStringLiteral("QLabel#details { color:#92909f; font-size:11px; padding:2px; }"));
     ui.rootLayout->setContentsMargins(24, 22, 24, 22); ui.rootLayout->setSpacing(22);
     ui.header->setStretch(0, 1);
     ui.playback->setStretch(3, 1);
@@ -190,7 +220,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
         if(QFileInfo::exists(model_box_->itemData(1).toString()))model_box_->setCurrentIndex(1);
         model_path_=model_box_->currentData().toString();
     }
-    ui.modelLabel->setText(selected_model(model_box_)==frametrail::DetectorModel::rf_scale7758628 ? QStringLiteral("Detection model · experimental RF") : QStringLiteral("Detection model · %1 categories").arg(frametrail::model_category_count(selected_model(model_box_))));
+    ui.modelLabel->setText(frametrail::is_rf_model(selected_model(model_box_)) ? QStringLiteral("Detection model · experimental RF") : QStringLiteral("Detection model · %1 categories").arg(frametrail::model_category_count(selected_model(model_box_))));
     ui.inspectorLayout->insertWidget(ui.inspectorLayout->indexOf(ui.modelLabel)+1,model_box_);
     auto* backend_label=new QLabel(QStringLiteral("PROCESSING DEVICE"));backend_label->setProperty("role","section");
     backend_box_=backend_selector(this);backend_label->setBuddy(backend_box_);
@@ -200,26 +230,11 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     ui.confidenceLabel->setBuddy(confidence_box_); ui.classesLabel->setBuddy(classes_box_); ui.directionLabel->setBuddy(direction_box_);
     line_button_->setToolTip(QStringLiteral("Click A then B. Right-click cancels. Playback stays at this position."));
     direction_box_->setToolTip(QStringLiteral("Sides refer to the A→B line. For a left-to-right line, + is below."));
-    auto* open = ui.open; auto* live = ui.liveCamera;
-    connect(live,&QPushButton::clicked,this,[this,live] {
-        if(playing_)toggle_playback();
-        auto* window=new LiveWindow(model_box_->itemData(0).toString(),selected_model(model_box_),selected_backend(backend_box_));window->setAttribute(Qt::WA_DeleteOnClose);
-        live->setEnabled(false);connect(window,&QObject::destroyed,this,[live]{live->setEnabled(true);});window->show();
-    });
-    auto* saved = ui.savedAnalysis;
-    connect(saved,&QPushButton::clicked,this,[this,saved] {
-        if(playing_)toggle_playback();
-        frametrail::RunConfiguration configuration;
-        configuration.source=source_.isEmpty() ? std::filesystem::path{} : native_path(source_);
-        configuration.detector={native_path(model_path_),float(confidence_box_->value()),.45f,selected_model(model_box_),selected_backend(backend_box_)};
-        configuration.kind=frametrail::RunKind::appearances;
-        configuration.tracking.line.reset();
-        auto* window=new SavedRunWindow(std::move(configuration));
-        saved->setEnabled(false);
-        connect(window,&QObject::destroyed,this,[saved]{saved->setEnabled(true);});
-        window->setAttribute(Qt::WA_DeleteOnClose);window->show();
-    });
-
+    auto* open = ui.open;
+    auto* smooth=new QPushButton(QStringLiteral("Playback"));smooth->setObjectName(QStringLiteral("smoothPlayback"));ui.header->addWidget(smooth);
+    connect(ui.liveCamera,&QPushButton::clicked,this,[this]{activate_workspace(3);});
+    connect(smooth,&QPushButton::clicked,this,[this]{activate_workspace(2);});
+    connect(ui.savedAnalysis,&QPushButton::clicked,this,[this]{activate_workspace(1);});
     connect(open, &QPushButton::clicked, this, [this] {
         const auto path = QFileDialog::getOpenFileName(this, QStringLiteral("Open image or video"), {},
             QStringLiteral("Media (*.mp4 *.mkv *.avi *.mov *.webm *.png *.jpg *.jpeg *.bmp *.ppm);;All files (*)"));
@@ -230,7 +245,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     connect(replay_button_, &QPushButton::clicked, this, [this] { open_file(source_); });
     connect(detect_box_,&QCheckBox::toggled,this,[this](bool){reconfigure_analysis();});
     connect(model_box_,&QComboBox::currentIndexChanged,this,[this,label=ui.modelLabel]{
-        label->setText(selected_model(model_box_)==frametrail::DetectorModel::rf_scale7758628 ? QStringLiteral("Detection model · experimental RF") : QStringLiteral("Detection model · %1 categories").arg(frametrail::model_category_count(selected_model(model_box_))));
+        label->setText(frametrail::is_rf_model(selected_model(model_box_)) ? QStringLiteral("Detection model · experimental RF") : QStringLiteral("Detection model · %1 categories").arg(frametrail::model_category_count(selected_model(model_box_))));
         model_path_=model_box_->currentData().toString();
         reconfigure_analysis();
     });
@@ -256,14 +271,98 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
         else state_label_->setText(QStringLiteral("Paused"));
         update_controls();
     };
+    install_workspace_chrome(this);
+    workspace_pages_=findChild<QStackedWidget*>(QStringLiteral("workspacePages"));
+    connect(findChild<QPushButton*>(QStringLiteral("previewWorkspace")),&QPushButton::clicked,this,[this]{activate_workspace(0);});
+    connect(findChild<QPushButton*>(QStringLiteral("quickGuide")),&QPushButton::clicked,this,[this]{activate_workspace(4);if(guide_workspace_)guide_workspace_->focus_search();});
+    for(int i=0;i<4;++i){auto* shortcut=new QShortcut(QKeySequence(QStringLiteral("Ctrl+%1").arg(i+1)),this);connect(shortcut,&QShortcut::activated,this,[this,i]{activate_workspace(i);});}
+    for(const auto& key:{QKeySequence(QStringLiteral("Ctrl+K")),QKeySequence(Qt::Key_F1)}){auto* shortcut=new QShortcut(key,this);connect(shortcut,&QShortcut::activated,this,[this]{activate_workspace(4);if(guide_workspace_)guide_workspace_->focus_search();});}
+    setAcceptDrops(true);
+    auto* open_shortcut=new QShortcut(QKeySequence::Open,this);
+    connect(open_shortcut,&QShortcut::activated,this,[this,open]{activate_workspace(0);open->click();});
+    preview_play_shortcut_=new QShortcut(QKeySequence(Qt::Key_Space),this);
+    connect(preview_play_shortcut_,&QShortcut::activated,this,[this]{if(workspace_section_==0 && play_button_->isEnabled())toggle_playback();});
     update_controls();
     connect(&timer_, &QTimer::timeout, this, [this] { tick(); });
-    timer_.start(10);
+    timer_.setObjectName(QStringLiteral("previewPoll"));timer_.start(100);
+}
+
+void PreviewWindow::activate_workspace(int section) {
+    if(workspace_close_requested_ || section<0 || section>4)return;
+    if(section!=workspace_section_){
+        if(workspace_section_==0 && playing_)toggle_playback();
+        if(workspace_section_==1 && analysis_workspace_)analysis_workspace_->suspend_playback();
+        if(workspace_section_==2 && playback_workspace_)playback_workspace_->suspend_playback();
+        if(workspace_section_==3 && camera_workspace_)camera_workspace_->request_stop();
+    }
+    QWidget* page=workspace_pages_->widget(0);
+    const auto options=[this]{return frametrail::DetectorOptions{native_path(model_path_),float(confidence_box_->value()),.45f,selected_model(model_box_),selected_backend(backend_box_)};};
+    const auto embed=[this](QMainWindow* window){
+        window->setParent(workspace_pages_,Qt::Widget);window->setMinimumSize(0,0);auto* layout=window->centralWidget()->layout();layout->setContentsMargins(0,0,0,0);
+        if(auto* heading=layout->itemAt(0)->layout();heading && heading->count())if(auto* mark=qobject_cast<QLabel*>(heading->itemAt(0)->widget());mark && !mark->pixmap().isNull())mark->hide();
+        workspace_pages_->addWidget(window);
+    };
+    if(section==1){
+        if(!analysis_workspace_){
+            frametrail::RunConfiguration configuration;configuration.source=source_.isEmpty()?std::filesystem::path{}:native_path(source_);configuration.detector=options();configuration.kind=frametrail::RunKind::appearances;configuration.tracking.line.reset();
+            analysis_workspace_=new SavedRunWindow(std::move(configuration));embed(analysis_workspace_);
+            analysis_workspace_->workspace_close_decision=[this](bool accepted){
+                if(!workspace_close_requested_)return;
+                if(accepted)begin_workspace_shutdown();
+                else{workspace_close_requested_=false;findChild<QWidget*>(QStringLiteral("workspaceRail"))->setEnabled(true);activate_workspace(1);}
+            };
+        }
+        page=analysis_workspace_;
+    }else if(section==2){
+        if(!playback_workspace_){
+            playback_workspace_=new PlaybackWorkspace(source_,options(),workspace_pages_);workspace_pages_->addWidget(playback_workspace_);
+            playback_workspace_->preview_selection=[this]{return std::pair{source_,frametrail::DetectorOptions{native_path(model_path_),float(confidence_box_->value()),.45f,selected_model(model_box_),selected_backend(backend_box_)}};};
+        }
+        page=playback_workspace_;
+    }else if(section==3){
+        if(!camera_workspace_){camera_workspace_=new LiveWindow(model_box_->itemData(0).toString(),selected_model(model_box_),selected_backend(backend_box_));embed(camera_workspace_);}
+        page=camera_workspace_;
+    }else if(section==4){
+        if(!guide_workspace_){
+            guide_workspace_=new GuideWorkspace(model_box_,workspace_pages_);workspace_pages_->addWidget(guide_workspace_);
+            guide_workspace_->navigate=[this](int target,int model){
+                if(model>=0 && model<model_box_->count() && QFileInfo::exists(model_box_->itemData(model).toString()))model_box_->setCurrentIndex(model);
+                activate_workspace(target);
+            };
+        }
+        page=guide_workspace_;
+    }
+    workspace_section_=section;workspace_pages_->setCurrentWidget(page);page->show();
+    const QStringList labels{QStringLiteral("Preview"),QStringLiteral("Analysis"),QStringLiteral("Playback"),QStringLiteral("Camera"),QStringLiteral("Guide")};
+    const QStringList buttons{QStringLiteral("previewWorkspace"),QStringLiteral("savedAnalysis"),QStringLiteral("smoothPlayback"),QStringLiteral("liveCamera"),QStringLiteral("quickGuide")};
+    findChild<QPushButton*>(buttons[section])->setChecked(true);
+    findChild<QLabel*>(QStringLiteral("subtitle"))->setText(QStringLiteral("Workspace / %1").arg(labels[section]));
+    findChild<QPushButton*>(QStringLiteral("open"))->setVisible(section==0);findChild<QPushButton*>(QStringLiteral("toggleInspector"))->setVisible(section==0);
+    if(preview_play_shortcut_)preview_play_shortcut_->setEnabled(section==0);
+    setAcceptDrops(section==0);update_workspace_activity();
+}
+void PreviewWindow::begin_workspace_shutdown(){
+    closing_=true;timer_.setInterval(10);pending_source_.clear();session_.stop();
+    if(playback_workspace_)playback_workspace_->request_shutdown();
+    if(camera_workspace_)camera_workspace_->request_stop();
+    state_label_->setText(QStringLiteral("Closing workspace…"));
+}
+void PreviewWindow::update_workspace_activity(){
+    QStringList activity;
+    if(analysis_workspace_ && analysis_workspace_->analysing())activity<<QStringLiteral("Analysis running");
+    if(playback_workspace_ && playback_workspace_->preparing())activity<<QStringLiteral("Playback preparing");
+    if(camera_workspace_ && camera_workspace_->active())activity<<(workspace_section_==3?QStringLiteral("Camera on"):QStringLiteral("Camera stopping"));
+    auto* badge=findChild<QLabel*>(QStringLiteral("workspaceActivity"));const bool busy=!activity.isEmpty();
+    const auto text=busy?activity.join(QStringLiteral(" · ")):QStringLiteral("All work stays local");
+    if(badge->text()!=text)badge->setText(text);
+    if(badge->property("busy").toBool()!=busy){badge->setProperty("busy",busy);badge->style()->unpolish(badge);badge->style()->polish(badge);}
 }
 
 void PreviewWindow::open_file(const QString& path) {
-    if (path.isEmpty() || closing_) return;
+    if (path.isEmpty() || closing_ || workspace_close_requested_) return;
+    activate_workspace(0);
     pending_source_ = path;
+    timer_.setInterval(10);
     session_.stop();
     next_.reset();
     displayed_sequence_.reset();
@@ -308,6 +407,7 @@ void PreviewWindow::update_controls() {
     track_box_->setEnabled(detect_box_->isChecked());
     classes_box_->setEnabled(tracking); direction_box_->setEnabled(tracking);
     line_button_->setEnabled(tracking && displayed_frame_.has_value() && !updating_);
+    timer_.setInterval(playing_ || updating_ || !pending_source_.isEmpty() || closing_ ? 10:100);
 }
 
 void PreviewWindow::reconfigure_analysis() {
@@ -400,9 +500,10 @@ void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
 }
 
 void PreviewWindow::tick() {
+    update_workspace_activity();
     auto status = session_.snapshot();
     if (closing_) {
-        if (!status.worker_active) close();
+        if (!status.worker_active && (!playback_workspace_ || playback_workspace_->shutdown_complete()) && (!camera_workspace_ || !camera_workspace_->active())){workspace_close_ready_=true;close();}
         return;
     }
     if (!pending_source_.isEmpty()) {
@@ -462,13 +563,19 @@ void PreviewWindow::tick() {
 }
 
 void PreviewWindow::closeEvent(QCloseEvent* event) {
-    if (session_.snapshot().worker_active) {
-        closing_ = true;
-        pending_source_.clear();
-        session_.stop();
-        state_label_->setText(QStringLiteral("Closing…"));
-        event->ignore();
-    } else {
-        event->accept();
-    }
+    if(workspace_close_ready_){event->accept();return;}
+    event->ignore();if(workspace_close_requested_)return;
+    if(analysis_workspace_)activate_workspace(1);
+    workspace_close_requested_=true;findChild<QWidget*>(QStringLiteral("workspaceRail"))->setEnabled(false);
+    if(analysis_workspace_)analysis_workspace_->close();else begin_workspace_shutdown();
+}
+
+void PreviewWindow::dragEnterEvent(QDragEnterEvent* event) {
+    const auto urls=event->mimeData()->urls();
+    if(urls.size()==1 && urls.front().isLocalFile() && QFileInfo(urls.front().toLocalFile()).isFile())event->acceptProposedAction();
+}
+void PreviewWindow::dropEvent(QDropEvent* event) {
+    const auto urls=event->mimeData()->urls();
+    if(urls.size()!=1 || !urls.front().isLocalFile() || !QFileInfo(urls.front().toLocalFile()).isFile())return;
+    open_file(urls.front().toLocalFile());event->acceptProposedAction();
 }

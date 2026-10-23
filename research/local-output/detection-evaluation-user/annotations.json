@@ -1,0 +1,262 @@
+{
+  "schema": 1,
+  "notes": "Manual selected-target annotations on five snapshots extracted with fps=1/2. Approximate visible extents, not exhaustive. Generated park scene; no general accuracy claim. Balloon not annotated: outside 80 categories. Local private footage; do not publish images.",
+  "images": [
+    {
+      "path": "frame-01.png",
+      "width": 1280,
+      "height": 720,
+      "complete": false,
+      "objects": [
+        {
+          "class_id": 0,
+          "box": [
+            201,
+            375,
+            335,
+            677
+          ]
+        },
+        {
+          "class_id": 0,
+          "box": [
+            650,
+            401,
+            717,
+            570
+          ]
+        },
+        {
+          "class_id": 16,
+          "box": [
+            591,
+            557,
+            799,
+            657
+          ]
+        },
+        {
+          "class_id": 2,
+          "box": [
+            1058,
+            447,
+            1280,
+            596
+          ]
+        },
+        {
+          "class_id": 2,
+          "box": [
+            890,
+            477,
+            1013,
+            550
+          ]
+        },
+        {
+          "class_id": 2,
+          "box": [
+            810,
+            476,
+            890,
+            531
+          ]
+        },
+        {
+          "class_id": 5,
+          "box": [
+            1024,
+            394,
+            1280,
+            535
+          ]
+        }
+      ]
+    },
+    {
+      "path": "frame-02.png",
+      "width": 1280,
+      "height": 720,
+      "complete": false,
+      "objects": [
+        {
+          "class_id": 29,
+          "box": [
+            651,
+            232,
+            907,
+            356
+          ]
+        }
+      ]
+    },
+    {
+      "path": "frame-03.png",
+      "width": 1280,
+      "height": 720,
+      "complete": false,
+      "objects": [
+        {
+          "class_id": 0,
+          "box": [
+            501,
+            65,
+            700,
+            720
+          ]
+        },
+        {
+          "class_id": 29,
+          "box": [
+            541,
+            66,
+            650,
+            164
+          ]
+        },
+        {
+          "class_id": 0,
+          "box": [
+            858,
+            309,
+            953,
+            511
+          ]
+        },
+        {
+          "class_id": 16,
+          "box": [
+            763,
+            445,
+            859,
+            515
+          ]
+        }
+      ]
+    },
+    {
+      "path": "frame-04.png",
+      "width": 1280,
+      "height": 720,
+      "complete": false,
+      "objects": [
+        {
+          "class_id": 14,
+          "box": [
+            660,
+            495,
+            756,
+            545
+          ]
+        },
+        {
+          "class_id": 14,
+          "box": [
+            461,
+            470,
+            516,
+            543
+          ]
+        },
+        {
+          "class_id": 14,
+          "box": [
+            281,
+            468,
+            371,
+            531
+          ]
+        },
+        {
+          "class_id": 14,
+          "box": [
+            898,
+            448,
+            967,
+            512
+          ]
+        },
+        {
+          "class_id": 14,
+          "box": [
+            1118,
+            448,
+            1198,
+            510
+          ]
+        }
+      ]
+    },
+    {
+      "path": "frame-05.png",
+      "width": 1280,
+      "height": 720,
+      "complete": false,
+      "objects": [
+        {
+          "class_id": 0,
+          "box": [
+            53,
+            399,
+            127,
+            603
+          ]
+        },
+        {
+          "class_id": 0,
+          "box": [
+            560,
+            461,
+            631,
+            609
+          ]
+        },
+        {
+          "class_id": 0,
+          "box": [
+            951,
+            371,
+            1058,
+            614
+          ]
+        },
+        {
+          "class_id": 0,
+          "box": [
+            380,
+            423,
+            418,
+            572
+          ]
+        },
+        {
+          "class_id": 0,
+          "box": [
+            702,
+            443,
+            737,
+            549
+          ]
+        },
+        {
+          "class_id": 0,
+          "box": [
+            870,
+            445,
+            916,
+            557
+          ]
+        },
+        {
+          "class_id": 0,
+          "box": [
+            1133,
+            433,
+            1198,
+            570
+          ]
+        }
+      ]
+    }
+  ]
+}

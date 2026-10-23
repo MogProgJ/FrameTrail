@@ -1,0 +1,12 @@
+{
+  "status": "explicit-new-scope-authorized",
+  "date": "2026-10-22",
+  "user_reply": "Run the separate TRAIN-only discrimination study (recommended)",
+  "question_scope": "Eight bounded CPU diagnostic fits; no validation/TEST data; no deployed model.",
+  "proposal_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\fresh-selector-batch-20261022-v1\\NEXT_STUDY_SCOPE.md",
+    "sha256": "108b2f807f8a12c9655ac155ff7d2a96aacff7c473841b04b651a757cfecfb59"
+  },
+  "relationship": "Separate study after completed no-winner7870268; not a retry/extension of the four conditions.",
+  "prior_experiment_receipt_sha256": "8b8b01b94ecc70a3d2babca9ceef4aa8af04668b63b143d0f6937e2a7f45452c"
+}

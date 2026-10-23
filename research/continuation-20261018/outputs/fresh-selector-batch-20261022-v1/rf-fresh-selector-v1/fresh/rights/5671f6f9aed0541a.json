@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "5671f6f9aed0541a",
+  "image_sha256": "3c84358ca7570706c06fcaf1b611f7e6d4b98e013e2bfe179b5ebf3761d3f5ef",
+  "source_review": {
+    "image_id": "5671f6f9aed0541a",
+    "image_sha256": "3c84358ca7570706c06fcaf1b611f7e6d4b98e013e2bfe179b5ebf3761d3f5ef",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/belenko/4252908243",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/belenko/4252908243",
+      "original_url": "https://c3.staticflickr.com/5/4062/4252908243_21ccf99984_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Andrey Belenko",
+      "author_url": "https://www.flickr.com/people/belenko/",
+      "title": "Deterrent or Provocation? Ad in London Tube",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Andrey Belenko",
+      "url": "https://www.flickr.com/photos/belenko",
+      "image": "https://live.staticflickr.com/7430/buddyicons/38934395@N07.jpg?1400134214#38934395@N07"
+    },
+    "current_title": "Deterrent or Provocation? Ad in London Tube",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Andrey Belenko",
+          "url": "https://www.flickr.com/photos/belenko",
+          "image": "https://live.staticflickr.com/7430/buddyicons/38934395@N07.jpg?1400134214#38934395@N07"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:38934395@N07",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/belenko/4252908243",
+    "html_sha256": "2b61127a7a670f56f3a28b45c9bb735bbe796810ee18cb8f33a5c0d8aa1a67eb",
+    "stored_sha256": "59b036d6dfcd0662fc9663af11794a2e6800cd603175f6e297df199bc60854a8",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\5671f6f9aed0541a.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\5671f6f9aed0541a.json",
+    "sha256": "7368ac2945437f42501b60e6657815ac7b44ca39df9514c15dfd8638a8f56537"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\5671f6f9aed0541a.json",
+    "sha256": "9473789bdb08974cd42e42dc7d2616f003c60156b9bbee97022ad7624fe1c7ce"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/belenko/4252908243",
+    "original_url": "https://c3.staticflickr.com/5/4062/4252908243_21ccf99984_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Andrey Belenko",
+    "author_url": "https://www.flickr.com/people/belenko/",
+    "title": "Deterrent or Provocation? Ad in London Tube",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

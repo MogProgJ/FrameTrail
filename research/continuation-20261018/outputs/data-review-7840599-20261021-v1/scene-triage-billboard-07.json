@@ -1,0 +1,148 @@
+{
+  "sheet": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\review-sheets\\billboard-07.jpg",
+  "stage": "initial-scene-triage-only-not-label-or-training-clearance",
+  "model_predictions_used": false,
+  "exhaustive_annotation": false,
+  "records": [
+    {
+      "id": "7fa470f4469e5644",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Town welcome sign with event marquee; campaign versus public-information boundary."
+    },
+    {
+      "id": "832800af0a48a691",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Tourism promotional bus wrap; vehicle surface versus physical billboard boundary."
+    },
+    {
+      "id": "8a1d920f169e7f7a",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large photographic fashion/retailer advertisement on facade."
+    },
+    {
+      "id": "8aebd2d37e832dff",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large freestanding Coca-Cola holiday product campaign."
+    },
+    {
+      "id": "8f9c51d76c0e9274",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Ice-cream business name/product-type sign and sculpture; no distinct campaign face cleared."
+    },
+    {
+      "id": "97c4a86fe18afdb8",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large Robin Hood film campaign beside waterfront."
+    },
+    {
+      "id": "9f11f6b4530e8fd7",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large illustrated manga/product campaign board."
+    },
+    {
+      "id": "9f493d9aae27adfd",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Ornate museum/location directional signs."
+    },
+    {
+      "id": "b00a5500f8ae0234",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Electrical supplies business name/address sign."
+    },
+    {
+      "id": "b2c4eb4da9539d67",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Cheese shop business name sign."
+    },
+    {
+      "id": "b34043b0f8303e59",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Glazed building graphic/logos; physical advertising panel versus facade design uncertain."
+    },
+    {
+      "id": "b70da5fc345b106c",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Angled freestanding roadside photographic campaign board."
+    },
+    {
+      "id": "beb1153b54d2b3c1",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Bakery product claim printed on shop window; physical-board/material boundary."
+    },
+    {
+      "id": "bff34db19d7edd47",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Multiple large rooftop/product campaign billboards."
+    },
+    {
+      "id": "c19adb2866fe9a60",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Heineken product/city campaign above airport parking direction signs."
+    },
+    {
+      "id": "c684d8b7a6e8cae8",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large public/state-visit campaign board behind road caution sign."
+    },
+    {
+      "id": "cea218650a100dd0",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Sports-ground product/entertainment advertising faces; original needed to separate screens and panels."
+    },
+    {
+      "id": "db6f76e1fcd366e7",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Small indoor university project information display."
+    },
+    {
+      "id": "dd1074c4e1f58872",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large McDonald's product-and-price roadside billboard."
+    },
+    {
+      "id": "e65bccba7826a02f",
+      "role": "val",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Las Vegas entertainment campaign panels on Excalibur venue sign; compare known recurring structures."
+    }
+  ]
+}

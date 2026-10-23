@@ -1,0 +1,9 @@
+{
+  "previous_app_bytes": 731418828,
+  "core_app_bytes": 386138634,
+  "optional_models_bytes": 344952714,
+  "core_reduction_bytes": 345280194,
+  "core_reduction_percent": 47.206905371049594,
+  "total_core_plus_optional_bytes": 731091348,
+  "limits": "Optional model bytes still exist outside app. This reduces the core distribution, not total storage when all packs/history are retained. No inference speed or working-memory reduction is claimed."
+}

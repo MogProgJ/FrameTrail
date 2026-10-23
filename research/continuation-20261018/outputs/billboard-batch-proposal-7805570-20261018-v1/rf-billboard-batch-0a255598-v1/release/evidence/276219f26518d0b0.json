@@ -1,0 +1,64 @@
+{
+  "image_id": "276219f26518d0b0",
+  "image_sha256": "7b9dbdb348c82c9e9ae9f5d323945813e13ac0d0ebb7db19abba82e54023caa8",
+  "publisher_attribution": {
+    "id": "276219f26518d0b0",
+    "landing_url": "https://www.flickr.com/photos/wolfsavard/4737147077",
+    "original_url": "https://farm1.staticflickr.com/4115/4737147077_b1ff37f833_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Laura Bittner",
+    "author_url": "https://www.flickr.com/people/wolfsavard/",
+    "title": "ten/three-sixty-five",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Laura LaRose",
+    "url": "https://www.flickr.com/photos/wolfsavard",
+    "image": "https://live.staticflickr.com/3242/buddyicons/31369133@N04.jpg?1223953807#31369133@N04"
+  },
+  "current_title": "ten/three-sixty-five",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Laura LaRose",
+        "url": "https://www.flickr.com/photos/wolfsavard",
+        "image": "https://live.staticflickr.com/3242/buddyicons/31369133@N04.jpg?1223953807#31369133@N04"
+      }
+    },
+    "meta_description": ""
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/wolfsavard/4737147077",
+  "canonical_page_url": "https://www.flickr.com/photos/wolfsavard/4737147077",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "e7bb5ddb0522b3afa2d0b963a5012d08c41cd1a78d3b2e986004b9850dc0f297",
+  "source_gzip_sha256": "4177268880424d73722683691a6eca2e8d71e483efa1ee9a6cf12ab131194383",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-198",
+  "visual_proof_sha256": "640e4fd5cd991bbd15a90140de8fb3fa87a0cb093022168c9bef41857169f4ed",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

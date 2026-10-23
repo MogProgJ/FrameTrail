@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "19b3bc8e122bdc44",
+  "image_sha256": "d6ddead13becda19b42eb80c7ddee4f3638a20d295dd90c5509157e83c37e1d3",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "19b3bc8e122bdc44",
+    "image_sha256": "d6ddead13becda19b42eb80c7ddee4f3638a20d295dd90c5509157e83c37e1d3",
+    "selected_category": "cat",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/sunlizard4fun/15584941641",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/sunlizard4fun/15584941641",
+      "original_url": "https://farm5.staticflickr.com/3940/15584941641_78728d9b5b_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "denebola2025",
+      "author_url": "https://www.flickr.com/people/sunlizard4fun/",
+      "title": "Signs of fall",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Orbitallens",
+      "url": "https://www.flickr.com/photos/sunlizard4fun",
+      "image": "https://live.staticflickr.com/2523/buddyicons/27892571@N08.jpg?1255060749#27892571@N08"
+    },
+    "current_title": "Signs of fall",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Orbitallens",
+          "url": "https://www.flickr.com/photos/sunlizard4fun",
+          "image": "https://live.staticflickr.com/2523/buddyicons/27892571@N08.jpg?1255060749#27892571@N08"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:27892571@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/sunlizard4fun/15584941641",
+    "html_sha256": "2b54ca8adb3ee90b7d06868f938e53bc867654f709789d15d97c64ae434a9c39",
+    "stored_sha256": "f5a98262bd0b2f3a6854cd3b87a401695af8d491f8b4022e6b8c28f234469e8c",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\19b3bc8e122bdc44.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/19b3bc8e122bdc44.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

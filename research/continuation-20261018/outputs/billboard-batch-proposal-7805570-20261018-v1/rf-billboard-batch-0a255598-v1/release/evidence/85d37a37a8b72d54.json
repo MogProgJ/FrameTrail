@@ -1,0 +1,64 @@
+{
+  "image_id": "85d37a37a8b72d54",
+  "image_sha256": "9e506671b905a58c57eb4795fa8baa5717853c599dc374f12ef4c7027f39a304",
+  "publisher_attribution": {
+    "id": "85d37a37a8b72d54",
+    "landing_url": "https://www.flickr.com/photos/hasitha_tudugalle/8421616221",
+    "original_url": "https://farm5.staticflickr.com/8368/8421616221_0d233833e3_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Hasitha Tudugalle",
+    "author_url": "https://www.flickr.com/people/hasitha_tudugalle/",
+    "title": "Australia Day CARnivale",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Hasitha Tudugalle",
+    "url": "https://www.flickr.com/photos/hasitha_tudugalle",
+    "image": "https://live.staticflickr.com/8743/buddyicons/14711897@N08.jpg?1428323140#14711897@N08"
+  },
+  "current_title": "Australia Day CARnivale",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Hasitha Tudugalle",
+        "url": "https://www.flickr.com/photos/hasitha_tudugalle",
+        "image": "https://live.staticflickr.com/8743/buddyicons/14711897@N08.jpg?1428323140#14711897@N08"
+      }
+    },
+    "meta_description": "At Hyde Park Sydney"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/hasitha_tudugalle/8421616221",
+  "canonical_page_url": "https://www.flickr.com/photos/hasitha_tudugalle/8421616221",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "a87381089550ef9d5d82fe22f13e70711337f473b58368d6971460afc97ef43e",
+  "source_gzip_sha256": "69e2f83856e56b6b4524a37b66e407e6c85dbe7f6b2e7e4820d474adef2d4ab3",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-132",
+  "visual_proof_sha256": "fcd501e516e1eabfa508feecd763fb09919f60c564febdb83ba11d02a8c7843d",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

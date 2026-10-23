@@ -1,0 +1,148 @@
+{
+  "sheet": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\review-sheets\\billboard-02.jpg",
+  "stage": "initial-scene-triage-only-not-label-or-training-clearance",
+  "model_predictions_used": false,
+  "exhaustive_annotation": false,
+  "records": [
+    {
+      "id": "3279158126d6646e",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Roadside pawnshop-name board; business name versus advertising campaign boundary."
+    },
+    {
+      "id": "3a92398ca72016d7",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large museum/exhibition campaign banner: Masterpieces live here."
+    },
+    {
+      "id": "3b15a6e03ad6b488",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large radio-station campaign panel with photographic/graphic message."
+    },
+    {
+      "id": "3bb630316f0e7221",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Theatre title marquee; distinguish information/name display from advertising face."
+    },
+    {
+      "id": "3c7402e215f4f1a8",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square advertising cluster; compare prior and cross-role scenes."
+    },
+    {
+      "id": "3e5ecc84e07f7ff9",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Street shop panels with partly legible prices/messages; original needed for advertising versus name sign."
+    },
+    {
+      "id": "411a932270973982",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed Book of Mormon theatre advertisement in station."
+    },
+    {
+      "id": "49c1e5716bcf2a78",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large retailer/product facade advertising panels; original required for exhaustive separate boxes."
+    },
+    {
+      "id": "4ba82dc9d702d034",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Political candidate campaign banner."
+    },
+    {
+      "id": "531e182ce7b493db",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Large business name/logo facade; preserve business-lettering boundary."
+    },
+    {
+      "id": "5b66ef813bafddcf",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Sports-ground sponsor advertising panels; scoreboard is separate."
+    },
+    {
+      "id": "62d0376700be86a0",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large framed plumbing-service advertisement with person/contact/service claims."
+    },
+    {
+      "id": "6a1313a7ffd76211",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Stadium AT&T-branded board; campaign face versus permanent venue branding uncertain."
+    },
+    {
+      "id": "7c93d73e4b20ee22",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed street-side Dishonored2 game advertisement."
+    },
+    {
+      "id": "87cad34e351c6487",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large facade campaign panel with product/game graphics and QR code."
+    },
+    {
+      "id": "87e9386c70c5a33a",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Station platform/destination signs."
+    },
+    {
+      "id": "88b4cd5f107251c2",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed commercial rental/retail advertisement with unit details and contact."
+    },
+    {
+      "id": "89a79124d4139fdc",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Las Vegas advertising night scene; compare recurring prior/cross-role scenes."
+    },
+    {
+      "id": "8c7f9b63185c9372",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large roadside swimming-lesson advertisement."
+    },
+    {
+      "id": "94da9709283f6a8f",
+      "role": "test",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Business name/location pole signs; inspect original before absence claim."
+    }
+  ]
+}

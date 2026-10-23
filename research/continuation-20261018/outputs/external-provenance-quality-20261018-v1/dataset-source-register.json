@@ -1,0 +1,82 @@
+[
+  {
+    "archive": "Cleaning tools.v2i.coco.zip",
+    "archive_sha256": "49576cde2305d6d1d163c8a7e9f5610efd5b0a911d620703dd983455166c5c98",
+    "source_page": "https://universe.roboflow.com/yolo8-train-rq5qv/cleaning-tools",
+    "declared_license": [
+      {
+        "id": 1,
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "name": "CC BY 4.0"
+      }
+    ],
+    "source_of_declaration": "Bundled README.dataset.txt and COCO licenses; only cleaning-tools project page was retrievable during this audit.",
+    "rights_verified": false,
+    "current_page_check": {
+      "tool": "web",
+      "result": "retrieved-uploader-license-declaration",
+      "checked_at": "2026-10-17T23:29:10.155815+00:00"
+    },
+    "upstream_image_rights_verified": false
+  },
+  {
+    "archive": "hangers.v1i.coco.zip",
+    "archive_sha256": "9d9e700e57cc7e102cd0f43676c05b7eaf663d5d685c81b33d4ea18e836d262a",
+    "source_page": "https://universe.roboflow.com/eashwar-cduwn/hangers-9cvdh",
+    "declared_license": [
+      {
+        "id": 1,
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "name": "CC BY 4.0"
+      }
+    ],
+    "source_of_declaration": "Bundled README.dataset.txt and COCO licenses; only cleaning-tools project page was retrievable during this audit.",
+    "rights_verified": false,
+    "current_page_check": {
+      "tool": "web",
+      "result": "not-retrievable-by-web-tool",
+      "checked_at": "2026-10-17T23:29:10.155815+00:00"
+    },
+    "upstream_image_rights_verified": false
+  },
+  {
+    "archive": "Lanterns.v3i.coco.zip",
+    "archive_sha256": "bed31108ae776b86040098a9a19fa77cec973384005110003c2305dc0719cae0",
+    "source_page": "https://universe.roboflow.com/lanterns-novyk/lanterns-oq9zx",
+    "declared_license": [
+      {
+        "id": 1,
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "name": "Public Domain"
+      }
+    ],
+    "source_of_declaration": "Bundled README.dataset.txt and COCO licenses; only cleaning-tools project page was retrievable during this audit.",
+    "rights_verified": false,
+    "current_page_check": {
+      "tool": "web",
+      "result": "not-retrievable-by-web-tool",
+      "checked_at": "2026-10-17T23:29:10.155815+00:00"
+    },
+    "upstream_image_rights_verified": false
+  },
+  {
+    "archive": "Toaster.v1i.coco.zip",
+    "archive_sha256": "a0330fcd0344bcfe98958c289cf24a18d51e092a7aa7f967fbe9bc4f60db2b2b",
+    "source_page": "https://universe.roboflow.com/jonie-may-c-dayao-3haua/toaster-vd198",
+    "declared_license": [
+      {
+        "id": 1,
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "name": "CC BY 4.0"
+      }
+    ],
+    "source_of_declaration": "Bundled README.dataset.txt and COCO licenses; only cleaning-tools project page was retrievable during this audit.",
+    "rights_verified": false,
+    "current_page_check": {
+      "tool": "web",
+      "result": "not-retrievable-by-web-tool",
+      "checked_at": "2026-10-17T23:29:10.155815+00:00"
+    },
+    "upstream_image_rights_verified": false
+  }
+]

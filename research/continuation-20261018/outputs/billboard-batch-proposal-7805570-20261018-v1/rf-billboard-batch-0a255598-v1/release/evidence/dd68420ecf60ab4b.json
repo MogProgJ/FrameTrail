@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "dd68420ecf60ab4b",
+  "image_sha256": "625349815fb9ca86670eae9ea08b88cd859863f034b8777f6b80be23162c8c41",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "dd68420ecf60ab4b",
+    "image_sha256": "625349815fb9ca86670eae9ea08b88cd859863f034b8777f6b80be23162c8c41",
+    "selected_category": "dog",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/lostinmiami/4376300235",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/lostinmiami/4376300235",
+      "original_url": "https://c4.staticflickr.com/5/4031/4376300235_178d5385d7_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Ed Kennedy",
+      "author_url": "https://www.flickr.com/people/lostinmiami/",
+      "title": "Grandview February 2010",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Ed Kennedy",
+      "url": "https://www.flickr.com/photos/lostinmiami",
+      "image": "https://live.staticflickr.com/3569/buddyicons/36675979@N08.jpg?1241921455#36675979@N08"
+    },
+    "current_title": "Grandview February 2010",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Ed Kennedy",
+          "url": "https://www.flickr.com/photos/lostinmiami",
+          "image": "https://live.staticflickr.com/3569/buddyicons/36675979@N08.jpg?1241921455#36675979@N08"
+        }
+      },
+      "meta_description": "Grandview Park, main overlook and amphitheater after a snow in February 2010"
+    },
+    "identity_group": "flickr-nsid:36675979@N08",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/lostinmiami/4376300235",
+    "html_sha256": "a368134f48cfd1b54dac16259db889486a39b14cdb5e9d8cbf754add9499f9a5",
+    "stored_sha256": "a0fdaee28cc41ba9e35181dd8a47e2d1d9d4267f37521a7ab42a0b125306ffc6",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\dd68420ecf60ab4b.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/dd68420ecf60ab4b.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

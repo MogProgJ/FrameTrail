@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "fc995598e0211103",
+  "image_sha256": "ac21ee8dfa3434801ce7ba8c778d26b3a2189732b28d5ffaa5e2c61482badfe0",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "fc995598e0211103",
+    "image_sha256": "ac21ee8dfa3434801ce7ba8c778d26b3a2189732b28d5ffaa5e2c61482badfe0",
+    "selected_category": "dog",
+    "selected_domain": "repair",
+    "source_url": "https://www.flickr.com/photos/donabelandewen/181345509",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/donabelandewen/181345509",
+      "original_url": "https://farm4.staticflickr.com/64/181345509_c478fb9d08_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Ewen Roberts",
+      "author_url": "https://www.flickr.com/people/donabelandewen/",
+      "title": "Look to the ocean",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Ewen Roberts",
+      "url": "https://www.flickr.com/photos/donabelandewen",
+      "image": "https://live.staticflickr.com/5617/buddyicons/85979850@N00.jpg?1439870769#85979850@N00"
+    },
+    "current_title": "Look to the ocean",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Ewen Roberts",
+          "url": "https://www.flickr.com/photos/donabelandewen",
+          "image": "https://live.staticflickr.com/5617/buddyicons/85979850@N00.jpg?1439870769#85979850@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:85979850@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/donabelandewen/181345509",
+    "html_sha256": "71df1fb2b5963c6a3d3e3097c85ed8da494c0e53d64230d4d849b41597758571",
+    "stored_sha256": "7f9cc3a1580d4f58018502ca1acfa636e98547a9bc3a96d17d2940eca33ff8d7",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\fc995598e0211103.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/fc995598e0211103.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

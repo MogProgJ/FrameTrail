@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "983d7d4d44387095",
+  "image_sha256": "2a268700f4d1b79f2475f66fce62854fa4f894ded09ae4bfa6255cecabbe5824",
+  "source_review": {
+    "image_id": "983d7d4d44387095",
+    "image_sha256": "2a268700f4d1b79f2475f66fce62854fa4f894ded09ae4bfa6255cecabbe5824",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "test",
+    "source_url": "https://www.flickr.com/photos/djackmanson/183281022",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/djackmanson/183281022",
+      "original_url": "https://farm6.staticflickr.com/68/183281022_f876b40258_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "David Jackmanson",
+      "author_url": "https://www.flickr.com/people/djackmanson/",
+      "title": "signtest",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Caspia Jackmanson",
+      "url": "https://www.flickr.com/photos/djackmanson",
+      "image": "https://farm66.staticflickr.com/65535/buddyicons/58301516@N00.jpg?1763510976#58301516@N00"
+    },
+    "current_title": "signtest",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Caspia Jackmanson",
+          "url": "https://www.flickr.com/photos/djackmanson",
+          "image": "https://farm66.staticflickr.com/65535/buddyicons/58301516@N00.jpg?1763510976#58301516@N00"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:58301516@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/djackmanson/183281022",
+    "html_sha256": "9360957994443a550b17d3b7f3711882e847ea13a361e2ae563c463c40b38971",
+    "stored_sha256": "bcbc3621a51a45d6ec16694e4a3613d9091da3b6b0f22fda18f212a5ca56c462",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\983d7d4d44387095.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\983d7d4d44387095.json",
+    "sha256": "a3b4f5362b267db4ea746309cfb897156c895d6d1ea1588cf428455051f5f6c6"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\983d7d4d44387095.json",
+    "sha256": "14f10c2faf439bd9147bc2dfe93ca8afcf42f241cbde8a3874b63f962d47e82e"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/djackmanson/183281022",
+    "original_url": "https://farm6.staticflickr.com/68/183281022_f876b40258_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "David Jackmanson",
+    "author_url": "https://www.flickr.com/people/djackmanson/",
+    "title": "signtest",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

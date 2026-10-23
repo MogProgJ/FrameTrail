@@ -1,0 +1,53 @@
+{
+  "image_id": "6532e6a4944b0156",
+  "image_sha256": "d3c9057d47e628457f00f1072e5f39242a91cb0d04650ca07aacfa3b86eb88ce",
+  "identity_group": "flickr-nsid:93393982@N00",
+  "scene_group": "scene:denver-welcomes-iste2010-colorado-convention-center-airport-banner",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\6532e6a4944b0156.json",
+    "sha256": "ba783ea8882eae643dc05c73b5fb563a6cb2e6638e8712943ab102d41243b028"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.130625,
+      0.408231,
+      0.97375,
+      0.660734
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-val-01.json",
+    "sha256": "d1e7d205239e5e4116e71cdbbbdb7315aaffaf8ef138321f2c13e230cf572b22"
+  },
+  "content_decision": {
+    "id": "6532e6a4944b0156",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.130625,
+        0.408231,
+        0.97375,
+        0.660734
+      ]
+    ],
+    "note": "One continuous Denver/ISTE2010 conference promotional banner in airport. Existing bounds verified; clocks and terminal structure excluded.",
+    "scene_description": "Denver Welcomes ISTE2010 Colorado Convention Center airport banner"
+  },
+  "prospective_split": "val",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "mode": "smoke",
+  "dataset_lock_sha256": "9c71e1b1d749f1d2c97604fc37aa363c51831e3838e5c7254bd26ba1016cb0b2",
+  "parent_weights_sha256": "4663086e1b8edbc4202a9ec589b03195ed149ef8aa8beeb4b503e0e35ff1731a",
+  "config": {
+    "schema": 1,
+    "family": "yolov8s-openimages",
+    "epochs": 1,
+    "imgsz": 320,
+    "batch": 2,
+    "device": "0",
+    "seed": 17,
+    "lr0": 0.0001,
+    "freeze": 10,
+    "patience": 5
+  },
+  "images": {
+    "train": 70,
+    "val": 11,
+    "test": 15
+  },
+  "raw_labels": 601,
+  "canonical_categories": 597,
+  "limits": "Smoke runs prove mechanics only. A trained artifact needs independent evaluation before adoption.",
+  "status": "completed",
+  "code_revision": null,
+  "config_sha256": "b3ad5b19a80d46680ee38ba682524068686b1422dc21d1ad3f4ce8d4f87d140d",
+  "source_sha256": {
+    "scripts/train-detector.py": "2970d00162b56ccde5fd18d5a662a63963e33a927d4c817c74f79473b6f2b43b",
+    "scripts/training_data.py": "ec5e6653c959f9fc4192a509a8d3f9b93bad5843ad073c8c810d01dc7452020f"
+  },
+  "environment": {
+    "python": "3.12.11",
+    "platform": "Linux-5.14.0-570.140.1.el9_6.x86_64-x86_64-with-glibc2.34",
+    "torch": "2.8.0+cu128",
+    "ultralytics": "8.3.228",
+    "cuda": "12.8",
+    "packages_sha256": "7bf35881eb6c6980bc7773326cb9d4fde57ad88b54af37b21225a442950ef8f1"
+  },
+  "device": "NVIDIA A100 80GB PCIe",
+  "elapsed_seconds": 106.91026002494618,
+  "checkpoints": {
+    "best.pt": "77723b84f509ed4dba7d78bac60fb4de00250f3b2bd0d5e6e158bc34c68ac37b",
+    "last.pt": "f7f80e66e6bb143bc882baae1c2ff5c6348281151163e6016693a2f417a007e6"
+  },
+  "locked_test_evaluated": false,
+  "approved_for_application": false
+}

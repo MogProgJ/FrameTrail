@@ -1,0 +1,40 @@
+{
+  "image_id": "0c39f6a763ce3ec0",
+  "image_sha256": "e0a49cc6db517a259e7ec8b037ad1cab7deddc14d0909fcbacc2cdefa25ca5a7",
+  "identity_group": "flickr-nsid:43117091@N00",
+  "scene_group": "scene:felix-fish-camp-restaurant-identity-sign-with-fish-illustration-under-grey-sky",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\0c39f6a763ce3ec0.json",
+    "sha256": "eed76480c391d7ce3f636efd07955336e68abccc7e0142f4b8ad150d80d69310"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-shop-02.json",
+    "sha256": "83bf19ebc880ca6f8336960f468bce86942e1475aa2a264d8a8dda5ee735676a"
+  },
+  "content_decision": {
+    "id": "0c39f6a763ce3ec0",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "shop-business-lettering",
+    "note": "Full original contains Felix's Fish Camp restaurant name/logo identification only, plus poles/sky; no advertising campaign offer/product face.",
+    "scene_description": "Felix Fish Camp restaurant identity sign with fish illustration under grey sky"
+  },
+  "prospective_split": "train",
+  "confuser_family": "shop-business-lettering",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

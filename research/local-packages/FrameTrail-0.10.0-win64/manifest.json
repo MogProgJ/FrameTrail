@@ -1,0 +1,432 @@
+{
+  "version": "0.10.0",
+  "channel": "private-preview",
+  "created_utc": "2026-10-03T13:00:23.4319859Z",
+  "files": [
+    {
+      "path": "avcodec-62.dll",
+      "bytes": 90992128,
+      "sha256": "4f817870cfaeaced3e34a083c50a1b4be0389202d7fb821632d47cf9b3f4d82a"
+    },
+    {
+      "path": "avdevice-62.dll",
+      "bytes": 4947456,
+      "sha256": "34bc695cfdd3106de29551c6868f1c2cdc0fa36903494506f1708251e6a3075e"
+    },
+    {
+      "path": "avfilter-11.dll",
+      "bytes": 31212544,
+      "sha256": "28e202431dc0643af97c307dc6437da13f8c08aa016fc28d1f9ec8fd0336e172"
+    },
+    {
+      "path": "avformat-62.dll",
+      "bytes": 22722560,
+      "sha256": "bcf514a394dc5ec43fe64e4f1624ba63b23e9c25967081ea2d03d95b0dc359ef"
+    },
+    {
+      "path": "avutil-60.dll",
+      "bytes": 3014144,
+      "sha256": "481620c7b5cd8e831a50762fae55699c821091e96c42226d04fee725a4aae2f5"
+    },
+    {
+      "path": "backends/directml/DirectML.dll",
+      "bytes": 18527776,
+      "sha256": "9c9e6d822561c6c41b90e6994b3e8857cf1d66dbfb1e0c4c799c7c89b4e92da1"
+    },
+    {
+      "path": "backends/directml/onnxruntime_providers_shared.dll",
+      "bytes": 22040,
+      "sha256": "265c8daf29637cb259cac8be9f08f2cd45f3883f0f0e4949cbfddd5b4cbec3b6"
+    },
+    {
+      "path": "backends/directml/onnxruntime.dll",
+      "bytes": 17328152,
+      "sha256": "e7eedec6a6f26dc39dc948276a75ef6d2bee3fff944d874ceed0bbd3b97bff40"
+    },
+    {
+      "path": "concrt140.dll",
+      "bytes": 324208,
+      "sha256": "2405355f0a58067b258f8df33c327e3a3d716eaac5a3a5aebb757842d85bd376"
+    },
+    {
+      "path": "dependencies/sqlite.json",
+      "bytes": 391,
+      "sha256": "73d3c1245342e39000771c63307e5c4ccee42e801a3e37a1a54f3ee0b410dc59"
+    },
+    {
+      "path": "dependencies/windows-directml.json",
+      "bytes": 1406,
+      "sha256": "aa654713612099732f048e15d345422f9a07c5b7a537466505ddb4f8179dd97b"
+    },
+    {
+      "path": "dependencies/windows-ffmpeg.json",
+      "bytes": 417,
+      "sha256": "8b3cb16bf79e2d186f834a5aa032c9c61aa84f8ff88a7f9f652b231089e720d8"
+    },
+    {
+      "path": "dependencies/windows-onnxruntime.json",
+      "bytes": 263,
+      "sha256": "ffc90e43410be99bae116f85d7f314e5987c511b2d7f9fc5a988a9cd282557a9"
+    },
+    {
+      "path": "dependencies/windows-qt.json",
+      "bytes": 424,
+      "sha256": "91086ec2d962e9b3d952570f014ea05bff6a9f487851c003af599f32e44f390e"
+    },
+    {
+      "path": "dependencies/yolox-nano.json",
+      "bytes": 645,
+      "sha256": "bca1e9cea17ef0edaeaf1c98308d10f9fbd193445495a1d70c43b6484e6266ad"
+    },
+    {
+      "path": "dependencies/yolox-small.json",
+      "bytes": 648,
+      "sha256": "6aa327ee9fd666747582962049b9349215e96f537246268180c9ec39d5e45c8f"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 11967,
+      "sha256": "df96d475b6833ff7a56744b5459568d3b824d07a71504378cf1f65ff26085304"
+    },
+    {
+      "path": "docs/benchmarks/2026-10-02-cpu-frames.csv",
+      "bytes": 15187,
+      "sha256": "bdf54e4c7457d51ac0457511ff9d4fc54cbe6f58eae463e069caa50854216177"
+    },
+    {
+      "path": "docs/benchmarks/2026-10-02-cpu.json",
+      "bytes": 1974,
+      "sha256": "bd55b5f7e9570069671fcea3bbf1e039f62249c80ffaa9e638058f9c5ed40df2"
+    },
+    {
+      "path": "docs/benchmarks/2026-10-03-gpu.json",
+      "bytes": 2697,
+      "sha256": "ea877054373488bd611f44c274dd22ecef7cd064ad675de3ac60520bec4616fa"
+    },
+    {
+      "path": "docs/COMPUTE_AND_TRAINING.md",
+      "bytes": 10895,
+      "sha256": "02b555f60a7fa5091e346b2ca3f0504db9cf97790aab49296345109a2629268b"
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "bytes": 4549,
+      "sha256": "5f3f9ca7d0c81dcd6426e6d0fc0127f841cc06e52de2f547e192d6beb92f78df"
+    },
+    {
+      "path": "docs/DETECTION.md",
+      "bytes": 9109,
+      "sha256": "45d613b4f0e5de8a00b6557258153cb4d0d8ea95a081bb567ac17eb8c71cc5b5"
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "bytes": 16915,
+      "sha256": "7a699d722b197312a1b14d533846d481fb232617fadb27a7972c495257f74c55"
+    },
+    {
+      "path": "docs/EQUIPMENT_AND_SETUP.md",
+      "bytes": 5705,
+      "sha256": "2262683a973db3956b1fef956104a7bbf60e30e6ff0e362f3e28c7ff5db360af"
+    },
+    {
+      "path": "docs/GLOSSARY.md",
+      "bytes": 3023,
+      "sha256": "160653a5aa8da3d4ef16d7c3a39abbe0f872ec66b2d5f46ffeb8be171ec62a31"
+    },
+    {
+      "path": "docs/GPU_INFERENCE.md",
+      "bytes": 9054,
+      "sha256": "83950a7637c4261edebd8a3920b06708cdafc1a38868c700f99c52b11ec13922"
+    },
+    {
+      "path": "docs/LIVE_CAMERA.md",
+      "bytes": 6589,
+      "sha256": "492cb1e671fe417efbee7be77f42648faca8132a15059fd93f7aba5ff5862874"
+    },
+    {
+      "path": "docs/MODEL_EVALUATION.md",
+      "bytes": 8481,
+      "sha256": "4344491b7003a23e85ee8066f26842fe579e74e7c9644f31621369cef1dbc13e"
+    },
+    {
+      "path": "docs/PACKAGING.md",
+      "bytes": 4479,
+      "sha256": "46cfb3a8e53136cc87940d00a7170f7c3cc631f5649f757aba0630eba4585c0f"
+    },
+    {
+      "path": "docs/PERFORMANCE.md",
+      "bytes": 4983,
+      "sha256": "9ec17aa1f259c7226b0d357b1d748d748093009ab15379692bded96b964eac18"
+    },
+    {
+      "path": "docs/PROJECT_BRIEF.md",
+      "bytes": 4061,
+      "sha256": "bd5c662ed085a961e9c77517db7a504d4c8f5bdda3847b4a45e25502d5e8a94b"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "bytes": 14187,
+      "sha256": "46f70efd5d863565dd05f9f2f2d2da02a7964d3abb08a01fa023bb731ef690e1"
+    },
+    {
+      "path": "docs/SAVED_RUNS.md",
+      "bytes": 11060,
+      "sha256": "1a44265ea8cf25cefb52b2e4aaee097ec36e8da37f9e6e0297f1641649dd8cbb"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "bytes": 10441,
+      "sha256": "4903fb1c646adbcd2847fdd7c752811167603f181209aef56626bf1dfc3b16d6"
+    },
+    {
+      "path": "docs/THIRD_PARTY_NOTICES.md",
+      "bytes": 2364,
+      "sha256": "3d646da9455ddb4f6503aac40cabfe5328872e3015572ea16d72b5f373d9222d"
+    },
+    {
+      "path": "docs/TRACKING.md",
+      "bytes": 10363,
+      "sha256": "9f38c8bba0cad5fc6267c75a2a02518f4c7aa38b1adc9728421886d74180d634"
+    },
+    {
+      "path": "frametrail-desktop.exe",
+      "bytes": 1531392,
+      "sha256": "01004b411be2e0b74814483b65b966f8e4ba9ed57004bdf80311db98b0793823"
+    },
+    {
+      "path": "frametrail.exe",
+      "bytes": 1288704,
+      "sha256": "42b2946b3894d7b84e750c31f1353d67e509960e9a0793da7615b87e6072cfdc"
+    },
+    {
+      "path": "generic/qtuiotouchplugin.dll",
+      "bytes": 101176,
+      "sha256": "91b2aa1161c24f8eaaf13346a9fec7ea795e80d2c999bb940fe914e37fa0e4f1"
+    },
+    {
+      "path": "imageformats/qgif.dll",
+      "bytes": 47928,
+      "sha256": "ab27920999dbe30c8b49ebdaefcc4740f931afc23f137ee9c77822d9069c4e59"
+    },
+    {
+      "path": "imageformats/qico.dll",
+      "bytes": 46904,
+      "sha256": "9cb3025a26c2e5a6225b601ca89c62bfa4dffc17f258cc10d439b1c3ac6d6256"
+    },
+    {
+      "path": "imageformats/qjpeg.dll",
+      "bytes": 592184,
+      "sha256": "efa72d5df5eafac48021b2e7ab501668989944b1fd84e902e21f17ddeac4bdfb"
+    },
+    {
+      "path": "models/yolox_nano.onnx",
+      "bytes": 3659407,
+      "sha256": "c789161ed43c8269fcd4e67c67eeeb4e80c622da2eb296a20bc6007bd18a0b7d"
+    },
+    {
+      "path": "models/yolox_s.onnx",
+      "bytes": 35858002,
+      "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063"
+    },
+    {
+      "path": "msvcp140_1.dll",
+      "bytes": 35952,
+      "sha256": "bfad5aef4c63a669e3c140655cdfdf395b6c979b400a447bd5dcb65ed8826c3d"
+    },
+    {
+      "path": "msvcp140_2.dll",
+      "bytes": 280200,
+      "sha256": "3ea06f0ee098b4823cb79599df3780e7f23cce52c19aac31d2a0d47efe33a5e9"
+    },
+    {
+      "path": "msvcp140_atomic_wait.dll",
+      "bytes": 50304,
+      "sha256": "640b2aefced484d0368eea5bdd06addd0658a3a70a49256e560d6923b404a479"
+    },
+    {
+      "path": "msvcp140_codecvt_ids.dll",
+      "bytes": 31872,
+      "sha256": "f2069a52880ec885ee7f0511186100eb7fada0411a2b4948fafea7735b878a18"
+    },
+    {
+      "path": "msvcp140.dll",
+      "bytes": 557728,
+      "sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9"
+    },
+    {
+      "path": "networkinformation/qnetworklistmanager.dll",
+      "bytes": 79160,
+      "sha256": "e838e8a4349a35f99f1a7ff7fb15c89e2697a6a4be857fe06fde222c3c810fae"
+    },
+    {
+      "path": "notices/DirectML/DirectML-LICENSE-CODE.txt",
+      "bytes": 1093,
+      "sha256": "903df5512f7d02609fed0c780a9b704f5a3eeb6e4d84ebe42a29845c81899a3c"
+    },
+    {
+      "path": "notices/DirectML/DirectML-LICENSE.txt",
+      "bytes": 10439,
+      "sha256": "a05138e3a085ff60a44881eedfa58dccb03ecc1d7b1f6ae888418e8c2fec4b8d"
+    },
+    {
+      "path": "notices/DirectML/ONNXRuntime-LICENSE.txt",
+      "bytes": 1094,
+      "sha256": "c250d6278f0b47a6439fb7592b08b58a55eb9f535aa49a1db63211c3f982b674"
+    },
+    {
+      "path": "notices/DirectML/ONNXRuntime-Privacy.md",
+      "bytes": 2490,
+      "sha256": "bfb7712b075f3f07e3ebee5dc2a296d1de32dbf71ad28663f73d1538cb6c3b08"
+    },
+    {
+      "path": "notices/DirectML/ONNXRuntime-ThirdPartyNotices.txt",
+      "bytes": 331175,
+      "sha256": "fb0af774b4d7cffc5b9d046f2aaeade2f37df2f80abf8033c95dfffcc77a8866"
+    },
+    {
+      "path": "notices/FFmpeg-LICENSE.txt",
+      "bytes": 7651,
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+    },
+    {
+      "path": "notices/ONNXRuntime-LICENSE.txt",
+      "bytes": 1094,
+      "sha256": "c250d6278f0b47a6439fb7592b08b58a55eb9f535aa49a1db63211c3f982b674"
+    },
+    {
+      "path": "notices/ONNXRuntime-ThirdPartyNotices.txt",
+      "bytes": 344457,
+      "sha256": "c53a76501ef60db6f865f20599f220761201ac4057683acefdab37d861b86622"
+    },
+    {
+      "path": "notices/Qt-SBOM/qtbase-6.11.3.cdx.json",
+      "bytes": 300334,
+      "sha256": "63cdef599de1d7deb539708eba06eab3ec80a17b4a4c0e2ff83f60434126b1d4"
+    },
+    {
+      "path": "notices/Qt-SBOM/qtbase-6.11.3.source.spdx",
+      "bytes": 10453927,
+      "sha256": "3b182a9640f740e9bd2c1df668ea997e3d1812d608ecfa9cfc31cd2ca6c60bee"
+    },
+    {
+      "path": "notices/Qt-SBOM/qtbase-6.11.3.spdx",
+      "bytes": 2346521,
+      "sha256": "0cf28fbee6541f684f339194efd42b0b9cf26c913096cd58b33ec516b6554828"
+    },
+    {
+      "path": "notices/Qt-SBOM/qtbase-6.11.3.spdx.json",
+      "bytes": 3860260,
+      "sha256": "4bf4f863a430a3b4a8506b80423b3451e29b41ec23383aa259420b514716bb3c"
+    },
+    {
+      "path": "notices/THIRD_PARTY_NOTICES.md",
+      "bytes": 2364,
+      "sha256": "3d646da9455ddb4f6503aac40cabfe5328872e3015572ea16d72b5f373d9222d"
+    },
+    {
+      "path": "notices/upstream/Qt-GPL-3.0.txt",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "path": "notices/upstream/Qt-LGPL-3.0.txt",
+      "bytes": 7651,
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+    },
+    {
+      "path": "notices/upstream/YOLOX-Apache-2.0.txt",
+      "bytes": 11371,
+      "sha256": "0ec3668d3274bcf29e8a29e9576d5a2cd96fc78d3c5bec4387355a796e5d9088"
+    },
+    {
+      "path": "onnxruntime.dll",
+      "bytes": 16462648,
+      "sha256": "7e39e2bdbba836d98071ef28620735ba36a47c554cf794585269aecc50fab0da"
+    },
+    {
+      "path": "platforms/qoffscreen.dll",
+      "bytes": 110904,
+      "sha256": "1b0b08da8de36bfc12ac8c6ad394ada12595de4f2d1d5e5d3c893198258009ae"
+    },
+    {
+      "path": "platforms/qwindows.dll",
+      "bytes": 992056,
+      "sha256": "e8c633f1c5054ec2972ea5dd85062d1078a6b1011cbeb3dd1fb6ed954da78765"
+    },
+    {
+      "path": "qt.conf",
+      "bytes": 30,
+      "sha256": "e6047c864b52bc6648ecd2c44629751a10c148b05f743d425f97fb6305cc9640"
+    },
+    {
+      "path": "Qt6Core.dll",
+      "bytes": 10370872,
+      "sha256": "b20757be279b4e074c89be1f183a40975bf867b9a2a4e0ca4ea34a95fe2bb39e"
+    },
+    {
+      "path": "Qt6Gui.dll",
+      "bytes": 9576248,
+      "sha256": "695ee5e5a7ac83b7a1f7d397ccb0dda39b84f8369fd2237d90c1229b78af0cd5"
+    },
+    {
+      "path": "Qt6Network.dll",
+      "bytes": 1754936,
+      "sha256": "ced0ea6ee03079a03ec19d1bdc4da5c1bf607cefa09f4f526768f54a4c0db8af"
+    },
+    {
+      "path": "Qt6Widgets.dll",
+      "bytes": 6501176,
+      "sha256": "16e181e86e4084ca26de4daaf9a32ab61c1eed9c4649e6176dbddc7849ea1e06"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4491,
+      "sha256": "bc06607ef88f9ef5a143add8148f01cb03514961640bf9ffe4ebb3dea124d71a"
+    },
+    {
+      "path": "styles/qmodernwindowsstyle.dll",
+      "bytes": 240952,
+      "sha256": "180d8c0b5cdce42ebaf26cd96f2582200784cde069dac487534e755eb6b581fb"
+    },
+    {
+      "path": "swresample-6.dll",
+      "bytes": 734720,
+      "sha256": "3baad8ac0c8f0050cfd5742f5104603a27127397521409bf7d1742e6d02f955b"
+    },
+    {
+      "path": "swscale-9.dll",
+      "bytes": 12900864,
+      "sha256": "d217a08bcd92b3a4b7ecb02e841724460a5c94a103d957370cfe75e892ac3dc2"
+    },
+    {
+      "path": "tls/qcertonlybackend.dll",
+      "bytes": 104760,
+      "sha256": "14f6c3dc09935b539371a2f88d05ac0c6cb06d64efbaa4db28ad8019cb3a1203"
+    },
+    {
+      "path": "tls/qschannelbackend.dll",
+      "bytes": 248632,
+      "sha256": "2460a9525f2673342f073e144affbecda505f34b9ddb130dd489496900944237"
+    },
+    {
+      "path": "vccorlib140.dll",
+      "bytes": 352384,
+      "sha256": "19839407c3fdbc824e5bce189bf68ddf8097f12ec28b757797ffa0415c144ddd"
+    },
+    {
+      "path": "vcruntime140_1.dll",
+      "bytes": 49792,
+      "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f"
+    },
+    {
+      "path": "vcruntime140_threads.dll",
+      "bytes": 38528,
+      "sha256": "219915cf20822f34d5e7c1fdd4e21ae7f3396881096c51036225fb8f84b47afa"
+    },
+    {
+      "path": "vcruntime140.dll",
+      "bytes": 124544,
+      "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066"
+    }
+  ]
+}

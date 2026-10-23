@@ -1,0 +1,40 @@
+{
+  "image_id": "45e33b09dbc5d6ee",
+  "image_sha256": "e989369d5a13ec51df8999cbfc19db7fbf1cf66d72fd29bd84b5bd637c989610",
+  "identity_group": "flickr-nsid:23401669@N00",
+  "scene_group": "scene:gold-framed-painting-of-two-archers-on-museum-wall",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\45e33b09dbc5d6ee.json",
+    "sha256": "3d5b21caa2edf937a761753638de1083f140f0cfbb3f31fa2ff5e39e6dd29e26"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-test-01.json",
+    "sha256": "fffa623bb2c2a007a905941a8e5bb3bdf50e01df7e6b772ad3a55277a307320a"
+  },
+  "content_decision": {
+    "id": "45e33b09dbc5d6ee",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "indoor-frames-screens-boards",
+    "note": "Full original shows gold-framed historical paintings and museum inventory cards; no advertising face.",
+    "scene_description": "Gold-framed painting of two archers on museum wall"
+  },
+  "prospective_split": "test",
+  "confuser_family": "indoor-frames-screens-boards",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

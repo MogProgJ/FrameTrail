@@ -1,0 +1,30 @@
+[
+  {
+    "clip": "preview-day",
+    "source_fps": 25,
+    "confidence": 0.65,
+    "observed_frames": 120,
+    "source_seconds": 4.76,
+    "wall_seconds": 8.384229999999999,
+    "presented_fps": 14.19331292199761,
+    "median_presentation_interval_ms": 69.82999999999993,
+    "maximum_presentation_interval_ms": 111.418,
+    "contiguous_sequences": true,
+    "backend": "DirectML GTX 1650 Ti",
+    "offscreen_Qt": true
+  },
+  {
+    "clip": "preview-night",
+    "source_fps": 30,
+    "confidence": 0.65,
+    "observed_frames": 120,
+    "source_seconds": 3.970633,
+    "wall_seconds": 8.33525,
+    "presented_fps": 14.276716355238294,
+    "median_presentation_interval_ms": 69.90499999999997,
+    "maximum_presentation_interval_ms": 95.11999999999989,
+    "contiguous_sequences": true,
+    "backend": "DirectML GTX 1650 Ti",
+    "offscreen_Qt": true
+  }
+]

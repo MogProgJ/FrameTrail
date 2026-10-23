@@ -1,0 +1,12 @@
+{
+  "archive": "frametrail-data-refresh-2fb87eec-v1.tar.gz",
+  "archive_sha256": "baf50018efc399b6e0c18df0c6ce0bd4a4d113578b015dd47226c465c6ae63a3",
+  "bytes": 194387,
+  "remote_directory": "data-refresh-2fb87eec-v1",
+  "plan_sha256": "2fb87eec20424b4d73fee912f3cf8395404cc11996cd5bced42ebe117c38d340",
+  "package_seal_sha256": "ef13eafdf402fe4ba9fe28939eedf495b55a0e21885130b80aa25e8dba1697cf",
+  "archived_files_verified": 13,
+  "cluster_submitted": false,
+  "cluster_start_script": "frametrail-start-data-refresh-2fb87eec-v1.sh",
+  "cluster_start_script_sha256": "3e2427410250ed186c33b275dc5f9a2229d62c03f9af42d96b3a6f57369799c9"
+}

@@ -1,0 +1,148 @@
+{
+  "sheet": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7824179-20261020-v1\\review-sheets\\billboard-04.jpg",
+  "stage": "initial-scene-triage-only-not-label-or-training-clearance",
+  "model_predictions_used": false,
+  "exhaustive_annotation": false,
+  "records": [
+    {
+      "id": "92acfd217c54a6c1",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed outdoor music or event campaign poster."
+    },
+    {
+      "id": "99c50590c334d1e5",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large museum exhibition promotional banner on facade; physical panel check needed."
+    },
+    {
+      "id": "9b5635760011caeb",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Freestanding disco-themed campaign billboard."
+    },
+    {
+      "id": "a0c6ca2cccd5fab5",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Car photo with background HAGERTY brand panel; inspect board versus name sign."
+    },
+    {
+      "id": "a2983a0668799165",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Stadium name/logo facade; inspect remaining scene for advertising."
+    },
+    {
+      "id": "a37b64646cdb1e20",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Freestanding service advertisements for textiles and computing."
+    },
+    {
+      "id": "a39dda42b11a5c4c",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Paired roadside BBS and tour promotion panels."
+    },
+    {
+      "id": "a77601a409a6caba",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Indoor projected church service announcement beside speaker; screen versus physical board."
+    },
+    {
+      "id": "a966c4f22b75600f",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square illuminated advertising panels; compare prior scenes."
+    },
+    {
+      "id": "b36d6932c4963074",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Cinema marquee titles versus separate advertising panels."
+    },
+    {
+      "id": "b3c84145d7be9b72",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "non-target-context",
+      "note": "Restaurant direction sign."
+    },
+    {
+      "id": "b3cddda00c8dde08",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed hotel beach/resort photographic promotion."
+    },
+    {
+      "id": "b619045bda83d108",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large outdoor children's summer programme advertisement."
+    },
+    {
+      "id": "b9baad45d76338a0",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large photographic product advertising billboard."
+    },
+    {
+      "id": "bdf66bc984b9720e",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Large Andy Warhol exhibition advertisement on museum facade."
+    },
+    {
+      "id": "c0ba504f51ead771",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Historical advertisement painted directly on brick; mural versus physical board."
+    },
+    {
+      "id": "c290260fba414277",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Outdoor public-health AIDS campaign billboard."
+    },
+    {
+      "id": "c72cf3016e535062",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context",
+      "note": "Framed fashion campaign alongside station information; box ad separately."
+    },
+    {
+      "id": "d086f2a58dc5a329",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "positive-context-scene-check",
+      "note": "Times Square advertising scene; compare old and new split scenes."
+    },
+    {
+      "id": "d1a9a119476fc110",
+      "role": "train",
+      "anchor": "billboard",
+      "disposition": "boundary-hold",
+      "note": "Petco Park stadium branding and decorative display; inspect advertising panels."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "8d26f78ba89373a2",
+  "image_sha256": "ee23130f59b6d6f66b9094922f78c6dde61694799853c7a462f078f88abc15c3",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "8d26f78ba89373a2",
+    "image_sha256": "ee23130f59b6d6f66b9094922f78c6dde61694799853c7a462f078f88abc15c3",
+    "selected_category": "taxi",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/profilerehab/4440895187",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/profilerehab/4440895187",
+      "original_url": "https://farm3.staticflickr.com/2796/4440895187_cdb8fe56c7_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Andrew Taylor",
+      "author_url": "https://www.flickr.com/people/profilerehab/",
+      "title": "Seattle Convention Center",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Andrew Taylor",
+      "url": "https://www.flickr.com/photos/profilerehab",
+      "image": "https://live.staticflickr.com/4135/buddyicons/40944554@N04.jpg?1279229712#40944554@N04"
+    },
+    "current_title": "Seattle Convention Center",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Andrew Taylor",
+          "url": "https://www.flickr.com/photos/profilerehab",
+          "image": "https://live.staticflickr.com/4135/buddyicons/40944554@N04.jpg?1279229712#40944554@N04"
+        }
+      },
+      "meta_description": "Some shots while on my way to the comicon 2010 in Seattle for my <a href=\"http://blog.profilerehab.com\" rel=\"noreferrer nofollow\">Blog</a>"
+    },
+    "identity_group": "flickr-nsid:40944554@N04",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/profilerehab/4440895187",
+    "html_sha256": "93339c9732ca89f24a37bf0e21acd1d4cce36938c702c918ccd8bb3a5a615f4a",
+    "stored_sha256": "ed526c0e50fccbc0ea4cc76983100274630f79b2ffdacffb4ac2567cb56a8e99",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\8d26f78ba89373a2.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/8d26f78ba89373a2.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

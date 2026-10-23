@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "a552b8fdc0d5334f",
+  "image_sha256": "8e8aa7d4ddc817971af78a0107bd5ed746cf441068410c24a61699a56012ee33",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "a552b8fdc0d5334f",
+    "image_sha256": "8e8aa7d4ddc817971af78a0107bd5ed746cf441068410c24a61699a56012ee33",
+    "selected_category": "frying pan",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/greggman/2068559598",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/greggman/2068559598",
+      "original_url": "https://c8.staticflickr.com/3/2307/2068559598_528a367d69_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Gregg Tavares",
+      "author_url": "https://www.flickr.com/people/greggman/",
+      "title": "Mapow Tofu",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Gregg Tavares",
+      "url": "https://www.flickr.com/photos/greggman",
+      "image": "https://live.staticflickr.com/5460/buddyicons/51035661423@N01.jpg?1374192449#51035661423@N01"
+    },
+    "current_title": "Mapow Tofu",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Gregg Tavares",
+          "url": "https://www.flickr.com/photos/greggman",
+          "image": "https://live.staticflickr.com/5460/buddyicons/51035661423@N01.jpg?1374192449#51035661423@N01"
+        }
+      },
+      "meta_description": ""
+    },
+    "identity_group": "flickr-nsid:51035661423@N01",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/greggman/2068559598",
+    "html_sha256": "775eec15a62cde051b979e63c14e0758ee443ebeada5e6d331e5c72d0e0b5648",
+    "stored_sha256": "2bf5848089436e7d8bb71049b39bd2f68f707bf5d04a9bc063cf3a22a904a35a",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\a552b8fdc0d5334f.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/a552b8fdc0d5334f.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

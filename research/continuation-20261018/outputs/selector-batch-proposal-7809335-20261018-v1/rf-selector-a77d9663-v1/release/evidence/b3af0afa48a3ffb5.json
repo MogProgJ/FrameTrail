@@ -1,0 +1,63 @@
+{
+  "photo": 2,
+  "image_id": "b3af0afa48a3ffb5",
+  "publisher_attribution": {
+    "id": "b3af0afa48a3ffb5",
+    "landing_url": "https://www.flickr.com/photos/marcogomes/2885371944",
+    "original_url": "https://farm6.staticflickr.com/3001/2885371944_c43b4d92eb_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Marco Gomes",
+    "author_url": "https://www.flickr.com/people/marcogomes/",
+    "title": "IMG_2228",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Marco Gomes",
+    "url": "https://www.flickr.com/photos/marcogomes",
+    "image": "https://live.staticflickr.com/5342/buddyicons/39802787@N00.jpg?1378682149#39802787@N00"
+  },
+  "current_title": "IMG_2228",
+  "source_url": "https://www.flickr.com/photos/marcogomes/2885371944",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 2,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "Marco Gomes",
+      "url": "https://www.flickr.com/photos/marcogomes",
+      "image": "https://live.staticflickr.com/5342/buddyicons/39802787@N00.jpg?1378682149#39802787@N00"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Marco Gomes",
+      "url": "https://www.flickr.com/photos/marcogomes",
+      "image": "https://live.staticflickr.com/5342/buddyicons/39802787@N00.jpg?1378682149#39802787@N00"
+    },
+    "meta_description": ""
+  },
+  "creator_override": null,
+  "image_sha256": "bd8a99bd65cff08b7238735c153f277a5e25d2277c29c73ecbe7c061cf380abb",
+  "source_page_sha256": "5fa625ab6b5f269d954efa5d8950495ebffc22b61f44a2d445b008e7bc89b491",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "3578672ab49a915def9d555912dd8d3262bb4557c1b6d543684851287812a193",
+  "source_job": 7626978,
+  "scope_note": "Three people, two clear faces, two foreground hands and the held phone have usable individual extents. Background hands/faces remain partial. Chair/table granularity, clothing, small tableware, couch and handbag extent are held.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

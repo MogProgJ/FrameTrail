@@ -1,0 +1,64 @@
+{
+  "image_id": "d74579ff3fe20254",
+  "image_sha256": "08ce32bafa630e3c4e3f3b21f3b0b5b521c58aaf70af4912adca1c2c08c69bd2",
+  "publisher_attribution": {
+    "id": "d74579ff3fe20254",
+    "landing_url": "https://www.flickr.com/photos/billward/110331421",
+    "original_url": "https://farm5.staticflickr.com/41/110331421_dbf3c43bbb_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Bill Ward",
+    "author_url": "https://www.flickr.com/people/billward/",
+    "title": "from-airplane-iceland-1",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Bill Ward",
+    "url": "https://www.flickr.com/photos/billward",
+    "image": "https://farm66.staticflickr.com/65535/buddyicons/23501684@N00.jpg?1594612366#23501684@N00"
+  },
+  "current_title": "from-airplane-iceland-1",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Bill Ward",
+        "url": "https://www.flickr.com/photos/billward",
+        "image": "https://farm66.staticflickr.com/65535/buddyicons/23501684@N00.jpg?1594612366#23501684@N00"
+      }
+    },
+    "meta_description": "Iceland, the geologist's paradise."
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/billward/110331421",
+  "canonical_page_url": "https://www.flickr.com/photos/billward/110331421",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "0e382e06a4c6d648c29faf4a9c4901c1f63f85866bfacf11815377183122311e",
+  "source_gzip_sha256": "ac8485a6f4b795eea3bf18ff2d424fc4d1a7f8308061d03cc3824e38d014d270",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-146",
+  "visual_proof_sha256": "0d62b76c6c1ad9e657cf46d7521075dee19f79efb461a2f9e8121b7bae49482f",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

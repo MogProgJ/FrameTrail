@@ -1,0 +1,71 @@
+{
+  "image_id": "293697fd4c71875e",
+  "image_sha256": "1348b15ba438804306a993181a95c0800ddea1e872510b7ba5574823c79535f4",
+  "publisher_attribution": {
+    "id": "293697fd4c71875e",
+    "landing_url": "https://www.flickr.com/photos/alesk/2229735736",
+    "original_url": "https://c7.staticflickr.com/3/2360/2229735736_a82933aeb7_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Alexandre Delbos",
+    "author_url": "https://www.flickr.com/people/alesk/",
+    "title": "Afterthought",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Alexandre Delbos",
+    "url": "https://www.flickr.com/photos/alesk",
+    "image": "https://live.staticflickr.com/52/buddyicons/95361738@N00.jpg?1150638910#95361738@N00"
+  },
+  "current_title": "Afterthought",
+  "caption_and_notices": {
+    "image_id": "293697fd4c71875e",
+    "identity_group": "flickr-nsid:95361738@N00",
+    "creator": {
+      "@type": "Person",
+      "name": "Alexandre Delbos",
+      "url": "https://www.flickr.com/photos/alesk",
+      "image": "https://live.staticflickr.com/52/buddyicons/95361738@N00.jpg?1150638910#95361738@N00"
+    },
+    "current_title": "Afterthought",
+    "notices": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Alexandre Delbos",
+        "url": "https://www.flickr.com/photos/alesk",
+        "image": "https://live.staticflickr.com/52/buddyicons/95361738@N00.jpg?1150638910#95361738@N00"
+      }
+    },
+    "meta_description": "I just wanted to shot the bus (whatever the reason).\n\tI don't know how come I did'nt realise how GORGEOUS the sunset was. And why I didn't stop for 30 seconds to take a picture of the scenery. :/"
+  },
+  "source_url": "https://www.flickr.com/photos/alesk/2229735736",
+  "canonical_page_url": "https://www.flickr.com/photos/alesk/2229735736",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "2da591bc3bfac6bf49bb2b6593506167b8b415f34d2d03ce578bdcbbb5c6a95b",
+  "source_gzip_sha256": "4839adbcdb78dd56e0a10d9d15cd06f0457843a79116c915c5b265af162bae7f",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true
+  },
+  "source_job": "7665290",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "review_basis": "Photo-specific current creator/identity and CC BY2.0 checks plus individually retained creator/title/caption/notices; authorised private PC/KIT research. No separate creator claim detected in these retained notices.",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY4.0. FrameTrail reviewed edits and model proposal provenance retained separately.",
+  "changes": "Original JPEG bytes unchanged; deterministic RGB512 resize during training. Boxes are adapted only as explicitly recorded. Weak targets remain unreviewed, train-only, positive-only at quarter photo-loss weight.",
+  "references": [
+    "https://creativecommons.org/licenses/by/2.0/",
+    "https://storage.googleapis.com/openimages/web/factsfigures.html#licenses"
+  ],
+  "public_distribution_approved": false
+}

@@ -1,0 +1,40 @@
+{
+  "image_id": "757556fbf9393cff",
+  "image_sha256": "99c57c48bfb822cf3992fdcc6f2235354bc0008ee2367e6148faff5a4cd26bad",
+  "identity_group": "flickr-nsid:24340358@N07",
+  "scene_group": "scene:museu-de-arte-contemporanea-purple-directional-marker",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\757556fbf9393cff.json",
+    "sha256": "8205b480111d8cdc4596f9c41c300251ee508916759cfe46e43b929f96444427"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-whole-photo-absent",
+  "normalized_xyxy": [],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-negative-train-traffic.json",
+    "sha256": "b6f5e869ddac873983b07cc2f447668cc76d268dd202f42091d8ebfce18749b4"
+  },
+  "content_decision": {
+    "id": "757556fbf9393cff",
+    "disposition": "whole-photo-billboard-absent-content-reviewed",
+    "normalized_xyxy": [],
+    "confuser_family": "traffic-information-signs",
+    "note": "Original shows museum direction/name marker with small stickers, sky and railing; no installed advertising campaign face.",
+    "scene_description": "Museu de Arte Contemporanea purple directional marker"
+  },
+  "prospective_split": "train",
+  "confuser_family": "traffic-information-signs",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

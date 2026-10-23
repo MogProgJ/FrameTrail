@@ -1,0 +1,53 @@
+{
+  "image_id": "23ac6df7ada563a3",
+  "image_sha256": "915d364509cf5b869660fb85641f9801d15ce390585e90e39358313b7e5a2858",
+  "identity_group": "flickr-nsid:25195900@N03",
+  "scene_group": "scene:rehoboth-beach-vegfest-umbrella-fork-logo-banner-beside-speaker-outdoors",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\23ac6df7ada563a3.json",
+    "sha256": "909bd112ac36f74c771bad7dc4d65f6350973ea3e9f0b7d9d37b604bef3cb48a"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.399375,
+      0.24906,
+      0.89125,
+      0.791353
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-batch-01.json",
+    "sha256": "8ea7c7ce2cc8b377d43bc9b4776a52de8549099ac42405d43589f3985d0b5019"
+  },
+  "content_decision": {
+    "id": "23ac6df7ada563a3",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.399375,
+        0.24906,
+        0.89125,
+        0.791353
+      ]
+    ],
+    "note": "One separate large VegFest event promotional banner. Publisher bounds match visible banner; speaker/stage/awning not additional billboards.",
+    "scene_description": "Rehoboth Beach VegFest umbrella fork logo banner beside speaker outdoors"
+  },
+  "prospective_split": "train",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

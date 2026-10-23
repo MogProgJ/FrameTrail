@@ -1,0 +1,19 @@
+{
+  "status": "one-training-RMS-constrained-head-development-checked",
+  "eligible": true,
+  "strict_gain": false,
+  "billboard_known_hits": 0,
+  "billboard_complete_fp": 0,
+  "unscored_predictions": 528,
+  "ranking": [
+    127,
+    0.5238095238095238
+  ],
+  "training_multiplier": 71.85306734169451,
+  "training_logit_RMS": 0.0999632639713376,
+  "head_sha256": "c160dbb5c147f2f767a4cdfe206ac92fd73326bf033002fc8ec8edb1f3cb0f7d",
+  "validation_seconds": 2.3765308000001824,
+  "new_GPU_jobs": 0,
+  "production_adoption": false,
+  "strict_ONNX_hold_not_waived": true
+}

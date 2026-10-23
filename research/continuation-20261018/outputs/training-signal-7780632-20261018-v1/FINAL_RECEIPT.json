@@ -1,0 +1,20 @@
+{
+  "status": "complete-sealed-training-signal-diagnostic",
+  "job": "7780632",
+  "photos": 12,
+  "checkpoint_photo_backward_checks": 24,
+  "matched_target_soft_score_and_gradient_checks": 96,
+  "input_files_rehashed": 28,
+  "input_changes": 0,
+  "optimizer_created": false,
+  "optimizer_updates": 0,
+  "model_parameters_and_buffers_unchanged": true,
+  "validation_used": false,
+  "heldout_used": false,
+  "app_changed": false,
+  "proposal_sampler_reproduced": true,
+  "proposal_approved": false,
+  "GPU_job_submitted": false,
+  "training_runner_created": false,
+  "proposal_protocol_sha256": "ddbb57c60855b5499ecdc039642fb5fd527634767e0575507e15b5774131e8c1"
+}

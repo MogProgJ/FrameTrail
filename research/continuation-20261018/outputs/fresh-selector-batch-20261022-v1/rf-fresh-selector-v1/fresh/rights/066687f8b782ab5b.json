@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "066687f8b782ab5b",
+  "image_sha256": "c67bad36cbf964aebd52923b9d544d7081f5abf056ced0cef88b7696f83fca10",
+  "source_review": {
+    "image_id": "066687f8b782ab5b",
+    "image_sha256": "c67bad36cbf964aebd52923b9d544d7081f5abf056ced0cef88b7696f83fca10",
+    "selected_category": "billboard",
+    "selected_domain": "billboard",
+    "prospective_split": "val",
+    "source_url": "https://www.flickr.com/photos/corporatienl/4588229253",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/corporatienl/4588229253",
+      "original_url": "https://c4.staticflickr.com/5/4010/4588229253_8bf6c4120c_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "CorporatieNL",
+      "author_url": "https://www.flickr.com/people/corporatienl/",
+      "title": "Kies voor een Dansend Dak",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "CorporatieNL",
+      "url": "https://www.flickr.com/photos/corporatienl",
+      "image": "https://live.staticflickr.com/2866/buddyicons/43340821@N06.jpg?1385737687#43340821@N06"
+    },
+    "current_title": "Kies voor een Dansend Dak",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "CorporatieNL",
+          "url": "https://www.flickr.com/photos/corporatienl",
+          "image": "https://live.staticflickr.com/2866/buddyicons/43340821@N06.jpg?1385737687#43340821@N06"
+        }
+      },
+      "meta_description": "Deze projectontwikkelaar kon in zijn wanhoop kennelijk geen betere naam voor het bouwproject verzinnen dan Dansende Daken. Bij die benaming denkt u waarschijnlijk eerder aan een voorbijrazende tropische storm dan aan een mooie nieuwe woning. \n\t\n\tOok de tagline 'Kies voor Keuze' klinkt als een open deur. Zoiets als Drink een Drankje, Slaap een Slaapje, Loop een Loopje. Dat kan beter."
+    },
+    "identity_group": "flickr-nsid:43340821@N06",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/corporatienl/4588229253",
+    "html_sha256": "2d0e55558a903acd858d5cf00a8b0a6050bc54e8ea89cdd094d41e40920ece76",
+    "stored_sha256": "542329b60fdc4cdadf1d02a0a7e08b133f8a7ea999d67d6d6dfc2acc1330af5f",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\066687f8b782ab5b.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\066687f8b782ab5b.json",
+    "sha256": "7435191e444e8d975e25e191598f9c3149986764ef1bc71a822587a3defd09e1"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\066687f8b782ab5b.json",
+    "sha256": "62fc5c126a0b324d68a979c234719eb3536428d670fe4d86c3305476fd67ca02"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/corporatienl/4588229253",
+    "original_url": "https://c4.staticflickr.com/5/4010/4588229253_8bf6c4120c_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "CorporatieNL",
+    "author_url": "https://www.flickr.com/people/corporatienl/",
+    "title": "Kies voor een Dansend Dak",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

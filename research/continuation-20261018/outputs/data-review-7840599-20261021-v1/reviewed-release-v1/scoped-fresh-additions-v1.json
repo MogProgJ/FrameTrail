@@ -1,0 +1,3785 @@
+{
+  "contract": "frametrail-rf-scoped-release-v1",
+  "taxonomy_id": "nextdata7769109-taxonomy-v1",
+  "approved_for_training": true,
+  "approved_for_application": false,
+  "weak_policy": "excluded",
+  "labels_frozen_before_predictions": true,
+  "unknown_classes_remain_unknown": true,
+  "images": [
+    {
+      "image_id": "a390d1ed9c87b4ac",
+      "image_sha256": "2053e6780abd38286c3f67f5a99117c62476177ab90c01a35b3795a0cb47eb91",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:15914631@N00",
+      "scene_group": "scene:black-2xu-human-performance-multiplied-shop-online-sports-campaign",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.5,
+            0.5,
+            1,
+            1
+          ]
+        }
+      ],
+      "source_path": "images/a390d1ed9c87b4ac.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/a390d1ed9c87b4ac.json",
+      "rights_receipt_sha256": "5728eab442e3f003cd29c2dcc33e8063a27539afc8824fe1ecb836be60e03605",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\a390d1ed9c87b4ac.json",
+        "sha256": "1457b6a76bda7574c513fc4e2ab3dcaa81792ff0dfad5e7c7619e7aae7bb7756"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "025011e0cec594f3",
+      "image_sha256": "ba74dc32fa8b0d7184a9f67541309324fa358a0458c289ca1a3c0f03b3a72b35",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:20557679@N00",
+      "scene_group": "scene:extreme-tanning-yellow-framed-free-tanning-price-offer-wall-poster",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.57765,
+            0.3495,
+            0.8311,
+            0.6256
+          ]
+        }
+      ],
+      "source_path": "images/025011e0cec594f3.jpg",
+      "width": 1024,
+      "height": 844,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/025011e0cec594f3.json",
+      "rights_receipt_sha256": "f2bd5265949f8523b17bfe80ff133eef20d2f7a53c79f212a1ffc7ae2e494728",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\025011e0cec594f3.json",
+        "sha256": "bdd6ffd1bbc2c9de6233e6ed58736502bc198631dc862a5aaa0316f0ff355ff5"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "516defad3c380520",
+      "image_sha256": "5f2abc362f175d32ad88e28ceba9336be2e744498de0d03a62709da254812839",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:8757347@N03",
+      "scene_group": "scene:blue-opel-fahren-sie-zur-hoelle-board-beside-racetrack-curve",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.2328125,
+            0.310507,
+            0.25062500000000004,
+            0.06378999999999996
+          ]
+        }
+      ],
+      "source_path": "images/516defad3c380520.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/516defad3c380520.json",
+      "rights_receipt_sha256": "3c6031bf895c74fd62d7f77d8e72ed076390ab75be7e4b9dfe882bd1acad0a3d",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\516defad3c380520.json",
+        "sha256": "591faf07a21c59c8b6f91e76520697f2fd416c78670b04835f5343cf729ae509"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "14eb9cc288f6bc91",
+      "image_sha256": "2e8f08283a04b8a3ef69f4cb80158b22e816a681fcdc75c9f4685be534255f4f",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:77116564@N00",
+      "scene_group": "scene:el-paso-museum-of-art-september2012-january2013-portrait-exhibition-poster-above-woman-in-red",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.57875,
+            0.2275,
+            0.4375,
+            0.455
+          ]
+        }
+      ],
+      "source_path": "images/14eb9cc288f6bc91.jpg",
+      "width": 768,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/14eb9cc288f6bc91.json",
+      "rights_receipt_sha256": "c22689a8c0fc6d72d17fb341106919d7dd1e04eae4a09590fbfdbe4c72ea7278",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\14eb9cc288f6bc91.json",
+        "sha256": "7d1f9c7101c63f24ca91e9f395be17589623e9a15a7a1f879143ee2a8e7ec6a4"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "07ec166bed0945e0",
+      "image_sha256": "62a56edf54654bfe381d27bd42ef431d4437032b9ee50070a57ef8a0d1d32c8c",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:39491352@N05",
+      "scene_group": "scene:hampton-roads-americas-first-region-farm-fresh-blue-board-beside-partial-black-product-billboard",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.48295,
+            0.43620000000000003,
+            0.8037000000000001,
+            0.5912
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.940625,
+            0.4197915,
+            0.115626,
+            0.5854170000000001
+          ]
+        }
+      ],
+      "source_path": "images/07ec166bed0945e0.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/07ec166bed0945e0.json",
+      "rights_receipt_sha256": "6bf16d734b74ca426f5ebfe3c4cc1c490ae7ea12251214a8c20e112b07741a89",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\07ec166bed0945e0.json",
+        "sha256": "2ea42541074b22b61698a27aeea051b1a05a8669476a46ed0836d3a1bcbc2b22"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "983d7d4d44387095",
+      "image_sha256": "2a268700f4d1b79f2475f66fce62854fa4f894ded09ae4bfa6255cecabbe5824",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:58301516@N00",
+      "scene_group": "scene:peter-turner-blue-portrait-billboard-over-green-yellow-service-station-with-small-carwash-opening-banner",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.48095,
+            0.46615,
+            0.25090000000000007,
+            0.27870000000000006
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.19385,
+            0.9173,
+            0.0655,
+            0.0898000000000001
+          ]
+        }
+      ],
+      "source_path": "images/983d7d4d44387095.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/983d7d4d44387095.json",
+      "rights_receipt_sha256": "cabc3f6555a47e9b4858c6f799d62822d3005faeaa873497ed639f26f1cfca40",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\983d7d4d44387095.json",
+        "sha256": "14f10c2faf439bd9147bc2dfe93ca8afcf42f241cbde8a3874b63f962d47e82e"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "8c7f9b63185c9372",
+      "image_sha256": "4344c0216f24970a2ccaf87ad9b6b3e8dc863c941ae4388be177089453c8e2f6",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:24236630@N05",
+      "scene_group": "scene:fins-swim-lessons-blue-child-goggles-roadside-billboard",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.48888899999999996,
+            0.3217725,
+            0.922222,
+            0.466281
+          ]
+        }
+      ],
+      "source_path": "images/8c7f9b63185c9372.jpg",
+      "width": 1024,
+      "height": 591,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/8c7f9b63185c9372.json",
+      "rights_receipt_sha256": "c2d76551c8a22a06d5ccaf608193dc36fe1bce86ca2ff30da5229e4afe59afaf",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\8c7f9b63185c9372.json",
+        "sha256": "4571792b54b4c3ac7252bcb8193f2b92938feb00d01a8b0e6719b2237a0bdec9"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "411a932270973982",
+      "image_sha256": "7d847464550a1c7ba3b76aab9405f63ea2c80084a24bdb29a25ef6c66fde4e24",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:23237342@N02",
+      "scene_group": "scene:book-of-mormon-musical-campaign-framed-between-oxford-circus-station-roundels",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.5115625,
+            0.4175,
+            0.886875,
+            0.513334
+          ]
+        }
+      ],
+      "source_path": "images/411a932270973982.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/411a932270973982.json",
+      "rights_receipt_sha256": "2a225fa8a4fc2d88033a6b5918b30be1bdd2401eb7cff5d1810a546b31b4f1c1",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\411a932270973982.json",
+        "sha256": "83ea5adafa0bfc50cbf4f7cb6f2e0373994c4dc7eb181b2255406458dcc954c3"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "243ebb245142e014",
+      "image_sha256": "69454957132b4fae2a38a66097abd5790fff1d94cfcdb43f6f4c9b367b527b91",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:76932323@N06",
+      "scene_group": "scene:prometheus-questions-will-be-answered-preorder-billboard-above-roundabout-direction-sign",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.48535,
+            0.37695,
+            0.9707,
+            0.3985000000000001
+          ]
+        }
+      ],
+      "source_path": "images/243ebb245142e014.jpg",
+      "width": 1024,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/243ebb245142e014.json",
+      "rights_receipt_sha256": "777ffcddf837877285def81c39755b612f2f1bd3ad9f313190650e002746ce6d",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\243ebb245142e014.json",
+        "sha256": "4fea74f6758d33af09b2f8b720db2e5b847bd6dc1978f62447e0cf2bf56a3e43"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "df0023910b6759e6",
+      "image_sha256": "9b77147dd435b45ba05cf1841e6a6700f733e8f0056b6f8d877ab38a23482084",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:28395003@N02",
+      "scene_group": "scene:crystal-park-st-sophia-homes-installment-property-campaign-beside-university-building-and-statue",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.20115,
+            0.3203,
+            0.2793,
+            0.6406
+          ]
+        }
+      ],
+      "source_path": "images/df0023910b6759e6.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/df0023910b6759e6.json",
+      "rights_receipt_sha256": "c0ce2ea9ad58bc8440675a3346ef31ff161cb471eca210ee6bb0447dcaac4c25",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\df0023910b6759e6.json",
+        "sha256": "3da6d927113f1fd3a4b806941b6ac52f2788527fc2bf3ba497ddad49cdeba4c9"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "4ba82dc9d702d034",
+      "image_sha256": "10d6fc4e1649ef197b3d9c0f43c77e2a55efd9cadb387da4f40b17666a096f90",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:50866543@N00",
+      "scene_group": "scene:over-road-lenith-melendez-friday14-event-banner-over-beer-two-for-one-promotion",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.5789065,
+            0.140625,
+            0.8359369999999999,
+            0.28125
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.6953130000000001,
+            0.389583,
+            0.6062500000000001,
+            0.23750000000000004
+          ]
+        }
+      ],
+      "source_path": "images/4ba82dc9d702d034.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/4ba82dc9d702d034.json",
+      "rights_receipt_sha256": "3da0119bbed5a053734b394d6f6ea495690d0a6731b80fc5852c8a34acd193ca",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\4ba82dc9d702d034.json",
+        "sha256": "48f99461204b202c9b17a1f708ced06682055e3eb93ef50d2931fca7e1d88e46"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "b7c90541ccbad22a",
+      "image_sha256": "a2172e9382f7df7a229e520632ace63dcbebb161c4e259c6691ee0992a17deb9",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:65555826@N00",
+      "scene_group": "scene:blue-national-choose-brighter-future-candidate-board-with-rear-red-labour-campaign-board",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.4878125,
+            0.462081,
+            0.8143750000000001,
+            0.541446
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.93065,
+            0.49950000000000006,
+            0.11329999999999996,
+            0.10300000000000004
+          ]
+        }
+      ],
+      "source_path": "images/b7c90541ccbad22a.jpg",
+      "width": 1024,
+      "height": 726,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/b7c90541ccbad22a.json",
+      "rights_receipt_sha256": "8eef8e8d4a2aa6d911bdd719e14e9f2146471373869646e4365a354c5d7703a3",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b7c90541ccbad22a.json",
+        "sha256": "cebf713ecef4e5ded40f95bcabc987e6c7eebccb43077aa24bd7343d23e5d01d"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "a4880e33a2079577",
+      "image_sha256": "531987f8978a7a8f470892e64aa1e415e6389e22a00c1efa6efea5fa401a7237",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:27887748@N00",
+      "scene_group": "scene:white-kitchen-with-pink-jumper-woman-at-sink-and-washer-below-counter",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/a4880e33a2079577.jpg",
+      "width": 1024,
+      "height": 680,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/a4880e33a2079577.json",
+      "rights_receipt_sha256": "feb81d76d18ee0f88c2b950d368699cc6be8cb0af7cb3f8bc377fd498beafad7",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\a4880e33a2079577.json",
+        "sha256": "867970ec8e42afe8072cad68de28427a4755023d6c86f885e47f71480fb88d1c"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "f046b6145d61cc46",
+      "image_sha256": "bf59c2f3789ecbb38253ab557c831cccfd90c6ddca33235eac3b3b06374e534b",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:38034971@N00",
+      "scene_group": "scene:acrylic-framed-line-drawings-below-spanish-literary-quotations",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/f046b6145d61cc46.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/f046b6145d61cc46.json",
+      "rights_receipt_sha256": "df32794c317b4b751e71b487f60e6e7670a1bb99c3dcebf9bb5572e3ab5f6399",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\f046b6145d61cc46.json",
+        "sha256": "94a81f0908125f9c9d9645eba0154b66b602cbc9145c363f629de58d40bc2b33"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "e5d879e9e68eaa03",
+      "image_sha256": "3d606fb2c47f282a2883eb0873aae0e947c32ee3db34d6684e3879312e1b38c4",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:16900221@N04",
+      "scene_group": "scene:wooden-storflaatan-spalen-oyangen-cycling-direction-signs-in-trees",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/e5d879e9e68eaa03.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/e5d879e9e68eaa03.json",
+      "rights_receipt_sha256": "c06ddd49244df6eae370a20e6c955b6b9210ff17134d04ace6790fa7a97b2369",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\e5d879e9e68eaa03.json",
+        "sha256": "c9effc4b6fff1cc43aae259c084d16a6368abedcc99272b9a3e336c3d617a309"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "cab9065c77e923a6",
+      "image_sha256": "e272d132a0f9ec7f536471e989905e32d3686f8fa4e6ca63ef47c9b30179f280",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:41464593@N02",
+      "scene_group": "scene:vieques-national-wildlife-refuge-police-checkpoint-with-yellow-warnings-and-brown-visitor-rules",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/cab9065c77e923a6.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/cab9065c77e923a6.json",
+      "rights_receipt_sha256": "df6ba5499e24058e4538c79e5c3973946ddd6cfa9eb339a8cf7290e4ff2e528b",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\cab9065c77e923a6.json",
+        "sha256": "622e51013ab85278dba8cc64c3128273760f2e66440699d086166e81d6b2fc48"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "e1d307153616cbaf",
+      "image_sha256": "8c0760b8e0813e5944231832b0d41c9420896443f047c6b5d4cc2fe5ac7cf05a",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:41594728@N08",
+      "scene_group": "scene:st-isabel-hospital-red-masonry-identity-column-and-red-statutory-notices",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/e1d307153616cbaf.jpg",
+      "width": 768,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/e1d307153616cbaf.json",
+      "rights_receipt_sha256": "af749a6d8d0e5f2cbd29be40f926d73f8edbb7373823949dad001135a9f8a4a4",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\e1d307153616cbaf.json",
+        "sha256": "271491d4ad2d56eb34911dc4331b89097fc8e387dd0b07d293d36f91dcdab240"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "59659ff63dad66fc",
+      "image_sha256": "ff1e26cee75528511c3d4c08f4a95157d4bb508f58e761e70b332a5216eef195",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:22719467@N02",
+      "scene_group": "scene:woman-pointing-at-blue-event-relationship-diagrams-on-whiteboard",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/59659ff63dad66fc.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/59659ff63dad66fc.json",
+      "rights_receipt_sha256": "bbaebdc5bd5ccef800e62eb1729c1f77ff9a6ec16409b44688736ed04cea0d91",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\59659ff63dad66fc.json",
+        "sha256": "33668b269ba3da0816e0cab4806b9368944c824ef531245b6c57667db27ca930"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "a122a9aa839dd2da",
+      "image_sha256": "6e417c00130d4cc8de80a0e1c607f05e23c2a1eacbfc614fb9e4178c0fe9518e",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:99896278@N06",
+      "scene_group": "scene:man-presenting-projected-uganda-budget-bubble-chart-beside-whiteboard",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/a122a9aa839dd2da.jpg",
+      "width": 1024,
+      "height": 681,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/a122a9aa839dd2da.json",
+      "rights_receipt_sha256": "37c912987937bb2675d893d01912aa59848ca59afd10b25e3117fd40a531ef8f",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\a122a9aa839dd2da.json",
+        "sha256": "cd83b70d5e75369e756414644ea3e027e4d72acfeaf0b2aeafcb9938fd06310b"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "5b9b6cc27d0eecd5",
+      "image_sha256": "72f91b283e428767d0bb418f476c435f801f6bb8bf4ac0f9df8281b24af6ca20",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:89750869@N04",
+      "scene_group": "scene:keshen-goodman-public-library-name-sign-on-grey-masonry",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/5b9b6cc27d0eecd5.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/5b9b6cc27d0eecd5.json",
+      "rights_receipt_sha256": "ee451cef1a343115bd9d163ddc112bfdc3d712dbc4c58786579148b332946611",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\5b9b6cc27d0eecd5.json",
+        "sha256": "bf2e454c6260799e9d8b35cc86242590547f72780a389301c693003e5d891261"
+      },
+      "confuser_family": "shop-business-lettering"
+    },
+    {
+      "image_id": "028555974e8341ad",
+      "image_sha256": "8f21436a96f84f66261745df95211238a19b9f5fa62ce9184ede02e3f9081295",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:71401718@N00",
+      "scene_group": "scene:dark-laundry-room-with-beige-dryer-white-washer-and-utility-sink",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/028555974e8341ad.jpg",
+      "width": 1024,
+      "height": 681,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/028555974e8341ad.json",
+      "rights_receipt_sha256": "eace062909440a14294e012928ac991492bfbbe06bc47860ef3df029c11dff60",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\028555974e8341ad.json",
+        "sha256": "854ecb62f44d64e2bac8135bb9675dabea39a5f3584f792e0504589748f429fe"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "644b877daa0f9756",
+      "image_sha256": "bef069739d6839a9801bb890504f3302c9360e4a857183f0dd3baeca0bb14be6",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:83407756@N00",
+      "scene_group": "scene:workshop-whiteboards-with-blue-software-diagrams-and-pink-sticky-notes",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/644b877daa0f9756.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/644b877daa0f9756.json",
+      "rights_receipt_sha256": "3f9126fc4cf05cab78e87e196599bfc4592a31f7cf4b55ebafa55ed9d4341953",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\644b877daa0f9756.json",
+        "sha256": "3834d3303b3e87d817ce58c374c2ceadd48dce8a339257a7e43046fa9b443273"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "cfdb76f77a479fea",
+      "image_sha256": "936279c1f6834cf0a276cb890ea86360f0e07e6bad5a9a3fa34deed7c3c78e37",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:50136062@N03",
+      "scene_group": "scene:curly-haired-woman-with-black-jumper-drawing-pie-diagram-on-flipchart",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/cfdb76f77a479fea.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/cfdb76f77a479fea.json",
+      "rights_receipt_sha256": "6d549849b74005fc74d75ab007c8b5c87c4631e166919df7285781ada9666fb1",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\cfdb76f77a479fea.json",
+        "sha256": "cb0d2139d48567640637e303ee4c842c9d114c7fe52574e41b899b5191d73990"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "095655d89ea59505",
+      "image_sha256": "ea5861e06d7cc17e5cfe2038b22320ef6186915443d7a968070b60f6b8d28002",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:45122874@N02",
+      "scene_group": "scene:man-in-dark-suit-and-woman-in-cream-blouse-inspecting-blue-and-white-laundry-machines",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/095655d89ea59505.jpg",
+      "width": 1024,
+      "height": 681,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/095655d89ea59505.json",
+      "rights_receipt_sha256": "539868b8f34415a4c45cee750d2eb3ec09f7016564770ce512b42ee4a94ad04b",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\095655d89ea59505.json",
+        "sha256": "1e07b0de7c0eaac0768122d7ddfae49dd09cc3a003dcac7304ea6f22e808333c"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "44c1bc4bb3f7d508",
+      "image_sha256": "bf14a6e62af0061fe3d3e09c1df55c3398546eae1c099314a67afcf904390dba",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:49503000362@N01",
+      "scene_group": "scene:close-frontal-malber-washer-with-yellow-energyguide-label",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/44c1bc4bb3f7d508.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/44c1bc4bb3f7d508.json",
+      "rights_receipt_sha256": "fd5c73b18113abc8f9753bfcd9285b50f7520cc4cc7a4f36adc66d70ead0bec7",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\44c1bc4bb3f7d508.json",
+        "sha256": "3dd8a3f9f4254ab4d22726c50913758c4dffce288369694240d69d95cb470b83"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "b7448c6ef4c00f74",
+      "image_sha256": "56761f855a27c7055297382713be0b9f327820cfaabbd6e29c6a65d3a59dece3",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:12066793@N05",
+      "scene_group": "scene:medinaceli-historic-district-right-arrow-roadside-sign",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/b7448c6ef4c00f74.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/b7448c6ef4c00f74.json",
+      "rights_receipt_sha256": "6ffca55854ff99717d361cca6c5edae9d20d69959322539cefb1d386982c3780",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b7448c6ef4c00f74.json",
+        "sha256": "f7909d90772fc25cbba9b1a441428a62339beb15fe5c502527c53adfe588d423"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "2bf5e0a0c30af713",
+      "image_sha256": "770d7157504a7a722e252d499447c73cdefd75a3966e91942dfadbb613dc54d2",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:23311795@N04",
+      "scene_group": "scene:dark-desk-with-laptop-social-page-and-desktop-video-chat",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/2bf5e0a0c30af713.jpg",
+      "width": 1024,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/2bf5e0a0c30af713.json",
+      "rights_receipt_sha256": "cc5327fb4f4a8faf92ec5657d96bba3af7a855af19035a0f36ced5c8ffacbcbc",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\2bf5e0a0c30af713.json",
+        "sha256": "ebeeb7cc0b911ba4389e6802518a1d5aa5caa4566f38ac75c3026e8643cc50a2"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "23a96f89d828cd77",
+      "image_sha256": "7a3fc747769d4d787fe05f775a93fe39c61aeeed92263557c5a9623f94d90331",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:49093230@N03",
+      "scene_group": "scene:eight-engraved-metal-flasks-displayed-below-framed-monochrome-prints",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/23a96f89d828cd77.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/23a96f89d828cd77.json",
+      "rights_receipt_sha256": "27bfa163447477fb6d0fb2caf017af6fb83500a3836bb58f08195a5093a6dc05",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\23a96f89d828cd77.json",
+        "sha256": "0ac48a5ed6f689ec609372738976dd1c25cbc07ac6edada9afd0245414fe44bf"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "87e9386c70c5a33a",
+      "image_sha256": "8477367dc1262b825ca20b8118b70cfd0359b0cf09c78333ed95798c7ca17209",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:42126397@N00",
+      "scene_group": "scene:blue-utrecht-centraal-amersfoort-railway-departure-boards",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/87e9386c70c5a33a.jpg",
+      "width": 1024,
+      "height": 613,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/87e9386c70c5a33a.json",
+      "rights_receipt_sha256": "5298d6fb7bd385fa37a82502f76424c5e70ea53193991fd17d9358748968e0c4",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\87e9386c70c5a33a.json",
+        "sha256": "352b9df41e29a5cc69d75af81d45ec1849d1c7a5a55d5e8d289c77935c2a42f6"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "45e33b09dbc5d6ee",
+      "image_sha256": "e989369d5a13ec51df8999cbfc19db7fbf1cf66d72fd29bd84b5bd637c989610",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:23401669@N00",
+      "scene_group": "scene:gold-framed-painting-of-two-archers-on-museum-wall",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/45e33b09dbc5d6ee.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/45e33b09dbc5d6ee.json",
+      "rights_receipt_sha256": "0884908799e91aafe65b68f7d53b162b0698885ef2993066ed5063604c22b4cb",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\45e33b09dbc5d6ee.json",
+        "sha256": "ad23b7cf8b8f64bce0736259b57f17145b184d3a5afe64a86408c45eef72fdac"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "0cd6403f59f41631",
+      "image_sha256": "47dbd51995e1a4e015772599c2e8621fb7ac16ba27671cfc2ca4d16b0841d0be",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:34389013@N06",
+      "scene_group": "scene:man-at-dual-monitor-office-desk-with-newspaper-clipping-wall",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/0cd6403f59f41631.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/0cd6403f59f41631.json",
+      "rights_receipt_sha256": "7156c76ddf2bb3f0ccef66caa83c78409c2e456227508c0d2a7886d6c633bbe3",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\0cd6403f59f41631.json",
+        "sha256": "97ef544d0a611fd2f21d2d5c233d4cb469f597629cb6e5160f5573ebfb075c12"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "04464aae28f04bc1",
+      "image_sha256": "463e03804cdcfc86bb17ff09819ba3b2cb9ad3cd77656b5e9b87bcad0e2cfcbe",
+      "split": "test",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:26286095@N07",
+      "scene_group": "scene:topographie-des-terrors-outdoor-historical-site-information-panels",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/04464aae28f04bc1.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/04464aae28f04bc1.json",
+      "rights_receipt_sha256": "c77bf3f68641b3a0872a8d201b5931b22a574bc2fd32600976465f4886bccc5a",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\04464aae28f04bc1.json",
+        "sha256": "82f45b662902c3d4db6c6c99148b981942bdf6d39682c22435781f1fcab48c8b"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "a37b64646cdb1e20",
+      "image_sha256": "8e6de98371b8a8199e1cfac612c037bd3154912fa6f0df96852af2782092158d",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:12050220@N05",
+      "scene_group": "scene:buddha-handloom-and-buddha-computer-street-advertisements-beside-white-arched-building",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.494,
+            0.396,
+            0.322,
+            0.24
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.49609349999999997,
+            0.5989585,
+            0.354687,
+            0.16041699999999992
+          ]
+        }
+      ],
+      "source_path": "images/a37b64646cdb1e20.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/a37b64646cdb1e20.json",
+      "rights_receipt_sha256": "4e79c630f4d393a6b05e1c567d980aae51243484c06fe8dca28061b1d592bb80",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\a37b64646cdb1e20.json",
+        "sha256": "faae3faff5d68df58a51eda21e84bc3a153984f761d5e3881c8e5fc4602bc317"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "04924b243ce19811",
+      "image_sha256": "fa1036194ae68f8b5890a043127d42fb286bac823def59a2cd14c08fbf16121d",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:79578508@N08",
+      "scene_group": "scene:mobilcom-debitel-galaxy-gear-note3-campaign-at-tiled-station-platform",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.4209,
+            0.46745000000000003,
+            0.7168,
+            0.6979
+          ]
+        }
+      ],
+      "source_path": "images/04924b243ce19811.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/04924b243ce19811.json",
+      "rights_receipt_sha256": "e704b52df6588c28b2d3add674246a1efb22abda2bb051cdda659ada49d7fe6d",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\04924b243ce19811.json",
+        "sha256": "06decd00c7568f57888a74968fbf11196aa6e7139ec4355723341792d77853c7"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "bb760b5b12f42f43",
+      "image_sha256": "cd44cbfa8c9acd82bcba1aa0ccd6c0437ec3dc35f8eb2bba17e1797c4e93d9e7",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:32800629@N07",
+      "scene_group": "scene:capp-the-land-matters-forest-billboard-beside-trees",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.4497,
+            0.4375,
+            0.8018000000000001,
+            0.875
+          ]
+        }
+      ],
+      "source_path": "images/bb760b5b12f42f43.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/bb760b5b12f42f43.json",
+      "rights_receipt_sha256": "0facd9367856567deb890a208b08bfe3665c05a5ce0c5ade79d80f86c7652dbc",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\bb760b5b12f42f43.json",
+        "sha256": "1c5ddb0e8275f7bb94909346ca2adcacdb3fdd8f3692b1b9f1bb7973c5b1094f"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "b3cddda00c8dde08",
+      "image_sha256": "5bb58aeb3daf965a2c48935a2f366aed91921eea1a7cb4c69094c2cd41e396a5",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:9333548@N04",
+      "scene_group": "scene:hotel-les-tipaniers-beach-restaurant-and-scubapiti-promotional-panel-amid-foliage",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.53365,
+            0.42645,
+            0.8545,
+            0.8529
+          ]
+        }
+      ],
+      "source_path": "images/b3cddda00c8dde08.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/b3cddda00c8dde08.json",
+      "rights_receipt_sha256": "dee4a868959285f5d014692e37c4b766595c978e65e1d402fc32009278d223fc",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b3cddda00c8dde08.json",
+        "sha256": "4c625af33d28547dd2821ec0c14fdc062aa61d40688deefa35866e373095fea3"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "99c50590c334d1e5",
+      "image_sha256": "b8cbef8d79281710812e89ca3e93a812d7938d462b494e9b945d75973b756d3e",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:21482624@N00",
+      "scene_group": "scene:musee-carnavalet-two-portrait-exhibition-banner-above-brown-museum-direction-arrows",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.50715,
+            0.3872,
+            0.3529,
+            0.5966
+          ]
+        }
+      ],
+      "source_path": "images/99c50590c334d1e5.jpg",
+      "width": 768,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/99c50590c334d1e5.json",
+      "rights_receipt_sha256": "82d9243b77675cce331660095916316e0fc79a9904f4ce76b69a866a8023e95f",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\99c50590c334d1e5.json",
+        "sha256": "e96b2adad840ceeca19842b5422e82e5b25c06c542e94e18f776fb7d12fe0e07"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "23ac6df7ada563a3",
+      "image_sha256": "915d364509cf5b869660fb85641f9801d15ce390585e90e39358313b7e5a2858",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:25195900@N03",
+      "scene_group": "scene:rehoboth-beach-vegfest-umbrella-fork-logo-banner-beside-speaker-outdoors",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.6453125,
+            0.5202065,
+            0.491875,
+            0.5422929999999999
+          ]
+        }
+      ],
+      "source_path": "images/23ac6df7ada563a3.jpg",
+      "width": 1024,
+      "height": 681,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/23ac6df7ada563a3.json",
+      "rights_receipt_sha256": "43e9efa60216ab5937befd6a3c969e0239492dc41be70c18f720a576da1caf40",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\23ac6df7ada563a3.json",
+        "sha256": "ec0f021b6d7759e5a2c5ee2274210f03d5774d955132e01c6248df6045a69d23"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "75ac7104b8c15a17",
+      "image_sha256": "ccb198d4037762e5fbec712aceb54b51ed525e0c44fed8abe2a797b0d9f85ae8",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:97785072@N00",
+      "scene_group": "scene:architects-engineers-911truth-examine-evidence-board-beside-cemetery-and-white-industrial-warehouse",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.1640625,
+            0.44606,
+            0.125625,
+            0.190432
+          ]
+        }
+      ],
+      "source_path": "images/75ac7104b8c15a17.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/75ac7104b8c15a17.json",
+      "rights_receipt_sha256": "3454eb0fcdfd9c27311ebbc0baf183ae9d5b47eae605ce8dc148826f97333a90",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\75ac7104b8c15a17.json",
+        "sha256": "118d467c8e4fbe5b664ba8671ef72a3ce1890183dda974ba9cf00c5d0c010401"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "64feab3aaa22fa1b",
+      "image_sha256": "22b8c6cd500ea16426eaf4a69d22df2f5e93128aee19df7272e3999b7e47d38e",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:14829735@N00",
+      "scene_group": "scene:paired-co-operatives-2012-grape-grower-and-park-community-campaign-panels",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.2465625,
+            0.48124999999999996,
+            0.493125,
+            0.6875
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.75,
+            0.4883335,
+            0.49875,
+            0.673333
+          ]
+        }
+      ],
+      "source_path": "images/64feab3aaa22fa1b.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/64feab3aaa22fa1b.json",
+      "rights_receipt_sha256": "679a695b7dcdc32bc94bd77e9f6266702475896822c19beebfef0c95650187c5",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\64feab3aaa22fa1b.json",
+        "sha256": "91d2020c4af5c29aaf4205171f5cfa7e4c27549b1c7a910972a0e9dc2d9b94cd"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "bdf66bc984b9720e",
+      "image_sha256": "2c3035129dc5c856c804e356fcac1c6bd05996fe75e3caaf53656bbadbee9dde",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:98848866@N00",
+      "scene_group": "scene:hong-kong-museum-of-art-warhol-marilyn-and-twentieth-anniversary-exhibition-facade-campaigns",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.77,
+            0.3958725,
+            0.2975,
+            0.791745
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.1724,
+            0.429,
+            0.29979999999999996,
+            0.6882
+          ]
+        }
+      ],
+      "source_path": "images/bdf66bc984b9720e.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/bdf66bc984b9720e.json",
+      "rights_receipt_sha256": "b28fc489c38fc45e5e819a43026dcfbec8af6a1e4c62f8d5d758df289371a85c",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\bdf66bc984b9720e.json",
+        "sha256": "bcc31990bdc2f2a9ea0839fd6fa870cda805e0c9318f763d2e843bfe89b458fd"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "eecb0152c21db860",
+      "image_sha256": "7128e7087b9f43403355aa2975b45ce81087aa3d97f16b30d77c7d2ee8ed717a",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:67513462@N00",
+      "scene_group": "scene:thunder-from-down-under-excalibur-show-roadside-billboard-by-atlantic-terminal",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.51105,
+            0.36950000000000005,
+            0.6138999999999999,
+            0.37700000000000006
+          ]
+        }
+      ],
+      "source_path": "images/eecb0152c21db860.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/eecb0152c21db860.json",
+      "rights_receipt_sha256": "a56d274450aba1c31768dabcc56996959f87a57e6a8f6f63d438a05198dd1b48",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\eecb0152c21db860.json",
+        "sha256": "08d7a85fb412d43e3f24cf513e1e1b3c0357fd371b8ebde1c8add9c039ba6724"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "a05d74b985d4bc2b",
+      "image_sha256": "557d2a67b39807ee8e26a3bfe86d17d3156b9cb20798ff94dd0dd1fb28a850f9",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:63328822@N00",
+      "scene_group": "scene:red-blue-north-korean-political-panel-between-residential-apartment-blocks",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.37889999999999996,
+            0.5176000000000001,
+            0.6524,
+            0.5168
+          ]
+        }
+      ],
+      "source_path": "images/a05d74b985d4bc2b.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/a05d74b985d4bc2b.json",
+      "rights_receipt_sha256": "0858c8ec186533afabf1532877a5c10cb491fbf8e1ebe2d421f744f494f4a9ab",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\a05d74b985d4bc2b.json",
+        "sha256": "16a5a602ac070da315d45beda8c0e8acfc8e27558a3dd7b70de4a035ac9f8819"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "b619045bda83d108",
+      "image_sha256": "2a5405fa0f753e64b65fd729a49b0da1ce47b5ed2268b8d97b4cd853843b9ce1",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:50881309@N08",
+      "scene_group": "scene:rbc-summer-kids-camp-kilimanjaro-and-cross-training-roadside-banner",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.48045,
+            0.45615,
+            0.6543,
+            0.7254999999999999
+          ]
+        }
+      ],
+      "source_path": "images/b619045bda83d108.jpg",
+      "width": 1024,
+      "height": 685,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/b619045bda83d108.json",
+      "rights_receipt_sha256": "e672c82d576a76f9d342e94c54a00d75e0dc664b02f6b1b9b55ee72e923f726d",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b619045bda83d108.json",
+        "sha256": "2616275c51c1522bf0827150edb5a2bcb609e59b3facb69245f53539badeba40"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "27920c9574d34fd9",
+      "image_sha256": "306f6b357ec5d02a71c00b850146e2f6d2221792352b016628ad9d78e6076c24",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:16093597@N05",
+      "scene_group": "scene:o2-world-teddy-bear-campaign-above-green-totaldemokratie-berlin-wall",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.8271875,
+            0.26875,
+            0.17562500000000003,
+            0.15249999999999997
+          ]
+        }
+      ],
+      "source_path": "images/27920c9574d34fd9.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/27920c9574d34fd9.json",
+      "rights_receipt_sha256": "c5b58111b7dd9520415276ba456a4ee6b88128e7107c27c36f689109a7b6215f",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\27920c9574d34fd9.json",
+        "sha256": "8c0518fa99dcbeef83de603e0f9d3b5bbed26c8d26d5445413a09120d4a3a86e"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "a39dda42b11a5c4c",
+      "image_sha256": "e756112a3eb45277010e374921efbc3e154a236296737bf2cc94ef9b43c0fecd",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:63169042@N00",
+      "scene_group": "scene:connecting-line-bbs-and-christmas-tour-double-pole-billboard-over-red-brick-building-in-snow",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.274375,
+            0.9371430000000001,
+            0.09874999999999998,
+            0.0704760000000001
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.45625,
+            0.5085715,
+            0.3212499999999999,
+            0.25904699999999997
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.376875,
+            0.932381,
+            0.09375,
+            0.06476199999999999
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.77,
+            0.5209525,
+            0.30874999999999997,
+            0.238095
+          ]
+        }
+      ],
+      "source_path": "images/a39dda42b11a5c4c.jpg",
+      "width": 1024,
+      "height": 672,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/a39dda42b11a5c4c.json",
+      "rights_receipt_sha256": "e98e324c0fa6a2373ef626493096701015eb69e7a6dd6a3172409a32076704ad",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\a39dda42b11a5c4c.json",
+        "sha256": "ad89929d4596718f4dc99f639b93f0cecf5a891dd4878b5491b31afc70e4fcbd"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "92acfd217c54a6c1",
+      "image_sha256": "87485996afced7cf9fdf5e2e7e37de10a48babc872b7707a2e76542ab632b199",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:78839566@N02",
+      "scene_group": "scene:plan-b-sheep-landscape-pool-and-dart-promotional-pavement-panel-on-dutch-street",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.35940000000000005,
+            0.5845,
+            0.625,
+            0.6162
+          ]
+        }
+      ],
+      "source_path": "images/92acfd217c54a6c1.jpg",
+      "width": 768,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/92acfd217c54a6c1.json",
+      "rights_receipt_sha256": "f16b7b9369c010c369f42b4a210118c50e93ea3239035254a20d784cc8b86abf",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\92acfd217c54a6c1.json",
+        "sha256": "e8b3301f1bf79bff698ac6dada9efe7536eba3af42f32abedf1c39b8e7b406d3"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "13909d11dbe65be8",
+      "image_sha256": "7727d6048435db5febb5ff1f5e5da39b53c3753b5300ccce575d9adce497f7e1",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:42121221@N07",
+      "scene_group": "scene:budapest-ferenciek-tere-bus-display-in-front-of-unicredit-4percent-deposit-campaign",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.7634375,
+            0.48686650000000004,
+            0.47187500000000004,
+            0.943715
+          ]
+        }
+      ],
+      "source_path": "images/13909d11dbe65be8.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/13909d11dbe65be8.json",
+      "rights_receipt_sha256": "3743680e65bc8cb6f8a0ba765517190e1e8ac344e30a167ce2d45f1a2bf7c309",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\13909d11dbe65be8.json",
+        "sha256": "18bd754b0377331e39ae14fbf15502a3931c789c7a19230d0e5943d16c693c61"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "db5023702de03984",
+      "image_sha256": "3a015e9c4b31e0bd51fd2c5ea7594dbb0011e06d37188537c2d748215a8e8fa6",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:92382806@N00",
+      "scene_group": "scene:57-street-station-nqr-entrance-cbs-evening-news-katie-couric-campaign",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.374,
+            0.2793,
+            0.5254000000000001,
+            0.4102
+          ]
+        }
+      ],
+      "source_path": "images/db5023702de03984.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/db5023702de03984.json",
+      "rights_receipt_sha256": "6593095322db591ae36d180859da50d993b9b7ae6fa1570a320e86bfb6c4c107",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\db5023702de03984.json",
+        "sha256": "77969476c12eaefff2a3993da2b3a897472bec94421d86d867f50f689e28b726"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "03a27395be344ab4",
+      "image_sha256": "4a2d4e9b6a0e2d9853c78f8dd3f11c866edbd56689e9a9e001d38db10c75dd6b",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:12708857@N00",
+      "scene_group": "scene:redrow-the-birches-now-open-housing-billboard-outside-grey-retail-building",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.58935,
+            0.4722,
+            0.48529999999999995,
+            0.6318
+          ]
+        }
+      ],
+      "source_path": "images/03a27395be344ab4.jpg",
+      "width": 1024,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/03a27395be344ab4.json",
+      "rights_receipt_sha256": "6991495412e5757101bab188bf7be092264d5c398ada364173010c2ed5f2c5d1",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\03a27395be344ab4.json",
+        "sha256": "4b0c51d3124b9baa8e33fbc39687f1a956bd73b48eb81761de6a7463a868b724"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "30cbf2e7a5034abe",
+      "image_sha256": "cc1e402451ece4e28329051799bc44789937a463b0ed7ea40dfa23f15db978a4",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:32627224@N07",
+      "scene_group": "scene:salvation-army-poverty-campaign-in-front-of-farine-five-roses-industrial-building",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.52245,
+            0.59225,
+            0.3907,
+            0.22390000000000004
+          ]
+        }
+      ],
+      "source_path": "images/30cbf2e7a5034abe.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/30cbf2e7a5034abe.json",
+      "rights_receipt_sha256": "dbe73991cd877a7c6a3df5956b0b392a362f67bb63b62e49ba6d2dc37c80fb2a",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\30cbf2e7a5034abe.json",
+        "sha256": "64790e124ee35fcab63a0682a5f32e26f836575306a16eb7e295e7c3e5aeb560"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "6da6a9c6bdf31c76",
+      "image_sha256": "4314c16b6cfe4b819782044ff2baf34d8c5c49a0111388c17eb9c30655b99876",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:50036088@N05",
+      "scene_group": "scene:pool-safely-pool-fence-campaign-with-two-girls-against-sky",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.5054685,
+            0.48333349999999997,
+            0.7890630000000001,
+            0.429167
+          ]
+        }
+      ],
+      "source_path": "images/6da6a9c6bdf31c76.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/6da6a9c6bdf31c76.json",
+      "rights_receipt_sha256": "b46a983e04ee0e8bd0c2b1f24ddeae3186003d2faa14573c92bd4abec9e03ba6",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\6da6a9c6bdf31c76.json",
+        "sha256": "cd434f0849d80434e72fed7faa0589209e5051484fe0aa760aaf2ee6a196fc44"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "888e37034d215b1c",
+      "image_sha256": "c59293e7943d895799d5ff86131c129732c92349c843464f862f56afb5dd22a3",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:38479816@N04",
+      "scene_group": "scene:red-framed-santeria-milagrosa-tarot-service-campaign-on-tiled-station-wall",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.43995,
+            0.48435,
+            0.7393,
+            0.7112999999999999
+          ]
+        }
+      ],
+      "source_path": "images/888e37034d215b1c.jpg",
+      "width": 1024,
+      "height": 769,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/888e37034d215b1c.json",
+      "rights_receipt_sha256": "54f6b118ca392eb953f3c401be9abed0a8a718f3e53740c16d8920640de658e4",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\888e37034d215b1c.json",
+        "sha256": "34482d6f8df15e649de8a4d8cf85d58d81906f54e0337b61e426c9b6996d47bd"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "b9baad45d76338a0",
+      "image_sha256": "b0403123e88f6d1d45613a0f19fc31205cda8fb5a43ba689fc69801e2a93d5f8",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:31715625@N00",
+      "scene_group": "scene:blue-zlatna-dab-beer-campaign-with-woman-and-bottle-across-urban-storefront-facade",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.58495,
+            0.6169,
+            0.8301000000000001,
+            0.3582
+          ]
+        }
+      ],
+      "source_path": "images/b9baad45d76338a0.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/b9baad45d76338a0.json",
+      "rights_receipt_sha256": "ce54b82083716e77a2251370bb06e51c5069d393acb3f899418f65c2e0d637fc",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b9baad45d76338a0.json",
+        "sha256": "63b72b0f9156b1610efbb178754b184afbb395687a647a50e2468c8c62a1fc32"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "f116401d17107895",
+      "image_sha256": "4a0f799487a679075a523791f37a89e6ad3ab1963c2408b46e53ff1ac6b392ee",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:31029865@N06",
+      "scene_group": "scene:japanese-mib3-station-corridor-film-advertisement-beside-standing-commuter",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.49315,
+            0.519,
+            0.9551000000000001,
+            0.5720000000000001
+          ]
+        }
+      ],
+      "source_path": "images/f116401d17107895.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/f116401d17107895.json",
+      "rights_receipt_sha256": "7ca57e86ed864ffc357abdb76ca18a33effe43d2769d4c3190c13cf2ba021c66",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\f116401d17107895.json",
+        "sha256": "b84a3be6ee945b091395767a31c78922dfb0389acc1b1ba61edf2fd611f7163e"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "5a1cea0bb9f7b721",
+      "image_sha256": "68a911102c7bec7d4b82a417bb8747841d642187bebc920fcce8a19525bc320d",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:31190896@N08",
+      "scene_group": "scene:western-australian-museum-a-day-in-pompeii-volcanic-facade-exhibition-campaign",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.47705000000000003,
+            0.5814,
+            0.9267,
+            0.5429999999999999
+          ]
+        }
+      ],
+      "source_path": "images/5a1cea0bb9f7b721.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/5a1cea0bb9f7b721.json",
+      "rights_receipt_sha256": "b638f029a41c7db4f70a55b395b4c8b052795c472c46c3ba217746b4c641e9d1",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\5a1cea0bb9f7b721.json",
+        "sha256": "3bff119824792000c419ffe971d0f791ffb45325d6a7ac27ba88c94de62875d6"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "ef535834c691726f",
+      "image_sha256": "ffd7135c6023f66811cd808ed851f0504d90b73ba33eaddc648727e8e48ba2bc",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:35637563@N00",
+      "scene_group": "scene:binningen-tram-stop-political-hemp-law-poster-concert-event-and-blue-wohnen-am-schlosspark-property-panel",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.47215,
+            0.53645,
+            0.1865,
+            0.33590000000000003
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.6665625,
+            0.37875000000000003,
+            0.10687499999999994,
+            0.325834
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.7544,
+            0.25325,
+            0.251,
+            0.3295
+          ]
+        }
+      ],
+      "source_path": "images/ef535834c691726f.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/ef535834c691726f.json",
+      "rights_receipt_sha256": "c774d23484ce0c1f1fbe888f9804a95ce903bf81f239e6342e541e5775d20306",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\ef535834c691726f.json",
+        "sha256": "59c36bc20188a042513ae12d0d1269cf0884b9cea5128f3de43bc6dc8a9e40bc"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "3d01928a39b59560",
+      "image_sha256": "4431e5a1653b88a25233df308ef9dcd2e9eefced2777d9103ef7d76dbbf40c6b",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:30800482@N04",
+      "scene_group": "scene:night-blue-krakchemia-adam-slodowy-service-campaign-billboard-photographed-from-below",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.5,
+            0.65755,
+            1,
+            0.4921
+          ]
+        }
+      ],
+      "source_path": "images/3d01928a39b59560.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/3d01928a39b59560.json",
+      "rights_receipt_sha256": "97a22a2e62ff66e2acdbcf8dc16ff6c8518e668e21e2433e868bbd1ccc48e85b",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\3d01928a39b59560.json",
+        "sha256": "1ef3000a0f80aa70ff1cfe77f2de4c03b0157556eb63e785f67937ae0ffd5a89"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "218828c2b0ceb0b2",
+      "image_sha256": "084affb312b1dea8924718cc359900d0f62618598391d8b7472bba0de5be19fc",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:15786211@N00",
+      "scene_group": "scene:oblique-utopia-rooftop-billboard-above-street-art-wall-and-elevated-road",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.8790625,
+            0.1985155,
+            0.12187499999999996,
+            0.378479
+          ]
+        }
+      ],
+      "source_path": "images/218828c2b0ceb0b2.jpg",
+      "width": 1024,
+      "height": 690,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/218828c2b0ceb0b2.json",
+      "rights_receipt_sha256": "cd875e4cd1842fbcc97180079afd9459e08a1146961e54483756b51d69b0ce88",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\218828c2b0ceb0b2.json",
+        "sha256": "6548b9cec1dc7e053a25f5dbc82c0d839f139efaffd08548d95e88784cde2580"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "ee920572c18e9006",
+      "image_sha256": "7c4667d9f0ce54352b1c1868da194e9694551cd20acf8f1595a4240bf7b64dc9",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:65909989@N07",
+      "scene_group": "scene:cannes-photo-mode-ninth-festival-laurent-elie-badessi-black-white-portrait-promotional-panel",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.422139,
+            0.5125,
+            0.844278,
+            0.8125
+          ]
+        }
+      ],
+      "source_path": "images/ee920572c18e9006.jpg",
+      "width": 683,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/ee920572c18e9006.json",
+      "rights_receipt_sha256": "ffdcfbf632950933c2f7a92fd9890d5a59994af738bf75ea194e432047f686b1",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\ee920572c18e9006.json",
+        "sha256": "748fcb8240baf17e759ec88c26034b815a61248291d262ea69f5623dbd843d99"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "1006ce66c4f168ce",
+      "image_sha256": "8391b60c3e73fbc8eb28f8cfa191c04fcb189a64b29d3ee41249ef331f8660b9",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:95172615@N00",
+      "scene_group": "scene:hoi-an-political-public-campaign-illustrated-citizens-boats-red-flags-and-town-website-billboard",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.5166000000000001,
+            0.46159999999999995,
+            0.9356000000000001,
+            0.5898
+          ]
+        }
+      ],
+      "source_path": "images/1006ce66c4f168ce.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/1006ce66c4f168ce.json",
+      "rights_receipt_sha256": "417d02277285b8a92e9b2b32c8dfa859bc19d1a728503b34693015e671467cb3",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\1006ce66c4f168ce.json",
+        "sha256": "fa2aa90ce74c05e73e2012cc9e6af74c900c4a876d534ea3da157d52f76ed189"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "9b1480cf4a006424",
+      "image_sha256": "bb0480e168b53ea9ec63f4449dd73ad5e7505153bfbbca51e3489806a9dd2919",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:56053642@N00",
+      "scene_group": "scene:mortys-pub-thursday-wing-special-illuminated-night-campaign-panel",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.45799999999999996,
+            0.4524,
+            0.40040000000000003,
+            0.6472
+          ]
+        }
+      ],
+      "source_path": "images/9b1480cf4a006424.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/9b1480cf4a006424.json",
+      "rights_receipt_sha256": "7e50ee5cb2d722fbc5de1f45e541c69ee5d6e559ddb4dc18ec67b55122905387",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\9b1480cf4a006424.json",
+        "sha256": "9b8f1cf675ff5544de894a876e338455310baca86e9c9b8edc2ced391bafc065"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "1ed09b82d0a8370d",
+      "image_sha256": "0ccb6d5ad916c91c30376239bbedfcf60c80f58181a7b6e8da98d5e991f3379c",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:93969271@N03",
+      "scene_group": "scene:white-frigidaire-laundry-appliance-with-bright-clothes",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/1ed09b82d0a8370d.jpg",
+      "width": 683,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/1ed09b82d0a8370d.json",
+      "rights_receipt_sha256": "54c175111fe6deaca1965c581392336de5b0a81f3c986d56d20155f544741c64",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\1ed09b82d0a8370d.json",
+        "sha256": "b9e559124ac7d8d935428ab1513a952410939fba6e6dd0b5131428367156c96d"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "46330787365e39e3",
+      "image_sha256": "44af63836819c1ea50fb6a2908e44998a53e0ffef1d99079529cee3943b2e36d",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:48722259@N02",
+      "scene_group": "scene:no-trucks-prohibition-close-up",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/46330787365e39e3.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/46330787365e39e3.json",
+      "rights_receipt_sha256": "edcd44a18c01aa1cbc59efa1a382d2ee71b26ae37ef1df47635a631857c4c421",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\46330787365e39e3.json",
+        "sha256": "de9c14649b9cc4531ffae0d22c3386f3abb6ae0b5dca7ed31a28ba5ef9e41627"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "64f48726c64d158b",
+      "image_sha256": "f059ce6610e2d8afae40bc0e7fff151e6c3c91945d50bd9685ff6f1302d808d1",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:55997298@N06",
+      "scene_group": "scene:green-tile-cream-cabinet-kitchen-with-front-loading-washer",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/64f48726c64d158b.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/64f48726c64d158b.json",
+      "rights_receipt_sha256": "88d821715394113a4ded581528ebe51f581db65c8b2519230987283e9057948b",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\64f48726c64d158b.json",
+        "sha256": "0d7dd54d1d6edfff9ab5505f54b2d14d0df4f08a86cc4ff556e2ab8366ef3baa"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "ed01c21759d5c1dd",
+      "image_sha256": "4999323b45a90cefcc5cf726b1bea4a50f04bb7c4ac2dbb572e1adac9c9e8096",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:21218849@N03",
+      "scene_group": "scene:handwritten-metaphors-list-on-recessed-indoor-whiteboard",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/ed01c21759d5c1dd.jpg",
+      "width": 685,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/ed01c21759d5c1dd.json",
+      "rights_receipt_sha256": "81deee185516dcd1634c19180e05fecdb70a776e9a43401b639a769d8fe28c3b",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\ed01c21759d5c1dd.json",
+        "sha256": "a3e14d741a8416ef0793d6c8f37e272be91df35a4221b49828978cb45badca41"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "20a3a8cd5733db8c",
+      "image_sha256": "70e0dd3720310dee3789417319266f68937124d86bf10f2c68fe1a87ee4ae0b6",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:69875617@N00",
+      "scene_group": "scene:station-road-horsforth-bus-service-information-sign",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/20a3a8cd5733db8c.jpg",
+      "width": 768,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/20a3a8cd5733db8c.json",
+      "rights_receipt_sha256": "01df62e27a4c5e12af2ef29a5224287cf9e543663dedb5c234629cd5294e8f2a",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\20a3a8cd5733db8c.json",
+        "sha256": "f62914b1a784594adf48c1a77048a8bc31dca390d59a03f986cebf0fea499295"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "c169d65520795324",
+      "image_sha256": "caef5126e7804e7252845949110d2b28bdab6c9e22efa9a2e5e5b9d2a51cd2a8",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:30325243@N00",
+      "scene_group": "scene:green-cake-sheep-cartoons-on-office-whiteboard",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/c169d65520795324.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/c169d65520795324.json",
+      "rights_receipt_sha256": "6fc549ab7e5530d022fa3395069ba59038e3a9b6a801b6cefe860f94ef1dc7bd",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\c169d65520795324.json",
+        "sha256": "2142cb95fc72f7aebed28ae61799709c92dc629134d98ff2d80b3c3a24bb7f83"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "8a2155fbed2a9b9f",
+      "image_sha256": "1769253ca2336ca5d0ccb26bb6d15ef19229c02e265c5564252c2116fd16f96c",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:99287245@N00",
+      "scene_group": "scene:medical-technical-console-crt-and-green-equipment-manual",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/8a2155fbed2a9b9f.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/8a2155fbed2a9b9f.json",
+      "rights_receipt_sha256": "a700766be2d0c7d27f67722dec4847b2d77f47d1e1e77cbd435eaa78a0f77f53",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\8a2155fbed2a9b9f.json",
+        "sha256": "f77d85894cd6f5789ff627d2fc52c9fac7d956d990208100cf85de0fc63a5ddd"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "060bdd332c2c7055",
+      "image_sha256": "fd52f0d602816c90f1ffd2caf35d980337bdfccaf77546178d5b458a9b321a1d",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:38035878@N07",
+      "scene_group": "scene:pazo-de-trasariz-stone-historic-building-identification-marker",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/060bdd332c2c7055.jpg",
+      "width": 1024,
+      "height": 779,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/060bdd332c2c7055.json",
+      "rights_receipt_sha256": "0a925aa9417b549cf17d9c8abc7787bbe8c5673a60927267a695fd62b3efc1c5",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\060bdd332c2c7055.json",
+        "sha256": "4d4c264fd2e296e0564a37cd91861d94da6a9218c3a6afdfd4a899241956b9d7"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "0ead37227d5e2931",
+      "image_sha256": "b9a3e250224dac862a7c61e31b4b59e9d09281af8c16d80d0683d2535c844475",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:44124368329@N01",
+      "scene_group": "scene:south-ferry-shelter-island-timetable-and-fares-beside-person",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/0ead37227d5e2931.jpg",
+      "width": 1024,
+      "height": 703,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/0ead37227d5e2931.json",
+      "rights_receipt_sha256": "a6e0d4f3994fc9202086b913dfeb4d961e86af3a8425a9331af7ad96ce77a901",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\0ead37227d5e2931.json",
+        "sha256": "5e158211a35d12291c83e38c6bef006fa70c5cc7adf48bbcae69e281627dfb46"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "0c4e2a0564dec658",
+      "image_sha256": "34939bcf92a6f4bece59a7cf380c2da7911a4be858d2e50822e34a254781ced4",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:44124366475@N01",
+      "scene_group": "scene:classroom-monitors-woman-and-foreground-shoe-on-desk",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/0c4e2a0564dec658.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/0c4e2a0564dec658.json",
+      "rights_receipt_sha256": "296d1ff1b8d18890fc428d61f137475d2b9910f6f2e95e8fffd63afca99753dd",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\0c4e2a0564dec658.json",
+        "sha256": "d3343650a3f22deceae38aeefb65ff07ae4c7b9af6de919ee5a05729486fcd42"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "31c585fd77d4d28f",
+      "image_sha256": "bafb970fdc736cc5867291901bd9d6535bc2267df8dad852636cbbe66e38db82",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:35498166@N00",
+      "scene_group": "scene:bridge-warning-and-chevron-with-apartment-skyline",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/31c585fd77d4d28f.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/31c585fd77d4d28f.json",
+      "rights_receipt_sha256": "d078bb49e3ce00a4cdea047c5431aa6f4fecea0e06efb5ac77c62399bc3f4eb9",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\31c585fd77d4d28f.json",
+        "sha256": "1c7df7714664c678ecfdef0474702f568c4dfd38c2188322a36c01504533908f"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "757556fbf9393cff",
+      "image_sha256": "99c57c48bfb822cf3992fdcc6f2235354bc0008ee2367e6148faff5a4cd26bad",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:24340358@N07",
+      "scene_group": "scene:museu-de-arte-contemporanea-purple-directional-marker",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/757556fbf9393cff.jpg",
+      "width": 1024,
+      "height": 679,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/757556fbf9393cff.json",
+      "rights_receipt_sha256": "2e267971d64875dd5b7d79c3fdd351dd6782d7f89fcde244c2552f0382b7aa9f",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\757556fbf9393cff.json",
+        "sha256": "c9b6378d102fe16b9d815bc02664baad690ec2eed587e4a9fcaad546c8ebc545"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "c112d5d0c11204c2",
+      "image_sha256": "1e0d9ba4d7a125d91b952d383d781cf674691a443d3bfb03496c7d75ebf02126",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:57866029@N00",
+      "scene_group": "scene:ali-auto-service-garage-roof-identification-above-open-workshop",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/c112d5d0c11204c2.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/c112d5d0c11204c2.json",
+      "rights_receipt_sha256": "38fbd176d7ea0beb11481c30f9d96091601a54b4fbfd31090c1c55f2fc631039",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\c112d5d0c11204c2.json",
+        "sha256": "d34a4ae9ca26c2ad2a6f9f71f33ece8d931cda6f7632c17b1f7fd9de8ed79886"
+      },
+      "confuser_family": "shop-business-lettering"
+    },
+    {
+      "image_id": "2de30a20ca6e53b5",
+      "image_sha256": "44ace0bf1fd1e97bb448a35d0fe63f8aa4e7ef9206ae98432f6eafe3a0ee3084",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:25514198@N00",
+      "scene_group": "scene:top-loading-japanese-control-appliance-beside-lace-curtained-window",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/2de30a20ca6e53b5.jpg",
+      "width": 680,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/2de30a20ca6e53b5.json",
+      "rights_receipt_sha256": "1bb7f7b24439ef24187f1b291c2180567da150b4b6ea84713a4cf2d99edfa252",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\2de30a20ca6e53b5.json",
+        "sha256": "e2da7fbfce84676364e83e7bac2f60c6cf68aaafa7d9da353dad7403578e619c"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "28b10d0cab704513",
+      "image_sha256": "b58075e525080bd5ca9db4d15049788e33b5b37208eaf78faa620db291a79cc3",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:81865167@N00",
+      "scene_group": "scene:child-beside-open-front-loader-in-domestic-utility-space",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/28b10d0cab704513.jpg",
+      "width": 1024,
+      "height": 760,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/28b10d0cab704513.json",
+      "rights_receipt_sha256": "efe167ba1eb5c1cb4eb8aab2ea79c2cd2bf908a22e3a74329d411cc5661a4d31",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\28b10d0cab704513.json",
+        "sha256": "7d81b4cfc3e69b7646f78136aa56156855b22fa5e64a8264243c8dd0b398b7bf"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "4693658c0ef57ce1",
+      "image_sha256": "61a29168353e9256b9cd3c577660747868e9864e726cf34a27a23a74a992df9c",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:38499344@N05",
+      "scene_group": "scene:presenter-at-flipchart-beside-fireplace-mirror",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/4693658c0ef57ce1.jpg",
+      "width": 1024,
+      "height": 765,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/4693658c0ef57ce1.json",
+      "rights_receipt_sha256": "f62d97b595bdfe642e0914f82c9a4b856dbc877a6760d23d248ef3a40a27f8fb",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\4693658c0ef57ce1.json",
+        "sha256": "cdf9791cef566dab607c0271d8d1e8680a71e38b484bd97abb1b62df100054e0"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "d6bab621c0ddc4ea",
+      "image_sha256": "66d3e82ea9836abe41067d178469f25777e837bfce00596d4febfbad9c612f50",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:23200295@N07",
+      "scene_group": "scene:group-beside-no-turn-sign-and-two-parking-meters-at-stone-wall",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/d6bab621c0ddc4ea.jpg",
+      "width": 683,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/d6bab621c0ddc4ea.json",
+      "rights_receipt_sha256": "3a0f83ced485e9cfc0a4eaf6ad6c86e9817debffb5bbdd4c81196babf1600af2",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\d6bab621c0ddc4ea.json",
+        "sha256": "bfdc8e2ed312281d53b57f3ea8187a676b05ace19bfcaa7334cb4662beecd13b"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "513b5406a0b58ba4",
+      "image_sha256": "6bd950de581b22343671a308deca1865c7b4bf689c6f7f2e00283f22263e52fa",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:45160304@N02",
+      "scene_group": "scene:game-demonstration-monitor-with-large-white-costume-head-participant",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/513b5406a0b58ba4.jpg",
+      "width": 1024,
+      "height": 721,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/513b5406a0b58ba4.json",
+      "rights_receipt_sha256": "80b6a343dd7707f11bef9b73c68d11c82f38011f65c32707ce48b1790e8e80d4",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\513b5406a0b58ba4.json",
+        "sha256": "839e0c4a0637b97c58114842f8ac6fe58d55728b7b4010878684b7b7263a3c12"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "380aab08547bb9d7",
+      "image_sha256": "d620e4c489d183ec654f4ae398bc58adc95d2ad99799334cd96cd3c11cb83286",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:60456299@N00",
+      "scene_group": "scene:in-sink-erator-disposal-close-up",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/380aab08547bb9d7.jpg",
+      "width": 1024,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/380aab08547bb9d7.json",
+      "rights_receipt_sha256": "7e21c9a9f886bd4584740ed7f7fe463b3a2198afde101d8147853ef7f39cea5d",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\380aab08547bb9d7.json",
+        "sha256": "6221b7b00044e833065d75f96f83ab8f6645dab1298b851f69f739de2a28a6ff"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "b7fdd04c8d1a1e0b",
+      "image_sha256": "19ab7a73af8b6e0b967b341742dacafcddc7e5c8855ef5814cb0f0f69324f51f",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:40882383@N03",
+      "scene_group": "scene:road-work-next15miles-project-information-on-forest-road",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/b7fdd04c8d1a1e0b.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/b7fdd04c8d1a1e0b.json",
+      "rights_receipt_sha256": "0224ec789e392f7dc040f3177913f2e623abb2770bf6e92a740feaba7c90b5f7",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b7fdd04c8d1a1e0b.json",
+        "sha256": "de49210e9312057203f4967788d0eb487145c15f57575b2b63662e9fe2002f42"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "00198353ef684011",
+      "image_sha256": "943c27d32abc436074edf4157166318613a9097cdc07532470a6bab230467fa5",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:41898857@N04",
+      "scene_group": "scene:meeting-room-with-long-wood-table-and-many-hanging-light-bulbs",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/00198353ef684011.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/00198353ef684011.json",
+      "rights_receipt_sha256": "e50e791795fa1c6664a5a0802e5df75b8e4b33708b593107fbfb3a6e8c584265",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\00198353ef684011.json",
+        "sha256": "7d43eb801f2097b14c07ab36754d8aec74462a64286b48864c2401b9db222114"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "1cfc8fd2934d4d5f",
+      "image_sha256": "6b453b783d47cd4e70a062135f0eb553d33e60c051b55dfd8123b099a51d3aba",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:57868312@N00",
+      "scene_group": "scene:amazon-shipboard-laundry-machines-with-worker",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/1cfc8fd2934d4d5f.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/1cfc8fd2934d4d5f.json",
+      "rights_receipt_sha256": "1bd870db07d6051a9d9407d23388d93904f44e9b2574e16a9e5280625b0d5eaa",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\1cfc8fd2934d4d5f.json",
+        "sha256": "fce3a7ad0a7f6c3b972b77844a1dc919b04abf71e4754b703e292352c624a35a"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "ef60f47752e17cae",
+      "image_sha256": "4db02810b07cf108ef7bf5aa9b969fc03ce28293abff5ec4b5eaefe943a896bb",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:41894167721@N01",
+      "scene_group": "scene:software-html-lesson-on-projection-screen-beside-framed-blue-portrait",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/ef60f47752e17cae.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/ef60f47752e17cae.json",
+      "rights_receipt_sha256": "189bcac830a356c7d8b5741360743895b7e234b80aa8d96824da4169332b6b79",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\ef60f47752e17cae.json",
+        "sha256": "e3a14d7563c5cc2fa682ea1c0c44852a2a6adc87c3d77cfc16911b78390b82f4"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "562d7492978db1be",
+      "image_sha256": "71a9eee3cfa31986ac1364d4d57e323d20a106d247d20665c381abe2fe2ba7f5",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:53133240@N00",
+      "scene_group": "scene:row-of-laundrette-machines-beside-coke-branded-appliance-side",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/562d7492978db1be.jpg",
+      "width": 994,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/562d7492978db1be.json",
+      "rights_receipt_sha256": "1287398840ad9516c5ffdbb23213275780209c963abf87b1b74ad31404a86831",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\562d7492978db1be.json",
+        "sha256": "22723c8630ee9605c525beafa4fb0fa93da7820e72eeaf7f624d861f1c73fa53"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "0c39f6a763ce3ec0",
+      "image_sha256": "e0a49cc6db517a259e7ec8b037ad1cab7deddc14d0909fcbacc2cdefa25ca5a7",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:43117091@N00",
+      "scene_group": "scene:felix-fish-camp-restaurant-identity-sign-with-fish-illustration-under-grey-sky",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/0c39f6a763ce3ec0.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/0c39f6a763ce3ec0.json",
+      "rights_receipt_sha256": "7a6b1ffdf6173c7ea46a7f455fc09552d6ebf94ead95e1a299d6c658baf9a21f",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\0c39f6a763ce3ec0.json",
+        "sha256": "738ec8d4186225983fd460ce7065558647b1b1cc19ddd8214e152c7258f7b8e6"
+      },
+      "confuser_family": "shop-business-lettering"
+    },
+    {
+      "image_id": "605daeae27237af9",
+      "image_sha256": "1cac7fd7f09e9ccd89d17d18d1fe5e55bc70bdf44dd8da16f93f2f4296e413e9",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:83221073@N00",
+      "scene_group": "scene:carlton-dishwasher-control-under-kitchen-counter",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/605daeae27237af9.jpg",
+      "width": 1024,
+      "height": 684,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/605daeae27237af9.json",
+      "rights_receipt_sha256": "ecf92a7d18125681512a30be926efdb131bfe087b409062306d993f30f1ad455",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\605daeae27237af9.json",
+        "sha256": "62ca65c1c462eddb4ac9a36e20172435ec2955fb77ddb615c7a1be8f6c12816f"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "6060c02183e1a945",
+      "image_sha256": "e942f496f6628387416c5578baa44efed6c632fcfd8b22a8f40cf1fc84e62c96",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:85598619@N00",
+      "scene_group": "scene:old-timber-shop-doorway-with-chinese-red-couplets-and-blue-partial-shop-name",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/6060c02183e1a945.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/6060c02183e1a945.json",
+      "rights_receipt_sha256": "f116364679f1f091e6eb0fabc513255bcd481a8a48bbc16a707f399488c64a84",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\6060c02183e1a945.json",
+        "sha256": "268fd7a7762656340308fcdbfd5fb6c3fcdbfbdfddc06357ca05647ea6fea436"
+      },
+      "confuser_family": "shop-business-lettering"
+    },
+    {
+      "image_id": "37c1b3a6b5c824d4",
+      "image_sha256": "b6a240019ba6fd6e16f340305f33661632b7ebd22b29678905a264f6554379b0",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:97719890@N00",
+      "scene_group": "scene:los-robertos-mexican-food-name-board-below-drive-through-open24hours-information",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/37c1b3a6b5c824d4.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/37c1b3a6b5c824d4.json",
+      "rights_receipt_sha256": "6f9d9d5efbc5e47dffd02b51ebe57be48e50e7ab79e16c6c90b9ebb9736ae063",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\37c1b3a6b5c824d4.json",
+        "sha256": "54b50561698073437e4db0dcfaea278e7a48307f9dd85070b85d7a52f41b84c2"
+      },
+      "confuser_family": "shop-business-lettering"
+    },
+    {
+      "image_id": "b3c84145d7be9b72",
+      "image_sha256": "3f73e7c5248a3568e2781d0bf4d5cc7d624c0c5217f40860871a06b8a358f4e5",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:34043089@N00",
+      "scene_group": "scene:black-restaurant-neon-name-and-arrow-sign-against-blue-sky",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/b3c84145d7be9b72.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/b3c84145d7be9b72.json",
+      "rights_receipt_sha256": "57c3a033d5bc5156739650fe0543780d77b9bdb3398a3180941383f6ae9f252c",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b3c84145d7be9b72.json",
+        "sha256": "9485169c77eabd42a07b88c71d54322639ac04b38ab134e144fc591f1c162a5e"
+      },
+      "confuser_family": "shop-business-lettering"
+    },
+    {
+      "image_id": "c2c1c1d3eb3b5c54",
+      "image_sha256": "9eb02d8dd549103c2557ca1d60d3b5f597ec863c0b72e7a57dc589bf7600e9e4",
+      "split": "train",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:9265232@N04",
+      "scene_group": "scene:oakdale-motel-vintage-red-arrow-neon-vacancy-name-sign",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/c2c1c1d3eb3b5c54.jpg",
+      "width": 1024,
+      "height": 692,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/c2c1c1d3eb3b5c54.json",
+      "rights_receipt_sha256": "166f0c5099c3ce197d83b1bbcb97de87dc40ae9114c4d0602c106e9928807b77",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\c2c1c1d3eb3b5c54.json",
+        "sha256": "51026f0c3d82edf80afcee200b7e68c807a7cb98c2990ac2af1180758ef33476"
+      },
+      "confuser_family": "shop-business-lettering"
+    },
+    {
+      "image_id": "066687f8b782ab5b",
+      "image_sha256": "c67bad36cbf964aebd52923b9d544d7081f5abf056ced0cef88b7696f83fca10",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:43340821@N06",
+      "scene_group": "scene:dansende-daken-housing-bouw-gestart-kies-voor-keuzen-development-board",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.500625,
+            0.4816665,
+            0.9237500000000001,
+            0.963333
+          ]
+        }
+      ],
+      "source_path": "images/066687f8b782ab5b.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/066687f8b782ab5b.json",
+      "rights_receipt_sha256": "7f0fa2e0660f8f4792c600fc5fd7d3cfb7c47a1a761a078c14371a01162928a9",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\066687f8b782ab5b.json",
+        "sha256": "62fc5c126a0b324d68a979c234719eb3536428d670fe4d86c3305476fd67ca02"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "5671f6f9aed0541a",
+      "image_sha256": "3c84358ca7570706c06fcaf1b611f7e6d4b98e013e2bfe179b5ebf3761d3f5ef",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:38934395@N07",
+      "scene_group": "scene:deterrent-or-provocation-tank-poster-at-hammersmith-station-platform",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.5735415,
+            0.534355,
+            0.695689,
+            0.44926000000000005
+          ]
+        }
+      ],
+      "source_path": "images/5671f6f9aed0541a.jpg",
+      "width": 1024,
+      "height": 819,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/5671f6f9aed0541a.json",
+      "rights_receipt_sha256": "0001d6b76875ae1db87005e56ea641f3bc41bec1fdd8c2c69c8e5abbd2ace5e7",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\5671f6f9aed0541a.json",
+        "sha256": "9473789bdb08974cd42e42dc7d2616f003c60156b9bbee97022ad7624fe1c7ce"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "6532e6a4944b0156",
+      "image_sha256": "d3c9057d47e628457f00f1072e5f39242a91cb0d04650ca07aacfa3b86eb88ce",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:93393982@N00",
+      "scene_group": "scene:denver-welcomes-iste2010-colorado-convention-center-airport-banner",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.5521875,
+            0.5344825,
+            0.843125,
+            0.25250300000000003
+          ]
+        }
+      ],
+      "source_path": "images/6532e6a4944b0156.jpg",
+      "width": 1024,
+      "height": 575,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/6532e6a4944b0156.json",
+      "rights_receipt_sha256": "42a0fbbecad6c8ebb71719046ed0b0bb6cd15b1d41a9e6f74eb2a934bebd36a1",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\6532e6a4944b0156.json",
+        "sha256": "254889025aebb4fb89e285552f702ee3b924a020b229695ba5f480711368a888"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "002d7d220a042075",
+      "image_sha256": "637540546953f17fe9f001ac18b383039ce850f5b6d27f987a22ab2e05dd6d62",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:66151780@N00",
+      "scene_group": "scene:thorns-showcase-lounge-bucket-of-butt-halibut-miller-beer-framed-wall-campaign",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.4321875,
+            0.5281425,
+            0.864375,
+            0.660413
+          ]
+        }
+      ],
+      "source_path": "images/002d7d220a042075.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/002d7d220a042075.json",
+      "rights_receipt_sha256": "f602c052a1bab194f6cfc8e769debe0f18580e64d5dc0b6c712ff77d24538801",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\002d7d220a042075.json",
+        "sha256": "ec491b4e037218bfd8cf20a811a6fdebe8bc5763c9e5982cacd7042e3ab0eeb4"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "97c4a86fe18afdb8",
+      "image_sha256": "fd4702dcdb379568da11e74feda1e7ebc16afcda9eeb81173be734ad6ff4ee42",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:8374005@N02",
+      "scene_group": "scene:robin-hood-russell-crowe-cutout-billboard-on-cannes-waterfront",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.7275,
+            0.30365,
+            0.4004,
+            0.4875
+          ]
+        }
+      ],
+      "source_path": "images/97c4a86fe18afdb8.jpg",
+      "width": 1024,
+      "height": 685,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/97c4a86fe18afdb8.json",
+      "rights_receipt_sha256": "1b4025b70cd565d9b5a3bf482402db2cd17bb8e042c0013707ec9e95a20ec30a",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\97c4a86fe18afdb8.json",
+        "sha256": "fde9293860c8f07b72d3b04fd6f938d3b194387edad33716f74bedb9cadddd29"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "c684d8b7a6e8cae8",
+      "image_sha256": "d71c01c43c7a985496749430562c80622b9fe1370bfb77d630fcea40452ded36",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:44281533@N07",
+      "scene_group": "scene:spanish-royal-state-visit-campaign-poster-behind-orange-precaucion-road-sign",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.6309375,
+            0.6242965,
+            0.736875,
+            0.749531
+          ]
+        }
+      ],
+      "source_path": "images/c684d8b7a6e8cae8.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/c684d8b7a6e8cae8.json",
+      "rights_receipt_sha256": "9ed75c066d58810fcb302e8a581fe6a783370024742176400713bd3932625957",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\c684d8b7a6e8cae8.json",
+        "sha256": "3b4e3a1e85f62f598dd47c0f29e7819eb112f942d5e383abf71a476dfa5298e8"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "4c916adba93611ad",
+      "image_sha256": "6187401d7104202cc547747e6c7b375386849e0e85d40224aa77123abe493f0f",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:25465562@N00",
+      "scene_group": "scene:chick-fil-a-breakfast-billboard-with-attached-cows-above-global-limousine-campaign",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.5,
+            0.44595,
+            0.5176000000000001,
+            0.4909
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.6475,
+            0.865417,
+            0.70375,
+            0.26750000000000007
+          ]
+        }
+      ],
+      "source_path": "images/4c916adba93611ad.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/4c916adba93611ad.json",
+      "rights_receipt_sha256": "bf26ae0640c35bc9e7b6928538d3441d73568260f1399260d15a3cd40fe5bd3f",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\4c916adba93611ad.json",
+        "sha256": "765b3259d89f75bc0ab1afe140526d01d5f6eb33964b427dcd550eb3210ae83c"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "cea218650a100dd0",
+      "image_sha256": "c2ae8b8654911aca7c62d8f7c65dc29df9527a4198446dae7711f870f4584071",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:7806965@N07",
+      "scene_group": "scene:invesco-field-bud-light-product-display-beside-obama-biden-political-campaign-screen",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.20995,
+            0.36979999999999996,
+            0.34569999999999995,
+            0.7084
+          ]
+        },
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.4868,
+            0.4469,
+            0.2646,
+            0.5892000000000001
+          ]
+        }
+      ],
+      "source_path": "images/cea218650a100dd0.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/cea218650a100dd0.json",
+      "rights_receipt_sha256": "91e3a02a60ae8291a8b6095d33b355c2393cab47537795e4a966bf624b0040a1",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\cea218650a100dd0.json",
+        "sha256": "6ec37dfb0cd98987a2e9aecb894b32d4d429644dce5c1b3f46f4a8bb1b54d594"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "dd1074c4e1f58872",
+      "image_sha256": "8b81f5c369706c3f919ec90245b2d69f14b3d7e35fbac9c56b21e5a5939030b0",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:33307631@N00",
+      "scene_group": "scene:mcdonalds-a-buck-seriously-double-cheeseburger-billboard-on-dry-hillside",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.5005,
+            0.5514,
+            0.7842,
+            0.32939999999999997
+          ]
+        }
+      ],
+      "source_path": "images/dd1074c4e1f58872.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/dd1074c4e1f58872.json",
+      "rights_receipt_sha256": "e6b673cffcc5f9a666ae75470b58bde22980aab3e41aadbbdb053a500dd3384a",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\dd1074c4e1f58872.json",
+        "sha256": "b67a500b82a16d267e396649b1b53b782cb73b6b7cca605e39e56d5239b7edbb"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "fe1a510b5a1c56fc",
+      "image_sha256": "1e73e75e613e8aad8a3bd527536566d17ba531ee04276aed20d5e42fe2f94596",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:70148893@N00",
+      "scene_group": "scene:red-garantia-de-progres-president-montilla-campaign-with-small-protest-placard-in-front",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.4995835,
+            0.3803125,
+            0.999167,
+            0.6393749999999999
+          ]
+        }
+      ],
+      "source_path": "images/fe1a510b5a1c56fc.jpg",
+      "width": 768,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/fe1a510b5a1c56fc.json",
+      "rights_receipt_sha256": "bbdc0b1912a3c0b7ba84c2ca677439a37e132e2beb601c97167a450e5e554073",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\fe1a510b5a1c56fc.json",
+        "sha256": "65b15abc94111949f8b0d25438591a53f4833366bbc81f3ef4cc75efa20f7e87"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "15b9fc26736f275a",
+      "image_sha256": "de6c87bf75228f8e470b286c3c719ea83df317d0c8bc9c360ef22ae1c20d073d",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:35351746@N03",
+      "scene_group": "scene:sprite-mysore-hot-spot-green-beverage-campaign-above-red-storefront-awning",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.3946875,
+            0.5387500000000001,
+            0.780625,
+            0.37750000000000006
+          ]
+        }
+      ],
+      "source_path": "images/15b9fc26736f275a.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/15b9fc26736f275a.json",
+      "rights_receipt_sha256": "f3f999e6762cd7aaf8899bfbd062c65488500ef9a0d6fb184e8e6eb14648a0df",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\15b9fc26736f275a.json",
+        "sha256": "b14d01eb42574fe95cbf577000655a613627e5958eef288ca4781257b852746c"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "b70da5fc345b106c",
+      "image_sha256": "f3c840db08aed5c1dee9e3bbbabfcf68ed82df5bb6fda8df58ed1b029721df34",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:88414259@N00",
+      "scene_group": "scene:oblique-red-television-entertainment-campaign-with-protruding-portrait-over-grassy-roadside",
+      "scope": {
+        "133": "complete"
+      },
+      "targets": [
+        {
+          "canonical_id": 133,
+          "normalized_cxcywh": [
+            0.65125,
+            0.37708349999999996,
+            0.2649999999999999,
+            0.439167
+          ]
+        }
+      ],
+      "source_path": "images/b70da5fc345b106c.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/b70da5fc345b106c.json",
+      "rights_receipt_sha256": "43310ad6b9d8f845d345853eb8079772bc7b9658643f834687cb63bb144da5dd",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b70da5fc345b106c.json",
+        "sha256": "3bf67d2c65bf51c749722b3d47a3c1f92feb0889a8cdba88f9ce9a0d5cff90c4"
+      },
+      "confuser_family": ""
+    },
+    {
+      "image_id": "2b92851e9cf25196",
+      "image_sha256": "3463a2d6bda01dd025af304bb9b50b655b7f5fe65000a8328b8d68e408a3e1c7",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:66992769@N08",
+      "scene_group": "scene:black-clothes-participants-in-domestic-washing-machine-kitchen",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/2b92851e9cf25196.jpg",
+      "width": 1024,
+      "height": 682,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/2b92851e9cf25196.json",
+      "rights_receipt_sha256": "59ad9979bbd5258ccd63db538db4ae5272f574922367402bbff44b5f72f775d2",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\2b92851e9cf25196.json",
+        "sha256": "6e8866251ad438c6ff6f7ec6be1b9fd20e130808da4e429eafd9c623b90c2dc0"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "8e68b658ee40cbac",
+      "image_sha256": "637e9811199e271e8727a835b80b57418e9d2575016de18db81ad3264e62817f",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:92748110@N00",
+      "scene_group": "scene:utility-room-with-radiator-washer-and-hanging-electrical-cord",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/8e68b658ee40cbac.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/8e68b658ee40cbac.json",
+      "rights_receipt_sha256": "99e0f2abf7b404116294ad78120f3df2e2d296a1b50baa28bb066e1ae40a8211",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\8e68b658ee40cbac.json",
+        "sha256": "b92973bee5249ee653c08781f6ce28f6388b736244df81f543da0409f33a72c0"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "1e496c37fb7ff35a",
+      "image_sha256": "a80dc995245dbb1ea15554cf32517251f9e8f94b6a259f62b433282fc7df583b",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:131137299@N05",
+      "scene_group": "scene:vr-headset-demonstration-with-dell-monitor-game-image",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/1e496c37fb7ff35a.jpg",
+      "width": 1024,
+      "height": 682,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/1e496c37fb7ff35a.json",
+      "rights_receipt_sha256": "dff8381dde4cbb1c7559f4dc31b34ff680267598198f53114d96fb2c289954f2",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\1e496c37fb7ff35a.json",
+        "sha256": "9531b45d44329fdcbb1fc12b5e7cb25aa07d606695ccf05a6dee6a071215e590"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "5d34be84c57bba2d",
+      "image_sha256": "99326482ebd564e7f7ef9f212754a2efa493a8b8a7383063e0fa3683c01bbedb",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:51035812521@N01",
+      "scene_group": "scene:stuttgart-train-departure-platform-a4-information-display",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/5d34be84c57bba2d.jpg",
+      "width": 1024,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/5d34be84c57bba2d.json",
+      "rights_receipt_sha256": "7c90e4867bbaa586855d5e6f95e91be309618eb22704ef9fe82f2d49ef9db2ae",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\5d34be84c57bba2d.json",
+        "sha256": "e8ffc3d394d2da734db1775c21546b13d1a3d017b8f06de620368b91011edb54"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "6d5375412062f4ce",
+      "image_sha256": "1af483d0c57ee4a821f9df16136557195e1c521c393fdda9de4636bcc5e74686",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:51986662@N05",
+      "scene_group": "scene:audubon-national-wildlife-refuge-identity-sign-at-gravel-entrance",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/6d5375412062f4ce.jpg",
+      "width": 1024,
+      "height": 681,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/6d5375412062f4ce.json",
+      "rights_receipt_sha256": "c10e9a70f2163fc99699f503bc52a664fca28db5190f9e15d01749b6a8c0b28a",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\6d5375412062f4ce.json",
+        "sha256": "32f8520c61024c9be7fa14a8d8d4d42d03886a60750d3a9cbdf6c117c93acaf6"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "5ce07497741762d6",
+      "image_sha256": "d0348e38f0edf4882c3ebda2416797f391192d5adc017de159b3c3f51eca8d39",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:56832361@N00",
+      "scene_group": "scene:dolores-restaurant-identity-and-never-closes-hours-by-parking-directions",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/5ce07497741762d6.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/5ce07497741762d6.json",
+      "rights_receipt_sha256": "ebae6f18df61911e4b578bd8e68ff46a928f8e9f47eed7a85c77422c567f08f1",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\5ce07497741762d6.json",
+        "sha256": "1b7b3cf49e596a7b659bfe375a35c654af7f50e3f400336d60d7539c5cbc2ed7"
+      },
+      "confuser_family": "shop-business-lettering"
+    },
+    {
+      "image_id": "e894aab4f702c000",
+      "image_sha256": "aa70824d5e4b0f63f7863e7d6be50f2130805860f4c8f7541e4b32b67c0332fe",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:11666393@N00",
+      "scene_group": "scene:white-swan-motel-vintage-no-vacancy-and-air-conditioned-neon-name-signs",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/e894aab4f702c000.jpg",
+      "width": 768,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/e894aab4f702c000.json",
+      "rights_receipt_sha256": "614d13b5905c41848bdd89e8f86f495fe1071515a9c16901ea8bc8893c9d66f8",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\e894aab4f702c000.json",
+        "sha256": "3132c85d1f65eb5444c9dcb50e4e469e9313b2c9321f8164925d556a1b7cc6ab"
+      },
+      "confuser_family": "shop-business-lettering"
+    },
+    {
+      "image_id": "e81d4fc6bdb57335",
+      "image_sha256": "caeb235927831371d7fc1a011dc07ec10a96153735f4ac0da3e0f2a8e34bbb10",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:61532128@N00",
+      "scene_group": "scene:ski-route-direction-arrows-including-mercedes-and-banzai-carina",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/e81d4fc6bdb57335.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/e81d4fc6bdb57335.json",
+      "rights_receipt_sha256": "8db182168d751eec52966caa8230ca13b92e4e4fbefcd9295a9ec73e5217cada",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\e81d4fc6bdb57335.json",
+        "sha256": "9d5f44feab9528bcdc930d3e2d8a8d3ce6b567a27ae66c45ab84d1b7ddc390b4"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "a4dd3353126f93b4",
+      "image_sha256": "d916251f4e8c58b06766911e206d1ce4f1e7c5e616659787e0354b0a51e6e714",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:67663596@N03",
+      "scene_group": "scene:red-campervan-beside-western-australia-welcome-information-marker",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/a4dd3353126f93b4.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/a4dd3353126f93b4.json",
+      "rights_receipt_sha256": "c0d574825b218d9cb023af48ec8f5f3b0b5c1f2002a8f9afe56fa3087bbc2946",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\a4dd3353126f93b4.json",
+        "sha256": "6aa5e9c47e4ebc93b27b3f8ea958a8c7f5e4597d67f128d1506e6c82e5c231f3"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "2bf7c15ed4c9de16",
+      "image_sha256": "376c5325a28799935119a6c29f26e5c5e658ab7c0a688324fc23d439f174db84",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:44576730@N06",
+      "scene_group": "scene:empty-self-serve-gasoline-price-information-panel",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/2bf7c15ed4c9de16.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/2bf7c15ed4c9de16.json",
+      "rights_receipt_sha256": "4766d81280576149bf4678e6cd76ffad0853ab1a57c816c9deed4441fe9982d7",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\2bf7c15ed4c9de16.json",
+        "sha256": "b38cfb34cdfccb5564082698db8a1243fafb2b0ccd3fcc9360fa5368d6ff3940"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "4a1a6868eb1dccd8",
+      "image_sha256": "79503cfa4160565bd681f2a1e48562b75222a9f4b18ef03e3b7b1288158f4280",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:57634952@N00",
+      "scene_group": "scene:presenter-with-green-scarf-beside-sustainability-flipchart",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/4a1a6868eb1dccd8.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/4a1a6868eb1dccd8.json",
+      "rights_receipt_sha256": "178436adc6d0046f0123247e1ccd7aa350a36e24534281b5b3444d25794312e8",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\4a1a6868eb1dccd8.json",
+        "sha256": "159554e9600c20d8308a633323942f84bf507885906ea7a1af8f881911a327cc"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "cf6cb3f326b2f890",
+      "image_sha256": "c91f0c5e480d5edcdce5c680d1706b0c574fc34e92d65744f52ec7856cf48e08",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:24029425@N06",
+      "scene_group": "scene:oval-matted-photograph-of-lilac-flowers",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/cf6cb3f326b2f890.jpg",
+      "width": 750,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/cf6cb3f326b2f890.json",
+      "rights_receipt_sha256": "165cd0586f7203cbdf47a629311014b3a2fe346f8105f2878a41145fdf8b2115",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\cf6cb3f326b2f890.json",
+        "sha256": "6a8bf4a2fb83fb408d2ce3085cbcd242ae63c408b5712d45db19591e1f949ee9"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "b3e1ae3e7781726e",
+      "image_sha256": "4b9ccceb853fc20ce6f84d0492399cd4862ac06ba48d2c54aef7e9f2f949cf2c",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:43574048@N00",
+      "scene_group": "scene:ornate-gold-framed-mythological-ceiling-paintings",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/b3e1ae3e7781726e.jpg",
+      "width": 768,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/b3e1ae3e7781726e.json",
+      "rights_receipt_sha256": "89d003df91dd77938aa8ae777284f084df25f68bb19fa3a105dab651cb68f512",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\b3e1ae3e7781726e.json",
+        "sha256": "cd9e570c8d680502fd48113f6e86584783cf1410f7e5c8c584df79263cdf873d"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "03b25bab135ebfbf",
+      "image_sha256": "b05fe2d52fec6b71fe5f7dacba7b731363cf2c4ab10679fed16316ae410092aa",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:130768092@N05",
+      "scene_group": "scene:yellow-cliff-edge-approaching-warning-sign-against-grey-sky",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/03b25bab135ebfbf.jpg",
+      "width": 1024,
+      "height": 683,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/03b25bab135ebfbf.json",
+      "rights_receipt_sha256": "98c875b5ed46448ff93f5ddb814afbf919ffdaf3b65f19ba3cdc16ee8ea584f6",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\03b25bab135ebfbf.json",
+        "sha256": "4460536ff085d36832ce90a46f3904b1766a23a613bb7236094c09282a813651"
+      },
+      "confuser_family": "traffic-information-signs"
+    },
+    {
+      "image_id": "360ff97104b82129",
+      "image_sha256": "0d6544198aed81577e9482eebb0190e3c8363a6e49f857118fffbc0e7eb91022",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:13316988@N00",
+      "scene_group": "scene:two-white-laundry-machines-with-blue-and-metal-wall-payment-units",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/360ff97104b82129.jpg",
+      "width": 1024,
+      "height": 682,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/360ff97104b82129.json",
+      "rights_receipt_sha256": "ec989b180d79b5b7f5c1122b68202f4f06c2a5b8bd3b6cc5053e13f00f5086fc",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\360ff97104b82129.json",
+        "sha256": "b15fc6f29bff6bdc46635444d9c71183f29bd624df8e983d6f2156f949d84462"
+      },
+      "confuser_family": "household-laundry"
+    },
+    {
+      "image_id": "5110409f98e95a40",
+      "image_sha256": "72c142f18e55eb151537cdf82313563bb3b3e7a0912def3cf7b7e36c1f3c427e",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:53016263@N00",
+      "scene_group": "scene:white-boatnerd-headquarters-building-covered-with-maritime-flags",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/5110409f98e95a40.jpg",
+      "width": 1024,
+      "height": 680,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/5110409f98e95a40.json",
+      "rights_receipt_sha256": "7cdc499649ceaaee7d42eefaf7d69bb548701bf98dfb2cfb43b88f2a4e7f12c2",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\5110409f98e95a40.json",
+        "sha256": "8cb5b883340cf595ddf1af1fc70af8128f97fb117441aca9fa8d02ea383c1d3d"
+      },
+      "confuser_family": "shop-business-lettering"
+    },
+    {
+      "image_id": "aaaf120ef247d0cb",
+      "image_sha256": "81841364ef6a85e6d4baef7f4f22e3b8b8c6cc47ef32cb6b9af61cb31cb00020",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:56624456@N00",
+      "scene_group": "scene:two-men-at-a-workshop-whiteboard-with-red-technical-notes",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/aaaf120ef247d0cb.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/aaaf120ef247d0cb.json",
+      "rights_receipt_sha256": "86b1c3f653bb85c5430cdcb5291558b3447559cee108d64008cd07e19fd32359",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\aaaf120ef247d0cb.json",
+        "sha256": "b99c9bce7a8fca6a65735bfcb583b4d16d27b52b2f572102e82d0d10b095ea50"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "3a6dc96a518eb744",
+      "image_sha256": "0379459331dbf230117c695d9bf97e659b8150856846a16d21d7661811e35473",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:8399025@N07",
+      "scene_group": "scene:vintage-beige-computers-and-keyboards-on-wooden-exhibition-tables",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/3a6dc96a518eb744.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/3a6dc96a518eb744.json",
+      "rights_receipt_sha256": "21eff7694e904c7343a92dd4c6873dff90b5f9003eb87b2ad7f2405cf961fbf5",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\3a6dc96a518eb744.json",
+        "sha256": "cf2dfa334c8408d075a737f7fbc04b4468a9f6a9ec03b1f93f0d741faa87ca3f"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "104c82e95a295ba0",
+      "image_sha256": "c7863909b98eff57d139888fa5e29d123dc442e77348d1071049398cdb7232ee",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:45074090@N00",
+      "scene_group": "scene:whiteboard-filled-with-multicolour-handwritten-speech-bubbles",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/104c82e95a295ba0.jpg",
+      "width": 1024,
+      "height": 768,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/104c82e95a295ba0.json",
+      "rights_receipt_sha256": "c240afe9903c555ecc656debdef58cf88f88978813388ca973133b7fc67d9ddc",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\104c82e95a295ba0.json",
+        "sha256": "1c76d72d6577f65478215aaecadae141451162cf19d1c0eab632cfb2f2a01eb3"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    },
+    {
+      "image_id": "093a3c43152a9742",
+      "image_sha256": "072ec9ffe1b94a3089a810267e04b1ed0ab49778f7838085cae1ae753dde25e7",
+      "split": "val",
+      "supervision": "gold",
+      "supervision_meaning": "Assistant-reviewed complete class scope; not independent human annotation",
+      "loss_weight": 1,
+      "identity_group": "flickr-nsid:63749317@N00",
+      "scene_group": "scene:black-and-white-printed-wedding-portrait-on-wood",
+      "scope": {
+        "133": "absent"
+      },
+      "targets": [],
+      "source_path": "images/093a3c43152a9742.jpg",
+      "width": 681,
+      "height": 1024,
+      "rights_verified_private_research": true,
+      "rights_receipt_path": "rights/093a3c43152a9742.json",
+      "rights_receipt_sha256": "71bfe5588524a9d8200218472a78371de2905145e0ed28837575efb52b2aad2d",
+      "content_review_ref": {
+        "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\093a3c43152a9742.json",
+        "sha256": "94d6b5fd3cea6c0d977f873accf5149e8ba0e95ef039012fefd02dfd624a70d8"
+      },
+      "confuser_family": "indoor-frames-screens-boards"
+    }
+  ],
+  "readiness_manifest_sha256": "bb7059df13cee2e6706d0d5ede4d49874cb2950df022324b89f442276295278d",
+  "readiness_report_sha256": "9c6db5221f3f0d72d4ed06428fd908d0a7dc9111fe006f37609858c633fbc85c",
+  "source_cohorts": [
+    "7824179",
+    "7840599"
+  ],
+  "authorization": "Standing user18Oct2026 private research/local qualification instruction; superseding reviewed124-photo receipts",
+  "limitations": "Assistant-reviewed engineering pilot; no independent human annotation claim; evaluation outcomes unknown. Historical23 non-protected originals absent; preserved rendered historical scene references used."
+}

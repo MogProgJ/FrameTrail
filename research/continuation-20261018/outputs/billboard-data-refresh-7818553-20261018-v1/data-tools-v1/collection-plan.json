@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "purpose": "new-billboard-and-confuser-photo-source-intake-only",
+  "authorization": "User approved continued bounded FrameTrail work without routine approval prompts on18October2026; exact scope recorded before submission. No training/adoption authorization inferred from new labels.",
+  "catalogue_relative_path": "output/training-general-v1/catalogue-7447265/openimages-train.sqlite",
+  "catalogue_sha256": "bd42dbb1129406c16cda37401670ecba04d6d956cde0071ab79de6190162e78d",
+  "exclusions_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+  "classes_source_sha256": "5240b43605a5b8c9048065bd8458cde9cc90315fc443c0fb5ff322d6680d69c3",
+  "selection_seed": "frametrail-data-refresh-after7818553-v1",
+  "anchors": [
+    {
+      "name": "billboard",
+      "raw_id": 46,
+      "quota": {
+        "train": 72,
+        "val": 24,
+        "test": 24
+      }
+    },
+    {
+      "name": "traffic sign",
+      "raw_id": 549,
+      "quota": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      }
+    },
+    {
+      "name": "washing machine",
+      "raw_id": 575,
+      "quota": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      }
+    },
+    {
+      "name": "picture frame",
+      "raw_id": 386,
+      "quota": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      }
+    },
+    {
+      "name": "computer monitor",
+      "raw_id": 128,
+      "quota": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      }
+    },
+    {
+      "name": "whiteboard",
+      "raw_id": 585,
+      "quota": {
+        "train": 14,
+        "val": 5,
+        "test": 5
+      }
+    }
+  ],
+  "maximum_photos": 240,
+  "maximum_photos_per_author_alias": 1,
+  "split": "Before downloading/predictions: stable SHA256 author group buckets0-1test,2-3val,4-9train. Quotas fixed; shortages preserved without substitute categories/authors or retries. Resolved NSID and perceptual/source identity checks remain mandatory before release.",
+  "publisher_policy": "Existing pinned publisher TRAIN catalogue only; original image bytes from public OpenImages AWS train endpoint, CC-BY2.0 publisher metadata and identity rotation. Individual public Flickr source HTML evidence collected separately, with no rights/training clearance.",
+  "model_inference": false,
+  "training": false,
+  "maximum_original_bytes": 1000000000,
+  "maximum_HTML_bytes": 480000000,
+  "maximum_source_page_bytes": 2000000,
+  "maximum_image_bytes": 10000000,
+  "decoded_pixel_cap": 40000000,
+  "wall_minutes": 45,
+  "active_seconds_cap": 2400,
+  "CPU_cores": 2,
+  "host_memory_GiB": 8,
+  "partition": "cpu_il",
+  "GPUs": 0,
+  "automatic_retries": 0,
+  "automatic_replacement_jobs": 0,
+  "shortfalls": "Keep partial cohort and holds; no silent replacements or fallback sources.",
+  "sources": [
+    "https://storage.googleapis.com/openimages/web/factsfigures_v7.html",
+    "https://storage.googleapis.com/openimages/web/download_v7.html"
+  ],
+  "rights_verified": false,
+  "approved_for_training": false,
+  "approved_for_application": false
+}

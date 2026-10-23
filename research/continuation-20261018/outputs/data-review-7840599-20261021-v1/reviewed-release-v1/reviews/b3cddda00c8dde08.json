@@ -1,0 +1,53 @@
+{
+  "image_id": "b3cddda00c8dde08",
+  "image_sha256": "5bb58aeb3daf965a2c48935a2f366aed91921eea1a7cb4c69094c2cd41e396a5",
+  "identity_group": "flickr-nsid:9333548@N04",
+  "scene_group": "scene:hotel-les-tipaniers-beach-restaurant-and-scubapiti-promotional-panel-amid-foliage",
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\b3cddda00c8dde08.json",
+    "sha256": "449aa5ef6b79828fe68ffa6e5490e3ff6a3c58713d11e8a579dacdd090c12e58"
+  },
+  "rights_status": "cleared-for-private-research",
+  "model_predictions_seen": false,
+  "duplicate_and_scene_review": {
+    "complete": true,
+    "compared_against_prior_sha256": "a196f501d7db9ce46ee0f88788a7cf0c7990a04f6e1499d4da7ec28f6a7df8f2",
+    "scene_session_overlap_with_protected": false,
+    "evidence_ref": {
+      "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\FINAL_SCENE_AND_ANNOTATION_REVIEW.json",
+      "sha256": "b4d58480be332f3952cdf0b7e21b638326d333539136e8ab1075f4ec28af98b2"
+    }
+  },
+  "other_unknown_classes_remain_unknown": true,
+  "billboard_scope": "billboard-complete-positive",
+  "normalized_xyxy": [
+    [
+      0.1064,
+      0,
+      0.9609,
+      0.8529
+    ]
+  ],
+  "content_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\detailed-batch-01.json",
+    "sha256": "8ea7c7ce2cc8b377d43bc9b4776a52de8549099ac42405d43589f3985d0b5019"
+  },
+  "content_decision": {
+    "id": "b3cddda00c8dde08",
+    "disposition": "complete-positive-content-reviewed",
+    "normalized_xyxy": [
+      [
+        0.1064,
+        0,
+        0.9609,
+        0.8529
+      ]
+    ],
+    "note": "One framed hotel/beach/diving promotional face with destination photography. Box expanded to full visible frame; poles/foliage excluded.",
+    "scene_description": "Hotel Les Tipaniers beach restaurant and Scubapiti promotional panel amid foliage"
+  },
+  "prospective_split": "train",
+  "confuser_family": "",
+  "reviewer": "assistant",
+  "independent_human_review": false
+}

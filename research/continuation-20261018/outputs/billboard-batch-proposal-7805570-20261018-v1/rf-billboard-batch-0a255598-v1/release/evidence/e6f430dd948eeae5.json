@@ -1,0 +1,64 @@
+{
+  "image_id": "e6f430dd948eeae5",
+  "image_sha256": "eb10f48eac34c389fb427de7e52b280b25be4f6039b427de79bc24ddcc275c3c",
+  "publisher_attribution": {
+    "id": "e6f430dd948eeae5",
+    "landing_url": "https://www.flickr.com/photos/amrufm/2874027723",
+    "original_url": "https://farm6.staticflickr.com/3282/2874027723_0a3465ce0e_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "amrufm",
+    "author_url": "https://www.flickr.com/people/amrufm/",
+    "title": "EFcrew Buka puasa Hartz Chicken Buffet",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "amrufm",
+    "url": "https://www.flickr.com/photos/amrufm",
+    "image": "https://live.staticflickr.com/87/buddyicons/92405724@N00.jpg?1171509265#92405724@N00"
+  },
+  "current_title": "EFcrew Buka puasa Hartz Chicken Buffet",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "amrufm",
+        "url": "https://www.flickr.com/photos/amrufm",
+        "image": "https://live.staticflickr.com/87/buddyicons/92405724@N00.jpg?1171509265#92405724@N00"
+      }
+    },
+    "meta_description": "why so seriouss??"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/amrufm/2874027723",
+  "canonical_page_url": "https://www.flickr.com/photos/amrufm/2874027723",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "eddf17640039aaa365277bc38eb8843d147d805babf331e6463634986d62c239",
+  "source_gzip_sha256": "96ac07c0afe863db3fd73a29028950167e170c787ab22a4efffd7d817bdbff26",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-044",
+  "visual_proof_sha256": "de5f06ac4476703a5e9aedde37ac1a3055267163734fc0313ea00a4c5445db9f",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

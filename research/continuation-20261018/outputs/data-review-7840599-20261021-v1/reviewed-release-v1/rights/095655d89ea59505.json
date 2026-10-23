@@ -1,0 +1,87 @@
+{
+  "rights_gate": "pass-private-research",
+  "image_id": "095655d89ea59505",
+  "image_sha256": "ea5861e06d7cc17e5cfe2038b22320ef6186915443d7a968070b60f6b8d28002",
+  "source_review": {
+    "image_id": "095655d89ea59505",
+    "image_sha256": "ea5861e06d7cc17e5cfe2038b22320ef6186915443d7a968070b60f6b8d28002",
+    "selected_category": "washing machine",
+    "selected_domain": "contrast",
+    "prospective_split": "test",
+    "source_url": "https://www.flickr.com/photos/buenosairesprensa/5589143855",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/buenosairesprensa/5589143855",
+      "original_url": "https://farm6.staticflickr.com/5096/5589143855_8f66a6d21e_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Gobierno de la Ciudad de Buenos Aires",
+      "author_url": "https://www.flickr.com/people/buenosairesprensa/",
+      "title": "11.04.02  Macri visita el Hogar Raimondi de Necochea",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Gobierno de la Ciudad de Buenos Aires",
+      "url": "https://www.flickr.com/photos/buenosairesprensa",
+      "image": "https://live.staticflickr.com/7294/buddyicons/45122874@N02.jpg?1369158820#45122874@N02"
+    },
+    "current_title": "11.04.02  Macri visita el Hogar Raimondi de Necochea",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Gobierno de la Ciudad de Buenos Aires",
+          "url": "https://www.flickr.com/photos/buenosairesprensa",
+          "image": "https://live.staticflickr.com/7294/buddyicons/45122874@N02.jpg?1369158820#45122874@N02"
+        }
+      },
+      "meta_description": "Necochea - El Jefe de Gobierno porteño, Mauricio Macri, visita las instalaciones del Hogar Raimondi de Necochea, que pertenece a la administración de la Ciudad de Buenos Aires.\n\tFoto GCBA\n\t\n\t "
+    },
+    "identity_group": "flickr-nsid:45122874@N02",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/buenosairesprensa/5589143855",
+    "html_sha256": "6eff3e42fd8a65a037bdcb575c966d474034563adf9d26cde758a53a3c24f21c",
+    "stored_sha256": "50ea7bfb9d9d271aeaaf5bbc2c6932c330eb1aabdc80d23f591098dfb00ba9f6",
+    "evidence_page": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\billboard-data-refresh-7818553-20261018-v1\\retrieval-7824179\\verified-7824179\\output\\billboard-data-refresh-7824179\\pages\\095655d89ea59505.html.gz",
+    "account_alias_resolved": false
+  },
+  "source_evidence_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\source-evidence\\095655d89ea59505.json",
+    "sha256": "699e93680e2df3b6f7fa6929c5f333ecda08cd35c1c64321e3f9636273ce2af2"
+  },
+  "content_scene_review_ref": {
+    "path": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\data-review-7840599-20261021-v1\\reviewed-release-v1\\reviews\\095655d89ea59505.json",
+    "sha256": "1e07b0de7c0eaac0768122d7ddfae49dd09cc3a003dcac7304ea6f22e808333c"
+  },
+  "attribution": {
+    "landing_url": "https://www.flickr.com/photos/buenosairesprensa/5589143855",
+    "original_url": "https://farm6.staticflickr.com/5096/5589143855_8f66a6d21e_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Gobierno de la Ciudad de Buenos Aires",
+    "author_url": "https://www.flickr.com/people/buenosairesprensa/",
+    "title": "11.04.02  Macri visita el Hogar Raimondi de Necochea",
+    "rotation": "0.0"
+  },
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "original_receipts_preserved": true,
+  "public_distribution": false
+}

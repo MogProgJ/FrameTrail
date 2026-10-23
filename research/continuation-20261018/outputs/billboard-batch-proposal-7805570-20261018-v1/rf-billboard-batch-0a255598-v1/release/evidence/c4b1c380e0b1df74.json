@@ -1,0 +1,64 @@
+{
+  "image_id": "c4b1c380e0b1df74",
+  "image_sha256": "ef593eadc9913cee720e8b459a6fddcffb776b305fcb370c8d2631648d912041",
+  "publisher_attribution": {
+    "id": "c4b1c380e0b1df74",
+    "landing_url": "https://www.flickr.com/photos/spinster/7385212480",
+    "original_url": "https://farm5.staticflickr.com/7222/7385212480_bca4b962a7_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Sandra Fauconnier",
+    "author_url": "https://www.flickr.com/people/spinster/",
+    "title": "Teylers Cake",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Sandra Fauconnier",
+    "url": "https://www.flickr.com/photos/spinster",
+    "image": "https://live.staticflickr.com/8253/buddyicons/80719942@N00.jpg?1369477693#80719942@N00"
+  },
+  "current_title": "Teylers Cake",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Sandra Fauconnier",
+        "url": "https://www.flickr.com/photos/spinster",
+        "image": "https://live.staticflickr.com/8253/buddyicons/80719942@N00.jpg?1369477693#80719942@N00"
+      }
+    },
+    "meta_description": "Oval Room cake!"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/spinster/7385212480",
+  "canonical_page_url": "https://www.flickr.com/photos/spinster/7385212480",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "d92637762bb315f4a64bbaea5335d8c514e49d441e9b1b1bc0195b0f09c06223",
+  "source_gzip_sha256": "f9d44bfde0ac7f226a569750f1135606ebe28e8a8f18a40248e62dc9908a91f3",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-073",
+  "visual_proof_sha256": "38dec29e5507687042f22cc4c11a985e4911b4f9b2b6bcff365f6ba9342d68dc",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

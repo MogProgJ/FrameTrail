@@ -1,0 +1,64 @@
+{
+  "image_id": "fb540270ae36a989",
+  "image_sha256": "df10ccf51642b829e3698b9e1dfa15139d28f2ceffb5b050bd144030b20507c6",
+  "publisher_attribution": {
+    "id": "fb540270ae36a989",
+    "landing_url": "https://www.flickr.com/photos/motorcycledealer79/13748055703",
+    "original_url": "https://farm6.staticflickr.com/7301/13748055703_af4e66332f_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Pauline Smith",
+    "author_url": "https://www.flickr.com/people/motorcycledealer79/",
+    "title": "Bike Night Poole Quay (08:04:2014) (4)",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Pauline Smith",
+    "url": "https://www.flickr.com/photos/motorcycledealer79",
+    "image": "https://live.staticflickr.com/3724/buddyicons/34597165@N04.jpg?1381871288#34597165@N04"
+  },
+  "current_title": "Bike Night Poole Quay (08:04:2014) (4)",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Pauline Smith",
+        "url": "https://www.flickr.com/photos/motorcycledealer79",
+        "image": "https://live.staticflickr.com/3724/buddyicons/34597165@N04.jpg?1381871288#34597165@N04"
+      }
+    },
+    "meta_description": "Healey 1000/4 fitted with an Ariel Square Four 1000 cc Engine"
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/motorcycledealer79/13748055703",
+  "canonical_page_url": "https://www.flickr.com/photos/motorcycledealer79/13748055703",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "e6618e2cadeb919424508db54c868fa75bf00ca10bff44b880df7c19e8be2e67",
+  "source_gzip_sha256": "a62440491349e9103c84a22e3e1a2509577577d5c03a3a7894452f5f0d22bfaa",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-039",
+  "visual_proof_sha256": "5a7147d563176802936a885b468c72c9cbdae3b5b9462c454f93e578f8c5a269",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

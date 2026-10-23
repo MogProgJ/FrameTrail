@@ -1,0 +1,18 @@
+Codec: h264
+Initial dimensions: 1280x720
+Execution provider: CPU
+Runtime: 1.30.0
+Device: Processor
+Fallback: 
+Model: YOLOX-S
+Detections across frames: 968
+Average detection (ms/frame): 152.9
+Crossings (- to +): 0
+Crossings (+ to -): 0
+Average tracking/rules (ms/frame): 0.02032
+Frames decoded: 120
+First timestamp (us): 0
+Last timestamp (us): 4958333
+Elapsed (s): 19.638
+Decode/detect/track/export throughput (fps): 6.111
+Stop condition: frame limit

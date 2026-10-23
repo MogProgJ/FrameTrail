@@ -1,0 +1,63 @@
+{
+  "photo": 16,
+  "image_id": "613cd5b255aa53c1",
+  "publisher_attribution": {
+    "id": "613cd5b255aa53c1",
+    "landing_url": "https://www.flickr.com/photos/viclic/46177076",
+    "original_url": "https://farm2.staticflickr.com/29/46177076_8beed4c678_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Victoria Rachitzky Hoch",
+    "author_url": "https://www.flickr.com/people/viclic/",
+    "title": "P1010763",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Victoria Rachitzky",
+    "url": "https://www.flickr.com/photos/viclic",
+    "image": "https://live.staticflickr.com/18/buddyicons/72675636@N00.jpg?1176089669#72675636@N00"
+  },
+  "current_title": "P1010763",
+  "source_url": "https://www.flickr.com/photos/viclic/46177076",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "caption_and_notices": {
+    "photo": 16,
+    "description": null,
+    "copyrightNotice": null,
+    "creditText": null,
+    "creator": {
+      "@type": "Person",
+      "name": "Victoria Rachitzky",
+      "url": "https://www.flickr.com/photos/viclic",
+      "image": "https://live.staticflickr.com/18/buddyicons/72675636@N00.jpg?1176089669#72675636@N00"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Victoria Rachitzky",
+      "url": "https://www.flickr.com/photos/viclic",
+      "image": "https://live.staticflickr.com/18/buddyicons/72675636@N00.jpg?1176089669#72675636@N00"
+    },
+    "meta_description": ""
+  },
+  "creator_override": null,
+  "image_sha256": "1b78d5c8efa4b984db87aa700f2e59e44de1cd88e3973f52905231ea8fced3ce",
+  "source_page_sha256": "df8691ff22e4567aed21ae65f5b6d02b74b6718a03b7423340bd0a031a1b6e77",
+  "rights_gate": "pass-private-research",
+  "annotation_credit": "Original Open Images annotations: Google LLC, CC BY 4.0. FrameTrail human corrections and assistant suggestions/review are documented in preserved event history.",
+  "changes": "Acquired JPEG bytes unchanged locally. Publisher delivered resized copies may differ from source-original dimensions; annotations adapted/corrected. Future training resizing/augmentation must be documented.",
+  "rights_verified_private_research": true,
+  "source_checks": {
+    "source_page_photo_id": true,
+    "original_publisher_image_photo_id": true,
+    "structured_image_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "both_photo_panel_links_cc_by_2_0": true,
+    "both_photo_panel_titles_cc_by_2_0": true
+  },
+  "source_gzip_sha256": "074d31128306c1a9ccb76fb1a120ac7cd5a074a7a08a6c310bbcbe00c0f7d466",
+  "source_job": 7626978,
+  "scope_note": "Visible keyboard, person, profile face and one hand retained. Book/stack and desk extents plus Clothing specificity remain held.",
+  "changes_for_this_release": "Original JPEG and source box coordinates unchanged. Explicit subset of targets selected; unknown classes masked. Deterministic 640-pixel letterbox during training."
+}

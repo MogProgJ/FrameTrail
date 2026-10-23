@@ -1,0 +1,10 @@
+{
+  "plan_sha256": "8f789c6e0bee3d8970ded955f0207560b3cc8d28816df20cf2e7593f9b18c70d",
+  "old_current_counts_equal": true,
+  "fresh_predictions_and_metrics_equal": true,
+  "old_unknown_count": 528,
+  "old_unknown_cap": 530,
+  "validation_device": "pinned-CPU-reference",
+  "test_photos_used": 0,
+  "optimizer_updates": 0
+}

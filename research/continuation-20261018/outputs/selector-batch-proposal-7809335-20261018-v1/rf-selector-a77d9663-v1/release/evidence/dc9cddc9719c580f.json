@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "dc9cddc9719c580f",
+  "image_sha256": "593bb31527b04d98962c0673dc933c50a7fed247a5f5c691ae89c67f93747c17",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "dc9cddc9719c580f",
+    "image_sha256": "593bb31527b04d98962c0673dc933c50a7fed247a5f5c691ae89c67f93747c17",
+    "selected_category": "taxi",
+    "selected_domain": "street",
+    "source_url": "https://www.flickr.com/photos/reggestraat/359679509",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/reggestraat/359679509",
+      "original_url": "https://c8.staticflickr.com/1/144/359679509_b14a278edc_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "Antony Antony",
+      "author_url": "https://www.flickr.com/people/reggestraat/",
+      "title": "Leopold Cafe",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "Antony Antony",
+      "url": "https://www.flickr.com/photos/reggestraat",
+      "image": "https://live.staticflickr.com/161/buddyicons/72171916@N00.jpg?1170271348#72171916@N00"
+    },
+    "current_title": "Leopold Cafe",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "Antony Antony",
+          "url": "https://www.flickr.com/photos/reggestraat",
+          "image": "https://live.staticflickr.com/161/buddyicons/72171916@N00.jpg?1170271348#72171916@N00"
+        }
+      },
+      "meta_description": "Shantaram hangout, in 80s. colaba causeway/"
+    },
+    "identity_group": "flickr-nsid:72171916@N00",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/reggestraat/359679509",
+    "html_sha256": "dfee92633cc8859be39817010d127a2b1cf00ed80d46ff4b7190bc2db50b639d",
+    "stored_sha256": "7a391580f080465c683a914ff8d3c30cb1198718c7146a92a9229d43de6a3ba1",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\dc9cddc9719c580f.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/dc9cddc9719c580f.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

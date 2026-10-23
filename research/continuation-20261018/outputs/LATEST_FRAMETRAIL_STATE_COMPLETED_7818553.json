@@ -1,0 +1,91 @@
+{
+  "status": "all-four-tasks-completed-archives-ready-awaiting-local-retrieval-and-audit",
+  "protocol_sha256": "a77d9663fcc898b6a257f6722dd37bc24b1d3a2d3065eb8cce5f0625403f019a",
+  "approval_sha256": "85aa28b8ad3f8e5f76f1fa4746496cb32163c63ae15ec3de98568ed9a280a81f",
+  "archive_sha256": "18e774efc73f126ffb5e5de2f648e2a5385c06ff4dffd422e309a27d0bc3235c",
+  "archive": "C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\frametrail-rf-selector-a77d9663-v1.tar.gz",
+  "archive_bytes": 531669695,
+  "verified_archive_files": 3023,
+  "batch": {
+    "tasks": 4,
+    "array": "0-3%2",
+    "maximum_concurrent_GPUs": 2,
+    "maximum_requested_GPU_hours": 3,
+    "per_task": {
+      "GPUs": 1,
+      "CPU_cores": 2,
+      "host_memory_GiB": 8,
+      "maximum_updates": 3000,
+      "Slurm_wall_minutes": 45,
+      "training_process_seconds": 1800,
+      "known_regression_seconds": 480
+    },
+    "automatic_retries": 0
+  },
+  "approval_recorded": true,
+  "archive_verified": true,
+  "SSH_contacted": true,
+  "cluster_submitted": true,
+  "real_array_job_id": "7818553",
+  "live_account_limits_verified": false,
+  "launch_command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\Launch-Approved-Run.ps1\"",
+  "current_model_job": "7805570",
+  "current_model_step": 100,
+  "strict_ONNX_hold": true,
+  "production_adoption": false,
+  "standing_preference": "Continue bounded FrameTrail project work without routine approval prompts. Latest user supersedes the older mandatory cluster-approval pause. Preserve resource limits, exact scope/provenance, scheduler checks, batching, model/data gates and no retries/replacements. Ask only when human input is truly required; direct KIT authentication is currently required. End responses with a concrete next step and why.",
+  "supersedes": [
+    "unapproved status snapshots in protocol/proposal/preparation/identity files",
+    "previous CURRENT_HANDOFF approval-needed statement",
+    "older standing requirement to pause solely for new cluster approval"
+  ],
+  "credentials": "User enters KIT OTP/password directly into their own terminal prompts; never into chat.",
+  "last_observed_scheduler_state": "COMPLETED",
+  "observation_source": "User-supplied cluster show-output command, preserved locally; no extra SSH query",
+  "launch_output_mtime_UTC": "2026-10-18T19:32:48.505930+00:00",
+  "runtime_and_input_preflight_passed": true,
+  "scheduler_admitted_actual_array": true,
+  "account_evidence": "Submission script recorded remote scheduler/account diagnostics and ran sbatch --test-only before the accepted submission. Those diagnostic files have not been downloaded, so detailed limits remain uninspected.",
+  "next_action": "Run Retrieve-Results.ps1 in Windows PowerShell for one SFTP connection; no further status login is needed.",
+  "status_command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\Check-Run.ps1\"",
+  "default_model_unchanged": true,
+  "tasks_completed": 4,
+  "task_exit_codes": [
+    "0:0",
+    "0:0",
+    "0:0",
+    "0:0"
+  ],
+  "reports_claim_no_improving_candidate": true,
+  "reported_selected_steps": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "independent_archive_and_tensor_audit_complete": false,
+  "aggregate_scheduler_allocation_seconds": 3845,
+  "aggregate_scheduler_allocation_GPU_hours": 1.0680555555555555,
+  "archives": [
+    {
+      "index": 0,
+      "sha256": "33fe470e3ae7faeff7a829f97bdf834cef17d93f42444b24c9a2d7543e704ef3"
+    },
+    {
+      "index": 1,
+      "sha256": "f117b8e889f63335c6b8bed1a037ca51b2790bfa3370b87cf9b71d6b0c1d5f4f"
+    },
+    {
+      "index": 2,
+      "sha256": "8f07b14a4e58cd0ac9498680f38716134437b06e5825fe2d70404ff0c7664120"
+    },
+    {
+      "index": 3,
+      "sha256": "f6f31b34612136ab7f1aaa4b587a3465ff7e69568eb228d6e7d831cc35c6c0c8"
+    }
+  ],
+  "archive_checksums_imported_locally": true,
+  "results_retrieved": false,
+  "new_cluster_jobs_submitted_by_this_step": 0,
+  "retrieval_command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\nazee\\Documents\\Codex\\2026-10-18\\frametrail-continuation\\outputs\\selector-batch-proposal-7809335-20261018-v1\\Retrieve-Results.ps1\""
+}

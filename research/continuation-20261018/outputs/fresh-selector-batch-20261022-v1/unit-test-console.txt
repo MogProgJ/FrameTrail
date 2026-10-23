@@ -1,0 +1,13 @@
+test_archive_paths_links_duplicates_and_size (__main__.Guards.test_archive_paths_links_duplicates_and_size) ... ok
+test_both_seed_method_and_ranking (__main__.Guards.test_both_seed_method_and_ranking) ... ok
+test_file_seal_tamper (__main__.Guards.test_file_seal_tamper) ... ok
+test_frozen_schedule_validation_leak (__main__.Guards.test_frozen_schedule_validation_leak) ... ok
+test_original_unknown_cap_and_gain_false_alarm (__main__.Guards.test_original_unknown_cap_and_gain_false_alarm) ... ok
+test_patch_shapes_scope_job_and_inactive_fingerprint (__main__.Guards.test_patch_shapes_scope_job_and_inactive_fingerprint) ... ok
+test_quota_evidence_fail_closed (__main__.Guards.test_quota_evidence_fail_closed) ... ok
+test_result_identity_partial_budget_and_checkpoint_set (__main__.Guards.test_result_identity_partial_budget_and_checkpoint_set) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 5.750s
+
+OK

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "rights_gate": "pass-private-research",
+  "intended_use": "Private noncommercial research on user PC/KIT only; no public distribution or blanket rights assurance",
+  "image_id": "a925f771289fa02e",
+  "image_sha256": "0d841cf9d8772465791a8a52ce14aef77cae724ccc7bdbe3ed6c55523e4c0438",
+  "source_review_sha256": "e6078d3280915e80dd63ad0da3d619c11e858c34f5b189ca1736452d79695ab9",
+  "source_review": {
+    "image_id": "a925f771289fa02e",
+    "image_sha256": "0d841cf9d8772465791a8a52ce14aef77cae724ccc7bdbe3ed6c55523e4c0438",
+    "selected_category": "kettle",
+    "selected_domain": "household",
+    "source_url": "https://www.flickr.com/photos/medeamalmo/15899677946",
+    "publisher_attribution": {
+      "landing_url": "https://www.flickr.com/photos/medeamalmo/15899677946",
+      "original_url": "https://c7.staticflickr.com/9/8643/15899677946_5c2e5a1e66_o.jpg",
+      "license": "https://creativecommons.org/licenses/by/2.0/",
+      "author": "MEDEA Malm\u00f6",
+      "author_url": "https://www.flickr.com/people/medeamalmo/",
+      "title": "Eat a Memory #1",
+      "rotation": "0.0"
+    },
+    "intake_holds": [],
+    "rights_verified": false,
+    "approved_for_training": false,
+    "status": "photo-specific-license-corroborated",
+    "checks": {
+      "source_photo_id": true,
+      "original_photo_id": true,
+      "structured_photo_id": true,
+      "author_account_or_documented_alias": true,
+      "structured_license_matches_publisher": true,
+      "two_photo_panel_links": true,
+      "photo_panel_links_cc_by_2": true,
+      "photo_panel_titles_cc_by_2": true,
+      "stable_author_NSID_present": true,
+      "panel_owner_matches_structured_NSID": true
+    },
+    "current_creator": {
+      "@type": "Person",
+      "name": "MEDEA Malm\u00f6",
+      "url": "https://www.flickr.com/photos/medeamalmo",
+      "image": "https://live.staticflickr.com/2592/buddyicons/44830374@N05.jpg?1264767223#44830374@N05"
+    },
+    "current_title": "Eat a Memory #1",
+    "creator_notices": {
+      "structured": {
+        "description": null,
+        "copyrightNotice": null,
+        "creditText": null,
+        "creator": {
+          "@type": "Person",
+          "name": "MEDEA Malm\u00f6",
+          "url": "https://www.flickr.com/photos/medeamalmo",
+          "image": "https://live.staticflickr.com/2592/buddyicons/44830374@N05.jpg?1264767223#44830374@N05"
+        }
+      },
+      "meta_description": "November 27, 2014"
+    },
+    "identity_group": "flickr-nsid:44830374@N05",
+    "structured_license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "canonical_page_url": "https://www.flickr.com/photos/medeamalmo/15899677946",
+    "html_sha256": "885821bae95346af2090fd1f701cdc392e03f69b93a6321ef87394000c6baaec",
+    "stored_sha256": "9c449585abd8d34b806079433d8ca6647873123f5f8484e484763c4f68f89cd4",
+    "evidence_page": "C:\\Users\\nazee\\.codex\\visualizations\\2026\\10\\15\\01a141ae-c7a6-7303-a280-403af88736f3\\nextdata-acquisition-7768932-v1\\results-7769109\\retrieved\\output\\training-general-v1\\next-photo-7768932-v1\\pages\\a925f771289fa02e.html.gz",
+    "account_alias_resolved": false
+  },
+  "stored_page_relative": "source-pages/a925f771289fa02e.html.gz",
+  "manual_content_hold_resolution": null,
+  "independent_human_recheck": false
+}

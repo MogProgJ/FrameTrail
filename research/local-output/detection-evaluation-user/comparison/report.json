@@ -1,0 +1,256 @@
+{
+  "schema": 1,
+  "confidence": 0.35,
+  "nms_iou": 0.45,
+  "match_iou": 0.5,
+  "cli_sha256": "96bea7d0559aad8ded7505c3d83006375e99eed4f466e544e3fc583e08754931",
+  "manifest_sha256": "fcc918cb53435f76daa66d08d7ca46dd17cb273502de11d3b3e2d1ed5c91e23f",
+  "models": {
+    "nano": {
+      "sha256": "c789161ed43c8269fcd4e67c67eeeb4e80c622da2eb296a20bc6007bd18a0b7d",
+      "images": [
+        {
+          "targets": 7,
+          "matched": 6,
+          "missed": 1,
+          "target_recall": 0.8571428571428571,
+          "predictions": 10,
+          "false_positives": null,
+          "precision": null,
+          "unmatched_targets": [
+            {
+              "reference": {
+                "class_id": 5,
+                "box": [
+                  1024,
+                  394,
+                  1280,
+                  535
+                ]
+              },
+              "overlapping_other_labels": []
+            }
+          ],
+          "image": "frame-01.png",
+          "sha256": "1f034550827b3b8c1068489776ce3ebb5cc20c67290ad4d97d56af302e81a0f1",
+          "complete": false,
+          "pipeline_ms": 54.2811
+        },
+        {
+          "targets": 1,
+          "matched": 1,
+          "missed": 0,
+          "target_recall": 1.0,
+          "predictions": 1,
+          "false_positives": null,
+          "precision": null,
+          "unmatched_targets": [],
+          "image": "frame-02.png",
+          "sha256": "ea55705bae7f79f3c5cbf6d133bfc8875ced0e8d325343151802a8b88984d4eb",
+          "complete": false,
+          "pipeline_ms": 64.0147
+        },
+        {
+          "targets": 4,
+          "matched": 3,
+          "missed": 1,
+          "target_recall": 0.75,
+          "predictions": 8,
+          "false_positives": null,
+          "precision": null,
+          "unmatched_targets": [
+            {
+              "reference": {
+                "class_id": 16,
+                "box": [
+                  763,
+                  445,
+                  859,
+                  515
+                ]
+              },
+              "overlapping_other_labels": [
+                {
+                  "class_id": 0,
+                  "label": "person",
+                  "confidence": 0.367996,
+                  "box": [
+                    765.747,
+                    444.068,
+                    854.275,
+                    511.179
+                  ]
+                }
+              ]
+            }
+          ],
+          "image": "frame-03.png",
+          "sha256": "4866190edd85e5f68207b4d7c27e95e06ba82e8ea401049f8909ae6279bc897a",
+          "complete": false,
+          "pipeline_ms": 62.9639
+        },
+        {
+          "targets": 5,
+          "matched": 1,
+          "missed": 4,
+          "target_recall": 0.2,
+          "predictions": 11,
+          "false_positives": null,
+          "precision": null,
+          "unmatched_targets": [
+            {
+              "reference": {
+                "class_id": 14,
+                "box": [
+                  461,
+                  470,
+                  516,
+                  543
+                ]
+              },
+              "overlapping_other_labels": []
+            },
+            {
+              "reference": {
+                "class_id": 14,
+                "box": [
+                  281,
+                  468,
+                  371,
+                  531
+                ]
+              },
+              "overlapping_other_labels": []
+            },
+            {
+              "reference": {
+                "class_id": 14,
+                "box": [
+                  898,
+                  448,
+                  967,
+                  512
+                ]
+              },
+              "overlapping_other_labels": []
+            },
+            {
+              "reference": {
+                "class_id": 14,
+                "box": [
+                  1118,
+                  448,
+                  1198,
+                  510
+                ]
+              },
+              "overlapping_other_labels": []
+            }
+          ],
+          "image": "frame-04.png",
+          "sha256": "2dc64d1eaf8284bd61ae8a3768666e6aab412bd1687c7c1a7ee2c839e3ab8586",
+          "complete": false,
+          "pipeline_ms": 64.898
+        },
+        {
+          "targets": 7,
+          "matched": 7,
+          "missed": 0,
+          "target_recall": 1.0,
+          "predictions": 9,
+          "false_positives": null,
+          "precision": null,
+          "unmatched_targets": [],
+          "image": "frame-05.png",
+          "sha256": "cf8e4d6889ae24b7bceec912eaf71082d83b8ebcabdc72298063bc25a1c4d630",
+          "complete": false,
+          "pipeline_ms": 64.2627
+        }
+      ],
+      "targets": 24,
+      "matched": 18,
+      "target_recall": 0.75,
+      "mean_first_frame_pipeline_ms": 62.08408
+    },
+    "small": {
+      "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+      "images": [
+        {
+          "targets": 7,
+          "matched": 7,
+          "missed": 0,
+          "target_recall": 1.0,
+          "predictions": 19,
+          "false_positives": null,
+          "precision": null,
+          "unmatched_targets": [],
+          "image": "frame-01.png",
+          "sha256": "1f034550827b3b8c1068489776ce3ebb5cc20c67290ad4d97d56af302e81a0f1",
+          "complete": false,
+          "pipeline_ms": 339.7239
+        },
+        {
+          "targets": 1,
+          "matched": 1,
+          "missed": 0,
+          "target_recall": 1.0,
+          "predictions": 1,
+          "false_positives": null,
+          "precision": null,
+          "unmatched_targets": [],
+          "image": "frame-02.png",
+          "sha256": "ea55705bae7f79f3c5cbf6d133bfc8875ced0e8d325343151802a8b88984d4eb",
+          "complete": false,
+          "pipeline_ms": 356.7512
+        },
+        {
+          "targets": 4,
+          "matched": 4,
+          "missed": 0,
+          "target_recall": 1.0,
+          "predictions": 13,
+          "false_positives": null,
+          "precision": null,
+          "unmatched_targets": [],
+          "image": "frame-03.png",
+          "sha256": "4866190edd85e5f68207b4d7c27e95e06ba82e8ea401049f8909ae6279bc897a",
+          "complete": false,
+          "pipeline_ms": 333.9126
+        },
+        {
+          "targets": 5,
+          "matched": 5,
+          "missed": 0,
+          "target_recall": 1.0,
+          "predictions": 36,
+          "false_positives": null,
+          "precision": null,
+          "unmatched_targets": [],
+          "image": "frame-04.png",
+          "sha256": "2dc64d1eaf8284bd61ae8a3768666e6aab412bd1687c7c1a7ee2c839e3ab8586",
+          "complete": false,
+          "pipeline_ms": 333.0189
+        },
+        {
+          "targets": 7,
+          "matched": 7,
+          "missed": 0,
+          "target_recall": 1.0,
+          "predictions": 14,
+          "false_positives": null,
+          "precision": null,
+          "unmatched_targets": [],
+          "image": "frame-05.png",
+          "sha256": "cf8e4d6889ae24b7bceec912eaf71082d83b8ebcabdc72298063bc25a1c4d630",
+          "complete": false,
+          "pipeline_ms": 266.1572
+        }
+      ],
+      "targets": 24,
+      "matched": 24,
+      "target_recall": 1.0,
+      "mean_first_frame_pipeline_ms": 325.91276
+    }
+  },
+  "notes": "Selected-image regression only; partial labels cannot establish precision. No mAP, event accuracy or generalization claim. Single-image timing includes first inference, excludes model load."
+}

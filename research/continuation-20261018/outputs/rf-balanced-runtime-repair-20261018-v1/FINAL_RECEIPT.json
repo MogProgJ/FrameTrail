@@ -1,0 +1,17 @@
+{
+  "status": "login-preflight-environment-repaired-awaiting-user-KIT-login",
+  "observed_failure": "PackageNotFoundError: rfdetr in preflight.py before submission-lock or sbatch",
+  "correction": "Load the same existing Miniforge module and exact RF-DETR PYTHONPATH as the sealed Slurm batch script before unchanged submit.sh",
+  "protocol_changed": false,
+  "approval_changed": false,
+  "training_code_changed": false,
+  "package_archive_changed": false,
+  "reupload": false,
+  "packages_installed": false,
+  "real_job_submitted_by_this_repair": false,
+  "actual_job_id": null,
+  "heldout_used": false,
+  "model_or_GUI_changed": false,
+  "live_KIT_confirmation": "Not performed: user keyboard-interactive OTP/password required",
+  "tests": "Metadata discovery regression, single-submit repeat, Windows PowerShell 5.1 native payload, PS/Bash syntax passed"
+}

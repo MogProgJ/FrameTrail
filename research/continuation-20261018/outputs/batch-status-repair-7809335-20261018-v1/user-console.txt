@@ -1,0 +1,159 @@
+PS C:\WINDOWS\system32>  powershell -NoProfile -ExecutionPolicy Bypass -File "C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\billboard-batch-proposal-7805570-20261018-v1\Check-Run.ps1"
+(ka_udxvl@uc3.scc.kit.edu) Your OTP:
+(ka_udxvl@uc3.scc.kit.edu) Password:
+FRAMETRAIL_JOB_ID=7809335
+JobID                                 JobName      State ExitCode               Start    Elapsed
+------------ -------------------------------- ---------- -------- ------------------- ----------
+7809335_0       frametrail-rf-billboard-batch  COMPLETED      0:0 2026-10-18T18:02:52   00:10:04
+7809335_0.b+                            batch  COMPLETED      0:0 2026-10-18T18:02:52   00:10:04
+7809335_0.e+                           extern  COMPLETED      0:0 2026-10-18T18:02:52   00:10:04
+7809335_0.0                            python  COMPLETED      0:0 2026-10-18T18:04:01   00:08:18
+7809335_0.1                            python  COMPLETED      0:0 2026-10-18T18:12:19   00:00:23
+7809335_1       frametrail-rf-billboard-batch  COMPLETED      0:0 2026-10-18T18:07:12   00:10:56
+7809335_1.b+                            batch  COMPLETED      0:0 2026-10-18T18:07:12   00:10:56
+7809335_1.e+                           extern  COMPLETED      0:0 2026-10-18T18:07:12   00:10:56
+7809335_1.0                            python  COMPLETED      0:0 2026-10-18T18:08:11   00:09:21
+7809335_1.1                            python  COMPLETED      0:0 2026-10-18T18:17:32   00:00:23
+7809335_2       frametrail-rf-billboard-batch  COMPLETED      0:0 2026-10-18T18:14:07   00:08:26
+7809335_2.b+                            batch  COMPLETED      0:0 2026-10-18T18:14:07   00:08:26
+7809335_2.e+                           extern  COMPLETED      0:0 2026-10-18T18:14:07   00:08:27
+7809335_2.0                            python  COMPLETED      0:0 2026-10-18T18:15:09   00:06:55
+7809335_2.1                            python  COMPLETED      0:0 2026-10-18T18:22:04   00:00:17
+7809335_3       frametrail-rf-billboard-batch  COMPLETED      0:0 2026-10-18T18:22:43   00:14:05
+7809335_3.b+                            batch  COMPLETED      0:0 2026-10-18T18:22:43   00:14:05
+7809335_3.e+                           extern  COMPLETED      0:0 2026-10-18T18:22:43   00:14:05
+7809335_3.0                            python  COMPLETED      0:0 2026-10-18T18:24:01   00:10:48
+7809335_3.1                            python  COMPLETED      0:0 2026-10-18T18:34:49   00:01:39
+{
+  "status": "complete-no-improving-candidate",
+  "actual_job_id": "7809335_0",
+  "slurm_job_id": "7809413",
+  "array_task_index": 0,
+  "variant": {
+    "index": 0,
+    "name": "n1-lr0.0001",
+    "negative_presentations": 1,
+    "lr": 0.0001,
+    "accumulation": 2,
+    "maximum_updates": 3000,
+    "schedule_file": "schedules/task-0.json",
+    "schedule_sha256": "5d0711f88a6c072f9ef90c167976ee3409dd163a4d4d42e36292ec0e430c4c1f"
+  },
+  "previous_job": "7805570",
+  "updates": 1500,
+  "completion_reason": "protocol-early-stop-no-gain",
+  "best_step": 0,
+  "new_candidate_selected": false,
+  "best_checkpoint_sha256": "9cb7ab001236f402701f9855919605724de5ef76eac7cbdd96b79108932a7362",
+  "last_checkpoint_sha256": "0d3403e0e81b8c31da59042b6125725630a4ce77d3462954766ec76d2b3298cf",
+  "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "active_classifier_rows": [
+    133
+  ],
+  "frozen_features_and_boxes_unchanged": true,
+  "inactive_classifier_rows_unchanged": true,
+  "retention_against_both_baselines": true,
+  "elapsed_seconds": 320.75,
+  "test_and_video_used": false,
+  "approved_for_application": false
+}FRAMETRAIL_TASK_ARCHIVE=0:f2f2b62b9ffc9098b563fe7df6906fe460bea69da0824be30b07094859d68f26
+{
+  "status": "complete-no-improving-candidate",
+  "actual_job_id": "7809335_1",
+  "slurm_job_id": "7809640",
+  "array_task_index": 1,
+  "variant": {
+    "index": 1,
+    "name": "n3-lr0.0001",
+    "negative_presentations": 3,
+    "lr": 0.0001,
+    "accumulation": 4,
+    "maximum_updates": 3000,
+    "schedule_file": "schedules/task-1.json",
+    "schedule_sha256": "ecd0143d22d4f2844a663702f42ac497a1ce2ab224beb9144a7bf4f675764908"
+  },
+  "previous_job": "7805570",
+  "updates": 1500,
+  "completion_reason": "protocol-early-stop-no-gain",
+  "best_step": 0,
+  "new_candidate_selected": false,
+  "best_checkpoint_sha256": "3ffc136b0f33106694a77c28f3c935836a2ba422642c9f5cd2e2eb7559aa8e2b",
+  "last_checkpoint_sha256": "c3043fcca8d917dbffe0eeaca67e0f066175e8d803912364393aea6790e7d407",
+  "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "active_classifier_rows": [
+    133
+  ],
+  "frozen_features_and_boxes_unchanged": true,
+  "inactive_classifier_rows_unchanged": true,
+  "retention_against_both_baselines": true,
+  "elapsed_seconds": 426.46,
+  "test_and_video_used": false,
+  "approved_for_application": false
+}FRAMETRAIL_TASK_ARCHIVE=1:112c9a1ca497061435b2e27b40875a4d792b98b9011abff8d14a89c221b031b2
+{
+  "status": "complete-no-improving-candidate",
+  "actual_job_id": "7809335_2",
+  "slurm_job_id": "7809721",
+  "array_task_index": 2,
+  "variant": {
+    "index": 2,
+    "name": "n1-lr0.0003",
+    "negative_presentations": 1,
+    "lr": 0.0003,
+    "accumulation": 2,
+    "maximum_updates": 3000,
+    "schedule_file": "schedules/task-2.json",
+    "schedule_sha256": "5d0711f88a6c072f9ef90c167976ee3409dd163a4d4d42e36292ec0e430c4c1f"
+  },
+  "previous_job": "7805570",
+  "updates": 1500,
+  "completion_reason": "protocol-early-stop-no-gain",
+  "best_step": 0,
+  "new_candidate_selected": false,
+  "best_checkpoint_sha256": "ef5a3765e2d49209cfc9146d1c7f33cab1e10311ba0731cd1a48955383976d0d",
+  "last_checkpoint_sha256": "23e503c9ce6f73eb7c0a611a9203e66ae6245b966a8f75c5b72c42467a5b6115",
+  "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "active_classifier_rows": [
+    133
+  ],
+  "frozen_features_and_boxes_unchanged": true,
+  "inactive_classifier_rows_unchanged": true,
+  "retention_against_both_baselines": true,
+  "elapsed_seconds": 280.29,
+  "test_and_video_used": false,
+  "approved_for_application": false
+}FRAMETRAIL_TASK_ARCHIVE=2:37a0e0babde1c6fc4fb9c815c074d956252a8973cfe5e26087bf13fe2c1088f0
+{
+  "status": "complete-no-improving-candidate",
+  "actual_job_id": "7809335_3",
+  "slurm_job_id": "7809335",
+  "array_task_index": 3,
+  "variant": {
+    "index": 3,
+    "name": "n3-lr0.0003",
+    "negative_presentations": 3,
+    "lr": 0.0003,
+    "accumulation": 4,
+    "maximum_updates": 3000,
+    "schedule_file": "schedules/task-3.json",
+    "schedule_sha256": "ecd0143d22d4f2844a663702f42ac497a1ce2ab224beb9144a7bf4f675764908"
+  },
+  "previous_job": "7805570",
+  "updates": 1500,
+  "completion_reason": "protocol-early-stop-no-gain",
+  "best_step": 0,
+  "new_candidate_selected": false,
+  "best_checkpoint_sha256": "081773f42b157f16815c1fb496cf09d35d62b9052f531bda50999783b0c926a1",
+  "last_checkpoint_sha256": "a184f84065d2796966e1a5efbaf2c1fa504f95aa30395605f79ec3189b3e7b49",
+  "starting_checkpoint_sha256": "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3",
+  "active_classifier_rows": [
+    133
+  ],
+  "frozen_features_and_boxes_unchanged": true,
+  "inactive_classifier_rows_unchanged": true,
+  "retention_against_both_baselines": true,
+  "elapsed_seconds": 486.21,
+  "test_and_video_used": false,
+  "approved_for_application": false
+}FRAMETRAIL_TASK_ARCHIVE=3:38e92b6062f37fa6429ef9eecb62ee43a896f37dcc99571c75c00e4e648a1a17
+PS C:\WINDOWS\system32>

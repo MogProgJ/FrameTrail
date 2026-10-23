@@ -1,0 +1,64 @@
+{
+  "image_id": "1b1e3f57e92fdb2c",
+  "image_sha256": "43d4b5c569e8c27a0a74e09139ccc0e2a3a61305ce9d22c165751430a3284c1a",
+  "publisher_attribution": {
+    "id": "1b1e3f57e92fdb2c",
+    "landing_url": "https://www.flickr.com/photos/kecko/16229360262",
+    "original_url": "https://c5.staticflickr.com/8/7490/16229360262_1466d5be3b_o.jpg",
+    "license": "https://creativecommons.org/licenses/by/2.0/",
+    "author": "Kecko",
+    "author_url": "https://www.flickr.com/people/kecko/",
+    "title": "Level crossing - Function test",
+    "rotation": "0.0"
+  },
+  "current_creator": {
+    "@type": "Person",
+    "name": "Kecko",
+    "url": "https://www.flickr.com/photos/kecko",
+    "image": "https://live.staticflickr.com/5711/buddyicons/70981241@N00.jpg?1478630780#70981241@N00"
+  },
+  "current_title": "Level crossing - Function test",
+  "caption_and_notices": {
+    "structured": {
+      "description": null,
+      "copyrightNotice": null,
+      "creditText": null,
+      "creator": {
+        "@type": "Person",
+        "name": "Kecko",
+        "url": "https://www.flickr.com/photos/kecko",
+        "image": "https://live.staticflickr.com/5711/buddyicons/70981241@N00.jpg?1478630780#70981241@N00"
+      }
+    },
+    "meta_description": "New level crossing installation from the factory site of Stadler Rail in Altenrhein to the SBB line. For road users, it looks like a normal traffic light and not like a railroad crossing. But the traffic light shows never green and the yellow flashes when the system is inactive. And the barrier is actually not for the train, but as a blockade for pedestrians which like to take a shortcut there. Staad, Altenrhein, Switzerland, Jan 7, 2015."
+  },
+  "specific_notice_resolution": null,
+  "source_url": "https://www.flickr.com/photos/kecko/16229360262",
+  "canonical_page_url": "https://www.flickr.com/photos/kecko/16229360262",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_page_sha256": "0c13a1b769b3dc97608bd7729d188d52b6994b16cd179a9efbdf6dc3a9b614b5",
+  "source_gzip_sha256": "d31320ff150e072c9419cb5a70f1f7c6945d322bde9d739fdac8c640c5e94e23",
+  "source_checks": {
+    "source_photo_id": true,
+    "original_photo_id": true,
+    "structured_photo_id": true,
+    "author_account_or_documented_alias": true,
+    "structured_license_matches_publisher": true,
+    "two_photo_panel_links": true,
+    "photo_panel_links_cc_by_2": true,
+    "photo_panel_titles_cc_by_2": true,
+    "stable_author_NSID_present": true
+  },
+  "source_job": "7752340",
+  "rights_gate": "pass-private-research",
+  "rights_verified_private_research": true,
+  "reviewer": "assistant",
+  "visual_review_id": "scale7752340-293",
+  "visual_proof_sha256": "d5a4d7b73049e6310bab05194042fc9e3e06c52237656546b220c31c0ac58bd7",
+  "review_basis": "Individual photo-specific source/author/licence checks, retained current title/caption/notices, and explicit recorded physical-content/geometry review for authorized private PC/KIT research. Unresolved credited photographer cases held separately.",
+  "annotation_credit": "Original Open Images publisher annotations: Google LLC, CC BY4.0. Original RF-DETR and YOLO proposal provenance and assistant edits retained separately; no human recheck claimed.",
+  "changes": "Original JPEG unchanged. Selected publisher/model box indices explicitly recorded. New labels positive-only; no new absence/completeness inference.",
+  "public_distribution_approved": false,
+  "approved_for_training": false
+}

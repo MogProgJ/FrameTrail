@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "files": {
+    "approval-template.json": "62ef331ac693aa229b66b1211a62fe8d3be7333308bbde6300c561a4e3694e25",
+    "archive-verifier-tests.txt": "36c75667d37d346dac5d4693ab9e8cbe10a270f2dcbaa0481bc4514abc3fd004",
+    "bootstrap-template.sh": "12731a8797b3a0c4109b4bdcdefd1c2a756f579362d6795591114d14fd3e5dc9",
+    "Check-Run.ps1": "3e7be4f69cfe11a3f8797e75c6e2c232ab8de30fc5b349f97f5368dd3530338c",
+    "compare_batch.py": "f5e7ae267134deed72286137652dcadceadf8a3f43b7413e4e78c6cd8a579d81",
+    "CONTINUATION_STATE.json": "9dff5b741c230070b59a3831439ad09c943062d38e3514b85174f3687e8f652a",
+    "contract-tests.txt": "59a535381c08e2e30c537f4c13b9327eca8f55d978e8ce8d50c5dcc2d4333e66",
+    "finalize_preparation.py": "54d05dca294ac823350639603d284ca266a6562892af7a7b79a7e57213397bae",
+    "HANDOFF.md": "32f4559251744e59a921829bf99268b470f9b4d6381a2f248e9352edf2f2539b",
+    "Invoke-KitScript.ps1": "c8eaa502133e2ea31cabcafbf0f0e0924bf940f7e8240dd9fa385c9d178f6dd5",
+    "Launch-Approved-Run.ps1": "d56449f3d28d635027beb2ba2f52a2ffe8e03e9eee0af9a6468309a24da2e674",
+    "missing-approval-guard.txt": "c1470dc813aa0de05a5e3bb61ed56dcc4faa3155727bcd173ecb2a8eaefe95b7",
+    "powershell-syntax.txt": "4b89ba8d133c8f1fe765f8da1534b99c4061c7e92faf7e8d15886e2d0fc32f41",
+    "PREPARATION_RECEIPT.json": "72b5a1df66eb9f7a21ceb1e4970d8a43557f0fa97b19a0ac3e0a3daa6efa4b3e",
+    "prepare_archive.py": "e9b017e29430e78be5b4f68d75808d8f692a2191a2791300cf95e1c21ce204e4",
+    "PROPOSAL.md": "d898ea66a0bcaf9fc3ed7ed29afa29f57c3ebff15cde3f12ad9f027adeaaf64d",
+    "PROPOSAL_IDENTITY.json": "3b8597e6bd90f12b15415a39ccb8073b1a4e1c5a3c9087dbc2ec7e89ef5e0018",
+    "protocol.json": "0a255598b74eb1d29d83ee1be10d517ae407fbda2c57e4565b51028d615343fd",
+    "Retrieve-Results.ps1": "ae550ac29b631e90d08e946e584bc1ce28c3f586aa1f39378050f81a0fb5c862",
+    "test-slurm-mocks.sh": "22fd147582169de50953f75eac27caa774093f2550d7d4c86023146eab6b2738",
+    "test_batch.py": "67fa840fa8243b7fcd41eaa32d9d466e18317bc56c7113b70a936b56812b4ac7",
+    "Validate-Helpers.ps1": "7f4e89d5f1a9b50ca6ed1ef74c80f306073542c631fa3a97f1a331234fafafd6",
+    "verify_results.py": "ae39bbfbb30e0aa016e1a4ad74386c194922921736f219def78f67e1e4a88964"
+  },
+  "core_package_seal_sha256": "4dd1582ecc6d4c20c4e841b8a6fa5976fd79ef3899c5482675a2db878dd95b58"
+}
