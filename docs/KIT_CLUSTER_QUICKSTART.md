@@ -2,6 +2,8 @@
 
 Prepared 4 October 2026 for the Python modules reported by the user. The user's GPU diagnostic completed successfully on an NVIDIA A100 80 GB. This guide prepares a one-epoch GPU training check with the existing 96-image sample. Larger accuracy training still needs reviewed data; RF-DETR is not trained by this job.
 
+Current progress: upload checksum and extraction passed; environment installation completed with PyTorch 2.8.0+cu128 and Ultralytics 8.3.228. After the first attempt failed before setup was complete, replacement job **7446193 completed with Slurm exit code 0** on the A100. It saved both checkpoints after one epoch on 70 training images and validation on 11 images. Training-wrapper time was 106.91 seconds; complete job time was 3 minutes 44 seconds. The locked test was untouched and the artifact is not approved for the app. Continue with result retrieval; see [HANDOFF.md](../HANDOFF.md). The preparation/submission steps below remain a reproduction guide, not instructions to repeat the successful run.
+
 The assistant has not logged into KIT or submitted a remote job. Run each stage in the terminal named below, and stop if a command reports an error. Enter passwords and OTPs only in your own terminal.
 
 ## 1. Cluster terminal: create storage and select Python
@@ -49,7 +51,7 @@ bash -l training/setup-cluster-env.sh
 
 This loads the reported Miniforge module and installs binary wheels in this project's `.venv`. It does not modify the module's shared Python installation or start training. Dependencies include the existing pinned PyTorch 2.8.0/torchvision 0.23.0 CUDA 12.8 wheels and the project's training requirements. [Official PyTorch wheel commands](https://pytorch.org/get-started/previous-versions/#v280).
 
-The log's `CUDA Version: 13.2` describes the driver's supported CUDA level; it does not require PyTorch to use a CUDA 13.2 build. Newer NVIDIA drivers support older CUDA runtimes through [backward compatibility](https://docs.nvidia.com/deploy/cuda-compatibility/why-cuda-compatibility.html). CUDA operation is tested on the allocated GPU before training. Package installation downloads several GB and may take time. Core package versions are pinned; the final installed dependency snapshot is saved in `.venv/installed-packages.txt` and each experiment's environment report. Linux installation/GPU training remain unverified until you run them successfully.
+The log's `CUDA Version: 13.2` describes the driver's supported CUDA level; it does not require PyTorch to use a CUDA 13.2 build. Newer NVIDIA drivers support older CUDA runtimes through [backward compatibility](https://docs.nvidia.com/deploy/cuda-compatibility/why-cuda-compatibility.html). CUDA operation is tested on the allocated GPU before training. Package installation downloads several GB and may take time. Core package versions are pinned; the final installed dependency snapshot is saved in `.venv/installed-packages.txt` and each experiment's environment report. The user's job 7446193 has now verified this Linux/CUDA smoke path.
 
 ## 5. Cluster terminal: submit one training test
 

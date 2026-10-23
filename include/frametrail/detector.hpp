@@ -26,7 +26,7 @@ struct DetectionResult {
     double preprocess_ms{}, inference_ms{}, postprocess_ms{};
     ExecutionInfo execution;
 };
-enum class DetectorModel { nano, yolox_s, world_s, world_m, openimages };
+enum class DetectorModel { nano, yolox_s, world_s, world_m, openimages, rf_scale7758628 };
 std::string_view model_id(DetectorModel model);
 std::string_view model_name(DetectorModel model);
 DetectorModel parse_model(std::string_view id);
@@ -77,6 +77,15 @@ struct Input {
 Input preprocess(const Frame& frame);
 std::vector<Detection> postprocess(std::span<const float> output, const Input& input,
     int width, int height, float confidence, float nms_iou, DetectorModel model=DetectorModel::world_s);
+}
+
+// Exact experimental trained RF contract: RGB full-image resize512, ImageNet
+// normalization; packed normalized boxes plus canonical foreground logits.
+namespace rfdetr {
+inline constexpr int input_size=512, queries=300, attributes=619;
+inline constexpr std::string_view checkpoint_sha256="1b72fc6474780a6805e919db5b1393d7e78b95209debafafce98c929c633f0d7";
+std::vector<float> preprocess(const Frame& frame);
+std::vector<Detection> postprocess(std::span<const float> output,int width,int height,float confidence,float nms_iou);
 }
 
 class Detector {

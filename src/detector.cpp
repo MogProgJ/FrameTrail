@@ -31,24 +31,26 @@ std::string_view class_name(int id) {
 
 std::string_view model_id(DetectorModel model) {
     switch(model) {case DetectorModel::nano:return "nano";case DetectorModel::yolox_s:return "small";
-        case DetectorModel::world_s:return "world-s";case DetectorModel::world_m:return "world-m";case DetectorModel::openimages:return "openimages";}
+        case DetectorModel::world_s:return "world-s";case DetectorModel::world_m:return "world-m";case DetectorModel::openimages:return "openimages";case DetectorModel::rf_scale7758628:return "rfdetr-7758628";}
     throw std::invalid_argument("Unsupported detector model");
 }
 std::string_view model_name(DetectorModel model) {
     switch(model) {case DetectorModel::nano:return "YOLOX-Nano";case DetectorModel::yolox_s:return "YOLOX-S";
-        case DetectorModel::world_s:return "YOLO-World S";case DetectorModel::world_m:return "YOLO-World M";case DetectorModel::openimages:return "YOLOv8 Open Images";}
+        case DetectorModel::world_s:return "YOLO-World S";case DetectorModel::world_m:return "YOLO-World M";case DetectorModel::openimages:return "YOLOv8 Open Images";case DetectorModel::rf_scale7758628:return "RF-DETR trained 7758628 (experimental)";}
     throw std::invalid_argument("Unsupported detector model");
 }
 DetectorModel parse_model(std::string_view id) {
     if(id=="nano")return DetectorModel::nano;if(id=="small")return DetectorModel::yolox_s;
     if(id=="world-s")return DetectorModel::world_s;if(id=="world-m")return DetectorModel::world_m;
     if(id=="openimages")return DetectorModel::openimages;
-    throw std::invalid_argument("Model type must be nano, small, world-s, world-m or openimages");
+    if(id=="rfdetr-7758628")return DetectorModel::rf_scale7758628;
+    throw std::invalid_argument("Model type must be nano, small, world-s, world-m, openimages or rfdetr-7758628");
 }
-int model_input_size(DetectorModel model) {model_id(model);return model==DetectorModel::nano ? 416:640;}
-int model_class_count(DetectorModel model) {model_id(model);return model==DetectorModel::openimages ? 601:(model==DetectorModel::nano || model==DetectorModel::yolox_s ? 80:100);}
+int model_input_size(DetectorModel model) {model_id(model);return model==DetectorModel::rf_scale7758628 ? 512:(model==DetectorModel::nano ? 416:640);}
+int model_class_count(DetectorModel model) {model_id(model);return model==DetectorModel::rf_scale7758628 ? 615:(model==DetectorModel::openimages ? 601:(model==DetectorModel::nano || model==DetectorModel::yolox_s ? 80:100));}
 int model_category_count(DetectorModel model) {return model==DetectorModel::openimages ? 597:model_class_count(model);}
 std::vector<int64_t> model_output_shape(DetectorModel model) {
+    if(model==DetectorModel::rf_scale7758628)return {1,300,619};
     if(model_class_count(model)>80)return {1,4+model_class_count(model),8400};
     return {1,yolox::candidate_count(model_input_size(model)),85};
 }
@@ -199,6 +201,14 @@ struct Detector::Impl {
                std::string_view(vocabulary.get())!=model_vocabulary(options.variant))
                 throw std::runtime_error("Recognition profile/vocabulary mismatch; use the pinned model export");
         }
+        if(options.variant==DetectorModel::rf_scale7758628) {
+            const auto metadata=session.GetModelMetadata();
+            const auto source=metadata.LookupCustomMetadataMapAllocated("frametrail.checkpoint_sha256",allocator);
+            const auto transform=metadata.LookupCustomMetadataMapAllocated("frametrail.preprocessing",allocator);
+            if(!source || std::string_view(source.get())!=rfdetr::checkpoint_sha256 ||
+               !transform || std::string_view(transform.get())!="rf-rgb512-normalized-v1")
+                throw std::runtime_error("RF candidate identity/preprocessing mismatch; use the verified trained export.");
+        }
         input_name=session.GetInputNameAllocated(0,allocator).get();
         output_name=session.GetOutputNameAllocated(0,allocator).get();
     }
@@ -210,11 +220,13 @@ DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     cancelled(stop);
     const auto started=std::chrono::steady_clock::now();
     const auto size=model_input_size(impl_->options.variant);
-    const bool world=model_class_count(impl_->options.variant)>80;
+    const bool rf=impl_->options.variant==DetectorModel::rf_scale7758628;
+    const bool world=!rf && model_class_count(impl_->options.variant)>80;
     yolo_world::Input world_input;
     yolox::Input legacy_input;
-    if(world)world_input=yolo_world::preprocess(frame);else legacy_input=yolox::preprocess(frame,size);
-    auto& tensor_data=world ? world_input.tensor:legacy_input.tensor;
+    std::vector<float> rf_input;
+    if(rf)rf_input=rfdetr::preprocess(frame);else if(world)world_input=yolo_world::preprocess(frame);else legacy_input=yolox::preprocess(frame,size);
+    auto& tensor_data=rf ? rf_input:(world ? world_input.tensor:legacy_input.tensor);
     const auto prepared=std::chrono::steady_clock::now();
     cancelled(stop);
     std::vector<float> gpu_output;
@@ -243,7 +255,8 @@ DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     const auto inferred=std::chrono::steady_clock::now();
     cancelled(stop);
     DetectionResult result;
-    result.objects=world ? yolo_world::postprocess(output,world_input,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,impl_->options.variant):
+    result.objects=rf ? rfdetr::postprocess(output,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou):
+        world ? yolo_world::postprocess(output,world_input,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,impl_->options.variant):
         yolox::postprocess(output,legacy_input.ratio,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,size);
     cancelled(stop);
     const auto finished=std::chrono::steady_clock::now();

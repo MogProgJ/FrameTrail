@@ -97,7 +97,7 @@ Native scene-boundary resets and long-gap reconfirmation are shared by all analy
 
 Validate the new video-analysis workflow through native File Explorer/dialogs and representative longer recordings. Broaden real-footage annotations and assess detection, tracking identities and event reliability before further model changes or training. Evaluate short labelled recorded/live people or vehicle crossings; schedule a sustained webcam test, including unplug/reconnect, only with explicit camera authorization. Profiling and private packaging are now implemented; use their measurements to guide optimization and validate the package on a clean Windows machine. Preview Fit/100% zoom and broader quality refinements remain deferred; the reported saved-review timing issue received a focused fix in 0.6.
 
-The [compute and training plan](COMPUTE_AND_TRAINING.md) is integrated as conditional Phase 8. The next work is reviewed broad-domain source-train data and independent evaluation, followed by an authenticated cluster setup test. A first general dataset catalogue, smoke training and compatible export are implemented; fox/dog and low light are difficult slices within broad recognition. Substantial training/adoption remain conditional on measured benefit. See [training tooling](TRAINING.md) and [readiness](TRAINING_READINESS.md).
+The [compute and training plan](COMPUTE_AND_TRAINING.md) is integrated as conditional Phase 8. The next work is reviewed broad-domain source-train data and independent evaluation; the authenticated cluster smoke has now succeeded. A first general dataset catalogue, smoke training and compatible export are implemented; fox/dog and low light are difficult slices within broad recognition. Substantial training/adoption remain conditional on measured benefit. See [training tooling](TRAINING.md) and [readiness](TRAINING_READINESS.md).
 
 Application implementation has begun following the user's instruction on 2 October 2026. Optional agent orchestration and hosted AI services remain deferred.
 
@@ -121,3 +121,66 @@ The [audit](TRAINING_READINESS.md) records required evidence and separates it fr
 The user broadened the training target to everyday objects and shortlisted RF-DETR Small. Tooling stage 0.13 adds a 601-label source catalogue, a six-domain bounded sample, source-group splits, duplicate/content checks, protected YOLO/COCO export, strict preflight, experiment/checkpoint identity and ONNX export. The sample contains 96 images and 447 boxes across 132 canonical categories, preserving all 597 application categories in the model head.
 
 A one-epoch CPU smoke completed and its exported full-vocabulary model passed CPU/DirectML native-reference checks and wrong-label rejection. The sample is unreviewed publisher validation data; its metrics do not establish product accuracy. Reviewed source-train data, independent broad-domain evaluation and authenticated KIT Linux/CUDA validation remain open. Cluster hostname/job template are recorded, but login requires user password/OTP and no job was submitted. No application models, GUI or saved-analysis layout/flow were changed. See [training evidence and commands](TRAINING.md).
+
+## Cluster setup and chat handoff (4 October 2026)
+
+The user subsequently completed an A100 80 GB diagnostic job, created the `frametrail` workspace, uploaded the training package with a successful SHA256 check, and extracted it. First training attempt 7442046 failed before training because environment installation had been interrupted and `torch` was absent. The user then completed installation and confirmed PyTorch 2.8.0+cu128 and Ultralytics 8.3.228 imports. Replacement job **7446193 completed with Slurm exit code 0**, training one epoch on 70 images and validating on 11 using the A100. The training wrapper took 106.91 seconds; total job wall time was 3 minutes 44 seconds. Both checkpoints and their hashes were recorded; the 15-image locked test was not evaluated and application approval remains false. Cluster mechanics are proven, while accuracy improvement and substantial training remain unproven. The experiment and Slurm log were downloaded to the usual checkout under `output/kit-results/7446193/`; both checkpoint hashes and the environment snapshot hash passed local verification. The assistant has not accessed the remote account. See [the continuation handoff](../HANDOFF.md) for subsequent data/evaluation work. Historical statements above describe the earlier stage.
+
+## First-60 audits and annotation corrections (4 October 2026)
+
+Photograph job 7450934 acquired 60 source-train images; original hashes and
+receipts were checked. The user accepted all 60 visual audits. The separate
+[annotation correction module](ANNOTATION_REVIEW.md) now provides editable local
+drafts, source-linked correction history and annotation-only COCO/YOLO exports.
+After 209 events there are 35 assistant-confirmed boxes, 489 pending boxes and
+19 rejected records (524 active draft targets). No image has a completed whole-
+image coverage/geometry pass or rights approval. The remaining 540 selected
+candidates have not been acquired. All 75 Python tooling tests and pure editor
+JavaScript checks passed; browser drawing/save/resume remains unverified because
+the built-in browser blocks local file URLs. Originals, notes, native models and
+the saved-analysis interface remain unchanged. No substantial training or
+accuracy improvement is claimed; see the latest handoff for release gates.
+
+## RF-DETR offline mechanics module (7 October 2026)
+
+The user approved a bounded RF-DETR Small pretrained CPU/export experiment. A
+separate pinned Python environment and receipted official checkpoint were created;
+no native app, shipped runtime, default weights or saved-analysis UI was changed.
+The six-photo run cpu-v3 completed: SDK/explicit sparse COCO decoding, ONNX export
+and checker, ONNX Runtime CPU, plus separate existing native model predictions.
+All returned RF detections above 0.35 agreed by class/box/score; raw positionwise
+query tolerance did not pass and remains reported as false. Failed runs were
+preserved. This is mechanics evidence, not accuracy, fine-tuning or native/GPU
+integration. See [the probe and read-only comparison](RFDETR_PROBE.md).
+
+Next: retrieve and validate the user's completed annotation correction JSON,
+freeze a reviewed scope/policy and independent real-world evaluation, then measure
+pretrained candidates before deciding native RF integration or KIT fine-tuning.
+No larger approved training set or automatic annotation acceptance system exists.
+
+## RF-DETR-assisted annotation review (7 October 2026)
+
+The user authorized using RF-DETR as an offline annotation assistant, not adopting
+it in the app. The verified export generated 318 suggestions for all 60 current
+photos, including 41 observation-only cases without exact training-vocabulary
+mapping. A new sibling editor workspace preserves the previous seed/history and
+supports provenance-linked human corrections, duplicate resolution, rejection,
+outside-vocabulary observations and earlier JSON import. No suggestions are
+silently accepted or original annotations replaced. All 111 Python tests and
+pure editor/payload checks passed; real browser interaction remains unverified.
+See [review instructions](RFDETR_ANNOTATION.md). Next: user review and saved JSON,
+then label/rights/release gates and independent evaluation. No training, cluster
+submission, native model adoption or accuracy improvement occurred.
+
+## Saved-box confirmation and RF-link repair (8 October 2026)
+
+The user's uploaded annotation JSON passed integrity/history checks but contained
+pending saved edits and two reactivated duplicate RF records. With explicit user
+approval, the editor now makes individual Save actions and RF-to-matching-box
+updates confirm directly. Explicit provenance-preserving RF links display/select
+the actual target and cannot be reopened as duplicate targets. A new resumed
+snapshot preserves the upload/history/geometry/labels while recording five links
+and 73 authorized confirmations; untouched pending drafts and review/rights gates
+remain unchanged. Resume editor-rfdetr-v3.html; see [instructions](RFDETR_ANNOTATION.md).
+All 117 Python tests and pure JS/payload/link checks passed. Browser interaction
+remains unverified; no native app/model, cluster or training change occurred.

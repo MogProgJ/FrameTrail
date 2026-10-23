@@ -133,7 +133,7 @@ int main(int argc, char* argv[]) {
             QTest::mouseClick(video_canvas,Qt::LeftButton,{},point(.8,.6));
             applied();
             auto* model=window.findChild<QComboBox*>(QStringLiteral("modelSelection"));
-            require(model && model->count()==5,"Model selector missing");
+            require(model && model->count()==6,"Model selector missing");
             if(QFileInfo::exists(model->itemData(1).toString())) {
                 model->setCurrentIndex(1);applied();
                 require(window.grab().save(root+QStringLiteral("/desktop-small-model.png")),"S selection screenshot failed");

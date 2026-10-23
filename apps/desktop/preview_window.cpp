@@ -190,7 +190,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
         if(QFileInfo::exists(model_box_->itemData(1).toString()))model_box_->setCurrentIndex(1);
         model_path_=model_box_->currentData().toString();
     }
-    ui.modelLabel->setText(QStringLiteral("Detection model · %1 categories").arg(frametrail::model_category_count(selected_model(model_box_))));
+    ui.modelLabel->setText(selected_model(model_box_)==frametrail::DetectorModel::rf_scale7758628 ? QStringLiteral("Detection model · experimental RF") : QStringLiteral("Detection model · %1 categories").arg(frametrail::model_category_count(selected_model(model_box_))));
     ui.inspectorLayout->insertWidget(ui.inspectorLayout->indexOf(ui.modelLabel)+1,model_box_);
     auto* backend_label=new QLabel(QStringLiteral("PROCESSING DEVICE"));backend_label->setProperty("role","section");
     backend_box_=backend_selector(this);backend_label->setBuddy(backend_box_);
@@ -230,7 +230,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     connect(replay_button_, &QPushButton::clicked, this, [this] { open_file(source_); });
     connect(detect_box_,&QCheckBox::toggled,this,[this](bool){reconfigure_analysis();});
     connect(model_box_,&QComboBox::currentIndexChanged,this,[this,label=ui.modelLabel]{
-        label->setText(QStringLiteral("Detection model · %1 categories").arg(frametrail::model_category_count(selected_model(model_box_))));
+        label->setText(selected_model(model_box_)==frametrail::DetectorModel::rf_scale7758628 ? QStringLiteral("Detection model · experimental RF") : QStringLiteral("Detection model · %1 categories").arg(frametrail::model_category_count(selected_model(model_box_))));
         model_path_=model_box_->currentData().toString();
         reconfigure_analysis();
     });

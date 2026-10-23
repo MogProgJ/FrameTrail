@@ -1,13 +1,19 @@
 #include "preview_window.hpp"
 #include <QApplication>
 #include <QTimer>
+#include <QComboBox>
 
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
     app.setApplicationName(QStringLiteral("FrameTrail"));
     PreviewWindow window;
+    auto arguments = app.arguments();
+    if(arguments.removeAll(QStringLiteral("--rf-experimental"))) {
+        window.findChild<QComboBox*>(QStringLiteral("modelSelection"))->setCurrentIndex(5);
+        window.findChild<QComboBox*>(QStringLiteral("backendSelection"))->setCurrentIndex(1);
+        window.setWindowTitle(QStringLiteral("FrameTrail · RF trained 7758628 · experimental"));
+    }
     window.show();
-    const auto arguments = app.arguments();
     if (arguments.size() > 1 && arguments[1] == QStringLiteral("--smoke-test")) {
         if (arguments.size() != 3) return 2;
         // Packaging check: local-file decode, inference and Qt presentation only.

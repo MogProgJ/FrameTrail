@@ -21,6 +21,7 @@ if(NOT EXISTS "${FFMPEG_ROOT}/include/libavcodec/avcodec.h")
         "  powershell -NoProfile -File ./scripts/fetch-dependencies.ps1\n"
         "Then configure again. If using your own SDK, set FFMPEG_ROOT to its root directory.")
 endif()
+
 find_path(_ffmpeg_headers libavcodec/avcodec.h HINTS "${FFMPEG_ROOT}/include"
     NO_DEFAULT_PATH NO_CACHE REQUIRED)
 foreach(_component avdevice avformat avcodec avutil swscale)
@@ -43,11 +44,13 @@ set_target_properties(ONNXRuntime PROPERTIES
     IMPORTED_IMPLIB "${ONNXRUNTIME_ROOT}/lib/onnxruntime.lib"
     IMPORTED_LOCATION "${ONNXRUNTIME_ROOT}/lib/onnxruntime.dll"
     INTERFACE_INCLUDE_DIRECTORIES "${ONNXRUNTIME_ROOT}/include")
-set(_detector_model "${CMAKE_CURRENT_SOURCE_DIR}/models/yolox_nano.onnx")
-set(_detector_small_model "${CMAKE_CURRENT_SOURCE_DIR}/models/yolox_s.onnx")
-set(_world_s_model "${CMAKE_CURRENT_SOURCE_DIR}/models/yolo_world_s.onnx")
-set(_openimages_model "${CMAKE_CURRENT_SOURCE_DIR}/models/yolo_openimages.onnx")
-set(_world_m_model "${CMAKE_CURRENT_SOURCE_DIR}/models/yolo_world_m.onnx")
+set(FRAMETRAIL_MODEL_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/models" CACHE PATH "Existing detector model directory")
+set(FRAMETRAIL_RF_MODEL "${CMAKE_CURRENT_SOURCE_DIR}/models/rfdetr_scale7758628.onnx" CACHE FILEPATH "Verified experimental RF export")
+set(_detector_model "${FRAMETRAIL_MODEL_ROOT}/yolox_nano.onnx")
+set(_detector_small_model "${FRAMETRAIL_MODEL_ROOT}/yolox_s.onnx")
+set(_world_s_model "${FRAMETRAIL_MODEL_ROOT}/yolo_world_s.onnx")
+set(_openimages_model "${FRAMETRAIL_MODEL_ROOT}/yolo_openimages.onnx")
+set(_world_m_model "${FRAMETRAIL_MODEL_ROOT}/yolo_world_m.onnx")
 file(READ "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/sqlite.json" _sqlite_manifest)
 string(JSON _sqlite_directory GET "${_sqlite_manifest}" archiveRoot)
 set(SQLITE_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/.deps/${_sqlite_directory}" CACHE PATH "SQLite amalgamation root")
@@ -66,6 +69,7 @@ add_library(frametrail_core
     src/frame_tracker.cpp
     src/detector.cpp
     src/yolo_world.cpp
+    src/rfdetr.cpp
     src/dml_inference.cpp
     src/media_reader.cpp
     src/frame_export.cpp
@@ -107,7 +111,7 @@ function(frametrail_runtime target)
                 COMMAND ${CMAKE_COMMAND} -E copy_directory "${FRAMETRAIL_DIRECTML_ROOT}/bin" "$<TARGET_FILE_DIR:${target}>/backends/directml"
                 VERBATIM)
         endif()
-        foreach(_model IN ITEMS "${_detector_model}" "${_detector_small_model}" "${_world_s_model}" "${_world_m_model}" "${_openimages_model}")
+        foreach(_model IN ITEMS "${_detector_model}" "${_detector_small_model}" "${_world_s_model}" "${_world_m_model}" "${_openimages_model}" "${FRAMETRAIL_RF_MODEL}")
             if(EXISTS "${_model}")
                 add_custom_command(TARGET ${target} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${target}>/models"
@@ -372,5 +376,26 @@ if(BUILD_TESTING)
         endif()
         set_tests_properties(desktop_controls PROPERTIES FIXTURES_REQUIRED media TIMEOUT 30
             ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
+    endif()
+endif()
+
+# Experimental RF adapter checks are independent of its adoption decision.
+if(BUILD_TESTING)
+    add_executable(frametrail_rf_native_tests tests/rf_native_tests.cpp)
+    target_link_libraries(frametrail_rf_native_tests PRIVATE frametrail_core)
+    frametrail_runtime(frametrail_rf_native_tests)
+    add_test(NAME rf_adapter_contract COMMAND frametrail_rf_native_tests)
+    if(FRAMETRAIL_BUILD_GUI)
+        add_executable(frametrail_rf_desktop_tests tests/rf_desktop_tests.cpp)
+        target_link_libraries(frametrail_rf_desktop_tests PRIVATE frametrail_preview_ui Qt6::Test)
+        frametrail_qt_runtime(frametrail_rf_desktop_tests)
+        add_custom_command(TARGET frametrail_rf_desktop_tests POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:Qt6::Test>" "$<TARGET_FILE_DIR:frametrail_rf_desktop_tests>" VERBATIM)
+    endif()
+    if(MSVC)
+        target_compile_options(frametrail_rf_native_tests PRIVATE /W4 /permissive- /utf-8)
+        if(FRAMETRAIL_BUILD_GUI)
+            target_compile_options(frametrail_rf_desktop_tests PRIVATE /W4 /permissive- /utf-8)
+        endif()
     endif()
 endif()

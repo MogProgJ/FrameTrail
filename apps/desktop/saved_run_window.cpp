@@ -112,7 +112,7 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     options->addWidget(new QLabel(QStringLiteral("Confidence")));confidence_=new QDoubleSpinBox;confidence_->setObjectName(QStringLiteral("analysisConfidence"));
     confidence_->setRange(.05,.95);confidence_->setSingleStep(.05);confidence_->setValue(configuration_ ? configuration_->detector.confidence : .35);options->addWidget(confidence_);
     auto* hint=new QLabel;
-    const auto update_hint=[this,hint]{hint->setText(QStringLiteral("All %1 object categories · on this device").arg(frametrail::model_category_count(selected_model(model_))));};
+    const auto update_hint=[this,hint]{hint->setText(selected_model(model_)==frametrail::DetectorModel::rf_scale7758628 ? QStringLiteral("Experimental RF · false alarms expected") : QStringLiteral("All %1 object categories · on this device").arg(frametrail::model_category_count(selected_model(model_))));};
     update_hint();connect(model_,&QComboBox::currentIndexChanged,this,[update_hint]{update_hint();});hint->setProperty("role","muted");options->addWidget(hint);options->addStretch();
     settings_panel_->hide();layout->addWidget(settings_panel_);
     progress_=new QProgressBar;progress_->setObjectName(QStringLiteral("analysisProgress"));progress_->setTextVisible(false);progress_->setMaximumHeight(7);progress_->hide();layout->addWidget(progress_);

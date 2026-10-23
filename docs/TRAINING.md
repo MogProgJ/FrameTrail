@@ -1,6 +1,6 @@
 # General recognition: datasets and training
 
-Updated: 4 October 2026. Dataset/training tooling stage 0.13; the desktop application remains 0.12.
+Updated: 7 October 2026. Dataset/training tooling stage 0.13; the desktop application remains 0.12.
 
 The product goal is broad everyday-object recognition. Fox/dog, low light, small objects and occlusion are difficult evaluation slices within that goal. They do not define the application's scope. RF-DETR Small is shortlisted as a challenger to the YOLO baseline.
 
@@ -85,19 +85,19 @@ All 29 Python contract checks passed, including immutable bundle validation, spl
 
 ## bwUniCluster handoff
 
-For a beginner-friendly sequence using the available Python module and a prepared upload archive, follow [the KIT quickstart](KIT_CLUSTER_QUICKSTART.md). The user has now completed an A100 80 GB diagnostic job successfully; actual Linux environment installation and GPU training remain pending.
+For a beginner-friendly sequence using the available Python module and a prepared upload archive, follow [the KIT quickstart](KIT_CLUSTER_QUICKSTART.md). A100 GPU smoke job **7446193** completed with exit code 0; local checkpoint/environment identity checks passed. This establishes training mechanics, not accuracy or adoption. See [HANDOFF](../HANDOFF.md) for current evidence; the original upload/setup commands are reproduction steps, not work to repeat.
 
 The user supplied `uc3.scc.kit.edu` and confirmed that login requires an interactive password and OTP. No credentials or account names are stored here. No cluster login or job submission was performed. Authenticate in your own terminal, then verify the account's permitted GPU partition, storage lifetime, and CUDA environment. [bwHPC documents the job policy](https://wiki.bwhpc.de/e/BwUniCluster3.0/Running_Jobs) and [supported container environments](https://wiki.bwhpc.de/e/BwUniCluster3.0/Containers).
 
 Transfer the repository, one bundle, the pinned publisher checkpoint and the environment lock to a persistent project/workspace directory. Export `FT_ROOT`, `FT_PYTHON`, `FT_DATASET`, `FT_WEIGHTS` and a new `FT_OUTPUT`. Submit `training/run-cluster.sbatch` with the permitted partition. `FT_MODE=smoke` and `FT_CONFIG=.../training/general-cluster-smoke.json` select the short GPU setup test; override wall time to fit the development queue. Defaults select reviewed training, and fail preflight on the current smoke bundle. Do not execute compute-heavy work on the login node.
 
-The Slurm script is prepared but has not been executed on KIT. CPU smoke success does not verify the Linux/CUDA job. Persist checkpoints and retrieve the chosen artifact/report before scratch storage expires.
+The Linux/CUDA smoke path has now run successfully. Publisher-train metadata job **7447265**, historical selection **7448416**, and balanced selection **7449188** completed. The balanced selection has 600 unique IDs, all six domains and all 52 acquisition anchors, with locally verified hashes/counts and no old smoke ID overlap. Photograph job **7450934** acquired the first 60 and local integrity checks passed. Their visual audits are accepted; [annotation correction drafts](ANNOTATION_REVIEW.md) now exist, but complete labels, rights and training approval remain outstanding. The remaining 540 candidates are not acquired. No approved larger training bundle exists. Persist important results before scratch storage expires.
 
 ## What comes next
 
 1. Acquire/index publisher train metadata in a bounded staged workflow and curate broad examples plus hard-case supplements. Review target completeness and rights; add real camera/site information and stronger duplicate checks where appropriate.
 2. Freeze independent real-world test data spanning the six domains and difficult conditions. Add full per-class precision/recall/AP and per-domain regression evaluation; measure confidence using validation only.
-3. Run the authenticated single-GPU setup test and then a budgeted reviewed-data fine-tune. Compare against the unchanged broad model and people/vehicle baseline before adopting any artifact.
-4. Evaluate shortlisted RF-DETR Small on the same reviewed dataset if useful, with its own preprocessing/output adapter and CPU/GPU resource measurements. Its [custom training](https://rfdetr.roboflow.com/latest/learn/train/) and [ONNX export](https://rfdetr.roboflow.com/latest/exports/onnx/) paths are documented, but no RF-DETR model has been installed or trained here.
+3. After the already completed single-GPU mechanics check, gate a budgeted fine-tune on reviewed data and independent evaluation. Compare against the unchanged broad model and people/vehicle baseline before adopting any artifact.
+4. Evaluate RF-DETR Small on the same reviewed dataset if useful, with its own preprocessing/output adapter and CPU/GPU resource measurements. The [isolated pretrained CPU/export probe](RFDETR_PROBE.md) completed on 7 October 2026; no RF-DETR fine-tuning, native integration, DirectML test or accuracy improvement has been established. Its [custom training](https://rfdetr.roboflow.com/latest/learn/train/) and [ONNX export](https://rfdetr.roboflow.com/latest/exports/onnx/) paths remain separate from adoption.
 
 Broader future datasets require taxonomy alignment and label/license checks before merging. Open-vocabulary expansion remains a separate model evaluation; it is not a guarantee of unlimited recognition. The saved-analysis UI stays as accepted.
