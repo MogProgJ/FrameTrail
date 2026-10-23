@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "verified_at_utc": "2026-10-23T22:37:46.436214+00:00",
+  "repository": "https://github.com/MogProgJ/FrameTrail",
+  "branch": "main",
+  "verified_content_commit": "e1523333e03ea2282f57436f9021000550c77a71",
+  "git_remote_main": "e1523333e03ea2282f57436f9021000550c77a71",
+  "github_api_main": "e1523333e03ea2282f57436f9021000550c77a71",
+  "committed_archive_sha256_check": {
+    "status": "passed",
+    "git_commit": "e1523333e03ea2282f57436f9021000550c77a71",
+    "files_checked": 27994,
+    "failures": []
+  },
+  "original_source_files_archived": 27994,
+  "current_source_consolidated": true,
+  "test_evidence": "VALIDATION_RECEIPT.json",
+  "local_binary_assets_uploaded": false,
+  "production_adoption": false,
+  "receipt_note": "This receipt is committed as a descendant of the verified content commit. Its own commit hash is intentionally not self-referential.",
+  "next_step": "Qualify unused local candidates for 11 TRAIN, 6 validation and 4 TEST truly absent additions under the expanded billboard definition before any new baseline or fit."
+}

@@ -1,3 +1,15 @@
+# GitHub sync verified — 24 October 2026
+
+User requested that all FrameTrail code and findings be current on GitHub. The private repository https://github.com/MogProgJ/FrameTrail, branch main, now contains verified content commit e1523333e03ea2282f57436f9021000550c77a71. Git remote and GitHub API agreed; all 27,994 archived source/evidence files match their original SHA-256 values in the committed Git blobs. Publication receipts are under research/sync-20261024/. Models, raw media, caches, SDK/build/package binaries and authentication/runtime artifacts remain local; their project artifact inventory and available scientific hash receipts are on GitHub. No binary backup or data/model release is claimed.
+
+The main source checkout C:/Users/nazee/Documents/All Modules/FrameTrail now includes the previously verified latest single-window workspace and Quick Guide source from native-lean-guide-20261019-v1/source. Preserve e73759e as the earlier checkout revision and every historical source snapshot. The consolidated source passed 37 native checks; existing Python tooling passed 120 checks; Quick Guide checks passed at normal and 125% scale; the unified workflow passed. These were application fixture checks, not a scientific evaluation or new training. No camera, cluster job, model promotion or scientific TEST prediction was performed. Production remains YOLOX-S default, explicit held RF preview and production_adoption=false.
+
+Canonical research receipts and the existing launcher/package remain under C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation. Read PROJECT_PROGRESS.md in the Git checkout for the GitHub entry point; the scientific status and existing authorizations below remain current. Continue ignoring MiniERP, Carrington Event and all unrelated projects. The publication receipt commit follows the content commit; use the live main ref for the latest publication metadata.
+
+Next step: qualify unused local candidates for 11 TRAIN, 6 validation and 4 TEST truly absent additions, including the five TRAIN shop confusers and one traffic confuser, because the expanded definition needs trustworthy coverage before a new baseline or fit.
+
+---
+
 # FrameTrail: broader billboard scope accepted; first image-review pass complete
 
 LATEST 22 October 2026: User answered the product boundary question: "they should both be considered. they are both at the end, billboards". This explicitly includes business/restaurant identity boards along with promotional boards. Do not ask that same question again. The previous handoff's pending human-boundary review is superseded by this user answer. User also said "All right, go ahead. Proceed to the next step." Continue necessary local data qualification autonomously; no routine approval checkpoints.
