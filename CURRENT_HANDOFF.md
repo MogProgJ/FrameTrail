@@ -1,3 +1,20 @@
+# Absent-photo qualification, first pass — 24 October 2026 (cloud session)
+
+Work lives on branch `claude/kind-brahmagupta-4q5cdd` under `research/continuation-20261024/outputs/absent-qualification-20261024-v1/`. Read `REPORT.md` there first.
+
+All 223 unused originals were re-fetched from the public Open Images bucket; every SHA-256 and dHash matches the inventory. Review order was frozen before any image was viewed, roles unchanged, no model predictions. Assistant review only; nothing admitted, `approved_for_training=false`.
+
+- TRAIN: 30 absent candidates found against a gap of 11. Traffic family now 7 (gap closed). Shop/business-lettering family still 0 of 5: under the broader definition every street scene in the inventory contains an in-scope board, so no genuine shop-lettering negative exists here.
+- Validation: 8 absent candidates against a gap of 6 (closed in draft). The 57 validation billboard-anchor photos were not reviewed because the frozen order only opens them for gaps left after the contrast block.
+- TEST: 0 absent candidates; gap of 4 remains. Every unused TEST photo is positive, held or rejected.
+- 22 boundary holds are listed by question in `REPORT.md` (noticeboard posters, painted wall ads, blank billboard faces, information boards with brand identity, composites/watermarks, small unreadable details).
+
+Still required before admission: visual scene/session comparison against prior releases, formal rights clearance, independent human confirmation, and a decision on the shop-family and TEST shortfalls.
+
+Next step: decide how to close the shop-family and TEST shortfalls (rule on the listed boundary holds, redefine the shop family, or approve a bounded targeted collection), because the unused local inventory is now exhausted for both.
+
+---
+
 # Cross-model handoff prepared — 24 October 2026
 
 The user requested an incredibly detailed project overview for another AI model. Read AI_HANDOFF_20261024.md (or the identical .txt), START_HERE_OTHER_MODEL.md and AI_HANDOFF_FACTS_20261024.json in the main FrameTrail checkout or this canonical continuation. They combine the product/architecture, implemented app, full research sequence, current draft/holds, source evidence, authorization and exact next work. The scientific state below is unchanged; this was a documentation-only continuation. The incoming model should begin unused-candidate/data qualification, preserving original roles, the 11/6/4 absence gaps and all model/data gates. New handoff files are published on the repository main branch after the earlier verified sync commit; use live main for the current documentation revision.

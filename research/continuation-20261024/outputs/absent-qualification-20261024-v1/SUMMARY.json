@@ -1,0 +1,98 @@
+{
+ "schema": 1,
+ "stage": "absent-qualification-20261024-v1",
+ "decision_files_sha256": {
+  "REVIEW_A_DECISIONS.json": "60e28eb2f75d72503c215fa236d9b1c8fcd3fbf2efe2153a826718106ce8674a",
+  "REVIEW_B_DECISIONS.json": "b68fe75bc2bc947d8b51de7f9bd218c256f0bf5fe1d31d0ce0925fde449da794",
+  "REVIEW_C_DECISIONS.json": "7c7be58cba35ee7e0932c451fab146458b35b78051a571b33f403c27d6647eb5"
+ },
+ "reviewed_records": 166,
+ "roles": {
+  "train": {
+   "gap_before": 11,
+   "absent_candidates_found": 30,
+   "remaining_gap": 0,
+   "decisions": {
+    "absent": 30,
+    "hold": 13,
+    "not-absent": 40,
+    "reject": 2
+   }
+  },
+  "val": {
+   "gap_before": 6,
+   "absent_candidates_found": 8,
+   "remaining_gap": 0,
+   "decisions": {
+    "absent": 8,
+    "hold": 2,
+    "not-absent": 1
+   }
+  },
+  "test": {
+   "gap_before": 4,
+   "absent_candidates_found": 0,
+   "remaining_gap": 4,
+   "decisions": {
+    "hold": 7,
+    "not-absent": 62,
+    "reject": 1
+   }
+  }
+ },
+ "train_absent_families_after_candidates": {
+  "shop-business-lettering": 0,
+  "traffic-information-signs": 7,
+  "indoor-frames-screens-boards": 30,
+  "household-laundry": 10
+ },
+ "train_family_remaining_gaps": {
+  "shop-business-lettering": 5,
+  "traffic-information-signs": 0,
+  "indoor-frames-screens-boards": 0,
+  "household-laundry": 0
+ },
+ "train_absent_unassigned_family": [
+  "83345074adb9538f",
+  "3db2cf22867fc76a"
+ ],
+ "holds_by_role": {
+  "train": [
+   "a8df81ce61f8a569",
+   "b33447da6ab4cbe6",
+   "117cc5e10b16b05b",
+   "7d3c9512d8ad8e26",
+   "910041a96e70e3b7",
+   "bb2c1ddff018b1d2",
+   "dcfb7be73a1b8376",
+   "3547d8e7ed6d8111",
+   "356986d84c8bdc28",
+   "45b675d7a987eb2d",
+   "766ff9c58948dc8e",
+   "bd7fae17003521c6",
+   "c0ba504f51ead771"
+  ],
+  "val": [
+   "d9e8beecc85c8c4a",
+   "31389522f357909e"
+  ],
+  "test": [
+   "29cd97b5de31d220",
+   "679f52e059e4622f",
+   "13738fd6baee7352",
+   "14739a4907bd6163",
+   "17f1bc32271053f6",
+   "1868a6fcfbfac188",
+   "a05ca9ca50d00afb"
+  ]
+ },
+ "status": "draft-candidates-not-admitted",
+ "still_required_before_admission": [
+  "visual scene/session comparison against prior releases and regression scenes",
+  "formal rights clearance (all 223 carry photo-specific license corroboration only)",
+  "independent human confirmation of assistant absence decisions",
+  "resolution of the shop-business-lettering family shortfall and the TEST shortfall"
+ ],
+ "approved_for_training": false,
+ "model_predictions_used": false
+}

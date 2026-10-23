@@ -8,6 +8,10 @@ The main build tree now contains the latest desktop source from the verified 19 
 
 YOLOX-S remains the default. RF job 7805570 step 100 is an explicit experimental preview. The ONNX numerical hold remains open; `production_adoption=false`. No model has been promoted by this sync.
 
+## Latest data qualification (24 October, cloud session)
+
+A first pass over all 223 unused candidates found 30 TRAIN and 8 validation absent-photo candidates, closing those draft gaps, but zero TEST absences and zero genuine shop/business-lettering negatives. The broader definition makes nearly every shopfront positive, and the unused inventory is exhausted for both shortfalls. See the [qualification report](research/continuation-20261024/outputs/absent-qualification-20261024-v1/REPORT.md). Nothing is admitted yet.
+
 ## Training and findings
 
 The exact four-trial selector batch 7870268 finished and was evaluated once. No checkpoint qualified; `winner=null` and TEST predictions remain zero. Under the frozen narrow billboard labels, final M0 seeds 17/29 scored 11 TP / 8 FP and 10 TP / 8 FP; M1 scored 12 TP / 8 FP and 13 TP / 7 FP on 32 fresh validation photos. Both methods exceeded the legacy unknown-query cap of 530; unknown detections are not automatically false positives. See the [postrun report](research/continuation-20261018/outputs/fresh-selector-batch-20261022-v1/POSTRUN_REPORT.md).
@@ -26,4 +30,4 @@ The corrected fresh draft lacks 11 TRAIN, 6 validation and 4 TEST truly absent p
 
 The current application and tooling source, earlier source snapshots, research scripts, experiment plans, authorizations, reports, metrics, annotation drafts, provenance records and handoffs are archived in [research/](research/README.md). The source manifest records original byte hashes. Raw media, model/checkpoint files, SDKs, build products, cached feature tensors and authentication/runtime files remain local; an inventory documents exclusions. This repository is a code and evidence archive, not a full binary backup or a data/model release.
 
-Next step: qualify unused local photos to close the 11/6/4 absent-photo gaps, because the expanded billboard definition needs trustworthy coverage before another training comparison.
+Next step: decide how to close the shop-family and TEST absent-photo shortfalls (rule on the listed holds, redefine the shop family, or approve a bounded targeted collection), because the existing unused inventory cannot close them.

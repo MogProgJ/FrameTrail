@@ -28,11 +28,13 @@ def main():
             'queue_index': entry['queue_index'], 'image_id': row['image_id'], 'role': entry['role'],
             'anchor': entry['anchor'], 'image_sha256': entry['sha256'], 'identity_group': entry['identity_group'],
             'decision_133': row['decision'], 'confuser_family': row['family'], 'scene_group': 'scene:' + row['scene'],
-            'note': row['note'], 'original_viewed': True, 'original_sha256_verified': True,
+            'note': row['note'], 'review_method': row.get('method', 'full-resolution original, zoomed crops where needed'),
+            'original_viewed': True, 'original_sha256_verified': True,
             'model_predictions_used': False, 'independent_human_review': False,
             'reviewer': 'assistant (Claude, cloud session)', 'approved_for_training': False,
         })
     complete = len(records) == len(entries)
+    unreviewed = sorted(set(entries) - {r['image_id'] for r in records}, key=lambda i: entries[i]['queue_index'])
     output = {
         'schema': 1, 'stage': queue['stage'], 'block': block, 'block_complete': complete,
         'queue_sha256': hashlib.sha256((HERE / 'QUEUE.json').read_bytes()).hexdigest(),
@@ -42,6 +44,7 @@ def main():
                     'not-absent': 'contains an in-scope board; positive candidate, boxes not drawn in this stage',
                     'reject': 'excluded by an existing recorded decision or disqualifying source evidence'},
         'records': records,
+        'unreviewed_image_ids': unreviewed,
     }
     target = HERE / f"REVIEW_{block.split('-')[0]}_DECISIONS.json"
     with target.open('x', encoding='utf-8') as handle:
