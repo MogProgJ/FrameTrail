@@ -1,6 +1,6 @@
 # FrameTrail progress
 
-Updated 24 October 2026. This is the current entry point; dated reports in the research archive are immutable historical evidence.
+Updated 24 October 2026. This is the current entry point; dated reports in the research archive are immutable historical evidence. For a complete transfer to another AI model, use the [detailed handoff](AI_HANDOFF_20261024.md) and [starter message](START_HERE_OTHER_MODEL.md).
 
 ## Application
 

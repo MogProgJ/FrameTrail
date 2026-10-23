@@ -1,3 +1,11 @@
+# Cross-model handoff prepared — 24 October 2026
+
+The user requested an incredibly detailed project overview for another AI model. Read AI_HANDOFF_20261024.md (or the identical .txt), START_HERE_OTHER_MODEL.md and AI_HANDOFF_FACTS_20261024.json in the main FrameTrail checkout or this canonical continuation. They combine the product/architecture, implemented app, full research sequence, current draft/holds, source evidence, authorization and exact next work. The scientific state below is unchanged; this was a documentation-only continuation. The incoming model should begin unused-candidate/data qualification, preserving original roles, the 11/6/4 absence gaps and all model/data gates. New handoff files are published on the repository main branch after the earlier verified sync commit; use live main for the current documentation revision.
+
+Next step: qualify existing unused originals for the missing11TRAIN/6validation/4TEST truly absent photos, including five TRAIN shop confusers and one traffic confuser, because the broader task needs trustworthy coverage before model work.
+
+---
+
 # GitHub sync verified — 24 October 2026
 
 User requested that all FrameTrail code and findings be current on GitHub. The private repository https://github.com/MogProgJ/FrameTrail, branch main, now contains verified content commit e1523333e03ea2282f57436f9021000550c77a71. Git remote and GitHub API agreed; all 27,994 archived source/evidence files match their original SHA-256 values in the committed Git blobs. Publication receipts are under research/sync-20261024/. Models, raw media, caches, SDK/build/package binaries and authentication/runtime artifacts remain local; their project artifact inventory and available scientific hash receipts are on GitHub. No binary backup or data/model release is claimed.

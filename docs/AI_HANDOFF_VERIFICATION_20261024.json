@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "date": "2026-10-24",
+  "source_base_commit": "6077472fb3ad1f4bfbe174578daa286d71bdb682",
+  "handoff_words": 10956,
+  "handoff_lines": 723,
+  "broken_local_links": [],
+  "source_backed_invariants_checked": 9,
+  "detailed_text_and_markdown_identical": true,
+  "source_receipt_hashes_recorded": 11,
+  "scientific_files_changed": false,
+  "model_training_or_inference": false,
+  "new_cluster_jobs": 0,
+  "handoff_sha256": "30a9c18cd8929e2eb9f914955b66f025fd5c1fe3384bc6e8799b7fa1e4c2f7a7",
+  "portable_files": {
+    "AI_HANDOFF_20261024.md": "30a9c18cd8929e2eb9f914955b66f025fd5c1fe3384bc6e8799b7fa1e4c2f7a7",
+    "AI_HANDOFF_20261024.txt": "30a9c18cd8929e2eb9f914955b66f025fd5c1fe3384bc6e8799b7fa1e4c2f7a7",
+    "START_HERE_OTHER_MODEL.md": "80f40b10253cbb61c409f737e8d504965c7819449354d820e0462274c072fe73",
+    "AI_HANDOFF_FACTS_20261024.json": "c5609d8cfd884132e90fb047b0e840500fefb97b2af9c680f948a04a4c773bda"
+  },
+  "credential_pattern_scan_alerts": [],
+  "canonical_and_repository_copies_match": true
+}

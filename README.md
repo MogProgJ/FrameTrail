@@ -20,6 +20,8 @@ Still images support detections and an annotated preview. They do not support mo
 
 ## Start reading here
 
+For a complete transfer to another AI model, read the [detailed current handoff](AI_HANDOFF_20261024.md), [starter message](START_HERE_OTHER_MODEL.md) and [source-backed facts](AI_HANDOFF_FACTS_20261024.json). A [plain-text copy](AI_HANDOFF_20261024.txt) is available for upload.
+
 | Document | What it explains |
 | --- | --- |
 | [Project brief and interface sketch](docs/PROJECT_BRIEF.md) | The product, first release, and proposed screen |
