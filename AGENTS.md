@@ -1,52 +1,81 @@
-## FrameTrail: strict separation from other cluster projects
+# FrameTrail — working agreement
 
-User instruction recorded on 22 October 2026; applies to all FrameTrail chats, continuations and cluster operations.
+Read this first in every session. It is the single source of truth for direction, rules and status. Keep it short and current: update **Status** and **Decision log** when something real changes; do not add history essays, receipts or handoff files.
 
-- Cluster access is authorized for FrameTrail work only. Ignore Carrington Event and other projects' jobs, files, logs, results, environments and sessions. Sharing an account or appearing in a queue does not authorize inspecting or managing them.
-- Target explicit job IDs verified through FrameTrail submission receipts and project paths. A similar job name or the current terminal folder is not sufficient proof of ownership. Current verified FrameTrail array: 7870268, under FrameTrail/output/training-general-v1/rf-fresh-selector-v1.
-- Prefer job-specific scheduler queries. Do not inspect, download, modify, cancel, hold, requeue, reprioritize or change dependencies for another project's jobs, including to make room for FrameTrail.
-- If account admission requires shared resource information, use only the minimum aggregate quota/usage evidence needed; ignore unrelated job details. Do not treat other projects' queue entries as FrameTrail tasks or report them as FrameTrail failures.
-- Never use account-wide or wildcard job-management commands. Preserve other projects' SSH identities and services. Carry this boundary into every FrameTrail handoff and future cluster package.
+## What FrameTrail is
 
-## FrameTrail: standing communication preference
+A native Windows desktop app (C++20, Qt, FFmpeg, ONNX Runtime, SQLite) that analyses images, video files and a webcam. It detects objects, tracks them over time, records when each appearance starts and ends, counts line crossings, and exports results. Private, single-user project. It will not be sold or shared.
 
-When resuming this continuation, read CURRENT_HANDOFF.md for the latest verified state and approval boundary. Older output status files are preserved historical snapshots.
+## The goal
 
-User instruction recorded on 18 October 2026; applies to every FrameTrail chat, including new chats and continuations, regardless of the current folder or saved project mapping.
+**One RF-DETR model that recognises about 600 everyday object categories well enough to be the app's main detector.**
 
-- End every user-facing response with the single best plausible, concrete next step for the full FrameTrail project, and briefly explain why it comes next. Keep the recommendation compact and grounded in current project evidence.
-- Do not wait for the user to ask what to do next. Avoid generic offers such as "let me know if you want to continue."
-- If a true blocker prevents progress, recommend the precise action or information needed to unblock it.
-- Carry this preference into every FrameTrail handoff. Continue already-authorized work autonomously; a recommendation does not grant new authorization for restricted actions.
+Concretely, the first target is a fine-tuned RF-DETR that:
 
-## FrameTrail: plain-language explanations
+1. Covers the Open Images everyday vocabulary (pilot: about 100 classes, then about 600).
+2. Beats the YOLOv8 Open Images model already in the app on the same held-out Open Images test images (Open Images-style mAP@0.5).
+3. Stays at least as good as today on people and vehicles.
+4. Runs inside FrameTrail (ONNX, GPU via DirectML, CPU fallback).
 
-User clarification recorded on 19 October 2026: the technical strategy Markdown was difficult to understand; explain the work directly in chat in ordinary language. Give the practical meaning, what changes next, and why. Keep formulas, protocol details and specialist terms in supporting artifacts unless the user asks for them. Do not make a technical file the sole explanation. Carry this preference into handoffs.
+"Anything you throw at it" beyond the trained vocabulary is a later, separate open-vocabulary mode. It is not a requirement for the main model.
 
-## FrameTrail: local autonomy clarification
+## Strategy in one paragraph
 
-User clarification recorded on 18 October 2026; applies to every FrameTrail chat and continuation.
+Train the whole RF-DETR model (not single classifier rows) on large public datasets (thousands of images per class), measure with a standard metric on large held-out sets, and iterate in a few meaningful GPU runs instead of many tiny diagnostics. Open Images V7 first, because its 600-class vocabulary already matches the app. Later, add Objects365/LVIS for rare classes, fill missing labels with a teacher model, and build a small test set from the user's own videos.
 
-- Continue authorized local project work autonomously until a real need for human input arises. Do not pause for routine local exports, parity checks, CPU benchmarks, reversible app integration, packaging, reviews or fixes.
-- Pause before submitting a new cluster job and present the exact proposed scope. Ask for other input only when truly necessary, such as unavailable credentials, an unresolved consequential choice, or an action restricted by higher-priority policy.
-- Older assistant-written protocol flags such as automatic_export=false are historical workflow boundaries, not a reason to request approval again after this clarification. Preserve old receipts and record superseding user authorization separately.
-- Keep meaningful progress updates concise; an update is not a permission checkpoint. Preserve the standing requirement to end each response with the best concrete next project step and why.
-- Carry these instructions and the latest verified state into every handoff.
+## Phases
 
-## FrameTrail: efficient cluster batching
+| Phase | What | Done when |
+| --- | --- | --- |
+| 0. Pipeline | Open Images → RF-DETR COCO dataset, training wrapper, Open Images-style evaluator, KIT job scripts, local CPU smoke test | Smoke test trains and evaluates end to end |
+| 1. Pilot | ~100 everyday classes, capped images per class, RF-DETR Small, one A100 | Clear mAP above the YOLOv8 Open Images baseline on the pilot classes |
+| 2. Full vocabulary | ~600 classes, capped per class, bigger model or longer run | Goal points 2–3 met on the full test set |
+| 3. Next level | Missing-label handling (verified-label loss masking or teacher pseudo-labels), Objects365/LVIS, own-video test set | Measured gain on rare classes and own footage |
+| 4. App | Make the RF adapter read class count/vocabulary from the ONNX metadata, add frame-rate sampling for long videos, class-flicker-tolerant tracking | New model is the app default |
 
-User clarification recorded on 18 October 2026; applies to every FrameTrail cluster proposal and handoff.
+## Rules that keep us on track
 
-- Before requesting submission, identify all useful independent experiments and automatic follow-up checks that can be prepared together. Prefer one launch/upload and a bounded Slurm array or dependency workflow over repeated single-experiment approval/authentication cycles.
-- Maximize useful evidence per submission, not arbitrary job count. Explain the batch matrix, dependencies, concurrency, aggregate GPU budget and why additional trials would or would not add information. Account limits must be checked against live authenticated scheduler/account evidence; public partition maxima are not user entitlements.
-- Keep failed-task evidence, avoid automatic retries or replacement jobs, retain validation-only selection, and preserve frozen regression and model-invariance checks. Continue local preparation/tests autonomously, then pause for approval of the complete new cluster scope.
+- **Measure, don't argue.** Every training run ends with `training/evaluate.py` metrics on held-out test images. A claim about model quality needs a metrics file behind it.
+- **Use public splits.** Train on Open Images *train*, select checkpoints on Open Images *validation*, report on Open Images *test*. Never train on validation or test images.
+- **Respect missing labels in evaluation.** Open Images labels are not exhaustive. The evaluator only scores a class on images where that class was human-verified (present or absent). Detections of unverified classes are ignored, not counted as false positives.
+- **Big levers first.** More and better data, full fine-tuning and a bigger model before loss tweaks. Do not hand-curate dozens of photos or sweep tiny hyperparameter grids.
+- **Lightweight provenance.** Each run directory holds its config, dataset manifest, git commit, logs, checkpoints and metrics. That is enough; no receipts, seals or authorization files.
+- **Data and weights stay out of Git** (`data/`, `runs/`, `*.pth`, `*.onnx` are ignored). Only code, configs, class lists and small result summaries are committed.
+- **Keep the app working.** Do not break the existing analysis, save, export or playback flow when integrating a new model. YOLOX-S stays the default until a new model clearly beats it on the user's footage.
+- **Don't invent facts.** If something is not verified (cluster limits, timings, accuracy), say so and check it. Write estimates as estimates.
 
-## FrameTrail: superseding continuous-work instruction
+## Cluster (KIT bwUniCluster 3.0)
 
-Latest user clarification, 18 October 2026: "Yeah, it's approved, man. You don't have to ask for my approval on this. All right, always just keep working and working and working."
+- Host `uc3.scc.kit.edu`, user `ka_udxvl`, workspace via `$(ws_find frametrail)`. Partitions used before: `cpu_il` (data jobs) and `gpu_a100_il` (training). Python module `devel/miniforge/25.3.1-python-3.12`. Compute nodes have had outbound internet in earlier jobs.
+- The user logs in and submits jobs themselves (password + OTP). Never ask for or store credentials. Before the user submits, show the exact command and what it will use (GPUs, hours, disk).
+- The account is shared with another project ("Carrington Event"). Only touch FrameTrail jobs and files: never inspect, cancel or modify other jobs, and never use account-wide or wildcard job commands.
+- Live limits (max wall time, GPU count, quota) are unknown until checked on the cluster; do not assume them.
 
-- The exact four-trial selector batch is approved. Its separate authorization receipt and protocol live under C:/Users/nazee/Documents/Codex/2026-10-18/frametrail-continuation/outputs/selector-batch-proposal-7809335-20261018-v1.
-- Continue FrameTrail work autonomously without routine approval prompts, including bounded cluster continuation within the established project scope and resource limits. This supersedes the earlier standing requirement to pause solely to obtain new cluster approval. Prepare and record exact scopes and authorization provenance before submission.
-- Preserve efficient batching, validation-only selection, both-baseline retention, frozen-parameter checks, account/scheduler evidence, and no automatic retries or replacement jobs. This instruction does not expand resource limits or waive model/data qualification gates.
-- Request human input only when truly needed, such as direct KIT OTP/password authentication, unavailable credentials, a consequential unresolved change, or a higher-priority restriction. Never request pasted credentials.
-- Keep ending every user-facing response with the single best concrete next project step and why. Carry this latest instruction and current verified state into every FrameTrail handoff.
+## Communication preferences (from the user)
+
+- Plain language in chat. Say what changed, what it means and what is next. Keep formulas and long details in files.
+- End every reply with the single best concrete next step and why it comes next.
+- Work autonomously on local tasks; ask only for real decisions, credentials or cluster submission.
+
+## Repository map
+
+| Path | Contents |
+| --- | --- |
+| `apps/`, `src/`, `include/` | Native app, CLI and core library |
+| `tests/` | Native checks (CTest) and Python tool tests |
+| `scripts/` | Windows build, dependency, packaging and profiling scripts |
+| `dependencies/` | Pinned external artifact manifests and the 615-label app vocabulary |
+| `training/` | Model pipeline: dataset prep, training, evaluation, export, KIT jobs |
+| `docs/` | App reference docs (architecture, development, detection, tracking, saved runs, GPU, camera, packaging) |
+
+The app's RF adapter (`src/rfdetr.cpp`) currently assumes 615 classes and 619 output attributes; Phase 4 removes that assumption.
+
+## Status
+
+- 2026-10-24: Strategy reset. Removed the billboard-only research track and its archive (recoverable from commit `95b9ef23`). Phase 0 is in progress.
+
+## Decision log
+
+- 2026-10-24: Switch from single-row billboard fine-tuning to full fine-tuning on Open Images. Reason: the largest earlier training set was 281 photos, while Open Images offers about 1.7M training images. Private use only, so public dataset licences are acceptable for training.
+- 2026-10-24: Pilot uses RF-DETR Small (512 px), the size already integrated in the app, and rfdetr 1.11.2, the version previously used on KIT.
+- 2026-10-24: The pilot trains with the standard loss and treats unlabeled objects as background, as public Open Images detectors do. Missing-label handling is a Phase 3 improvement, decided by measurement.
