@@ -38,6 +38,7 @@ Other actions, all with the same script and `-Action <name>`:
 | `probe` | Read-only: asks Slurm when differently sized jobs would start (`sbatch --test-only`, nothing queued) |
 | `resubmit` | Cancels this project's recorded jobs that are still queued or running, then submits again with `kit/submit.env` |
 | `sync` | Only installs the uploaded code (and updates `.venv` when `requirements.txt` changed) |
+| `fetch` | Downloads a finished run's `eval-test.json`, the baseline's, and `rfdetr_openimages.onnx` (+ `.json`) into `runs\`, then installs the model into `models\` and next to the built app. `-Run <name>` picks the run (default `pilot-small`) |
 
 `kit/submit.env` holds the submission settings in Git. It is set from the queue probe:
 
@@ -80,11 +81,11 @@ sbatch training/kit/train.sbatch
 
 ## Use a trained model in the app
 
-Copy `runs/<run>/rfdetr_openimages.onnx` (about 115 MB for RF-DETR Small) into the app's `models/` folder, restart FrameTrail, and pick **RF-DETR · Open Images (trained)**. From the command line: `--model-type rfdetr-oi`.
+Run `-Action fetch` from the laptop. It downloads `runs/<run>/rfdetr_openimages.onnx` (about 115 MB for RF-DETR Small) and puts it in `models\` and in `build\windows-msvc\Release\models\`, where the app looks. Later builds copy it from `models\` too. Start FrameTrail and pick **RF-DETR · Open Images (trained)**. From the command line: `--model-type rfdetr-oi`.
 
 The app accepts the file because of its metadata (profile `rfdetr-oi`, the 615-category vocabulary and the 512 px preprocessing), not a pinned checksum, so every retrained model drops in the same way. Classes the model was not trained on are never reported. Saved runs, tracking, appearance counting and CSV export work as with the other models, because classes keep the app's usual category IDs.
 
-Checked on 2026-10-24 with a small test checkpoint: the app's own detector code (built on Linux against ONNX Runtime 1.30) loaded the export and returned the same detections as rfdetr. Files with a wrong profile or preprocessing were refused, and saved runs, new and old, opened correctly. The Windows build and the DirectML GPU path were not tested in that session.
+Checked on 2026-10-24 with a small test checkpoint: the app's own detector code (built on Linux against ONNX Runtime 1.30) loaded the export and returned the same detections as rfdetr. Files with a wrong profile or preprocessing were refused, and saved runs, new and old, opened correctly. The Windows build then passed all 37 checks on the laptop. The DirectML GPU path with this profile is still untested.
 
 ## Local smoke test (any machine, CPU)
 

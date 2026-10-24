@@ -52,6 +52,7 @@ set(_detector_small_model "${FRAMETRAIL_MODEL_ROOT}/yolox_s.onnx")
 set(_world_s_model "${FRAMETRAIL_MODEL_ROOT}/yolo_world_s.onnx")
 set(_openimages_model "${FRAMETRAIL_MODEL_ROOT}/yolo_openimages.onnx")
 set(_world_m_model "${FRAMETRAIL_MODEL_ROOT}/yolo_world_m.onnx")
+set(_rf_openimages_model "${FRAMETRAIL_MODEL_ROOT}/rfdetr_openimages.onnx")
 file(READ "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/sqlite.json" _sqlite_manifest)
 string(JSON _sqlite_directory GET "${_sqlite_manifest}" archiveRoot)
 set(SQLITE_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/.deps/${_sqlite_directory}" CACHE PATH "SQLite amalgamation root")
@@ -113,7 +114,7 @@ function(frametrail_runtime target)
                 COMMAND ${CMAKE_COMMAND} -E copy_directory "${FRAMETRAIL_DIRECTML_ROOT}/bin" "$<TARGET_FILE_DIR:${target}>/backends/directml"
                 VERBATIM)
         endif()
-        foreach(_model IN ITEMS "${_detector_model}" "${_detector_small_model}" "${_world_s_model}" "${_world_m_model}" "${_openimages_model}" "${FRAMETRAIL_RF_MODEL}" "${FRAMETRAIL_BALANCED_RF_MODEL}")
+        foreach(_model IN ITEMS "${_detector_model}" "${_detector_small_model}" "${_world_s_model}" "${_world_m_model}" "${_openimages_model}" "${FRAMETRAIL_RF_MODEL}" "${FRAMETRAIL_BALANCED_RF_MODEL}" "${_rf_openimages_model}")
             if(EXISTS "${_model}")
                 add_custom_command(TARGET ${target} POST_BUILD
                 COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${target}>/models"

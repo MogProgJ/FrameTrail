@@ -31,7 +31,7 @@ Train the whole RF-DETR model (not single classifier rows) on large public datas
 | 1. Pilot | ~100 everyday classes, capped images per class, RF-DETR Small, one A100 | Clear mAP above the YOLOv8 Open Images baseline on the pilot classes |
 | 2. Full vocabulary | ~600 classes, capped per class, bigger model or longer run | Goal points 2–3 met on the full test set |
 | 3. Next level | Missing-label handling (verified-label loss masking or teacher pseudo-labels), Objects365/LVIS, own-video test set | Measured gain on rare classes and own footage |
-| 4. App | Loading trained models is done (`rfdetr-oi` profile). Left: frame-rate sampling for long videos, class-flicker-tolerant tracking, Windows/DirectML check of the new profile | New model is the app default |
+| 4. App | Loading trained models is done (`rfdetr-oi` profile). Left: frame-rate sampling for long videos, class-flicker-tolerant tracking, DirectML check of the new profile | New model is the app default |
 
 ## Rules that keep us on track
 
@@ -78,6 +78,7 @@ Trained models reach the app through `training/export.py` and the `rfdetr-oi` pr
 - 2026-10-24: The original data job 7911071 started far earlier than Slurm's estimate and built `data/pilot`. Resubmitted the rest: baseline 7911861 and smoke 7911862 (dev_gpu_a100_il, estimated today), then train 7911863 (estimated 2026-10-30 on gpu_h100_il; it waits for the smoke test). Next: `-Action status` once the smoke test has run; set `train.env` epochs from its measured speed.
 - 2026-10-24: Baseline YOLOv8s-oiv7 on the pilot test split (4,774 images, 110 classes): mAP@0.5 **0.5439**, people and vehicles **0.6241** (`runs/baseline-yolov8s-oiv7-pilot/eval-test.json`). This is the bar for Phase 1. The GPU smoke test passed on an A100 at 62.5 images/s, about 13 min per pilot epoch. Train 7911863 is set to 50 epochs with a cosine schedule (estimate: 11–13 h on an A100). Next: wait for it to run, then compare `runs/pilot-small/eval-test.json` with the baseline.
 - 2026-10-24: Train 7911863 still pending (Priority). While it waits: added `training/export.py` and the app profile `rfdetr-oi`. The training job now also writes `runs/pilot-small/rfdetr_openimages.onnx`. Verified on Linux with a test checkpoint: the app's detector code gives the same detections as rfdetr, rejects mismatched files, and saved runs (new and old) open. Not yet built or tested on Windows/DirectML.
+- 2026-10-24: Windows build with the new profile: all 37 checks pass (`scripts/build.ps1`). `-Action fetch` downloads a finished run's scores and installs its model next to the app. DirectML with the new profile is still untested (needs a GPU build and a trained model). Next: wait for train 7911863, then `-Action fetch`.
 
 ## Decision log
 
