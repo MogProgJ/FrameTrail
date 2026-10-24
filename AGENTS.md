@@ -75,6 +75,7 @@ The app's RF adapter (`src/rfdetr.cpp`) currently assumes 615 classes and 619 ou
 - 2026-10-24: Strategy reset. Removed the billboard-only research track and its archive (recoverable from commit `95b9ef23`).
 - 2026-10-24: Phase 0 done. `training/` builds Open Images datasets, trains with resume, and scores with the Open Images-style evaluator against the YOLOv8s baseline. The local CPU smoke test (4 classes, 1 epoch) ran end to end. The pilot dry run on real metadata selects 49,418 train / 1,954 valid / 4,774 test images for 110 classes. Next: the user runs `training/kit/setup.sh` and `submit_pilot.sh` on KIT (see `training/README.md`).
 - 2026-10-24: Pilot submitted on KIT: prepare 7911071, train 7911072, baseline 7911073. The environment is set up in `$(ws_find frametrail)/rf`, and the workspace now has 30 days and 2 extensions left. Slurm's estimated starts were 2026-10-27 (data) and 2026-11-08 (GPU). The probe showed priority-bound waits, so the plan changed to: data in dev CPU parts, a dev GPU smoke test that measures speed, the baseline in dev GPU, then one 24 h training job on H100 or A100 (`training/kit/submit.env`). Next: `-Action resubmit`.
+- 2026-10-24: The original data job 7911071 started far earlier than Slurm's estimate and built `data/pilot`. Resubmitted the rest: baseline 7911861 and smoke 7911862 (dev_gpu_a100_il, estimated today), then train 7911863 (estimated 2026-10-30 on gpu_h100_il; it waits for the smoke test). Next: `-Action status` once the smoke test has run; set `train.env` epochs from its measured speed.
 
 ## Decision log
 
