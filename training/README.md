@@ -58,16 +58,16 @@ bash training/kit/submit_pilot.sh
 
 | Job | Resources | What it does |
 | --- | --- | --- |
-| `ft-prepare` | `cpu_il`, 16 CPUs, 64 GB, up to 8 h | Builds `data/pilot` (~6 GB metadata + ~16 GB images) |
+| `ft-prepare` | `cpu_il`, 16 CPUs, 32 GB, up to 8 h | Builds `data/pilot` (~6 GB metadata + ~16 GB images) |
 | `ft-train` | `gpu_a100_il`, 1 A100, 16 CPUs, 64 GB, up to 24 h | RF-DETR Small, 12 epochs, then scores the test split |
 | `ft-baseline` | `gpu_a100_il`, 1 A100, up to 2 h | Scores YOLOv8s Open Images on the same test split |
 
 Timings are estimates until the first run measures them.
 
-**6. Follow progress.**
+**6. Follow progress.** This queries only the FrameTrail job IDs recorded at submission, never the whole shared account:
 
 ```bash
-squeue -u $USER -n ft-prepare,ft-train,ft-baseline
+squeue -j "$(awk '{print $2}' logs/submitted.txt | paste -sd,)"
 tail -f logs/ft-train-*.log
 cat runs/pilot-small/metrics.csv | tail -3
 ```
