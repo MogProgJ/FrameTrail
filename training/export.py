@@ -1,16 +1,21 @@
-"""Export a trained RF-DETR checkpoint to the ONNX layout FrameTrail loads.
+"""Export a trained RF-DETR checkpoint for the app's "RF-DETR Open Images" profile (`rfdetr-oi`).
 
-The app expects one input [1, 3, R, R] (RGB, plain resize to R x R, ImageNet normalisation) and one
-output [1, queries, 4 + classes]: normalised (cx, cy, w, h) boxes followed by one raw logit per class.
-rfdetr's extra no-object column is dropped. The class names, input size and preprocessing are stored
-in the ONNX metadata, so the app needs no hardcoded vocabulary.
+The app's RF adapter expects one input [1, 3, 512, 512] (RGB, plain resize, ImageNet normalisation)
+and one output [1, 300, 4 + 615]: normalised (cx, cy, w, h) boxes, then one raw logit for each of the
+app's 615 categories (dependencies/recognition-vocabulary.json). Each trained class is placed in the
+column of its app category, found through the app's own Open Images name table; categories the model
+was not trained on get a constant logit of -100, so they are never reported. rfdetr's no-object
+column is dropped. The trained class names are also stored, as `frametrail.trained_classes`.
 
 After export, the ONNX output is compared with PyTorch on a few test images, and a summary
 (<out>.json) records the checkpoint and ONNX hashes, the parity errors and the CPU latency.
 
 Example:
     python training/export.py --weights runs/pilot-small/checkpoint_best_total.pth --model small \\
-        --images data/pilot/test --out runs/pilot-small/frametrail-pilot-small.onnx
+        --images data/pilot/test --out runs/pilot-small/rfdetr_openimages.onnx
+
+Copy the file into the app's models/ folder as rfdetr_openimages.onnx and pick
+"RF-DETR · Open Images (trained)".
 """
 from __future__ import annotations
 
@@ -24,8 +29,14 @@ import time
 from pathlib import Path
 
 MODELS = ('nano', 'small', 'medium', 'base', 'large')
-OUTPUT_LAYOUT = 'rf-cxcywh-logits-v1'
+PROFILE = 'rfdetr-oi'
+PREPROCESSING = 'rf-rgb512-normalized-v1'
+RESOLUTION = 512
+UNTRAINED_LOGIT = -100.0
 TOLERANCE = dict(rtol=1e-3, atol=2e-3)
+HERE = Path(__file__).resolve().parent
+# In the repository the app vocabulary sits in dependencies/; on the cluster the launcher uploads it into training/.
+VOCABULARY_PATHS = (HERE.parent / 'dependencies' / 'recognition-vocabulary.json', HERE / 'recognition-vocabulary.json')
 
 
 def sha256(path: Path) -> str:
@@ -36,8 +47,18 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def preprocessing_id(resolution: int) -> str:
-    return f'rf-rgb{resolution}-normalized-v1'
+def app_columns(names: list[str], vocabulary: dict) -> list[int]:
+    """App category ID for each trained class, matched by Open Images label, then by category name."""
+    by_label = {label.lower(): cid for label, cid in zip(vocabulary['openimages_labels'], vocabulary['openimages_ids'])}
+    by_name = {name.lower(): cid for cid, name in enumerate(vocabulary['classes'])}
+    ids = [by_label.get(name.lower(), by_name.get(name.lower())) for name in names]
+    missing = [name for name, cid in zip(names, ids) if cid is None]
+    if missing:
+        raise SystemExit(f'No app category for: {", ".join(missing)}')
+    if len(set(ids)) != len(ids):
+        clashes = sorted({vocabulary['classes'][cid] for cid in ids if ids.count(cid) > 1})
+        raise SystemExit(f'Several trained classes map to the same app category: {", ".join(clashes)}')
+    return ids
 
 
 def load_image(path: Path, resolution: int):
@@ -59,6 +80,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--images', type=Path, required=True, help='folder of images for the parity check')
     parser.add_argument('--parity-images', type=int, default=8)
     parser.add_argument('--name', help='display name stored in the model; default is the output file name')
+    parser.add_argument('--vocabulary', type=Path, help='app vocabulary JSON; default: dependencies/recognition-vocabulary.json')
     parser.add_argument('--opset', type=int, default=17)
     args = parser.parse_args(argv)
 
@@ -70,25 +92,37 @@ def main(argv: list[str] | None = None) -> int:
 
     model_class = {'nano': rfdetr.RFDETRNano, 'small': rfdetr.RFDETRSmall, 'medium': rfdetr.RFDETRMedium,
                    'base': rfdetr.RFDETRBase, 'large': rfdetr.RFDETRLarge}[args.model]
+    vocabulary_path = args.vocabulary or next((p for p in VOCABULARY_PATHS if p.exists()), None)
+    if vocabulary_path is None:
+        raise SystemExit('App vocabulary not found; pass --vocabulary dependencies/recognition-vocabulary.json')
+    vocabulary = json.loads(vocabulary_path.read_text(encoding='utf-8'))
     model = model_class(pretrain_weights=str(args.weights))
     names = list(model.class_names)
     resolution = int(model.model.resolution)
+    if resolution != RESOLUTION:
+        raise SystemExit(f'The app takes {RESOLUTION} px input; this model uses {resolution} px.')
     network = model.model.model.cpu().eval()
     rows = network.class_embed.weight.shape[0]
     if rows != len(names) + 1:
         raise SystemExit(f'Head has {rows} rows for {len(names)} class names; expected one extra no-object row.')
-    if any('\n' in name or not name.strip() for name in names):
-        raise SystemExit('Class names must be non-empty single lines.')
-    classes = len(names)
+    columns = app_columns(names, vocabulary)
+    classes, categories = len(names), len(vocabulary['classes'])
+    # Output column 4 + c reads trained logit k where columns[k] == c, or the constant column for untrained c.
+    source = [classes] * categories
+    for k, cid in enumerate(columns):
+        source[cid] = k
 
     class Packed(torch.nn.Module):
         def __init__(self, inner):
             super().__init__()
             self.inner = inner
+            self.register_buffer('source', torch.tensor(source, dtype=torch.long))
 
         def forward(self, pixels):
             boxes, logits = self.inner(pixels)[:2]
-            return torch.cat([boxes, logits[:, :, :classes]], dim=2)
+            untrained = torch.full_like(logits[:, :, :1], UNTRAINED_LOGIT)
+            trained = torch.cat([logits[:, :, :classes], untrained], dim=2)
+            return torch.cat([boxes, trained.index_select(2, self.source)], dim=2)
 
     exportable = copy.deepcopy(network).eval()
     exportable.export()
@@ -105,12 +139,12 @@ def main(argv: list[str] | None = None) -> int:
     exported = onnx.load(str(args.out))
     checkpoint_hash = sha256(args.weights)
     metadata = {
-        'frametrail.profile': 'rfdetr',
-        'frametrail.name': args.name or args.out.stem,
-        'frametrail.vocabulary': '\n'.join(names),
-        'frametrail.preprocessing': preprocessing_id(resolution),
-        'frametrail.output': OUTPUT_LAYOUT,
+        'frametrail.profile': PROFILE,
+        'frametrail.vocabulary': '\n'.join(vocabulary['classes']),
+        'frametrail.preprocessing': PREPROCESSING,
         'frametrail.checkpoint_sha256': checkpoint_hash,
+        'frametrail.trained_classes': '\n'.join(names),
+        'frametrail.name': args.name or args.out.stem,
         'frametrail.architecture': f'rfdetr-{args.model}',
     }
     del exported.metadata_props[:]
@@ -126,11 +160,13 @@ def main(argv: list[str] | None = None) -> int:
     input_shape = session.get_inputs()[0].shape
     output_shape = session.get_outputs()[0].shape
     queries = int(network.num_queries)
-    if input_shape != [1, 3, resolution, resolution] or output_shape != [1, queries, 4 + classes]:
+    if input_shape != [1, 3, resolution, resolution] or output_shape != [1, queries, 4 + categories]:
         raise SystemExit(f'Unexpected ONNX shapes {input_shape} -> {output_shape}')
 
     box_error = logit_error = 0.0
     passed = True
+    untrained = np.ones(categories, dtype=bool)
+    untrained[columns] = False
     latencies = []
     for path in images:
         pixels = load_image(path, resolution)
@@ -141,15 +177,18 @@ def main(argv: list[str] | None = None) -> int:
         started = time.perf_counter()
         output = session.run(None, {'input': pixels.numpy()})[0]
         latencies.append(time.perf_counter() - started)
+        placed = output[:, :, 4:][:, :, columns]
         box_error = max(box_error, float(np.max(np.abs(boxes - output[:, :, :4]))))
-        logit_error = max(logit_error, float(np.max(np.abs(logits - output[:, :, 4:]))))
+        logit_error = max(logit_error, float(np.max(np.abs(logits - placed))))
         passed &= bool(np.isfinite(output).all() and np.allclose(boxes, output[:, :, :4], **TOLERANCE)
-                       and np.allclose(logits, output[:, :, 4:], **TOLERANCE))
+                       and np.allclose(logits, placed, **TOLERANCE)
+                       and np.all(output[:, :, 4:][:, :, untrained] == UNTRAINED_LOGIT))
 
     summary = {
         'onnx': str(args.out), 'onnx_sha256': sha256(args.out), 'checkpoint': str(args.weights),
-        'checkpoint_sha256': checkpoint_hash, 'classes': classes, 'input_shape': input_shape,
-        'output_shape': output_shape, 'metadata': {k: v for k, v in metadata.items() if k != 'frametrail.vocabulary'},
+        'checkpoint_sha256': checkpoint_hash, 'classes': classes, 'app_categories': columns,
+        'input_shape': input_shape, 'output_shape': output_shape,
+        'metadata': {k: v for k, v in metadata.items() if k not in ('frametrail.vocabulary', 'frametrail.trained_classes')},
         'parity': {'images': len(images), 'passed': passed, 'max_box_error': box_error,
                    'max_logit_error': logit_error, 'tolerance': TOLERANCE},
         'onnxruntime_cpu_median_seconds': statistics.median(latencies[1:] or latencies),

@@ -62,7 +62,7 @@ int main(int argc,char** argv){
         {
             PreviewWindow preview;preview.show();
             auto* selector=preview.findChild<QComboBox*>(QStringLiteral("modelSelection"));
-            require(selector && selector->count()==7,"RF not offered in model selector");
+            require(selector && selector->count()==8,"RF not offered in model selector");
             require(selector->currentIndex()==1,"Existing default model changed");
             selector->setCurrentIndex(balanced ? 6:5);
             if(gpu)preview.findChild<QComboBox*>(QStringLiteral("backendSelection"))->setCurrentIndex(1);

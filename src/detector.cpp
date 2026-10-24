@@ -25,10 +25,11 @@ void cancelled(std::stop_token stop) {
     if (stop.stop_requested()) throw std::runtime_error("Object detection cancelled");
 }
 }
-bool is_rf_model(DetectorModel model) {return model==DetectorModel::rf_scale7758628 || model==DetectorModel::rf_balanced7805570;}
+bool is_rf_model(DetectorModel model) {return model==DetectorModel::rf_scale7758628 || model==DetectorModel::rf_balanced7805570 || model==DetectorModel::rf_openimages;}
 std::string_view rfdetr::checkpoint_for(DetectorModel model) {
     if(model==DetectorModel::rf_scale7758628)return checkpoint_sha256;
     if(model==DetectorModel::rf_balanced7805570)return "c1e7b571476a9bdc02533359dfe3f599afab98822aa90df265e9068f43f46bd3";
+    if(model==DetectorModel::rf_openimages)return {};
     throw std::invalid_argument("Not an RF profile");
 }
 std::string_view class_name(int id) {
@@ -37,12 +38,12 @@ std::string_view class_name(int id) {
 
 std::string_view model_id(DetectorModel model) {
     switch(model) {case DetectorModel::nano:return "nano";case DetectorModel::yolox_s:return "small";
-        case DetectorModel::world_s:return "world-s";case DetectorModel::world_m:return "world-m";case DetectorModel::openimages:return "openimages";case DetectorModel::rf_scale7758628:return "rfdetr-7758628";case DetectorModel::rf_balanced7805570:return "rfdetr-7805570";}
+        case DetectorModel::world_s:return "world-s";case DetectorModel::world_m:return "world-m";case DetectorModel::openimages:return "openimages";case DetectorModel::rf_scale7758628:return "rfdetr-7758628";case DetectorModel::rf_balanced7805570:return "rfdetr-7805570";case DetectorModel::rf_openimages:return "rfdetr-oi";}
     throw std::invalid_argument("Unsupported detector model");
 }
 std::string_view model_name(DetectorModel model) {
     switch(model) {case DetectorModel::nano:return "YOLOX-Nano";case DetectorModel::yolox_s:return "YOLOX-S";
-        case DetectorModel::world_s:return "YOLO-World S";case DetectorModel::world_m:return "YOLO-World M";case DetectorModel::openimages:return "YOLOv8 Open Images";case DetectorModel::rf_scale7758628:return "RF-DETR trained 7758628 (experimental)";case DetectorModel::rf_balanced7805570:return "RF-DETR balanced 7805570 (experimental)";}
+        case DetectorModel::world_s:return "YOLO-World S";case DetectorModel::world_m:return "YOLO-World M";case DetectorModel::openimages:return "YOLOv8 Open Images";case DetectorModel::rf_scale7758628:return "RF-DETR trained 7758628 (experimental)";case DetectorModel::rf_balanced7805570:return "RF-DETR balanced 7805570 (experimental)";case DetectorModel::rf_openimages:return "RF-DETR Open Images (trained)";}
     throw std::invalid_argument("Unsupported detector model");
 }
 DetectorModel parse_model(std::string_view id) {
@@ -51,7 +52,8 @@ DetectorModel parse_model(std::string_view id) {
     if(id=="openimages")return DetectorModel::openimages;
     if(id=="rfdetr-7758628")return DetectorModel::rf_scale7758628;
     if(id=="rfdetr-7805570")return DetectorModel::rf_balanced7805570;
-    throw std::invalid_argument("Model type must be nano, small, world-s, world-m, openimages, rfdetr-7758628 or rfdetr-7805570");
+    if(id=="rfdetr-oi")return DetectorModel::rf_openimages;
+    throw std::invalid_argument("Model type must be nano, small, world-s, world-m, openimages, rfdetr-7758628, rfdetr-7805570 or rfdetr-oi");
 }
 int model_input_size(DetectorModel model) {model_id(model);return is_rf_model(model) ? 512:(model==DetectorModel::nano ? 416:640);}
 int model_class_count(DetectorModel model) {model_id(model);return is_rf_model(model) ? 615:(model==DetectorModel::openimages ? 601:(model==DetectorModel::nano || model==DetectorModel::yolox_s ? 80:100));}
@@ -212,7 +214,8 @@ struct Detector::Impl {
             const auto metadata=session.GetModelMetadata();
             const auto source=metadata.LookupCustomMetadataMapAllocated("frametrail.checkpoint_sha256",allocator);
             const auto transform=metadata.LookupCustomMetadataMapAllocated("frametrail.preprocessing",allocator);
-            if(!source || std::string_view(source.get())!=rfdetr::checkpoint_for(options.variant) ||
+            const auto pinned=rfdetr::checkpoint_for(options.variant);
+            if((!pinned.empty() && (!source || std::string_view(source.get())!=pinned)) ||
                !transform || std::string_view(transform.get())!="rf-rgb512-normalized-v1")
                 throw std::runtime_error("RF candidate identity/preprocessing mismatch; use the verified trained export.");
         }

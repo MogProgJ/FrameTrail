@@ -24,7 +24,7 @@ r = json.load(open(sys.argv[1]))
 print('mAP@0.5', round(r['map50'], 4), '| people/vehicles', round(r['map50_people_and_vehicles'] or 0, 4),
       '| classes', r['classes_scored'], '| images', r['images'])" "$result"; }
 done
-for summary in runs/*/frametrail-*.json; do
+for summary in runs/*/rfdetr_openimages.json; do
     [[ -f "$summary" ]] && { echo; echo "== $summary"; "$FT_VENV/bin/python" -c "
 import json, sys
 r = json.load(open(sys.argv[1]))

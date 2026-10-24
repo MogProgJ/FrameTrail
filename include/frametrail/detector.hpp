@@ -26,7 +26,7 @@ struct DetectionResult {
     double preprocess_ms{}, inference_ms{}, postprocess_ms{};
     ExecutionInfo execution;
 };
-enum class DetectorModel { nano, yolox_s, world_s, world_m, openimages, rf_scale7758628, rf_balanced7805570 };
+enum class DetectorModel { nano, yolox_s, world_s, world_m, openimages, rf_scale7758628, rf_balanced7805570, rf_openimages };
 bool is_rf_model(DetectorModel model);
 std::string_view model_id(DetectorModel model);
 std::string_view model_name(DetectorModel model);
@@ -82,10 +82,12 @@ std::vector<Detection> postprocess(std::span<const float> output, const Input& i
 
 // Exact experimental trained RF contract: RGB full-image resize512, ImageNet
 // normalization; packed normalized boxes plus canonical foreground logits.
+// rf_openimages is any training/export.py export: identified by its profile, vocabulary
+// and preprocessing metadata instead of one pinned checkpoint, so retrained models drop in.
 namespace rfdetr {
 inline constexpr int input_size=512, queries=300, attributes=619;
 inline constexpr std::string_view checkpoint_sha256="1b72fc6474780a6805e919db5b1393d7e78b95209debafafce98c929c633f0d7";
-std::string_view checkpoint_for(DetectorModel model);
+std::string_view checkpoint_for(DetectorModel model); // Empty when the profile pins no checkpoint.
 std::vector<float> preprocess(const Frame& frame);
 std::vector<Detection> postprocess(std::span<const float> output,int width,int height,float confidence,float nms_iou);
 }

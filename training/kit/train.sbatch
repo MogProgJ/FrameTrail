@@ -30,8 +30,8 @@ else
 fi
 [[ -f "runs/$RUN/eval-test.json" ]] || "$FT_VENV/bin/python" training/evaluate.py --dataset "data/$DATASET" --split test --backend rfdetr \
     --model-size "$MODEL" --weights "runs/$RUN/checkpoint_best_total.pth" --out "runs/$RUN/eval-test.json" --batch 16
-# App-ready ONNX with the class names inside. A failed export does not fail the job: rerun export.py by hand.
-ONNX="runs/$RUN/frametrail-$RUN.onnx"
+# App-ready ONNX for the "RF-DETR · Open Images (trained)" profile. A failed export does not fail the job.
+ONNX="runs/$RUN/rfdetr_openimages.onnx"
 [[ -f "$ONNX" ]] || "$FT_VENV/bin/python" training/export.py --weights "runs/$RUN/checkpoint_best_total.pth" \
     --model "$MODEL" --images "data/$DATASET/test" --out "$ONNX" || echo "ONNX export failed; see above."
 # Once training is finished, later parts of this chain have nothing to do: cancel those that are

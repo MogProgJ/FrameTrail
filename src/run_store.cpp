@@ -168,7 +168,7 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
         "deadband REAL NOT NULL,rearm REAL NOT NULL,codec TEXT NOT NULL,width INTEGER NOT NULL,height INTEGER NOT NULL,"
         "duration_us INTEGER,processed_frames INTEGER NOT NULL DEFAULT 0,last_timestamp_us INTEGER,timestamp_seekable INTEGER NOT NULL DEFAULT 1,"
         "run_id TEXT NOT NULL DEFAULT(lower(hex(randomblob(16)))),"
-        "model_type TEXT NOT NULL CHECK(model_type IN('nano','small','world-s','world-m','openimages','rfdetr-7758628','rfdetr-7805570')),"
+        "model_type TEXT NOT NULL CHECK(model_type IN('nano','small','world-s','world-m','openimages','rfdetr-7758628','rfdetr-7805570','rfdetr-oi')),"
         "run_kind TEXT NOT NULL CHECK(run_kind IN('crossings','appearances')),"
         "engine TEXT NOT NULL DEFAULT 'FrameTrail 0.12 / recognition-v1 + YOLOX / tracker-v2 / scene-guard-v1',"
         "association_policy TEXT NOT NULL DEFAULT 'greedy',"

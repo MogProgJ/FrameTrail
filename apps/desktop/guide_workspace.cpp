@@ -54,7 +54,7 @@ void GuideWorkspace::filter(){
         for(auto match=matches.crbegin();match!=matches.crend();++match){
             const int id=*match;
             const auto name=QString::fromUtf8(frametrail::class_name(id).data(),int(frametrail::class_name(id).size()));int preferred=-1;QStringList supported;
-            for(const int index:{1,4,0,2,3,6,5})if(index<installed_.size() && installed_[index] && frametrail::model_has_class(static_cast<frametrail::DetectorModel>(index),id)){
+            for(const int index:{1,4,0,2,3,7,6,5})if(index<installed_.size() && installed_[index] && frametrail::model_has_class(static_cast<frametrail::DetectorModel>(index),id)){
                 if(preferred<0)preferred=index;supported<<QString::fromUtf8(frametrail::model_name(static_cast<frametrail::DetectorModel>(index)).data(),int(frametrail::model_name(static_cast<frametrail::DetectorModel>(index)).size()));
             }
             const auto model=preferred==4?QStringLiteral("Broad recognition"):preferred<0?QString{}:QString::fromUtf8(frametrail::model_name(static_cast<frametrail::DetectorModel>(preferred)).data(),int(frametrail::model_name(static_cast<frametrail::DetectorModel>(preferred)).size()));

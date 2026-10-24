@@ -9,7 +9,7 @@ Fine-tunes RF-DETR on Open Images V7 and scores it against the YOLOv8s Open Imag
 | `train.py` | Fine-tunes the whole model and resumes automatically if re-run. |
 | `warmstart.py` | Gives each class that also exists in COCO its pretrained COCO head row. Without it, rfdetr's resizing gives our first class COCO's unused slot, and the smoke test then never detected Person at all. |
 | `evaluate.py` + `oi_metric.py` | Open Images-style mAP@0.5. Classes are only scored on images where they were human-verified, group-of boxes count once, and merged classes are de-duplicated. |
-| `export.py` | Writes the app's ONNX file: one output of boxes plus class logits, with the class names, input size and preprocessing stored as metadata. It checks the ONNX output against PyTorch and writes a `.json` summary next to it. |
+| `export.py` | Writes the app's ONNX file for the `rfdetr-oi` profile: boxes plus one logit per app category (615), with each trained class placed in its app category through the app's own Open Images name table. It checks the ONNX output against PyTorch and writes a `.json` summary next to it. |
 | `kit/` | bwUniCluster setup and Slurm jobs. |
 
 Splits: training uses Open Images *train*, checkpoint selection uses *validation*, and the reported score uses *test*. The pilot takes up to 600 training images per class, choosing the rarest classes first. A dry run against the real metadata selected 49,418 training images (~179k boxes, roughly 14 GB), 1,954 validation and 4,774 test images. Rare Open Images classes stay thin: Towel has 144 training images, and Scissors has only 6 test images, so its score is noisy.
@@ -59,7 +59,7 @@ The pilot chain:
 | `ft-prepare` | `dev_cpu_il`, 4 CPUs, 16 GB, 30-minute parts that resume | Builds `data/pilot` (~6 GB metadata + ~16 GB images) |
 | `ft-smoke` | `dev_gpu_a100_il`, 1 A100, 30 min | Two short epochs, scoring, speed measurement |
 | `ft-baseline` | `dev_gpu_a100_il`, 1 A100, 30 min | Scores YOLOv8s Open Images on the test split |
-| `ft-train` | `gpu_h100_il`, `gpu_h100` or `gpu_a100_il`, 1 GPU, 16 CPUs, 64 GB, up to 24 h | RF-DETR Small, 50 epochs (cosine schedule), then scores the test split |
+| `ft-train` | `gpu_h100_il`, `gpu_h100` or `gpu_a100_il`, 1 GPU, 16 CPUs, 64 GB, up to 24 h | RF-DETR Small, 50 epochs (cosine schedule), then scores the test split and exports the app model |
 
 Measured on 2026-10-24: the data job took 15 minutes in `cpu_il`; the smoke test trained at 62.5 images/s on an A100 (about 13 minutes per pilot epoch). The 50-epoch length is an estimate of 11–13 h on an A100.
 
@@ -70,13 +70,21 @@ Measured on 2026-10-24: the data job took 15 minutes in `cpu_il`; the smoke test
 - `runs/pilot-small/eval-test.json`: our model's scores.
 - `runs/baseline-yolov8s-oiv7-pilot/eval-test.json`: the baseline's scores.
 
-Each holds `map50`, `map50_people_and_vehicles` and per-class AP. The training job also writes `runs/pilot-small/frametrail-pilot-small.onnx`, the app-ready model, with its `.json` parity summary. Copy them back to the laptop (small files) or paste the summary lines from the logs.
+Each holds `map50`, `map50_people_and_vehicles` and per-class AP. The training job also writes `runs/pilot-small/rfdetr_openimages.onnx`, the app-ready model, with its `.json` parity summary. Copy them back to the laptop (small files) or paste the summary lines from the logs.
 
 If training stops at the time limit, resubmit only the training job and it resumes:
 
 ```bash
 sbatch training/kit/train.sbatch
 ```
+
+## Use a trained model in the app
+
+Copy `runs/<run>/rfdetr_openimages.onnx` (about 115 MB for RF-DETR Small) into the app's `models/` folder, restart FrameTrail, and pick **RF-DETR · Open Images (trained)**. From the command line: `--model-type rfdetr-oi`.
+
+The app accepts the file because of its metadata (profile `rfdetr-oi`, the 615-category vocabulary and the 512 px preprocessing), not a pinned checksum, so every retrained model drops in the same way. Classes the model was not trained on are never reported. Saved runs, tracking, appearance counting and CSV export work as with the other models, because classes keep the app's usual category IDs.
+
+Checked on 2026-10-24 with a small test checkpoint: the app's own detector code (built on Linux against ONNX Runtime 1.30) loaded the export and returned the same detections as rfdetr. Files with a wrong profile or preprocessing were refused, and saved runs, new and old, opened correctly. The Windows build and the DirectML GPU path were not tested in that session.
 
 ## Local smoke test (any machine, CPU)
 

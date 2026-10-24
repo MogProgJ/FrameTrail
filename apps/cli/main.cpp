@@ -28,7 +28,7 @@ void help() {
                  "  --preview <path>   Export the first decoded frame as a PPM image\n"
                  "  --max-frames <n>   Stop after n frames (positive integer)\n"
                  "  --detect <model>   Run a supported native ONNX model\n"
-                 "  --model-type <id>  nano (default), small, world-s, world-m, openimages, rfdetr-7758628, rfdetr-7805570\n"
+                 "  --model-type <id>  nano (default), small, world-s, world-m, openimages, rfdetr-7758628, rfdetr-7805570, rfdetr-oi\n"
                  "  --backend <id>     cpu (default), auto (GPU/CPU), or directml (strict GPU)\n"
                  "  --gpu-device <n>   Optional DXGI adapter index; default selects capable GPU\n"
                  "  --confidence <n>   Confidence in (0,1], default 0.35\n"

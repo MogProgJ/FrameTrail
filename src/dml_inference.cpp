@@ -118,7 +118,8 @@ struct DmlInference::Impl {
             Owned<OrtModelMetadata> metadata(raw_metadata,api->ReleaseModelMetadata);
             std::vector<const char*> keys{"frametrail.profile","frametrail.vocabulary"};
             if(is_rf_model(variant)) {
-                keys.push_back("frametrail.checkpoint_sha256");keys.push_back("frametrail.preprocessing");
+                if(!rfdetr::checkpoint_for(variant).empty())keys.push_back("frametrail.checkpoint_sha256");
+                keys.push_back("frametrail.preprocessing");
             }
             for(const auto* key:keys) {
                 char* raw{};check(api->ModelMetadataLookupCustomMetadataMap(metadata.get(),allocator,key,&raw));

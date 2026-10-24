@@ -1,4 +1,5 @@
 """Checks for the RF-DETR training pipeline's pure logic (no network, models or images)."""
+import json
 import sys
 import tempfile
 import unittest
@@ -7,6 +8,7 @@ from pathlib import Path
 TRAINING = Path(__file__).resolve().parents[1] / 'training'
 sys.path.insert(0, str(TRAINING))
 import evaluate  # noqa: E402
+import export  # noqa: E402
 import oi_metric  # noqa: E402
 import openimages  # noqa: E402
 
@@ -126,6 +128,26 @@ class DatasetBuildTests(unittest.TestCase):
         self.assertEqual((image['oi_verified_positive'], image['oi_verified_negative']), ([1], [2]))
         self.assertEqual(annotation['bbox'], [20.0, 20.0, 80.0, 40.0])
         self.assertEqual((annotation['oi_group_of'], annotation['iscrowd']), (1, 0))
+
+
+class AppExportTests(unittest.TestCase):
+    vocabulary = json.loads((TRAINING.parent / 'dependencies' / 'recognition-vocabulary.json').read_text(encoding='utf-8'))
+
+    def test_every_class_list_maps_to_distinct_app_categories(self):
+        for path in sorted((TRAINING / 'classes').glob('*.txt')):
+            lines = (raw.split('#', 1)[0].strip() for raw in path.read_text(encoding='utf-8').splitlines())
+            names = [line.partition('=')[0].strip() for line in lines if line]
+            with self.subTest(path.name):
+                self.assertEqual(len(set(export.app_columns(names, self.vocabulary))), len(names))
+
+    def test_open_images_names_use_the_app_mapping(self):
+        self.assertEqual(export.app_columns(['Person', 'Mobile phone', 'Table'], self.vocabulary), [0, 67, 544])
+
+    def test_unknown_or_clashing_classes_are_refused(self):
+        with self.assertRaises(SystemExit):
+            export.app_columns(['Person', 'Flux capacitor'], self.vocabulary)
+        with self.assertRaises(SystemExit):
+            export.app_columns(['Person', 'Man'], self.vocabulary)
 
 
 if __name__ == '__main__':

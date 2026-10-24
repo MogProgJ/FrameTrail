@@ -31,7 +31,7 @@ Train the whole RF-DETR model (not single classifier rows) on large public datas
 | 1. Pilot | ~100 everyday classes, capped images per class, RF-DETR Small, one A100 | Clear mAP above the YOLOv8 Open Images baseline on the pilot classes |
 | 2. Full vocabulary | ~600 classes, capped per class, bigger model or longer run | Goal points 2–3 met on the full test set |
 | 3. Next level | Missing-label handling (verified-label loss masking or teacher pseudo-labels), Objects365/LVIS, own-video test set | Measured gain on rare classes and own footage |
-| 4. App | Make the RF adapter read class count/vocabulary from the ONNX metadata, add frame-rate sampling for long videos, class-flicker-tolerant tracking | New model is the app default |
+| 4. App | Loading trained models is done (`rfdetr-oi` profile). Left: frame-rate sampling for long videos, class-flicker-tolerant tracking, Windows/DirectML check of the new profile | New model is the app default |
 
 ## Rules that keep us on track
 
@@ -68,7 +68,7 @@ Train the whole RF-DETR model (not single classifier rows) on large public datas
 | `training/` | Model pipeline: dataset prep, training, evaluation, export, KIT jobs |
 | `docs/` | App reference docs (architecture, development, detection, tracking, saved runs, GPU, camera, packaging) |
 
-The app's RF adapter (`src/rfdetr.cpp`) currently assumes 615 classes and 619 output attributes; Phase 4 removes that assumption.
+Trained models reach the app through `training/export.py` and the `rfdetr-oi` profile ("RF-DETR · Open Images (trained)", file `models/rfdetr_openimages.onnx`). Exports keep the app's 615 category IDs, so saved runs, tracking and CSV export are unchanged. A class outside that vocabulary (for example from Objects365) would first need a new app category.
 
 ## Status
 
@@ -77,6 +77,7 @@ The app's RF adapter (`src/rfdetr.cpp`) currently assumes 615 classes and 619 ou
 - 2026-10-24: Pilot submitted on KIT: prepare 7911071, train 7911072, baseline 7911073. The environment is set up in `$(ws_find frametrail)/rf`, and the workspace now has 30 days and 2 extensions left. Slurm's estimated starts were 2026-10-27 (data) and 2026-11-08 (GPU). The probe showed priority-bound waits, so the plan changed to: data in dev CPU parts, a dev GPU smoke test that measures speed, the baseline in dev GPU, then one 24 h training job on H100 or A100 (`training/kit/submit.env`). Next: `-Action resubmit`.
 - 2026-10-24: The original data job 7911071 started far earlier than Slurm's estimate and built `data/pilot`. Resubmitted the rest: baseline 7911861 and smoke 7911862 (dev_gpu_a100_il, estimated today), then train 7911863 (estimated 2026-10-30 on gpu_h100_il; it waits for the smoke test). Next: `-Action status` once the smoke test has run; set `train.env` epochs from its measured speed.
 - 2026-10-24: Baseline YOLOv8s-oiv7 on the pilot test split (4,774 images, 110 classes): mAP@0.5 **0.5439**, people and vehicles **0.6241** (`runs/baseline-yolov8s-oiv7-pilot/eval-test.json`). This is the bar for Phase 1. The GPU smoke test passed on an A100 at 62.5 images/s, about 13 min per pilot epoch. Train 7911863 is set to 50 epochs with a cosine schedule (estimate: 11–13 h on an A100). Next: wait for it to run, then compare `runs/pilot-small/eval-test.json` with the baseline.
+- 2026-10-24: Train 7911863 still pending (Priority). While it waits: added `training/export.py` and the app profile `rfdetr-oi`. The training job now also writes `runs/pilot-small/rfdetr_openimages.onnx`. Verified on Linux with a test checkpoint: the app's detector code gives the same detections as rfdetr, rejects mismatched files, and saved runs (new and old) open. Not yet built or tested on Windows/DirectML.
 
 ## Decision log
 
@@ -85,4 +86,5 @@ The app's RF adapter (`src/rfdetr.cpp`) currently assumes 615 classes and 619 ou
 - 2026-10-24: Warm-start the classification head by class name (`training/warmstart.py`). rfdetr's default resizing gave our first class COCO's unused slot: in the smoke test, Person had AP 0.00 without the warm start and 0.90 with it.
 - 2026-10-24: The evaluator applies class-wise NMS (IoU 0.7) after mapping, so a baseline predicting Man and Person on one person is not double-penalised.
 - 2026-10-24: Train with a cosine learning-rate schedule (`train.py --lr-scheduler`, default). rfdetr's default "step" schedule only lowers the rate after 100 epochs, so a shorter run would never decay. Pilot length 50 epochs, sized from the measured smoke-test speed to fit one 24 h job with margin.
+- 2026-10-24: Bring trained models into the app in the app's existing 615-category layout (`rfdetr-oi`), not with a per-model vocabulary. All 110 pilot classes map to distinct app categories through the app's own Open Images table, and saved runs, tracking and exports depend on those IDs. The profile is identified by metadata instead of a pinned checksum, so retrained models drop in.
 - 2026-10-24: The pilot trains with the standard loss and treats unlabeled objects as background, as public Open Images detectors do. Missing-label handling is a Phase 3 improvement, decided by measurement.
