@@ -23,6 +23,11 @@ if ($Action -eq 'fetch') {
     $remote = (ssh -o BatchMode=yes $Account 'bash -lc ''echo $(ws_find frametrail)/rf/runs''' | Select-Object -Last 1)
     if ($LASTEXITCODE -ne 0 -or -not $remote -or $remote.Trim() -eq '/rf/runs') { throw 'Could not find the frametrail workspace' }
     $remote = $remote.Trim()
+    ssh -o BatchMode=yes $Account "test -f $remote/$Run/eval-test.json"
+    if ($LASTEXITCODE -ne 0) {
+        Write-Output "Run '$Run' has no test scores yet: training has not finished. Check progress with -Action status."
+        exit 1
+    }
     $dataset = $Run.Split('-')[0]
     $files = @("$Run/eval-test.json", "$Run/rfdetr_openimages.json", "$Run/rfdetr_openimages.onnx",
                "baseline-yolov8s-oiv7-$dataset/eval-test.json")
