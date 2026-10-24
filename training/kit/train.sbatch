@@ -8,7 +8,7 @@
 #SBATCH --mem=64G
 #SBATCH --time=24:00:00
 #SBATCH --output=logs/%x-%j.log
-# Fine-tune RF-DETR on data/$DATASET, then score the best checkpoint on the test split.
+# Fine-tune RF-DETR on data/$DATASET, score the best checkpoint on the test split, export it for the app.
 # Re-submitting the same RUN resumes from runs/$RUN/last.ckpt, so training can be split into
 # several shorter jobs (see TRAIN_PARTS in submit_pilot.sh). Finished runs only get scored.
 set -euo pipefail
@@ -30,6 +30,10 @@ else
 fi
 [[ -f "runs/$RUN/eval-test.json" ]] || "$FT_VENV/bin/python" training/evaluate.py --dataset "data/$DATASET" --split test --backend rfdetr \
     --model-size "$MODEL" --weights "runs/$RUN/checkpoint_best_total.pth" --out "runs/$RUN/eval-test.json" --batch 16
+# App-ready ONNX with the class names inside. A failed export does not fail the job: rerun export.py by hand.
+ONNX="runs/$RUN/frametrail-$RUN.onnx"
+[[ -f "$ONNX" ]] || "$FT_VENV/bin/python" training/export.py --weights "runs/$RUN/checkpoint_best_total.pth" \
+    --model "$MODEL" --images "data/$DATASET/test" --out "$ONNX" || echo "ONNX export failed; see above."
 # Once training is finished, later parts of this chain have nothing to do: cancel those that are
 # still pending. Only job IDs recorded in logs/submitted.txt (this project's own) are touched.
 if [[ -f "runs/$RUN/finished.json" && -s logs/submitted.txt ]]; then

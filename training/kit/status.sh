@@ -3,6 +3,8 @@
 source "$(dirname "$0")/env.sh"
 if [[ ! -s logs/submitted.txt ]]; then echo "No FrameTrail submission recorded."; exit 0; fi
 cat logs/submitted.txt
+echo; echo "Training settings on the cluster (read when the training job starts):"
+grep -v "^#" training/kit/train.env
 ids=$(awk '{print $2}' logs/submitted.txt | paste -sd,)
 echo; echo "Queue (empty = finished or cancelled):"
 squeue -j "$ids" -o "%.10i %.12j %.9T %.20S %.10M %R" 2>/dev/null || true
@@ -21,5 +23,11 @@ import json, sys
 r = json.load(open(sys.argv[1]))
 print('mAP@0.5', round(r['map50'], 4), '| people/vehicles', round(r['map50_people_and_vehicles'] or 0, 4),
       '| classes', r['classes_scored'], '| images', r['images'])" "$result"; }
+done
+for summary in runs/*/frametrail-*.json; do
+    [[ -f "$summary" ]] && { echo; echo "== $summary"; "$FT_VENV/bin/python" -c "
+import json, sys
+r = json.load(open(sys.argv[1]))
+print('ONNX', r['onnx'], '| classes', r['classes'], '| parity passed', r['parity']['passed'])" "$summary"; }
 done
 true

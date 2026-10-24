@@ -6,5 +6,8 @@ torchvision==0.29.1
 pytorch-lightning==2.6.6
 pandas==3.1.0
 tensorboard==2.21.0
+# ONNX export for the app (export.py).
+onnx==1.23.2
+onnxruntime==1.31.0
 # Baseline only: the YOLOv8s Open Images model the app ships.
 ultralytics==8.3.228

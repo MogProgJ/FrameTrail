@@ -9,6 +9,7 @@ python -c 'import sys; assert sys.version_info[:2] == (3, 12), sys.version'
 "$FT_VENV/bin/python" -m pip install -r training/requirements.txt
 "$FT_VENV/bin/python" -m pip check
 "$FT_VENV/bin/python" -m pip freeze > "$FT_ROOT/installed-packages.txt"
+cp training/requirements.txt "$FT_ROOT/installed-requirements.txt"
 # Pre-download weights so GPU jobs never depend on the network.
 "$FT_VENV/bin/python" -c 'import rfdetr; rfdetr.RFDETRSmall(); rfdetr.RFDETRMedium()'
 mkdir -p weights

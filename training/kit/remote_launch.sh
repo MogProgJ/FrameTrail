@@ -28,6 +28,13 @@ fi
 rm -rf training
 cp -r "$NEW" training
 echo "Installed training code into $WS/rf/training"
+# Keep an existing environment in step with training/requirements.txt.
+if [[ -x .venv/bin/python ]] && ! cmp -s training/requirements.txt installed-requirements.txt; then
+    echo "Python requirements changed; updating .venv"
+    (source training/kit/env.sh && "$FT_VENV/bin/python" -m pip install -q -r training/requirements.txt \
+        && "$FT_VENV/bin/python" -m pip check && "$FT_VENV/bin/python" -m pip freeze > installed-packages.txt)
+    cp training/requirements.txt installed-requirements.txt
+fi
 
 case "$action" in
     sync) ;;

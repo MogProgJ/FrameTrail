@@ -9,6 +9,7 @@ Fine-tunes RF-DETR on Open Images V7 and scores it against the YOLOv8s Open Imag
 | `train.py` | Fine-tunes the whole model and resumes automatically if re-run. |
 | `warmstart.py` | Gives each class that also exists in COCO its pretrained COCO head row. Without it, rfdetr's resizing gives our first class COCO's unused slot, and the smoke test then never detected Person at all. |
 | `evaluate.py` + `oi_metric.py` | Open Images-style mAP@0.5. Classes are only scored on images where they were human-verified, group-of boxes count once, and merged classes are de-duplicated. |
+| `export.py` | Writes the app's ONNX file: one output of boxes plus class logits, with the class names, input size and preprocessing stored as metadata. It checks the ONNX output against PyTorch and writes a `.json` summary next to it. |
 | `kit/` | bwUniCluster setup and Slurm jobs. |
 
 Splits: training uses Open Images *train*, checkpoint selection uses *validation*, and the reported score uses *test*. The pilot takes up to 600 training images per class, choosing the rarest classes first. A dry run against the real metadata selected 49,418 training images (~179k boxes, roughly 14 GB), 1,954 validation and 4,774 test images. Rare Open Images classes stay thin: Towel has 144 training images, and Scissors has only 6 test images, so its score is noisy.
@@ -36,7 +37,7 @@ Other actions, all with the same script and `-Action <name>`:
 | `status` | Read-only report: queue state and estimated start of this project's jobs, recent log lines, epoch metrics, test scores |
 | `probe` | Read-only: asks Slurm when differently sized jobs would start (`sbatch --test-only`, nothing queued) |
 | `resubmit` | Cancels this project's recorded jobs that are still queued or running, then submits again with `kit/submit.env` |
-| `sync` | Only installs the uploaded code |
+| `sync` | Only installs the uploaded code (and updates `.venv` when `requirements.txt` changed) |
 
 `kit/submit.env` holds the submission settings in Git. It is set from the queue probe:
 
@@ -69,7 +70,7 @@ Measured on 2026-10-24: the data job took 15 minutes in `cpu_il`; the smoke test
 - `runs/pilot-small/eval-test.json`: our model's scores.
 - `runs/baseline-yolov8s-oiv7-pilot/eval-test.json`: the baseline's scores.
 
-Each holds `map50`, `map50_people_and_vehicles` and per-class AP. Copy them back to the laptop (small files) or paste the summary lines from the logs.
+Each holds `map50`, `map50_people_and_vehicles` and per-class AP. The training job also writes `runs/pilot-small/frametrail-pilot-small.onnx`, the app-ready model, with its `.json` parity summary. Copy them back to the laptop (small files) or paste the summary lines from the logs.
 
 If training stops at the time limit, resubmit only the training job and it resumes:
 
