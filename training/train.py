@@ -58,6 +58,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--grad-accum', type=int, default=2, help='effective batch = batch-size x grad-accum')
     parser.add_argument('--lr', type=float, default=1e-4)
     parser.add_argument('--lr-encoder', type=float, default=1.5e-4)
+    parser.add_argument('--lr-scheduler', choices=('cosine', 'step'), default='cosine',
+                        help="cosine decays to zero over the run; rfdetr's 'step' only drops the rate after "
+                             "100 epochs, so shorter runs would never decay. Keep --epochs fixed when resuming.")
     parser.add_argument('--workers', type=int, default=8)
     parser.add_argument('--device', default=None, help='cuda, cpu, ...; default lets rfdetr choose')
     parser.add_argument('--checkpoint-interval', type=int, default=4,
@@ -95,7 +98,7 @@ def main(argv: list[str] | None = None) -> int:
     model = model_class(pretrain_weights=str(weights))
     options = dict(dataset_dir=str(args.dataset), output_dir=str(args.out), epochs=args.epochs,
                    batch_size=args.batch_size, grad_accum_steps=args.grad_accum, lr=args.lr,
-                   lr_encoder=args.lr_encoder, num_workers=args.workers,
+                   lr_encoder=args.lr_encoder, lr_scheduler=args.lr_scheduler, num_workers=args.workers,
                    checkpoint_interval=args.checkpoint_interval, tensorboard=True)
     if args.device:
         options['device'] = args.device

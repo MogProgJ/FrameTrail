@@ -53,13 +53,14 @@ To work by hand in a cluster terminal instead: copy `training/` into `$(ws_find 
 
 The pilot chain:
 
-| Job | Resources | What it does |
+| Job | Resources (from `kit/submit.env`) | What it does |
 | --- | --- | --- |
-| `ft-prepare` | `cpu_il`, 16 CPUs, 32 GB, up to 8 h | Builds `data/pilot` (~6 GB metadata + ~16 GB images) |
-| `ft-train` | `gpu_a100_il`, 1 A100, 16 CPUs, 64 GB, up to 24 h | RF-DETR Small, 12 epochs, then scores the test split |
-| `ft-baseline` | `gpu_a100_il`, 1 A100, up to 2 h | Scores YOLOv8s Open Images on the same test split |
+| `ft-prepare` | `dev_cpu_il`, 4 CPUs, 16 GB, 30-minute parts that resume | Builds `data/pilot` (~6 GB metadata + ~16 GB images) |
+| `ft-smoke` | `dev_gpu_a100_il`, 1 A100, 30 min | Two short epochs, scoring, speed measurement |
+| `ft-baseline` | `dev_gpu_a100_il`, 1 A100, 30 min | Scores YOLOv8s Open Images on the test split |
+| `ft-train` | `gpu_h100_il`, `gpu_h100` or `gpu_a100_il`, 1 GPU, 16 CPUs, 64 GB, up to 24 h | RF-DETR Small, 50 epochs (cosine schedule), then scores the test split |
 
-Timings are estimates until the first run measures them.
+Measured on 2026-10-24: the data job took 15 minutes in `cpu_il`; the smoke test trained at 62.5 images/s on an A100 (about 13 minutes per pilot epoch). The 50-epoch length is an estimate of 11–13 h on an A100.
 
 **Follow progress** with `-Action status`. It only queries the FrameTrail job IDs recorded at submission, never the whole shared account.
 
