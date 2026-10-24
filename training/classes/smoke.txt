@@ -1,0 +1,5 @@
+# Tiny vocabulary for the local pipeline test only.
+Person = Person, Man, Woman, Boy, Girl
+Car
+Dog
+Chair

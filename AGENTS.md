@@ -72,10 +72,13 @@ The app's RF adapter (`src/rfdetr.cpp`) currently assumes 615 classes and 619 ou
 
 ## Status
 
-- 2026-10-24: Strategy reset. Removed the billboard-only research track and its archive (recoverable from commit `95b9ef23`). Phase 0 is in progress.
+- 2026-10-24: Strategy reset. Removed the billboard-only research track and its archive (recoverable from commit `95b9ef23`).
+- 2026-10-24: Phase 0 done. `training/` builds Open Images datasets, trains with resume, and scores with the Open Images-style evaluator against the YOLOv8s baseline. The local CPU smoke test (4 classes, 1 epoch) ran end to end. The pilot dry run on real metadata selects 49,418 train / 1,954 valid / 4,774 test images for 110 classes. Next: the user runs `training/kit/setup.sh` and `submit_pilot.sh` on KIT (see `training/README.md`).
 
 ## Decision log
 
 - 2026-10-24: Switch from single-row billboard fine-tuning to full fine-tuning on Open Images. Reason: the largest earlier training set was 281 photos, while Open Images offers about 1.7M training images. Private use only, so public dataset licences are acceptable for training.
 - 2026-10-24: Pilot uses RF-DETR Small (512 px), the size already integrated in the app, and rfdetr 1.11.2, the version previously used on KIT.
+- 2026-10-24: Warm-start the classification head by class name (`training/warmstart.py`). rfdetr's default resizing gave our first class COCO's unused slot: in the smoke test, Person had AP 0.00 without the warm start and 0.90 with it.
+- 2026-10-24: The evaluator applies class-wise NMS (IoU 0.7) after mapping, so a baseline predicting Man and Person on one person is not double-penalised.
 - 2026-10-24: The pilot trains with the standard loss and treats unlabeled objects as background, as public Open Images detectors do. Missing-label handling is a Phase 3 improvement, decided by measurement.

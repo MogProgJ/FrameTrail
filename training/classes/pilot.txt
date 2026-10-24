@@ -1,0 +1,125 @@
+# Pilot vocabulary: everyday objects, one class per line.
+# "Target = Source, Source" merges several Open Images classes into one target.
+# Names must match Open Images V7 boxable display names exactly.
+
+# People and transport
+Person = Person, Man, Woman, Boy, Girl
+Car = Car, Taxi
+Bus
+Truck
+Van
+Motorcycle
+Bicycle
+Train
+Airplane = Fixed-wing aircraft
+Boat
+Traffic light
+Traffic sign
+Stop sign
+Street light
+Fire hydrant
+Bench
+Billboard
+Helmet
+
+# Home and furniture
+Chair
+Table
+Couch
+Bed
+Desk
+Shelf
+Door
+Window
+Lamp
+Mirror
+Curtain
+Pillow
+Picture frame
+Clock
+Vase
+Houseplant
+Flowerpot
+Bathtub
+Toilet
+Sink
+Towel
+Fireplace
+Stairs
+Television
+Washing machine
+Refrigerator
+Oven
+Microwave oven
+Ceiling fan
+
+# Kitchen and food
+Bottle
+Wine glass
+Mug
+Coffee cup
+Bowl
+Plate
+Fork
+Knife
+Spoon
+Frying pan
+Cutting board
+Pizza
+Cake
+Bread
+Banana
+Apple
+Orange = Orange (fruit)
+Hamburger
+Doughnut
+
+# Electronics and work
+Laptop
+Computer monitor
+Computer keyboard
+Computer mouse
+Mobile phone
+Headphones
+Camera
+Tablet computer
+Remote control
+Book
+Pen
+Scissors
+Whiteboard
+
+# Personal and outdoor
+Backpack
+Handbag
+Suitcase
+Umbrella
+Glasses
+Sunglasses
+Hat
+Watch
+Tie
+Football
+Tennis racket
+Skateboard
+Kite
+Tent
+Balloon
+Flag
+Teddy bear
+
+# Animals
+Dog
+Cat
+Bird
+Horse
+Cattle
+Sheep
+Fox
+Squirrel
+Duck
+Chicken
+Fish
+Butterfly
+Deer
+Rabbit

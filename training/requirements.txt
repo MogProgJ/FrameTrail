@@ -1,0 +1,10 @@
+# Training environment (Linux/CUDA on KIT, or CPU for the local smoke test).
+# Versions verified together in the local smoke test on 2026-10-24.
+rfdetr[train]==1.11.2
+torch==2.14.1
+torchvision==0.29.1
+pytorch-lightning==2.6.6
+pandas==3.1.0
+tensorboard
+# Baseline only: the YOLOv8s Open Images model the app ships.
+ultralytics==8.3.228
