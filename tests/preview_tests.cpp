@@ -49,6 +49,21 @@ void run(const std::filesystem::path& root) {
         require(frames[i].generation == second_generation && frames[i].frame.sequence == i,
             "Frame ordering or source identity is incorrect");
     }
+    // Timeline jump: playback starts at the first frame at or after the requested time and continues.
+    session.start(root / "smooth.mkv", {}, {}, {}, std::chrono::milliseconds(1000));
+    std::vector<frametrail::PreviewFrame> jumped;
+    wait_for([&] {
+        while (auto frame = session.try_pop()) jumped.push_back(std::move(*frame));
+        return !session.snapshot().worker_active && session.snapshot().queued_frames == 0;
+    });
+    require(session.snapshot().state == frametrail::PreviewState::completed && jumped.size() >= 50 && jumped.size() <= 62,
+        "Start time did not skip the first second of a 2 s, 60 fps video");
+    require(jumped.front().frame.timestamp && *jumped.front().frame.timestamp >= std::chrono::milliseconds(1000) &&
+        *jumped.front().frame.timestamp < std::chrono::milliseconds(1100), "Start time began at the wrong frame");
+    bool rejected = false;
+    try { session.start(root / "smooth.mkv", {}, {}, frametrail::ReviewPosition{}, std::chrono::milliseconds(500)); }
+    catch (const std::invalid_argument&) { rejected = true; }
+    require(rejected, "Saved-frame review and start time were accepted together");
     session.start(root / "invalid.txt");
     wait_for([&] { return !session.snapshot().worker_active; });
     require(session.snapshot().state == frametrail::PreviewState::failed && !session.snapshot().error.empty(),

@@ -99,6 +99,10 @@ private:
 class StudioStyle final : public QProxyStyle {
 public:
     StudioStyle():QProxyStyle(QStringLiteral("Fusion")){setObjectName(QStringLiteral("frametrailStudio"));}
+    int styleHint(StyleHint hint,const QStyleOption* option=nullptr,const QWidget* widget=nullptr,QStyleHintReturn* data=nullptr) const override {
+        if(hint==SH_Slider_AbsoluteSetButtons)return Qt::LeftButton; // Click on a timeline jumps there.
+        return QProxyStyle::styleHint(hint,option,widget,data);
+    }
     void drawPrimitive(PrimitiveElement element,const QStyleOption* option,QPainter* painter,const QWidget* widget=nullptr) const override {
         if(element==PE_IndicatorArrowDown || element==PE_IndicatorArrowUp || element==PE_IndicatorSpinDown || element==PE_IndicatorSpinUp) {
             painter->save();painter->setRenderHint(QPainter::Antialiasing);

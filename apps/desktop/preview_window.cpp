@@ -8,6 +8,11 @@
 #include "studio_controls.hpp"
 #include "workspace_chrome.hpp"
 #include "playback_workspace.hpp"
+#include "home_workspace.hpp"
+#include "recent_files.hpp"
+#include <QSlider>
+#include <QSignalBlocker>
+#include <map>
 #include <QStackedWidget>
 #include <QStyle>
 #include <QDragEnterEvent>
@@ -54,6 +59,15 @@ QString timestamp_text(const std::optional<std::chrono::microseconds>& timestamp
         .arg((ms / 60000) % 60, 2, 10, QChar('0'))
         .arg((ms / 1000) % 60, 2, 10, QChar('0'))
         .arg(ms % 1000, 3, 10, QChar('0'));
+}
+bool still_image(const QString& path) {
+    const auto suffix=QFileInfo(path).suffix().toLower();
+    return suffix==QStringLiteral("png") || suffix==QStringLiteral("jpg") || suffix==QStringLiteral("jpeg") || suffix==QStringLiteral("bmp") || suffix==QStringLiteral("ppm");
+}
+QString clock_text(std::chrono::microseconds time) {
+    const auto total=std::max<std::int64_t>(0,time.count()/1000000);
+    return total>=3600 ? QStringLiteral("%1:%2:%3").arg(total/3600).arg(total/60%60,2,10,QChar('0')).arg(total%60,2,10,QChar('0'))
+                       : QStringLiteral("%1:%2").arg(total/60).arg(total%60,2,10,QChar('0'));
 }
 } // namespace
 
@@ -285,6 +299,16 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     workspace_pages_=findChild<QStackedWidget*>(QStringLiteral("workspacePages"));
     connect(findChild<QPushButton*>(QStringLiteral("previewWorkspace")),&QPushButton::clicked,this,[this]{activate_workspace(0);});
     connect(findChild<QPushButton*>(QStringLiteral("quickGuide")),&QPushButton::clicked,this,[this]{activate_workspace(4);if(guide_workspace_)guide_workspace_->focus_search();});
+    connect(findChild<QPushButton*>(QStringLiteral("homeWorkspace")),&QPushButton::clicked,this,[this]{activate_workspace(5);});
+    for(const auto& key:{QKeySequence(QStringLiteral("Ctrl+H")),QKeySequence(QStringLiteral("Ctrl+0"))}){auto* shortcut=new QShortcut(key,this);connect(shortcut,&QShortcut::activated,this,[this]{activate_workspace(5);});}
+    timeline_=findChild<QSlider*>(QStringLiteral("timeline"));position_label_=findChild<QLabel*>(QStringLiteral("timePosition"));
+    duration_label_=findChild<QLabel*>(QStringLiteral("timeDuration"));in_view_=findChild<QLabel*>(QStringLiteral("inViewSummary"));
+    connect(timeline_,&QSlider::sliderMoved,this,[this](int value){
+        if(media_duration_)position_label_->setText(clock_text(std::chrono::microseconds(std::int64_t(media_duration_->count()*(value/1000.))))); });
+    connect(timeline_,&QSlider::sliderReleased,this,[this]{seek_to(timeline_->value()/1000.);});
+    for(auto* box:{static_cast<QWidget*>(model_box_),static_cast<QWidget*>(backend_box_)})connect(qobject_cast<QComboBox*>(box),&QComboBox::currentIndexChanged,this,[this]{update_detector_status();});
+    connect(confidence_box_,&QDoubleSpinBox::valueChanged,this,[this]{update_detector_status();});
+    update_detector_status();
     for(int i=0;i<4;++i){auto* shortcut=new QShortcut(QKeySequence(QStringLiteral("Ctrl+%1").arg(i+1)),this);connect(shortcut,&QShortcut::activated,this,[this,i]{activate_workspace(i);});}
     for(const auto& key:{QKeySequence(QStringLiteral("Ctrl+K")),QKeySequence(Qt::Key_F1)}){auto* shortcut=new QShortcut(key,this);connect(shortcut,&QShortcut::activated,this,[this]{activate_workspace(4);if(guide_workspace_)guide_workspace_->focus_search();});}
     setAcceptDrops(true);
@@ -298,7 +322,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
 }
 
 void PreviewWindow::activate_workspace(int section) {
-    if(workspace_close_requested_ || section<0 || section>4)return;
+    if(workspace_close_requested_ || section<0 || section>5)return;
     if(section!=workspace_section_){
         if(workspace_section_==0 && playing_)toggle_playback();
         if(workspace_section_==1 && analysis_workspace_)analysis_workspace_->suspend_playback();
@@ -322,12 +346,16 @@ void PreviewWindow::activate_workspace(int section) {
                 else{workspace_close_requested_=false;findChild<QWidget*>(QStringLiteral("workspaceRail"))->setEnabled(true);activate_workspace(1);}
             };
         }
+        else if(!analysis_workspace_->analysing() && !analysis_workspace_->has_video() && !source_.isEmpty() && !still_image(source_))
+            analysis_workspace_->select_video(source_); // Open once: Analysis picks up the video from Preview.
         page=analysis_workspace_;
     }else if(section==2){
         if(!playback_workspace_){
             playback_workspace_=new PlaybackWorkspace(source_,options(),workspace_pages_);workspace_pages_->addWidget(playback_workspace_);
             playback_workspace_->preview_selection=[this]{return std::pair{source_,frametrail::DetectorOptions{native_path(model_path_),float(confidence_box_->value()),.45f,selected_model(model_box_),selected_backend(backend_box_)}};};
         }
+        else if(playback_workspace_->source().isEmpty() && !source_.isEmpty() && !still_image(source_))
+            playback_workspace_->select_video(source_,options());
         page=playback_workspace_;
     }else if(section==3){
         if(!camera_workspace_){camera_workspace_=new LiveWindow(model_box_->itemData(0).toString(),selected_model(model_box_),selected_backend(backend_box_));embed(camera_workspace_);}
@@ -341,10 +369,25 @@ void PreviewWindow::activate_workspace(int section) {
             };
         }
         page=guide_workspace_;
+    }else if(section==5){
+        if(!home_workspace_){
+            home_workspace_=new HomeWorkspace(workspace_pages_);workspace_pages_->addWidget(home_workspace_);
+            home_workspace_->open_media=[this]{activate_workspace(0);findChild<QPushButton*>(QStringLiteral("open"))->click();};
+            home_workspace_->open_analysis=[this]{activate_workspace(1);if(auto* button=analysis_workspace_->findChild<QPushButton*>(QStringLiteral("openRun")))button->click();};
+            home_workspace_->open_path=[this](const QString& path){open_path(path);};
+            home_workspace_->navigate=[this](int target){activate_workspace(target);};
+            home_workspace_->setup=[this]{
+                const auto model=selected_model(model_box_);
+                return QStringList{QString::fromUtf8(frametrail::model_name(model).data()),
+                    QStringLiteral("%1 object categories").arg(frametrail::model_category_count(model)),
+                    QStringLiteral("Runs on %1 · confidence %2%").arg(selected_backend(backend_box_)==frametrail::DetectorBackend::cpu ? QStringLiteral("the CPU") : QStringLiteral("the GPU when available")).arg(qRound(confidence_box_->value()*100))};
+            };
+        }
+        page=home_workspace_;
     }
     workspace_section_=section;workspace_pages_->setCurrentWidget(page);page->show();
-    const QStringList labels{QStringLiteral("Preview"),QStringLiteral("Analysis"),QStringLiteral("Playback"),QStringLiteral("Camera"),QStringLiteral("Guide")};
-    const QStringList buttons{QStringLiteral("previewWorkspace"),QStringLiteral("savedAnalysis"),QStringLiteral("smoothPlayback"),QStringLiteral("liveCamera"),QStringLiteral("quickGuide")};
+    const QStringList labels{QStringLiteral("Preview"),QStringLiteral("Analysis"),QStringLiteral("Playback"),QStringLiteral("Camera"),QStringLiteral("Guide"),QStringLiteral("Home")};
+    const QStringList buttons{QStringLiteral("previewWorkspace"),QStringLiteral("savedAnalysis"),QStringLiteral("smoothPlayback"),QStringLiteral("liveCamera"),QStringLiteral("quickGuide"),QStringLiteral("homeWorkspace")};
     findChild<QPushButton*>(buttons[section])->setChecked(true);
     findChild<QLabel*>(QStringLiteral("subtitle"))->setText(QStringLiteral("Workspace / %1").arg(labels[section]));
     findChild<QPushButton*>(QStringLiteral("open"))->setVisible(section==0);findChild<QPushButton*>(QStringLiteral("toggleInspector"))->setVisible(section==0);
@@ -364,14 +407,54 @@ void PreviewWindow::update_workspace_activity(){
     if(camera_workspace_ && camera_workspace_->active())activity<<(workspace_section_==3?QStringLiteral("Camera on"):QStringLiteral("Camera stopping"));
     auto* badge=findChild<QLabel*>(QStringLiteral("workspaceActivity"));const bool busy=!activity.isEmpty();
     const auto text=busy?activity.join(QStringLiteral(" · ")):QStringLiteral("All work stays local");
+    const std::pair<const char*,bool> rail[]={{"savedAnalysis",analysis_workspace_ && analysis_workspace_->analysing()},
+        {"smoothPlayback",playback_workspace_ && playback_workspace_->preparing()},{"liveCamera",camera_workspace_ && camera_workspace_->active()}};
+    for(const auto& [name,active]:rail)if(auto* button=findChild<QPushButton*>(QString::fromLatin1(name));button && button->property("busy").toBool()!=active){button->setProperty("busy",active);button->update();}
     if(badge->text()!=text)badge->setText(text);
     if(badge->property("busy").toBool()!=busy){badge->setProperty("busy",busy);badge->style()->unpolish(badge);badge->style()->polish(badge);}
+}
+
+void PreviewWindow::show_home(){activate_workspace(5);}
+void PreviewWindow::open_path(const QString& path) {
+    if(path.isEmpty())return;
+    if(QFileInfo(path).suffix().compare(QStringLiteral("frametrail"),Qt::CaseInsensitive)==0) {
+        activate_workspace(1);
+        try{analysis_workspace_->open_run(path);remember_file(path);}catch(const std::exception&){}
+        return;
+    }
+    open_file(path);
+}
+void PreviewWindow::update_detector_status() {
+    if(auto* label=findChild<QLabel*>(QStringLiteral("detectorStatus")))
+        label->setText(QStringLiteral("%1  ·  %2  ·  %3%").arg(QString::fromUtf8(frametrail::model_name(selected_model(model_box_)).data()),
+            selected_backend(backend_box_)==frametrail::DetectorBackend::cpu ? QStringLiteral("CPU") : QStringLiteral("GPU / auto")).arg(qRound(confidence_box_->value()*100)));
+}
+void PreviewWindow::update_timeline() {
+    const bool known=media_start_ && media_duration_ && media_duration_->count()>0;
+    timeline_->setEnabled(known && !line_editing_ && !updating_ && pending_source_.isEmpty() && !closing_);
+    duration_label_->setText(known ? clock_text(*media_duration_) : QStringLiteral("0:00"));
+    if(!known || timeline_->isSliderDown())return;
+    const auto position=displayed_frame_ && displayed_frame_->timestamp ? *displayed_frame_->timestamp-*media_start_ : std::chrono::microseconds{};
+    position_label_->setText(clock_text(position));
+    QSignalBlocker block(timeline_);timeline_->setValue(int(std::clamp(1000.*double(position.count())/double(media_duration_->count()),0.,1000.)));
+}
+void PreviewWindow::seek_to(double fraction) {
+    if(source_.isEmpty() || closing_ || !pending_source_.isEmpty() || line_editing_ || !media_start_ || !media_duration_)return;
+    const auto offset=std::chrono::microseconds(std::int64_t(std::clamp(fraction,0.,1.)*double(media_duration_->count())));
+    pause_after_seek_=!playing_;
+    pending_start_=*media_start_+offset;
+    pending_source_=source_;timer_.setInterval(10);session_.stop();next_.reset();
+    updating_=false;line_editing_=false;stopped_=true;playing_=false;
+    state_label_->setText(QStringLiteral("Jumping to %1…").arg(clock_text(offset)));
+    counts_label_->setText(QStringLiteral("Counts restart after a jump"));
+    update_controls();
 }
 
 void PreviewWindow::open_file(const QString& path) {
     if (path.isEmpty() || closing_ || workspace_close_requested_) return;
     activate_workspace(0);
-    pending_source_ = path;
+    remember_file(path);
+    pending_source_ = path;pending_start_.reset();pause_after_seek_=false;media_start_.reset();media_duration_.reset();
     timer_.setInterval(10);
     session_.stop();
     next_.reset();
@@ -419,6 +502,7 @@ void PreviewWindow::update_controls() {
     classes_box_->setEnabled(tracking); direction_box_->setEnabled(tracking);
     line_button_->setEnabled(tracking && displayed_frame_.has_value() && !updating_);
     timer_.setInterval(playing_ || updating_ || !pending_source_.isEmpty() || closing_ ? 10:100);
+    if(timeline_)update_timeline();
 }
 
 void PreviewWindow::reconfigure_analysis() {
@@ -451,7 +535,7 @@ void PreviewWindow::begin_pending_source() {
     pending_source_.clear();
     try {
         auto [detection,tracking] = analysis_options();
-        session_.start(native_path(source_),std::move(detection),std::move(tracking));
+        session_.start(native_path(source_),std::move(detection),std::move(tracking),std::nullopt,std::exchange(pending_start_,std::nullopt));
         generation_ = session_.snapshot().generation;
         analysis_revision_ = session_.snapshot().analysis_revision;
         playing_ = true;
@@ -488,11 +572,24 @@ void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
         wrapped.tracking ? std::optional<frametrail::CountingLine>(counting_line_) : std::nullopt);
     displayed_sequence_ = frame.sequence;
     const auto info = session_.snapshot().info;
-    details_label_->setText(QStringLiteral("%1 × %2   ·   %3   ·   Frame %4   ·   %5")
+    if(!media_start_)media_start_=frame.timestamp.value_or(std::chrono::microseconds{});
+    if(info && info->duration && info->duration->count()>0)media_duration_=info->duration;
+    if(!wrapped.detection)in_view_->setText(detect_box_->isChecked() ? QStringLiteral("Waiting for the detector…") : QStringLiteral("Detection is off."));
+    else if(wrapped.detection->objects.empty())in_view_->setText(QStringLiteral("Nothing detected in this frame."));
+    else {
+        std::map<int,int> counts;for(const auto& object:wrapped.detection->objects)++counts[object.class_id];
+        std::vector<std::pair<int,int>> ordered(counts.begin(),counts.end());
+        std::stable_sort(ordered.begin(),ordered.end(),[](const auto& a,const auto& b){return a.second>b.second;});
+        QStringList parts;
+        for(const auto& [id,count]:ordered)parts<<QStringLiteral("<span style=\"color:%1\">&#9679;</span>&nbsp;<span style=\"color:%2\">%3</span>&nbsp;<b style=\"color:%2\">%4</b>")
+            .arg(ft::ui::category_color(id).name(),ft::ui::text.name(),QString::fromUtf8(frametrail::class_name(id).data()).toHtmlEscaped()).arg(count);
+        in_view_->setText(parts.join(QStringLiteral("&nbsp;&nbsp;&nbsp; ")));
+    }
+    details_label_->setText(QStringLiteral("%1×%2  ·  %3")
         .arg(frame.width).arg(frame.height)
-        .arg(info ? QString::fromStdString(info->codec) : QStringLiteral("Unknown codec"))
-        .arg(frame.sequence).arg(timestamp_text(frame.timestamp)));
-    if (wrapped.detection) details_label_->setText(details_label_->text()+QStringLiteral("   ·   %1 objects   ·   %2 ms per frame")
+        .arg(info ? QString::fromStdString(info->codec) : QStringLiteral("unknown codec")));
+    details_label_->setToolTip(QStringLiteral("Frame %1 at %2").arg(frame.sequence).arg(timestamp_text(frame.timestamp)));
+    if (wrapped.detection) details_label_->setText(details_label_->text()+QStringLiteral("  ·  %1 objects  ·  %2 ms per frame")
         .arg(wrapped.detection->objects.size()).arg(wrapped.detection->elapsed_ms,0,'f',1));
     if (wrapped.tracking) {
         counts_label_->setText(QStringLiteral("− → +  %1      + → −  %2\n%3 tracked now")
@@ -509,6 +606,7 @@ void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
     displayed_frame_ = std::move(wrapped.frame);
     state_label_->setText(playing_ ? QStringLiteral("Playing") : QStringLiteral("Paused"));
     update_controls();
+    if(pause_after_seek_ && playing_){pause_after_seek_=false;toggle_playback();}
 }
 
 void PreviewWindow::tick() {
@@ -589,5 +687,5 @@ void PreviewWindow::dragEnterEvent(QDragEnterEvent* event) {
 void PreviewWindow::dropEvent(QDropEvent* event) {
     const auto urls=event->mimeData()->urls();
     if(urls.size()!=1 || !urls.front().isLocalFile() || !QFileInfo(urls.front().toLocalFile()).isFile())return;
-    open_file(urls.front().toLocalFile());event->acceptProposedAction();
+    open_path(urls.front().toLocalFile());event->acceptProposedAction();
 }

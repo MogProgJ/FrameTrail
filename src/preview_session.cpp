@@ -13,9 +13,12 @@ bool same_detector(const std::optional<DetectorOptions>& a, const std::optional<
 PreviewSession::~PreviewSession() { stop(); }
 
 void PreviewSession::start(const std::filesystem::path& source, std::optional<DetectorOptions> detection,
-    std::optional<TrackingOptions> tracking, std::optional<ReviewPosition> review) {
+    std::optional<TrackingOptions> tracking, std::optional<ReviewPosition> review,
+    std::optional<std::chrono::microseconds> start_at) {
     if (tracking && !detection) throw std::invalid_argument("Tracking requires detection");
     if (review && (detection || tracking)) throw std::invalid_argument("Event review cannot run inference or tracking");
+    if (review && start_at) throw std::invalid_argument("Choose either a saved frame or a start time");
+    if (start_at && start_at->count() < 0) throw std::invalid_argument("Start time must be nonnegative");
     {
         std::lock_guard lock(mutex_);
         if (status_.worker_active) throw std::logic_error("Stop the active preview before opening another source");
@@ -30,6 +33,7 @@ void PreviewSession::start(const std::filesystem::path& source, std::optional<De
         frames_.clear(); pending_frames_.clear();
         source_ = source; detection_ = std::move(detection); tracking_ = std::move(tracking);
         review_ = review;
+        start_at_ = start_at;
         status_ = {};
         status_.generation = generation;
         status_.analysis_revision = 1;
@@ -100,6 +104,15 @@ void PreviewSession::launch_worker() {
                         }
                         std::lock_guard lock(mutex_);
                         if(!stop.stop_requested())pending_frames_.push_back(std::move(*first));
+                    } else if(start_at_ && start_at_->count()>0) {
+                        std::optional<Frame> first;
+                        try {first=reader_->seek(*start_at_);}catch(const std::exception&) {
+                            if(stop.stop_requested())throw;
+                            // No usable seek index or timestamps: play from the beginning instead.
+                            reader_=std::make_unique<MediaReader>(source_,source_stop_.get_token());
+                        }
+                        std::lock_guard lock(mutex_);
+                        if(first && !stop.stop_requested())pending_frames_.push_back(std::move(*first));
                     }
                 }
                 std::unique_ptr<Detector> detector;

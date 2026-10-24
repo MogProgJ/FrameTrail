@@ -25,6 +25,8 @@ ICONS = {
     'chevron_down': 'chevron_down', 'chevron_up': 'chevron_up', 'local': 'shield_checkmark', 'info': 'info',
     'warning': 'warning', 'error': 'error_circle', 'brand': 'scan_object', 'video': 'video', 'clock': 'clock',
     'list': 'apps_list_detail', 'upload': 'arrow_upload', 'tag': 'tag', 'history': 'history',
+    'image': 'image', 'chevron_right': 'chevron_right', 'document': 'document', 'sparkle': 'sparkle',
+    'people': 'people', 'timer': 'timer', 'cpu': 'developer_board', 'delete': 'delete',
 }
 
 

@@ -42,8 +42,11 @@ class PreviewSession {
 public:
     static constexpr std::size_t capacity = 2;
     ~PreviewSession();
+    // review: open one saved frame exactly (no analysis). start_at: begin playback at the first frame
+    // at or after this time, with detection and tracking as usual (a timeline jump).
     void start(const std::filesystem::path& source, std::optional<DetectorOptions> detection = {},
-        std::optional<TrackingOptions> tracking = {}, std::optional<ReviewPosition> review = {});
+        std::optional<TrackingOptions> tracking = {}, std::optional<ReviewPosition> review = {},
+        std::optional<std::chrono::microseconds> start_at = {});
     // Keep decoder position; re-analyse retained frames and the bounded queue.
     std::uint64_t reconfigure(std::optional<DetectorOptions> detection,
         std::optional<TrackingOptions> tracking, std::vector<Frame> retained = {});
@@ -63,6 +66,7 @@ private:
     std::optional<DetectorOptions> detection_;
     std::optional<TrackingOptions> tracking_;
     std::optional<ReviewPosition> review_;
+    std::optional<std::chrono::microseconds> start_at_;
     std::deque<Frame> pending_frames_;
     std::stop_source source_stop_;
     // Only sequential workers access this; retained at EOF for setting refreshes.

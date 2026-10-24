@@ -15,6 +15,7 @@ public:
     std::function<std::pair<QString,frametrail::DetectorOptions>()> preview_selection;
     void select_video(QString source,frametrail::DetectorOptions options);
     CachedPlaybackWindow* cache() const {return cache_;}
+    const QString& source() const {return source_;}
     bool preparing() const;
     void suspend_playback();
     void request_shutdown();

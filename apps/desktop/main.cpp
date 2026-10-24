@@ -15,6 +15,7 @@ int main(int argc, char* argv[]) {
     app.setFont(QFont(family,10));
     app.styleHints()->setColorScheme(Qt::ColorScheme::Dark);
     app.setApplicationName(QStringLiteral("FrameTrail"));
+    app.setOrganizationName(QStringLiteral("FrameTrail")); // Per-user settings such as recent files.
     PreviewWindow window;
     auto arguments = app.arguments();
     const bool smooth_mode=arguments.removeAll(QStringLiteral("--smooth-rf-experimental"))>0;
@@ -38,7 +39,8 @@ int main(int argc, char* argv[]) {
         });
         poll->start(20);
         QTimer::singleShot(10000, &app, [&] { app.exit(1); });
-    } else if (arguments.size() > 1) window.open_file(arguments[1]);
+    } else if (arguments.size() > 1) window.open_path(arguments[1]);
+    else if (!smooth_mode) window.show_home();
     if(smooth_mode){
         auto* prepare=new QTimer(&window);prepare->setInterval(20);
         QObject::connect(prepare,&QTimer::timeout,&window,[&window,prepare]{

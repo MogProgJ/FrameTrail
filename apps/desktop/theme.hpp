@@ -69,6 +69,26 @@ inline QString frametrail_theme() {
         QMainWindow, QWidget#shell { background:@window; }
         QLabel { background:transparent; }
         QLabel#title { font-size:20px; font-weight:600; }
+        QLabel#display { font-size:28px; font-weight:600; }
+        QLabel#cardTitle { font-size:15px; font-weight:600; color:@text; }
+        QLabel[role="time"] { color:@textSecondary; font-size:12px; min-width:34px; qproperty-alignment:AlignCenter; }
+        QLabel#detectorStatus { color:@textTertiary; font-size:12px; }
+        QFrame#statusBar { background:@pane; border:none; border-top:1px solid @stroke; }
+        QFrame#dropZone { background:#202020; border:2px dashed #3d3d3d; border-radius:12px; }
+        QPushButton[role="rail"] { min-width:68px; max-width:68px; min-height:58px; max-height:58px; padding:0; border:none; background:transparent; }
+        QPushButton[role="card"] { min-height:176px; background:@card; border:1px solid @stroke; border-radius:10px; padding:0; text-align:left; }
+        QPushButton[role="card"]:hover { background:@cardHover; border-color:@strokeControl; }
+        QPushButton[role="card"]:pressed { background:@controlPressed; }
+        QPushButton[role="chip"] { background:@control; border:1px solid @strokeControl; border-radius:12px; padding:3px 10px; min-height:16px; font-size:12px; }
+        QPushButton[role="chip"]:hover { background:@controlHover; }
+        QSlider { min-height:22px; }
+        QSlider::groove:horizontal { height:4px; background:#3d3d3d; border-radius:2px; }
+        QSlider::sub-page:horizontal { background:@accent; border-radius:2px; }
+        QSlider::add-page:horizontal { background:#3d3d3d; border-radius:2px; }
+        QSlider::handle:horizontal { background:@accent; border:4px solid #454545; width:10px; height:10px; margin:-7px 0; border-radius:9px; }
+        QSlider::handle:horizontal:hover { border-width:3px; }
+        QSlider::sub-page:horizontal:disabled { background:#3d3d3d; }
+        QSlider::handle:horizontal:disabled { background:#3d3d3d; border-color:#2d2d2d; }
         QLabel#subtitle, QLabel#source, QLabel[role="muted"] { color:@textSecondary; }
         QLabel[role="caption"], QLabel#details { color:@textTertiary; font-size:12px; }
         QLabel[role="section"] { color:@text; font-size:14px; font-weight:600; padding-top:4px; }

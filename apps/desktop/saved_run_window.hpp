@@ -16,6 +16,8 @@ class QProgressBar;
 class QToolButton;
 class QDragEnterEvent;
 class QDropEvent;
+class AppearanceTimeline;
+class FlowLayout;
 
 class SavedRunWindow : public QMainWindow {
 public:
@@ -29,6 +31,7 @@ public:
     void review_event(int row);
     std::optional<std::chrono::microseconds> displayed_timestamp() const { return displayed_timestamp_; }
     bool analysing() const { return job_.progress().active; }
+    bool has_video() const { return !selected_video_.isEmpty() || store_.has_value(); }
     std::function<void(bool)> workspace_close_decision;
     void suspend_playback();
 protected:
@@ -38,6 +41,8 @@ protected:
 private:
     void tick();
     void load_page(std::uint64_t after);
+    void load_overview();                       // Chips per object type and the timeline chart.
+    void select_appearance(std::uint64_t id);
     void show_error(const std::exception& error);
     void toggle_playback();
     void update_controls();
@@ -69,6 +74,9 @@ private:
     QWidget* settings_panel_{};
     QWidget* results_panel_{};
     QProgressBar* progress_{};
+    AppearanceTimeline* timeline_{};
+    QWidget* chips_{};
+    FlowLayout* chips_layout_{};
     bool closing_{}, awaiting_job_{}, awaiting_frame_{}, playing_{}, clock_started_{}, unsaved_{}, draft_job_{},cancel_requested_{};
     std::chrono::steady_clock::time_point analysis_started_{};
     std::chrono::steady_clock::time_point clock_,paused_;

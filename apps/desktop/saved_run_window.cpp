@@ -4,6 +4,11 @@
 #include "theme.hpp"
 #include "studio_controls.hpp"
 #include "processing_feedback.hpp"
+#include "appearance_timeline.hpp"
+#include "recent_files.hpp"
+#include <QPainter>
+#include <QPainterPath>
+#include <map>
 #include <QFrame>
 #include <QCloseEvent>
 #include <QCoreApplication>
@@ -48,6 +53,24 @@ QString time_text(std::optional<std::chrono::microseconds> time) {
         .arg((ms/1000)%60,2,10,QChar('0')).arg(ms%1000,3,10,QChar('0'));
 }
 QImage thumbnail_image(const std::vector<std::uint8_t>& value) {return QImage::fromData(value.data(),int(value.size()),"PPM");}
+// Saved thumbnail with the object picked out: the rest of the frame dimmed, the box in its type colour.
+QIcon appearance_icon(const QImage& thumbnail,const frametrail::Detection& box,int width,int height) {
+    if(thumbnail.isNull())return {};
+    auto image=thumbnail.convertToFormat(QImage::Format_RGB32).scaled(thumbnail.size()*2,Qt::KeepAspectRatio,Qt::SmoothTransformation);
+    const double sx=double(image.width())/std::max(1,width),sy=double(image.height())/std::max(1,height);
+    const QRectF object(box.left*sx,box.top*sy,(box.right-box.left)*sx,(box.bottom-box.top)*sy);
+    QPainter painter(&image);painter.setRenderHint(QPainter::Antialiasing);
+    QPainterPath outside;outside.addRect(image.rect());QPainterPath inside;inside.addRect(object);
+    painter.fillPath(outside.subtracted(inside),QColor(0,0,0,120));
+    painter.setPen(QPen(ft::ui::category_color(box.class_id),2.5));painter.setBrush(Qt::NoBrush);painter.drawRect(object);
+    return QIcon(QPixmap::fromImage(image));
+}
+// 0:02.4 style: minutes, seconds and tenths.
+QString short_time(std::optional<std::chrono::microseconds> time) {
+    if(!time)return QStringLiteral("?");
+    const auto tenths=std::max<std::int64_t>(0,time->count()/100000);
+    return QStringLiteral("%1:%2.%3").arg(tenths/600).arg(tenths/10%60,2,10,QChar('0')).arg(tenths%10);
+}
 QString save_dialog(QWidget* parent,const QString& title,const QString& name,const QString& filter,const QString& suffix) {
     QFileDialog dialog(parent,title,name,filter);dialog.setAcceptMode(QFileDialog::AcceptSave);
     dialog.setFileMode(QFileDialog::AnyFile);dialog.setDefaultSuffix(suffix);
@@ -121,15 +144,23 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     settings_panel_->hide();layout->addWidget(settings_panel_);
     progress_=new QProgressBar;progress_->setObjectName(QStringLiteral("analysisProgress"));progress_->setTextVisible(false);progress_->setMaximumHeight(7);progress_->hide();layout->addWidget(progress_);
     status_=new QLabel(QStringLiteral("Choose a video to begin."));status_->setObjectName(QStringLiteral("analysisStatus"));status_->setTextFormat(Qt::PlainText);status_->setWordWrap(true);layout->addWidget(status_);
-    auto* split=new QSplitter;canvas_=new FrameCanvas;canvas_->set_empty_icon(QStringLiteral("analysis"));canvas_->set_empty_text(QStringLiteral("Find every object in a video\nDrop a video here or choose one. Analyse it once, then review, save or export the appearances."));split->addWidget(canvas_);
+    auto* split=new QSplitter;split->setHandleWidth(12);split->setChildrenCollapsible(false);
+    auto* review=new QWidget;auto* review_layout=new QVBoxLayout(review);review_layout->setContentsMargins(0,0,0,0);review_layout->setSpacing(10);
+    canvas_=new FrameCanvas;canvas_->set_empty_icon(QStringLiteral("analysis"));canvas_->set_empty_text(QStringLiteral("Find every object in a video\nDrop a video here or choose one. Analyse it once, then review, save or export the appearances."));review_layout->addWidget(canvas_,1);
+    auto* transport=new QFrame;transport->setObjectName(QStringLiteral("transportBar"));auto* playback=new QHBoxLayout(transport);playback->setContentsMargins(8,6,12,6);playback->setSpacing(6);
+    play_=new QPushButton(QStringLiteral("Play"));play_->setObjectName(QStringLiteral("reviewPlay"));play_->setProperty("role","subtle");playback->addWidget(play_);
+    back_=new QPushButton(QStringLiteral("Back to appearance"));back_->setObjectName(QStringLiteral("backToAppearance"));back_->setProperty("role","subtle");playback->addWidget(back_);
+    review_status_=new QLabel(QStringLiteral("Results will appear here after analysis."));review_status_->setObjectName(QStringLiteral("reviewStatus"));review_status_->setProperty("role","muted");review_status_->setTextFormat(Qt::PlainText);playback->addWidget(review_status_,1);
+    review_layout->addWidget(transport);
+    timeline_=new AppearanceTimeline;timeline_->hide();review_layout->addWidget(timeline_);
+    timeline_->activated=[this](std::uint64_t id){select_appearance(id);};
+    split->addWidget(review);
     auto* results=new QFrame;results->setObjectName(QStringLiteral("inspector"));results_panel_=results;auto* results_layout=new QVBoxLayout(results);results_layout->setContentsMargins(14,16,14,14);results_layout->setSpacing(10);
-    results_title_=new QLabel(QStringLiteral("Object appearances"));results_title_->setProperty("role","section");results_title_->setContentsMargins(4,0,0,4);results_layout->addWidget(results_title_);
-    events_=new QListWidget;events_->setObjectName(QStringLiteral("savedEvents"));events_->setIconSize(QSize(88,50));events_->setAcceptDrops(false);events_->viewport()->setAcceptDrops(false);results_layout->addWidget(events_,1);
+    results_title_=new QLabel(QStringLiteral("Object appearances"));results_title_->setProperty("role","section");results_title_->setContentsMargins(4,0,0,0);results_layout->addWidget(results_title_);
+    chips_=new QWidget;chips_layout_=new FlowLayout(chips_,6);chips_->hide();results_layout->addWidget(chips_);
+    events_=new QListWidget;events_->setObjectName(QStringLiteral("savedEvents"));events_->setIconSize(QSize(96,54));events_->setAcceptDrops(false);events_->viewport()->setAcceptDrops(false);results_layout->addWidget(events_,1);
     auto* paging=new QHBoxLayout;previous_=new QPushButton(QStringLiteral("Previous"));more_=new QPushButton(QStringLiteral("Next"));previous_->setObjectName(QStringLiteral("previousResults"));more_->setObjectName(QStringLiteral("nextResults"));paging->addWidget(previous_);paging->addWidget(more_);results_layout->addLayout(paging);previous_->hide();more_->hide();previous_->setEnabled(false);more_->setEnabled(false);
-    split->addWidget(results);split->setStretchFactor(0,1);split->setStretchFactor(1,0);split->setSizes({810,345});layout->addWidget(split,1);
-    auto* playback=new QHBoxLayout;play_=new QPushButton(QStringLiteral("Play"));play_->setObjectName(QStringLiteral("reviewPlay"));playback->addWidget(play_);
-    back_=new QPushButton(QStringLiteral("Back to appearance"));back_->setObjectName(QStringLiteral("backToAppearance"));playback->addWidget(back_);
-    review_status_=new QLabel(QStringLiteral("Results will appear here after analysis."));review_status_->setObjectName(QStringLiteral("reviewStatus"));review_status_->setProperty("role","muted");review_status_->setTextFormat(Qt::PlainText);review_status_->setWordWrap(true);playback->addWidget(review_status_,1);layout->addLayout(playback);setCentralWidget(shell);
+    split->addWidget(results);split->setStretchFactor(0,1);split->setStretchFactor(1,0);split->setSizes({820,360});layout->addWidget(split,1);setCentralWidget(shell);
     connect(choose_,&QPushButton::clicked,this,[this]{
         const auto path=QFileDialog::getOpenFileName(this,QStringLiteral("Choose a video"),{},QStringLiteral("Video (*.mp4 *.mkv *.avi *.mov *.webm *.m4v *.wmv *.mpg *.mpeg *.ts *.mts *.m2ts);;All files (*)"));
         if(!path.isEmpty())select_video(path);
@@ -195,7 +226,8 @@ bool SavedRunWindow::select_video(const QString& video) {
     if(!confirm_discard())return false;
     review_.stop();pending_review_.reset();next_.reset();playing_=false;awaiting_frame_=false;displayed_timestamp_.reset();
     store_.reset();summary_.reset();page_.clear();appearances_.clear();events_->clear();cursors_={0};database_.clear();unsaved_=false;
-    selected_video_=file.absoluteFilePath();source_->setText(file.fileName());source_->setToolTip(selected_video_);
+    selected_video_=file.absoluteFilePath();source_->setText(file.fileName());source_->setToolTip(selected_video_);remember_file(selected_video_);
+    timeline_->set_spans({},0);timeline_->hide();chips_->hide();
     canvas_->set_image({});canvas_->set_empty_text(QStringLiteral("Ready to analyse\n%1").arg(file.fileName()));
     status_->setText(QStringLiteral("Ready. Analyse the video to find object appearances."));review_status_->setText(QStringLiteral("Click an appearance to review its timestamp."));results_title_->setText(QStringLiteral("Object appearances"));
     play_->setEnabled(false);back_->setEnabled(false);previous_->hide();more_->hide();progress_->hide();update_controls();return true;
@@ -222,7 +254,7 @@ void SavedRunWindow::start_analysis(const QString& database,frametrail::RunConfi
     if(analysing())throw std::logic_error("An analysis is already running");
     if(std::filesystem::exists(native(database)))throw std::runtime_error("Analysis destination already exists; choose a new filename");
     review_.stop();pending_review_.reset();next_.reset();playing_=false;awaiting_frame_=false;play_->setEnabled(false);back_->setEnabled(false);displayed_timestamp_.reset();preview_sequence_.reset();
-    store_.reset();summary_.reset();page_.clear();appearances_.clear();events_->clear();canvas_->set_image({});canvas_->set_empty_text(QStringLiteral("Starting analysis…"));unsaved_=false;
+    store_.reset();summary_.reset();page_.clear();appearances_.clear();events_->clear();load_overview();canvas_->set_image({});canvas_->set_empty_text(QStringLiteral("Starting analysis…"));unsaved_=false;
     previous_->hide();more_->hide();source_->setText(QFileInfo(text(configuration.source)).fileName());source_->setToolTip(text(configuration.source));
     database_=database;draft_job_=QFileInfo(database).absolutePath()==scratch_.path();cancel_requested_=false;analysis_started_=std::chrono::steady_clock::now();job_.start(native(database),std::move(configuration));awaiting_job_=true;
     progress_->setRange(0,0);progress_->show();status_->setText(QStringLiteral("Starting analysis…"));review_status_->setText(QStringLiteral("Processing locally. Save the result when you’re ready."));update_controls();
@@ -250,6 +282,7 @@ void SavedRunWindow::open_run(const QString& database) {
     if(!confirm_discard())return;
     review_.stop();pending_review_.reset();next_.reset();playing_=false;awaiting_frame_=false;play_->setEnabled(false);back_->setEnabled(false);displayed_timestamp_.reset();canvas_->set_image({});
     store_.emplace(std::move(candidate));summary_=std::move(info);database_=database;cursors_={0};unsaved_=false;
+    if(QFileInfo(database).absolutePath()!=scratch_.path())remember_file(database);
     const auto& s=*summary_;source_->setText(QFileInfo(text(s.configuration.source)).fileName());source_->setToolTip(text(s.configuration.source));
     selected_video_=store_->source_available() ? text(s.configuration.source) : QString{};
     const bool objects=s.configuration.kind==frametrail::RunKind::appearances;
@@ -260,7 +293,7 @@ void SavedRunWindow::open_run(const QString& database) {
     if(!s.error.empty() && s.status!="cancelled")status_->setText(status_->text()+QStringLiteral(" · ")+QString::fromStdString(s.error));
     canvas_->set_empty_text(objects ? QStringLiteral("No object appearances found\nTry a lower confidence in Analysis settings") : QStringLiteral("No crossing events in this analysis"));
     review_status_->setText(store_->source_available() ? QStringLiteral("Click an appearance to review it.") : QStringLiteral("Video missing or changed. Thumbnails and exports are still available."));
-    progress_->hide();load_page(0);update_controls();
+    progress_->hide();load_overview();load_page(0);update_controls();
 }
 void SavedRunWindow::load_page(std::uint64_t after) {
     if(!store_)return;
@@ -269,9 +302,11 @@ void SavedRunWindow::load_page(std::uint64_t after) {
     if(objects) {
         appearances_=store_->appearances(after);
         for(const auto& value:appearances_) {
-            auto* item=new QListWidgetItem(QIcon(QPixmap::fromImage(thumbnail_image(value.thumbnail))),
-                QStringLiteral("%1\n%2 → %3").arg(QString::fromUtf8(frametrail::class_name(value.first_detection.class_id).data())).arg(time_text(value.first_timestamp)).arg(time_text(value.last_timestamp)),events_);
-            item->setSizeHint(QSize(300,68));item->setToolTip(QStringLiteral("Appearance #%1 · %2 observations · peak confidence %3%\nFrame span includes short detection gaps; IDs belong to this analysis.").arg(value.id).arg(value.observations).arg(value.peak_confidence*100,0,'f',1));
+            const auto seconds=value.first_timestamp && value.last_timestamp ? double((*value.last_timestamp-*value.first_timestamp).count())/1e6 : 0.;
+            auto* item=new QListWidgetItem(appearance_icon(thumbnail_image(value.thumbnail),value.first_detection,summary_->media.width,summary_->media.height),
+                QStringLiteral("%1\n%2 – %3  ·  %4 s  ·  %5%").arg(QString::fromUtf8(frametrail::class_name(value.first_detection.class_id).data()),
+                    short_time(value.first_timestamp),short_time(value.last_timestamp)).arg(seconds,0,'f',1).arg(qRound(value.peak_confidence*100)),events_);
+            item->setSizeHint(QSize(300,70));item->setToolTip(QStringLiteral("Appearance #%1 · %2 observations · peak confidence %3%\nFrame span includes short detection gaps; IDs belong to this analysis.").arg(value.id).arg(value.observations).arg(value.peak_confidence*100,0,'f',1));
         }
     } else {
         page_=store_->events(after);
@@ -287,6 +322,40 @@ void SavedRunWindow::load_page(std::uint64_t after) {
     if(events_->count()>0){events_->setCurrentRow(0);review_event(0);}
     else {back_->setEnabled(false);play_->setEnabled(false);}
 }
+void SavedRunWindow::load_overview() {
+    while(auto* item=chips_layout_->takeAt(0)){delete item->widget();delete item;}
+    if(!store_ || summary_->configuration.kind!=frametrail::RunKind::appearances){timeline_->set_spans({},0);timeline_->hide();chips_->hide();return;}
+    std::vector<AppearanceTimeline::Span> spans;
+    std::map<int,std::pair<int,std::uint64_t>> types; // object type -> appearances, first appearance id
+    std::uint64_t after=0;
+    for(int page=0;page<20;++page) { // Overview of the first 2,000 appearances; the list pages through all of them.
+        const auto rows=store_->appearances(after,100);if(rows.empty())break;
+        for(const auto& value:rows) {
+            after=value.id;auto& type=types[value.first_detection.class_id];if(!type.first)type.second=value.id;++type.first;
+            if(value.first_timestamp)spans.push_back({value.id,value.first_detection.class_id,value.first_timestamp->count()/1e6,
+                value.last_timestamp.value_or(*value.first_timestamp).count()/1e6});
+        }
+    }
+    timeline_->set_spans(std::move(spans),summary_->media.duration ? summary_->media.duration->count()/1e6 : 0.);timeline_->setVisible(!timeline_->empty());
+    std::vector<std::pair<int,std::pair<int,std::uint64_t>>> ordered(types.begin(),types.end());
+    std::stable_sort(ordered.begin(),ordered.end(),[](const auto& a,const auto& b){return a.second.first>b.second.first;});
+    for(const auto& [type,info]:ordered) {
+        auto* chip=new QPushButton(QStringLiteral("%1  %2").arg(QString::fromUtf8(frametrail::class_name(type).data())).arg(info.first));
+        chip->setProperty("role","chip");chip->setCursor(Qt::PointingHandCursor);chip->setToolTip(QStringLiteral("Jump to the first appearance"));
+        QPixmap dot(QSize(10,10)*2);dot.setDevicePixelRatio(2);dot.fill(Qt::transparent);
+        {QPainter painter(&dot);painter.setRenderHint(QPainter::Antialiasing);painter.setPen(Qt::NoPen);painter.setBrush(ft::ui::category_color(type));painter.drawEllipse(QRectF(1,1,8,8));}
+        chip->setIcon(QIcon(dot));chip->setIconSize(QSize(10,10));
+        const auto first=info.second;connect(chip,&QPushButton::clicked,this,[this,first]{select_appearance(first);});
+        chips_layout_->addWidget(chip);
+    }
+    chips_->setVisible(!ordered.empty());
+}
+void SavedRunWindow::select_appearance(std::uint64_t id) {
+    for(int row=0;row<int(appearances_.size());++row)if(appearances_[std::size_t(row)].id==id){events_->setCurrentRow(row);return;}
+    if(id==0 || !store_)return;
+    cursors_.push_back(id-1);
+    try{load_page(id-1);}catch(const std::exception& e){show_error(e);}
+}
 void SavedRunWindow::review_event(int row) {
     if(!store_ || row<0 || row>=events_->count())return;
     review_.stop();next_.reset();pending_review_.reset();playing_=false;awaiting_frame_=false;clock_started_=false;review_box_.reset();
@@ -294,7 +363,8 @@ void SavedRunWindow::review_event(int row) {
     std::optional<std::chrono::microseconds> timestamp;std::uint64_t sequence;
     if(summary_->configuration.kind==frametrail::RunKind::appearances) {
         const auto& value=appearances_.at(row);timestamp=value.first_timestamp;sequence=value.first_sequence;review_box_=value.first_detection;
-        canvas_->set_image(thumbnail_image(value.thumbnail));
+        canvas_->set_image(thumbnail_image(value.thumbnail));timeline_->set_selected(value.id);
+        timeline_->set_playhead(value.first_timestamp ? std::optional<double>(value.first_timestamp->count()/1e6) : std::nullopt);
     }else {
         const auto& value=page_.at(row);timestamp=value.event.timestamp;sequence=value.event.sequence;canvas_->set_image(thumbnail_image(value.thumbnail));
     }
@@ -356,7 +426,7 @@ void SavedRunWindow::tick() {
         }
         if(present) {
             const auto& frame=present->frame;QImage image(frame.pixels.data(),frame.width,frame.height,frame.stride,QImage::Format_RGB888);
-            canvas_->set_image(image.copy(),awaiting_frame_ && review_box_ ? std::vector<frametrail::Detection>{*review_box_} : std::vector<frametrail::Detection>{});displayed_timestamp_=time;
+            canvas_->set_image(image.copy(),awaiting_frame_ && review_box_ ? std::vector<frametrail::Detection>{*review_box_} : std::vector<frametrail::Detection>{});displayed_timestamp_=time;timeline_->set_playhead(time.count()/1e6);
             review_status_->setText(time_text(frame.timestamp));
             if(awaiting_frame_){awaiting_frame_=false;paused_=now;play_->setEnabled(true);}
         }

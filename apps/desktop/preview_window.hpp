@@ -21,6 +21,8 @@ class SavedRunWindow;
 class PlaybackWorkspace;
 class LiveWindow;
 class GuideWorkspace;
+class HomeWorkspace;
+class QSlider;
 
 class FrameCanvas : public QWidget {
 public:
@@ -58,6 +60,8 @@ class PreviewWindow : public QMainWindow {
 public:
     explicit PreviewWindow(const QString& model_path = {});
     void open_file(const QString& path);
+    void open_path(const QString& path); // Media opens in Preview, a saved .frametrail analysis in Analysis.
+    void show_home();
     [[nodiscard]] std::optional<std::uint64_t> displayed_sequence() const { return displayed_sequence_; }
     [[nodiscard]] std::optional<std::chrono::microseconds> displayed_timestamp() const {
         return displayed_frame_ ? displayed_frame_->timestamp : std::nullopt;
@@ -84,6 +88,9 @@ private:
     void activate_workspace(int section);
     void begin_workspace_shutdown();
     void update_workspace_activity();
+    void update_detector_status();
+    void update_timeline();
+    void seek_to(double fraction);
     std::pair<std::optional<frametrail::DetectorOptions>, std::optional<frametrail::TrackingOptions>> analysis_options();
 
     frametrail::PreviewSession session_;
@@ -108,6 +115,12 @@ private:
     PlaybackWorkspace* playback_workspace_{};
     LiveWindow* camera_workspace_{};
     GuideWorkspace* guide_workspace_{};
+    HomeWorkspace* home_workspace_{};
+    QSlider* timeline_{};
+    QLabel *position_label_{},*duration_label_{},*in_view_{};
+    std::optional<std::chrono::microseconds> pending_start_;
+    std::optional<std::chrono::microseconds> media_start_,media_duration_;
+    bool pause_after_seek_{};
     int workspace_section_{};
     bool workspace_close_requested_{},workspace_close_ready_{};
     QComboBox* classes_box_{};
