@@ -1,10 +1,13 @@
+# Full build and all checks:   .\scripts\build.ps1
+# Just the app, then open it:   .\scripts\build.ps1 -Run   (skips the test programs and checks)
 [CmdletBinding()]
 param(
     [ValidateSet('Release', 'Debug')]
     [string]$Configuration = 'Release',
     [switch]$SkipTests,
     [switch]$MediaOnly,
-    [switch]$GpuChecks
+    [switch]$GpuChecks,
+    [switch]$Run
 )
 
 $ErrorActionPreference = 'Stop'
@@ -27,9 +30,14 @@ try {
     if (-not $MediaOnly) { $taskConfigureArgs += "-DFRAMETRAIL_QT_ROOT=$taskQtRoot" }
     & $taskCmake @taskConfigureArgs
     if ($LASTEXITCODE -ne 0) { throw 'CMake configuration failed. Check the diagnostics above and ensure dependencies were fetched.' }
-    & $taskCmake --build --preset $Configuration.ToLowerInvariant()
+    $taskBuildArgs = @('--build', '--preset', $Configuration.ToLowerInvariant())
+    if ($Run) { $taskBuildArgs += @('--target', 'frametrail-desktop') }
+    & $taskCmake @taskBuildArgs
     if ($LASTEXITCODE -ne 0) { throw 'C++ build failed.' }
-    if (-not $SkipTests) {
+    if ($Run) {
+        $taskApp = Join-Path $taskRoot "build/windows-msvc/$Configuration/frametrail-desktop.exe"
+        Start-Process -FilePath $taskApp -WorkingDirectory (Split-Path -Parent $taskApp)
+    } elseif (-not $SkipTests) {
         & $taskCtest --preset $Configuration.ToLowerInvariant()
         if ($LASTEXITCODE -ne 0) { throw 'CTest validation failed.' }
     }
