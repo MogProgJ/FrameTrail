@@ -15,6 +15,7 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QHBoxLayout>
+#include <QLinearGradient>
 #include <QGraphicsOpacityEffect>
 #include <QPropertyAnimation>
 
@@ -97,6 +98,21 @@ inline void fade_in(QWidget* page,int duration=170) {
     auto* effect=new QGraphicsOpacityEffect(page);effect->setOpacity(0);page->setGraphicsEffect(effect);
     auto* fade=new QPropertyAnimation(effect,"opacity",page);fade->setDuration(duration);fade->setStartValue(0.);fade->setEndValue(1.);fade->setEasingCurve(QEasingCurve::OutCubic);
     QObject::connect(fade,&QPropertyAnimation::finished,page,[page]{page->setGraphicsEffect(nullptr);});fade->start(QAbstractAnimation::DeleteWhenStopped);
+}
+// App icon: white brand glyph on a blue tile (same artwork as frametrail.ico in the executable).
+inline QIcon app_icon() {
+    QIcon icon;
+    for(const int size:{16,24,32,48,64,128,256}) {
+        QPixmap pixmap(size,size);pixmap.fill(Qt::transparent);
+        QPainter painter(&pixmap);painter.setRenderHint(QPainter::Antialiasing);
+        const QRectF tile(size*.04,size*.04,size*.92,size*.92);
+        QLinearGradient gradient(tile.topLeft(),tile.bottomRight());gradient.setColorAt(0,QColor("#1b6fd1"));gradient.setColorAt(1,QColor("#3fc3f0"));
+        painter.setPen(Qt::NoPen);painter.setBrush(gradient);painter.drawRoundedRect(tile,size*.22,size*.22);
+        const double glyph=size*.62;painter.translate((size-glyph)/2,(size-glyph)/2);painter.scale(glyph/20.,glyph/20.);
+        painter.fillPath(fluent_path(QStringLiteral("brand")),QColor("#ffffff"));painter.end();
+        icon.addPixmap(pixmap);
+    }
+    return icon;
 }
 // Standalone windows show the brand mark; the shared workspace hides it when embedding a page.
 inline void studio_heading(QHBoxLayout* header) {header->insertWidget(0,brand_mark());}

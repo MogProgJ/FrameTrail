@@ -1,0 +1,2 @@
+// Windows executable icon (Explorer, shortcuts, taskbar). Rendered from the brand glyph by the icon tool.
+IDI_ICON1 ICON "frametrail.ico"

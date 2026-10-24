@@ -1,5 +1,7 @@
 # Full build and all checks:   .\scripts\build.ps1
-# Just the app, then open it:   .\scripts\build.ps1 -Run   (skips the test programs and checks)
+# Just the app:                 .\scripts\build.ps1 -AppOnly   (skips the test programs and checks)
+# Just the app, then open it:   .\scripts\build.ps1 -Run
+# Everyday use needs no build: open FrameTrail.cmd or the desktop shortcut; after updates use Update-FrameTrail.cmd.
 [CmdletBinding()]
 param(
     [ValidateSet('Release', 'Debug')]
@@ -7,7 +9,8 @@ param(
     [switch]$SkipTests,
     [switch]$MediaOnly,
     [switch]$GpuChecks,
-    [switch]$Run
+    [switch]$Run,
+    [switch]$AppOnly
 )
 
 $ErrorActionPreference = 'Stop'
@@ -31,13 +34,13 @@ try {
     & $taskCmake @taskConfigureArgs
     if ($LASTEXITCODE -ne 0) { throw 'CMake configuration failed. Check the diagnostics above and ensure dependencies were fetched.' }
     $taskBuildArgs = @('--build', '--preset', $Configuration.ToLowerInvariant())
-    if ($Run) { $taskBuildArgs += @('--target', 'frametrail-desktop') }
+    if ($Run -or $AppOnly) { $taskBuildArgs += @('--target', 'frametrail-desktop') }
     & $taskCmake @taskBuildArgs
     if ($LASTEXITCODE -ne 0) { throw 'C++ build failed.' }
     if ($Run) {
         $taskApp = Join-Path $taskRoot "build/windows-msvc/$Configuration/frametrail-desktop.exe"
         Start-Process -FilePath $taskApp -WorkingDirectory (Split-Path -Parent $taskApp)
-    } elseif (-not $SkipTests) {
+    } elseif (-not $SkipTests -and -not $AppOnly) {
         & $taskCtest --preset $Configuration.ToLowerInvariant()
         if ($LASTEXITCODE -ne 0) { throw 'CTest validation failed.' }
     }

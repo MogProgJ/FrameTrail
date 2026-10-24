@@ -4,11 +4,17 @@ A native Windows desktop app that turns images, videos and a webcam feed into de
 
 The current focus is training a much stronger detector: an RF-DETR model fine-tuned on Open Images to recognise about 600 everyday object categories. See [AGENTS.md](AGENTS.md) for the goal, plan, rules and status, and [training/README.md](training/README.md) for the model pipeline.
 
+## Run and update
+
+- **Open FrameTrail:** the **FrameTrail** shortcut on the desktop or in the Start menu, or double-click `FrameTrail.cmd`. It opens the built app at once; nothing is compiled.
+- **After code updates:** double-click `Update-FrameTrail.cmd`. It pulls the new code, rebuilds only the app (seconds for small changes, a few minutes after large ones), refreshes the shortcuts and opens FrameTrail. Close FrameTrail first.
+- The full `.\scripts\build.ps1` also builds and runs all test programs; use it to check changes, not to open the app.
+
 ## Use the app
 
-1. Open a video or image in **Preview**, or choose **Video analysis** and drop in a recording.
-2. Analyse it, then review each object's appearances with first/last timestamps and thumbnails.
-3. Save the analysis or export CSV. Draw a line in Preview to count crossings.
+1. Start on **Home**: drop a video or photo, or pick a tool. Recent files are listed there.
+2. **Preview** plays it with live detection; drag the timeline to jump, click an object type under *In view* to focus on it, Ctrl+S saves a snapshot. Draw a line to count crossings.
+3. **Analysis** scans a whole video once: object chips, a timeline of appearances and thumbnails. Save the analysis or export CSV.
 
 ## Build (Windows x64)
 
@@ -18,7 +24,7 @@ Needs Visual Studio 2022 C++ tools and CMake 3.25+.
 .\scripts\fetch-dependencies.ps1
 .\scripts\fetch-model.ps1 -Model all
 .\scripts\build.ps1
-.\build\windows-msvc\Release\frametrail-desktop.exe
+.\scripts\install-shortcut.ps1
 ```
 
 Optional GPU support: run `.\scripts\fetch-gpu.ps1`, rebuild, then pick **GPU · CPU fallback** in the app. More detail is in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).

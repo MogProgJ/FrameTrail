@@ -1,5 +1,6 @@
 #include "preview_window.hpp"
 #include "cached_playback_window.hpp"
+#include "studio_controls.hpp"
 #include <QApplication>
 #include <QTimer>
 #include <QComboBox>
@@ -16,6 +17,7 @@ int main(int argc, char* argv[]) {
     app.styleHints()->setColorScheme(Qt::ColorScheme::Dark);
     app.setApplicationName(QStringLiteral("FrameTrail"));
     app.setOrganizationName(QStringLiteral("FrameTrail")); // Per-user settings such as recent files.
+    app.setWindowIcon(app_icon());
     PreviewWindow window;
     auto arguments = app.arguments();
     const bool smooth_mode=arguments.removeAll(QStringLiteral("--smooth-rf-experimental"))>0;

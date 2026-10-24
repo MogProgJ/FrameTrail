@@ -5,3 +5,6 @@
 *.sh text eol=lf
 *.py text eol=lf
 /training/** text eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ico binary
