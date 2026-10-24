@@ -17,6 +17,7 @@ class QComboBox;
 class QPropertyAnimation;
 class QStackedWidget;
 class QShortcut;
+class QPainter;
 class SavedRunWindow;
 class PlaybackWorkspace;
 class LiveWindow;
@@ -34,6 +35,12 @@ public:
     void set_empty_text(QString text) {empty_text_=std::move(text);update();}
     void set_empty_icon(QString icon) {empty_icon_=std::move(icon);update();} // Fluent icon name, see studio_controls.hpp
     void set_temporal_style(bool enabled) {temporal_style_=enabled;update();}
+    // Show only one object type; other boxes fade. Empty shows all.
+    void set_focus_class(std::optional<int> id) {focus_class_=id;update();}
+    [[nodiscard]] std::optional<int> focus_class() const {return focus_class_;}
+    void set_ambient(bool enabled) {ambient_=enabled;update();} // Frame colours glow around the picture.
+    // The current frame with boxes, labels, trails and counting line, at the frame's own resolution.
+    [[nodiscard]] QImage annotated_image() const;
     std::function<void(frametrail::CountingLine)> line_selected;
     std::function<void()> line_cancelled;
     [[nodiscard]] const QImage& image() const { return image_; }
@@ -45,7 +52,11 @@ protected:
     void mousePressEvent(QMouseEvent*) override;
 private:
     QRect image_rect() const;
+    void draw_overlays(QPainter& painter,const QRect& target) const;
     QImage image_;
+    QImage glow_; // A few pixels wide; scaled up smoothly it becomes the ambient glow.
+    std::optional<int> focus_class_;
+    bool ambient_{true};
     std::vector<frametrail::Detection> objects_;
     std::vector<frametrail::TrackedObject> tracks_;
     std::optional<frametrail::CountingLine> line_;

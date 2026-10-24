@@ -73,6 +73,8 @@ inline QString frametrail_theme() {
         QLabel#cardTitle { font-size:15px; font-weight:600; color:@text; }
         QLabel[role="time"] { color:@textSecondary; font-size:12px; min-width:34px; qproperty-alignment:AlignCenter; }
         QLabel#detectorStatus { color:@textTertiary; font-size:12px; }
+        QFrame#toast { background:#2c2c2c; border:1px solid #454545; border-radius:8px; }
+        QLabel#inViewSummary a { text-decoration:none; }
         QFrame#statusBar { background:@pane; border:none; border-top:1px solid @stroke; }
         QFrame#dropZone { background:#202020; border:2px dashed #3d3d3d; border-radius:12px; }
         QPushButton[role="rail"] { min-width:68px; max-width:68px; min-height:58px; max-height:58px; padding:0; border:none; background:transparent; }
@@ -82,6 +84,7 @@ inline QString frametrail_theme() {
         QPushButton[role="chip"] { background:@control; border:1px solid @strokeControl; border-radius:12px; padding:3px 10px; min-height:16px; font-size:12px; }
         QPushButton[role="chip"]:hover { background:@controlHover; }
         QSlider { min-height:22px; }
+        QSlider#timeline { min-height:38px; }
         QSlider::groove:horizontal { height:4px; background:#3d3d3d; border-radius:2px; }
         QSlider::sub-page:horizontal { background:@accent; border-radius:2px; }
         QSlider::add-page:horizontal { background:#3d3d3d; border-radius:2px; }

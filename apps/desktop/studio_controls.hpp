@@ -15,6 +15,8 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QHBoxLayout>
+#include <QGraphicsOpacityEffect>
+#include <QPropertyAnimation>
 
 // Fluent UI System Icons (see fluent_icons.hpp), parsed once into 20 x 20 painter paths.
 inline const QPainterPath& fluent_path(QString name) {
@@ -74,6 +76,27 @@ inline void studio_button(QPushButton* button,const QString& icon) {
 inline QLabel* brand_mark(int size=24) {
     auto* mark=new QLabel;mark->setPixmap(fluent_pixmap(QStringLiteral("brand"),ft::ui::accent(),size));mark->setFixedSize(size+6,size+6);
     mark->setAlignment(Qt::AlignCenter);return mark;
+}
+// Short confirmation at the bottom of a window that fades away by itself.
+inline void show_toast(QWidget* window,const QString& text,const QString& icon=QStringLiteral("check")) {
+    if(!window)return;
+    if(auto* old=window->findChild<QFrame*>(QStringLiteral("toast"),Qt::FindDirectChildrenOnly))old->deleteLater();
+    auto* toast=new QFrame(window);toast->setObjectName(QStringLiteral("toast"));toast->setAttribute(Qt::WA_TransparentForMouseEvents);
+    auto* layout=new QHBoxLayout(toast);layout->setContentsMargins(14,10,16,10);layout->setSpacing(10);
+    auto* mark=new QLabel;mark->setPixmap(fluent_pixmap(icon,ft::ui::success,18));layout->addWidget(mark);
+    auto* label=new QLabel(text);label->setTextFormat(Qt::PlainText);layout->addWidget(label);
+    toast->adjustSize();toast->move((window->width()-toast->width())/2,window->height()-toast->height()-48);toast->show();toast->raise();
+    auto* effect=new QGraphicsOpacityEffect(toast);toast->setGraphicsEffect(effect);
+    auto* fade=new QPropertyAnimation(effect,"opacity",toast);fade->setDuration(3200);
+    fade->setKeyValueAt(0,0.);fade->setKeyValueAt(.06,1.);fade->setKeyValueAt(.85,1.);fade->setKeyValueAt(1,0.);
+    QObject::connect(fade,&QPropertyAnimation::finished,toast,&QObject::deleteLater);fade->start(QAbstractAnimation::DeleteWhenStopped);
+}
+// Fade a page in when switching sections.
+inline void fade_in(QWidget* page,int duration=170) {
+    if(!page || page->graphicsEffect())return;
+    auto* effect=new QGraphicsOpacityEffect(page);effect->setOpacity(0);page->setGraphicsEffect(effect);
+    auto* fade=new QPropertyAnimation(effect,"opacity",page);fade->setDuration(duration);fade->setStartValue(0.);fade->setEndValue(1.);fade->setEasingCurve(QEasingCurve::OutCubic);
+    QObject::connect(fade,&QPropertyAnimation::finished,page,[page]{page->setGraphicsEffect(nullptr);});fade->start(QAbstractAnimation::DeleteWhenStopped);
 }
 // Standalone windows show the brand mark; the shared workspace hides it when embedding a page.
 inline void studio_heading(QHBoxLayout* header) {header->insertWidget(0,brand_mark());}

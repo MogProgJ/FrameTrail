@@ -11,6 +11,9 @@
 #include "home_workspace.hpp"
 #include "recent_files.hpp"
 #include <QSlider>
+#include "timeline_slider.hpp"
+#include <QDir>
+#include <QStandardPaths>
 #include <QSignalBlocker>
 #include <map>
 #include <QStackedWidget>
@@ -80,6 +83,7 @@ FrameCanvas::FrameCanvas(QWidget* parent) : QWidget(parent) {
 void FrameCanvas::set_image(QImage image, std::vector<frametrail::Detection> objects,
     std::vector<frametrail::TrackedObject> tracks, std::optional<frametrail::CountingLine> line) {
     image_ = std::move(image);
+    glow_ = image_.isNull() ? QImage{} : image_.scaled(96,54,Qt::IgnoreAspectRatio,Qt::FastTransformation).scaled(24,14,Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
     objects_ = std::move(objects);
     tracks_ = std::move(tracks);
     line_ = std::move(line);
@@ -145,8 +149,40 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
     }
     const QRect target = image_rect();
     painter.setRenderHint(QPainter::SmoothPixmapTransform);
+    if(ambient_ && !glow_.isNull()) {
+        painter.setOpacity(.6);painter.drawImage(QRectF(rect()).adjusted(-40,-40,40,40),glow_);painter.setOpacity(1);
+        painter.fillRect(rect(),QColor(17,17,17,150));
+    }
     painter.drawImage(target, image_);
     painter.setClipRect(target);
+    draw_overlays(painter,target);
+    if (selecting_line_) {
+        const auto screen=[&](frametrail::Point p){return QPointF(target.left()+p.x*target.width(),target.top()+p.y*target.height());};
+        auto font=painter.font();font.setPixelSize(13);font.setWeight(QFont::DemiBold);painter.setFont(font);
+        if (first_point_) {
+            const QRectF circle(screen(*first_point_).x()-9,screen(*first_point_).y()-9,18,18);painter.setPen(Qt::NoPen);painter.setBrush(ft::ui::line_color);painter.drawEllipse(circle);
+            painter.setPen(QColor("#101010"));painter.drawText(circle,Qt::AlignCenter,QStringLiteral("A"));
+        }
+        const auto text=first_point_ ? QStringLiteral("Click point B   ·   right-click to cancel") : QStringLiteral("Click point A   ·   right-click to cancel");
+        font.setWeight(QFont::Normal);painter.setFont(font);
+        const auto size=painter.fontMetrics().size(Qt::TextSingleLine,text);
+        const QRectF banner(target.left()+12,target.top()+12,size.width()+24,size.height()+12);
+        painter.setPen(Qt::NoPen);painter.setBrush(QColor(20,20,20,225));painter.drawRoundedRect(banner,6,6);
+        painter.setPen(ft::ui::line_color);painter.drawText(banner,Qt::AlignCenter,text);
+    }
+}
+
+QImage FrameCanvas::annotated_image() const {
+    if(image_.isNull())return {};
+    QImage out=image_.convertToFormat(QImage::Format_RGB32);
+    QPainter painter(&out);painter.setRenderHint(QPainter::Antialiasing);
+    // Draw overlays as they look on a ~1280 px wide view, so lines and labels stay readable on large frames.
+    const double scale=std::max(1.,out.width()/1280.);painter.scale(scale,scale);
+    draw_overlays(painter,QRect(0,0,int(out.width()/scale),int(out.height()/scale)));
+    return out;
+}
+
+void FrameCanvas::draw_overlays(QPainter& painter,const QRect& target) const {
     auto label_font=painter.font();label_font.setPixelSize(12);label_font.setWeight(QFont::DemiBold);painter.setFont(label_font);
     const double sx=double(target.width())/image_.width(), sy=double(target.height())/image_.height();
     for (const auto& object:objects_) {
@@ -154,8 +190,13 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
         for(const auto& track:tracks_)if(track.detection.class_id==object.class_id && track.detection.left==object.left &&
             track.detection.top==object.top && track.detection.right==object.right && track.detection.bottom==object.bottom){matched=&track;break;}
         const bool tentative=temporal_style_ && matched && !matched->confirmed;
-        const QColor color=temporal_style_ && matched ? (matched->confirmed ? ft::ui::category_color(int(matched->id%97)):QColor("#a6a6a6")):
+        QColor color=temporal_style_ && matched ? (matched->confirmed ? ft::ui::category_color(int(matched->id%97)):QColor("#a6a6a6")):
             ft::ui::category_color(object.class_id);
+        if(focus_class_ && object.class_id!=*focus_class_) {
+            color.setAlpha(70);painter.setPen(QPen(color,1.5));painter.setBrush(Qt::NoBrush);
+            painter.drawRoundedRect(QRectF(target.left()+object.left*sx,target.top()+object.top*sy,(object.right-object.left)*sx,(object.bottom-object.top)*sy),4,4);
+            continue;
+        }
         const QRectF box(target.left()+object.left*sx, target.top()+object.top*sy,
             (object.right-object.left)*sx, (object.bottom-object.top)*sy);
         auto fill=color;fill.setAlpha(22);
@@ -179,6 +220,7 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
         return QPointF(target.left()+p.x*target.width(),target.top()+p.y*target.height());
     };
     for (const auto& track : tracks_) {
+        if(focus_class_ && track.detection.class_id!=*focus_class_)continue;
         auto color=ft::ui::category_color(int(track.id%97));
         for (std::size_t i=1;i<track.trail.size();++i) {
             if(temporal_style_)color.setAlpha(50+int(180*i/(track.trail.size()-1)));
@@ -198,15 +240,6 @@ void FrameCanvas::paintEvent(QPaintEvent*) {
         marker(screen(line_->a),QStringLiteral("A"));marker(screen(line_->b),QStringLiteral("B"));
         marker(screen({middle.x-dy/norm*0.05,middle.y+dx/norm*0.05}),QStringLiteral("+"));
         marker(screen({middle.x+dy/norm*0.05,middle.y-dx/norm*0.05}),QStringLiteral("−"));
-    }
-    if (selecting_line_) {
-        if (first_point_) marker(screen(*first_point_),QStringLiteral("A"));
-        const auto text=first_point_ ? QStringLiteral("Click point B   ·   right-click to cancel") : QStringLiteral("Click point A   ·   right-click to cancel");
-        auto font=painter.font();font.setPixelSize(13);painter.setFont(font);
-        const auto size=painter.fontMetrics().size(Qt::TextSingleLine,text);
-        const QRectF banner(target.left()+12,target.top()+12,size.width()+24,size.height()+12);
-        painter.setPen(Qt::NoPen);painter.setBrush(QColor(20,20,20,225));painter.drawRoundedRect(banner,6,6);
-        painter.setPen(ft::ui::line_color);painter.drawText(banner,Qt::AlignCenter,text);
     }
 }
 
@@ -306,6 +339,26 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     connect(timeline_,&QSlider::sliderMoved,this,[this](int value){
         if(media_duration_)position_label_->setText(clock_text(std::chrono::microseconds(std::int64_t(media_duration_->count()*(value/1000.))))); });
     connect(timeline_,&QSlider::sliderReleased,this,[this]{seek_to(timeline_->value()/1000.);});
+    connect(in_view_,&QLabel::linkActivated,this,[this](const QString& link){
+        const int id=link.toInt();
+        canvas_->set_focus_class(canvas_->focus_class()==id ? std::nullopt : std::optional<int>(id));
+        if(displayed_frame_)canvas_->update();
+    });
+    auto* snapshot=findChild<QPushButton*>(QStringLiteral("snapshot"));
+    const auto save_snapshot=[this]{
+        const auto image=canvas_->annotated_image();if(image.isNull())return;
+        const auto folder=QDir(QStandardPaths::writableLocation(QStandardPaths::PicturesLocation)).filePath(QStringLiteral("FrameTrail"));
+        const auto offset=displayed_frame_ && displayed_frame_->timestamp && media_start_ ? *displayed_frame_->timestamp-*media_start_ : std::chrono::microseconds{};
+        const auto seconds=offset.count()/1000000;
+        auto name=QStringLiteral("%1-%2m%3s").arg(QFileInfo(source_).completeBaseName()).arg(seconds/60).arg(seconds%60,2,10,QChar('0'));
+        QString path=QDir(folder).filePath(name+QStringLiteral(".png"));
+        for(int n=2;QFileInfo::exists(path);++n)path=QDir(folder).filePath(QStringLiteral("%1 (%2).png").arg(name).arg(n));
+        if(QDir().mkpath(folder) && image.save(path))show_toast(this,QStringLiteral("Snapshot saved to %1").arg(QDir::toNativeSeparators(path)));
+        else show_toast(this,QStringLiteral("Could not save the snapshot in %1").arg(QDir::toNativeSeparators(folder)),QStringLiteral("warning"));
+    };
+    connect(snapshot,&QPushButton::clicked,this,save_snapshot);
+    auto* snapshot_shortcut=new QShortcut(QKeySequence::Save,this);
+    connect(snapshot_shortcut,&QShortcut::activated,this,[this,save_snapshot]{if(workspace_section_==0)save_snapshot();});
     for(auto* box:{static_cast<QWidget*>(model_box_),static_cast<QWidget*>(backend_box_)})connect(qobject_cast<QComboBox*>(box),&QComboBox::currentIndexChanged,this,[this]{update_detector_status();});
     connect(confidence_box_,&QDoubleSpinBox::valueChanged,this,[this]{update_detector_status();});
     update_detector_status();
@@ -323,6 +376,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
 
 void PreviewWindow::activate_workspace(int section) {
     if(workspace_close_requested_ || section<0 || section>5)return;
+    const bool switching=section!=workspace_section_;
     if(section!=workspace_section_){
         if(workspace_section_==0 && playing_)toggle_playback();
         if(workspace_section_==1 && analysis_workspace_)analysis_workspace_->suspend_playback();
@@ -385,7 +439,7 @@ void PreviewWindow::activate_workspace(int section) {
         }
         page=home_workspace_;
     }
-    workspace_section_=section;workspace_pages_->setCurrentWidget(page);page->show();
+    workspace_section_=section;workspace_pages_->setCurrentWidget(page);page->show();if(switching)fade_in(page);
     const QStringList labels{QStringLiteral("Preview"),QStringLiteral("Analysis"),QStringLiteral("Playback"),QStringLiteral("Camera"),QStringLiteral("Guide"),QStringLiteral("Home")};
     const QStringList buttons{QStringLiteral("previewWorkspace"),QStringLiteral("savedAnalysis"),QStringLiteral("smoothPlayback"),QStringLiteral("liveCamera"),QStringLiteral("quickGuide"),QStringLiteral("homeWorkspace")};
     findChild<QPushButton*>(buttons[section])->setChecked(true);
@@ -455,6 +509,7 @@ void PreviewWindow::open_file(const QString& path) {
     activate_workspace(0);
     remember_file(path);
     pending_source_ = path;pending_start_.reset();pause_after_seek_=false;media_start_.reset();media_duration_.reset();
+    static_cast<TimelineSlider*>(timeline_)->reset_activity();canvas_->set_focus_class(std::nullopt);
     timer_.setInterval(10);
     session_.stop();
     next_.reset();
@@ -503,6 +558,7 @@ void PreviewWindow::update_controls() {
     line_button_->setEnabled(tracking && displayed_frame_.has_value() && !updating_);
     timer_.setInterval(playing_ || updating_ || !pending_source_.isEmpty() || closing_ ? 10:100);
     if(timeline_)update_timeline();
+    if(auto* snapshot=findChild<QPushButton*>(QStringLiteral("snapshot")))snapshot->setEnabled(!canvas_->image().isNull());
 }
 
 void PreviewWindow::reconfigure_analysis() {
@@ -580,10 +636,20 @@ void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
         std::map<int,int> counts;for(const auto& object:wrapped.detection->objects)++counts[object.class_id];
         std::vector<std::pair<int,int>> ordered(counts.begin(),counts.end());
         std::stable_sort(ordered.begin(),ordered.end(),[](const auto& a,const auto& b){return a.second>b.second;});
+        const auto focus=canvas_->focus_class();
         QStringList parts;
-        for(const auto& [id,count]:ordered)parts<<QStringLiteral("<span style=\"color:%1\">&#9679;</span>&nbsp;<span style=\"color:%2\">%3</span>&nbsp;<b style=\"color:%2\">%4</b>")
-            .arg(ft::ui::category_color(id).name(),ft::ui::text.name(),QString::fromUtf8(frametrail::class_name(id).data()).toHtmlEscaped()).arg(count);
-        in_view_->setText(parts.join(QStringLiteral("&nbsp;&nbsp;&nbsp; ")));
+        for(const auto& [id,count]:ordered) {
+            const bool dimmed=focus && *focus!=id;
+            parts<<QStringLiteral("<a href=\"%5\" style=\"text-decoration:none\"><span style=\"color:%1\">&#9679;</span>&nbsp;<span style=\"color:%2\">%3</span>&nbsp;<b style=\"color:%2\">%4</b></a>")
+                .arg(ft::ui::category_color(id).name(),(dimmed ? ft::ui::text_disabled : ft::ui::text).name(),QString::fromUtf8(frametrail::class_name(id).data()).toHtmlEscaped()).arg(count).arg(id);
+        }
+        auto html=parts.join(QStringLiteral("&nbsp;&nbsp;&nbsp; "));
+        if(focus)html+=QStringLiteral("<br><span style=\"color:%1;font-size:12px\">Showing only %2 · click it again to show all</span>")
+            .arg(ft::ui::text_tertiary.name(),QString::fromUtf8(frametrail::class_name(*focus).data()).toHtmlEscaped());
+        in_view_->setText(html);
+        if(media_duration_ && media_start_ && frame.timestamp && media_duration_->count()>0)
+            static_cast<TimelineSlider*>(timeline_)->add_activity(double((*frame.timestamp-*media_start_).count())/double(media_duration_->count()),
+                int(wrapped.detection->objects.size()),ordered.front().first);
     }
     details_label_->setText(QStringLiteral("%1×%2  ·  %3")
         .arg(frame.width).arg(frame.height)

@@ -1,5 +1,6 @@
 #include "workspace_chrome.hpp"
 #include "studio_controls.hpp"
+#include "timeline_slider.hpp"
 #include <QMainWindow>
 #include <QFrame>
 #include <QLabel>
@@ -75,7 +76,8 @@ void install_workspace_chrome(QMainWindow* window) {
     auto* group=new QButtonGroup(window);group->setExclusive(true);
     const auto add_nav=[&](QPushButton* button,const QString& label,const QString& icon,const QString& hint){
         button->setText(label);button->setToolTip(hint);button->setProperty("role","rail");button->setProperty("railIcon",icon);button->setCheckable(true);
-        button->setFixedSize(68,58);button->setCursor(Qt::PointingHandCursor);button->setFocusPolicy(Qt::NoFocus); // Ctrl+1–4, Ctrl+H and Ctrl+K switch sections from the keyboard.button->setAttribute(Qt::WA_Hover);new RailPainter(button);
+        button->setFixedSize(68,58);button->setCursor(Qt::PointingHandCursor);button->setFocusPolicy(Qt::NoFocus);
+        button->setAttribute(Qt::WA_Hover);new RailPainter(button); // Ctrl+1–4, Ctrl+H and Ctrl+K switch sections from the keyboard.
         group->addButton(button,group->buttons().size());nav->addWidget(button,0,Qt::AlignHCenter);
     };
     auto* home=new QPushButton;home->setObjectName(QStringLiteral("homeWorkspace"));
@@ -113,7 +115,9 @@ void install_workspace_chrome(QMainWindow* window) {
     auto* toggle=new QPushButton;toggle->setObjectName(QStringLiteral("toggleInspector"));toggle->setCheckable(true);toggle->setChecked(true);
     toggle->setProperty("role","subtle");toggle->setText(QStringLiteral("Settings"));studio_button(toggle,QStringLiteral("inspector"));
     toggle->setToolTip(QStringLiteral("Show or hide detection and tracking settings · Ctrl+I"));
-    heading->addWidget(toggle);heading->addWidget(open);
+    auto* snapshot=new QPushButton(QStringLiteral("Snapshot"));snapshot->setObjectName(QStringLiteral("snapshot"));snapshot->setProperty("role","subtle");
+    studio_button(snapshot,QStringLiteral("image"));snapshot->setToolTip(QStringLiteral("Save this frame with its boxes as a PNG in Pictures\\FrameTrail · Ctrl+S"));snapshot->setEnabled(false);
+    heading->addWidget(snapshot);heading->addWidget(toggle);heading->addWidget(open);
     auto* splitter=new QSplitter(Qt::Horizontal);splitter->setObjectName(QStringLiteral("workspaceSplitter"));splitter->setHandleWidth(12);splitter->setChildrenCollapsible(false);
     workspace->removeWidget(video);workspace->removeWidget(scroll);splitter->addWidget(video);splitter->addWidget(scroll);
     splitter->setStretchFactor(0,1);splitter->setStretchFactor(1,0);splitter->setSizes({860,300});
@@ -158,6 +162,8 @@ void install_workspace_chrome(QMainWindow* window) {
     auto* in_view_title=new QLabel(QStringLiteral("In view"));in_view_title->setProperty("role","section");
     auto* in_view=new QLabel(QStringLiteral("Open media to see detected objects here."));in_view->setObjectName(QStringLiteral("inViewSummary"));
     in_view->setWordWrap(true);in_view->setProperty("role","muted");in_view->setTextFormat(Qt::RichText);in_view->setMinimumHeight(44);
+    in_view->setTextInteractionFlags(Qt::LinksAccessibleByMouse);in_view->setOpenExternalLinks(false);
+    in_view->setToolTip(QStringLiteral("Click an object type to show only that type; click it again to show all"));
     auto* in_view_divider=new QFrame;in_view_divider->setObjectName(QStringLiteral("divider"));
     options->insertWidget(0,in_view_title);options->insertWidget(1,in_view);options->insertSpacing(2,4);options->insertWidget(3,in_view_divider);
     QObject::connect(toggle,&QPushButton::toggled,scroll,&QWidget::setVisible);
@@ -169,7 +175,7 @@ void install_workspace_chrome(QMainWindow* window) {
     // Timeline: position, seek slider and duration between the buttons and the end of the bar.
     playback->removeWidget(state);for(int i=playback->count();i-->0;)if(playback->itemAt(i)->spacerItem())delete playback->takeAt(i);
     auto* position=new QLabel(QStringLiteral("0:00"));position->setObjectName(QStringLiteral("timePosition"));position->setProperty("role","time");
-    auto* timeline=new QSlider(Qt::Horizontal);timeline->setObjectName(QStringLiteral("timeline"));timeline->setRange(0,1000);timeline->setEnabled(false);
+    auto* timeline=new TimelineSlider;timeline->setObjectName(QStringLiteral("timeline"));timeline->setRange(0,1000);timeline->setEnabled(false);
     timeline->setAccessibleName(QStringLiteral("Video position"));timeline->setToolTip(QStringLiteral("Drag or click to jump. Tracking counts restart after a jump."));
     auto* duration=new QLabel(QStringLiteral("0:00"));duration->setObjectName(QStringLiteral("timeDuration"));duration->setProperty("role","time");
     playback->addSpacing(8);playback->addWidget(position);playback->addWidget(timeline,1);playback->addWidget(duration);
