@@ -29,16 +29,17 @@ CachedPlaybackWindow::CachedPlaybackWindow(const QString& source,frametrail::Det
     auto* settings=new QLabel(QStringLiteral("%1 · %2 · Confidence %3% · Detection overlays")
         .arg(QFileInfo(source).fileName()).arg(QString::fromUtf8(frametrail::model_name(options.variant).data())).arg(qRound(options.confidence*100)));
     settings->setTextFormat(Qt::PlainText);settings->setWordWrap(true);settings->setProperty("role","muted");layout->addWidget(settings);
-    canvas_=new FrameCanvas;canvas_->set_empty_text(QStringLiteral("Preparing detections…\nPlayback begins when the video is ready."));layout->addWidget(canvas_,1);
+    canvas_=new FrameCanvas;canvas_->set_empty_icon(QStringLiteral("playback"));canvas_->set_empty_text(QStringLiteral("Preparing detections…\nPlayback begins when the video is ready."));layout->addWidget(canvas_,1);
     progress_=new QProgressBar;progress_->setTextVisible(false);progress_->setRange(0,0);progress_->setMaximumHeight(7);layout->addWidget(progress_);
     status_=new QLabel(QStringLiteral("Preparing video…"));status_->setObjectName(QStringLiteral("cacheStatus"));status_->setTextFormat(Qt::PlainText);status_->setWordWrap(true);layout->addWidget(status_);
     auto* controls=new QHBoxLayout;play_=new QPushButton(QStringLiteral("Pause"));play_->setObjectName(QStringLiteral("cachePlay"));play_->setEnabled(false);controls->addWidget(play_);
     replay_=new QPushButton(QStringLiteral("Replay"));replay_->setObjectName(QStringLiteral("cacheReplay"));replay_->setEnabled(false);controls->addWidget(replay_);
     cancel_=new QPushButton(QStringLiteral("Cancel preparation"));cancel_->setObjectName(QStringLiteral("cacheCancel"));controls->addWidget(cancel_);controls->addStretch();auto* transport=new QFrame;transport->setObjectName(QStringLiteral("transportBar"));transport->setLayout(controls);controls->setContentsMargins(10,9,10,9);layout->addWidget(transport);studio_button(play_,"play");studio_button(replay_,"replay");setCentralWidget(shell);
+    studio_button(play_,QStringLiteral("pause"));studio_button(replay_,QStringLiteral("replay"));studio_button(cancel_,QStringLiteral("dismiss"));
     connect(play_,&QPushButton::clicked,this,[this]{
         const auto now=std::chrono::steady_clock::now();playing_=!playing_;
         if(playing_ && clock_started_)clock_+=now-paused_;else paused_=now;
-        play_->setText(playing_?QStringLiteral("Pause"):QStringLiteral("Play"));
+        play_->setText(playing_?QStringLiteral("Pause"):QStringLiteral("Play"));studio_button(play_,playing_?QStringLiteral("pause"):QStringLiteral("play"));
         if(!playing_)status_->setText(QStringLiteral("Paused · cached detections"));
     });
     connect(replay_,&QPushButton::clicked,this,[this]{decoder_.stop();playing_=false;ready_=false;restart_=true;next_.reset();overlays_.reset();play_->setEnabled(false);replay_->setEnabled(false);});

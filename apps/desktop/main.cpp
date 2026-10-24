@@ -4,11 +4,16 @@
 #include <QTimer>
 #include <QComboBox>
 #include <QPushButton>
+#include <QFontDatabase>
+#include <QStyleHints>
 
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
     app.setStyle(QStringLiteral("Fusion"));
-    app.setFont(QFont(QStringLiteral("Segoe UI"),10));
+    // Windows 11 type face when installed (Windows 10 falls back to Segoe UI); dark title bar and palette.
+    const auto family=QFontDatabase::hasFamily(QStringLiteral("Segoe UI Variable Text")) ? QStringLiteral("Segoe UI Variable Text") : QStringLiteral("Segoe UI");
+    app.setFont(QFont(family,10));
+    app.styleHints()->setColorScheme(Qt::ColorScheme::Dark);
     app.setApplicationName(QStringLiteral("FrameTrail"));
     PreviewWindow window;
     auto arguments = app.arguments();

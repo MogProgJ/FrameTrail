@@ -106,84 +106,93 @@ void FrameCanvas::mousePressEvent(QMouseEvent* event) {
 void FrameCanvas::paintEvent(QPaintEvent*) {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
-    QPainterPath surface;surface.addRoundedRect(QRectF(rect()).adjusted(1,1,-1,-1),12,12);
-    painter.fillPath(surface,QColor("#17181c"));painter.setPen(QPen(QColor("#2b2c33"),1));painter.drawPath(surface);
+    QPainterPath surface;surface.addRoundedRect(QRectF(rect()).adjusted(.5,.5,-.5,-.5),8,8);
+    painter.fillPath(surface,ft::ui::canvas);painter.setPen(QPen(ft::ui::stroke,1));painter.drawPath(surface);
     painter.setClipPath(surface);
     if (image_.isNull()) {
-        const auto center=rect().center();
-        const QRectF icon(center.x()-32,center.y()-108,64,64);
-        painter.setPen(QPen(QColor("#45424f"),1));painter.setBrush(QColor("#25232e"));painter.drawRoundedRect(icon,17,17);
-        painter.setPen(QPen(QColor("#c4bcfa"),2,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin));
-        const int cx=center.x(),cy=center.y()-76;
-        painter.drawLine(cx-12,cy-4,cx-12,cy+10);painter.drawLine(cx-12,cy+10,cx+12,cy+10);painter.drawLine(cx+12,cy+10,cx+12,cy-4);
-        painter.drawLine(cx,cy+2,cx,cy-13);painter.drawLine(cx,cy-13,cx-5,cy-8);painter.drawLine(cx,cy-13,cx+5,cy-8);
         const bool preview=empty_text_==QStringLiteral("Open an image or video to begin");
         const auto lines=empty_text_.split('\n');
-        auto title_font=painter.font();title_font.setPixelSize(width()<540?19:23);title_font.setWeight(QFont::DemiBold);painter.setFont(title_font);painter.setPen(QColor("#e9e8ee"));
-        painter.drawText(QRect(22,center.y()-18,width()-44,64),Qt::AlignHCenter|Qt::AlignTop|Qt::TextWordWrap,preview?QStringLiteral("Open a video or image"):lines.first());
-        auto hint_font=painter.font();hint_font.setPixelSize(13);hint_font.setWeight(QFont::Normal);painter.setFont(hint_font);painter.setPen(QColor("#a3a0ad"));
-        const auto hint=preview?QStringLiteral("Drop a file into your workspace, or choose Open media."):lines.mid(1).join('\n');
-        painter.drawText(QRect(28,center.y()+32,width()-56,68),Qt::AlignHCenter|Qt::AlignTop|Qt::TextWordWrap,hint);
-        if(preview){painter.setPen(QColor("#767480"));hint_font.setPixelSize(11);painter.setFont(hint_font);painter.drawText(QRect(20,center.y()+87,width()-40,25),Qt::AlignCenter,QStringLiteral("MP4 · MOV · MKV · Images    /    Ctrl+O"));}
+        const auto title=preview?QStringLiteral("Open a video or image"):lines.first();
+        const auto hint=preview?QStringLiteral("Drop a file here, or choose Open media."):lines.mid(1).join('\n');
+        const auto center=rect().center();
+        if(preview && width()>360 && height()>260) {
+            const QRectF zone=QRectF(rect()).adjusted(24,24,-24,-24);
+            painter.setPen(QPen(QColor("#3a3a3a"),1.2,Qt::DashLine));painter.setBrush(Qt::NoBrush);painter.drawRoundedRect(zone,8,8);
+        }
+        const QRectF badge(center.x()-28,center.y()-104,56,56);
+        painter.setPen(Qt::NoPen);painter.setBrush(QColor("#232323"));painter.drawRoundedRect(badge,12,12);
+        painter.drawPixmap(badge.center()-QPointF(14,14),fluent_pixmap(empty_icon_,ft::ui::accent(),28));
+        auto title_font=painter.font();title_font.setPixelSize(width()<540?18:20);title_font.setWeight(QFont::DemiBold);painter.setFont(title_font);painter.setPen(ft::ui::text);
+        painter.drawText(QRect(22,center.y()-30,width()-44,32),Qt::AlignHCenter|Qt::AlignTop|Qt::TextWordWrap,title);
+        auto hint_font=painter.font();hint_font.setPixelSize(14);hint_font.setWeight(QFont::Normal);painter.setFont(hint_font);painter.setPen(ft::ui::text_secondary);
+        painter.drawText(QRect(28,center.y()+8,width()-56,64),Qt::AlignHCenter|Qt::AlignTop|Qt::TextWordWrap,hint);
+        if(preview){painter.setPen(ft::ui::text_tertiary);hint_font.setPixelSize(12);painter.setFont(hint_font);painter.drawText(QRect(20,center.y()+60,width()-40,22),Qt::AlignCenter,QStringLiteral("MP4 · MOV · MKV · AVI · WebM · JPG · PNG     Ctrl+O"));}
         return;
     }
     const QRect target = image_rect();
     painter.setRenderHint(QPainter::SmoothPixmapTransform);
     painter.drawImage(target, image_);
     painter.setClipRect(target);
+    auto label_font=painter.font();label_font.setPixelSize(12);label_font.setWeight(QFont::DemiBold);painter.setFont(label_font);
     const double sx=double(target.width())/image_.width(), sy=double(target.height())/image_.height();
     for (const auto& object:objects_) {
         const frametrail::TrackedObject* matched{};
         for(const auto& track:tracks_)if(track.detection.class_id==object.class_id && track.detection.left==object.left &&
             track.detection.top==object.top && track.detection.right==object.right && track.detection.bottom==object.bottom){matched=&track;break;}
-        const QColor color=temporal_style_ && matched ? (matched->confirmed ? QColor::fromHsv(int((matched->id*67)%360),150,230):QColor("#a0adbf")):
-            QColor::fromHsv((object.class_id*47+150)%360,180,245);
+        const bool tentative=temporal_style_ && matched && !matched->confirmed;
+        const QColor color=temporal_style_ && matched ? (matched->confirmed ? ft::ui::category_color(int(matched->id%97)):QColor("#a6a6a6")):
+            ft::ui::category_color(object.class_id);
         const QRectF box(target.left()+object.left*sx, target.top()+object.top*sy,
             (object.right-object.left)*sx, (object.bottom-object.top)*sy);
-        painter.setPen(QPen(color,2,temporal_style_ && matched && !matched->confirmed ? Qt::DashLine:Qt::SolidLine));
-        painter.setBrush(Qt::NoBrush);
-        painter.drawRoundedRect(box,3,3);
-        auto label=QStringLiteral("%1 %2%")
+        auto fill=color;fill.setAlpha(22);
+        painter.setPen(QPen(color,2,tentative ? Qt::DashLine:Qt::SolidLine));painter.setBrush(fill);
+        painter.drawRoundedRect(box,4,4);
+        auto label=QStringLiteral("%1  %2%")
             .arg(QString::fromUtf8(frametrail::class_name(object.class_id).data()))
             .arg(qRound(object.confidence*100));
-        if(matched)label += QStringLiteral(" #%1%2").arg(matched->id).arg(matched->confirmed ? QString{} : QStringLiteral("?"));
+        if(matched)label += QStringLiteral("  #%1%2").arg(matched->id).arg(matched->confirmed ? QString{} : QStringLiteral("?"));
         const auto text_size=painter.fontMetrics().size(Qt::TextSingleLine,label);
-        const double label_x=std::clamp(box.left(),double(target.left()),
-            std::max(double(target.left()),double(target.right()-text_size.width()-8)));
-        const double label_y=std::max(double(target.top()),box.top()-text_size.height()-6);
-        const QRectF label_box(label_x,label_y,text_size.width()+8,text_size.height()+6);
-        painter.setBrush(QColor("#ec16171d"));painter.setPen(QPen(color,1));painter.drawRoundedRect(label_box,4,4);
-        painter.setPen(QColor("#f3f1f8"));
+        const QSizeF pill(text_size.width()+12,text_size.height()+4);
+        const double label_x=std::clamp(box.left(),double(target.left()),std::max(double(target.left()),double(target.right())-pill.width()));
+        const double above=box.top()-pill.height()-3;
+        const double label_y=above>=target.top() ? above : std::min(box.top()+3,double(target.bottom())-pill.height());
+        const QRectF label_box(QPointF(label_x,label_y),pill);
+        painter.setPen(Qt::NoPen);painter.setBrush(color);painter.drawRoundedRect(label_box,4,4);
+        painter.setPen(QColor("#101010"));
         painter.drawText(label_box,Qt::AlignCenter,label);
     }
     const auto screen = [&](frametrail::Point p) {
         return QPointF(target.left()+p.x*target.width(),target.top()+p.y*target.height());
     };
-    painter.setRenderHint(QPainter::Antialiasing);
     for (const auto& track : tracks_) {
-        auto color=QColor::fromHsv(int((track.id*67)%360),150,230);
+        auto color=ft::ui::category_color(int(track.id%97));
         for (std::size_t i=1;i<track.trail.size();++i) {
             if(temporal_style_)color.setAlpha(50+int(180*i/(track.trail.size()-1)));
-            painter.setPen(QPen(color,2));painter.drawLine(screen(track.trail[i-1]),screen(track.trail[i]));
+            painter.setPen(QPen(color,2.5,Qt::SolidLine,Qt::RoundCap));painter.drawLine(screen(track.trail[i-1]),screen(track.trail[i]));
         }
     }
+    const auto marker=[&](QPointF center,const QString& text){
+        const QRectF circle(center.x()-9,center.y()-9,18,18);painter.setPen(Qt::NoPen);painter.setBrush(ft::ui::line_color);painter.drawEllipse(circle);
+        painter.setPen(QColor("#101010"));painter.drawText(circle,Qt::AlignCenter,text);
+    };
     if (line_) {
-        painter.setPen(QPen(QColor("#ffce63"),3));
+        painter.setPen(QPen(ft::ui::line_color,3,Qt::SolidLine,Qt::RoundCap));
         painter.drawLine(screen(line_->a),screen(line_->b));
-        painter.drawEllipse(screen(line_->a),4,4); painter.drawEllipse(screen(line_->b),4,4);
-        painter.drawText(screen(line_->a)+QPointF(8,-8),QStringLiteral("A"));
-        painter.drawText(screen(line_->b)+QPointF(8,-8),QStringLiteral("B"));
         const auto dx=line_->b.x-line_->a.x,dy=line_->b.y-line_->a.y;
-        const auto norm=std::hypot(dx,dy);
+        const auto norm=std::max(1e-9,std::hypot(dx,dy));
         const frametrail::Point middle{(line_->a.x+line_->b.x)/2,(line_->a.y+line_->b.y)/2};
-        painter.drawText(screen({middle.x-dy/norm*0.05,middle.y+dx/norm*0.05}),QStringLiteral("+"));
-        painter.drawText(screen({middle.x+dy/norm*0.05,middle.y-dx/norm*0.05}),QStringLiteral("−"));
+        marker(screen(line_->a),QStringLiteral("A"));marker(screen(line_->b),QStringLiteral("B"));
+        marker(screen({middle.x-dy/norm*0.05,middle.y+dx/norm*0.05}),QStringLiteral("+"));
+        marker(screen({middle.x+dy/norm*0.05,middle.y-dx/norm*0.05}),QStringLiteral("−"));
     }
     if (selecting_line_) {
-        painter.setPen(QPen(QColor("#ffce63"),2));
-        if (first_point_) painter.drawEllipse(screen(*first_point_),6,6);
-        painter.drawText(target.adjusted(12,12,-12,-12),Qt::AlignTop|Qt::AlignLeft,
-            first_point_ ? QStringLiteral("Click endpoint B • Right-click to cancel") : QStringLiteral("Click endpoint A • Right-click to cancel"));
+        if (first_point_) marker(screen(*first_point_),QStringLiteral("A"));
+        const auto text=first_point_ ? QStringLiteral("Click point B   ·   right-click to cancel") : QStringLiteral("Click point A   ·   right-click to cancel");
+        auto font=painter.font();font.setPixelSize(13);painter.setFont(font);
+        const auto size=painter.fontMetrics().size(Qt::TextSingleLine,text);
+        const QRectF banner(target.left()+12,target.top()+12,size.width()+24,size.height()+12);
+        painter.setPen(Qt::NoPen);painter.setBrush(QColor(20,20,20,225));painter.drawRoundedRect(banner,6,6);
+        painter.setPen(ft::ui::line_color);painter.drawText(banner,Qt::AlignCenter,text);
     }
 }
 
@@ -193,7 +202,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     ui.setupUi(this);
     setWindowTitle(QStringLiteral("FrameTrail — Video workspace"));
     setMinimumSize(900, 600);
-    install_studio_style();setStyleSheet(frametrail_theme()+QStringLiteral("QLabel#details { color:#92909f; font-size:11px; padding:2px; }"));
+    install_studio_style();setStyleSheet(frametrail_theme());
     ui.rootLayout->setContentsMargins(24, 22, 24, 22); ui.rootLayout->setSpacing(22);
     ui.header->setStretch(0, 1);
     ui.playback->setStretch(3, 1);
@@ -272,6 +281,7 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
         update_controls();
     };
     install_workspace_chrome(this);
+    details_label_->setText(QStringLiteral("Ctrl+O  open media   ·   Space  play or pause   ·   Ctrl+I  settings"));
     workspace_pages_=findChild<QStackedWidget*>(QStringLiteral("workspacePages"));
     connect(findChild<QPushButton*>(QStringLiteral("previewWorkspace")),&QPushButton::clicked,this,[this]{activate_workspace(0);});
     connect(findChild<QPushButton*>(QStringLiteral("quickGuide")),&QPushButton::clicked,this,[this]{activate_workspace(4);if(guide_workspace_)guide_workspace_->focus_search();});
@@ -298,7 +308,7 @@ void PreviewWindow::activate_workspace(int section) {
     QWidget* page=workspace_pages_->widget(0);
     const auto options=[this]{return frametrail::DetectorOptions{native_path(model_path_),float(confidence_box_->value()),.45f,selected_model(model_box_),selected_backend(backend_box_)};};
     const auto embed=[this](QMainWindow* window){
-        window->setParent(workspace_pages_,Qt::Widget);window->setMinimumSize(0,0);auto* layout=window->centralWidget()->layout();layout->setContentsMargins(0,0,0,0);
+        window->setParent(workspace_pages_,Qt::Widget);window->setMinimumSize(0,0);auto* layout=window->centralWidget()->layout();layout->setContentsMargins(24,18,24,18);
         if(auto* heading=layout->itemAt(0)->layout();heading && heading->count())if(auto* mark=qobject_cast<QLabel*>(heading->itemAt(0)->widget());mark && !mark->pixmap().isNull())mark->hide();
         workspace_pages_->addWidget(window);
     };
@@ -378,7 +388,7 @@ void PreviewWindow::open_file(const QString& path) {
     source_label_->setText(QFileInfo(path).fileName());
     source_label_->setToolTip(path);source_transition_->stop();source_transition_->start();
     details_label_->setText(QStringLiteral("Reading media…"));
-    counts_label_->setText(QStringLiteral("Video counts: − → +  0    |    + → −  0"));
+    counts_label_->setText(QStringLiteral("− → +  0      + → −  0"));
 }
 
 std::pair<std::optional<frametrail::DetectorOptions>,std::optional<frametrail::TrackingOptions>> PreviewWindow::analysis_options() {
@@ -403,6 +413,7 @@ void PreviewWindow::update_controls() {
     stop_button_->setEnabled(ready && playing_);
     replay_button_->setEnabled(!source_.isEmpty() && pending_source_.isEmpty() && !closing_);
     play_button_->setText(playing_ ? QStringLiteral("Pause") : QStringLiteral("Play"));
+    if(play_button_->property("showsPause").toBool()!=playing_){play_button_->setProperty("showsPause",playing_);studio_button(play_button_,playing_ ? QStringLiteral("pause") : QStringLiteral("play"));}
     const bool tracking = detect_box_->isChecked() && track_box_->isChecked();
     track_box_->setEnabled(detect_box_->isChecked());
     classes_box_->setEnabled(tracking); direction_box_->setEnabled(tracking);
@@ -477,20 +488,21 @@ void PreviewWindow::display(frametrail::PreviewFrame wrapped) {
         wrapped.tracking ? std::optional<frametrail::CountingLine>(counting_line_) : std::nullopt);
     displayed_sequence_ = frame.sequence;
     const auto info = session_.snapshot().info;
-    details_label_->setText(QStringLiteral("%1 × %2    •    %3    •    Frame %4    •    %5")
+    details_label_->setText(QStringLiteral("%1 × %2   ·   %3   ·   Frame %4   ·   %5")
         .arg(frame.width).arg(frame.height)
         .arg(info ? QString::fromStdString(info->codec) : QStringLiteral("Unknown codec"))
         .arg(frame.sequence).arg(timestamp_text(frame.timestamp)));
-    if (wrapped.detection) details_label_->setText(details_label_->text()+QStringLiteral("    •    %1 objects    •    %2 ms/frame")
+    if (wrapped.detection) details_label_->setText(details_label_->text()+QStringLiteral("   ·   %1 objects   ·   %2 ms per frame")
         .arg(wrapped.detection->objects.size()).arg(wrapped.detection->elapsed_ms,0,'f',1));
     if (wrapped.tracking) {
-        counts_label_->setText(QStringLiteral("Video counts: − → +  %1    |    + → −  %2    •    %3 observed tracks    •    Rules %4 ms")
+        counts_label_->setText(QStringLiteral("− → +  %1      + → −  %2\n%3 tracked now")
             .arg(wrapped.tracking->negative_to_positive).arg(wrapped.tracking->positive_to_negative)
-            .arg(wrapped.tracking->objects.size()).arg(wrapped.tracking->elapsed_ms,0,'f',2));
-    } else counts_label_->setText(QStringLiteral("Video counts: − → +  0    |    + → −  0"));
+            .arg(wrapped.tracking->objects.size()));
+        counts_label_->setToolTip(QStringLiteral("Tracking rules took %1 ms for this frame").arg(wrapped.tracking->elapsed_ms,0,'f',2));
+    } else counts_label_->setText(QStringLiteral("− → +  0      + → −  0"));
     if(wrapped.detection) {
         const auto& execution=wrapped.detection->execution;
-        details_label_->setText(details_label_->text()+QStringLiteral(" · %1").arg(execution.provider=="DirectML" ? QStringLiteral("GPU"):QStringLiteral("CPU")));
+        details_label_->setText(details_label_->text()+QStringLiteral(" on %1").arg(execution.provider=="DirectML" ? QStringLiteral("GPU"):QStringLiteral("CPU")));
         details_label_->setToolTip(QString::fromStdString(execution.provider+" / ONNX Runtime "+execution.runtime+" / "+execution.device+
             (execution.fallback.empty() ? "": "\nCPU fallback: "+execution.fallback)));
     }

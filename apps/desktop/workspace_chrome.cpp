@@ -29,63 +29,102 @@ void install_workspace_chrome(QMainWindow* window) {
     auto* root=window->findChild<QVBoxLayout*>(QStringLiteral("rootLayout"));
     auto* video_column=window->findChild<QVBoxLayout*>(QStringLiteral("videoColumn"));
     auto* playback=window->findChild<QHBoxLayout*>(QStringLiteral("playback"));
-    if(!workspace || !header || !video || !scroll || !inspector || !options || !root || !video_column || !playback)throw std::runtime_error("Workspace layout contract missing");
-    root->setContentsMargins(18,14,18,16);root->setSpacing(16);workspace->setSpacing(10);header->setSpacing(10);
-    auto* branding=window->findChild<QVBoxLayout*>(QStringLiteral("branding"));branding->setSpacing(3);
-    window->findChild<QLabel*>(QStringLiteral("subtitle"))->setText(QStringLiteral("Workspace / Preview"));studio_heading(header);
-    auto* activity=new QLabel(QStringLiteral("All work stays local"));activity->setObjectName(QStringLiteral("workspaceActivity"));activity->setProperty("role","badge");activity->setTextFormat(Qt::PlainText);header->addWidget(activity);
-    window->findChild<QLabel*>(QStringLiteral("source"))->setText(QStringLiteral("Preview  /  Untitled media"));
-    window->findChild<QLabel*>(QStringLiteral("details"))->setText(QStringLiteral("Local processing  \u00b7  Ctrl+O  Open media     Space  Play / pause"));
-    auto* rail=new QFrame;rail->setObjectName(QStringLiteral("workspaceRail"));rail->setFixedWidth(164);
-    auto* nav=new QVBoxLayout(rail);nav->setContentsMargins(10,18,10,16);nav->setSpacing(5);
-    auto* section=new QLabel(QStringLiteral("WORKSPACE"));section->setProperty("role","section");section->setContentsMargins(8,0,0,10);nav->addWidget(section);
+    auto* branding=window->findChild<QVBoxLayout*>(QStringLiteral("branding"));
+    auto* title=window->findChild<QLabel*>(QStringLiteral("title"));
+    auto* subtitle=window->findChild<QLabel*>(QStringLiteral("subtitle"));
+    auto* source=window->findChild<QLabel*>(QStringLiteral("source"));
+    auto* open=window->findChild<QPushButton*>(QStringLiteral("open"));
+    if(!workspace || !header || !video || !scroll || !inspector || !options || !root || !video_column || !playback || !branding ||
+       !title || !subtitle || !source || !open)throw std::runtime_error("Workspace layout contract missing");
+
+    // Navigation pane: brand, sections, guide and the local-processing status.
+    auto* rail=new QFrame;rail->setObjectName(QStringLiteral("workspaceRail"));rail->setFixedWidth(212);
+    auto* nav=new QVBoxLayout(rail);nav->setContentsMargins(10,14,10,14);nav->setSpacing(4);
+    auto* brand=new QHBoxLayout;brand->setContentsMargins(6,0,0,14);brand->setSpacing(8);brand->addWidget(brand_mark(22));
+    auto* name=new QLabel(QStringLiteral("FrameTrail"));name->setObjectName(QStringLiteral("brandName"));brand->addWidget(name);brand->addStretch();nav->addLayout(brand);
     auto* group=new QButtonGroup(window);group->setExclusive(true);
-    auto* current=new QPushButton(QStringLiteral("Preview"));current->setObjectName(QStringLiteral("previewWorkspace"));current->setProperty("role","navigation");current->setCheckable(true);current->setChecked(true);studio_button(current,"play");nav->addWidget(current);group->addButton(current,0);
-    current->setToolTip(QStringLiteral("Preview media · Ctrl+1"));
-    const auto move_action=[&](const char* name,const QString& label,const QString& icon,const QString& hint) {
-        auto* button=window->findChild<QPushButton*>(QString::fromLatin1(name));if(!button)throw std::runtime_error(name);header->removeWidget(button);
-        button->setText(label);button->setToolTip(hint);button->setProperty("role","navigation");studio_button(button,icon);
-        button->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);button->setCheckable(true);group->addButton(button,group->buttons().size());nav->addWidget(button);
+    const auto add_nav=[&](QPushButton* button,const QString& label,const QString& icon,const QString& hint){
+        button->setText(label);button->setToolTip(hint);button->setProperty("role","navigation");button->setCheckable(true);
+        button->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);studio_button(button,icon);new NavIndicator(button);
+        group->addButton(button,group->buttons().size());nav->addWidget(button);
     };
-    move_action("savedAnalysis",QStringLiteral("Analysis"),"analyse",QStringLiteral("Find and review object appearances · Ctrl+2"));
-    move_action("smoothPlayback",QStringLiteral("Playback"),"smooth",QStringLiteral("Prepare once for smooth playback · Ctrl+3"));
-    move_action("liveCamera",QStringLiteral("Camera"),"camera",QStringLiteral("Camera opens only on Start and stops when leaving · Ctrl+4"));
+    auto* current=new QPushButton;current->setObjectName(QStringLiteral("previewWorkspace"));
+    add_nav(current,QStringLiteral("Preview"),QStringLiteral("preview"),QStringLiteral("Watch a video or image with live detection · Ctrl+1"));current->setChecked(true);
+    const auto move_action=[&](const char* object,const QString& label,const QString& icon,const QString& hint) {
+        auto* button=window->findChild<QPushButton*>(QString::fromLatin1(object));if(!button)throw std::runtime_error(object);
+        header->removeWidget(button);add_nav(button,label,icon,hint);
+    };
+    move_action("savedAnalysis",QStringLiteral("Analysis"),QStringLiteral("analysis"),QStringLiteral("Find every object appearance in a video · Ctrl+2"));
+    move_action("smoothPlayback",QStringLiteral("Playback"),QStringLiteral("playback"),QStringLiteral("Prepare detections once, then play smoothly · Ctrl+3"));
+    move_action("liveCamera",QStringLiteral("Camera"),QStringLiteral("camera"),QStringLiteral("Live webcam detection; the camera opens only on Start · Ctrl+4"));
     nav->addStretch();
-    auto* guide=new QPushButton(QStringLiteral("Quick Guide"));guide->setObjectName(QStringLiteral("quickGuide"));guide->setProperty("role","navigation");guide->setCheckable(true);guide->setToolTip(QStringLiteral("Find tasks, shortcuts and object categories · Ctrl+K / F1"));studio_button(guide,"guide");group->addButton(guide,4);nav->addWidget(guide);
-    auto* local=new QLabel(QStringLiteral("LOCAL WORKSPACE"));local->setProperty("role","section");local->setContentsMargins(7,14,0,0);nav->addWidget(local);
-    auto* note=new QLabel(QStringLiteral("Ctrl+1–4 to switch\nCtrl+K to find a task"));note->setProperty("role","muted");note->setContentsMargins(7,4,0,0);nav->addWidget(note);
-    auto* splitter=new QSplitter(Qt::Horizontal);splitter->setObjectName(QStringLiteral("workspaceSplitter"));splitter->setHandleWidth(6);splitter->setChildrenCollapsible(false);
+    auto* guide=new QPushButton;guide->setObjectName(QStringLiteral("quickGuide"));
+    add_nav(guide,QStringLiteral("Guide"),QStringLiteral("guide"),QStringLiteral("Tasks, shortcuts and object categories · Ctrl+K / F1"));
+    auto* divider=new QFrame;divider->setObjectName(QStringLiteral("divider"));nav->addSpacing(6);nav->addWidget(divider);nav->addSpacing(6);
+    auto* status=new QHBoxLayout;status->setContentsMargins(10,2,4,0);status->setSpacing(8);
+    auto* shield=new QLabel;shield->setPixmap(fluent_pixmap(QStringLiteral("local"),ft::ui::text_tertiary,16));status->addWidget(shield,0,Qt::AlignTop);
+    auto* activity=new QLabel(QStringLiteral("All work stays local"));activity->setObjectName(QStringLiteral("workspaceActivity"));
+    activity->setTextFormat(Qt::PlainText);activity->setWordWrap(true);activity->setToolTip(QStringLiteral("Video, images and results never leave this PC"));
+    status->addWidget(activity,1);nav->addLayout(status);
+
+    // Preview page: heading (title, file, actions), then video and inspector side by side.
+    root->removeItem(header);root->removeItem(workspace);root->setContentsMargins(0,0,0,0);root->setSpacing(0);
+    branding->removeWidget(title);branding->removeWidget(subtitle);subtitle->hide();title->setText(QStringLiteral("Preview"));
+    video_column->removeWidget(source);source->setText(QStringLiteral("No media open"));
+    header->removeWidget(open);open->setText(QStringLiteral("Open media"));open->setProperty("role","primary");studio_button(open,QStringLiteral("open"));
+    while(header->count())delete header->takeAt(0); // Only empty layouts and spacers remain.
+    delete header;
+    auto* heading=new QHBoxLayout;heading->setSpacing(12);heading->addWidget(title);heading->addWidget(source,1,Qt::AlignVCenter);
+    auto* toggle=new QPushButton;toggle->setObjectName(QStringLiteral("toggleInspector"));toggle->setCheckable(true);toggle->setChecked(true);
+    toggle->setProperty("role","subtle");toggle->setText(QStringLiteral("Settings"));studio_button(toggle,QStringLiteral("inspector"));
+    toggle->setToolTip(QStringLiteral("Show or hide detection and tracking settings · Ctrl+I"));
+    heading->addWidget(toggle);heading->addWidget(open);
+    auto* splitter=new QSplitter(Qt::Horizontal);splitter->setObjectName(QStringLiteral("workspaceSplitter"));splitter->setHandleWidth(12);splitter->setChildrenCollapsible(false);
     workspace->removeWidget(video);workspace->removeWidget(scroll);splitter->addWidget(video);splitter->addWidget(scroll);
-    splitter->setStretchFactor(0,1);splitter->setStretchFactor(1,0);splitter->setSizes({830,288});workspace->addWidget(rail);
-    auto* pages=new QStackedWidget;pages->setObjectName(QStringLiteral("workspacePages"));pages->addWidget(splitter);workspace->addWidget(pages,1);
-    scroll->setMaximumWidth(390);scroll->setMinimumWidth(276);scroll->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);inspector->setMinimumWidth(0);inspector->setMaximumWidth(QWIDGETSIZE_MAX);
+    splitter->setStretchFactor(0,1);splitter->setStretchFactor(1,0);splitter->setSizes({860,300});
+    auto* preview=new QWidget;auto* preview_layout=new QVBoxLayout(preview);preview_layout->setContentsMargins(24,18,24,18);preview_layout->setSpacing(14);
+    preview_layout->addLayout(heading);preview_layout->addWidget(splitter,1);
+    auto* pages=new QStackedWidget;pages->setObjectName(QStringLiteral("workspacePages"));pages->addWidget(preview);
+    auto* body=new QHBoxLayout;body->setContentsMargins(0,0,0,0);body->setSpacing(0);body->addWidget(rail);body->addWidget(pages,1);
+    root->addLayout(body,1);delete workspace;
+
+    // Inspector: Detection and Tracking tabs inside one card.
+    scroll->setMaximumWidth(380);scroll->setMinimumWidth(268);scroll->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);inspector->setMinimumWidth(0);inspector->setMaximumWidth(QWIDGETSIZE_MAX);
     auto* tabs=new QTabWidget;tabs->setObjectName(QStringLiteral("inspectorTabs"));tabs->setDocumentMode(true);tabs->tabBar()->setDrawBase(false);
-    const auto page=[&](const QString& title,const QStringList& names) {
-        auto* widget=new QWidget;auto* layout=new QVBoxLayout(widget);layout->setContentsMargins(2,18,2,10);layout->setSpacing(11);
-        for(const auto& name:names) {
-            auto* control=window->findChild<QWidget*>(name);if(!control)throw std::runtime_error(("Missing inspector control: "+name).toStdString());options->removeWidget(control);layout->addWidget(control);
+    const auto page=[&](const QString& name,const QStringList& names) {
+        auto* widget=new QWidget;auto* layout=new QVBoxLayout(widget);layout->setContentsMargins(0,16,0,8);layout->setSpacing(8);
+        for(const auto& object:names) {
+            auto* control=window->findChild<QWidget*>(object);if(!control)throw std::runtime_error(("Missing inspector control: "+object).toStdString());options->removeWidget(control);layout->addWidget(control);
             if(auto* box=qobject_cast<QComboBox*>(control)) {box->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);box->setMinimumContentsLength(12);box->setMinimumWidth(0);box->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);}
+            if(qobject_cast<QComboBox*>(control) || qobject_cast<QAbstractSpinBox*>(control) || qobject_cast<QPushButton*>(control))layout->addSpacing(6);
         }
-        layout->addStretch();tabs->addTab(widget,title);
+        layout->addStretch();tabs->addTab(widget,name);
     };
     for(auto* label:inspector->findChildren<QLabel*>())if(label->text()==QStringLiteral("PROCESSING DEVICE"))label->setObjectName(QStringLiteral("deviceCaption"));
     page(QStringLiteral("Detection"),{"analysisSection","detectObjects","modelLabel","modelSelection","deviceCaption","backendSelection","confidenceLabel","confidence"});
     page(QStringLiteral("Tracking"),{"trackingSection","trackObjects","classesLabel","trackingClasses","directionLabel","crossingDirection","drawLine","lineHint"});
-    tabs->findChild<QLabel*>(QStringLiteral("analysisSection"))->setText(QStringLiteral("OBJECT RECOGNITION"));
-    tabs->findChild<QLabel*>(QStringLiteral("trackingSection"))->setText(QStringLiteral("MOVEMENT & COUNTING"));
-    window->findChild<QLabel*>(QStringLiteral("crossingsSection"))->setText(QStringLiteral("SESSION COUNTS"));
+    tabs->findChild<QLabel*>(QStringLiteral("analysisSection"))->setText(QStringLiteral("Object detection"));
+    tabs->findChild<QLabel*>(QStringLiteral("trackingSection"))->setText(QStringLiteral("Movement and counting"));
+    tabs->findChild<QLabel*>(QStringLiteral("deviceCaption"))->setText(QStringLiteral("Processing device"));
+    tabs->findChild<QLabel*>(QStringLiteral("deviceCaption"))->setProperty("role",QVariant());
+    for(const char* caption:{"modelLabel","deviceCaption","confidenceLabel","classesLabel","directionLabel"})
+        tabs->findChild<QLabel*>(QString::fromLatin1(caption))->setProperty("role","muted");
+    tabs->findChild<QLabel*>(QStringLiteral("lineHint"))->setProperty("role","caption");
+    window->findChild<QLabel*>(QStringLiteral("crossingsSection"))->setText(QStringLiteral("Session counts"));
+    window->findChild<QLabel*>(QStringLiteral("countsHint"))->setProperty("role","caption");
+    window->findChild<QLabel*>(QStringLiteral("crossingCounts"))->setText(QStringLiteral("− → +  0      + → −  0"));
     QObject::connect(tabs,&QTabWidget::currentChanged,tabs,[tabs](int index){
         auto* page=tabs->widget(index);auto* effect=new QGraphicsOpacityEffect(page);page->setGraphicsEffect(effect);
         auto* fade=new QPropertyAnimation(effect,"opacity",page);fade->setDuration(140);fade->setStartValue(.65);fade->setEndValue(1.);fade->setEasingCurve(QEasingCurve::OutCubic);
         QObject::connect(fade,&QPropertyAnimation::finished,page,[page]{page->setGraphicsEffect(nullptr);});fade->start(QAbstractAnimation::DeleteWhenStopped);
     });
-    options->insertWidget(0,tabs,1);options->setContentsMargins(14,14,14,16);options->setSpacing(10);
-    auto* toggle=new QPushButton(QStringLiteral("Inspector"));toggle->setObjectName(QStringLiteral("toggleInspector"));toggle->setCheckable(true);toggle->setChecked(true);studio_button(toggle,"inspector");toggle->setToolTip(QStringLiteral("Toggle inspector \u00b7 Ctrl+I"));
-    header->addWidget(toggle);QObject::connect(toggle,&QPushButton::toggled,scroll,&QWidget::setVisible);
+    options->insertWidget(0,tabs,1);options->setContentsMargins(16,10,16,16);options->setSpacing(8);
+    QObject::connect(toggle,&QPushButton::toggled,scroll,&QWidget::setVisible);
     auto* shortcut=new QShortcut(QKeySequence(QStringLiteral("Ctrl+I")),window);QObject::connect(shortcut,&QShortcut::activated,window,[toggle,pages]{if(pages->currentIndex()==0)toggle->toggle();});
-    studio_button(window->findChild<QPushButton*>(QStringLiteral("open")),"open");
-    for(const auto& pair:{std::pair{"play","play"},std::pair{"stop","stop"},std::pair{"replay","replay"},std::pair{"drawLine","analyse"}})studio_button(window->findChild<QPushButton*>(QString::fromLatin1(pair.first)),QString::fromLatin1(pair.second));
-    // Wrap the existing transport layout without replacing its controls or signals.
-    video_column->removeItem(playback);auto* bar=new QFrame;bar->setObjectName(QStringLiteral("transportBar"));bar->setLayout(playback);playback->setContentsMargins(10,9,12,9);playback->setSpacing(8);video_column->insertWidget(2,bar);video_column->setSpacing(9);
+    for(const auto& pair:{std::pair{"play","play"},std::pair{"stop","stop"},std::pair{"replay","replay"},std::pair{"drawLine","line"}})studio_button(window->findChild<QPushButton*>(QString::fromLatin1(pair.first)),QString::fromLatin1(pair.second));
+    for(const char* object:{"play","stop","replay"})window->findChild<QPushButton*>(QString::fromLatin1(object))->setProperty("role","subtle");
+    // Transport: wrap the existing playback layout without replacing its controls or signals.
+    video_column->removeItem(playback);auto* bar=new QFrame;bar->setObjectName(QStringLiteral("transportBar"));bar->setLayout(playback);playback->setContentsMargins(8,6,12,6);playback->setSpacing(6);
+    video_column->insertWidget(1,bar);video_column->setSpacing(10);
     window->resize(1400,900);
 }

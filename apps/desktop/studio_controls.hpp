@@ -1,6 +1,11 @@
 #pragma once
+#include "fluent_icons.hpp"
+#include "theme.hpp"
 #include <QIcon>
 #include <QApplication>
+#include <QEvent>
+#include <QFrame>
+#include <QHash>
 #include <QResource>
 #include <QProxyStyle>
 #include <QStyleOption>
@@ -11,23 +16,85 @@
 #include <QLabel>
 #include <QHBoxLayout>
 
-// Resolution-independent line icons drawn by Qt; no external font or asset dependency.
-inline QIcon studio_icon(const QString& name, const QColor& color=QColor("#bab7d0")) {
-    QPixmap p(48,48);p.fill(Qt::transparent);QPainter q(&p);q.scale(2,2);q.setRenderHint(QPainter::Antialiasing);q.setPen(QPen(color,1.6,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin));
-    if(name=="open") {q.drawRoundedRect(QRectF(3,6,18,15),3,3);q.drawLine(8,6,8,3);q.drawLine(8,3,14,3);}
-    else if(name=="analyse") {q.drawRoundedRect(QRectF(3,3,18,18),3,3);q.drawLine(7,16,7,12);q.drawLine(12,16,12,8);q.drawLine(17,16,17,6);}
-    else if(name=="camera") {q.drawRoundedRect(QRectF(3,6,18,14),3,3);q.drawEllipse(QPointF(12,13),4,4);q.drawLine(7,6,9,3);q.drawLine(9,3,15,3);q.drawLine(15,3,17,6);}
-    else if(name=="inspector") {q.drawRoundedRect(QRectF(3,3,18,18),3,3);q.drawLine(15,3,15,21);q.drawLine(18,7,19,7);q.drawLine(18,11,19,11);}
-    else if(name=="play") {QPainterPath a;a.moveTo(8,5);a.lineTo(19,12);a.lineTo(8,19);a.closeSubpath();q.drawPath(a);}
-    else if(name=="stop")q.drawRoundedRect(QRectF(6,6,12,12),2,2);
-    else if(name=="replay") {q.drawArc(QRectF(5,5,14,14),40*16,285*16);q.drawLine(5,4,5,10);q.drawLine(5,10,11,10);}
-    else if(name=="smooth") {q.drawRoundedRect(QRectF(3,3,18,18),3,3);q.drawLine(7,5,7,19);q.drawLine(17,5,17,19);q.drawLine(3,9,7,9);q.drawLine(17,15,21,15);}
-    else if(name=="guide") {q.drawRoundedRect(QRectF(4,3,16,18),2,2);q.drawLine(8,3,8,21);q.drawLine(11,8,16,8);q.drawLine(11,12,16,12);}
-    else {q.drawLine(3,9,3,3);q.drawLine(3,3,9,3);q.drawLine(15,3,21,3);q.drawLine(21,3,21,9);q.drawLine(21,15,21,21);q.drawLine(21,21,15,21);q.drawLine(9,21,3,21);q.drawLine(3,21,3,15);q.setBrush(color);q.drawEllipse(QPointF(12,12),2.2,2.2);}
-    return QIcon(p);
+// Fluent UI System Icons (see fluent_icons.hpp), parsed once into 20 x 20 painter paths.
+inline const QPainterPath& fluent_path(QString name) {
+    if(name==QStringLiteral("analyse"))name=QStringLiteral("analysis");
+    if(name==QStringLiteral("smooth"))name=QStringLiteral("playback");
+    static QHash<QString,QPainterPath> cache;
+    if(const auto found=cache.constFind(name);found!=cache.cend())return *found;
+    QPainterPath path;path.setFillRule(Qt::WindingFill);
+    for(const auto& [key,data]:fluent_icon_paths) {
+        if(QLatin1StringView(key.data(),qsizetype(key.size()))!=name)continue;
+        const auto text=QString::fromLatin1(data.data(),qsizetype(data.size()));
+        qsizetype i=0;
+        const auto number=[&]{
+            while(i<text.size() && (text[i]==QLatin1Char(' ') || text[i]==QLatin1Char(',')))++i;
+            const auto start=i;
+            while(i<text.size() && (text[i].isDigit() || text[i]==QLatin1Char('.') || text[i]==QLatin1Char('-') || text[i]==QLatin1Char('e')))++i;
+            return text.mid(start,i-start).toDouble();
+        };
+        const auto point=[&]{const double x=number();return QPointF(x,number());};
+        while(i<text.size()) {
+            const auto command=text[i++].toLatin1();
+            if(command=='M')path.moveTo(point());
+            else if(command=='L')path.lineTo(point());
+            else if(command=='Q'){const auto c=point();path.quadTo(c,point());}
+            else if(command=='C'){const auto c1=point();const auto c2=point();path.cubicTo(c1,c2,point());}
+            else if(command=='Z')path.closeSubpath();
+        }
+        break;
+    }
+    return *cache.insert(name,path);
 }
-inline void studio_button(QPushButton* button,const QString& icon) {button->setIcon(studio_icon(icon,button->property("role").toString()=="primary"?QColor("#282239"):QColor("#bab7d0")));button->setIconSize(QSize(16,16));button->setCursor(Qt::PointingHandCursor);}
-inline void studio_heading(QHBoxLayout* header) {auto* mark=new QLabel;mark->setPixmap(studio_icon("brand",QColor("#c1baff")).pixmap(24,24));mark->setFixedSize(30,30);header->insertWidget(0,mark);}
+// trailing: transparent space after the glyph. Qt draws a fixed 4 px gap between a button's icon and
+// text; the extra space gives Windows 11 spacing (8 px, or 12 px in the navigation pane).
+inline QPixmap fluent_pixmap(const QString& name,const QColor& color,int size=20,qreal ratio=2.,int trailing=0) {
+    QPixmap pixmap(QSize(size+trailing,size)*ratio);pixmap.setDevicePixelRatio(ratio);pixmap.fill(Qt::transparent);
+    QPainter painter(&pixmap);painter.setRenderHint(QPainter::Antialiasing);painter.scale(size/20.,size/20.);
+    painter.fillPath(fluent_path(name),color);
+    return pixmap;
+}
+inline QIcon studio_icon(const QString& name,const QColor& color=ft::ui::text,const QColor& checked=QColor(),int trailing=0) {
+    QIcon icon;
+    for(const int size:{16,18,20,24}) {
+        icon.addPixmap(fluent_pixmap(name,color,size,2.,trailing),QIcon::Normal,QIcon::Off);
+        icon.addPixmap(fluent_pixmap(name,ft::ui::text_disabled,size,2.,trailing),QIcon::Disabled,QIcon::Off);
+        icon.addPixmap(fluent_pixmap(name,checked.isValid()?checked:color,size,2.,trailing),QIcon::Normal,QIcon::On);
+    }
+    return icon;
+}
+inline void studio_button(QPushButton* button,const QString& icon) {
+    if(!button)return;
+    const auto role=button->property("role").toString();
+    const auto color=role==QStringLiteral("primary")?ft::ui::on_accent():role==QStringLiteral("navigation")?ft::ui::text_secondary:ft::ui::text;
+    const int trailing=button->text().isEmpty()?0:role==QStringLiteral("navigation")?8:4;
+    button->setIcon(studio_icon(icon,color,role==QStringLiteral("navigation")?ft::ui::accent():QColor(),trailing));
+    button->setIconSize(QSize(18+trailing,18));button->setCursor(Qt::PointingHandCursor);
+}
+inline QLabel* brand_mark(int size=24) {
+    auto* mark=new QLabel;mark->setPixmap(fluent_pixmap(QStringLiteral("brand"),ft::ui::accent(),size));mark->setFixedSize(size+6,size+6);
+    mark->setAlignment(Qt::AlignCenter);return mark;
+}
+// Standalone windows show the brand mark; the shared workspace hides it when embedding a page.
+inline void studio_heading(QHBoxLayout* header) {header->insertWidget(0,brand_mark());}
+
+// Selection marker for navigation buttons: a short accent bar on the left edge, as in Windows 11.
+class NavIndicator final : public QObject {
+public:
+    explicit NavIndicator(QPushButton* button):QObject(button),button_(button),bar_(new QFrame(button)) {
+        bar_->setObjectName(QStringLiteral("navIndicator"));bar_->setAttribute(Qt::WA_TransparentForMouseEvents);
+        bar_->setVisible(button->isChecked());button->installEventFilter(this);
+        QObject::connect(button,&QPushButton::toggled,bar_,&QWidget::setVisible);
+    }
+protected:
+    bool eventFilter(QObject*,QEvent* event) override {
+        if(event->type()==QEvent::Resize || event->type()==QEvent::Show)bar_->setGeometry(0,(button_->height()-16)/2,3,16);
+        return false;
+    }
+private:
+    QPushButton* button_;
+    QFrame* bar_;
+};
 
 class StudioStyle final : public QProxyStyle {
 public:
@@ -35,14 +102,22 @@ public:
     void drawPrimitive(PrimitiveElement element,const QStyleOption* option,QPainter* painter,const QWidget* widget=nullptr) const override {
         if(element==PE_IndicatorArrowDown || element==PE_IndicatorArrowUp || element==PE_IndicatorSpinDown || element==PE_IndicatorSpinUp) {
             painter->save();painter->setRenderHint(QPainter::Antialiasing);
-            painter->setPen(QPen(option->state&State_Enabled?QColor("#bdb9cd"):QColor("#666572"),1.5,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin));
+            painter->setPen(QPen(option->state&State_Enabled?ft::ui::text_secondary:ft::ui::text_disabled,1.5,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin));
             const auto c=QPointF(option->rect.center());const double dy=(element==PE_IndicatorArrowUp || element==PE_IndicatorSpinUp)?-1:1;
-            painter->drawLine(c+QPointF(-3,-dy*1.5),c+QPointF(0,dy*1.5));painter->drawLine(c+QPointF(0,dy*1.5),c+QPointF(3,-dy*1.5));painter->restore();return;
+            painter->drawLine(c+QPointF(-3.5,-dy*1.75),c+QPointF(0,dy*1.75));painter->drawLine(c+QPointF(0,dy*1.75),c+QPointF(3.5,-dy*1.75));painter->restore();return;
         }
         if(element==PE_IndicatorCheckBox) {
-            painter->save();painter->setRenderHint(QPainter::Antialiasing);const bool on=option->state&State_On,enabled=option->state&State_Enabled;
-            const auto r=QRectF(option->rect).adjusted(1,1,-1,-1);painter->setPen(QPen(enabled?QColor(on?"#c1baff":"#656371"):QColor("#494853"),1));painter->setBrush(QColor(enabled&&on?"#c1baff":"#1a1b20"));painter->drawRoundedRect(r,4,4);
-            if(on){painter->setPen(QPen(enabled?QColor("#272139"):QColor("#777482"),1.8,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin));const auto c=r.center();painter->drawLine(c+QPointF(-4,0),c+QPointF(-1,3));painter->drawLine(c+QPointF(-1,3),c+QPointF(4,-3));}
+            painter->save();painter->setRenderHint(QPainter::Antialiasing);
+            const bool on=option->state&State_On,enabled=option->state&State_Enabled,hover=option->state&State_MouseOver;
+            const auto r=QRectF(option->rect).adjusted(1.5,1.5,-1.5,-1.5);
+            if(on){painter->setPen(Qt::NoPen);painter->setBrush(enabled?(hover?ft::ui::accent_hover():ft::ui::accent()):QColor("#3a3a3a"));}
+            else{painter->setPen(QPen(enabled?QColor("#9a9a9a"):QColor("#4a4a4a"),1));painter->setBrush(hover&&enabled?QColor("#2f2f2f"):QColor("#262626"));}
+            painter->drawRoundedRect(r,4,4);
+            if(on){
+                painter->setPen(QPen(enabled?ft::ui::on_accent():ft::ui::text_disabled,1.6,Qt::SolidLine,Qt::RoundCap,Qt::RoundJoin));
+                const auto c=r.center();QPainterPath tick;tick.moveTo(c+QPointF(-4,0.5));tick.lineTo(c+QPointF(-1.2,3.2));tick.lineTo(c+QPointF(4.2,-2.8));
+                painter->setBrush(Qt::NoBrush);painter->drawPath(tick);
+            }
             painter->restore();return;
         }
         QProxyStyle::drawPrimitive(element,option,painter,widget);

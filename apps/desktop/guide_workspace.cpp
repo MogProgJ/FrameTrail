@@ -1,5 +1,7 @@
 #include "guide_workspace.hpp"
 #include "frametrail/detector.hpp"
+#include "studio_controls.hpp"
+#include <QAction>
 #include <QComboBox>
 #include <QFileInfo>
 #include <QHBoxLayout>
@@ -24,15 +26,15 @@ GuideWorkspace::GuideWorkspace(const QComboBox* models,QWidget* parent):QWidget(
         {"Use a camera", "Open Camera, choose a device and click Start. Entering Camera does not turn it on. Leaving the section requests capture to stop.\n\nA working camera and driver are required. If no device is available, use a video in Preview or Analysis instead.", "camera webcam live capture device start stop", "Open Camera",3},
         {"Keyboard shortcuts and faster processing", "Ctrl+1  Preview\nCtrl+2  Analysis\nCtrl+3  Playback\nCtrl+4  Camera\nCtrl+K or F1  This guide and search\nCtrl+O  Open media in Preview\nCtrl+I  Preview inspector\nSpace  Play / pause in Preview\n\nFor quicker detection, try YOLOX-Nano when its category list covers your object. A faster model may miss more detail. Smooth Playback prepares boxes once; it does not make detection itself faster. All processing stays on this device.", "keyboard shortcut navigation help guide faster performance cpu gpu", "Open Preview",0}
     };
-    auto* root=new QVBoxLayout(this);root->setContentsMargins(18,16,18,16);root->setSpacing(14);
-    auto* heading=new QLabel(QStringLiteral("What would you like to do?"));heading->setStyleSheet(QStringLiteral("font-size:22px;font-weight:600;"));root->addWidget(heading);
+    auto* root=new QVBoxLayout(this);root->setContentsMargins(24,18,24,18);root->setSpacing(12);
+    auto* heading=new QLabel(QStringLiteral("What would you like to do?"));heading->setObjectName(QStringLiteral("title"));root->addWidget(heading);
     auto* intro=new QLabel(QStringLiteral("A short guide to the workspace. Search a task or an object name."));intro->setWordWrap(true);intro->setProperty("role","muted");root->addWidget(intro);
-    search_=new QLineEdit;search_->setObjectName(QStringLiteral("guideSearch"));search_->setAccessibleName(QStringLiteral("Search tasks and object categories"));search_->setPlaceholderText(QStringLiteral("Search tasks or objects, e.g. export or billboard"));search_->setClearButtonEnabled(true);search_->setStyleSheet(QStringLiteral("QLineEdit {background:#1c1d23;color:#dfdde7;border:1px solid #34343e;border-radius:8px;padding:10px 12px;selection-background-color:#514a6b;} QLineEdit:focus {border-color:#b7a9ee;}"));root->addWidget(search_);
+    search_=new QLineEdit;search_->setObjectName(QStringLiteral("guideSearch"));search_->setAccessibleName(QStringLiteral("Search tasks and object categories"));search_->setPlaceholderText(QStringLiteral("Search tasks or objects, e.g. export or billboard"));search_->setClearButtonEnabled(true);search_->setMinimumHeight(36);root->addWidget(search_);
     summary_=new QLabel;summary_->setObjectName(QStringLiteral("guideSummary"));summary_->setProperty("role","muted");summary_->setWordWrap(true);root->addWidget(summary_);
     auto* columns=new QHBoxLayout;columns->setSpacing(18);
-    results_=new QListWidget;results_->setObjectName(QStringLiteral("guideResults"));results_->setAccessibleName(QStringLiteral("Guide search results"));results_->setWordWrap(true);results_->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);results_->setResizeMode(QListView::Adjust);results_->setMinimumWidth(190);results_->setMaximumWidth(285);results_->setStyleSheet(QStringLiteral("QListWidget::item { padding:12px 10px; }"));columns->addWidget(results_,1);
-    auto* detail=new QVBoxLayout;detail->setSpacing(12);title_=new QLabel;title_->setObjectName(QStringLiteral("guideTitle"));title_->setTextFormat(Qt::PlainText);title_->setWordWrap(true);title_->setStyleSheet(QStringLiteral("font-size:18px;font-weight:600;"));detail->addWidget(title_);
-    body_=new QTextBrowser;body_->setObjectName(QStringLiteral("guideBody"));body_->setAccessibleName(QStringLiteral("Guide instructions"));body_->setOpenExternalLinks(false);body_->setStyleSheet(QStringLiteral("QTextBrowser { background:#1c1d23;color:#dfdde7;border:1px solid #34343e;border-radius:8px;padding:14px; }"));detail->addWidget(body_,1);
+    results_=new QListWidget;results_->setObjectName(QStringLiteral("guideResults"));results_->setAccessibleName(QStringLiteral("Guide search results"));results_->setWordWrap(true);results_->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);results_->setResizeMode(QListView::Adjust);results_->setMinimumWidth(190);results_->setMaximumWidth(285);results_->setSpacing(1);columns->addWidget(results_,1);
+    auto* detail=new QVBoxLayout;detail->setSpacing(12);title_=new QLabel;title_->setObjectName(QStringLiteral("guideTitle"));title_->setTextFormat(Qt::PlainText);title_->setWordWrap(true);title_->setStyleSheet(QStringLiteral("font-size:18px;font-weight:600;padding-top:6px;"));detail->addWidget(title_);
+    body_=new QTextBrowser;body_->setObjectName(QStringLiteral("guideBody"));body_->setAccessibleName(QStringLiteral("Guide instructions"));body_->setOpenExternalLinks(false);detail->addWidget(body_,1);
     go_=new QPushButton;go_->setObjectName(QStringLiteral("guideGo"));go_->setProperty("role","primary");detail->addWidget(go_,0,Qt::AlignLeft);columns->addLayout(detail,2);root->addLayout(columns,1);
     connect(search_,&QLineEdit::textChanged,this,[this]{filter();});
     connect(results_,&QListWidget::currentRowChanged,this,[this]{show_entry();});

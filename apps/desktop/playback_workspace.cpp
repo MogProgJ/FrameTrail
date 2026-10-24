@@ -12,15 +12,15 @@
 PlaybackWorkspace::PlaybackWorkspace(QString source,frametrail::DetectorOptions options,QWidget* parent)
     :QWidget(parent),source_(std::move(source)),options_(std::move(options)) {
     setObjectName(QStringLiteral("playbackWorkspace"));
-    auto* layout=new QVBoxLayout(this);layout->setContentsMargins(0,0,0,0);layout->setSpacing(12);
-    auto* heading=new QHBoxLayout;auto* title=new QLabel(QStringLiteral("Smooth playback"));title->setObjectName(QStringLiteral("title"));heading->addWidget(title);heading->addStretch();
+    auto* layout=new QVBoxLayout(this);layout->setContentsMargins(24,18,24,18);layout->setSpacing(12);
+    auto* heading=new QHBoxLayout;auto* title=new QLabel(QStringLiteral("Playback"));title->setObjectName(QStringLiteral("title"));heading->addWidget(title);heading->addStretch();
     choose_=new QPushButton(QStringLiteral("Choose video…"));choose_->setObjectName(QStringLiteral("choosePlaybackVideo"));studio_button(choose_,"open");heading->addWidget(choose_);layout->addLayout(heading);
     auto* actions=new QHBoxLayout;prepare_=new QPushButton(QStringLiteral("Prepare playback"));prepare_->setObjectName(QStringLiteral("preparePlayback"));prepare_->setProperty("role","primary");studio_button(prepare_,"smooth");actions->addWidget(prepare_);
-    use_preview_=new QPushButton(QStringLiteral("Use preview video"));use_preview_->setObjectName(QStringLiteral("usePreviewVideo"));actions->addWidget(use_preview_);actions->addStretch();layout->addLayout(actions);
-    source_label_=new QLabel;source_label_->setObjectName(QStringLiteral("playbackSource"));source_label_->setTextFormat(Qt::PlainText);source_label_->setWordWrap(true);layout->addWidget(source_label_);
+    use_preview_=new QPushButton(QStringLiteral("Use preview video"));studio_button(use_preview_,QStringLiteral("preview"));use_preview_->setObjectName(QStringLiteral("usePreviewVideo"));actions->addWidget(use_preview_);actions->addStretch();layout->addLayout(actions);
+    source_label_=new QLabel;source_label_->setObjectName(QStringLiteral("playbackSource"));source_label_->setProperty("role","muted");source_label_->setTextFormat(Qt::PlainText);source_label_->setMinimumWidth(0);source_label_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Preferred);heading->insertWidget(1,source_label_,1);
     settings_label_=new QLabel;settings_label_->setProperty("role","muted");settings_label_->setTextFormat(Qt::PlainText);settings_label_->setWordWrap(true);layout->addWidget(settings_label_);
     content_=new QVBoxLayout;content_->setContentsMargins(0,0,0,0);layout->addLayout(content_,1);
-    empty_=new FrameCanvas;empty_->setObjectName(QStringLiteral("playbackEmpty"));empty_->set_empty_text(QStringLiteral("Prepare once. Play smoothly.\nChoose a video, then prepare its detections.\nSwitch sections while preparation continues."));content_->addWidget(empty_,1);
+    empty_=new FrameCanvas;empty_->setObjectName(QStringLiteral("playbackEmpty"));empty_->set_empty_icon(QStringLiteral("playback"));empty_->set_empty_text(QStringLiteral("Prepare once. Play smoothly.\nChoose a video, then prepare its detections.\nSwitch sections while preparation continues."));content_->addWidget(empty_,1);
     connect(choose_,&QPushButton::clicked,this,[this]{const auto path=QFileDialog::getOpenFileName(this,QStringLiteral("Choose playback video"),{},QStringLiteral("Video (*.mp4 *.mkv *.avi *.mov *.webm);;All files (*)"));if(!path.isEmpty())select_video(path,options_);});
     connect(use_preview_,&QPushButton::clicked,this,[this]{if(preview_selection){auto [source,options]=preview_selection();if(source.isEmpty()){source_label_->setText(QStringLiteral("Open a video in Preview first, or choose one here."));return;}select_video(std::move(source),std::move(options));}});
     connect(prepare_,&QPushButton::clicked,this,[this]{prepare();});

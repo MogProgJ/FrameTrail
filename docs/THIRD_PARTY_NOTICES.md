@@ -12,6 +12,7 @@ These identify artifacts; this inventory is not a completed public-distribution 
 | YOLOX-Nano / YOLOX-S | 0.1.1rc0 ONNX export | Apache-2.0 text from reference commit `6ddff4824372906469a7fae2dc3206c7aa4bbaee`; model manifest/hash |
 | YOLO-World-v2 S/M exports | Official Ultralytics v8.3.0 checkpoints, exported with 8.3.228 | Ultralytics AGPL-3.0 notice and upstream World GPL-3.0 text; checkpoint/export hashes and frozen vocabulary |
 | YOLOv8s Open Images V7 | Official Ultralytics v8.3.0 checkpoint, exported with 8.3.228 | Ultralytics AGPL-3.0 text; checkpoint/export hashes and canonical label map |
+| Fluent UI System Icons | @fluentui/svg-icons 1.1.344, converted to path data in `apps/desktop/fluent_icons.hpp` by `scripts/generate-icons.py` | Original MIT LICENSE (`notices/FluentUI-System-Icons-MIT.txt`) |
 | SQLite | 3.53.4 amalgamation | Public-domain dedication in source header; artifact manifest |
 | Microsoft C++ runtime | App-local x64 Microsoft.VC143.CRT from installed Visual Studio | DLL versions and file hashes in package manifest; governed by Visual Studio redistributable terms |
 

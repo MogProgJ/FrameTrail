@@ -92,16 +92,16 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     install_studio_style();setStyleSheet(frametrail_theme());
     auto* shell=new QWidget;shell->setObjectName(QStringLiteral("shell"));auto* layout=new QVBoxLayout(shell);
     layout->setContentsMargins(20,18,20,18);layout->setSpacing(14);
-    auto* header=new QHBoxLayout;auto* title=new QLabel(QStringLiteral("Video analysis"));title->setObjectName(QStringLiteral("title"));header->addWidget(title);studio_heading(header);header->addStretch();
+    auto* header=new QHBoxLayout;auto* title=new QLabel(QStringLiteral("Analysis"));title->setObjectName(QStringLiteral("title"));header->addWidget(title);studio_heading(header);header->addStretch();
     choose_=new QPushButton(QStringLiteral("Choose video…"));choose_->setObjectName(QStringLiteral("chooseVideo"));header->addWidget(choose_);
     open_=new QPushButton(QStringLiteral("Open analysis…"));open_->setObjectName(QStringLiteral("openRun"));header->addWidget(open_);layout->addLayout(header);
-    source_=new QLabel(QStringLiteral("Drop a video into this window, or choose one to begin."));source_->setObjectName(QStringLiteral("analysisSource"));source_->setProperty("role","muted");source_->setTextFormat(Qt::PlainText);source_->setWordWrap(true);layout->addWidget(source_);
+    source_=new QLabel(QStringLiteral("No video chosen"));source_->setObjectName(QStringLiteral("analysisSource"));source_->setProperty("role","muted");source_->setTextFormat(Qt::PlainText);source_->setMinimumWidth(0);source_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Preferred);header->insertWidget(header->indexOf(title)+1,source_,1);
     auto* actions=new QHBoxLayout;
     analyse_=new QPushButton(QStringLiteral("Analyse video"));analyse_->setObjectName(QStringLiteral("saveAnalysis"));analyse_->setProperty("role","primary");actions->addWidget(analyse_);
     cancel_=new QPushButton(QStringLiteral("Cancel"));cancel_->setObjectName(QStringLiteral("cancelAnalysis"));actions->addWidget(cancel_);
     save_=new QPushButton(QStringLiteral("Save analysis…"));save_->setObjectName(QStringLiteral("saveRun"));actions->addWidget(save_);
     export_=new QPushButton(QStringLiteral("Export CSV…"));export_->setObjectName(QStringLiteral("exportRun"));actions->addWidget(export_);actions->addStretch();
-    settings_toggle_=new QToolButton;settings_toggle_->setText(QStringLiteral("Analysis settings"));settings_toggle_->setCheckable(true);actions->addWidget(settings_toggle_);layout->addLayout(actions);
+    settings_toggle_=new QToolButton;settings_toggle_->setText(QStringLiteral("Settings"));settings_toggle_->setCheckable(true);actions->addWidget(settings_toggle_);layout->addLayout(actions);
     settings_panel_=new QWidget;auto* options=new QHBoxLayout(settings_panel_);options->setContentsMargins(0,0,0,0);
     const auto nano=configuration_ && configuration_->detector.variant==frametrail::DetectorModel::nano && !configuration_->detector.model.empty() ?
         text(configuration_->detector.model) : QCoreApplication::applicationDirPath()+QStringLiteral("/models/yolox_nano.onnx");
@@ -121,10 +121,10 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     settings_panel_->hide();layout->addWidget(settings_panel_);
     progress_=new QProgressBar;progress_->setObjectName(QStringLiteral("analysisProgress"));progress_->setTextVisible(false);progress_->setMaximumHeight(7);progress_->hide();layout->addWidget(progress_);
     status_=new QLabel(QStringLiteral("Choose a video to begin."));status_->setObjectName(QStringLiteral("analysisStatus"));status_->setTextFormat(Qt::PlainText);status_->setWordWrap(true);layout->addWidget(status_);
-    auto* split=new QSplitter;canvas_=new FrameCanvas;canvas_->set_empty_text(QStringLiteral("Drop a video here\nChoose → Analyse → Review → Save"));split->addWidget(canvas_);
+    auto* split=new QSplitter;canvas_=new FrameCanvas;canvas_->set_empty_icon(QStringLiteral("analysis"));canvas_->set_empty_text(QStringLiteral("Find every object in a video\nDrop a video here or choose one. Analyse it once, then review, save or export the appearances."));split->addWidget(canvas_);
     auto* results=new QFrame;results->setObjectName(QStringLiteral("inspector"));results_panel_=results;auto* results_layout=new QVBoxLayout(results);results_layout->setContentsMargins(14,16,14,14);results_layout->setSpacing(10);
-    results_title_=new QLabel(QStringLiteral("Object appearances"));results_title_->setProperty("role","section");results_layout->addWidget(results_title_);
-    events_=new QListWidget;events_->setObjectName(QStringLiteral("savedEvents"));events_->setIconSize(QSize(96,54));events_->setAcceptDrops(false);events_->viewport()->setAcceptDrops(false);results_layout->addWidget(events_,1);
+    results_title_=new QLabel(QStringLiteral("Object appearances"));results_title_->setProperty("role","section");results_title_->setContentsMargins(4,0,0,4);results_layout->addWidget(results_title_);
+    events_=new QListWidget;events_->setObjectName(QStringLiteral("savedEvents"));events_->setIconSize(QSize(88,50));events_->setAcceptDrops(false);events_->viewport()->setAcceptDrops(false);results_layout->addWidget(events_,1);
     auto* paging=new QHBoxLayout;previous_=new QPushButton(QStringLiteral("Previous"));more_=new QPushButton(QStringLiteral("Next"));previous_->setObjectName(QStringLiteral("previousResults"));more_->setObjectName(QStringLiteral("nextResults"));paging->addWidget(previous_);paging->addWidget(more_);results_layout->addLayout(paging);previous_->hide();more_->hide();previous_->setEnabled(false);more_->setEnabled(false);
     split->addWidget(results);split->setStretchFactor(0,1);split->setStretchFactor(1,0);split->setSizes({810,345});layout->addWidget(split,1);
     auto* playback=new QHBoxLayout;play_=new QPushButton(QStringLiteral("Play"));play_->setObjectName(QStringLiteral("reviewPlay"));playback->addWidget(play_);
@@ -158,7 +158,9 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     connect(play_,&QPushButton::clicked,this,[this]{toggle_playback();});connect(back_,&QPushButton::clicked,this,[this]{review_event(events_->currentRow());});
     connect(&timer_,&QTimer::timeout,this,[this]{tick();});timer_.setTimerType(Qt::PreciseTimer);timer_.start(5);
     if(configuration_ && !configuration_->source.empty())select_video(text(configuration_->source));
-    studio_button(choose_,"open");studio_button(open_,"open");studio_button(analyse_,"analyse");studio_button(play_,"play");
+    studio_button(choose_,"open");studio_button(open_,"history");studio_button(analyse_,"analysis");studio_button(play_,"play");
+    studio_button(save_,"save");studio_button(export_,"export");studio_button(back_,"replay");studio_button(cancel_,"dismiss");
+    settings_toggle_->setIcon(studio_icon(QStringLiteral("settings")));settings_toggle_->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     update_controls();
 }
 void SavedRunWindow::show_error(const std::exception& error) {status_->setText(QStringLiteral("Could not complete: ")+QString::fromUtf8(error.what()));update_controls();}
@@ -269,14 +271,14 @@ void SavedRunWindow::load_page(std::uint64_t after) {
         for(const auto& value:appearances_) {
             auto* item=new QListWidgetItem(QIcon(QPixmap::fromImage(thumbnail_image(value.thumbnail))),
                 QStringLiteral("%1\n%2 → %3").arg(QString::fromUtf8(frametrail::class_name(value.first_detection.class_id).data())).arg(time_text(value.first_timestamp)).arg(time_text(value.last_timestamp)),events_);
-            item->setSizeHint(QSize(300,78));item->setToolTip(QStringLiteral("Appearance #%1 · %2 observations · peak confidence %3%\nFrame span includes short detection gaps; IDs belong to this analysis.").arg(value.id).arg(value.observations).arg(value.peak_confidence*100,0,'f',1));
+            item->setSizeHint(QSize(300,68));item->setToolTip(QStringLiteral("Appearance #%1 · %2 observations · peak confidence %3%\nFrame span includes short detection gaps; IDs belong to this analysis.").arg(value.id).arg(value.observations).arg(value.peak_confidence*100,0,'f',1));
         }
     } else {
         page_=store_->events(after);
         for(const auto& value:page_) {
             const auto& e=value.event;
             auto* item=new QListWidgetItem(QIcon(QPixmap::fromImage(thumbnail_image(value.thumbnail))),QStringLiteral("%1\n%2").arg(QString::fromUtf8(frametrail::class_name(e.class_id).data())).arg(time_text(e.timestamp)),events_);
-            item->setSizeHint(QSize(300,78));
+            item->setSizeHint(QSize(300,68));
         }
     }
     const auto last=objects ? (appearances_.empty() ? 0:appearances_.back().id) : (page_.empty() ? 0:page_.back().event.id);

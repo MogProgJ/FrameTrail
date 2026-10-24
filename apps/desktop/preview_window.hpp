@@ -30,6 +30,7 @@ public:
     void begin_line_selection();
     void cancel_line_selection(bool notify = true);
     void set_empty_text(QString text) {empty_text_=std::move(text);update();}
+    void set_empty_icon(QString icon) {empty_icon_=std::move(icon);update();} // Fluent icon name, see studio_controls.hpp
     void set_temporal_style(bool enabled) {temporal_style_=enabled;update();}
     std::function<void(frametrail::CountingLine)> line_selected;
     std::function<void()> line_cancelled;
@@ -49,6 +50,7 @@ private:
     bool selecting_line_{};
     bool temporal_style_{};
     QString empty_text_{QStringLiteral("Open an image or video to begin")};
+    QString empty_icon_{QStringLiteral("preview")};
     std::optional<frametrail::Point> first_point_;
 };
 
