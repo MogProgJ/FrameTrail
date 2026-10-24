@@ -49,7 +49,7 @@ Train the whole RF-DETR model (not single classifier rows) on large public datas
 - Host `uc3.scc.kit.edu`, user `ka_udxvl`, workspace via `$(ws_find frametrail)`. Partitions used before: `cpu_il` (data jobs) and `gpu_a100_il` (training). Python module `devel/miniforge/25.3.1-python-3.12`. Compute nodes have had outbound internet in earlier jobs.
 - Access is key-based SSH from the user's Windows laptop (bwIDM Interactive key, unlocked in the Windows agent for about 8 hours after OTP). Cloud sessions cannot reach the cluster (no SSH route, and the key stays on the laptop). Submissions run from the laptop, by the user or by a Claude session on that machine, via `training/kit/launch-from-windows.ps1`. Never ask for, copy or store credentials or keys. Before anything is submitted, state what it will use (GPUs, hours, disk).
 - The account is shared with another project ("Carrington Event"). Only touch FrameTrail jobs and files: never inspect, cancel or modify other jobs, and never use account-wide or wildcard job commands.
-- Live limits (max wall time, GPU count, quota) are unknown until checked on the cluster; do not assume them.
+- `sinfo` is denied for this account. Use `-Action probe` (read-only `sbatch --test-only`) to compare queues. Slurm accepted 16 CPU/8 h on `cpu_il` and 1 A100/24 h on `gpu_a100_il`, but estimated starts days to weeks out (2026-10-24).
 
 ## Communication preferences (from the user)
 
@@ -74,6 +74,7 @@ The app's RF adapter (`src/rfdetr.cpp`) currently assumes 615 classes and 619 ou
 
 - 2026-10-24: Strategy reset. Removed the billboard-only research track and its archive (recoverable from commit `95b9ef23`).
 - 2026-10-24: Phase 0 done. `training/` builds Open Images datasets, trains with resume, and scores with the Open Images-style evaluator against the YOLOv8s baseline. The local CPU smoke test (4 classes, 1 epoch) ran end to end. The pilot dry run on real metadata selects 49,418 train / 1,954 valid / 4,774 test images for 110 classes. Next: the user runs `training/kit/setup.sh` and `submit_pilot.sh` on KIT (see `training/README.md`).
+- 2026-10-24: Pilot submitted on KIT: prepare 7911071, train 7911072, baseline 7911073. The environment is set up in `$(ws_find frametrail)/rf`, and the workspace now has 30 days and 2 extensions left. Slurm's estimated starts were 2026-10-27 (data) and 2026-11-08 (GPU). Next: probe whether shorter jobs start sooner, and if so, resubmit training as a chain of short parts.
 
 ## Decision log
 

@@ -27,17 +27,20 @@ git checkout claude/kind-brahmagupta-4q5cdd
 powershell -ExecutionPolicy Bypass -File training\kit\launch-from-windows.ps1
 ```
 
-This copies `training/` to the cluster and runs `kit/remote_launch.sh` on the login node, which:
+This copies `training/` to the cluster and runs `kit/remote_launch.sh` on the login node. That script extends the workspace when fewer than 14 days remain, installs the code into `$(ws_find frametrail)/rf/training`, runs `kit/setup.sh` the first time (`FORCE_SETUP=1` redoes it), and submits. `submit_pilot.sh` has Slurm validate every request (`sbatch --test-only`) before queuing anything, and refuses while an earlier FrameTrail chain is still active.
 
-1. Extends the `frametrail` workspace by 30 days if fewer than 14 remain.
-2. Puts the code in `$(ws_find frametrail)/rf/training`.
-3. Prints the partition time limits.
-4. Runs `kit/setup.sh` the first time (several GB of packages plus the pretrained weights). Set `FORCE_SETUP=1` to redo it.
-5. Runs `kit/submit_pilot.sh`. That script has Slurm validate all three requests (`sbatch --test-only`) before queuing anything, and refuses to submit while an earlier FrameTrail chain is still active.
+Other actions, all with the same script and `-Action <name>`:
 
-The job scripts assume `cpu_il` allows 8 hours and `gpu_a100_il` allows 24 hours. If the printed limits are shorter, lower `--time` in the matching `training/kit/*.sbatch`. Training resumes when re-submitted.
+| Action | What it does |
+| --- | --- |
+| `status` | Read-only report: queue state and estimated start of this project's jobs, recent log lines, epoch metrics, test scores |
+| `probe` | Read-only: asks Slurm when differently sized jobs would start (`sbatch --test-only`, nothing queued) |
+| `resubmit` | Cancels this project's recorded jobs that are still queued or running, then submits again with `kit/submit.env` |
+| `sync` | Only installs the uploaded code |
 
-To do the same by hand in a cluster terminal: copy `training/` into `$(ws_find frametrail)/rf/`, `cd` there, then run `bash training/kit/setup.sh` and `bash training/kit/submit_pilot.sh`.
+`kit/submit.env` holds the submission settings in Git. For example, `TRAIN_PARTS=6` with `TRAIN_OPTS="--time=04:00:00"` splits training into six back-to-back 4-hour jobs. Short jobs usually start sooner, each part resumes from the last epoch, and a finished run cancels its own leftover parts. The data job is skipped once `data/<dataset>/dataset.json` exists. `sinfo` is not permitted for this account, so `probe` is how to compare queues.
+
+To work by hand in a cluster terminal instead: copy `training/` into `$(ws_find frametrail)/rf/`, `cd` there, then run `bash training/kit/setup.sh` and `bash training/kit/submit_pilot.sh`.
 
 The pilot chain:
 
@@ -49,15 +52,9 @@ The pilot chain:
 
 Timings are estimates until the first run measures them.
 
-**6. Follow progress.** This queries only the FrameTrail job IDs recorded at submission, never the whole shared account:
+**Follow progress** with `-Action status`. It only queries the FrameTrail job IDs recorded at submission, never the whole shared account.
 
-```bash
-squeue -j "$(awk '{print $2}' logs/submitted.txt | paste -sd,)"
-tail -f logs/ft-train-*.log
-cat runs/pilot-small/metrics.csv | tail -3
-```
-
-**7. Results.** Two files hold the answer:
+**Results.** Two files hold the answer:
 
 - `runs/pilot-small/eval-test.json`: our model's scores.
 - `runs/baseline-yolov8s-oiv7-pilot/eval-test.json`: the baseline's scores.

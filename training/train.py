@@ -102,6 +102,8 @@ def main(argv: list[str] | None = None) -> int:
     if resume:
         options['resume'] = str(resume)
     model.train(**options)
+    (args.out / 'finished.json').write_text(json.dumps({'finished': time.strftime('%Y-%m-%dT%H:%M:%S%z'),
+                                                         'epochs': args.epochs}), encoding='utf-8')
     print(f'Finished. Best weights: {args.out / "checkpoint_best_total.pth"}', flush=True)
     return 0
 
