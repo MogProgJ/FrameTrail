@@ -47,7 +47,7 @@ Train the whole RF-DETR model (not single classifier rows) on large public datas
 ## Cluster (KIT bwUniCluster 3.0)
 
 - Host `uc3.scc.kit.edu`, user `ka_udxvl`, workspace via `$(ws_find frametrail)`. Partitions used before: `cpu_il` (data jobs) and `gpu_a100_il` (training). Python module `devel/miniforge/25.3.1-python-3.12`. Compute nodes have had outbound internet in earlier jobs.
-- The user logs in and submits jobs themselves (password + OTP). Never ask for or store credentials. Before the user submits, show the exact command and what it will use (GPUs, hours, disk).
+- Access is key-based SSH from the user's Windows laptop (bwIDM Interactive key, unlocked in the Windows agent for about 8 hours after OTP). Cloud sessions cannot reach the cluster (no SSH route, and the key stays on the laptop). Submissions run from the laptop, by the user or by a Claude session on that machine, via `training/kit/launch-from-windows.ps1`. Never ask for, copy or store credentials or keys. Before anything is submitted, state what it will use (GPUs, hours, disk).
 - The account is shared with another project ("Carrington Event"). Only touch FrameTrail jobs and files: never inspect, cancel or modify other jobs, and never use account-wide or wildcard job commands.
 - Live limits (max wall time, GPU count, quota) are unknown until checked on the cluster; do not assume them.
 

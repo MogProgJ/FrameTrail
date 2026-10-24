@@ -17,44 +17,29 @@ To preview the selection without downloading images, add `--plan-only` to the `o
 
 ## Run the pilot on the KIT cluster
 
-**1. Laptop (PowerShell, in your FrameTrail checkout).** Get this branch and copy the `training` folder to your cluster home:
+The cluster is only reachable from your laptop, because the SSH key lives there. Cloud sessions cannot connect.
+
+**One command, from the laptop** (PowerShell in the FrameTrail folder, with the Interactive key unlocked):
 
 ```powershell
 git fetch origin
 git checkout claude/kind-brahmagupta-4q5cdd
-scp -r .\training ka_udxvl@uc3.scc.kit.edu:~/ft-training
+powershell -ExecutionPolicy Bypass -File training\kit\launch-from-windows.ps1
 ```
 
-**2. Cluster terminal.** Check the workspace, which was due to expire on 3 November, extend it, and put the code in place:
+This copies `training/` to the cluster and runs `kit/remote_launch.sh` on the login node, which:
 
-```bash
-ws_list
-ws_extend frametrail 30
-mkdir -p "$(ws_find frametrail)/rf"
-rm -rf "$(ws_find frametrail)/rf/training"
-cp -r ~/ft-training "$(ws_find frametrail)/rf/training"
-cd "$(ws_find frametrail)/rf"
-```
+1. Extends the `frametrail` workspace by 30 days if fewer than 14 remain.
+2. Puts the code in `$(ws_find frametrail)/rf/training`.
+3. Prints the partition time limits.
+4. Runs `kit/setup.sh` the first time (several GB of packages plus the pretrained weights). Set `FORCE_SETUP=1` to redo it.
+5. Runs `kit/submit_pilot.sh`. That script has Slurm validate all three requests (`sbatch --test-only`) before queuing anything, and refuses to submit while an earlier FrameTrail chain is still active.
 
-**3. Check the partition limits** before submitting, because the job scripts assume `cpu_il` allows 8 hours and `gpu_a100_il` allows 24 hours:
+The job scripts assume `cpu_il` allows 8 hours and `gpu_a100_il` allows 24 hours. If the printed limits are shorter, lower `--time` in the matching `training/kit/*.sbatch`. Training resumes when re-submitted.
 
-```bash
-sinfo -p cpu_il,gpu_a100_il -o "%P %l %G %a"
-```
+To do the same by hand in a cluster terminal: copy `training/` into `$(ws_find frametrail)/rf/`, `cd` there, then run `bash training/kit/setup.sh` and `bash training/kit/submit_pilot.sh`.
 
-If a limit is shorter, lower `--time` in the matching `training/kit/*.sbatch` file. Training resumes when re-submitted, so a shorter limit only means more submissions.
-
-**4. One-time environment setup** on the login node. It downloads several GB of Python packages and the pretrained weights:
-
-```bash
-bash training/kit/setup.sh
-```
-
-**5. Submit the pilot.** This submits three jobs. The data job runs first, then training and the baseline run in parallel:
-
-```bash
-bash training/kit/submit_pilot.sh
-```
+The pilot chain:
 
 | Job | Resources | What it does |
 | --- | --- | --- |
