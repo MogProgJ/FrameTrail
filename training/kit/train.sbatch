@@ -16,6 +16,9 @@ source training/kit/env.sh
 DATASET="${DATASET:-pilot}"
 MODEL="${MODEL:-small}"
 RUN="${RUN:-$DATASET-$MODEL}"
+# Epochs and batch settings are read when the job starts, so they can be changed (and synced)
+# while it waits in the queue without losing its place.
+source <(tr -d '\r' < training/kit/train.env)
 nvidia-smi
 "$FT_VENV/bin/python" -c 'import torch; assert torch.cuda.is_available(); print(torch.cuda.get_device_name(0))'
 if [[ -f "runs/$RUN/finished.json" ]]; then

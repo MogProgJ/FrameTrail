@@ -14,6 +14,7 @@ done
 for metrics in runs/*/metrics.csv; do
     [[ -f "$metrics" ]] && { echo; echo "== $metrics (last epoch rows)"; tail -n 2 "$metrics" | cut -c1-200; }
 done
+if [[ -f runs/gpu-smoke/throughput.json ]]; then echo; echo "== GPU smoke speed"; cat runs/gpu-smoke/throughput.json; fi
 for result in runs/*/eval-test.json; do
     [[ -f "$result" ]] && { echo; echo "== $result"; "$FT_VENV/bin/python" -c "
 import json, sys

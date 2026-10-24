@@ -33,6 +33,14 @@ case "$action" in
     sync) ;;
     probe) bash training/kit/probe_queue.sh ;;
     launch|resubmit)
+        if [[ ! -x .venv/bin/python || "${FORCE_SETUP:-0}" == 1 ]]; then
+            bash training/kit/setup.sh
+        fi
+        set -a
+        source <(tr -d '\r' < training/kit/submit.env)
+        set +a
+        # Validate the new requests before touching anything that is already queued.
+        CHECK_ONLY=1 bash training/kit/submit_pilot.sh
         if [[ "$action" == resubmit && -s logs/submitted.txt ]]; then
             ids=$(awk '{print $2}' logs/submitted.txt | paste -sd,)
             active=$(squeue -h -j "$ids" -o %i 2>/dev/null || true)
@@ -42,12 +50,6 @@ case "$action" in
                 sleep 5
             fi
         fi
-        if [[ ! -x .venv/bin/python || "${FORCE_SETUP:-0}" == 1 ]]; then
-            bash training/kit/setup.sh
-        fi
-        set -a
-        source <(tr -d '\r' < training/kit/submit.env)
-        set +a
         bash training/kit/submit_pilot.sh
         ;;
     *) echo "Unknown action: $action" >&2; exit 2 ;;

@@ -38,7 +38,16 @@ Other actions, all with the same script and `-Action <name>`:
 | `resubmit` | Cancels this project's recorded jobs that are still queued or running, then submits again with `kit/submit.env` |
 | `sync` | Only installs the uploaded code |
 
-`kit/submit.env` holds the submission settings in Git. For example, `TRAIN_PARTS=6` with `TRAIN_OPTS="--time=04:00:00"` splits training into six back-to-back 4-hour jobs. Short jobs usually start sooner, each part resumes from the last epoch, and a finished run cancels its own leftover parts. The data job is skipped once `data/<dataset>/dataset.json` exists. `sinfo` is not permitted for this account, so `probe` is how to compare queues.
+`kit/submit.env` holds the submission settings in Git. It is set from the queue probe:
+
+1. The data job runs as up to three resumable 30-minute parts in `dev_cpu_il`.
+2. Then a 30-minute GPU smoke test runs in `dev_gpu_a100_il` (`kit/smoke.sbatch`). It trains two epochs on a 1,500-image slice, scores it, and writes `runs/gpu-smoke/throughput.json` with images per second and the estimated minutes per full epoch.
+3. The baseline scoring also runs in `dev_gpu_a100_il`.
+4. Finally, one 24-hour training job may start on `gpu_h100_il`, `gpu_h100` or `gpu_a100_il`, whichever is first. It only starts if the smoke test passed.
+
+`kit/train.env` (epochs, batch size) is read when the training job starts. Change it, then `-Action sync`, and a queued job picks it up without losing its place. `TRAIN_PARTS` can split training into back-to-back jobs that resume, and a finished run cancels its own leftover parts. That only helps when waits depend on job length; on 2026-10-24 they depended on priority. The data job is skipped once `data/<dataset>/dataset.json` exists. `sinfo` is not permitted for this account, so `probe` is how to compare queues.
+
+`resubmit` first has Slurm validate the new requests and only then cancels the old ones. If a dev queue refuses some optional jobs (later data parts, the baseline, the smoke test), the rest is still submitted, and every queued job is recorded in `logs/submitted.txt`.
 
 To work by hand in a cluster terminal instead: copy `training/` into `$(ws_find frametrail)/rf/`, `cd` there, then run `bash training/kit/setup.sh` and `bash training/kit/submit_pilot.sh`.
 
