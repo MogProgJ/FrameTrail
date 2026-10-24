@@ -1,8 +1,0 @@
-test_active_row_allowed_inactive_row_and_features_rejected (test_audit.AuditContracts.test_active_row_allowed_inactive_row_and_features_rejected) ... ok
-test_current_baseline_and_ties_replay (test_audit.AuditContracts.test_current_baseline_and_ties_replay) ... ok
-test_forged_metric_rejected (test_audit.AuditContracts.test_forged_metric_rejected) ... ok
-
-----------------------------------------------------------------------
-Ran 3 tests in 1.374s
-
-OK

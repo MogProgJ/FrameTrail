@@ -1,3 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,80,fox,0.753286,25.5028,548.528,561.253,959.497,195.52
-0,0,574,tree,0.27128,0,0.306543,766.051,561.901,195.52

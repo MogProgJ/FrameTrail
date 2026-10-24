@@ -73,8 +73,8 @@ Integration checks run the actual ONNX model on repeated and vertically translat
 
 Before claiming useful counting accuracy, evaluate short permissioned clips from a fixed camera: one person crossing, a vehicle crossing, motion in both directions, repeated crossings, jitter/standing near the line, obstruction, and nearby similar objects. Label expected crossings and identities, then report missed events, false events, duplicates, and identity switches with model/line/settings/input details. Camera motion, crowds, small objects, detector class flicker, and occlusion can still break this baseline.
 
-First compare those cases with the current detector/tracker before changing algorithms or adding GPU/training infrastructure. Version 0.5 saves whole-file runs and supports event review; see [saved runs](SAVED_RUNS.md). Use that workflow to preserve settings/evidence during evaluation. See [roadmap](ROADMAP.md) and [compute/training gates](COMPUTE_AND_TRAINING.md).
+First compare those cases with the current detector/tracker before changing algorithms or adding GPU/training infrastructure. Version 0.5 saves whole-file runs and supports event review; see [saved runs](SAVED_RUNS.md). Use that workflow to preserve settings/evidence during evaluation. See roadmap and compute/training gates.
 
 ## Reliability stage in 0.11
 
-Default association stays greedy after experimental global repair introduced an extra sampled crowd ID change. Repair is available explicitly through the CLI, while the GUI gains native scene-boundary handling and long-gap reconfirmation. See [tracking evaluation and evidence](TRACKING_EVALUATION.md) for module boundaries, measured failures, limits and the reviewed-label workflow.
+Default association stays greedy after experimental global repair introduced an extra sampled crowd ID change. Repair is available explicitly through the CLI, while the GUI gains native scene-boundary handling and long-gap reconfirmation. See tracking evaluation and evidence for module boundaries, measured failures, limits and the reviewed-label workflow.

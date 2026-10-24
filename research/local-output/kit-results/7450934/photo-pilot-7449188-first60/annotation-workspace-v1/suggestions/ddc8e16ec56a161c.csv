@@ -1,2 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,67,cell phone,0.361079,250.71,0.884766,1015.67,763.232,197.624

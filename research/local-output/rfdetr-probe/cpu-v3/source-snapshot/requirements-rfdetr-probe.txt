@@ -1,9 +1,0 @@
-# Isolated CPU inference/export only. Install CPU torch wheels first (setup script).
-# Do not install into the desktop runtime or KIT's working YOLO environment.
-torch==2.8.0+cpu
-torchvision==0.23.0+cpu
-rfdetr[onnx]==1.11.2
-onnx==1.19.1
-onnxruntime==1.30.0
-numpy==2.2.6
-pillow==12.3.0

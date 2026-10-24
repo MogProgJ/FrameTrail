@@ -1,9 +1,0 @@
-FrameTrail — local workflow update, 19 October 2026
-
-Run-FrameTrail.cmd: normal YOLOX-S default.
-Run-Balanced-Preview.cmd: unchanged explicit experimental RF preview.
-
-New: preparation preview, elapsed time/rate/approximate time left, stable Cancel feedback, clear partial-result wording, unfilled detection boxes.
-
-No cluster access is needed. The selected RF model remains a preview; strict export qualification is still held.
-See REPORT.md and FINAL_RECEIPT.json for measured scope and checks.

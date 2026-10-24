@@ -1,3 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,11,stop sign,0.898679,316.826,516.645,767.536,906.127,188.378
-0,0,571,traffic sign,0.421497,382.786,900.034,690.545,1014.81,188.378

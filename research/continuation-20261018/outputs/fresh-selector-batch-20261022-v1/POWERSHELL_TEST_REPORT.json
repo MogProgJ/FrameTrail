@@ -1,8 +1,0 @@
-{
-  "real_network_calls": 0,
-  "archive_and_start_uploaded_together": true,
-  "powershell_parser_errors": 0,
-  "tampered_package_blocked": true,
-  "mock_upload_connections": 1,
-  "status": "passed"
-}

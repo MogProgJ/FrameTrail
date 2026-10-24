@@ -1,7 +1,0 @@
-{
-  "cluster_start_script_sha256": "3cd033b68eb069ea4e07be0e59887d32b0df547012fd835e92209b9298b3875e",
-  "cluster_start_script": "start.sh",
-  "package_seal_sha256": "mockseal",
-  "archive": "tiny.tar.gz",
-  "archive_sha256": "c9ef77cdc211a9e6c2a32876ef36d52cfa61c7a42193d9c2198be8957d60de81"
-}

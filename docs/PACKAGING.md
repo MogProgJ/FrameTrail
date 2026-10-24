@@ -8,7 +8,7 @@ are not implemented. The application is unsigned.
 
 ## Detection models
 
-Choose **YOLOX-S** for the existing 80-category people/vehicle baseline, **Broad recognition · 597 categories** for the Open Images model (including fox), or experimental **YOLO-World S/M** for the 100-category export. Nano remains the faster CPU option. The private 0.12 preview includes these installed, checksum-verified models. Broader vocabulary has accuracy and speed tradeoffs; it does not fix the dark generated fox. S stays the default after comparison. See [recognition](RECOGNITION.md).
+Choose **YOLOX-S** for the existing 80-category people/vehicle baseline, **Broad recognition · 597 categories** for the Open Images model (including fox), or experimental **YOLO-World S/M** for the 100-category export. Nano remains the faster CPU option. The private 0.12 preview includes these installed, checksum-verified models. Broader vocabulary has accuracy and speed tradeoffs; it does not fix the dark generated fox. S stays the default after comparison. See recognition.
 
 Model changes preserve playback position. New schema-4 analyses require 0.12; schemas 1–3 remain readable. Open **Video analysis…**, choose/drop a video, analyse, review appearances, then save/export. See [the workflow](SAVED_RUNS.md).
 
@@ -72,4 +72,4 @@ current private project's local evaluation; no public binary release is publishe
 
 ## Tracking continuity
 
-The 0.11 pipeline adds conservative scene-boundary resets and long-gap reconfirmation, while preserving the saved-analysis workflow. The GUI keeps greedy association; experimental global repair is an explicit CLI option until broader labels justify it. See [tracking evidence and limits](TRACKING_EVALUATION.md).
+The 0.11 pipeline adds conservative scene-boundary resets and long-gap reconfirmation, while preserving the saved-analysis workflow. The GUI keeps greedy association; experimental global repair is an explicit CLI option until broader labels justify it. See tracking evidence and limits.

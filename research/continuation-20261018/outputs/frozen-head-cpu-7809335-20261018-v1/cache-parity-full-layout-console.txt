@@ -1,8 +1,0 @@
-[2026-10-18 20:27:57] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
-[2026-10-18 20:27:57] [WARNING] rf-detr - Using a different number of positional encodings than DINOv2, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
-[2026-10-18 20:27:57] [WARNING] rf-detr - Using patch size 16 instead of 14, which means we're not loading DINOv2 backbone weights. This is not a problem if finetuning a pretrained RF-DETR model.
-[2026-10-18 20:27:58] [INFO] rf-detr - File C:\Users\nazee\Documents\All Modules\FrameTrail\.deps\rfdetr-probe-assets\rf-detr-small.pth already exists with correct MD5 hash.
-{"image_id": "013037fd8c0daf0a", "role": "positive", "feature_shape": [3, 1, 300, 256], "max_output_error": 0.0, "loss_error": 0.0, "gradient_max_error": 0.0, "decoded_detections_identical": true, "passed": true, "seconds": 0.7379121999983909}
-{"image_id": "078cc35acabe5e77", "role": "positive", "feature_shape": [3, 1, 300, 256], "max_output_error": 0.0, "loss_error": 0.0, "gradient_max_error": 0.0, "decoded_detections_identical": true, "passed": true, "seconds": 0.5859525999985635}
-{"image_id": "062b4f2407f2522d", "role": "explicit-negative", "feature_shape": [3, 1, 300, 256], "max_output_error": 0.0, "loss_error": 0.0, "gradient_max_error": 0.0, "decoded_detections_identical": true, "passed": true, "seconds": 0.8479643000027863}
-{"image_id": "078433fcb4d125c2", "role": "explicit-negative", "feature_shape": [3, 1, 300, 256], "max_output_error": 0.0, "loss_error": 0.0, "gradient_max_error": 0.0, "decoded_detections_identical": true, "passed": true, "seconds": 0.6580520999996224}

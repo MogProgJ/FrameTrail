@@ -1,8 +1,0 @@
-{
-  "remote_directory": "data-refresh-2fb87eec-v1",
-  "plan_sha256": "2fb87eec20424b4d73fee912f3cf8395404cc11996cd5bced42ebe117c38d340",
-  "archive_sha256": "3b639df7064cefa9e15f99f9b2061c9c45c00aae53a27453cf2d9b42a852ae3e",
-  "standing_authorization_recorded": true,
-  "cluster_submitted": false,
-  "code_revision": 2
-}

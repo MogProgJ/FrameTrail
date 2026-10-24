@@ -1,2 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,187,clothing,0.32502,0.389972,803.731,83.8103,982.904,160.823

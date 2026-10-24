@@ -1,3 +1,0 @@
-preflight-fails: PASS (mock Slurm only)
-normal: PASS (mock Slurm only)
-ambiguous: PASS (mock Slurm only)

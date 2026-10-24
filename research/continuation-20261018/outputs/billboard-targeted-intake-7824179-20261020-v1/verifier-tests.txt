@@ -1,9 +1,0 @@
-test_archive_link_fails (__main__.Contracts.test_archive_link_fails) ... ok
-test_checksum_mismatch_fails (__main__.Contracts.test_checksum_mismatch_fails) ... ok
-test_failed_task_is_preserved_without_training_clearance (__main__.Contracts.test_failed_task_is_preserved_without_training_clearance) ... ok
-test_traversal_and_wrong_job_namespace_fail (__main__.Contracts.test_traversal_and_wrong_job_namespace_fail) ... ok
-
-----------------------------------------------------------------------
-Ran 4 tests in 0.953s
-
-OK

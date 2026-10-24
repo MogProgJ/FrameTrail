@@ -39,7 +39,9 @@ Thumbs.db
 /gemini_generated_video_*.mp4
 /gemini_generated_video_*-analysis.csv
 
-# Keep copied research evidence separate from local runtime artifacts
-/research/**/__pycache__/
-/research/**/.env
-/research/**/.env.*
+# Training data, checkpoints and run outputs live outside Git
+/runs/
+/data/
+*.pth
+*.pt
+*.onnx

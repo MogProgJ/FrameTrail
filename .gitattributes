@@ -3,10 +3,4 @@
 *.svg text eol=lf
 *.sbatch text eol=lf
 *.sh text eol=lf
-
-# Frozen research evidence must retain its original bytes and hashes.
-/research/** -text
-
-# Portable AI handoff copies retain the same bytes across Windows checkouts.
-/AI_HANDOFF_20261024.txt text eol=lf
-/AI_HANDOFF_FACTS_20261024.json text eol=lf
+*.py text eol=lf

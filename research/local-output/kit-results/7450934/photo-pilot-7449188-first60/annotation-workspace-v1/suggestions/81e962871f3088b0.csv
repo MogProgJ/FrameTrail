@@ -1,3 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,2,car,0.66973,0,6.06592,1022.38,765.76,171.642
-0,0,2,car,0.553979,205.698,464.75,270.881,511.799,171.642

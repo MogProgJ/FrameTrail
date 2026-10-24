@@ -1,2 +1,0 @@
-sequence,timestamp_us,width,height,rgb_bytes,decode_rgb_ms,preprocess_ms,inference_ms,postprocess_ms,tracking_ms,pipeline_ms
-0,0,1280,720,2764800,27.230100,11.721900,291.381900,2.746800,0.000000,333.912600

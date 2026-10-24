@@ -1,1 +1,0 @@
-bash "$(ws_find frametrail)/FrameTrail/output/frametrail-start-data-refresh-658b0c2c-v1.sh"

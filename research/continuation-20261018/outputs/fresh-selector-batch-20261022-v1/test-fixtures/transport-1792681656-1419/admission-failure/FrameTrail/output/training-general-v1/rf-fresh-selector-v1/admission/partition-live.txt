@@ -1,1 +1,0 @@
-PartitionName=gpu_a100_il

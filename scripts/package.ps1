@@ -59,11 +59,10 @@ if($taskGpuCompiled -and (Test-Path -LiteralPath (Join-Path $taskGpuBuild 'onnxr
 Get-ChildItem -LiteralPath (Join-Path $taskRoot 'dependencies') -Filter '*.json'  | Copy-Item -Destination (Join-Path $taskStage 'dependencies')
 Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/PACKAGING.md') -Destination (Join-Path $taskStage 'README.md')
 $taskGuide = Join-Path $taskStage 'README.md'
-$taskGuideText = (Get-Content -LiteralPath $taskGuide -Raw).Replace('](SAVED_RUNS.md)','](docs/SAVED_RUNS.md)').Replace('](GPU_INFERENCE.md)','](docs/GPU_INFERENCE.md)').Replace('](TRACKING_EVALUATION.md)','](docs/TRACKING_EVALUATION.md)').Replace('](RECOGNITION.md)','](docs/RECOGNITION.md)')
+$taskGuideText = (Get-Content -LiteralPath $taskGuide -Raw).Replace('](SAVED_RUNS.md)','](docs/SAVED_RUNS.md)').Replace('](GPU_INFERENCE.md)','](docs/GPU_INFERENCE.md)')
 Set-Content -LiteralPath $taskGuide -Value $taskGuideText -Encoding utf8
 $taskDocs = New-Item -ItemType Directory -Path (Join-Path $taskStage 'docs')
 Get-ChildItem -LiteralPath (Join-Path $taskRoot 'docs') -Filter '*.md' | Copy-Item -Destination $taskDocs.FullName
-Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/benchmarks') -Destination $taskDocs.FullName -Recurse
 Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/THIRD_PARTY_NOTICES.md') -Destination (Join-Path $taskStage 'notices')
 Copy-Item -LiteralPath (Join-Path $taskRoot 'docs/notices') -Destination (Join-Path $taskStage 'notices/upstream') -Recurse
 Copy-Item -LiteralPath (Join-Path $taskFfmpeg 'LICENSE.txt') -Destination (Join-Path $taskStage 'notices/FFmpeg-LICENSE.txt')

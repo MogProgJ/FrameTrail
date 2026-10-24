@@ -1,2 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,90,owl,0.696795,5.38369,111.404,681.226,1024,162.407

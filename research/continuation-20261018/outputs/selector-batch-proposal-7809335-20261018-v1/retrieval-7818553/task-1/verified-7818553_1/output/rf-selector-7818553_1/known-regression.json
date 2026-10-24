@@ -1,8 +1,0 @@
-{
-  "status": "step-zero-unchanged-reuse-pinned-current-scores",
-  "best_checkpoint_sha256": "b52bbd7be6d864b9e4eff97ea3141a3f25a61d0f71295f24742d9251ddbb7121",
-  "scored_new_images": 0,
-  "retention_passed": true,
-  "reference_sets": 6,
-  "production_adoption": false
-}

@@ -1,4 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,529,street light,0.560722,625.157,5.76046,941,763.93,172.561
-0,0,315,house,0.328308,0.212551,590.74,250.59,767.588,172.561
-0,0,574,tree,0.251725,0.0254471,408.745,72.2276,762.542,172.561

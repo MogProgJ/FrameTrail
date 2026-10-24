@@ -1,3 +1,0 @@
-﻿Object,Appearance ID,First seen,Last seen,Span seconds,Observations,Peak confidence percent,First frame,Last frame,First timestamp us,Last timestamp us,Video,Analysis status,Model,Run ID,Execution provider,Runtime,Device,CPU fallback
-"bicycle",1,00:00:00.000,00:00:00.000,0.000,1,95.40,0,0,0,0,"workflow-long.mkv","cancelled","YOLOX-S","f470bd5a70837a19fc76a561c2a0dd74","CPU","1.30.0","Processor",""
-"dog",2,00:00:00.000,00:00:00.000,0.000,1,91.81,0,0,0,0,"workflow-long.mkv","cancelled","YOLOX-S","f470bd5a70837a19fc76a561c2a0dd74","CPU","1.30.0","Processor",""

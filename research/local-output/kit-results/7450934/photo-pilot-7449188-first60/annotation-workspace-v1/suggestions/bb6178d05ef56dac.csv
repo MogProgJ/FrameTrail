@@ -1,4 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,47,apple,0.944161,328.949,56.075,684.278,395.704,185.963
-0,0,47,apple,0.363898,246.633,339.146,521.867,612.885,185.963
-0,0,47,apple,0.326438,518.371,346.983,790.902,618.162,185.963

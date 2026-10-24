@@ -1,9 +1,0 @@
-{
-  "status": "reporting-audit-order-correction",
-  "original_failure": "Exact list comparison used fold/model order against model/fold order",
-  "repair": "Compare unchanged per-method/fold result dictionaries in canonical order",
-  "fit_records_changed": false,
-  "new_fits": 0,
-  "optimizer_updates": 0,
-  "validation_or_test_used": false
-}

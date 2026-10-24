@@ -106,7 +106,7 @@ FFmpeg decodes, Qt presents the interface, ONNX Runtime runs YOLOX-Nano or YOLOX
 
 Training is an offline artifact-production workflow, not part of the desktop process. A future Python tool may train on a workstation or bwUniCluster and export a versioned ONNX model plus labels, preprocessing metadata, checksum, metrics, and provenance. The C++ application accepts that artifact only through a matching detector adapter and local validation.
 
-A future GPU execution provider remains inside the native detector boundary. A future Python inference worker, if justified, implements the same frame/result identity contract across a versioned process boundary. The native CPU detector remains the fallback. bwUniCluster is a scheduled batch target and is not part of the interactive runtime topology. See [Compute, training, and bwUniCluster](COMPUTE_AND_TRAINING.md).
+A future GPU execution provider remains inside the native detector boundary. A future Python inference worker, if justified, implements the same frame/result identity contract across a versioned process boundary. The native CPU detector remains the fallback. bwUniCluster is a scheduled batch target and is not part of the interactive runtime topology. See Compute, training, and bwUniCluster.
 
 ## Optional GPU module in 0.10
 
@@ -116,4 +116,4 @@ A future GPU execution provider remains inside the native detector boundary. A f
 
 ## Tracking continuity modules (0.11)
 
-`Tracker` stays pixel independent. `FrameTracker` composes a bounded `SceneBoundary` guard with association/rules and is shared by preview, live, CLI and appearance analysis. A boundary clears active continuity while retaining monotonically increasing run IDs and counts. `association::assign` owns the bounded experimental Hungarian repair; the default remains greedy. Optional schema-3 policy metadata preserves configuration without migrating older files. See [evaluation](TRACKING_EVALUATION.md).
+`Tracker` stays pixel independent. `FrameTracker` composes a bounded `SceneBoundary` guard with association/rules and is shared by preview, live, CLI and appearance analysis. A boundary clears active continuity while retaining monotonically increasing run IDs and counts. `association::assign` owns the bounded experimental Hungarian repair; the default remains greedy. Optional schema-3 policy metadata preserves configuration without migrating older files. See evaluation.

@@ -1,1 +1,0 @@
-{"status": "approved-code-assets-and-scope-verified", "sealed_files": 3021, "photos": 965, "planned_updates": 12000, "trial_tasks": 4, "GPU_inference": false, "training": false}

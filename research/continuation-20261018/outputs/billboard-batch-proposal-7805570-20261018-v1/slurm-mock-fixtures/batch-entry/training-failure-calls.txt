@@ -1,3 +1,0 @@
-verify_package.py
-train_balanced.py
-bundle_results.py

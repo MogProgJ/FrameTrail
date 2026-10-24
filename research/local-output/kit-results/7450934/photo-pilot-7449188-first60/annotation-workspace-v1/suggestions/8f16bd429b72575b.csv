@@ -1,4 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,0,person,0.507854,131.289,35.8423,481.223,680.828,177.373
-0,0,16,dog,0.301884,352.041,203.161,753.73,576.322,177.373
-0,0,392,monkey,0.267995,352.291,204.94,753.891,576.443,177.373

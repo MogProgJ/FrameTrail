@@ -1,4 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,0,person,0.80346,293.264,13.0591,1023.22,682.297,169.759
-0,0,322,human face,0.740818,578.132,32.4388,848.865,427.649,169.759
-0,0,193,coffee cup,0.423434,590.202,495.436,799.063,682.285,169.759

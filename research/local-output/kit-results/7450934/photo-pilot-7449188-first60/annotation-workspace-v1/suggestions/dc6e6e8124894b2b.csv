@@ -1,2 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,437,plant,0.578443,0,0,1024,675.983,178.751

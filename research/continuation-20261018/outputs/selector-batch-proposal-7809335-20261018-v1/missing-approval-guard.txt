@@ -1,9 +1,0 @@
-Explicit approval for this exact cluster job is required before packaging or SSH. No job submitted.
-At C:\Users\nazee\Documents\Codex\2026-10-18\frametrail-continuation\outputs\selector-batch-proposal-7809335-20261018-v
-1\Launch-Approved-Run.ps1:4 char:77
-+ ... .json'))) { throw 'Explicit approval for this exact cluster job is re ...
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : OperationStopped: (Explicit approv... job submitted.:String) [], RuntimeException
-    + FullyQualifiedErrorId : Explicit approval for this exact cluster job is required before packaging or SSH. No job 
-    submitted.
- 

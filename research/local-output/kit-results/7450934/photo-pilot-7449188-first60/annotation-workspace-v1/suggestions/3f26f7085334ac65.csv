@@ -1,4 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,25,umbrella,0.761123,252.875,275.671,619.566,573.649,164.776
-0,0,0,person,0.632972,206.229,340.244,509.315,938.738,164.776
-0,0,187,clothing,0.266302,205.215,415.287,452.774,911.634,164.776

@@ -1,5 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,322,human face,0.508742,480.593,262.02,707.234,536.28,170.304
-0,0,199,computer keyboard,0.397247,755.041,440.854,1024,766.913,170.304
-0,0,0,person,0.345866,27.3246,31.314,924.427,768,170.304
-0,0,187,clothing,0.301147,195.122,417.947,770.563,766.424,170.304

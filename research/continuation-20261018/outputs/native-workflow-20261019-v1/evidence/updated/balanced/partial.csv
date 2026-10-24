@@ -1,4 +1,0 @@
-﻿Object,Appearance ID,First seen,Last seen,Span seconds,Observations,Peak confidence percent,First frame,Last frame,First timestamp us,Last timestamp us,Video,Analysis status,Model,Run ID,Execution provider,Runtime,Device,CPU fallback
-"dog",1,00:00:00.000,00:00:00.000,0.000,1,95.48,0,0,0,0,"workflow-long.mkv","cancelled","RF-DETR balanced 7805570 (experimental)","b23ba630b0d2545e78ac1184dae6b082","CPU","1.30.0","Processor",""
-"bicycle",2,00:00:00.000,00:00:00.000,0.000,1,92.60,0,0,0,0,"workflow-long.mkv","cancelled","RF-DETR balanced 7805570 (experimental)","b23ba630b0d2545e78ac1184dae6b082","CPU","1.30.0","Processor",""
-"car",3,00:00:00.000,00:00:00.000,0.000,1,85.04,0,0,0,0,"workflow-long.mkv","cancelled","RF-DETR balanced 7805570 (experimental)","b23ba630b0d2545e78ac1184dae6b082","CPU","1.30.0","Processor",""

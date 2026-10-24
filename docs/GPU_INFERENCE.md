@@ -41,7 +41,7 @@ On this laptop: Intel Core i7-10750H, GTX 1650 Ti 4 GiB, NVIDIA driver 581.95, W
 | Nano | 20.44 ms | 17.21 ms | 48.93 → 58.09 | 1.19× | 2.82 → 4.18 s |
 | S | 163.41 ms | 39.21 ms | 6.12 → 25.51 | 4.17× | 19.77 → 5.95 s |
 
-GPU p95 pipeline times were 23.62 ms for Nano and 46.53 ms for S. Sampled process peaks grew from about 79/161 MiB on CPU to 289/326 MiB on GPU for Nano/S. Model loading and graph preparation account for part of the short-run cost. The important result is that S benefits substantially while Nano has a modest warm gain and loses on short overall duration. See the [sanitized measurement summary](benchmarks/2026-10-03-gpu.json); raw input, annotations and detailed results stay local and ignored.
+GPU p95 pipeline times were 23.62 ms for Nano and 46.53 ms for S. Sampled process peaks grew from about 79/161 MiB on CPU to 289/326 MiB on GPU for Nano/S. Model loading and graph preparation account for part of the short-run cost. The important result is that S benefits substantially while Nano has a modest warm gain and loses on short overall duration.
 
 The frozen 24 selected targets from five partially labelled snapshots produced the same recovery counts: Nano 18/24 and S 24/24 on CPU and GPU. The public reference-photo checks also compare strong same-class boxes/confidences and repeated GPU outputs. This is limited regression evidence, not full precision, event accuracy or exact numerical equality. GPU arithmetic can change scores near thresholds or NMS boundaries.
 

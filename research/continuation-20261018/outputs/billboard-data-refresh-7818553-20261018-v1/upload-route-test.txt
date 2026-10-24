@@ -1,3 +1,0 @@
-Upload only. Enter KIT OTP/password directly. Submit using your existing cluster session afterward.
-Upload finished. In your existing cluster terminal: bash "$(ws_find frametrail)/FrameTrail/output/frametrail-start-data-refresh-2fb87eec-v1.sh"
-PASS: one inert SCP invocation containing both files; zero network connections or submissions.

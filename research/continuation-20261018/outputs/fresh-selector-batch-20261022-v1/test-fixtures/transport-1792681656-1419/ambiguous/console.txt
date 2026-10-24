@@ -1,2 +1,0 @@
-Ambiguous submission; preserve lock and inspect scheduler.
-Submission previously attempted; inspect evidence. No replacement.

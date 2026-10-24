@@ -1,1 +1,0 @@
-Recognition profile/vocabulary mismatch; use the pinned model export

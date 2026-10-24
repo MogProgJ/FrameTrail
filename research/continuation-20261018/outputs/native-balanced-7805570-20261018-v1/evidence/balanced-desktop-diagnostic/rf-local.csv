@@ -1,3 +1,0 @@
-﻿Object,Appearance ID,First seen,Last seen,Span seconds,Observations,Peak confidence percent,First frame,Last frame,First timestamp us,Last timestamp us,Video,Analysis status,Model,Run ID,Execution provider,Runtime,Device,CPU fallback
-"cat",1,00:00:00.000,00:00:01.500,1.500,4,93.20,0,3,0,1500000,"cat-review.mkv","completed","RF-DETR balanced 7805570 (experimental)","688830d8145bf05ca406c6c27b21228f","CPU","1.30.0","Processor",""
-"person",2,00:00:00.000,00:00:01.500,1.500,4,92.12,0,3,0,1500000,"cat-review.mkv","completed","RF-DETR balanced 7805570 (experimental)","688830d8145bf05ca406c6c27b21228f","CPU","1.30.0","Processor",""

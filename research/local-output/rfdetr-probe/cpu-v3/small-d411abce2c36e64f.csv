@@ -1,4 +1,0 @@
-sequence,timestamp_us,class_id,label,confidence,left,top,right,bottom,detection_ms
-0,0,0,person,0.916385,470.689,16.332,850.585,560.297,165.997
-0,0,0,person,0.890087,110.18,81.1043,572.971,727.964,165.997
-0,0,0,person,0.631852,814.126,2.76075,1023.31,578.053,165.997

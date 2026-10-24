@@ -1,8 +1,0 @@
-{
-  "archive": "frametrail-rf-selector-a77d9663-v1.tar.gz",
-  "archive_sha256": "18e774efc73f126ffb5e5de2f648e2a5385c06ff4dffd422e309a27d0bc3235c",
-  "bytes": 531669695,
-  "package_seal_sha256": "9d8009c09ed03b4e01397fb9b4d346baeb1560f3c2007ba46a8cab8c9923d885",
-  "approval_sha256": "85aa28b8ad3f8e5f76f1fa4746496cb32163c63ae15ec3de98568ed9a280a81f",
-  "protocol_sha256": "a77d9663fcc898b6a257f6722dd37bc24b1d3a2d3065eb8cce5f0625403f019a"
-}

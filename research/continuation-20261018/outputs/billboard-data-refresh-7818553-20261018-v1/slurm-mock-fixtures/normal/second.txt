@@ -1,3 +1,0 @@
-FRAMETRAIL_JOB_ID=123456789
-Collection report not ready.
-Archive not ready.

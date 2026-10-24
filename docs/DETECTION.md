@@ -2,7 +2,7 @@
 
 ## What you can do
 
-Open an image or recording with **Detect objects** checked. FrameTrail draws boxes, class names, and confidence scores for the displayed frame. Detection is enabled by default when the local model exists. Unchecking it restores preview-only playback. Changing detection settings preserves the current frame and prior playing/paused state; temporary tracking counts restart there. The model selector offers Nano, YOLOX-S and the optional broader recognition models; see [model evaluation](MODEL_EVALUATION.md).
+Open an image or recording with **Detect objects** checked. FrameTrail draws boxes, class names, and confidence scores for the displayed frame. Detection is enabled by default when the local model exists. Unchecking it restores preview-only playback. Changing detection settings preserves the current frame and prior playing/paused state; temporary tracking counts restart there. The model selector offers Nano, YOLOX-S and the optional broader recognition models; see model evaluation.
 
 The confidence control defaults to 0.35. Raising it hides weaker predictions; lowering it shows more candidates and can introduce false positives. A score is not a calibrated probability that a label is correct. The initial detector recognizes the 80 COCO categories, including people, bicycles, cars, motorcycles, buses, and trucks. Tracking adds selected classes, IDs, and crossing counts; see [TRACKING.md](TRACKING.md). Version 0.5 persists whole-file crossing analyses and reopens evidence without inference; see [SAVED_RUNS.md](SAVED_RUNS.md).
 
@@ -78,7 +78,7 @@ This adds tests requiring dog and bicycle detections, validates CLI exports, and
 
 Historical 0.3 baseline: with model and sample present, all 11 CTest checks passed. The inspected overlay found dog, bicycle, and car boxes on the 768x576 photo. On the inspected i7-10750H, two Release runs averaged approximately 15 and 20 ms per frame, each over ten warm detections with four CPU threads. The second run reported 61.1 MiB peak process working set. This includes preprocessing/postprocessing and excludes model load, file decode, and UI drawing. Subsequent runs can differ with load and power state. The sample test also reports process peak working set on Windows; this includes runtime and decoder memory and is not a model-only allocation measurement.
 
-The 0.8 update adds a partial-label selected-target comparison on user-supplied footage and an S option; see [results and limits](MODEL_EVALUATION.md). Representative full precision/recall, long-running resource and tracking/event evaluation remain open.
+The 0.8 update adds a partial-label selected-target comparison on user-supplied footage and an S option; see results and limits. Representative full precision/recall, long-running resource and tracking/event evaluation remain open.
 
 ## Notices
 
@@ -87,4 +87,4 @@ ONNX Runtime's SDK contains its MIT license and third-party notices. YOLOX's ups
 
 ## Expanded decoded-YOLO adapter (0.12)
 
-Open Images and World models have their own native RGB/255 centered-letterbox adapter and decoded channel-first tensors. Their exact profile/vocabulary is checked before inference. They do not use the YOLOX input/output contract above. The 597-category broad model, fixed 100-category experimental World exports, measured gains/regressions, pinned export setup and remaining dark-fox failure are documented in [RECOGNITION.md](RECOGNITION.md). The existing CPU/GPU execution preference, tracking and appearance workflow remain shared.
+Open Images and World models have their own native RGB/255 centered-letterbox adapter and decoded channel-first tensors. Their exact profile/vocabulary is checked before inference. They do not use the YOLOX input/output contract above. The 597-category broad model, fixed 100-category experimental World exports, measured gains/regressions, pinned export setup and remaining dark-fox failure are documented in RECOGNITION.md. The existing CPU/GPU execution preference, tracking and appearance workflow remain shared.
