@@ -7,6 +7,12 @@
 #include "appearance_timeline.hpp"
 #include "recent_files.hpp"
 #include <QPainter>
+#include <QDir>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QShortcut>
+#include <QStandardPaths>
 #include <QPainterPath>
 #include <map>
 #include <QFrame>
@@ -54,7 +60,7 @@ QString time_text(std::optional<std::chrono::microseconds> time) {
 }
 QImage thumbnail_image(const std::vector<std::uint8_t>& value) {return QImage::fromData(value.data(),int(value.size()),"PPM");}
 // Saved thumbnail with the object picked out: the rest of the frame dimmed, the box in its type colour.
-QIcon appearance_icon(const QImage& thumbnail,const frametrail::Detection& box,int width,int height) {
+QIcon appearance_icon(const QImage& thumbnail,const frametrail::Detection& box,int width,int height,std::optional<bool> verdict={}) {
     if(thumbnail.isNull())return {};
     auto image=thumbnail.convertToFormat(QImage::Format_RGB32).scaled(thumbnail.size()*2,Qt::KeepAspectRatio,Qt::SmoothTransformation);
     const double sx=double(image.width())/std::max(1,width),sy=double(image.height())/std::max(1,height);
@@ -63,6 +69,12 @@ QIcon appearance_icon(const QImage& thumbnail,const frametrail::Detection& box,i
     QPainterPath outside;outside.addRect(image.rect());QPainterPath inside;inside.addRect(object);
     painter.fillPath(outside.subtracted(inside),QColor(0,0,0,120));
     painter.setPen(QPen(ft::ui::category_color(box.class_id),2.5));painter.setBrush(Qt::NoBrush);painter.drawRect(object);
+    if(verdict) { // Review badge: green check for correct, red cross for wrong.
+        const double r=image.height()*.2;const QPointF centre(image.width()-r-5,image.height()-r-5);
+        painter.setPen(QPen(QColor(0,0,0,140),2));painter.setBrush(*verdict ? QColor("#3fae4f") : QColor("#e0444f"));painter.drawEllipse(centre,r,r);
+        painter.save();painter.translate(centre-QPointF(r*.7,r*.7));painter.scale(r*1.4/20.,r*1.4/20.);
+        painter.fillPath(fluent_path(*verdict ? QStringLiteral("check") : QStringLiteral("dismiss")),Qt::white);painter.restore();
+    }
     return QIcon(QPixmap::fromImage(image));
 }
 // 0:02.4 style: minutes, seconds and tenths.
@@ -123,7 +135,8 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     analyse_=new QPushButton(QStringLiteral("Analyse video"));analyse_->setObjectName(QStringLiteral("saveAnalysis"));analyse_->setProperty("role","primary");actions->addWidget(analyse_);
     cancel_=new QPushButton(QStringLiteral("Cancel"));cancel_->setObjectName(QStringLiteral("cancelAnalysis"));actions->addWidget(cancel_);
     save_=new QPushButton(QStringLiteral("Save analysis…"));save_->setObjectName(QStringLiteral("saveRun"));actions->addWidget(save_);
-    export_=new QPushButton(QStringLiteral("Export CSV…"));export_->setObjectName(QStringLiteral("exportRun"));actions->addWidget(export_);actions->addStretch();
+    export_=new QPushButton(QStringLiteral("Export CSV…"));export_->setObjectName(QStringLiteral("exportRun"));actions->addWidget(export_);
+    export_review_=new QPushButton(QStringLiteral("Export review…"));export_review_->setObjectName(QStringLiteral("exportReview"));actions->addWidget(export_review_);actions->addStretch();
     settings_toggle_=new QToolButton;settings_toggle_->setText(QStringLiteral("Settings"));settings_toggle_->setCheckable(true);actions->addWidget(settings_toggle_);layout->addLayout(actions);
     settings_panel_=new QWidget;auto* options=new QHBoxLayout(settings_panel_);options->setContentsMargins(0,0,0,0);
     const auto nano=configuration_ && configuration_->detector.variant==frametrail::DetectorModel::nano && !configuration_->detector.model.empty() ?
@@ -151,12 +164,21 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     play_=new QPushButton(QStringLiteral("Play"));play_->setObjectName(QStringLiteral("reviewPlay"));play_->setProperty("role","subtle");playback->addWidget(play_);
     back_=new QPushButton(QStringLiteral("Back to appearance"));back_->setObjectName(QStringLiteral("backToAppearance"));back_->setProperty("role","subtle");playback->addWidget(back_);
     review_status_=new QLabel(QStringLiteral("Results will appear here after analysis."));review_status_->setObjectName(QStringLiteral("reviewStatus"));review_status_->setProperty("role","muted");review_status_->setTextFormat(Qt::PlainText);playback->addWidget(review_status_,1);
+    correct_=new QPushButton(QStringLiteral("Correct"));correct_->setObjectName(QStringLiteral("markCorrect"));
+    correct_->setIcon(studio_icon(QStringLiteral("check"),ft::ui::success,QColor(),4));correct_->setIconSize(QSize(22,18));
+    correct_->setToolTip(QStringLiteral("The box and label are right · C"));playback->addWidget(correct_);
+    wrong_=new QPushButton(QStringLiteral("Wrong"));wrong_->setObjectName(QStringLiteral("markWrong"));
+    wrong_->setIcon(studio_icon(QStringLiteral("dismiss"),QColor("#ff7b84"),QColor(),4));wrong_->setIconSize(QSize(22,18));
+    wrong_->setToolTip(QStringLiteral("A false alarm or the wrong object type · X  (U clears)"));playback->addWidget(wrong_);
     review_layout->addWidget(transport);
     timeline_=new AppearanceTimeline;timeline_->hide();review_layout->addWidget(timeline_);
     timeline_->activated=[this](std::uint64_t id){select_appearance(id);};
     split->addWidget(review);
     auto* results=new QFrame;results->setObjectName(QStringLiteral("inspector"));results_panel_=results;auto* results_layout=new QVBoxLayout(results);results_layout->setContentsMargins(14,16,14,14);results_layout->setSpacing(10);
     results_title_=new QLabel(QStringLiteral("Object appearances"));results_title_->setProperty("role","section");results_title_->setContentsMargins(4,0,0,0);results_layout->addWidget(results_title_);
+    review_progress_=new QLabel;review_progress_->setObjectName(QStringLiteral("reviewProgress"));review_progress_->setProperty("role","caption");
+    review_progress_->setWordWrap(true);review_progress_->setTextFormat(Qt::PlainText);review_progress_->setContentsMargins(4,0,0,0);results_layout->addWidget(review_progress_);
+    review_bar_=new QProgressBar;review_bar_->setObjectName(QStringLiteral("reviewBar"));review_bar_->setTextVisible(false);review_bar_->setMaximumHeight(4);results_layout->addWidget(review_bar_);
     chips_=new QWidget;chips_layout_=new FlowLayout(chips_,6);chips_->hide();results_layout->addWidget(chips_);
     events_=new QListWidget;events_->setObjectName(QStringLiteral("savedEvents"));events_->setIconSize(QSize(96,54));events_->setAcceptDrops(false);events_->viewport()->setAcceptDrops(false);results_layout->addWidget(events_,1);
     auto* paging=new QHBoxLayout;previous_=new QPushButton(QStringLiteral("Previous"));more_=new QPushButton(QStringLiteral("Next"));previous_->setObjectName(QStringLiteral("previousResults"));more_->setObjectName(QStringLiteral("nextResults"));paging->addWidget(previous_);paging->addWidget(more_);results_layout->addLayout(paging);previous_->hide();more_->hide();previous_->setEnabled(false);more_->setEnabled(false);
@@ -178,6 +200,22 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
         if(!path.isEmpty()){try{export_analysis_csv(path,true);}catch(const std::exception& e){show_error(e);}}
     });
     connect(settings_toggle_,&QToolButton::toggled,settings_panel_,&QWidget::setVisible);
+    review_folder_=QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).filePath(QStringLiteral("reviews"));
+    connect(correct_,&QPushButton::clicked,this,[this]{set_verdict(events_->currentRow(),true,true);});
+    connect(wrong_,&QPushButton::clicked,this,[this]{set_verdict(events_->currentRow(),false,true);});
+    const std::pair<Qt::Key,int> keys[]={{Qt::Key_C,1},{Qt::Key_X,0},{Qt::Key_U,-1}};
+    for(const auto& [key,value]:keys) {
+        auto* shortcut=new QShortcut(QKeySequence(key),this);shortcut->setContext(Qt::WidgetWithChildrenShortcut);
+        connect(shortcut,&QShortcut::activated,this,[this,value]{
+            if(!correct_->isVisible() || !correct_->isEnabled())return;
+            set_verdict(events_->currentRow(),value<0 ? std::nullopt : std::optional<bool>(value==1),value>=0);
+        });
+    }
+    connect(export_review_,&QPushButton::clicked,this,[this]{
+        const auto name=summary_ ? QFileInfo(text(summary_->configuration.source)).completeBaseName()+QStringLiteral("-review.csv") : QStringLiteral("review.csv");
+        const auto path=save_dialog(this,QStringLiteral("Export review"),name,QStringLiteral("CSV (*.csv)"),QStringLiteral("csv"));
+        if(!path.isEmpty()){try{export_review_csv(path,true);}catch(const std::exception& e){show_error(e);}}
+    });
     connect(events_,&QListWidget::currentRowChanged,this,[this](int row){review_event(row);});
     connect(previous_,&QPushButton::clicked,this,[this]{if(cursors_.size()>1){cursors_.pop_back();try{load_page(cursors_.back());}catch(const std::exception& e){show_error(e);}}});
     connect(more_,&QPushButton::clicked,this,[this]{
@@ -190,7 +228,7 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     connect(&timer_,&QTimer::timeout,this,[this]{tick();});timer_.setTimerType(Qt::PreciseTimer);timer_.start(5);
     if(configuration_ && !configuration_->source.empty())select_video(text(configuration_->source));
     studio_button(choose_,"open");studio_button(open_,"history");studio_button(analyse_,"analysis");studio_button(play_,"play");
-    studio_button(save_,"save");studio_button(export_,"export");studio_button(back_,"replay");studio_button(cancel_,"dismiss");
+    studio_button(save_,"save");studio_button(export_,"export");studio_button(export_review_,"check");studio_button(back_,"replay");studio_button(cancel_,"dismiss");
     settings_toggle_->setIcon(studio_icon(QStringLiteral("settings")));settings_toggle_->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     update_controls();
 }
@@ -203,6 +241,10 @@ void SavedRunWindow::update_controls() {
     settings_toggle_->setEnabled(!busy);model_->setEnabled(!busy);confidence_->setEnabled(!busy);
     results_panel_->setVisible(store_.has_value());
     play_->setVisible(store_.has_value());back_->setVisible(store_.has_value());
+    const bool reviewable=store_.has_value() && summary_ && summary_->configuration.kind==frametrail::RunKind::appearances;
+    correct_->setVisible(reviewable);wrong_->setVisible(reviewable);review_progress_->setVisible(reviewable);review_bar_->setVisible(reviewable);
+    correct_->setEnabled(reviewable && !busy && events_->currentRow()>=0);wrong_->setEnabled(correct_->isEnabled());
+    export_review_->setVisible(reviewable && !verdicts_.empty());export_review_->setEnabled(!busy);
     if(busy){play_->setEnabled(false);back_->setEnabled(false);}
 }
 bool SavedRunWindow::confirm_discard() {
@@ -225,7 +267,7 @@ bool SavedRunWindow::select_video(const QString& video) {
     if(!file.isFile() || !file.isReadable()){status_->setText(QStringLiteral("Choose one readable local video file."));return false;}
     if(!confirm_discard())return false;
     review_.stop();pending_review_.reset();next_.reset();playing_=false;awaiting_frame_=false;displayed_timestamp_.reset();
-    store_.reset();summary_.reset();page_.clear();appearances_.clear();events_->clear();cursors_={0};database_.clear();unsaved_=false;
+    store_.reset();summary_.reset();page_.clear();appearances_.clear();events_->clear();verdicts_.clear();cursors_={0};database_.clear();unsaved_=false;
     selected_video_=file.absoluteFilePath();source_->setText(file.fileName());source_->setToolTip(selected_video_);remember_file(selected_video_);
     timeline_->set_spans({},0);timeline_->hide();chips_->hide();
     canvas_->set_image({});canvas_->set_empty_text(QStringLiteral("Ready to analyse\n%1").arg(file.fileName()));
@@ -254,7 +296,7 @@ void SavedRunWindow::start_analysis(const QString& database,frametrail::RunConfi
     if(analysing())throw std::logic_error("An analysis is already running");
     if(std::filesystem::exists(native(database)))throw std::runtime_error("Analysis destination already exists; choose a new filename");
     review_.stop();pending_review_.reset();next_.reset();playing_=false;awaiting_frame_=false;play_->setEnabled(false);back_->setEnabled(false);displayed_timestamp_.reset();preview_sequence_.reset();
-    store_.reset();summary_.reset();page_.clear();appearances_.clear();events_->clear();load_overview();canvas_->set_image({});canvas_->set_empty_text(QStringLiteral("Starting analysis…"));unsaved_=false;
+    store_.reset();summary_.reset();page_.clear();appearances_.clear();events_->clear();verdicts_.clear();load_overview();canvas_->set_image({});canvas_->set_empty_text(QStringLiteral("Starting analysis…"));unsaved_=false;
     previous_->hide();more_->hide();source_->setText(QFileInfo(text(configuration.source)).fileName());source_->setToolTip(text(configuration.source));
     database_=database;draft_job_=QFileInfo(database).absolutePath()==scratch_.path();cancel_requested_=false;analysis_started_=std::chrono::steady_clock::now();job_.start(native(database),std::move(configuration));awaiting_job_=true;
     progress_->setRange(0,0);progress_->show();status_->setText(QStringLiteral("Starting analysis…"));review_status_->setText(QStringLiteral("Processing locally. Save the result when you’re ready."));update_controls();
@@ -293,7 +335,7 @@ void SavedRunWindow::open_run(const QString& database) {
     if(!s.error.empty() && s.status!="cancelled")status_->setText(status_->text()+QStringLiteral(" · ")+QString::fromStdString(s.error));
     canvas_->set_empty_text(objects ? QStringLiteral("No object appearances found\nTry a lower confidence in Analysis settings") : QStringLiteral("No crossing events in this analysis"));
     review_status_->setText(store_->source_available() ? QStringLiteral("Click an appearance to review it.") : QStringLiteral("Video missing or changed. Thumbnails and exports are still available."));
-    progress_->hide();load_overview();load_page(0);update_controls();
+    progress_->hide();load_reviews();load_overview();load_page(0);update_review_summary();update_controls();
 }
 void SavedRunWindow::load_page(std::uint64_t after) {
     if(!store_)return;
@@ -303,7 +345,9 @@ void SavedRunWindow::load_page(std::uint64_t after) {
         appearances_=store_->appearances(after);
         for(const auto& value:appearances_) {
             const auto seconds=value.first_timestamp && value.last_timestamp ? double((*value.last_timestamp-*value.first_timestamp).count())/1e6 : 0.;
-            auto* item=new QListWidgetItem(appearance_icon(thumbnail_image(value.thumbnail),value.first_detection,summary_->media.width,summary_->media.height),
+            const auto found=verdicts_.find(value.id);
+            auto* item=new QListWidgetItem(appearance_icon(thumbnail_image(value.thumbnail),value.first_detection,summary_->media.width,summary_->media.height,
+                    found==verdicts_.end() ? std::nullopt : std::optional<bool>(found->second.correct)),
                 QStringLiteral("%1\n%2 – %3  ·  %4 s  ·  %5%").arg(QString::fromUtf8(frametrail::class_name(value.first_detection.class_id).data()),
                     short_time(value.first_timestamp),short_time(value.last_timestamp)).arg(seconds,0,'f',1).arg(qRound(value.peak_confidence*100)),events_);
             item->setSizeHint(QSize(300,70));item->setToolTip(QStringLiteral("Appearance #%1 · %2 observations · peak confidence %3%\nFrame span includes short detection gaps; IDs belong to this analysis.").arg(value.id).arg(value.observations).arg(value.peak_confidence*100,0,'f',1));
@@ -324,6 +368,7 @@ void SavedRunWindow::load_page(std::uint64_t after) {
 }
 void SavedRunWindow::load_overview() {
     while(auto* item=chips_layout_->takeAt(0)){delete item->widget();delete item;}
+    chips_by_type_.clear();
     if(!store_ || summary_->configuration.kind!=frametrail::RunKind::appearances){timeline_->set_spans({},0);timeline_->hide();chips_->hide();return;}
     std::vector<AppearanceTimeline::Span> spans;
     std::map<int,std::pair<int,std::uint64_t>> types; // object type -> appearances, first appearance id
@@ -346,6 +391,7 @@ void SavedRunWindow::load_overview() {
         {QPainter painter(&dot);painter.setRenderHint(QPainter::Antialiasing);painter.setPen(Qt::NoPen);painter.setBrush(ft::ui::category_color(type));painter.drawEllipse(QRectF(1,1,8,8));}
         chip->setIcon(QIcon(dot));chip->setIconSize(QSize(10,10));
         const auto first=info.second;connect(chip,&QPushButton::clicked,this,[this,first]{select_appearance(first);});
+        chips_by_type_[type]={info.first,chip};
         chips_layout_->addWidget(chip);
     }
     chips_->setVisible(!ordered.empty());
@@ -436,4 +482,101 @@ void SavedRunWindow::closeEvent(QCloseEvent* event) {
     if(!closing_ && !analysing() && !awaiting_job_ && !confirm_discard()){event->ignore();if(workspace_close_decision)workspace_close_decision(false);return;}
     if(job_.progress().active || review_.snapshot().worker_active){closing_=true;job_.cancel();review_.stop();event->ignore();status_->setText(QStringLiteral("Closing analysis…"));}
     else {review_.release();store_.reset();event->accept();if(workspace_close_decision)workspace_close_decision(true);}
+}
+
+// --- Review: correct / wrong verdicts per appearance -------------------------------------------
+void SavedRunWindow::set_review_folder(const QString& folder) {review_folder_=folder;if(store_){load_reviews();load_page(cursors_.back());update_review_summary();}}
+QString SavedRunWindow::review_file() const {
+    return summary_ ? QDir(review_folder_).filePath(QString::fromStdString(summary_->id)+QStringLiteral(".json")) : QString{};
+}
+std::optional<bool> SavedRunWindow::verdict(int row) const {
+    if(row<0 || row>=int(appearances_.size()))return std::nullopt;
+    const auto found=verdicts_.find(appearances_[std::size_t(row)].id);
+    return found==verdicts_.end() ? std::nullopt : std::optional<bool>(found->second.correct);
+}
+void SavedRunWindow::load_reviews() {
+    verdicts_.clear();
+    QFile file(review_file());
+    if(review_file().isEmpty() || !file.open(QIODevice::ReadOnly))return;
+    const auto root=QJsonDocument::fromJson(file.readAll()).object();
+    if(root.value(QStringLiteral("run_id")).toString()!=QString::fromStdString(summary_->id))return;
+    for(const auto& entry:root.value(QStringLiteral("verdicts")).toArray()) {
+        const auto row=entry.toObject();
+        const auto id=row.value(QStringLiteral("appearance")).toInteger(0);
+        if(id>0)verdicts_[std::uint64_t(id)]={row.value(QStringLiteral("correct")).toBool(),row.value(QStringLiteral("class_id")).toInt()};
+    }
+}
+void SavedRunWindow::save_reviews() {
+    if(!summary_)return;
+    QJsonArray rows;
+    for(const auto& [id,value]:verdicts_)rows.append(QJsonObject{{QStringLiteral("appearance"),qint64(id)},{QStringLiteral("class_id"),value.class_id},
+        {QStringLiteral("object"),QString::fromUtf8(frametrail::class_name(value.class_id).data())},{QStringLiteral("correct"),value.correct}});
+    const QJsonObject root{{QStringLiteral("schema"),1},{QStringLiteral("run_id"),QString::fromStdString(summary_->id)},
+        {QStringLiteral("video"),QFileInfo(text(summary_->configuration.source)).fileName()},
+        {QStringLiteral("model"),QString::fromUtf8(frametrail::model_name(summary_->configuration.detector.variant).data())},
+        {QStringLiteral("confidence"),summary_->configuration.detector.confidence},
+        {QStringLiteral("appearances"),qint64(summary_->appearance_count)},{QStringLiteral("verdicts"),rows}};
+    QSaveFile file(review_file());
+    if(!QDir().mkpath(review_folder_) || !file.open(QIODevice::WriteOnly) || file.write(QJsonDocument(root).toJson())<0 || !file.commit())
+        status_->setText(QStringLiteral("Could not save the review in %1").arg(QDir::toNativeSeparators(review_folder_)));
+}
+void SavedRunWindow::refresh_item(int row) {
+    if(row<0 || row>=int(appearances_.size()) || row>=events_->count())return;
+    const auto& value=appearances_[std::size_t(row)];
+    events_->item(row)->setIcon(appearance_icon(thumbnail_image(value.thumbnail),value.first_detection,summary_->media.width,summary_->media.height,verdict(row)));
+}
+void SavedRunWindow::set_verdict(int row,std::optional<bool> correct,bool advance) {
+    if(!store_ || !summary_ || summary_->configuration.kind!=frametrail::RunKind::appearances || row<0 || row>=int(appearances_.size()))return;
+    const auto& value=appearances_[std::size_t(row)];
+    if(correct)verdicts_[value.id]={*correct,value.first_detection.class_id};else verdicts_.erase(value.id);
+    save_reviews();refresh_item(row);update_review_summary();update_controls();
+    if(!advance)return;
+    for(int next=row+1;next<int(appearances_.size());++next)if(!verdict(next)){events_->setCurrentRow(next);return;}
+    if(more_->isEnabled()) { // Continue on the next page at its first unreviewed appearance.
+        more_->click();
+        for(int next=0;next<int(appearances_.size());++next)if(!verdict(next)){events_->setCurrentRow(next);return;}
+    }
+}
+QString SavedRunWindow::review_summary() const {return review_progress_->text();}
+void SavedRunWindow::update_review_summary() {
+    const auto total=summary_ ? std::max<std::uint64_t>(summary_->appearance_count,verdicts_.size()) : 0;
+    const auto reviewed=verdicts_.size();
+    const auto correct=std::count_if(verdicts_.begin(),verdicts_.end(),[](const auto& entry){return entry.second.correct;});
+    review_bar_->setRange(0,int(std::max<std::uint64_t>(1,total)));review_bar_->setValue(int(reviewed));
+    if(!reviewed)review_progress_->setText(QStringLiteral("Not reviewed yet. Select an appearance and press C if it is right or X if it is wrong."));
+    else review_progress_->setText(QStringLiteral("%1 %2 of %3  ·  %4 correct, %5 wrong  ·  %6% correct")
+        .arg(reviewed==total ? QStringLiteral("All reviewed:") : QStringLiteral("Reviewed")).arg(reviewed).arg(total).arg(correct).arg(qint64(reviewed)-correct)
+        .arg(qRound(100.*double(correct)/double(reviewed))));
+    for(auto& [type,entry]:chips_by_type_) {
+        int seen=0,right=0;
+        for(const auto& [id,value]:verdicts_)if(value.class_id==type){++seen;right+=value.correct;}
+        auto label=QStringLiteral("%1  %2").arg(QString::fromUtf8(frametrail::class_name(type).data())).arg(entry.first);
+        if(seen)label+=QStringLiteral("  ·  %1%").arg(qRound(100.*right/seen));
+        entry.second->setText(label);
+        entry.second->setToolTip(seen ? QStringLiteral("%1 of %2 reviewed: %3 correct, %4 wrong. Click to jump to the first one.").arg(seen).arg(entry.first).arg(right).arg(seen-right)
+                                      : QStringLiteral("Jump to the first appearance"));
+    }
+}
+void SavedRunWindow::export_review_csv(const QString& output,bool replace) {
+    if(!store_ || analysing() || awaiting_job_)throw std::logic_error("Wait for analysis to finish before exporting");
+    protect_inputs(*summary_,output);
+    const auto staging=scratch_.filePath(QUuid::createUuid().toString(QUuid::WithoutBraces)+QStringLiteral(".csv"));
+    {
+        QFile file(staging);if(!file.open(QIODevice::WriteOnly))throw std::runtime_error(file.errorString().toStdString());
+        QByteArray out("\xef\xbb\xbfAppearance ID,Object,First (s),Last (s),Peak confidence,Verdict\r\n");
+        std::uint64_t after=0;
+        for(;;) {
+            const auto rows=store_->appearances(after,100);if(rows.empty())break;
+            for(const auto& value:rows) {
+                after=value.id;const auto found=verdicts_.find(value.id);
+                const auto seconds=[](std::optional<std::chrono::microseconds> time){return time ? QString::number(time->count()/1e6,'f',3) : QString{};};
+                out+=QStringLiteral("%1,\"%2\",%3,%4,%5,%6\r\n").arg(value.id).arg(QString::fromUtf8(frametrail::class_name(value.first_detection.class_id).data()))
+                    .arg(seconds(value.first_timestamp),seconds(value.last_timestamp)).arg(value.peak_confidence,0,'f',3)
+                    .arg(found==verdicts_.end() ? QString{} : found->second.correct ? QStringLiteral("correct") : QStringLiteral("wrong")).toUtf8();
+            }
+        }
+        if(file.write(out)!=out.size())throw std::runtime_error(file.errorString().toStdString());
+    }
+    try{atomic_copy(staging,output,replace);}catch(...){QFile::remove(staging);throw;}
+    QFile::remove(staging);status_->setText(QStringLiteral("Review exported · %1").arg(QFileInfo(output).fileName()));
 }

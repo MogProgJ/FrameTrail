@@ -68,6 +68,14 @@ Schema-1/2/3 files remain readable without migration. Earlier crossing runs disp
 .\build\windows-msvc\Release\frametrail.exe run output\recording.frametrail --export output\recording.csv
 ```
 
+## Checking accuracy (review mode)
+
+After an analysis, select an appearance and press **C** if the box and label are right or **X** if they are wrong (**U** clears); the **Correct** and **Wrong** buttons under the video do the same. The list then moves to the next unreviewed appearance, across pages. Each thumbnail gets a green or red badge, the results panel shows how many are reviewed and the share that is correct, and every object chip shows its own share.
+
+Verdicts belong to the analysis (its run ID), not to the video: analyse the same video with another model and review it to compare the two. They are stored in the per-user app data folder (`%APPDATA%\FrameTrail\FrameTrail\reviews\<run id>.json`), so the `.frametrail` file is never modified, and they return when the analysis is reopened. **Export review** writes one CSV row per appearance with its times, peak confidence and verdict (blank when not reviewed).
+
+Review measures false alarms (precision). It does not find objects the model missed; comparing how many correct appearances two models find on the same video is the practical stand-in.
+
 ## Pipeline and validation
 
 `AnalysisJob` owns one ordered decode → detect → track → write worker. `RunStore` wraps SQLite's native C API with C++ RAII. A frame's appearance updates, crossing events and progress commit together. Repeating an identical appearance observation does not inflate its count; conflicting IDs or reversed progress fail and roll back. Final counts come from committed rows.

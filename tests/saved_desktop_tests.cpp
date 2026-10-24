@@ -34,7 +34,7 @@ void intake(const std::filesystem::path& fixtures,const std::filesystem::path& s
     const auto root=fixtures/("intake-ui-"+std::to_string(std::chrono::steady_clock::now().time_since_epoch().count()));
     std::filesystem::create_directory(root);const auto video=root/std::filesystem::path(u8"vidéo, 影.mkv");std::filesystem::copy_file(source,video);
     frametrail::RunConfiguration config{{},{model},{}};
-    SavedRunWindow window(config);window.show();
+    SavedRunWindow window(config);window.set_review_folder(text(root/"reviews"));window.show();
     auto* analyse=window.findChild<QPushButton*>(QStringLiteral("saveAnalysis"));
     auto* save=window.findChild<QPushButton*>(QStringLiteral("saveRun"));
     auto* list=window.findChild<QListWidget*>(QStringLiteral("savedEvents"));
@@ -58,6 +58,14 @@ void intake(const std::filesystem::path& fixtures,const std::filesystem::path& s
     require(save->isEnabled(),status->text().toUtf8().constData());
     require(list->count()>0 && status->text().contains(QStringLiteral("completed")),"Appearance results were not presented");
     wait([&]{return window.displayed_timestamp().has_value();},"First reviewed Unicode-source frame");
+    // Review mode: verdicts, auto-advance, progress text, export, and restore after reopening (below).
+    require(!window.verdict(0) && window.review_summary().contains(QStringLiteral("Not reviewed")),"Fresh analysis already had verdicts");
+    window.set_verdict(0,true,true);
+    require(window.verdict(0)==std::optional<bool>(true) && list->currentRow()==std::min(1,list->count()-1),"Correct verdict was not stored or did not advance");
+    if(list->count()>1){window.set_verdict(1,false);require(window.verdict(1)==std::optional<bool>(false),"Wrong verdict was not stored");}
+    require(window.review_summary().contains(QStringLiteral("Reviewed")) || window.review_summary().contains(QStringLiteral("All reviewed")),"Review progress missing");
+    window.export_review_csv(text(root/"review.csv"));
+    require(bytes(root/"review.csv").find(",correct\r\n")!=std::string::npos,"Review CSV lacks the verdicts");
     require(window.grab().save(text(root/"analysis-results.png")),"Results screenshot failed");
     window.resize(920,620);QTest::qWait(25);require(window.grab().save(text(root/"analysis-compact.png")),"Compact analysis screenshot failed");window.resize(1240,820);
     bool prompt_seen=false;
@@ -75,8 +83,9 @@ void intake(const std::filesystem::path& fixtures,const std::filesystem::path& s
     require(bytes(saved)==saved_bytes && bytes(csv)==csv_bytes,"Failed save/export modified existing outputs");
     window.save_analysis(text(saved),true);require(bytes(saved)==saved_bytes,"Confirmed replacement changed results");
     window.close();wait([&]{return !window.isVisible();});
-    SavedRunWindow reopened;reopened.show();reopened.open_run(text(saved));
+    SavedRunWindow reopened;reopened.set_review_folder(text(root/"reviews"));reopened.show();reopened.open_run(text(saved));
     auto* reopened_list=reopened.findChild<QListWidget*>(QStringLiteral("savedEvents"));require(reopened_list->count()==list->count(),"Reopening lost appearances");
+    require(reopened.verdict(0)==std::optional<bool>(true) && (reopened_list->count()<2 || reopened.verdict(1)==std::optional<bool>(false)),"Reopening lost review verdicts");
     fails([&]{reopened.export_analysis_csv(text(saved),true);},"CSV export replaced the working analysis database");
     wait([&]{return reopened.displayed_timestamp().has_value();});
     require(bytes(saved)==saved_bytes,"Review wrote to saved analysis");reopened.close();wait([&]{return !reopened.isVisible();});
