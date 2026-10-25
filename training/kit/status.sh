@@ -11,8 +11,19 @@ echo; echo "Queue (empty = finished or cancelled):"
 squeue -j "$ids" -o "%.10i %.12j %.9T %.20S %.10M %R" 2>/dev/null || true
 echo; echo "Finished jobs:"
 sacct -j "$ids" -X -o JobID,JobName%12,State,Elapsed,ExitCode 2>/dev/null || true
+# A log's own last lines, without the resource summary Slurm appends to every job log.
+log_tail() {
+    awk '/JOB FEEDBACK|^Job ID: [0-9]+$/ {exit} {print}' "$1" \
+        | grep -v -E '^(CPU Utilized|CPU Efficiency|Job Wall-clock time|Memory Utilized|Memory Efficiency|NodeName=|Cluster:|User/Group:|State:|Nodes:|Cores per node:)' \
+        | tail -n "$2"
+}
 for log in $(ls -t logs/ft-*.log 2>/dev/null | head -3); do
-    echo; echo "== last lines of $log"; tail -n 5 "$log"
+    echo; echo "== last lines of $log"; log_tail "$log" 5
+done
+# Failed jobs show more, so the error is visible without opening the cluster.
+sacct -j "$ids" -X -n -P -o JobID,JobName,State 2>/dev/null | while IFS='|' read -r id name state; do
+    [[ "$state" =~ ^(FAILED|OUT_OF_MEMORY|NODE_FAIL) && -f "logs/$name-$id.log" ]] || continue
+    echo; echo "== $name $id $state: last lines of logs/$name-$id.log"; log_tail "logs/$name-$id.log" 25
 done
 for metrics in runs/*/metrics.csv; do
     [[ -f "$metrics" ]] && { echo; echo "== $metrics (last epoch rows)"; tail -n 2 "$metrics" | cut -c1-200; }
