@@ -95,7 +95,13 @@ def main(argv: list[str] | None = None) -> int:
         weights = args.out / 'warmstart.pth'
     elif resume and (args.out / 'warmstart.pth').exists():
         weights = args.out / 'warmstart.pth'  # Same head layout as the run being resumed.
-    model = model_class(pretrain_weights=str(weights))
+    # A warm-started head already has one row per dataset class; rfdetr must be told its size or it cuts the head
+    # back to 90 rows (see checkpoints.py). The official COCO weights are left to rfdetr's own resizing.
+    if Path(weights).name == 'warmstart.pth':
+        from checkpoints import head_classes
+        model = model_class(pretrain_weights=str(weights), num_classes=head_classes(weights))
+    else:
+        model = model_class(pretrain_weights=str(weights))
     options = dict(dataset_dir=str(args.dataset), output_dir=str(args.out), epochs=args.epochs,
                    batch_size=args.batch_size, grad_accum_steps=args.grad_accum, lr=args.lr,
                    lr_encoder=args.lr_encoder, lr_scheduler=args.lr_scheduler, num_workers=args.workers,

@@ -89,6 +89,7 @@ def main(argv: list[str] | None = None) -> int:
     import onnxruntime
     import rfdetr
     import torch
+    from checkpoints import head_classes
 
     model_class = {'nano': rfdetr.RFDETRNano, 'small': rfdetr.RFDETRSmall, 'medium': rfdetr.RFDETRMedium,
                    'base': rfdetr.RFDETRBase, 'large': rfdetr.RFDETRLarge}[args.model]
@@ -96,7 +97,7 @@ def main(argv: list[str] | None = None) -> int:
     if vocabulary_path is None:
         raise SystemExit('App vocabulary not found; pass --vocabulary dependencies/recognition-vocabulary.json')
     vocabulary = json.loads(vocabulary_path.read_text(encoding='utf-8'))
-    model = model_class(pretrain_weights=str(args.weights))
+    model = model_class(pretrain_weights=str(args.weights), num_classes=head_classes(args.weights))
     names = list(model.class_names)
     resolution = int(model.model.resolution)
     if resolution != RESOLUTION:

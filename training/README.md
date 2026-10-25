@@ -9,6 +9,7 @@ Fine-tunes RF-DETR on Open Images V7 and scores it against the YOLOv8s Open Imag
 | `openimages.py` | Downloads Open Images metadata and images; writes `train/`, `valid/` and `test/` in rfdetr's COCO layout, plus `dataset.json`. `--reuse data/pilot` hard-links images an earlier dataset already has. |
 | `train.py` | Fine-tunes the whole model and resumes automatically if re-run. |
 | `warmstart.py` | Gives each class that also exists in COCO its pretrained COCO head row. Without it, rfdetr's resizing gives our first class COCO's unused slot, and the smoke test then never detected Person at all. |
+| `checkpoints.py` | Reads a checkpoint's class count. Training (from the warm start), scoring and export build models with it, because rfdetr 1.11.2 otherwise cuts a head with more than 90 classes down to 90 and silently drops the rest. |
 | `evaluate.py` + `oi_metric.py` | Open Images-style mAP@0.5. Classes are only scored on images where they were human-verified, group-of boxes count once, and merged classes are de-duplicated. |
 | `export.py` | Writes the app's ONNX file for the `rfdetr-oi` profile: boxes plus one logit per app category (615), with each trained class placed in its app category through the app's own Open Images name table. It checks the ONNX output against PyTorch and writes a `.json` summary next to it. |
 | `kit/` | bwUniCluster setup and Slurm jobs. |

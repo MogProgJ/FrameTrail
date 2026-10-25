@@ -52,7 +52,8 @@ def predict_rfdetr(weights: Path, paths: list[Path], threshold: float, batch: in
     import rfdetr
     model_class = {'nano': rfdetr.RFDETRNano, 'small': rfdetr.RFDETRSmall, 'medium': rfdetr.RFDETRMedium,
                    'base': rfdetr.RFDETRBase, 'large': rfdetr.RFDETRLarge}[size]
-    model = model_class(pretrain_weights=str(weights))
+    from checkpoints import head_classes
+    model = model_class(pretrain_weights=str(weights), num_classes=head_classes(weights))
     for start in range(0, len(paths), batch):
         chunk = paths[start:start + batch]
         results = model.predict([str(p) for p in chunk], threshold=threshold, include_source_image=False)

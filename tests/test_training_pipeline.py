@@ -1,4 +1,5 @@
 """Checks for the RF-DETR training pipeline's pure logic (no network, models or images)."""
+import importlib.util
 import json
 import sys
 import tempfile
@@ -7,6 +8,7 @@ from pathlib import Path
 
 TRAINING = Path(__file__).resolve().parents[1] / 'training'
 sys.path.insert(0, str(TRAINING))
+import checkpoints  # noqa: E402
 import evaluate  # noqa: E402
 import export  # noqa: E402
 import oi_metric  # noqa: E402
@@ -138,6 +140,18 @@ class DatasetBuildTests(unittest.TestCase):
             self.assertTrue(openimages.reuse_image('a', target, [earlier]))
             self.assertEqual(target.read_bytes(), b'jpeg')
             self.assertFalse(openimages.reuse_image('b', target.with_name('b.jpg'), [earlier]))
+
+
+@unittest.skipUnless(importlib.util.find_spec('torch'), 'needs torch')
+class CheckpointTests(unittest.TestCase):
+    def test_head_classes_reads_model_and_lightning_layouts(self):
+        import torch
+        with tempfile.TemporaryDirectory() as folder:
+            weights, archive = Path(folder) / 'best.pth', Path(folder) / 'last.ckpt'
+            torch.save({'model': {'class_embed.bias': torch.zeros(111)}}, weights)
+            torch.save({'state_dict': {'model.class_embed.bias': torch.zeros(596)}}, archive)
+            self.assertEqual(checkpoints.head_classes(weights), 110)
+            self.assertEqual(checkpoints.head_classes(archive), 595)
 
 
 class AppExportTests(unittest.TestCase):
