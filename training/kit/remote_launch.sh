@@ -1,8 +1,9 @@
 #!/bin/bash -l
 # Runs on the KIT login node, started by launch-from-windows.ps1 over SSH.
-# Usage: remote_launch.sh [launch|resubmit|probe|status|sync]
+# Usage: remote_launch.sh [launch|resubmit|probe|status|sync|add JOB...]
 #   launch    install the uploaded code, set up once, submit the pilot (refuses if jobs are active)
-#   resubmit  install, cancel this project's recorded jobs that are still queued or running, submit again
+#   resubmit  install, cancel this project's recorded pilot-chain jobs that are still active, submit again
+#   add       install, then queue extra jobs next to the pilot chain (submit_extra.sh); cancels nothing
 #   probe     install, then ask Slurm (read-only) when differently sized jobs would start
 #   status    report this project's jobs, logs and results (read-only)
 #   sync      install the uploaded code only
@@ -39,6 +40,12 @@ fi
 case "$action" in
     sync) ;;
     probe) bash training/kit/probe_queue.sh ;;
+    add)
+        set -a
+        source <(tr -d '\r' < training/kit/submit.env)
+        set +a
+        bash training/kit/submit_extra.sh "${@:2}"
+        ;;
     launch|resubmit)
         if [[ ! -x .venv/bin/python || "${FORCE_SETUP:-0}" == 1 ]]; then
             bash training/kit/setup.sh

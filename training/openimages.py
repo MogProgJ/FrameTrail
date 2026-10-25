@@ -14,13 +14,16 @@ Each annotation keeps `oi_group_of` so group-of boxes can be scored the Open Ima
 Usage:
     python training/openimages.py --classes training/classes/pilot.txt --out data/pilot
     python training/openimages.py --classes training/classes/pilot.txt --out data/smoke --smoke
+    python training/openimages.py --classes training/classes/full.txt --out data/full --reuse data/pilot
 """
 from __future__ import annotations
 
 import argparse
 import concurrent.futures
 import json
+import os
 import random
+import shutil
 import sys
 import time
 import urllib.request
@@ -198,10 +201,24 @@ def select_images(boxes_by_image: dict[str, list[tuple]], categories: list[Categ
 
 # ---------------------------------------------------------------- images
 
-def download_image(image_id: str, split: str, target: Path) -> tuple[int, int] | str:
+def reuse_image(image_id: str, target: Path, reuse: list[Path]) -> bool:
+    """Hard-link (or copy) the image from an earlier dataset; Open Images IDs are unique across splits."""
+    for folder in reuse:
+        for role in ROLES:
+            source = folder / role / f'{image_id}.jpg'
+            if source.is_file():
+                try:
+                    os.link(source, target)
+                except OSError:
+                    shutil.copyfile(source, target)
+                return True
+    return False
+
+
+def download_image(image_id: str, split: str, target: Path, reuse: list[Path] = ()) -> tuple[int, int] | str:
     """Fetch one original; return (width, height) or a reason it was skipped."""
     from PIL import Image
-    if not target.exists():
+    if not target.exists() and not reuse_image(image_id, target, reuse):
         url = IMAGE_URL.format(split=split, image_id=image_id)
         data, reason = None, 'download failed'
         for attempt in range(3):
@@ -229,11 +246,12 @@ def download_image(image_id: str, split: str, target: Path) -> tuple[int, int] |
         return f'decode: {error}'
 
 
-def download_all(image_ids: list[str], split: str, folder: Path, workers: int) -> tuple[dict, dict]:
+def download_all(image_ids: list[str], split: str, folder: Path, workers: int,
+                 reuse: list[Path] = ()) -> tuple[dict, dict]:
     folder.mkdir(parents=True, exist_ok=True)
     sizes, failures = {}, {}
     with concurrent.futures.ThreadPoolExecutor(workers) as pool:
-        futures = {pool.submit(download_image, i, split, folder / f'{i}.jpg'): i for i in image_ids}
+        futures = {pool.submit(download_image, i, split, folder / f'{i}.jpg', reuse): i for i in image_ids}
         for done, future in enumerate(concurrent.futures.as_completed(futures), 1):
             image_id = futures[future]
             result = future.result()
@@ -287,6 +305,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--test-cap', type=int, default=60)
     parser.add_argument('--seed', type=int, default=17)
     parser.add_argument('--workers', type=int, default=48, help='parallel image downloads')
+    parser.add_argument('--reuse', type=Path, nargs='*', default=[],
+                        help='earlier dataset folders (e.g. data/pilot) whose images are linked instead of downloaded')
     parser.add_argument('--smoke', action='store_true',
                         help='take every role from the small validation split (local pipeline test)')
     parser.add_argument('--plan-only', action='store_true',
@@ -340,7 +360,7 @@ def main(argv: list[str] | None = None) -> int:
             print(f'{role}: {len(chosen)} images planned', flush=True)
             continue
         folder = args.out / role
-        sizes, failures = download_all(chosen, split, folder, args.workers)
+        sizes, failures = download_all(chosen, split, folder, args.workers, args.reuse)
         verified = load_verified(fetch(META['labels'][split], args.cache), cat_by_mid, set(sizes))
         coco = build_coco(chosen, sizes, by_image, verified, categories)
         (folder / '_annotations.coco.json').write_text(json.dumps(coco), encoding='utf-8')

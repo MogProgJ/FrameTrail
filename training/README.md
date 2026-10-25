@@ -5,7 +5,8 @@ Fine-tunes RF-DETR on Open Images V7 and scores it against the YOLOv8s Open Imag
 | File | Job |
 | --- | --- |
 | `classes/pilot.txt` | The 110 pilot classes. `Target = Source, Source` merges Open Images classes (e.g. Man/Woman/Boy/Girl into Person). |
-| `openimages.py` | Downloads Open Images metadata and images; writes `train/`, `valid/` and `test/` in rfdetr's COCO layout, plus `dataset.json`. |
+| `classes/full.txt` | The full vocabulary for Phase 2: 595 classes, one per app category, named as in the app so every class exports to its own category. |
+| `openimages.py` | Downloads Open Images metadata and images; writes `train/`, `valid/` and `test/` in rfdetr's COCO layout, plus `dataset.json`. `--reuse data/pilot` hard-links images an earlier dataset already has. |
 | `train.py` | Fine-tunes the whole model and resumes automatically if re-run. |
 | `warmstart.py` | Gives each class that also exists in COCO its pretrained COCO head row. Without it, rfdetr's resizing gives our first class COCO's unused slot, and the smoke test then never detected Person at all. |
 | `evaluate.py` + `oi_metric.py` | Open Images-style mAP@0.5. Classes are only scored on images where they were human-verified, group-of boxes count once, and merged classes are de-duplicated. |
@@ -36,9 +37,10 @@ Other actions, all with the same script and `-Action <name>`:
 | --- | --- |
 | `status` | Read-only report: queue state and estimated start of this project's jobs, recent log lines, epoch metrics, test scores |
 | `probe` | Read-only: asks Slurm when differently sized jobs would start (`sbatch --test-only`, nothing queued) |
-| `resubmit` | Cancels this project's recorded jobs that are still queued or running, then submits again with `kit/submit.env` |
+| `resubmit` | Cancels the pilot chain's recorded jobs that are still queued or running, then submits again with `kit/submit.env` |
+| `add` | Queues extra jobs next to the pilot chain without cancelling anything: `-Job full-data`, `-Job smoke-model` or both (`-Job full-data,smoke-model`). See below |
 | `sync` | Only installs the uploaded code (and updates `.venv` when `requirements.txt` changed) |
-| `fetch` | Downloads a finished run's `eval-test.json`, the baseline's, and `rfdetr_openimages.onnx` (+ `.json`) into `runs\`, then installs the model into `models\` and next to the built app. `-Run <name>` picks the run (default `pilot-small`) |
+| `fetch` | Downloads a finished run's `eval-test.json`, the baseline's, and `rfdetr_openimages.onnx` (+ `.json`) into `runs\`, then installs the model into `models\` and next to the built app. `-Run <name>` picks the run (default `pilot-small`; `gpu-smoke` after the `smoke-model` job) |
 
 `kit/submit.env` holds the submission settings in Git. It is set from the queue probe:
 
@@ -63,6 +65,17 @@ The pilot chain:
 | `ft-train` | `gpu_h100_il`, `gpu_h100` or `gpu_a100_il`, 1 GPU, 16 CPUs, 64 GB, up to 24 h | RF-DETR Small, 50 epochs (cosine schedule), then scores the test split and exports the app model |
 
 Measured on 2026-10-24: the data job took 15 minutes in `cpu_il`; the smoke test trained at 62.5 images/s on an A100 (about 13 minutes per pilot epoch). The 50-epoch length is an estimate of 11–13 h on an A100.
+
+### Extra jobs next to the pilot
+
+`-Action add` uses `kit/submit_extra.sh`. It records its jobs in `logs/extra.txt`, never in `logs/submitted.txt`, so `launch`, `resubmit` and the training job's own clean-up leave them alone, and it never cancels anything itself. A job that is still queued or running is not queued twice.
+
+| Job | Resources | What it does |
+| --- | --- | --- |
+| `full-data` | `dev_cpu_il`, 4 CPUs, 16 GB, up to four 30-minute parts that resume | Builds `data/full` from `classes/full.txt`, hard-linking the images `data/pilot` already has. Dry run on 2026-10-25: 175,051 train / 6,584 valid / 16,788 test images, selected in 3.7 min with 5.2 GB memory. Estimated at most ~58 GB of images. Before downloading it checks this user's storage quota (`kit/space_check.sh`) and stops if 60 GB plus 100 GB of headroom are not free, so queued training keeps room for checkpoints |
+| `smoke-model` | `dev_cpu_il`, 4 CPUs, 16 GB, 30 min | Exports the GPU smoke test's 2-epoch checkpoint as `runs/gpu-smoke/rfdetr_openimages.onnx`. Its accuracy is meaningless; it lets the laptop check the `rfdetr-oi` profile on DirectML (`-Action fetch -Run gpu-smoke`) before the real model exists |
+
+The full dataset is thin for some classes: 60 have fewer than 100 training images, and 61 have fewer than 10 test images (16 have none, so they cannot be scored). Container and Kitchenware have no boxes in any split and are left out.
 
 **Follow progress** with `-Action status`. It only queries the FrameTrail job IDs recorded at submission, never the whole shared account.
 

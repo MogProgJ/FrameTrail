@@ -129,6 +129,16 @@ class DatasetBuildTests(unittest.TestCase):
         self.assertEqual(annotation['bbox'], [20.0, 20.0, 80.0, 40.0])
         self.assertEqual((annotation['oi_group_of'], annotation['iscrowd']), (1, 0))
 
+    def test_images_of_earlier_datasets_are_reused(self):
+        with tempfile.TemporaryDirectory() as folder:
+            earlier, target = Path(folder) / 'pilot', Path(folder) / 'full' / 'a.jpg'
+            (earlier / 'test').mkdir(parents=True)
+            (earlier / 'test' / 'a.jpg').write_bytes(b'jpeg')
+            target.parent.mkdir()
+            self.assertTrue(openimages.reuse_image('a', target, [earlier]))
+            self.assertEqual(target.read_bytes(), b'jpeg')
+            self.assertFalse(openimages.reuse_image('b', target.with_name('b.jpg'), [earlier]))
+
 
 class AppExportTests(unittest.TestCase):
     vocabulary = json.loads((TRAINING.parent / 'dependencies' / 'recognition-vocabulary.json').read_text(encoding='utf-8'))

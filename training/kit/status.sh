@@ -1,11 +1,12 @@
 #!/bin/bash -l
-# Read-only progress report for this project's own jobs (IDs from logs/submitted.txt).
+# Read-only progress report for this project's own jobs (IDs from logs/submitted.txt and logs/extra.txt).
 source "$(dirname "$0")/env.sh"
-if [[ ! -s logs/submitted.txt ]]; then echo "No FrameTrail submission recorded."; exit 0; fi
-cat logs/submitted.txt
+if [[ ! -s logs/submitted.txt && ! -s logs/extra.txt ]]; then echo "No FrameTrail submission recorded."; exit 0; fi
+cat logs/submitted.txt 2>/dev/null
+[[ -s logs/extra.txt ]] && { echo "Extra jobs:"; cat logs/extra.txt; }
 echo; echo "Training settings on the cluster (read when the training job starts):"
 grep -v "^#" training/kit/train.env
-ids=$(awk '{print $2}' logs/submitted.txt | paste -sd,)
+ids=$(cat logs/submitted.txt logs/extra.txt 2>/dev/null | awk '{print $2}' | paste -sd,)
 echo; echo "Queue (empty = finished or cancelled):"
 squeue -j "$ids" -o "%.10i %.12j %.9T %.20S %.10M %R" 2>/dev/null || true
 echo; echo "Finished jobs:"
@@ -16,6 +17,9 @@ done
 for metrics in runs/*/metrics.csv; do
     [[ -f "$metrics" ]] && { echo; echo "== $metrics (last epoch rows)"; tail -n 2 "$metrics" | cut -c1-200; }
 done
+if [[ -d data/full ]]; then
+    echo; echo "== data/full: $(find data/full -name '*.jpg' | wc -l) images so far$([[ -f data/full/dataset.json ]] && echo ', complete')"
+fi
 if [[ -f runs/gpu-smoke/throughput.json ]]; then echo; echo "== GPU smoke speed"; cat runs/gpu-smoke/throughput.json; fi
 for result in runs/*/eval-test.json; do
     [[ -f "$result" ]] && { echo; echo "== $result"; "$FT_VENV/bin/python" -c "
