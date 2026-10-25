@@ -68,13 +68,13 @@ Measured on 2026-10-24: the data job took 15 minutes in `cpu_il`; the smoke test
 
 ### Extra jobs next to the pilot
 
-`-Action add` uses `kit/submit_extra.sh`. It records its jobs in `logs/extra.txt`, never in `logs/submitted.txt`, so `launch`, `resubmit` and the training job's own clean-up leave them alone, and it never cancels anything itself. A job that is still queued or running is not queued twice. If a queue refuses a job and `kit/submit.env` names a fallback, it tries that queue once.
+`-Action add` uses `kit/submit_extra.sh`. It records its jobs in `logs/extra.txt`, never in `logs/submitted.txt`, so `launch`, `resubmit` and the training job's own clean-up leave them alone, and it never cancels anything itself. A job that is still queued or running is not queued twice. If Slurm refuses a job for a per-user limit, nothing is queued and the script prints FrameTrail's own job count and the per-user limits.
 
-The dev queues allow one running and at most three queued jobs per user ([bwHPC wiki](https://wiki.bwhpc.de/e/BwUniCluster3.0/Running_Jobs)), and this user account is shared with another project. On 2026-10-25 `dev_cpu_il` refused the first submission (`QOSMaxSubmitJobPerUserLimit`). So the long data job runs in `cpu_il`, and only the short export tries the dev queue first.
+The dev queues allow one running and at most three queued jobs per user ([bwHPC wiki](https://wiki.bwhpc.de/e/BwUniCluster3.0/Running_Jobs)), and this user account is shared with another project. On 2026-10-25 `dev_cpu_il` refused FrameTrail's submissions, even Slurm's validation request (`QOSMaxSubmitJobPerUserLimit`). So the extra jobs run in `cpu_il`.
 
 | Job | Resources (from `kit/submit.env`) | What it does |
 | --- | --- | --- |
-| `smoke-model` | `dev_cpu_il`, falling back to `cpu_il`; 4 CPUs, 16 GB, 30 min | Exports the GPU smoke test's 2-epoch checkpoint as `runs/gpu-smoke/rfdetr_openimages.onnx`. Its accuracy is meaningless; it lets the laptop check the `rfdetr-oi` profile on DirectML (`-Action fetch -Run gpu-smoke`) before the real model exists |
+| `smoke-model` | `cpu_il`, 4 CPUs, 16 GB, 30 min | Exports the GPU smoke test's 2-epoch checkpoint as `runs/gpu-smoke/rfdetr_openimages.onnx`. Its accuracy is meaningless; it lets the laptop check the `rfdetr-oi` profile on DirectML (`-Action fetch -Run gpu-smoke`) before the real model exists |
 | `full-data` | `cpu_il`, 16 CPUs, 32 GB, up to 3 h (a re-run resumes) | Builds `data/full` from `classes/full.txt`, hard-linking the images `data/pilot` already has. Dry run on 2026-10-25: 175,051 train / 6,584 valid / 16,788 test images, selected in 3.7 min with 5.2 GB memory. Estimated at most ~58 GB of images. Before downloading it checks this user's storage quota (`kit/space_check.sh`) and stops if 60 GB plus 100 GB of headroom are not free, so queued training keeps room for checkpoints |
 
 The full dataset is thin for some classes: 60 have fewer than 100 training images, and 61 have fewer than 10 test images (16 have none, so they cannot be scored). Container and Kitchenware have no boxes in any split and are left out.

@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #SBATCH --job-name=ft-export
-#SBATCH --partition=dev_cpu_il
+#SBATCH --partition=cpu_il
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4

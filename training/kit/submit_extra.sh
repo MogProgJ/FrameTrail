@@ -2,60 +2,68 @@
 # Queue extra jobs next to the pilot chain without touching it.
 # Usage (from $(ws_find frametrail)/rf):  bash training/kit/submit_extra.sh JOB [JOB...]
 #   smoke-model  export the GPU smoke test's checkpoint as the app model, to check the app's GPU path early.
-#                Settings: EXPORT_OPTS, EXPORT_FALLBACK_OPTS.
+#                Settings: EXPORT_OPTS.
 #   full-data    build data/full (training/classes/full.txt, the app's whole Open Images vocabulary) in one
 #                resumable CPU job, linking the images data/pilot already has instead of downloading them.
-#                Settings: FULL_OPTS, FULL_FALLBACK_OPTS, FULL_NEED_GB (stops before downloading if the quota is short).
-# A job the queue refuses (e.g. the dev queues' per-user limit, which the account shares with its other
-# project) is tried once more with its *_FALLBACK_OPTS. Jobs are recorded in logs/extra.txt, never in
-# logs/submitted.txt, so launch/resubmit and the training job's clean-up leave them alone. This script never
-# cancels anything, and it does not queue a job again while an earlier submission of it is still active.
+#                Settings: FULL_OPTS, FULL_NEED_GB (stops before downloading if the quota is short).
+# Jobs are recorded in logs/extra.txt, never in logs/submitted.txt, so launch/resubmit and the training job's
+# clean-up leave them alone. This script never cancels anything, and it does not queue a job again while an
+# earlier submission of it is still active. If Slurm refuses a job for a per-user limit, it prints the limits.
 set -euo pipefail
 source "$(dirname "$0")/env.sh"
 [[ $# -gt 0 ]] || { echo "Name at least one job: smoke-model, full-data" >&2; exit 2; }
 touch logs/extra.txt
+refused=0
 
 active() {  # Recorded IDs of job $1 that are still queued or running.
     local ids
     ids=$(awk -v name="$1" '$1 == name {print $2}' logs/extra.txt | paste -sd,)
     [[ -z "$ids" ]] || squeue -h -j "$ids" -o %i 2>/dev/null || true
 }
-check() {  # check SCRIPT [OPTIONS...]: Slurm validates the request; nothing is queued.
-    local script="$1" reply; shift
-    reply=$(sbatch --test-only "$@" "$script" 2>&1) || { echo "$reply" >&2; return 1; }
+refusal() {  # refusal NAME REPLY: report why Slurm refused; note per-user limits for the report.
+    echo "$1: Slurm refused it: $2" >&2
+    if echo "$2" | grep -q -i 'limit\|policy'; then refused=1; fi
 }
-refused=0
-queue() {  # queue NAME SCRIPT OPTIONS FALLBACK: submit with OPTIONS, else with FALLBACK; record the ID.
-    local name="$1" script="$2" options="$3" fallback="$4" id reply
-    if reply=$(sbatch --parsable --export=ALL $options "$script" 2>&1); then
-        id=$reply
-    elif [[ -n "$fallback" ]] && echo "$reply" | grep -q -i 'limit\|policy'; then
-        echo "$name: the queue refused it (${reply##*error: }); trying $fallback instead."
-        if ! reply=$(sbatch --parsable --export=ALL $fallback "$script" 2>&1); then
-            echo "$name: not queued: $reply" >&2
-            echo "$reply" | grep -q -i 'limit\|policy' && refused=1
-            return 1
-        fi
-        id=$reply
-    else
-        echo "$name: not queued: $reply" >&2
-        echo "$reply" | grep -q -i 'limit\|policy' && refused=1
-        return 1
-    fi
-    echo "$name $id" >> logs/extra.txt
-    echo "$name: queued as job $id"
+check() {  # check NAME SCRIPT OPTIONS: Slurm validates the request; nothing is queued.
+    local reply
+    reply=$(sbatch --test-only $3 "$2" 2>&1) || { refusal "$1" "$reply"; return 1; }
+}
+queue() {  # queue NAME SCRIPT OPTIONS: submit and record the job ID.
+    local id
+    id=$(sbatch --parsable --export=ALL $3 "$2" 2>&1) || { refusal "$1" "$id"; return 1; }
+    echo "$1 $id" >> logs/extra.txt
+    echo "$1: queued as job $id"
+}
+report() {  # Read-only: FrameTrail's own job count and the per-user limits. Other jobs are not listed.
+    [[ "$refused" == 1 ]] || return 0
+    local ids own partition
+    ids=$(cat logs/submitted.txt logs/extra.txt 2>/dev/null | awk '{print $2}' | paste -sd,)
+    own=$( [[ -z "$ids" ]] || squeue -h -j "$ids" -o %i 2>/dev/null | wc -l || true)
+    echo
+    echo "A per-user job limit is full. FrameTrail itself has ${own:-0} queued or running job(s); the rest of"
+    echo "the limit is used by other work under this user account. Nothing was cancelled. Try again once it frees up."
+    for partition in dev_cpu_il cpu_il; do
+        echo "  $partition: $(scontrol show partition "$partition" 2>/dev/null | grep -o 'QoS=[^ ]*' || echo 'QoS unknown')"
+    done
+    echo "Per-user limits of the quality-of-service levels that have one (MaxSubmitPU = queued + running jobs):"
+    sacctmgr -n -P show qos format=Name,MaxSubmitPU,MaxJobsPU 2>/dev/null \
+        | awk -F'|' '$2 != "" || $3 != "" {printf "  %-20s MaxSubmitPU=%-6s MaxJobsPU=%s\n", $1, $2, $3}' || true
 }
 
-# Validate every request (and its fallback) before anything is queued.
+# Validate every request before anything is queued.
+valid=1
 for job in "$@"; do
     case "$job" in
-        smoke-model) check training/kit/export.sbatch ${EXPORT_OPTS:-}
-                     [[ -z "${EXPORT_FALLBACK_OPTS:-}" ]] || check training/kit/export.sbatch $EXPORT_FALLBACK_OPTS ;;
-        full-data) check training/kit/prepare.sbatch ${FULL_OPTS:-}
-                   [[ -z "${FULL_FALLBACK_OPTS:-}" ]] || check training/kit/prepare.sbatch $FULL_FALLBACK_OPTS ;;
+        smoke-model) check smoke-model training/kit/export.sbatch "${EXPORT_OPTS:-}" || valid=0 ;;
+        full-data) check full-data training/kit/prepare.sbatch "${FULL_OPTS:-}" || valid=0 ;;
         *) echo "Unknown job '$job'. Jobs: smoke-model, full-data" >&2; exit 2 ;;
     esac
 done
+if [[ "$valid" == 0 ]]; then
+    echo "Nothing was queued."
+    report
+    exit 1
+fi
 echo "Slurm accepted the requests; queuing."
 
 failed=0
@@ -71,30 +79,17 @@ for job in "$@"; do
                 echo "smoke-model: runs/gpu-smoke has no checkpoint; nothing to export." >&2; failed=1; continue
             fi
             if [[ -f runs/gpu-smoke/rfdetr_openimages.onnx ]]; then echo "smoke-model: already exported."; continue; fi
-            RUN=gpu-smoke queue smoke-model training/kit/export.sbatch "${EXPORT_OPTS:-}" "${EXPORT_FALLBACK_OPTS:-}" || failed=1
+            RUN=gpu-smoke queue smoke-model training/kit/export.sbatch "${EXPORT_OPTS:-}" || failed=1
             ;;
         full-data)
             if [[ -f data/full/dataset.json ]]; then echo "full-data: data/full is already built."; continue; fi
             DATASET=full PREPARE_ARGS="--reuse data/pilot" NEED_GB="${FULL_NEED_GB:-}" \
-                queue full-data training/kit/prepare.sbatch "${FULL_OPTS:-}" "${FULL_FALLBACK_OPTS:-}" || failed=1
+                queue full-data training/kit/prepare.sbatch "${FULL_OPTS:-}" || failed=1
             ;;
     esac
 done
 echo "Extra jobs recorded in logs/extra.txt:"
 cat logs/extra.txt
-if [[ "$refused" == 1 ]]; then
-    # Read-only: the limits that apply and FrameTrail's own job count. Other jobs on the account are not listed.
-    ids=$(cat logs/submitted.txt logs/extra.txt 2>/dev/null | awk '{print $2}' | paste -sd,)
-    own=$( [[ -z "$ids" ]] || squeue -h -j "$ids" -o %i 2>/dev/null | wc -l || true)
-    echo
-    echo "Slurm refused a job because a per-user job limit is full. FrameTrail itself has ${own:-0} queued or running"
-    echo "job(s); the rest of the limit is used by other work under this user account. Try again once it frees up."
-    for partition in dev_cpu_il cpu_il; do
-        echo "  $partition: $(scontrol show partition "$partition" 2>/dev/null | grep -o 'QoS=[^ ]*' || echo 'QoS unknown')"
-    done
-    echo "Per-user limits of the quality-of-service levels that have one (MaxSubmitPU = queued + running jobs):"
-    sacctmgr -n -P show qos format=Name,MaxSubmitPU,MaxJobsPU 2>/dev/null \
-        | awk -F'|' '$2 != "" || $3 != "" {printf "  %-20s MaxSubmitPU=%-6s MaxJobsPU=%s\n", $1, $2, $3}' || true
-fi
+report
 echo "Check with: -Action status"
 exit "$failed"
