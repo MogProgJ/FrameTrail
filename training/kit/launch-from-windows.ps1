@@ -60,6 +60,9 @@ if ($Action -eq 'fetch') {
     }
     return
 }
+# Shows which code is uploaded, so the output tells whether a git pull is missing.
+$commit = git -C (Split-Path -Parent $training) log -1 --format='%h %s' 2>$null
+if ($commit) { Write-Output "Uploading training code from commit $commit" }
 Invoke-Checked 'Clearing the upload folder' { ssh -o BatchMode=yes $Account 'rm -rf ~/ft-training-new' }
 Invoke-Checked 'Copying training/' { scp -q -r $training "${Account}:~/ft-training-new" }
 # export.py maps trained classes onto the app's categories with this file.

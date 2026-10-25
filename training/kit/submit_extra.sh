@@ -24,16 +24,22 @@ check() {  # check SCRIPT [OPTIONS...]: Slurm validates the request; nothing is 
     local script="$1" reply; shift
     reply=$(sbatch --test-only "$@" "$script" 2>&1) || { echo "$reply" >&2; return 1; }
 }
+refused=0
 queue() {  # queue NAME SCRIPT OPTIONS FALLBACK: submit with OPTIONS, else with FALLBACK; record the ID.
     local name="$1" script="$2" options="$3" fallback="$4" id reply
     if reply=$(sbatch --parsable --export=ALL $options "$script" 2>&1); then
         id=$reply
     elif [[ -n "$fallback" ]] && echo "$reply" | grep -q -i 'limit\|policy'; then
         echo "$name: the queue refused it (${reply##*error: }); trying $fallback instead."
-        reply=$(sbatch --parsable --export=ALL $fallback "$script" 2>&1) || { echo "$name: not queued: $reply" >&2; return 1; }
+        if ! reply=$(sbatch --parsable --export=ALL $fallback "$script" 2>&1); then
+            echo "$name: not queued: $reply" >&2
+            echo "$reply" | grep -q -i 'limit\|policy' && refused=1
+            return 1
+        fi
         id=$reply
     else
         echo "$name: not queued: $reply" >&2
+        echo "$reply" | grep -q -i 'limit\|policy' && refused=1
         return 1
     fi
     echo "$name $id" >> logs/extra.txt
@@ -76,5 +82,19 @@ for job in "$@"; do
 done
 echo "Extra jobs recorded in logs/extra.txt:"
 cat logs/extra.txt
+if [[ "$refused" == 1 ]]; then
+    # Read-only: the limits that apply and FrameTrail's own job count. Other jobs on the account are not listed.
+    ids=$(cat logs/submitted.txt logs/extra.txt 2>/dev/null | awk '{print $2}' | paste -sd,)
+    own=$( [[ -z "$ids" ]] || squeue -h -j "$ids" -o %i 2>/dev/null | wc -l || true)
+    echo
+    echo "Slurm refused a job because a per-user job limit is full. FrameTrail itself has ${own:-0} queued or running"
+    echo "job(s); the rest of the limit is used by other work under this user account. Try again once it frees up."
+    for partition in dev_cpu_il cpu_il; do
+        echo "  $partition: $(scontrol show partition "$partition" 2>/dev/null | grep -o 'QoS=[^ ]*' || echo 'QoS unknown')"
+    done
+    echo "Per-user limits of the quality-of-service levels that have one (MaxSubmitPU = queued + running jobs):"
+    sacctmgr -n -P show qos format=Name,MaxSubmitPU,MaxJobsPU 2>/dev/null \
+        | awk -F'|' '$2 != "" || $3 != "" {printf "  %-20s MaxSubmitPU=%-6s MaxJobsPU=%s\n", $1, $2, $3}' || true
+fi
 echo "Check with: -Action status"
 exit "$failed"
