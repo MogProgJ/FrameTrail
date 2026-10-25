@@ -70,7 +70,7 @@ Measured on 2026-10-24: the data job took 15 minutes in `cpu_il`; the smoke test
 
 `-Action add` uses `kit/submit_extra.sh`. It records its jobs in `logs/extra.txt`, never in `logs/submitted.txt`, so `launch`, `resubmit` and the training job's own clean-up leave them alone, and it never cancels anything itself. A job that is still queued or running is not queued twice. If Slurm refuses a job for a per-user limit, nothing is queued and the script prints FrameTrail's own job count and the per-user limits.
 
-The dev queues allow one running and at most three queued jobs per user ([bwHPC wiki](https://wiki.bwhpc.de/e/BwUniCluster3.0/Running_Jobs)), and this user account is shared with another project. On 2026-10-25 `dev_cpu_il` refused FrameTrail's submissions, even Slurm's validation request (`QOSMaxSubmitJobPerUserLimit`). So the extra jobs run in `cpu_il`.
+The dev queues allow one running and at most three queued jobs per user ([bwHPC wiki](https://wiki.bwhpc.de/e/BwUniCluster3.0/Running_Jobs)), and this user account is shared with another project. On 2026-10-25 the first `add` queued four 30-minute `full-data` parts in `dev_cpu_il`; they filled that limit, so the export was refused (`QOSMaxSubmitJobPerUserLimit`). The extra jobs now run in `cpu_il` and leave the dev slots free.
 
 | Job | Resources (from `kit/submit.env`) | What it does |
 | --- | --- | --- |
