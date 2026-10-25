@@ -2,7 +2,7 @@
 # Needs a working key-based SSH login (the Interactive key unlocked in the Windows agent).
 # Run from the FrameTrail folder:
 #   powershell -ExecutionPolicy Bypass -File training\kit\launch-from-windows.ps1 [-Action launch|resubmit|probe|status|sync|add|fetch]
-# -Action add -Job full-data,smoke-model queues extra jobs next to the pilot chain; it never cancels anything.
+# -Action add -Job smoke-model,full-data queues extra jobs next to the pilot chain; it never cancels anything.
 # -Action fetch [-Run pilot-small] downloads a finished run's scores and app model into runs\ and models\.
 param(
     [ValidateSet('launch', 'resubmit', 'probe', 'status', 'sync', 'add', 'fetch')][string]$Action = 'launch',
@@ -17,7 +17,7 @@ $jobs = @($Job -split '[,\s]+' | Where-Object { $_ })
 foreach ($name in $jobs) {
     if ($name -notin @('full-data', 'smoke-model')) { throw "Unknown job '$name'. Jobs: full-data, smoke-model" }
 }
-if ($Action -eq 'add' -and $jobs.Count -eq 0) { throw 'Name the extra jobs, for example: -Action add -Job full-data,smoke-model' }
+if ($Action -eq 'add' -and $jobs.Count -eq 0) { throw 'Name the extra jobs, for example: -Action add -Job smoke-model,full-data' }
 
 function Invoke-Checked([string]$what, [scriptblock]$command) {
     & $command
