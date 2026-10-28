@@ -23,6 +23,8 @@
 #include <QMimeData>
 #include <QUrl>
 #include <QShortcut>
+#include <QKeyEvent>
+#include <QLineEdit>
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
 #include "ui_preview_layout.h"
@@ -53,6 +55,18 @@ std::filesystem::path native_path(const QString& value) {
     return std::filesystem::path(std::u8string(bytes.begin(), bytes.end()));
 #endif
 }
+
+// Space is play/pause everywhere in Preview. A focused spin box would otherwise take it as typing.
+class SpaceForPlayback final : public QObject {
+public:
+    using QObject::QObject;
+protected:
+    bool eventFilter(QObject*,QEvent* event) override {
+        if(event->type()!=QEvent::ShortcutOverride)return false;
+        const auto* key=static_cast<QKeyEvent*>(event);
+        return key->key()==Qt::Key_Space && key->modifiers()==Qt::NoModifier;
+    }
+};
 
 QString timestamp_text(const std::optional<std::chrono::microseconds>& timestamp) {
     if (!timestamp) return QStringLiteral("Unknown time");
@@ -268,6 +282,9 @@ PreviewWindow::PreviewWindow(const QString& model_path) {
     for (auto* button : {play_button_, stop_button_, replay_button_}) button->setEnabled(false);
     detect_box_ = ui.detectObjects; detect_box_->setChecked(QFileInfo::exists(model_path_));
     confidence_box_ = ui.confidence; track_box_ = ui.trackObjects;
+    confidence_box_->setKeyboardTracking(false); // Typed values apply once, on Enter or leaving the box, not per digit.
+    {auto* space=new SpaceForPlayback(confidence_box_);confidence_box_->installEventFilter(space);
+     if(auto* edit=confidence_box_->findChild<QLineEdit*>())edit->installEventFilter(space);}
     classes_box_ = ui.trackingClasses; direction_box_ = ui.crossingDirection;
     line_button_ = ui.drawLine; counts_label_ = ui.crossingCounts;
 
@@ -378,7 +395,7 @@ void PreviewWindow::activate_workspace(int section) {
     if(workspace_close_requested_ || section<0 || section>5)return;
     const bool switching=section!=workspace_section_;
     if(section!=workspace_section_){
-        if(workspace_section_==0 && playing_)toggle_playback();
+        if(workspace_section_==0 && (updating_ ? resume_after_update_ : playing_))toggle_playback();
         if(workspace_section_==1 && analysis_workspace_)analysis_workspace_->suspend_playback();
         if(workspace_section_==2 && playback_workspace_)playback_workspace_->suspend_playback();
         if(workspace_section_==3 && camera_workspace_)camera_workspace_->request_stop();
@@ -498,7 +515,7 @@ void PreviewWindow::seek_to(double fraction) {
     pause_after_seek_=!playing_;
     pending_start_=*media_start_+offset;
     pending_source_=source_;timer_.setInterval(10);session_.stop();next_.reset();
-    updating_=false;line_editing_=false;stopped_=true;playing_=false;
+    updating_=false;line_editing_=false;stopped_=true;playing_=false;finished_=false;
     state_label_->setText(QStringLiteral("Jumping to %1…").arg(clock_text(offset)));
     counts_label_->setText(QStringLiteral("Counts restart after a jump"));
     update_controls();
@@ -518,6 +535,7 @@ void PreviewWindow::open_file(const QString& path) {
     updating_ = false; line_editing_ = false;
     canvas_->set_image({});
     stopped_ = true;
+    finished_ = false;
     playing_ = false;
     play_button_->setEnabled(false);
     stop_button_->setEnabled(false);
@@ -546,12 +564,14 @@ std::pair<std::optional<frametrail::DetectorOptions>,std::optional<frametrail::T
 }
 
 void PreviewWindow::update_controls() {
-    const bool ready = !stopped_ && !updating_ && !line_editing_ && pending_source_.isEmpty();
-    play_button_->setEnabled(ready);
-    stop_button_->setEnabled(ready && playing_);
+    // While settings apply, Play/Pause stays usable and changes what happens once they are applied.
+    const bool ready = !stopped_ && !line_editing_ && pending_source_.isEmpty();
+    const bool will_play = updating_ ? resume_after_update_ : playing_;
+    play_button_->setEnabled(ready || (finished_ && pending_source_.isEmpty() && !closing_));
+    stop_button_->setEnabled(ready && will_play);
     replay_button_->setEnabled(!source_.isEmpty() && pending_source_.isEmpty() && !closing_);
-    play_button_->setText(playing_ ? QStringLiteral("Pause") : QStringLiteral("Play"));
-    if(play_button_->property("showsPause").toBool()!=playing_){play_button_->setProperty("showsPause",playing_);studio_button(play_button_,playing_ ? QStringLiteral("pause") : QStringLiteral("play"));}
+    play_button_->setText(will_play ? QStringLiteral("Pause") : QStringLiteral("Play"));
+    if(play_button_->property("showsPause").toBool()!=will_play){play_button_->setProperty("showsPause",will_play);studio_button(play_button_,will_play ? QStringLiteral("pause") : QStringLiteral("play"));}
     const bool tracking = detect_box_->isChecked() && track_box_->isChecked();
     track_box_->setEnabled(detect_box_->isChecked());
     classes_box_->setEnabled(tracking); direction_box_->setEnabled(tracking);
@@ -589,6 +609,7 @@ void PreviewWindow::reconfigure_analysis() {
 void PreviewWindow::begin_pending_source() {
     source_ = pending_source_;
     pending_source_.clear();
+    finished_ = false;
     try {
         auto [detection,tracking] = analysis_options();
         session_.start(native_path(source_),std::move(detection),std::move(tracking),std::nullopt,std::exchange(pending_start_,std::nullopt));
@@ -605,7 +626,14 @@ void PreviewWindow::begin_pending_source() {
 }
 
 void PreviewWindow::toggle_playback() {
-    if (stopped_ || updating_ || line_editing_ || !pending_source_.isEmpty()) return;
+    if (finished_ && pending_source_.isEmpty() && !closing_) { open_file(source_); return; }
+    if (stopped_ || line_editing_ || !pending_source_.isEmpty()) return;
+    if (updating_) {
+        resume_after_update_ = !resume_after_update_;
+        update_controls();
+        state_label_->setText(resume_after_update_ ? QStringLiteral("Applying settings… then playing") : QStringLiteral("Applying settings… then paused"));
+        return;
+    }
     const auto now = std::chrono::steady_clock::now();
     playing_ = !playing_;
     if (!playing_) pause_start_ = now;
@@ -615,7 +643,7 @@ void PreviewWindow::toggle_playback() {
 }
 
 void PreviewWindow::stop_playback() {
-    if (playing_) toggle_playback();
+    if (updating_ ? resume_after_update_ : playing_) toggle_playback();
     state_label_->setText(QStringLiteral("Stopped — press Play to continue"));
 }
 
@@ -733,6 +761,7 @@ void PreviewWindow::tick() {
     } else if (!status.worker_active && status.queued_frames == 0) {
         playing_ = false;
         stopped_ = true;
+        finished_ = displayed_sequence_.has_value();
         update_controls();
         state_label_->setText(displayed_sequence_ ? QStringLiteral("Finished") : QStringLiteral("No frames decoded"));
     }

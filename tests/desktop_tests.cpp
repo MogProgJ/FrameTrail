@@ -263,6 +263,27 @@ int main(int argc, char* argv[]) {
         require(pixel.red() > 240 && pixel.green() < 10, "Displayed pixels are incorrect");
         require(window.grab().save(root + QStringLiteral("/desktop-preview.png")), "Preview screenshot failed");
 
+        // Play/Pause stays usable while settings apply, Space works from the confidence box, and Play restarts at the end.
+        auto* confidence=window.findChild<QDoubleSpinBox*>(QStringLiteral("confidence"));
+        window.open_file(root + QStringLiteral("/smooth.mkv"));
+        wait_for([&]{return window.displayed_sequence().value_or(0)>=3 && window.playing();});
+        confidence->setValue(confidence->value()+.05);
+        require(play->isEnabled() && play->text()==QStringLiteral("Pause"),"Play/Pause unusable while settings apply");
+        QTest::mouseClick(play,Qt::LeftButton);
+        wait_for([&]{return state->text()==QStringLiteral("Paused") && play->isEnabled();});
+        const auto held=window.displayed_sequence();
+        QTest::qWait(150);
+        require(!window.playing() && window.displayed_sequence()==held,"Pause pressed while settings applied was lost");
+        window.activateWindow();
+        require(QTest::qWaitForWindowActive(&window),"Preview window did not become active");
+        confidence->setFocus();
+        QTest::keyClick(confidence,Qt::Key_Space);
+        require(window.playing(),"Space in the confidence box did not resume playback");
+        wait_for([&]{return state->text()==QStringLiteral("Finished");});
+        require(play->isEnabled() && play->text()==QStringLiteral("Play"),"Play unusable at the end of the video");
+        QTest::mouseClick(play,Qt::LeftButton);
+        wait_for([&]{return window.playing() && window.displayed_sequence().value_or(999)<20;});
+
         // Rapid source replacement must not display an earlier source's frames.
         window.open_file(root + QStringLiteral("/delayed.mkv"));
         QTest::qWait(30);

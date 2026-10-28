@@ -153,6 +153,7 @@ private:
     bool resume_after_line_{};
     bool playing_{};
     bool stopped_{true};
+    bool finished_{}; // Reached the end: Play starts again from the beginning.
     bool closing_{};
     bool clock_started_{};
     std::chrono::steady_clock::time_point playback_start_;
