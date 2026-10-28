@@ -15,7 +15,7 @@ $training = Split-Path -Parent $PSScriptRoot
 # A list arrives as one string through powershell -File, so split it here.
 $jobs = @($Job -split '[,\s]+' | Where-Object { $_ })
 foreach ($name in $jobs) {
-    if ($name -notin @('full-data', 'smoke-model')) { throw "Unknown job '$name'. Jobs: full-data, smoke-model" }
+    if ($name -notin @('full-data', 'smoke-model', 'full-baseline')) { throw "Unknown job '$name'. Jobs: full-data, smoke-model, full-baseline" }
 }
 if ($Action -eq 'add' -and $jobs.Count -eq 0) { throw 'Name the extra jobs, for example: -Action add -Job smoke-model,full-data' }
 

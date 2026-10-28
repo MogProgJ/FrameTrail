@@ -77,6 +77,7 @@ The dev queues allow one running and at most three queued jobs per user ([bwHPC 
 | --- | --- | --- |
 | `smoke-model` | `cpu_il`, 4 CPUs, 16 GB, 30 min | Exports the GPU smoke test's 2-epoch checkpoint as `runs/gpu-smoke/rfdetr_openimages.onnx`. Its accuracy is meaningless; it lets the laptop check the `rfdetr-oi` profile on DirectML (`-Action fetch -Run gpu-smoke`) before the real model exists |
 | `full-data` | `cpu_il`, 16 CPUs, 32 GB, up to 3 h (a re-run resumes) | Builds `data/full` from `classes/full.txt`, hard-linking the images `data/pilot` already has. Dry run on 2026-10-25: 175,051 train / 6,584 valid / 16,788 test images, selected in 3.7 min with 5.2 GB memory. Estimated at most ~58 GB of images. Before downloading it checks this user's storage quota (`kit/space_check.sh`) and stops if 60 GB plus 100 GB of headroom are not free, so queued training keeps room for checkpoints |
+| `full-baseline` | `cpu_il`, 16 CPUs, 32 GB, up to 10 h | Scores the app's YOLOv8s Open Images model on `data/full`'s 16,788 test images: the bar for Phase 2, measured without a GPU. Locally 1.1 s per image on 4 CPUs; not resumable, hence the long limit |
 
 The full dataset is thin for some classes: 60 have fewer than 100 training images, and 61 have fewer than 10 test images (16 have none, so they cannot be scored). Container and Kitchenware have no boxes in any split and are left out.
 

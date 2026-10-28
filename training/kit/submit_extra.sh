@@ -6,12 +6,14 @@
 #   full-data    build data/full (training/classes/full.txt, the app's whole Open Images vocabulary) in one
 #                resumable CPU job, linking the images data/pilot already has instead of downloading them.
 #                Settings: FULL_OPTS, FULL_NEED_GB (stops before downloading if the quota is short).
+#   full-baseline  score the app's YOLOv8s Open Images model on data/full's test split on CPU: the Phase 2 bar.
+#                Settings: FULL_BASELINE_OPTS.
 # Jobs are recorded in logs/extra.txt, never in logs/submitted.txt, so launch/resubmit and the training job's
 # clean-up leave them alone. This script never cancels anything, and it does not queue a job again while an
 # earlier submission of it is still active. If Slurm refuses a job for a per-user limit, it prints the limits.
 set -euo pipefail
 source "$(dirname "$0")/env.sh"
-[[ $# -gt 0 ]] || { echo "Name at least one job: smoke-model, full-data" >&2; exit 2; }
+[[ $# -gt 0 ]] || { echo "Name at least one job: smoke-model, full-data, full-baseline" >&2; exit 2; }
 touch logs/extra.txt
 refused=0
 
@@ -56,7 +58,8 @@ for job in "$@"; do
     case "$job" in
         smoke-model) check smoke-model training/kit/export.sbatch "${EXPORT_OPTS:-}" || valid=0 ;;
         full-data) check full-data training/kit/prepare.sbatch "${FULL_OPTS:-}" || valid=0 ;;
-        *) echo "Unknown job '$job'. Jobs: smoke-model, full-data" >&2; exit 2 ;;
+        full-baseline) check full-baseline training/kit/baseline_cpu.sbatch "${FULL_BASELINE_OPTS:-}" || valid=0 ;;
+        *) echo "Unknown job '$job'. Jobs: smoke-model, full-data, full-baseline" >&2; exit 2 ;;
     esac
 done
 if [[ "$valid" == 0 ]]; then
@@ -85,6 +88,11 @@ for job in "$@"; do
             if [[ -f data/full/dataset.json ]]; then echo "full-data: data/full is already built."; continue; fi
             DATASET=full PREPARE_ARGS="--reuse data/pilot" NEED_GB="${FULL_NEED_GB:-}" \
                 queue full-data training/kit/prepare.sbatch "${FULL_OPTS:-}" || failed=1
+            ;;
+        full-baseline)
+            if [[ ! -f data/full/dataset.json ]]; then echo "full-baseline: data/full is not built yet." >&2; failed=1; continue; fi
+            if [[ -f runs/baseline-yolov8s-oiv7-full/eval-test.json ]]; then echo "full-baseline: already scored."; continue; fi
+            DATASET=full queue full-baseline training/kit/baseline_cpu.sbatch "${FULL_BASELINE_OPTS:-}" || failed=1
             ;;
     esac
 done
