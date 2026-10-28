@@ -6,6 +6,7 @@
 #include "processing_feedback.hpp"
 #include "appearance_timeline.hpp"
 #include "recent_files.hpp"
+#include "model_comparison.hpp"
 #include <QPainter>
 #include <QDir>
 #include <QJsonArray>
@@ -136,7 +137,9 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     cancel_=new QPushButton(QStringLiteral("Cancel"));cancel_->setObjectName(QStringLiteral("cancelAnalysis"));actions->addWidget(cancel_);
     save_=new QPushButton(QStringLiteral("Save analysis…"));save_->setObjectName(QStringLiteral("saveRun"));actions->addWidget(save_);
     export_=new QPushButton(QStringLiteral("Export CSV…"));export_->setObjectName(QStringLiteral("exportRun"));actions->addWidget(export_);
-    export_review_=new QPushButton(QStringLiteral("Export review…"));export_review_->setObjectName(QStringLiteral("exportReview"));actions->addWidget(export_review_);actions->addStretch();
+    export_review_=new QPushButton(QStringLiteral("Export review…"));export_review_->setObjectName(QStringLiteral("exportReview"));actions->addWidget(export_review_);
+    compare_=new QPushButton(QStringLiteral("Compare models"));compare_->setObjectName(QStringLiteral("compareModels"));
+    compare_->setToolTip(QStringLiteral("Compare the reviewed analyses of this video made with different models"));actions->addWidget(compare_);actions->addStretch();
     settings_toggle_=new QToolButton;settings_toggle_->setText(QStringLiteral("Settings"));settings_toggle_->setCheckable(true);actions->addWidget(settings_toggle_);layout->addLayout(actions);
     settings_panel_=new QWidget;auto* options=new QHBoxLayout(settings_panel_);options->setContentsMargins(0,0,0,0);
     const auto nano=configuration_ && configuration_->detector.variant==frametrail::DetectorModel::nano && !configuration_->detector.model.empty() ?
@@ -218,6 +221,9 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
             set_verdict(events_->currentRow(),value<0 ? std::nullopt : std::optional<bool>(value==1),value>=0);
         });
     }
+    connect(compare_,&QPushButton::clicked,this,[this]{
+        if(summary_)show_model_comparison(this,review_folder_,QFileInfo(text(summary_->configuration.source)).fileName());
+    });
     connect(export_review_,&QPushButton::clicked,this,[this]{
         const auto name=summary_ ? QFileInfo(text(summary_->configuration.source)).completeBaseName()+QStringLiteral("-review.csv") : QStringLiteral("review.csv");
         const auto path=save_dialog(this,QStringLiteral("Export review"),name,QStringLiteral("CSV (*.csv)"),QStringLiteral("csv"));
@@ -235,7 +241,7 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     connect(&timer_,&QTimer::timeout,this,[this]{tick();});timer_.setTimerType(Qt::PreciseTimer);timer_.start(5);
     if(configuration_ && !configuration_->source.empty())select_video(text(configuration_->source));
     studio_button(choose_,"open");studio_button(open_,"history");studio_button(analyse_,"analysis");studio_button(play_,"play");
-    studio_button(save_,"save");studio_button(export_,"export");studio_button(export_review_,"check");studio_button(back_,"replay");studio_button(cancel_,"dismiss");
+    studio_button(save_,"save");studio_button(export_,"export");studio_button(export_review_,"check");studio_button(compare_,"analysis");studio_button(back_,"replay");studio_button(cancel_,"dismiss");
     settings_toggle_->setIcon(studio_icon(QStringLiteral("settings")));settings_toggle_->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     update_controls();
 }
@@ -252,6 +258,7 @@ void SavedRunWindow::update_controls() {
     correct_->setVisible(reviewable);wrong_->setVisible(reviewable);review_progress_->setVisible(reviewable);review_bar_->setVisible(reviewable);
     correct_->setEnabled(reviewable && !busy && events_->currentRow()>=0);wrong_->setEnabled(correct_->isEnabled());
     export_review_->setVisible(reviewable && !verdicts_.empty());export_review_->setEnabled(!busy);
+    compare_->setVisible(reviewable);compare_->setEnabled(!busy);
     if(busy){play_->setEnabled(false);back_->setEnabled(false);}
 }
 bool SavedRunWindow::confirm_discard() {

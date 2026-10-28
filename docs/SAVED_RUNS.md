@@ -78,6 +78,8 @@ Verdicts belong to the analysis (its run ID), not to the video: analyse the same
 
 Review measures false alarms (precision). It does not find objects the model missed; comparing how many correct appearances two models find on the same video is the practical stand-in.
 
+**Compare models** puts that side by side. It reads the review files for the open video (matched by file name) and shows the newest review of each model: appearances found, how many you reviewed, the share marked correct, and the estimated correct appearances (found × share), plus the share per object type. The better value in each row is bold when at least two models have one. Review a similar number of appearances with each model, so the shares are comparable.
+
 ## Pipeline and validation
 
 `AnalysisJob` owns one ordered decode → detect → track → write worker. `RunStore` wraps SQLite's native C API with C++ RAII. A frame's appearance updates, crossing events and progress commit together. Repeating an identical appearance observation does not inflate its count; conflicting IDs or reversed progress fail and roll back. Final counts come from committed rows.

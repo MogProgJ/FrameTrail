@@ -146,6 +146,12 @@ inline QString frametrail_theme() {
         QCheckBox { spacing:10px; min-height:28px; }
         QCheckBox::indicator { width:20px; height:20px; }
 
+        QTableWidget { background:@card; color:@text; gridline-color:@stroke; border:1px solid @stroke; border-radius:8px; outline:0; }
+        QTableWidget::item { padding:6px 10px; }
+        QHeaderView::section { background:#2b2b2b; color:@textSecondary; border:none; border-right:1px solid @stroke;
+            border-bottom:1px solid @stroke; padding:6px 10px; font-weight:600; }
+        QTableCornerButton::section { background:#2b2b2b; border:none; }
+        QHeaderView { background:@card; }
         QListWidget { background:transparent; border:none; outline:0; }
         QListWidget::item { padding:8px; margin:2px 0; border:1px solid transparent; border-radius:6px; color:@text; }
         QListWidget::item:hover { background:@cardHover; }

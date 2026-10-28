@@ -93,7 +93,7 @@ private:
     std::map<std::uint64_t,Verdict> verdicts_;
     std::map<int,std::pair<int,QPushButton*>> chips_by_type_; // object type -> appearances, chip
     QString review_folder_;
-    QPushButton *correct_{},*wrong_{},*export_review_{};
+    QPushButton *correct_{},*wrong_{},*export_review_{},*compare_{};
     QLabel* review_progress_{};
     QProgressBar* review_bar_{};
     QWidget* chips_{};

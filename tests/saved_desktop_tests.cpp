@@ -1,6 +1,14 @@
 #include "saved_run_window.hpp"
 #include "preview_window.hpp"
 #include <QComboBox>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QTableWidget>
+#include <QFile>
+#include <QFileInfo>
+#include <memory>
+#include "model_comparison.hpp"
 #include <QApplication>
 #include <QFontDatabase>
 #include <QLabel>
@@ -66,6 +74,26 @@ void intake(const std::filesystem::path& fixtures,const std::filesystem::path& s
     if(list->count()>1){window.set_verdict(1,false);require(window.verdict(1)==std::optional<bool>(false),"Wrong verdict was not stored");}
     require(window.review_summary().contains(QStringLiteral("Reviewed")) || window.review_summary().contains(QStringLiteral("All reviewed")),"Review progress missing");
     window.export_review_csv(text(root/"review.csv"));
+    {   // Compare models: the review just made, plus another model's review of the same video file name.
+        require(window.findChild<QPushButton*>(QStringLiteral("compareModels"))->isVisible(),"Compare models is not offered");
+        const auto video_name=QFileInfo(text(video)).fileName();
+        QFile other(text(root/"reviews"/"other-run.json"));require(other.open(QIODevice::WriteOnly),"Could not write a second review");
+        other.write(QJsonDocument(QJsonObject{{QStringLiteral("schema"),1},{QStringLiteral("run_id"),QStringLiteral("other-run")},
+            {QStringLiteral("video"),video_name},{QStringLiteral("model"),QStringLiteral("Another model")},{QStringLiteral("confidence"),.5},
+            {QStringLiteral("appearances"),10},{QStringLiteral("verdicts"),QJsonArray{
+                QJsonObject{{QStringLiteral("appearance"),1},{QStringLiteral("class_id"),16},{QStringLiteral("object"),QStringLiteral("dog")},{QStringLiteral("correct"),true}},
+                QJsonObject{{QStringLiteral("appearance"),2},{QStringLiteral("class_id"),16},{QStringLiteral("object"),QStringLiteral("dog")},{QStringLiteral("correct"),true}},
+                QJsonObject{{QStringLiteral("appearance"),3},{QStringLiteral("class_id"),0},{QStringLiteral("object"),QStringLiteral("person")},{QStringLiteral("correct"),false}}}}}).toJson());
+        other.close();
+        const auto runs=reviewed_runs(text(root/"reviews"),video_name);
+        require(runs.size()==2,"Comparison did not find both models' reviews");
+        const auto found=std::ranges::find(runs,QStringLiteral("Another model"),&ReviewedRun::model);
+        require(found!=runs.end() && found->reviewed==3 && found->correct==2 && found->objects.at(QStringLiteral("dog"))==std::pair{2,2},
+            "Comparison counted the other model's verdicts wrongly");
+        std::unique_ptr<QTableWidget> table(comparison_table(runs));
+        require(table->columnCount()==2 && table->item(3,int(found-runs.begin()))->text()==QStringLiteral("7"),
+            "Comparison table lost a model or its estimate (10 found x 2/3 correct)");
+    }
     require(bytes(root/"review.csv").find(",correct\r\n")!=std::string::npos,"Review CSV lacks the verdicts");
     require(window.grab().save(text(root/"analysis-results.png")),"Results screenshot failed");
     window.resize(920,620);QTest::qWait(25);require(window.grab().save(text(root/"analysis-compact.png")),"Compact analysis screenshot failed");window.resize(1240,820);
