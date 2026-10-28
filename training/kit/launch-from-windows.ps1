@@ -15,7 +15,7 @@ $training = Split-Path -Parent $PSScriptRoot
 # A list arrives as one string through powershell -File, so split it here.
 $jobs = @($Job -split '[,\s]+' | Where-Object { $_ })
 foreach ($name in $jobs) {
-    if ($name -notin @('full-data', 'smoke-model', 'pilot-model', 'full-baseline')) { throw "Unknown job '$name'. Jobs: full-data, smoke-model, pilot-model, full-baseline" }
+    if ($name -notin @('full-data', 'smoke-model', 'pilot-model', 'full-baseline', 'full-speed', 'full-train', 'report')) { throw "Unknown job '$name'. Jobs: full-data, smoke-model, pilot-model, full-baseline, full-speed, full-train, report" }
 }
 if ($Action -eq 'add' -and $jobs.Count -eq 0) { throw 'Name the extra jobs, for example: -Action add -Job smoke-model,full-data' }
 
@@ -43,6 +43,8 @@ if ($Action -eq 'fetch') {
         exit 1
     }
     $files = @("$Run/eval-test.json", "$Run/rfdetr_openimages.json", "$Run/rfdetr_openimages.onnx")
+    ssh -o BatchMode=yes $Account "test -f $remote/$Run/compare-baseline.md"
+    if ($LASTEXITCODE -eq 0) { $files += "$Run/compare-baseline.md" }
     # The baseline's scores on the same test split, when there are any (not for the smoke test).
     $baseline = "baseline-yolov8s-oiv7-$($Run.Split('-')[0])/eval-test.json"
     ssh -o BatchMode=yes $Account "test -f $remote/$baseline"

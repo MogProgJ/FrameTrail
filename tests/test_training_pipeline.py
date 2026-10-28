@@ -10,6 +10,8 @@ TRAINING = Path(__file__).resolve().parents[1] / 'training'
 sys.path.insert(0, str(TRAINING))
 import checkpoints  # noqa: E402
 import evaluate  # noqa: E402
+import hierarchy  # noqa: E402
+import missing_labels  # noqa: E402
 import export  # noqa: E402
 import oi_metric  # noqa: E402
 import openimages  # noqa: E402
@@ -140,6 +142,64 @@ class DatasetBuildTests(unittest.TestCase):
             self.assertTrue(openimages.reuse_image('a', target, [earlier]))
             self.assertEqual(target.read_bytes(), b'jpeg')
             self.assertFalse(openimages.reuse_image('b', target.with_name('b.jpg'), [earlier]))
+
+
+class HierarchyTests(unittest.TestCase):
+    tree = {'LabelName': '/m/root', 'Subcategory': [
+        {'LabelName': '/m/animal', 'Subcategory': [{'LabelName': '/m/dog'}, {'LabelName': '/m/cat'}]}]}
+    mids = {'Animal': '/m/animal', 'Dog': '/m/dog', 'Cat': '/m/cat'}
+    classes = [{'id': 1, 'name': 'Animal', 'open_images': ['Animal']}, {'id': 2, 'name': 'Dog', 'open_images': ['Dog']},
+               {'id': 3, 'name': 'Cat', 'open_images': ['Cat']}]
+
+    def ancestors(self):
+        return hierarchy.ancestors_by_category(self.tree, self.mids, self.classes)
+
+    def test_ancestors_follow_the_tree(self):
+        self.assertEqual(self.ancestors(), {1: set(), 2: {1}, 3: {1}})
+
+    def test_truth_expands_up_and_negatives_down(self):
+        truth = {'a': oi_metric.ImageTruth({2}, set(), [(2, 0, 0, 10, 10, False)]),
+                 'b': oi_metric.ImageTruth(set(), {1}, []),
+                 'c': oi_metric.ImageTruth({1, 2}, set(), [(1, 0, 0, 10, 10, False), (2, 0, 0, 10, 10, False)])}
+        expanded = hierarchy.expand_truth(truth, self.ancestors())
+        self.assertEqual(expanded['a'].positive, {1, 2})
+        self.assertIn((1, 0, 0, 10, 10, False), expanded['a'].boxes)
+        self.assertEqual(expanded['b'].negative, {1, 2, 3})
+        self.assertEqual(len(expanded['c'].boxes), 2, 'an Animal box and a Dog box on one animal stay one Animal')
+
+    def test_child_detection_scores_for_the_parent(self):
+        truth = {'a': oi_metric.ImageTruth({2}, set(), [(2, 0, 0, 10, 10, False)])}
+        detections = {'a': [(2, 0.9, (0, 0, 10, 10))]}
+        categories = {1: 'Animal', 2: 'Dog', 3: 'Cat'}
+        flat = oi_metric.evaluate(truth, detections, categories)
+        self.assertIsNone(flat['per_class']['Animal']['ap'])
+        ancestors = self.ancestors()
+        expanded = oi_metric.evaluate(hierarchy.expand_truth(truth, ancestors),
+                                      hierarchy.expand_detections(detections, ancestors), categories)
+        self.assertEqual((expanded['per_class']['Animal']['ap'], expanded['per_class']['Dog']['ap']), (1.0, 1.0))
+
+
+class MissingLabelTests(unittest.TestCase):
+    coco = {'categories': [{'id': 2, 'name': 'Dog'}, {'id': 1, 'name': 'Animal'}, {'id': 3, 'name': 'Cup'}],
+            'images': [{'id': 7, 'oi_verified_positive': [2], 'oi_verified_negative': [3]},
+                       {'id': 8, 'oi_verified_positive': [], 'oi_verified_negative': []}]}
+
+    def test_labels_follow_category_id_order(self):
+        self.assertEqual(missing_labels.label_index(self.coco['categories']), {1: 0, 2: 1, 3: 2})
+
+    def test_table_marks_verified_labels_and_unboxed_parents(self):
+        table = missing_labels.image_table(self.coco, {2: {1}, 1: set(), 3: set()})
+        self.assertEqual(table[7], ([1, 2], [0]))
+        self.assertEqual(table[8], ([], []))
+
+    @unittest.skipUnless(importlib.util.find_spec('torch'), 'needs torch')
+    def test_weights(self):
+        table = missing_labels.image_table(self.coco, {2: {1}, 1: set(), 3: set()})
+        weights = missing_labels.class_weights(table, [7, 8, 99], classes=3, columns=4, unverified_weight=0.25)
+        self.assertEqual(weights.shape, (3, 1, 4))
+        self.assertEqual(weights[0, 0].tolist(), [0.0, 1.0, 1.0, 1.0])  # Animal is true via Dog; no-object keeps 1.
+        self.assertEqual(weights[1, 0].tolist(), [0.25, 0.25, 0.25, 1.0])
+        self.assertEqual(weights[2, 0].tolist(), [1.0, 1.0, 1.0, 1.0])  # Unknown image: plain loss.
 
 
 @unittest.skipUnless(importlib.util.find_spec('torch'), 'needs torch')

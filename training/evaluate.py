@@ -7,6 +7,9 @@ Backends:
 Predicted class names are mapped onto our categories by target name or by any merged
 Open Images source name (case-insensitive). Unmapped predictions are dropped.
 
+Next to the flat score, `hierarchy` holds a parent-aware one in which a child class also counts as its
+parents (a Dog box is also an Animal box), as the Open Images Challenge scores; see hierarchy.py.
+
 Examples:
     python training/evaluate.py --dataset data/pilot --backend rfdetr \
         --weights runs/pilot-small/checkpoint_best_total.pth --out runs/pilot-small/eval-test.json
@@ -22,6 +25,7 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import hierarchy  # noqa: E402
 import oi_metric  # noqa: E402
 
 PEOPLE_AND_VEHICLES = ['Person', 'Car', 'Bus', 'Truck', 'Van', 'Motorcycle', 'Bicycle']
@@ -37,6 +41,19 @@ def name_map(dataset: Path, categories: dict[int, str]) -> dict[str, int]:
             for source in entry['open_images']:
                 mapping[source.lower()] = entry['id']
     return mapping
+
+
+def parent_aware(dataset: Path, cache: Path, truth: dict, detections: dict, categories: dict[int, str]) -> dict | None:
+    """The same scoring with the Open Images class hierarchy applied (hierarchy.py), or None if unavailable."""
+    ancestors = hierarchy.for_dataset(dataset, cache)
+    if not ancestors:
+        return None
+    expanded = {image: suppress_duplicates(items)
+                for image, items in hierarchy.expand_detections(detections, ancestors).items()}
+    result = oi_metric.evaluate(hierarchy.expand_truth(truth, ancestors), expanded, categories)
+    result['map50_people_and_vehicles'] = oi_metric.subset_map(result, PEOPLE_AND_VEHICLES)
+    result['classes_with_parents'] = sum(1 for above in ancestors.values() if above)
+    return result
 
 
 def suppress_duplicates(items: list[tuple[int, float, tuple]]) -> list[tuple[int, float, tuple]]:
@@ -91,6 +108,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--threshold', type=float, default=0.01, help='low, so AP sees the whole score range')
     parser.add_argument('--batch', type=int, default=8)
     parser.add_argument('--limit', type=int, help='only the first N images (quick checks)')
+    parser.add_argument('--cache', type=Path, default=Path('data/openimages-metadata'),
+                        help='Open Images metadata folder (class hierarchy and names for the parent-aware score)')
     args = parser.parse_args(argv)
 
     folder = args.dataset / args.split
@@ -136,15 +155,21 @@ def main(argv: list[str] | None = None) -> int:
     result.update({
         'map50_people_and_vehicles': oi_metric.subset_map(result, PEOPLE_AND_VEHICLES),
         'dataset': str(args.dataset), 'split': args.split, 'images': len(truth),
-        'backend': args.backend, 'weights': str(args.weights) if args.weights else None,
+        'backend': args.backend, 'weights': str(args.weights) if args.weights else None,  # Also with --predictions.
         'predictions': source, 'threshold': args.threshold,
         'unmapped_prediction_classes': len(unmapped), 'seconds': round(time.time() - started, 1)})
+    with_parents = parent_aware(args.dataset, args.cache, truth, detections, categories)
+    if with_parents:
+        result['hierarchy'] = with_parents
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, indent=1), encoding='utf-8')
     worst = sorted((v['ap'], k) for k, v in result['per_class'].items() if v['ap'] is not None)[:5]
     print(f"mAP@0.5 {result['map50']:.4f} over {result['classes_scored']} classes; "
           f"people/vehicles {result['map50_people_and_vehicles'] or 0:.4f}; "
           f"weakest: {', '.join(f'{n} {a:.2f}' for a, n in worst)}")
+    if with_parents:
+        print(f"With parent classes (Open Images hierarchy): mAP@0.5 {with_parents['map50']:.4f}; "
+              f"people/vehicles {with_parents['map50_people_and_vehicles'] or 0:.4f}")
     return 0
 
 

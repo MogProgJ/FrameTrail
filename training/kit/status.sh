@@ -31,13 +31,36 @@ done
 if [[ -d data/full ]]; then
     echo; echo "== data/full: $(find data/full -name '*.jpg' | wc -l) images so far$([[ -f data/full/dataset.json ]] && echo ', complete')"
 fi
-if [[ -f runs/gpu-smoke/throughput.json ]]; then echo; echo "== GPU smoke speed"; cat runs/gpu-smoke/throughput.json; fi
+for speed in runs/*/throughput.json; do
+    [[ -f "$speed" ]] && { echo; echo "== $speed"; cat "$speed"; echo; }
+done
+# Which GPU each training run used and how long its epochs took (from runs.jsonl and metrics.csv).
+for history in runs/*/runs.jsonl; do
+    [[ -f "$history" ]] && "$FT_VENV/bin/python" - "$history" <<'PY'
+import json, sys, time
+from pathlib import Path
+history = Path(sys.argv[1])
+records = [json.loads(line) for line in history.read_text().splitlines() if line.strip()]
+gpus = sorted({gpu for record in records for gpu in record['environment'].get('gpus', [])})
+metrics = history.with_name('metrics.csv')
+epochs = len({line.split(',')[0] for line in metrics.read_text().splitlines()[1:]}) if metrics.exists() else 0
+started = time.mktime(time.strptime(records[0]['started'][:19], '%Y-%m-%dT%H:%M:%S'))
+latest = metrics.stat().st_mtime if metrics.exists() else started
+print(f"\n== {history.parent}: {epochs}/{records[0]['arguments']['epochs']} epochs on {', '.join(gpus) or 'no GPU'}"
+      + (f", {(latest - started) / 60 / epochs:.1f} min per epoch" if epochs and len(records) == 1 else '')
+      + (f", {len(records)} job parts" if len(records) > 1 else ''))
+PY
+done
 for result in runs/*/eval-test.json; do
     [[ -f "$result" ]] && { echo; echo "== $result"; "$FT_VENV/bin/python" -c "
 import json, sys
 r = json.load(open(sys.argv[1]))
 print('mAP@0.5', round(r['map50'], 4), '| people/vehicles', round(r['map50_people_and_vehicles'] or 0, 4),
-      '| classes', r['classes_scored'], '| images', r['images'])" "$result"; }
+      '| classes', r['classes_scored'], '| images', r['images'],
+      *(['| with parent classes', round(r['hierarchy']['map50'], 4)] if 'hierarchy' in r else []))" "$result"; }
+done
+for report in runs/*/compare-baseline.md; do
+    [[ -f "$report" ]] && { echo; echo "== $report (top; the whole report has every class)"; sed -n 3,14p "$report"; }
 done
 for summary in runs/*/rfdetr_openimages.json; do
     [[ -f "$summary" ]] && { echo; echo "== $summary"; "$FT_VENV/bin/python" -c "

@@ -8,12 +8,19 @@
 #                Settings: FULL_OPTS, FULL_NEED_GB (stops before downloading if the quota is short).
 #   full-baseline  score the app's YOLOv8s Open Images model on data/full's test split on CPU: the Phase 2 bar.
 #                Settings: FULL_BASELINE_OPTS.
+#   full-speed   GPU smoke test of the Phase 2 run on data/full, started from the pilot as the real run is: two
+#                short epochs, scoring, measured speed and an export (runs/gpu-smoke-full). Settings: FULL_SPEED_OPTS.
+#   full-train   the Phase 2 run: RF-DETR Small on data/full from the pilot (runs/full-small, settings in
+#                kit/full-small.env). Waits for full-speed when both are queued together. Settings: FULL_TRAIN_OPTS.
+#   report       re-score finished runs from their saved predictions (adds the parent-aware score) and compare each
+#                with the YOLOv8s baseline (runs/<run>/compare-baseline.md); CPU only. Settings: REPORT_OPTS.
 # Jobs are recorded in logs/extra.txt, never in logs/submitted.txt, so launch/resubmit and the training job's
 # clean-up leave them alone. This script never cancels anything, and it does not queue a job again while an
 # earlier submission of it is still active. If Slurm refuses a job for a per-user limit, it prints the limits.
 set -euo pipefail
 source "$(dirname "$0")/env.sh"
-[[ $# -gt 0 ]] || { echo "Name at least one job: smoke-model, pilot-model, full-data, full-baseline" >&2; exit 2; }
+JOBS="smoke-model, pilot-model, full-data, full-baseline, full-speed, full-train, report"
+[[ $# -gt 0 ]] || { echo "Name at least one job: $JOBS" >&2; exit 2; }
 touch logs/extra.txt
 refused=0
 
@@ -34,6 +41,7 @@ queue() {  # queue NAME SCRIPT OPTIONS: submit and record the job ID.
     local id
     id=$(sbatch --parsable --export=ALL $3 "$2" 2>&1) || { refusal "$1" "$id"; return 1; }
     echo "$1 $id" >> logs/extra.txt
+    queued_id=$id
     echo "$1: queued as job $id"
 }
 report() {  # Read-only: FrameTrail's own job count and the per-user limits. Other jobs are not listed.
@@ -59,7 +67,10 @@ for job in "$@"; do
         smoke-model|pilot-model) check "$job" training/kit/export.sbatch "${EXPORT_OPTS:-}" || valid=0 ;;
         full-data) check full-data training/kit/prepare.sbatch "${FULL_OPTS:-}" || valid=0 ;;
         full-baseline) check full-baseline training/kit/baseline_cpu.sbatch "${FULL_BASELINE_OPTS:-}" || valid=0 ;;
-        *) echo "Unknown job '$job'. Jobs: smoke-model, pilot-model, full-data, full-baseline" >&2; exit 2 ;;
+        full-speed) check full-speed training/kit/smoke.sbatch "${FULL_SPEED_OPTS:-}" || valid=0 ;;
+        full-train) check full-train training/kit/train.sbatch "${FULL_TRAIN_OPTS:-}" || valid=0 ;;
+        report) check report training/kit/report.sbatch "${REPORT_OPTS:-}" || valid=0 ;;
+        *) echo "Unknown job '$job'. Jobs: $JOBS" >&2; exit 2 ;;
     esac
 done
 if [[ "$valid" == 0 ]]; then
@@ -74,6 +85,7 @@ for job in "$@"; do
     running=$(active "$job")
     if [[ -n "$running" ]]; then
         echo "$job: already queued or running ($(echo $running)); not queued again."
+        [[ "$job" != full-speed ]] || speed=$(echo $running | awk '{print $NF}')
         continue
     fi
     case "$job" in
@@ -97,6 +109,33 @@ for job in "$@"; do
             if [[ ! -f data/full/dataset.json ]]; then echo "full-baseline: data/full is not built yet." >&2; failed=1; continue; fi
             if [[ -f runs/baseline-yolov8s-oiv7-full/eval-test.json ]]; then echo "full-baseline: already scored."; continue; fi
             DATASET=full queue full-baseline training/kit/baseline_cpu.sbatch "${FULL_BASELINE_OPTS:-}" || failed=1
+            ;;
+        report)
+            queue report training/kit/report.sbatch "${REPORT_OPTS:-}" || failed=1
+            ;;
+        full-speed|full-train)
+            if [[ ! -f data/full/dataset.json || ! -f runs/pilot-small/checkpoint_best_total.pth ]]; then
+                echo "$job: needs data/full and the pilot's runs/pilot-small/checkpoint_best_total.pth." >&2; failed=1; continue
+            fi
+            if [[ "$job" == full-speed ]]; then
+                if [[ -f runs/gpu-smoke-full/throughput.json ]]; then echo "full-speed: already measured."; speed=done; continue; fi
+                DATASET=full SMOKE_RUN=gpu-smoke-full START_FROM=runs/pilot-small/checkpoint_best_total.pth \
+                    queue full-speed training/kit/smoke.sbatch "${FULL_SPEED_OPTS:-}" && speed=$queued_id || failed=1
+                continue
+            fi
+            if [[ -f runs/full-small/finished.json && -f runs/full-small/eval-test.json ]]; then
+                echo "full-train: runs/full-small is already trained and scored."; continue
+            fi
+            after=""
+            if [[ " $* " == *" full-speed "* ]]; then
+                if [[ -z "${speed:-}" ]]; then
+                    echo "full-train: not queued, because the full-speed test it should wait for was not queued." >&2
+                    failed=1; continue
+                fi
+                [[ "$speed" == done ]] || after="--dependency=afterok:$speed"
+            fi
+            DATASET=full MODEL=small RUN=full-small PARTS_NAME=full-train \
+                queue full-train training/kit/train.sbatch "$after ${FULL_TRAIN_OPTS:-}" || failed=1
             ;;
     esac
 done

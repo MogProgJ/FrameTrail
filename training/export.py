@@ -35,6 +35,7 @@ RESOLUTION = 512
 UNTRAINED_LOGIT = -100.0
 TOLERANCE = dict(rtol=1e-3, atol=2e-3)
 SHOWN = 0.3  # Detections at or above this score must be the same in ONNX and PyTorch.
+LOWEST = 0.05  # The app's lowest confidence setting: every query that could ever be shown must match.
 HERE = Path(__file__).resolve().parent
 # In the repository the app vocabulary sits in dependencies/; on the cluster the launcher uploads it into training/.
 VOCABULARY_PATHS = (HERE.parent / 'dependencies' / 'recognition-vocabulary.json', HERE / 'recognition-vocabulary.json')
@@ -165,15 +166,18 @@ def main(argv: list[str] | None = None) -> int:
     if input_shape != [1, 3, resolution, resolution] or output_shape != [1, queries, 4 + categories]:
         raise SystemExit(f'Unexpected ONNX shapes {input_shape} -> {output_shape}')
 
-    # Queries are compared after pairing each PyTorch query with its nearest ONNX query: the decoder's query order
-    # comes from a top-k over encoder scores, which tiny numeric differences can reorder without changing any
-    # detection. The app reads all queries, so order does not matter; values and the detections shown do.
+    # Queries are compared after pairing each with its nearest partner in the other output. The decoder's queries
+    # come from a top-k over encoder scores, so tiny numeric differences can reorder them, or swap a proposal at the
+    # cut-off for another, without changing any detection. Every query the app could show (score >= LOWEST, on
+    # either side) must have a partner within TOLERANCE; queries below that on both sides may differ.
     box_error = logit_error = ordered_box_error = 0.0
-    reordered = shown = shown_missing = 0
+    reordered = differing = shown = shown_missing = 0
+    differing_score = 0.0
     passed = True
     untrained = np.ones(categories, dtype=bool)
     untrained[columns] = False
     latencies = []
+    sigmoid = lambda x: 1 / (1 + np.exp(-x))
     for path in images:
         pixels = load_image(path, resolution)
         with torch.inference_mode():
@@ -187,19 +191,29 @@ def main(argv: list[str] | None = None) -> int:
         ref_boxes, ref_logits, out_boxes, out_logits = boxes[0], logits[0], output[0, :, :4], placed[0]
         cost = (np.abs(ref_boxes[:, None] - out_boxes[None]).sum(-1)
                 + np.abs(ref_logits[:, None] - out_logits[None]).mean(-1))
-        pair = cost.argmin(1)
-        one_to_one = len(set(pair.tolist())) == len(pair)
-        reordered += int(np.sum(pair != np.arange(len(pair))))
+        forward, backward = cost.argmin(1), cost.argmin(0)
+        reordered += int(np.sum(forward != np.arange(len(forward))))
         ordered_box_error = max(ordered_box_error, float(np.max(np.abs(ref_boxes - out_boxes))))
-        box_error = max(box_error, float(np.max(np.abs(ref_boxes - out_boxes[pair]))))
-        logit_error = max(logit_error, float(np.max(np.abs(ref_logits - out_logits[pair]))))
-        ref_shown = 1 / (1 + np.exp(-ref_logits.max(1))) >= SHOWN
-        out_shown = 1 / (1 + np.exp(-out_logits.max(1))) >= SHOWN
+        ref_score, out_score = sigmoid(ref_logits.max(1)), sigmoid(out_logits.max(1))
+        close = lambda a_boxes, a_logits, b_boxes, b_logits: (
+            np.isclose(a_boxes, b_boxes, **TOLERANCE).all(1) & np.isclose(a_logits, b_logits, **TOLERANCE).all(1))
+        ref_ok = close(ref_boxes, ref_logits, out_boxes[forward], out_logits[forward])
+        out_ok = close(out_boxes, out_logits, ref_boxes[backward], ref_logits[backward])
+        ref_relevant, out_relevant = ref_score >= LOWEST, out_score >= LOWEST
+        differing += int(np.sum(~ref_ok))
+        if (~ref_ok).any():
+            differing_score = max(differing_score, float(ref_score[~ref_ok].max()))
+        if (~out_ok).any():
+            differing_score = max(differing_score, float(out_score[~out_ok].max()))
+        if ref_relevant.any():
+            box_error = max(box_error, float(np.max(np.abs(ref_boxes - out_boxes[forward])[ref_relevant])))
+            logit_error = max(logit_error, float(np.max(np.abs(ref_logits - out_logits[forward])[ref_relevant])))
+        one_to_one = len(set(forward[ref_relevant].tolist())) == int(ref_relevant.sum())
+        ref_shown, out_shown = ref_score >= SHOWN, out_score >= SHOWN
         shown += int(ref_shown.sum())
-        shown_missing += int(np.sum(ref_shown != out_shown[pair]))
+        shown_missing += abs(int(ref_shown.sum()) - int(out_shown.sum()))
         passed &= bool(np.isfinite(output).all() and one_to_one
-                       and np.allclose(ref_boxes, out_boxes[pair], **TOLERANCE)
-                       and np.allclose(ref_logits, out_logits[pair], **TOLERANCE)
+                       and ref_ok[ref_relevant].all() and out_ok[out_relevant].all()
                        and ref_shown.sum() == out_shown.sum()
                        and np.all(output[:, :, 4:][:, :, untrained] == UNTRAINED_LOGIT))
 
@@ -211,6 +225,8 @@ def main(argv: list[str] | None = None) -> int:
         'parity': {'images': len(images), 'passed': passed, 'max_box_error': box_error,
                    'max_logit_error': logit_error, 'tolerance': TOLERANCE,
                    'reordered_queries': reordered, 'max_box_error_in_query_order': ordered_box_error,
+                   'queries_without_partner': differing, 'highest_score_without_partner': differing_score,
+                   'lowest_score_checked': LOWEST,
                    f'detections_at_{SHOWN}': shown, 'detections_changed': shown_missing},
         'onnxruntime_cpu_median_seconds': statistics.median(latencies[1:] or latencies),
         'versions': {'torch': torch.__version__, 'onnx': onnx.__version__, 'onnxruntime': onnxruntime.__version__},
