@@ -2,7 +2,7 @@
 # Queue extra jobs next to the pilot chain without touching it.
 # Usage (from $(ws_find frametrail)/rf):  bash training/kit/submit_extra.sh JOB [JOB...]
 #   smoke-model  export the GPU smoke test's checkpoint as the app model, to check the app's GPU path early.
-#                Settings: EXPORT_OPTS.
+#   pilot-model  export the pilot run's best checkpoint (runs/pilot-small) as the app model. Both use EXPORT_OPTS.
 #   full-data    build data/full (training/classes/full.txt, the app's whole Open Images vocabulary) in one
 #                resumable CPU job, linking the images data/pilot already has instead of downloading them.
 #                Settings: FULL_OPTS, FULL_NEED_GB (stops before downloading if the quota is short).
@@ -13,7 +13,7 @@
 # earlier submission of it is still active. If Slurm refuses a job for a per-user limit, it prints the limits.
 set -euo pipefail
 source "$(dirname "$0")/env.sh"
-[[ $# -gt 0 ]] || { echo "Name at least one job: smoke-model, full-data, full-baseline" >&2; exit 2; }
+[[ $# -gt 0 ]] || { echo "Name at least one job: smoke-model, pilot-model, full-data, full-baseline" >&2; exit 2; }
 touch logs/extra.txt
 refused=0
 
@@ -56,10 +56,10 @@ report() {  # Read-only: FrameTrail's own job count and the per-user limits. Oth
 valid=1
 for job in "$@"; do
     case "$job" in
-        smoke-model) check smoke-model training/kit/export.sbatch "${EXPORT_OPTS:-}" || valid=0 ;;
+        smoke-model|pilot-model) check "$job" training/kit/export.sbatch "${EXPORT_OPTS:-}" || valid=0 ;;
         full-data) check full-data training/kit/prepare.sbatch "${FULL_OPTS:-}" || valid=0 ;;
         full-baseline) check full-baseline training/kit/baseline_cpu.sbatch "${FULL_BASELINE_OPTS:-}" || valid=0 ;;
-        *) echo "Unknown job '$job'. Jobs: smoke-model, full-data, full-baseline" >&2; exit 2 ;;
+        *) echo "Unknown job '$job'. Jobs: smoke-model, pilot-model, full-data, full-baseline" >&2; exit 2 ;;
     esac
 done
 if [[ "$valid" == 0 ]]; then
@@ -77,12 +77,16 @@ for job in "$@"; do
         continue
     fi
     case "$job" in
-        smoke-model)
-            if [[ ! -f runs/gpu-smoke/checkpoint_best_total.pth ]]; then
-                echo "smoke-model: runs/gpu-smoke has no checkpoint; nothing to export." >&2; failed=1; continue
+        smoke-model|pilot-model)
+            if [[ "$job" == smoke-model ]]; then run=gpu-smoke images=data/pilot-smoke/test name="gpu-smoke test model"
+            else run=pilot-small images=data/pilot/test name="RF-DETR Small · Open Images pilot (110 classes)"; fi
+            if [[ ! -f "runs/$run/checkpoint_best_total.pth" ]]; then
+                echo "$job: runs/$run has no checkpoint; nothing to export." >&2; failed=1; continue
             fi
-            if [[ -f runs/gpu-smoke/rfdetr_openimages.onnx ]]; then echo "smoke-model: already exported."; continue; fi
-            RUN=gpu-smoke queue smoke-model training/kit/export.sbatch "${EXPORT_OPTS:-}" || failed=1
+            if grep -q '"passed": true' "runs/$run/rfdetr_openimages.json" 2>/dev/null; then
+                echo "$job: already exported, and its check passed."; continue
+            fi
+            RUN=$run IMAGES=$images NAME=$name queue "$job" training/kit/export.sbatch "${EXPORT_OPTS:-}" || failed=1
             ;;
         full-data)
             if [[ -f data/full/dataset.json ]]; then echo "full-data: data/full is already built."; continue; fi

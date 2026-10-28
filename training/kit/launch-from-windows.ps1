@@ -15,7 +15,7 @@ $training = Split-Path -Parent $PSScriptRoot
 # A list arrives as one string through powershell -File, so split it here.
 $jobs = @($Job -split '[,\s]+' | Where-Object { $_ })
 foreach ($name in $jobs) {
-    if ($name -notin @('full-data', 'smoke-model', 'full-baseline')) { throw "Unknown job '$name'. Jobs: full-data, smoke-model, full-baseline" }
+    if ($name -notin @('full-data', 'smoke-model', 'pilot-model', 'full-baseline')) { throw "Unknown job '$name'. Jobs: full-data, smoke-model, pilot-model, full-baseline" }
 }
 if ($Action -eq 'add' -and $jobs.Count -eq 0) { throw 'Name the extra jobs, for example: -Action add -Job smoke-model,full-data' }
 
@@ -34,6 +34,12 @@ if ($Action -eq 'fetch') {
     ssh -o BatchMode=yes $Account "test -f $remote/$Run/eval-test.json -a -f $remote/$Run/rfdetr_openimages.onnx"
     if ($LASTEXITCODE -ne 0) {
         Write-Output "Run '$Run' has no test scores or app model yet. Check progress with -Action status."
+        exit 1
+    }
+    # export.py compares the ONNX file with PyTorch; a file that failed that check never reaches the app.
+    ssh -o BatchMode=yes $Account "grep -q 'passed.: true' $remote/$Run/rfdetr_openimages.json"
+    if ($LASTEXITCODE -ne 0) {
+        Write-Output "Run '$Run' has an app model, but it failed the ONNX check, so it was not installed. See -Action status."
         exit 1
     }
     $files = @("$Run/eval-test.json", "$Run/rfdetr_openimages.json", "$Run/rfdetr_openimages.onnx")

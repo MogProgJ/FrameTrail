@@ -34,6 +34,7 @@ PREPROCESSING = 'rf-rgb512-normalized-v1'
 RESOLUTION = 512
 UNTRAINED_LOGIT = -100.0
 TOLERANCE = dict(rtol=1e-3, atol=2e-3)
+SHOWN = 0.3  # Detections at or above this score must be the same in ONNX and PyTorch.
 HERE = Path(__file__).resolve().parent
 # In the repository the app vocabulary sits in dependencies/; on the cluster the launcher uploads it into training/.
 VOCABULARY_PATHS = (HERE.parent / 'dependencies' / 'recognition-vocabulary.json', HERE / 'recognition-vocabulary.json')
@@ -164,7 +165,11 @@ def main(argv: list[str] | None = None) -> int:
     if input_shape != [1, 3, resolution, resolution] or output_shape != [1, queries, 4 + categories]:
         raise SystemExit(f'Unexpected ONNX shapes {input_shape} -> {output_shape}')
 
-    box_error = logit_error = 0.0
+    # Queries are compared after pairing each PyTorch query with its nearest ONNX query: the decoder's query order
+    # comes from a top-k over encoder scores, which tiny numeric differences can reorder without changing any
+    # detection. The app reads all queries, so order does not matter; values and the detections shown do.
+    box_error = logit_error = ordered_box_error = 0.0
+    reordered = shown = shown_missing = 0
     passed = True
     untrained = np.ones(categories, dtype=bool)
     untrained[columns] = False
@@ -179,10 +184,23 @@ def main(argv: list[str] | None = None) -> int:
         output = session.run(None, {'input': pixels.numpy()})[0]
         latencies.append(time.perf_counter() - started)
         placed = output[:, :, 4:][:, :, columns]
-        box_error = max(box_error, float(np.max(np.abs(boxes - output[:, :, :4]))))
-        logit_error = max(logit_error, float(np.max(np.abs(logits - placed))))
-        passed &= bool(np.isfinite(output).all() and np.allclose(boxes, output[:, :, :4], **TOLERANCE)
-                       and np.allclose(logits, placed, **TOLERANCE)
+        ref_boxes, ref_logits, out_boxes, out_logits = boxes[0], logits[0], output[0, :, :4], placed[0]
+        cost = (np.abs(ref_boxes[:, None] - out_boxes[None]).sum(-1)
+                + np.abs(ref_logits[:, None] - out_logits[None]).mean(-1))
+        pair = cost.argmin(1)
+        one_to_one = len(set(pair.tolist())) == len(pair)
+        reordered += int(np.sum(pair != np.arange(len(pair))))
+        ordered_box_error = max(ordered_box_error, float(np.max(np.abs(ref_boxes - out_boxes))))
+        box_error = max(box_error, float(np.max(np.abs(ref_boxes - out_boxes[pair]))))
+        logit_error = max(logit_error, float(np.max(np.abs(ref_logits - out_logits[pair]))))
+        ref_shown = 1 / (1 + np.exp(-ref_logits.max(1))) >= SHOWN
+        out_shown = 1 / (1 + np.exp(-out_logits.max(1))) >= SHOWN
+        shown += int(ref_shown.sum())
+        shown_missing += int(np.sum(ref_shown != out_shown[pair]))
+        passed &= bool(np.isfinite(output).all() and one_to_one
+                       and np.allclose(ref_boxes, out_boxes[pair], **TOLERANCE)
+                       and np.allclose(ref_logits, out_logits[pair], **TOLERANCE)
+                       and ref_shown.sum() == out_shown.sum()
                        and np.all(output[:, :, 4:][:, :, untrained] == UNTRAINED_LOGIT))
 
     summary = {
@@ -191,7 +209,9 @@ def main(argv: list[str] | None = None) -> int:
         'input_shape': input_shape, 'output_shape': output_shape,
         'metadata': {k: v for k, v in metadata.items() if k not in ('frametrail.vocabulary', 'frametrail.trained_classes')},
         'parity': {'images': len(images), 'passed': passed, 'max_box_error': box_error,
-                   'max_logit_error': logit_error, 'tolerance': TOLERANCE},
+                   'max_logit_error': logit_error, 'tolerance': TOLERANCE,
+                   'reordered_queries': reordered, 'max_box_error_in_query_order': ordered_box_error,
+                   f'detections_at_{SHOWN}': shown, 'detections_changed': shown_missing},
         'onnxruntime_cpu_median_seconds': statistics.median(latencies[1:] or latencies),
         'versions': {'torch': torch.__version__, 'onnx': onnx.__version__, 'onnxruntime': onnxruntime.__version__},
     }
