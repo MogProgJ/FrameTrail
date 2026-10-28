@@ -21,6 +21,9 @@ struct TrackingOptions {
     std::vector<int> classes{0, 1, 2, 3, 5, 7};
     std::optional<CountingLine> line{CountingLine{}};
     AssociationPolicy association{AssociationPolicy::greedy}; // Repair stays opt-in until broader identity validation.
+    // Analyse every Nth decoded frame (1..30), e.g. for long videos with a slower detector. Gaps counted in frames
+    // scale with it; gaps measured in time do not need to.
+    unsigned frame_step{1};
 };
 struct TrackedObject {
     std::uint64_t id{};

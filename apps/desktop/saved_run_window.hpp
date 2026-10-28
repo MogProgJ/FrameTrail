@@ -84,6 +84,7 @@ private:
     QPushButton *choose_{}, *analyse_{}, *open_{}, *cancel_{}, *save_{}, *export_{}, *previous_{}, *more_{}, *play_{}, *back_{};
     QComboBox* model_{};
     QDoubleSpinBox* confidence_{};
+    QComboBox* frame_step_{}; // Analyse every Nth frame: faster on long videos with a slower model.
     QToolButton* settings_toggle_{};
     QWidget* settings_panel_{};
     QWidget* results_panel_{};

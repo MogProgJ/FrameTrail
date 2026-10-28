@@ -202,6 +202,47 @@ class MissingLabelTests(unittest.TestCase):
         self.assertEqual(weights[2, 0].tolist(), [1.0, 1.0, 1.0, 1.0])  # Unknown image: plain loss.
 
 
+@unittest.skipUnless(importlib.util.find_spec('rfdetr'), 'needs rfdetr')
+class MissingLabelLossTests(unittest.TestCase):
+    """The patched loss is rfdetr's own when every weight is 1, and only lowers the "absent" part otherwise."""
+
+    def losses(self, weight, table_images):
+        import torch
+        from rfdetr.models import criterion
+        torch.manual_seed(3)
+        outputs = {'pred_logits': torch.randn(2, 5, 4), 'pred_boxes': torch.rand(2, 5, 4) * 0.5 + 0.25}
+        targets = [{'labels': torch.tensor([1]), 'boxes': torch.tensor([[0.5, 0.5, 0.2, 0.2]]), 'image_id': torch.tensor(1)},
+                   {'labels': torch.tensor([0, 2]), 'boxes': torch.tensor([[0.4, 0.4, 0.2, 0.2], [0.6, 0.6, 0.1, 0.1]]),
+                    'image_id': torch.tensor(2)}]
+        indices = [(torch.tensor([3]), torch.tensor([0])), (torch.tensor([0, 4]), torch.tensor([0, 1]))]
+        owner = criterion.SetCriterion.__new__(criterion.SetCriterion)
+        torch.nn.Module.__init__(owner)
+        owner.ia_bce_loss, owner.focal_alpha = True, 0.25
+        original = criterion.SetCriterion.loss_labels
+        with tempfile.TemporaryDirectory() as folder:
+            annotations = Path(folder) / 'train.json'
+            annotations.write_text(json.dumps({'categories': [{'id': i + 1, 'name': str(i)} for i in range(3)],
+                                               'images': table_images}), encoding='utf-8')
+            try:
+                missing_labels.install(annotations, 3, weight)
+                patched = criterion.SetCriterion.loss_labels(owner, outputs, targets, indices, torch.tensor(3.0))
+            finally:
+                criterion.SetCriterion.loss_labels = original
+        plain = original(owner, outputs, targets, indices, torch.tensor(3.0))
+        return float(plain['loss_ce']), float(patched['loss_ce'])
+
+    def test_weight_one_is_rfdetrs_loss(self):
+        plain, patched = self.losses(1.0, [])
+        self.assertAlmostEqual(plain, patched, places=6)
+
+    def test_unverified_classes_count_less(self):
+        images = [{'id': 1, 'oi_verified_positive': [2], 'oi_verified_negative': []},
+                  {'id': 2, 'oi_verified_positive': [1, 3], 'oi_verified_negative': []}]
+        plain, patched = self.losses(0.0, images)
+        self.assertLess(patched, plain)
+        self.assertGreater(patched, 0)
+
+
 @unittest.skipUnless(importlib.util.find_spec('torch'), 'needs torch')
 class CheckpointTests(unittest.TestCase):
     def test_head_classes_reads_model_and_lightning_layouts(self):

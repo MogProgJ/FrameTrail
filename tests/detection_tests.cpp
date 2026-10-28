@@ -26,6 +26,14 @@ template<class F> void wait_for(F f) {
     }
 }
 void contract() {
+    // Open Images nesting: a parent box on the same object as a child box is hidden; other overlaps stay.
+    require(frametrail::is_ancestor(106,16) && frametrail::is_ancestor(585,2) && !frametrail::is_ancestor(16,106) &&
+        !frametrail::is_ancestor(2,0),"Open Images class hierarchy wrong");
+    const frametrail::Detection dog{16,.6f,10,10,50,50},animal{106,.9f,11,10,50,51},far_animal{106,.8f,200,200,240,240},
+        person{0,.9f,10,10,50,50};
+    const auto hidden=frametrail::hide_parent_duplicates({animal,dog,far_animal,person});
+    require(hidden.size()==3 && std::none_of(hidden.begin(),hidden.end(),[](const auto& d){return d.class_id==106 && d.left<100;}),
+        "Parent box on a child box was not hidden, or an unrelated box was");
     require(frametrail::parse_model("world-m")==frametrail::DetectorModel::world_m &&
         frametrail::model_class_count(frametrail::DetectorModel::world_s)==100 && frametrail::class_name(80)=="fox" &&
         frametrail::class_name(86)=="balloon" && frametrail::class_name(99)=="shopping cart","World vocabulary/profile mapping wrong");

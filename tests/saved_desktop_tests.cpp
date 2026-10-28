@@ -1,5 +1,6 @@
 #include "saved_run_window.hpp"
 #include "preview_window.hpp"
+#include <QComboBox>
 #include <QApplication>
 #include <QFontDatabase>
 #include <QLabel>
@@ -115,6 +116,11 @@ void intake(const std::filesystem::path& fixtures,const std::filesystem::path& s
     SavedRunWindow retry(config);retry.show();retry.select_video(text(fixtures/"invalid.txt"));retry.analyse_video();
     wait([&]{return !retry.analysing() && retry.findChild<QPushButton*>(QStringLiteral("chooseVideo"))->isEnabled();});
     require(!retry.findChild<QPushButton*>(QStringLiteral("saveRun"))->isVisible(),"Invalid input presented a saved result");retry.close();wait([&]{return !retry.isVisible();});
+    {   // The frame step is offered and restored from a run's configuration.
+        auto stepped=config;stepped.tracking.frame_step=3;SavedRunWindow sampled(stepped);
+        auto* step=sampled.findChild<QComboBox*>(QStringLiteral("analysisFrameStep"));
+        require(step && step->count()==4 && step->currentData().toInt()==3,"Frame step option missing or not restored");
+    }
     std::cout<<"Appearance intake passed; private artifacts: "<<root.string()<<'\n';
 }
 

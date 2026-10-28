@@ -150,6 +150,13 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     options->addWidget(new QLabel(QStringLiteral("Model")));options->addWidget(model_);
     options->addWidget(new QLabel(QStringLiteral("Confidence")));confidence_=new QDoubleSpinBox;confidence_->setObjectName(QStringLiteral("analysisConfidence"));
     confidence_->setRange(.05,.95);confidence_->setSingleStep(.05);confidence_->setValue(configuration_ ? configuration_->detector.confidence : .35);options->addWidget(confidence_);
+    options->addWidget(new QLabel(QStringLiteral("Frames")));frame_step_=new QComboBox;frame_step_->setObjectName(QStringLiteral("analysisFrameStep"));
+    for(const auto& [label,step]:{std::pair{QStringLiteral("Every frame"),1},{QStringLiteral("Every 2nd · faster"),2},
+        {QStringLiteral("Every 3rd · faster"),3},{QStringLiteral("Every 5th · fastest"),5}})frame_step_->addItem(label,step);
+    frame_step_->setToolTip(QStringLiteral("Run the detector on every Nth frame. Long videos finish several times faster; tracks continue between "
+        "the analysed frames, and appearance times are accurate to a few frames."));
+    if(configuration_)frame_step_->setCurrentIndex(std::max(0,frame_step_->findData(int(configuration_->tracking.frame_step))));
+    options->addWidget(frame_step_);
     model_->setMinimumWidth(0);model_->setMaximumWidth(300);model_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
     auto* hint=new QLabel;hint->setWordWrap(true);hint->setMinimumWidth(0);
     const auto update_hint=[this,hint]{hint->setText(frametrail::is_rf_model(selected_model(model_)) ? QStringLiteral("Experimental RF · false alarms expected") : QStringLiteral("All %1 object categories · on this device").arg(frametrail::model_category_count(selected_model(model_))));};
@@ -238,7 +245,7 @@ void SavedRunWindow::update_controls() {
     choose_->setEnabled(!busy);open_->setEnabled(!busy);analyse_->setEnabled(!busy && !selected_video_.isEmpty());
     cancel_->setVisible(busy && !closing_);cancel_->setEnabled(analysing() && !cancel_requested_);
     save_->setVisible(store_.has_value());export_->setVisible(store_.has_value());save_->setEnabled(store_.has_value() && !busy);export_->setEnabled(store_.has_value() && !busy);
-    settings_toggle_->setEnabled(!busy);model_->setEnabled(!busy);confidence_->setEnabled(!busy);
+    settings_toggle_->setEnabled(!busy);model_->setEnabled(!busy);confidence_->setEnabled(!busy);frame_step_->setEnabled(!busy);
     results_panel_->setVisible(store_.has_value());
     play_->setVisible(store_.has_value());back_->setVisible(store_.has_value());
     const bool reviewable=store_.has_value() && summary_ && summary_->configuration.kind==frametrail::RunKind::appearances;
@@ -290,6 +297,7 @@ void SavedRunWindow::analyse_video() {
     if(configuration_) {config.detector.backend=configuration_->detector.backend;config.detector.gpu_device=configuration_->detector.gpu_device;}
     config.kind=frametrail::RunKind::appearances;config.tracking.classes=frametrail::model_classes(config.detector.variant);std::sort(config.tracking.classes.begin(),config.tracking.classes.end());
     config.tracking.classes.erase(std::unique(config.tracking.classes.begin(),config.tracking.classes.end()),config.tracking.classes.end());config.tracking.line.reset();
+    config.tracking.frame_step=unsigned(frame_step_->currentData().toInt());
     start_analysis(scratch_.filePath(QUuid::createUuid().toString(QUuid::WithoutBraces)+QStringLiteral(".frametrail")),std::move(config));
 }
 void SavedRunWindow::start_analysis(const QString& database,frametrail::RunConfiguration configuration) {

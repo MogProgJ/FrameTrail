@@ -88,3 +88,7 @@ ONNX Runtime's SDK contains its MIT license and third-party notices. YOLOX's ups
 ## Expanded decoded-YOLO adapter (0.12)
 
 Open Images and World models have their own native RGB/255 centered-letterbox adapter and decoded channel-first tensors. Their exact profile/vocabulary is checked before inference. They do not use the YOLOX input/output contract above. The 597-category broad model, fixed 100-category experimental World exports, measured gains/regressions, pinned export setup and remaining dark-fox failure are documented in RECOGNITION.md. The existing CPU/GPU execution preference, tracking and appearance workflow remain shared.
+
+## Nested Open Images classes
+
+Open Images nests its classes: a dog is also a carnivore, a mammal and an animal, and a taxi is also a car. Its detectors can report a parent and a child on the same object. For the two Open Images models (YOLOv8 Open Images and RF-DETR · Open Images), FrameTrail hides a parent box that overlaps a child box at IoU above 0.7, so a dog shows as Dog rather than Dog plus Animal (`hide_parent_duplicates`). A parent box on its own, such as an animal the model could not name more precisely, stays. The parent table (`src/recognition_hierarchy.hpp`, 916 pairs over 507 categories) is generated from the Open Images class hierarchy by `scripts/generate-hierarchy.py`.

@@ -50,6 +50,14 @@ struct DetectorOptions {
     int gpu_device{-1}; // DXGI index; -1 selects a capable adapter with most dedicated memory.
 };
 std::string_view class_name(int id);
+// Open Images nests its classes: a dog is also a carnivore, a mammal and an animal; a taxi is also a car.
+bool is_ancestor(int ancestor, int category);
+// Same class, nested classes, or classes sharing an Open Images parent (car and truck are both land vehicles):
+// a detector may flicker between them on one object, so a track may change between them.
+bool related_classes(int a, int b);
+// Drops a box whose class is a parent of another box's class on the same object (IoU above `iou`), so a dog shows
+// as Dog rather than Dog plus Animal. Applied to the Open Images models' detections.
+std::vector<Detection> hide_parent_duplicates(std::vector<Detection> detections, float iou = 0.7f);
 
 // Explicit contracts for the publisher's Nano (416) and S (640) 0.1.1rc0 exports.
 namespace yolox {

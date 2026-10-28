@@ -175,7 +175,8 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
         "vocabulary_id TEXT NOT NULL DEFAULT 'coco-v1',vocabulary TEXT NOT NULL DEFAULT '',"
         "requested_backend TEXT NOT NULL DEFAULT 'cpu',gpu_device INTEGER NOT NULL DEFAULT -1,"
         "execution_backend TEXT NOT NULL DEFAULT 'CPU',execution_runtime TEXT NOT NULL DEFAULT '',"
-        "execution_device TEXT NOT NULL DEFAULT '',execution_fallback TEXT NOT NULL DEFAULT '');"
+        "execution_device TEXT NOT NULL DEFAULT '',execution_fallback TEXT NOT NULL DEFAULT '',"
+        "frame_step INTEGER NOT NULL DEFAULT 1 CHECK(frame_step BETWEEN 1 AND 30));"
         "CREATE TABLE events(id INTEGER PRIMARY KEY CHECK(id>0),track_id INTEGER NOT NULL,sequence INTEGER NOT NULL,"
         "timestamp_us INTEGER,class_id INTEGER NOT NULL,direction INTEGER NOT NULL CHECK(direction IN(1,2)),"
         "x REAL NOT NULL,y REAL NOT NULL,thumbnail BLOB NOT NULL);"
@@ -197,11 +198,11 @@ RunStore RunStore::create(const std::filesystem::path& database,const RunConfigu
     insert.text(21,std::string(model_id(config.detector.variant)));
     insert.text(22,config.kind==RunKind::appearances ? "appearances" : "crossings");
     insert.row();
-    Statement backend(impl->database,"UPDATE run SET requested_backend=?,gpu_device=?,association_policy=?,vocabulary_id=?,vocabulary=? WHERE id=1");
+    Statement backend(impl->database,"UPDATE run SET requested_backend=?,gpu_device=?,association_policy=?,vocabulary_id=?,vocabulary=?,frame_step=? WHERE id=1");
     backend.text(1,backend_id(config.detector.backend));backend.number(2,config.detector.gpu_device);backend.text(3,association_name(config.tracking.association));
     backend.text(4,std::string(model_id(config.detector.variant)));
     const auto vocabulary=model_vocabulary(config.detector.variant);
-    backend.text(5,vocabulary);backend.row();
+    backend.text(5,vocabulary);backend.number(6,config.tracking.frame_step);backend.row();
     impl->execute("COMMIT");impl->execution_metadata=true;impl->association_metadata=true;guard.ready=true;return RunStore(std::move(impl));
 }
 RunStore::RunStore(const std::filesystem::path& database):impl_(std::make_unique<Impl>(database,false)) {
@@ -250,6 +251,11 @@ RunSummary RunStore::summary() const {
     out.configuration.tracking.line=CountingLine{{row.real(12),row.real(13)},{row.real(14),row.real(15)},
         static_cast<CrossingDirection>(row.number(16)),row.real(17),row.real(18)};
     if(out.configuration.kind==RunKind::appearances)out.configuration.tracking.line.reset();
+    Statement sampled(impl_->database,"SELECT COUNT(*) FROM pragma_table_info('run') WHERE name='frame_step'");
+    if(sampled.row() && sampled.number(0)) { // Runs before frame sampling analysed every frame.
+        Statement step(impl_->database,"SELECT frame_step FROM run WHERE id=1");step.row();
+        out.configuration.tracking.frame_step=unsigned(step.number(0));
+    }
     Tracker validate(out.configuration.tracking);
     out.media={row.text(19),int(row.number(20)),int(row.number(21)),row.time(22)};
     out.processed_frames=row.number(23);out.last_timestamp=row.time(24);
@@ -335,7 +341,12 @@ void RunStore::record_frame(const Frame& frame,std::span<const CrossingEvent> ev
             Statement old(impl_->database,"SELECT class_id,last_sequence,last_timestamp_us FROM appearances WHERE id=?");
             old.number(1,integer(object.id));
             if(old.row()) {
-                if(old.number(0)!=d.class_id)throw std::logic_error("Conflicting appearance class");
+                // A track may settle on a related class (car/truck) after more observations; keep the latest.
+                if(old.number(0)!=d.class_id) {
+                    if(!related_classes(int(old.number(0)),d.class_id))throw std::logic_error("Conflicting appearance class");
+                    Statement relabel(impl_->database,"UPDATE appearances SET class_id=? WHERE id=?");
+                    relabel.number(1,d.class_id);relabel.number(2,integer(object.id));relabel.row();
+                }
                 if(frame.timestamp && old.time(2) && *frame.timestamp<*old.time(2))throw std::logic_error("Appearance timestamps must not move backwards");
                 if(integer(frame.sequence)<old.number(1))throw std::logic_error("Appearance frames must not move backwards");
                 if(integer(frame.sequence)==old.number(1)) {

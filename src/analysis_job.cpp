@@ -30,8 +30,12 @@ void AnalysisJob::start(const std::filesystem::path& database,RunConfiguration c
                 {std::lock_guard lock(mutex_);progress_.duration=reader.info().duration;progress_.status="running";}
                 std::array<bool,recognition_classes> observed_classes{};
                 auto preview_at=std::chrono::steady_clock::time_point{};
+                const std::uint64_t step=configuration.tracking.frame_step;
+                std::uint64_t decoded{};
                 while(!stop.stop_requested()) {
                     auto frame=reader.read();if(!frame)break;
+                    ++decoded;
+                    if(frame->sequence%step!=0)continue; // Decoded for order, analysed every step-th frame.
                     const auto detection=detector.detect(*frame,stop);
                     store->record_execution(detection.execution);
                     const auto tracking=tracker.update(detection.objects,*frame);
@@ -50,7 +54,7 @@ void AnalysisJob::start(const std::filesystem::path& database,RunConfiguration c
                     }
                 }
                 if(stop.stop_requested())outcome="cancelled";
-                if(outcome=="completed" && configuration.kind==RunKind::appearances && progress().frames<2)
+                if(outcome=="completed" && configuration.kind==RunKind::appearances && decoded<2)
                     throw std::runtime_error("Choose a video with at least two frames; this input is a still image");
                 if(outcome=="completed" && progress().frames==0)throw std::runtime_error("No visual frames could be decoded");
                 if(file_stamp(configuration.source)!=store->summary().source_stamp ||

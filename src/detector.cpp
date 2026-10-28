@@ -1,5 +1,6 @@
 #include "frametrail/detector.hpp"
 #include "dml_inference.hpp"
+#include "recognition_hierarchy.hpp"
 #include "recognition_vocabulary.hpp"
 #include <onnxruntime_cxx_api.h>
 #include <algorithm>
@@ -34,6 +35,23 @@ std::string_view rfdetr::checkpoint_for(DetectorModel model) {
 }
 std::string_view class_name(int id) {
     return id >= 0 && id < recognition_classes ? labels[id] : "unknown";
+}
+bool is_ancestor(int ancestor,int category) {
+    return std::binary_search(vocabulary::ancestors.begin(),vocabulary::ancestors.end(),
+        std::pair<short,short>{short(category),short(ancestor)});
+}
+bool related_classes(int a,int b) {
+    if(a==b || is_ancestor(a,b) || is_ancestor(b,a))return true;
+    const auto parents=std::equal_range(vocabulary::ancestors.begin(),vocabulary::ancestors.end(),std::pair<short,short>{short(a),0},
+        [](const auto& x,const auto& y){return x.first<y.first;});
+    return std::any_of(parents.first,parents.second,[&](const auto& pair){return is_ancestor(pair.second,b);});
+}
+std::vector<Detection> hide_parent_duplicates(std::vector<Detection> detections,float iou) {
+    std::vector<Detection> kept;
+    for(const auto& candidate:detections)
+        if(std::none_of(detections.begin(),detections.end(),[&](const Detection& other){
+            return is_ancestor(candidate.class_id,other.class_id) && overlap(candidate,other)>iou;}))kept.push_back(candidate);
+    return kept;
 }
 
 std::string_view model_id(DetectorModel model) {
@@ -268,6 +286,8 @@ DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     result.objects=rf ? rfdetr::postprocess(output,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou):
         world ? yolo_world::postprocess(output,world_input,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,impl_->options.variant):
         yolox::postprocess(output,legacy_input.ratio,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,size);
+    if(impl_->options.variant==DetectorModel::openimages || impl_->options.variant==DetectorModel::rf_openimages)
+        result.objects=hide_parent_duplicates(std::move(result.objects));
     cancelled(stop);
     const auto finished=std::chrono::steady_clock::now();
     result.elapsed_ms=std::chrono::duration<double,std::milli>(finished-started).count();

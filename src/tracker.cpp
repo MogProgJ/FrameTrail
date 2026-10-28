@@ -70,6 +70,15 @@ struct Tracker::Impl {
         int side{};
         Point stable_anchor{};
         bool armed{};
+        std::vector<std::pair<int,double>> votes; // Class -> summed confidence; the track shows the leading class.
+        void vote(const Detection& d) {
+            const auto found=std::ranges::find(votes,d.class_id,&std::pair<int,double>::first);
+            if(found==votes.end())votes.emplace_back(d.class_id,d.confidence);else found->second+=d.confidence;
+            const auto current=std::ranges::find(votes,box.class_id,&std::pair<int,double>::first);
+            const auto best=std::ranges::max_element(votes,{},&std::pair<int,double>::second);
+            // Keep the current class on a tie, so the label does not flip back and forth.
+            if(current==votes.end() || best->second>current->second)box.class_id=best->first;
+        }
     };
     TrackingOptions options;
     std::vector<Track> tracks;
@@ -111,6 +120,7 @@ struct Tracker::Impl {
 Tracker::Tracker(TrackingOptions options) : impl_(std::make_unique<Impl>()) {
     association_name(options.association);
     if (options.classes.empty()) throw std::invalid_argument("Tracking needs at least one class");
+    if (options.frame_step < 1 || options.frame_step > 30) throw std::invalid_argument("Frame step must be 1 to 30");
     for (int id : options.classes) if (id < 0 || id >= recognition_classes) throw std::invalid_argument("Tracking class must be a FrameTrail vocabulary ID in [0,614]");
     if (options.line) {
         const auto& line = *options.line;
@@ -140,7 +150,8 @@ TrackingResult Tracker::update(std::span<const Detection> detections, std::uint6
     }
     if (selected.size() > 256) throw std::runtime_error("Tracking baseline supports at most 256 selected detections per frame");
     if (s.width != width || s.height != height) s.tracks.clear(); // Do not bridge coordinate changes.
-    std::erase_if(s.tracks,[&](const auto& t) { return Impl::gap_exceeds(t,sequence,timestamp,750000,15); });
+    const std::uint64_t step = s.options.frame_step;
+    std::erase_if(s.tracks,[&](const auto& t) { return Impl::gap_exceeds(t,sequence,timestamp,750000,15*step); });
 
     std::vector<association::Edge> candidates;
     for (std::size_t i = 0; i < s.tracks.size(); ++i) {
@@ -154,7 +165,10 @@ TrackingResult Tracker::update(std::span<const Detection> detections, std::uint6
         predicted.left += dx; predicted.right += dx; predicted.top += dy; predicted.bottom += dy;
         for (std::size_t j = 0; j < selected.size(); ++j) {
             const auto& d = selected[j];
-            if (d.class_id != track.box.class_id) continue;
+            // Detectors flicker between related classes on one object (car/truck/van, dog/cat). A track may
+            // follow such a change, at a cost and only with strong overlap; unrelated classes never share a track.
+            const bool same_class = d.class_id == track.box.class_id;
+            if (!same_class && !related_classes(d.class_id, track.box.class_id)) continue;
             const double predicted_distance = length(subtract(anchor(predicted,width,height),anchor(d,width,height)));
             // A small fallback penalty keeps motion prediction preferred while
             // allowing an abrupt stop/reversal without discarding the identity.
@@ -164,8 +178,8 @@ TrackingResult Tracker::update(std::span<const Detection> detections, std::uint6
             const double scale = std::max({(d.right-d.left)/double(width),(d.bottom-d.top)/double(height),0.02});
             const double overlap = std::max(iou(predicted,d),iou(track.box,d));
             // Reject distant pairs, even when a large box overlaps by accident.
-            if (distance <= 0.15 && (overlap >= 0.05 || distance <= scale))
-                candidates.push_back({j,i,scored_distance / scale + (1-overlap)*0.25});
+            if (distance <= 0.15 && (overlap >= 0.05 || distance <= scale) && (same_class || overlap >= 0.3))
+                candidates.push_back({j,i,scored_distance / scale + (1-overlap)*0.25 + (same_class ? 0 : 0.5)});
         }
     }
     // Preserve the established baseline when it already achieves maximum possible
@@ -189,11 +203,12 @@ TrackingResult Tracker::update(std::span<const Detection> detections, std::uint6
             if (s.tracks.size() >= 512) throw std::runtime_error("Tracking baseline exceeded 512 active tracks");
             Impl::Track track;
             track.id = s.next_track++; track.box = selected[j]; track.sequence = sequence; track.timestamp = timestamp;
+            track.vote(selected[j]);
             s.tracks.push_back(std::move(track));
             matches[j] = s.tracks.size()-1;
         } else {
             auto& track = s.tracks[*matches[j]];
-            const bool gap = Impl::gap_exceeds(track,sequence,timestamp,250000,3);
+            const bool gap = Impl::gap_exceeds(track,sequence,timestamp,250000,3*step);
             const auto previous = anchor(track.box,width,height);
             const auto steps = double(sequence-track.sequence);
             track.velocity = {(p.x-previous.x)/steps,(p.y-previous.y)/steps};
@@ -202,7 +217,9 @@ TrackingResult Tracker::update(std::span<const Detection> detections, std::uint6
                 track.time_velocity = {(p.x-previous.x)/seconds,(p.y-previous.y)/seconds};
             } else track.time_velocity = {};
             if (gap) { track.side = 0; track.armed = false; track.trail.clear(); track.hits=0; }
-            track.box = selected[j]; track.sequence = sequence; track.timestamp = timestamp; ++track.hits;
+            const int shown = track.box.class_id;
+            track.box = selected[j]; track.box.class_id = shown; track.vote(selected[j]);
+            track.sequence = sequence; track.timestamp = timestamp; ++track.hits;
         }
         auto& track = s.tracks[*matches[j]];
         track.trail.push_back(p);

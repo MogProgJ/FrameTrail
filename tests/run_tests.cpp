@@ -96,6 +96,21 @@ void storage(const std::filesystem::path& fixtures) {
     {auto store=frametrail::RunStore::create(duplicate,config,media);store.record_frame(*first,{});
         first->sequence=1;store.record_frame(*first,{});require(!store.summary().timestamp_seekable,"Repeated timestamps allowed ambiguous seeking");store.finish("cancelled");}
 }
+void appearance_relabel(const std::filesystem::path& fixtures) {
+    // A track that settles on a related class (car to truck) relabels its appearance instead of failing.
+    const auto root=output_root(fixtures);const auto model=root/"relabel-model.onnx";
+    {std::ofstream file(model);file<<"relabel fixture";}
+    const auto source=fixtures/"variable.mkv";frametrail::MediaReader reader(source);auto frame=*reader.read();
+    frametrail::RunConfiguration config{source,{model},{},frametrail::RunKind::appearances};config.tracking.line.reset();config.tracking.classes={2,7};
+    auto saved=frametrail::RunStore::create(root/"relabel.frametrail",config,reader.info());
+    const frametrail::TrackedObject car{1,{2,.8f,10,5,25,30},false,{}};
+    saved.record_frame(frame,{},std::vector{car});
+    frame.sequence=1;frame.timestamp=std::chrono::microseconds(100000);
+    auto truck=car;truck.detection.class_id=7;saved.record_frame(frame,{},std::vector{truck});
+    const auto values=saved.appearances();
+    require(values.size()==1 && values[0].first_detection.class_id==7 && values[0].observations==2,"Related class change was not relabelled");
+    saved.finish("completed");
+}
 void appearance_storage(const std::filesystem::path& fixtures) {
     const auto root=output_root(fixtures);const auto model=root/"appearance-model.onnx";
     {std::ofstream file(model);file<<"appearance storage fixture";}
@@ -210,6 +225,13 @@ void analysis(const std::filesystem::path& source,const std::filesystem::path& m
     require(appearance_store.summary().processed_frames==6 && appearance_store.summary().appearance_count>=3 && appearance_store.summary().class_count>=3 &&
         std::ranges::any_of(appearances,[](const auto& item){return item.first_detection.class_id==16 && item.first_timestamp && item.first_timestamp->count()==0;}),"Appearance pipeline lost dog/categories/timestamp");
     require(job.progress().preview && job.progress().preview->frame.width==1000,"Analysis preview was not published");
+    auto sampled_config=appearance_config;sampled_config.tracking.frame_step=2; // Detect on frames 0, 2 and 4 only.
+    const auto sampled_file=root/"sampled-appearances.frametrail";job.start(sampled_file,sampled_config);
+    wait([&]{return !job.progress().active;});require(job.progress().status=="completed" && job.progress().frames==3,"Frame sampling analysed the wrong frames");
+    frametrail::RunStore sampled(sampled_file);
+    require(sampled.summary().configuration.tracking.frame_step==2 && sampled.summary().processed_frames==5 &&
+        std::ranges::any_of(sampled.appearances(),[](const auto& item){return item.first_detection.class_id==16 && item.observations==3;}),
+        "Sampled analysis lost its step or broke the dog's track");
     auto blank_config=appearance_config;blank_config.source=source.parent_path()/"blank.mkv";
     const auto empty_file=root/"empty-appearances.frametrail";job.start(empty_file,blank_config);
     wait([&]{return !job.progress().active;});require(job.progress().status=="completed" && frametrail::RunStore(empty_file).summary().appearance_count==0 && frametrail::RunStore(empty_file).summary().processed_frames==10,"Zero-object video was treated as a failure");
@@ -232,7 +254,7 @@ void analysis(const std::filesystem::path& source,const std::filesystem::path& m
 }
 int main(int argc,char* argv[]) {
     try {
-        if(argc==2){storage(argv[1]);expanded_storage(argv[1],frametrail::DetectorModel::world_m,80);expanded_storage(argv[1],frametrail::DetectorModel::openimages,614);appearance_storage(argv[1]);seeking(argv[1]);}
+        if(argc==2){storage(argv[1]);expanded_storage(argv[1],frametrail::DetectorModel::world_m,80);expanded_storage(argv[1],frametrail::DetectorModel::openimages,614);appearance_storage(argv[1]);appearance_relabel(argv[1]);seeking(argv[1]);}
         else if(argc==3)analysis(argv[1],argv[2]);else throw std::runtime_error("Expected fixtures, or source/model");
         std::cout<<"Saved-run contracts passed\n";return 0;
     }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}

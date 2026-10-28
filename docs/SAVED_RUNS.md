@@ -15,6 +15,8 @@ Analysis first writes to a unique temporary workspace. There is no pre-analysis 
 
 The list loads at most 100 entries at once. Previous/Next appear only when needed. Playback controls, result actions and the results panel appear when a result is available. Model/confidence controls remain behind Analysis settings.
 
+**Frames.** The *Frames* setting runs the detector on every frame (the default) or on every 2nd, 3rd or 5th. A long video then finishes several times faster, which matters with the slower RF-DETR model. Frames in between are decoded but not analysed; tracks continue across them, and appearance times are accurate to a few frames. The step is saved with the run.
+
 ## What an appearance means
 
 An appearance is the detections associated with one native tracker ID: first observation, last observation, observed-frame count, peak confidence, and a thumbnail of the first frame. Repeated observations update that row instead of generating a new row for each frame. Each run considers all model categories independently of the player's people/vehicle filter.

@@ -32,7 +32,7 @@ IDs are unique only within one run. CLI files represent separate runs; they do n
 
 ## Association and bounded state
 
-`Tracker` accepts detections, sequence, optional source timestamp, and dimensions. It never reads pixels or touches Qt. It makes same-class candidate pairs using bottom-center distance and box overlap. Constant-velocity prediction uses elapsed source seconds when timestamps advance, with sequence-step prediction otherwise. The last observed box provides a penalized fallback for abrupt stops/reversals.
+`Tracker` accepts detections, sequence, optional source timestamp, and dimensions. It never reads pixels or touches Qt. It makes candidate pairs using bottom-center distance and box overlap, normally within one class. Detectors flicker between related classes on one object (car, truck and van; dog and cat), so a track may also take a detection of a related class: one that shares an Open Images parent class (`related_classes`, from `src/recognition_hierarchy.hpp`). That needs box overlap of at least 0.3 and costs extra in the matching, so a same-class detection always wins. Each track keeps a confidence-weighted vote and shows its leading class; a one-frame "truck" on a car stays a car, while a lasting change settles on the new class. Unrelated classes, such as a person and a car, never share a track. Constant-velocity prediction uses elapsed source seconds when timestamps advance, with sequence-step prediction otherwise. The last observed box provides a penalized fallback for abrupt stops/reversals.
 
 In default greedy mode, candidates require normalized distance at most 0.15 and either IoU at least 0.05 or distance within the candidate box's largest normalized dimension (minimum 0.02). A score combines distance scaled by box size and overlap; candidates are greedily assigned in score order, with track index and detection index breaking ties. One observation can match only one track. This is explicitly a deterministic greedy baseline, with no appearance embedding, optical flow, or global assignment solver.
 
@@ -48,7 +48,7 @@ The perpendicular signed-distance deadband is 0.015 in normalized coordinates. O
 
 After a side change, the arm is consumed even if direction filtering rejected it. A later observation on the same side at least 0.04 from the line re-arms it. Thus near-line jitter does not immediately create repeat events, while deliberate return crossings remain possible. These distances are baseline parameters, not calibrated accuracy thresholds.
 
-A gap longer than 250 ms between matched observations clears crossing history and trails, even if the identity survives until expiry. With missing timestamps, the threshold is three sequence steps. This avoids inferring a crossing through a long obstruction, at the cost of missing some real crossings. Sparse low-FPS footage may require a measured rule adjustment; we do not fill gaps with invented events.
+A gap longer than 250 ms between matched observations clears crossing history and trails, even if the identity survives until expiry. With missing timestamps, the threshold is three sequence steps, times the frame step when only every Nth frame is analysed (`TrackingOptions::frame_step`). This avoids inferring a crossing through a long obstruction, at the cost of missing some real crossings. Sparse low-FPS footage may require a measured rule adjustment; we do not fill gaps with invented events.
 
 ## Architecture
 

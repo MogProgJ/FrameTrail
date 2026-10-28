@@ -88,6 +88,27 @@ void run() {
     classes.at({box(.5,.35)});
     require(classes.at({box(.5,.35,2)}).objects[0].id!=1,"Class mismatch reused an identity");
     require(classes.at({box(.5,.35,16)}).objects.empty(),"Unselected class was tracked");
+    Run flicker; // A car briefly labelled truck keeps its identity and class; a lasting change settles on truck.
+    const auto car=flicker.at({box(.5,.35,2)}).objects[0].id;
+    flicker.at({box(.5,.37,2)});
+    auto relabelled=flicker.at({box(.5,.39,7)});
+    require(relabelled.objects.size()==1 && relabelled.objects[0].id==car && relabelled.objects[0].detection.class_id==2,
+        "Car/truck flicker split the track or changed its class");
+    flicker.at({box(.5,.41,7)});
+    relabelled=flicker.at({box(.5,.43,7)});
+    require(relabelled.objects[0].id==car && relabelled.objects[0].detection.class_id==7,"Lasting class change did not settle");
+    require(related_classes(2,7) && related_classes(16,15) && !related_classes(0,2),"Related class table wrong");
+    TrackingOptions sampled; sampled.frame_step=5; Tracker every_fifth(sampled); // No timestamps: gaps count frames.
+    std::uint64_t first{};std::uint64_t counted{};
+    for(int k=0;k<6;++k) {
+        const auto observed=box(.5,.35+.06*k);
+        const auto result=every_fifth.update(std::span(&observed,1),std::uint64_t(k*5),std::nullopt,1000,1000);
+        if(k==0)first=result.objects[0].id;
+        require(result.objects[0].id==first,"Frame step broke a track across sampled frames");
+        counted=result.negative_to_positive;
+    }
+    require(counted==1,"Frame step lost the crossing");
+    rejects([]{TrackingOptions o;o.frame_step=0;Tracker t(o);},"Frame step 0 accepted");
     TrackingOptions no_line;no_line.line.reset(); Run ids_only(no_line);
     for(double y:{.35,.41,.47,.54}) require(ids_only.at({box(.5,y)}).events.empty(),"Disabled rule produced events");
 
