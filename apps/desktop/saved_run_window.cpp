@@ -154,8 +154,8 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     options->addWidget(new QLabel(QStringLiteral("Confidence")));confidence_=new QDoubleSpinBox;confidence_->setObjectName(QStringLiteral("analysisConfidence"));
     confidence_->setRange(.05,.95);confidence_->setSingleStep(.05);confidence_->setValue(configuration_ ? configuration_->detector.confidence : .35);options->addWidget(confidence_);
     options->addWidget(new QLabel(QStringLiteral("Frames")));frame_step_=new QComboBox;frame_step_->setObjectName(QStringLiteral("analysisFrameStep"));
-    for(const auto& [label,step]:{std::pair{QStringLiteral("Every frame"),1},{QStringLiteral("Every 2nd · faster"),2},
-        {QStringLiteral("Every 3rd · faster"),3},{QStringLiteral("Every 5th · fastest"),5}})frame_step_->addItem(label,step);
+    frame_step_->addItem(QStringLiteral("Every frame"),1);frame_step_->addItem(QStringLiteral("Every 2nd · faster"),2);
+    frame_step_->addItem(QStringLiteral("Every 3rd · faster"),3);frame_step_->addItem(QStringLiteral("Every 5th · fastest"),5);
     frame_step_->setToolTip(QStringLiteral("Run the detector on every Nth frame. Long videos finish several times faster; tracks continue between "
         "the analysed frames, and appearance times are accurate to a few frames."));
     if(configuration_)frame_step_->setCurrentIndex(std::max(0,frame_step_->findData(int(configuration_->tracking.frame_step))));
@@ -578,7 +578,7 @@ void SavedRunWindow::export_review_csv(const QString& output,bool replace) {
     const auto staging=scratch_.filePath(QUuid::createUuid().toString(QUuid::WithoutBraces)+QStringLiteral(".csv"));
     {
         QFile file(staging);if(!file.open(QIODevice::WriteOnly))throw std::runtime_error(file.errorString().toStdString());
-        QByteArray out("\xef\xbb\xbfAppearance ID,Object,First (s),Last (s),Peak confidence,Verdict\r\n");
+        QByteArray out("\xef\xbb\xbf" "Appearance ID,Object,First (s),Last (s),Peak confidence,Verdict\r\n");
         std::uint64_t after=0;
         for(;;) {
             const auto rows=store_->appearances(after,100);if(rows.empty())break;
