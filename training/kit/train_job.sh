@@ -16,6 +16,14 @@ grep -v '^#' "$settings"
 source <(tr -d '\r' < "$settings")
 nvidia-smi
 "$FT_VENV/bin/python" -c 'import torch; assert torch.cuda.is_available(); print(torch.cuda.get_device_name(0))'
+# Epochs may depend on the GPU the job landed on (EPOCHS_H100, EPOCHS_A100), so one 24 h job fits either way.
+# A resumed run keeps the count it started with (train.py).
+gpu=$(nvidia-smi --query-gpu=name --format=csv,noheader | head -1)
+case "$gpu" in
+    *H100*) EPOCHS="${EPOCHS_H100:-${EPOCHS:-12}}" ;;
+    *A100*) EPOCHS="${EPOCHS_A100:-${EPOCHS:-12}}" ;;
+esac
+echo "GPU: $gpu; epochs: ${EPOCHS:-12}"
 if [[ -f "runs/$RUN/finished.json" ]]; then
     echo "runs/$RUN already finished training."
 else

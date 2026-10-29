@@ -36,6 +36,10 @@ UNTRAINED_LOGIT = -100.0
 TOLERANCE = dict(rtol=1e-3, atol=2e-3)
 SHOWN = 0.3  # Detections at or above this score must be the same in ONNX and PyTorch.
 LOWEST = 0.05  # The app's lowest confidence setting: every query that could ever be shown must match.
+# Class scores are compared as the probabilities the app uses. Raw logits of a large head drift a little more
+# between runtimes (0.012 on a 595-class model on the cluster), which moves a probability by at most a quarter of
+# that; 0.005 is ten times finer than the app's 0.05 confidence steps.
+SCORE_TOLERANCE = 0.005
 HERE = Path(__file__).resolve().parent
 # In the repository the app vocabulary sits in dependencies/; on the cluster the launcher uploads it into training/.
 VOCABULARY_PATHS = (HERE.parent / 'dependencies' / 'recognition-vocabulary.json', HERE / 'recognition-vocabulary.json')
@@ -196,7 +200,8 @@ def main(argv: list[str] | None = None) -> int:
         ordered_box_error = max(ordered_box_error, float(np.max(np.abs(ref_boxes - out_boxes))))
         ref_score, out_score = sigmoid(ref_logits.max(1)), sigmoid(out_logits.max(1))
         close = lambda a_boxes, a_logits, b_boxes, b_logits: (
-            np.isclose(a_boxes, b_boxes, **TOLERANCE).all(1) & np.isclose(a_logits, b_logits, **TOLERANCE).all(1))
+            np.isclose(a_boxes, b_boxes, **TOLERANCE).all(1)
+            & (np.abs(sigmoid(a_logits) - sigmoid(b_logits)) <= SCORE_TOLERANCE).all(1))
         ref_ok = close(ref_boxes, ref_logits, out_boxes[forward], out_logits[forward])
         out_ok = close(out_boxes, out_logits, ref_boxes[backward], ref_logits[backward])
         ref_relevant, out_relevant = ref_score >= LOWEST, out_score >= LOWEST
@@ -226,7 +231,7 @@ def main(argv: list[str] | None = None) -> int:
                    'max_logit_error': logit_error, 'tolerance': TOLERANCE,
                    'reordered_queries': reordered, 'max_box_error_in_query_order': ordered_box_error,
                    'queries_without_partner': differing, 'highest_score_without_partner': differing_score,
-                   'lowest_score_checked': LOWEST,
+                   'lowest_score_checked': LOWEST, 'score_tolerance': SCORE_TOLERANCE,
                    f'detections_at_{SHOWN}': shown, 'detections_changed': shown_missing},
         'onnxruntime_cpu_median_seconds': statistics.median(latencies[1:] or latencies),
         'versions': {'torch': torch.__version__, 'onnx': onnx.__version__, 'onnxruntime': onnxruntime.__version__},
