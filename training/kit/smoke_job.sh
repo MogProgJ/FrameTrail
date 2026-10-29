@@ -33,5 +33,8 @@ result = {'gpu': gpu, 'slice_train_images': 1500, 'slice_valid_images': 300,
 Path(f'runs/{run}/throughput.json').write_text(json.dumps(result, indent=1))
 print(json.dumps(result, indent=1))
 PY
+# The export is checked here too, but its result must not block a training job waiting on this test (afterok):
+# the training job exports by itself, and status shows this check's numbers either way.
 "$FT_VENV/bin/python" training/export.py --weights "runs/$SMOKE_RUN/checkpoint_best_total.pth" --model "$MODEL" \
-    --images "data/$DATASET-smoke/test" --out "runs/$SMOKE_RUN/rfdetr_openimages.onnx" --name "$SMOKE_RUN test model"
+    --images "data/$DATASET-smoke/test" --out "runs/$SMOKE_RUN/rfdetr_openimages.onnx" --name "$SMOKE_RUN test model" \
+    || echo "ONNX export check failed; see above. Training is not blocked by it."
