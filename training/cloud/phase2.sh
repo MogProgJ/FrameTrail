@@ -9,13 +9,17 @@
 #
 # Where: $FT_ROOT (default ~/frametrail-work) holds .venv, data/, runs/, weights/. Needs about 150 GB of disk, a GPU
 # with 40 GB or more, and python3.12 or newer with venv. Environment variables:
+#   PRICE_PER_HOUR       what this machine costs per hour in dollars, e.g. 0.69 (needed by the plan stage)
+#   BUDGET_USD           what you are willing to spend on training, e.g. 25 (default 25)
+#   TRAIN_CAP            images per class for the training set (default 300: 102,598 training images, about 35 GB; 600 gives
+#                        175,051 images, 60 GB; 200 gives 72,660). The test split is the same for every cap.
 #   RUN_DEATH_SWITCH=1   power the machine off when the script ends or fails (stops the per-hour billing; it does not
 #                        delete the disk). Leave unset to keep it on.
 #   TRAIN_ARGS           extra train.py options, e.g. "--unverified-weight 0.25"
 # Settings (epochs, batch size, run to start from) are in training/kit/full-small.env, as on the cluster.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
-STAGES=("$@"); [[ ${#STAGES[@]} -gt 0 ]] || STAGES=(setup data baseline train report package)
+STAGES=("$@"); [[ ${#STAGES[@]} -gt 0 ]] || STAGES=(setup data baseline plan train report package)
 log() { printf '\n=== %s  %s\n' "$(date '+%F %T')" "$*"; }
 want() { [[ " ${STAGES[*]} " == *" $1 "* ]]; }
 
@@ -49,7 +53,7 @@ if want data; then
         echo "data/full is already built."
     else
         "$FT_VENV/bin/python" training/openimages.py --classes training/classes/full.txt --out data/full \
-            --cache data/openimages-metadata --workers 64
+            --cache data/openimages-metadata --workers 64 --train-cap "${TRAIN_CAP:-300}"
     fi
 fi
 
@@ -63,9 +67,52 @@ if want baseline; then
     fi
 fi
 
+if want plan; then
+    log "plan: measure this GPU on the real data, then choose epochs (and batch size) that fit the budget"
+    : "${PRICE_PER_HOUR:?Set PRICE_PER_HOUR to the price of this machine per hour in dollars, e.g. PRICE_PER_HOUR=0.69}"
+    BUDGET="${BUDGET_USD:-25}"
+    rm -f overrides.env
+    chosen=
+    for shape in "16 1" "8 2"; do   # Batch size x accumulation; the second is for GPUs with less memory.
+        set -- $shape
+        if [[ -f runs/gpu-smoke-full/throughput.json ]]; then chosen="$1 $2"; break; fi
+        echo "Speed test with batch size $1 x accumulation $2 ..."
+        if DATASET=full SMOKE_RUN=gpu-smoke-full BATCH="$1" bash training/kit/smoke_job.sh > "logs/speed-$1x$2.log" 2>&1; then
+            chosen="$1 $2"
+        else
+            tail -n 5 "logs/speed-$1x$2.log"; echo "That did not run (out of memory?); trying a smaller batch."
+        fi
+    done
+    [[ -n "$chosen" && -f runs/gpu-smoke-full/throughput.json ]] || { echo "The speed test failed; see logs/speed-*.log" >&2; exit 1; }
+    set -- $chosen
+    "$FT_VENV/bin/python" - "$BUDGET" "$PRICE_PER_HOUR" "$1" "$2" <<'PY'
+import json, math, sys
+budget, price, batch, accum = float(sys.argv[1]), float(sys.argv[2]), sys.argv[3], sys.argv[4]
+speed = json.load(open('runs/gpu-smoke-full/throughput.json'))
+epoch_h = speed['estimated_minutes_per_full_epoch'] / 60 * 1.1          # +10%: validation after each epoch
+hours = budget / price
+spare = 2.0 + 0.35                                                       # data, baseline, scoring, export; speed test
+epochs = max(1, min(40, math.floor((hours - spare) / epoch_h)))
+need = epochs * epoch_h
+print(f"Measured {speed['train_images_per_second']} images/s on {speed['gpu']}: one epoch is about {epoch_h * 60:.0f} min with validation.")
+print(f"With ${budget:.0f} at ${price:.2f}/hour ({hours:.1f} h), after {spare:.1f} h for everything else: {epochs} epochs ({need:.1f} h, about ${need * price:.0f} of training).")
+if epochs < 6:
+    print("WARNING: fewer than 6 epochs fits this budget. Raise BUDGET_USD, pick a cheaper machine, or use a smaller TRAIN_CAP (rebuild data/full).")
+open('overrides.env', 'w').write(f"EPOCHS={epochs}\nEPOCHS_FIXED=1\nBATCH={batch}\nACCUM={accum}\nHOURS_CAP={math.ceil(need * 1.15)}\n")
+PY
+fi
+
 if want train; then
-    log "train: RF-DETR Small on data/full (training/kit/full-small.env)"
-    DATASET=full MODEL=small RUN=full-small PARTS_NAME=full-train bash training/kit/train_job.sh
+    log "train: RF-DETR Small on data/full (training/kit/full-small.env, overrides.env from the plan stage)"
+    # Hard stop: a run that overruns is cut by the time cap instead of billing on (checkpoints stay; rerun resumes).
+    cap=$(grep -s '^HOURS_CAP=' overrides.env | cut -d= -f2 || true)
+    if [[ -n "$cap" ]]; then
+        echo "Training time cap: ${cap} h"
+        timeout "${cap}h" env DATASET=full MODEL=small RUN=full-small PARTS_NAME=full-train bash training/kit/train_job.sh \
+            || { echo "Stopped by the time cap or an error. Rerun this stage to resume."; exit 1; }
+    else
+        DATASET=full MODEL=small RUN=full-small PARTS_NAME=full-train bash training/kit/train_job.sh
+    fi
 fi
 
 if want report; then

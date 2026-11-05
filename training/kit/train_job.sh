@@ -14,6 +14,8 @@ settings="training/kit/$RUN.env"
 echo "Run $RUN on data/$DATASET; settings from $settings:"
 grep -v '^#' "$settings"
 source <(tr -d '\r' < "$settings")
+# Settings chosen for this machine (training/cloud/phase2.sh plan stage: epochs, batch size from a measured speed).
+[[ -f "$FT_ROOT/overrides.env" ]] && { echo "Overrides:"; cat "$FT_ROOT/overrides.env"; source "$FT_ROOT/overrides.env"; }
 # Without the run to start from (e.g. after the cluster was lost), train from the official COCO weights.
 if [[ -n "${START_FROM:-}" && ! -f "$START_FROM" ]]; then
     echo "START_FROM $START_FROM is missing; starting from the COCO weights instead."
@@ -24,10 +26,12 @@ nvidia-smi
 # Epochs may depend on the GPU the job landed on (EPOCHS_H100, EPOCHS_A100), so one 24 h job fits either way.
 # A resumed run keeps the count it started with (train.py).
 gpu=$(nvidia-smi --query-gpu=name --format=csv,noheader | head -1)
-case "$gpu" in
-    *H100*) EPOCHS="${EPOCHS_H100:-${EPOCHS:-12}}" ;;
-    *A100*) EPOCHS="${EPOCHS_A100:-${EPOCHS:-12}}" ;;
-esac
+if [[ -z "${EPOCHS_FIXED:-}" ]]; then
+    case "$gpu" in
+        *H100*) EPOCHS="${EPOCHS_H100:-${EPOCHS:-12}}" ;;
+        *A100*) EPOCHS="${EPOCHS_A100:-${EPOCHS:-12}}" ;;
+    esac
+fi
 echo "GPU: $gpu; epochs: ${EPOCHS:-12}"
 if [[ -f "runs/$RUN/finished.json" ]]; then
     echo "runs/$RUN already finished training."
