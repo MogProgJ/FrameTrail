@@ -80,7 +80,9 @@ if want plan; then
         if DATASET=full SMOKE_RUN=gpu-smoke-full BATCH="$1" bash training/kit/smoke_job.sh > "logs/speed-$1x$2.log" 2>&1; then
             chosen="$1 $2"
         else
-            tail -n 5 "logs/speed-$1x$2.log"; echo "That did not run (out of memory?); trying a smaller batch."
+            tail -n 8 "logs/speed-$1x$2.log"
+            grep -q -i "out of memory" "logs/speed-$1x$2.log" || { echo "The speed test failed (not a memory problem): logs/speed-$1x$2.log" >&2; exit 1; }
+            echo "That ran out of GPU memory; trying a smaller batch."
         fi
     done
     [[ -n "$chosen" && -f runs/gpu-smoke-full/throughput.json ]] || { echo "The speed test failed; see logs/speed-*.log" >&2; exit 1; }

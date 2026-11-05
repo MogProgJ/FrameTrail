@@ -49,7 +49,10 @@ for batch in 16 8; do
     if DATASET=probe SMOKE_RUN=gpu-probe BATCH="$batch" bash training/kit/smoke_job.sh > "logs/speed-$batch.log" 2>&1; then
         echo "Batch size $batch worked."; break
     fi
-    tail -n 5 "logs/speed-$batch.log"; echo "Batch size $batch failed (out of memory?); trying a smaller one."
+    tail -n 8 "logs/speed-$batch.log"
+    # Only a memory shortage is worth a smaller batch; anything else is a real error to read and report.
+    grep -q -i "out of memory" "logs/speed-$batch.log" || { echo "The speed test failed (not a memory problem); full log: $FT_ROOT/logs/speed-$batch.log" >&2; exit 1; }
+    echo "Batch size $batch ran out of GPU memory; trying a smaller one."
     [[ "$batch" != 8 ]] || { echo "The speed test failed; see $FT_ROOT/logs/speed-*.log" >&2; exit 1; }
 done
 "$FT_VENV/bin/python" - <<'PY'

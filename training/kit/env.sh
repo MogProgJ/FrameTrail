@@ -15,5 +15,6 @@ export TORCH_HOME="$FT_ROOT/.cache/torch"
 export PIP_CACHE_DIR="$FT_ROOT/.cache/pip"
 export YOLO_CONFIG_DIR="$FT_ROOT/.cache/ultralytics"
 export PYTHONUNBUFFERED=1
+export MPLBACKEND=Agg   # Notebook hosts (Kaggle, Colab) set a Jupyter-only plotting backend that this environment lacks
 cd "$FT_ROOT" || { echo "Copy the training folder to $FT_ROOT first" >&2; return 1; }
 mkdir -p "$YOLO_CONFIG_DIR" logs
