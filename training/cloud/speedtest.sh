@@ -16,7 +16,7 @@ command -v nvidia-smi >/dev/null || { echo "No NVIDIA GPU: on Kaggle turn on Set
 nvidia-smi --query-gpu=name,memory.total --format=csv
 export FT_ROOT="${FT_ROOT:-$HOME/frametrail-work}"
 mkdir -p "$FT_ROOT"
-df -h "$FT_ROOT" | tail -1 | awk '{print "Free disk here: " $4}'
+df -h "$FT_ROOT" | tail -1 | awk '{print "Free disk here (the figure of the host; on Kaggle the session limit is lower, see its Session panel, about 57.6 GiB): " $4}'
 echo "CPU cores: $(nproc); memory: $(free -g | awk '/Mem:/ {print $2}') GB"
 # One GPU, and no more data workers than cores: a second GPU would start a second training process with its own
 # workers, and a small notebook machine (4 cores, 31 GB) can run out of memory and lose its kernel.
