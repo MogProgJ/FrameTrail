@@ -37,7 +37,7 @@ if [[ -f "runs/$RUN/finished.json" ]]; then
     echo "runs/$RUN already finished training."
 else
     "$FT_VENV/bin/python" training/train.py --dataset "data/$DATASET" --out "runs/$RUN" --model "$MODEL" \
-        --epochs "${EPOCHS:-12}" --batch-size "${BATCH:-16}" --grad-accum "${ACCUM:-1}" --workers 14 --device cuda \
+        --epochs "${EPOCHS:-12}" --batch-size "${BATCH:-16}" --grad-accum "${ACCUM:-1}" --workers "${WORKERS:-14}" --device cuda \
         ${START_FROM:+--start-from "$START_FROM"} ${TRAIN_ARGS:-}
 fi
 [[ -f "runs/$RUN/eval-test.json" ]] || "$FT_VENV/bin/python" training/evaluate.py --dataset "data/$DATASET" \

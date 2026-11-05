@@ -13,7 +13,7 @@ nvidia-smi --query-gpu=name,memory.total --format=csv
     --train 1500 --valid 300 --test 500
 rm -rf "runs/$SMOKE_RUN"
 "$FT_VENV/bin/python" training/train.py --dataset "data/$DATASET-smoke" --out "runs/$SMOKE_RUN" --model "$MODEL" \
-    --epochs 2 --batch-size "${BATCH:-16}" --grad-accum 1 --workers 7 --device cuda --checkpoint-interval 1 \
+    --epochs 2 --batch-size "${BATCH:-16}" --grad-accum 1 --workers "${WORKERS:-7}" --device cuda --checkpoint-interval 1 \
     ${START_FROM:+--start-from "$START_FROM"}
 "$FT_VENV/bin/python" training/evaluate.py --dataset "data/$DATASET-smoke" --split test --backend rfdetr \
     --model-size "$MODEL" --weights "runs/$SMOKE_RUN/checkpoint_best_total.pth" \

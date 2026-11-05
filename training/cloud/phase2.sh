@@ -36,6 +36,9 @@ mkdir -p "$FT_ROOT"
 [[ -e "$FT_ROOT/training" ]] || ln -s "$REPO/training" "$FT_ROOT/training"
 cd "$FT_ROOT"
 mkdir -p logs
+# One GPU, and data workers matched to the cores (see speedtest.sh); override by setting them before the call.
+export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
+export WORKERS="${WORKERS:-$(( $(nproc) < 14 ? $(nproc) : 14 ))}"
 
 if want setup; then
     log "setup: Python environment and pretrained weights"

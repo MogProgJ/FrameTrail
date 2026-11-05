@@ -18,6 +18,11 @@ export FT_ROOT="${FT_ROOT:-$HOME/frametrail-work}"
 mkdir -p "$FT_ROOT"
 df -h "$FT_ROOT" | tail -1 | awk '{print "Free disk here: " $4}'
 echo "CPU cores: $(nproc); memory: $(free -g | awk '/Mem:/ {print $2}') GB"
+# One GPU, and no more data workers than cores: a second GPU would start a second training process with its own
+# workers, and a small notebook machine (4 cores, 31 GB) can run out of memory and lose its kernel.
+export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
+export WORKERS="${WORKERS:-$(( $(nproc) < 7 ? $(nproc) : 7 ))}"
+echo "Using GPU(s) $CUDA_VISIBLE_DEVICES with $WORKERS data workers."
 [[ -e "$FT_ROOT/training" ]] || ln -s "$REPO/training" "$FT_ROOT/training"
 cd "$FT_ROOT"; mkdir -p logs
 echo "== setup (a few minutes)"
