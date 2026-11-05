@@ -14,9 +14,10 @@ cd "$(dirname "$0")/../.."
 REPO="$PWD"
 command -v nvidia-smi >/dev/null || { echo "No NVIDIA GPU: on Kaggle turn on Settings > Accelerator > GPU, and Internet." >&2; exit 1; }
 nvidia-smi --query-gpu=name,memory.total --format=csv
-df -h "${FT_ROOT:-$HOME}" 2>/dev/null | tail -1 | awk '{print "Free disk here: " $4}'
 export FT_ROOT="${FT_ROOT:-$HOME/frametrail-work}"
 mkdir -p "$FT_ROOT"
+df -h "$FT_ROOT" | tail -1 | awk '{print "Free disk here: " $4}'
+echo "CPU cores: $(nproc); memory: $(free -g | awk '/Mem:/ {print $2}') GB"
 [[ -e "$FT_ROOT/training" ]] || ln -s "$REPO/training" "$FT_ROOT/training"
 cd "$FT_ROOT"; mkdir -p logs
 echo "== setup (a few minutes)"
