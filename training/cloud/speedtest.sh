@@ -23,6 +23,22 @@ cd "$FT_ROOT"; mkdir -p logs
 echo "== setup (a few minutes)"
 bash training/kit/setup.sh > logs/setup.log 2>&1 || { tail -n 20 logs/setup.log; echo "Setup failed; see $FT_ROOT/logs/setup.log" >&2; exit 1; }
 source training/kit/env.sh
+echo "== does PyTorch see the GPU?"
+if ! "$FT_VENV/bin/python" -c 'import torch; assert torch.cuda.is_available(); print(torch.__version__, torch.version.cuda, torch.cuda.get_device_name(0))' 2>/dev/null; then
+    # The pinned PyTorch is built for a recent CUDA; an older driver (Kaggle, some rentals) cannot run it.
+    echo "Not with this build ($(nvidia-smi | grep -o 'Driver Version: [0-9.]*')). Trying PyTorch builds for older drivers."
+    versions=$(grep -E '^(torch|torchvision)==' training/requirements.txt | tr '\n' ' ')
+    for cuda in cu128 cu126 cu124; do
+        if "$FT_VENV/bin/python" -m pip install --quiet --force-reinstall --no-deps $versions \
+                --index-url "https://download.pytorch.org/whl/$cuda" > "logs/torch-$cuda.log" 2>&1 \
+                && "$FT_VENV/bin/python" -c 'import torch; assert torch.cuda.is_available()' 2>/dev/null; then
+            echo "Using the $cuda build."; break
+        fi
+        echo "$cuda build: not available or not working."
+    done
+    "$FT_VENV/bin/python" -c 'import torch; assert torch.cuda.is_available(), "PyTorch still cannot use the GPU"; print(torch.__version__, torch.version.cuda)' \
+        || { echo "PyTorch cannot use this GPU; see $FT_ROOT/logs/torch-*.log" >&2; exit 1; }
+fi
 if [[ ! -f data/probe/dataset.json ]]; then
     echo "== probe data (downloads about 6 GB of metadata, then about 2,000 images)"
     "$FT_VENV/bin/python" training/openimages.py --classes training/classes/full.txt --out data/probe \

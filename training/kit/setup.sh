@@ -3,15 +3,17 @@
 # Usage (from $(ws_find frametrail)/rf):  bash training/kit/setup.sh
 set -euo pipefail
 source "$(dirname "$0")/env.sh"
-# Python 3.12 or newer. Where the system Python is older (Kaggle, many GPU rental images), uv fetches 3.12.
-if [[ ! -d "$FT_VENV" ]]; then
-    if python3 -c 'import sys; sys.exit(0 if sys.version_info[:2] >= (3, 12) else 1)'; then
-        python3 -m venv "$FT_VENV"
+# A working environment with Python 3.12 or newer and pip. Where `python3 -m venv` cannot work (Kaggle and many
+# Debian-based images lack ensurepip) or the system Python is older than 3.12, uv fetches 3.12 and builds it.
+if ! "$FT_VENV/bin/python" -m pip --version >/dev/null 2>&1; then
+    if python3 -c 'import sys; sys.exit(0 if sys.version_info[:2] >= (3, 12) else 1)' \
+            && python3 -m venv --clear "$FT_VENV" >/dev/null 2>&1; then
+        :
     else
-        echo "System Python is older than 3.12; getting 3.12 with uv."
+        echo "No usable python3 -m venv here (or Python older than 3.12); building the environment with uv."
         command -v uv >/dev/null || python3 -m pip install --quiet --user uv
         export PATH="$HOME/.local/bin:$PATH"
-        uv venv --seed --python 3.12 "$FT_VENV"
+        uv venv --seed --python 3.12 --clear "$FT_VENV"
     fi
 fi
 "$FT_VENV/bin/python" -c 'import sys; assert sys.version_info[:2] >= (3, 12), sys.version'
