@@ -14,6 +14,11 @@ settings="training/kit/$RUN.env"
 echo "Run $RUN on data/$DATASET; settings from $settings:"
 grep -v '^#' "$settings"
 source <(tr -d '\r' < "$settings")
+# Without the run to start from (e.g. after the cluster was lost), train from the official COCO weights.
+if [[ -n "${START_FROM:-}" && ! -f "$START_FROM" ]]; then
+    echo "START_FROM $START_FROM is missing; starting from the COCO weights instead."
+    START_FROM=
+fi
 nvidia-smi
 "$FT_VENV/bin/python" -c 'import torch; assert torch.cuda.is_available(); print(torch.cuda.get_device_name(0))'
 # Epochs may depend on the GPU the job landed on (EPOCHS_H100, EPOCHS_A100), so one 24 h job fits either way.
@@ -45,7 +50,7 @@ grep -q '"passed": true' "runs/$RUN/rfdetr_openimages.json" 2>/dev/null || "$FT_
 # Once training is finished, later parts of this run have nothing to do: cancel those still pending. Only job IDs
 # this project recorded under PARTS_NAME (logs/submitted.txt, logs/extra.txt) are touched.
 if [[ -f "runs/$RUN/finished.json" ]]; then
-    parts=$(cat logs/submitted.txt logs/extra.txt 2>/dev/null | awk -v name="$PARTS_NAME" '$1 == name {print $2}' | paste -sd,)
+    parts=$(cat logs/submitted.txt logs/extra.txt 2>/dev/null | awk -v name="$PARTS_NAME" '$1 == name {print $2}' | paste -sd, || true)
     pending=$( [[ -z "$parts" ]] || squeue -h -t PD -j "$parts" -o %i 2>/dev/null || true)
     [[ -z "$pending" ]] || scancel $pending
 fi

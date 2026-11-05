@@ -103,6 +103,20 @@ If training stops at the time limit, resubmit only the training job and it resum
 sbatch training/kit/train.sbatch
 ```
 
+## Without the cluster: one rented GPU machine
+
+The KIT account was lost on 2026-11-05, together with everything stored there (the pilot checkpoint, `data/full`, saved runs). What survives is the code, the pilot's scores and app model fetched to the laptop (`runs\pilot-small\`, `models\rfdetr_openimages.onnx`), and the numbers in AGENTS.md. `cloud/phase2.sh` runs the whole Phase 2 on **one Linux machine with an NVIDIA GPU**, with no Slurm. It works on an Azure NC-series VM or any GPU rental (RunPod, Lambda, ...):
+
+```bash
+git clone https://github.com/MogProgJ/FrameTrail.git && cd FrameTrail && git checkout claude/kind-brahmagupta-4q5cdd
+tmux new -s train               # so it survives a closed laptop
+bash training/cloud/phase2.sh   # setup, data, baseline, train, report, package; each stage skips finished work
+```
+
+Run it again after any interruption and it carries on (data downloads resume, training resumes from `last.ckpt`). Stages can be named: `bash training/cloud/phase2.sh data baseline`. `RUN_DEATH_SWITCH=1` powers the machine off when the script ends or fails, so a finished or crashed run stops costing money (a stopped Azure VM still needs to be deallocated in the portal to stop compute billing; the script's own `poweroff` only shuts the OS down). Results end up in `~/frametrail-work/results/` (scores, the report, the app model and its check, the best checkpoint): **copy them off the machine before deleting it**, which is what was lost last time.
+
+Needs about 150 GB of disk (data ~60 GB, metadata ~6 GB, checkpoints), a GPU with 40 GB or more, and python3.12 or newer. The settings are `kit/full-small.env`; without `runs/pilot-small` it trains from the official COCO weights instead of the pilot. The data selection is deterministic (seed 17), so a rebuilt `data/full` is the same set of images. Not measured off the cluster: download speed and the epoch time on the rented GPU.
+
 ## Use a trained model in the app
 
 Run `-Action fetch` from the laptop. It downloads `runs/<run>/rfdetr_openimages.onnx` (about 115 MB for RF-DETR Small) and puts it in `models\` and in `build\windows-msvc\Release\models\`, where the app looks. Later builds copy it from `models\` too. Start FrameTrail and pick **RF-DETR · Open Images (trained)**. From the command line: `--model-type rfdetr-oi`.

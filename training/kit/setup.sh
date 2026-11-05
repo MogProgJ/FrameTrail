@@ -3,7 +3,8 @@
 # Usage (from $(ws_find frametrail)/rf):  bash training/kit/setup.sh
 set -euo pipefail
 source "$(dirname "$0")/env.sh"
-python -c 'import sys; assert sys.version_info[:2] == (3, 12), sys.version'
+python3 -c 'import sys; assert sys.version_info[:2] >= (3, 12), sys.version'
+python() { python3 "$@"; }
 [[ -d "$FT_VENV" ]] || python -m venv "$FT_VENV"
 "$FT_VENV/bin/python" -m pip install --upgrade pip
 "$FT_VENV/bin/python" -m pip install -r training/requirements.txt
