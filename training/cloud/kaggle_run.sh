@@ -43,6 +43,10 @@ save() {
     for file in "${FILES[@]}"; do
         [[ -f "$FT_ROOT/$RUN/$file" ]] && cp -u "$FT_ROOT/$RUN/$file" "$KEEP/full-small/$file"
     done
+    # Earlier sessions' validation history: the trainer starts metrics.csv afresh when it resumes.
+    for file in "$FT_ROOT/$RUN"/metrics-part*.csv; do
+        [[ -f "$file" ]] && cp -u "$file" "$KEEP/full-small/"
+    done
     [[ -f "$FT_ROOT/runs/baseline-yolov8s-oiv7-full/eval-test.json" ]] \
         && cp -u "$FT_ROOT/runs/baseline-yolov8s-oiv7-full/eval-test"* "$KEEP/baseline/" || true
 }
@@ -65,6 +69,13 @@ if [[ -f "$FT_ROOT/$RUN/finished.json" && -f "$FT_ROOT/$RUN/eval-test.json" ]]; 
     bash "$PHASE2" package || true; save
     cp -a "$FT_ROOT/results" "$KEEP/" 2>/dev/null || true
     exit 0
+fi
+
+# Keep the previous session's validation history under its own name (metrics-part1.csv, ...).
+if [[ -f "$FT_ROOT/$RUN/metrics.csv" ]]; then
+    part=1; while [[ -f "$FT_ROOT/$RUN/metrics-part$part.csv" ]]; do part=$((part + 1)); done
+    mv "$FT_ROOT/$RUN/metrics.csv" "$FT_ROOT/$RUN/metrics-part$part.csv"
+    rm -f "$KEEP/full-small/metrics.csv"
 fi
 
 # A background copy every 15 minutes, and at the end however the script ends: an interrupted session keeps its last checkpoint.

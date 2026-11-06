@@ -133,6 +133,7 @@ if want package; then
         [[ -f "runs/full-small/$file" ]] && cp "runs/full-small/$file" results/ || echo "(no $file yet)"
     done
     cp -f runs/baseline-yolov8s-oiv7-full/eval-test.json results/baseline-eval-test.json 2>/dev/null || true
+    cp -f runs/full-small/metrics-part*.csv results/ 2>/dev/null || true   # earlier sessions' history (Kaggle)
     ls -la results
 fi
 log "done"
