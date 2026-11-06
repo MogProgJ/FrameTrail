@@ -13,7 +13,7 @@
 #
 # Session 1: sets up, downloads the data (about 13 GB), scores the YOLOv8 baseline, trains until SESSION_HOURS are used.
 # Session 2: add session 1's output as an Input (Add Input -> Your Work / Notebook Output -> this notebook -> latest
-#   version), run again: it restores the checkpoint from /kaggle/input/*/keep and carries on. Repeat until the log says
+#   version), run again: it restores the checkpoint from the keep folder under /kaggle/input and carries on. Repeat until the log says
 #   "training finished". Results end up in /kaggle/working/keep/results of the last version: download them.
 # Settings (environment variables): SESSION_HOURS (default 10: training time per session; setup, data and baseline take
 #   about 1 h more, and a session ends at 12 h), EPOCHS_TOTAL (default 20), TRAIN_CAP (default 100).
@@ -51,12 +51,17 @@ save() {
         && cp -u "$FT_ROOT/runs/baseline-yolov8s-oiv7-full/eval-test"* "$KEEP/baseline/" || true
 }
 
-log "restore: look for the previous session's output under $INPUT/*/keep"
-for previous in "$INPUT"/*/keep; do
-    [[ -d "$previous" ]] || continue
+log "restore: look for the previous session's output (a keep folder anywhere under $INPUT)"
+# Any depth: Kaggle has changed where it mounts inputs before (/kaggle/input/<name>/... or deeper).
+while IFS= read -r previous; do
     echo "Found $previous"
     cp -a "$previous/." "$KEEP/"
-done
+done < <(find "$INPUT" -maxdepth 6 -type d -name keep 2>/dev/null | sort)
+if [[ ! -f "$KEEP/full-small/last.ckpt" ]]; then
+    echo "NO PREVIOUS CHECKPOINT FOUND: training starts from the beginning. If this is not the first session, stop it"
+    echo "and add the previous version's output as an Input. What is under $INPUT:"
+    find "$INPUT" -maxdepth 3 2>/dev/null | head -n 20 || true
+fi
 if [[ -d "$KEEP/full-small" ]]; then
     mkdir -p "$FT_ROOT/$RUN"; cp -a "$KEEP/full-small/." "$FT_ROOT/$RUN/"
     echo "Restored the run: $(ls "$FT_ROOT/$RUN" | tr '\n' ' ')"
@@ -104,5 +109,5 @@ if [[ -f "$FT_ROOT/$RUN/finished.json" ]]; then
     echo "DONE: download /kaggle/working/keep/results (the app model is rfdetr_openimages.onnx)."
 else
     echo "NOT FINISHED: start another session with this version's output added as an Input."
-    grep -c . "$FT_ROOT/$RUN/metrics.csv" 2>/dev/null | xargs -I{} echo "Metrics rows so far: {}"
+    grep -c . "$FT_ROOT/$RUN/metrics.csv" 2>/dev/null | xargs -I{} echo "Metrics rows so far: {}" || true
 fi
