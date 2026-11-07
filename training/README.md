@@ -123,6 +123,37 @@ Results end up in `~/frametrail-work/results/` (scores, the report, the app mode
 
 Needs about 100 GB of disk (data ~35 GB at the default cap, metadata ~6 GB, checkpoints), a GPU with 24 GB or more (it tries batch size 16, then 8 x 2), and python3.12 or newer. The settings are `kit/full-small.env`; without `runs/pilot-small` it trains from the official COCO weights instead of the pilot. The data selection is deterministic (seed 17), so a rebuilt `data/full` is the same set of images. Not measured off the cluster: download speed and the epoch time on the rented GPU.
 
+## Round 3: fill in the missing labels (Kaggle)
+
+**Why.** On the user's street footage the Phase 2 model misses most handbags, backpacks and umbrellas that YOLOX-S finds (footage check: 15%, 0% and 4% of YOLOX-S's boxes), although on Open Images test photos it scores well on them. Open Images leaves many such objects unlabelled, and training treated them as background. Round 3 adds the boxes YOLOX-S (the teacher) finds for classes **nobody verified on that image**, then trains the Phase 2 model 6 more epochs on the same 38,881 images. Human labels and human "absent" verdicts are never overridden.
+
+**How the teacher is trusted.** `pseudo_labels.py measure` checks YOLOX-S against the human labels on images where a class was verified, per class and per score threshold. `fill` uses, per class, the lowest threshold whose precision is at least 80% with at least 15 checked boxes; classes that never reach it get nothing. Boxes smaller than 1% of the image side or overlapping an existing box (IoU above 0.6) are skipped. `train/_annotations.original.json` keeps the untouched labels; added boxes carry `oi_pseudo: 1` and the teacher's score. `audit` draws pictures (human boxes green, added orange) to look at. The validation and test splits are never changed, so scores stay comparable with Phase 2 and YOLOv8.
+
+**Run it.** A Kaggle notebook with one cell (the same pattern as `kaggle_run.sh`):
+
+```bash
+%%bash
+git clone --depth 1 --branch claude/kind-brahmagupta-4q5cdd https://github.com/MogProgJ/FrameTrail.git /kaggle/temp/FrameTrail
+bash /kaggle/temp/FrameTrail/training/cloud/kaggle_round3.sh
+```
+
+Settings: Accelerator GPU T4, Internet on. **Input:** the Phase 2 notebook's Version 2 output (it holds `keep/full-small/checkpoint_best_total.pth`). Then "Save Version" -> "Save & Run All". One session does everything: data (about 16 min), teacher (CPU, about 1.5-2 h, an estimate from 7.5 images/s on the laptop's CPU), 6 epochs (about 5.2 h at Phase 2's 52 min per epoch), scoring, the comparison with Phase 2 and the app model: about 7.5 h in all, about 7 GPU hours. If a session stops early, run a new version with the stopped version's output added as a second Input; every stage resumes.
+
+To save GPU hours, a first session with **no accelerator** and `ROUND3_STAGES="data teacher"` (put `export ROUND3_STAGES="data teacher"` before the `bash` line) does the teacher work on CPU; the GPU session then adds that output as an Input and skips the teacher run (it only re-applies the labels).
+
+**Results** are in the version's output under `keep/results-round3` (scores, `compare-phase2.md`, `teacher-measure.json`, `pseudo_labels.json` with what was added per class, the audit pictures, the app model). The log ends with mAP@0.5 and people-and-vehicles against Phase 2.
+
+**What counts as a win** (all three):
+1. Open Images test mAP@0.5 not clearly below Phase 2 (0.6877; within about 0.01), people and vehicles at least 0.76.
+2. On the user's footage, the share of YOLOX-S's confident boxes the new model also finds rises clearly for handbags, backpacks and umbrellas (Phase 2: 15%, 0%, 4%; all objects 62%), without falling for people (87%) and cars (58%). Before installing, run the same check on the same five videos (listed in `output\footage-check-before-round3\videos.txt`):
+   `powershell -ExecutionPolicy Bypass -File scripts\footage-check.ps1 -Videos (Get-Content "output\footage-check-before-round3\videos.txt") -Models round3=<path to the new onnx>`
+   Combined scores 100% there by construction (it contains YOLOX-S); it is the ceiling, not the target.
+3. Reviewing one analysis of own footage shows no new kind of false box.
+
+Install with `training\cloud\install-model.ps1 -From <download>` as below (it keeps the Phase 2 model as a backup).
+
+Tested locally on 2026-11-07 on a small slice (1,922 images): the teacher's port gives the app's detections (27 of 27 boxes, within 0.003 px), measuring, filling (146 boxes added to 801 images) and the audit pictures work, and `kaggle_round3.sh` ran end to end with fake data and training stages, as a CPU-only session (data, teacher) followed by a GPU session that restored its teacher results and trained. Not yet run on Kaggle.
+
 ## Use a trained model in the app
 
 **From Kaggle or a rented machine:** download the `results` folder (on Kaggle: the version's Output tab, `keep/results`, or the whole output as a zip), then from the FrameTrail folder run
@@ -152,6 +183,6 @@ Unit tests for the pure logic, which need no packages: `python -m unittest tests
 
 ## Known limits
 
-- Open Images labels are incomplete. Training treats unlabeled objects as background, the same as public Open Images detectors do. Evaluation corrects for this; training does not yet (Phase 3 in AGENTS.md).
+- Open Images labels are incomplete. Training treats unlabeled objects as background, the same as public Open Images detectors do. Evaluation corrects for this; training does so only in round 3, and only where YOLOX-S knows the class (its 80 COCO classes).
 - Group-of boxes, which cover a crowd of the same objects, are trained as ordinary boxes.
 - Merging Man/Woman/Boy/Girl into Person removes near-duplicate boxes at IoU 0.7. An image verified to contain no Man is treated as verified for Person.

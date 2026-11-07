@@ -7,6 +7,9 @@
 #include "appearance_timeline.hpp"
 #include "recent_files.hpp"
 #include "model_comparison.hpp"
+#include "analysis_report_view.hpp"
+#include "frametrail/analysis_report.hpp"
+#include <QTabWidget>
 #include <QPainter>
 #include <QDir>
 #include <QJsonArray>
@@ -137,16 +140,18 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     cancel_=new QPushButton(QStringLiteral("Cancel"));cancel_->setObjectName(QStringLiteral("cancelAnalysis"));actions->addWidget(cancel_);
     save_=new QPushButton(QStringLiteral("Save analysis…"));save_->setObjectName(QStringLiteral("saveRun"));actions->addWidget(save_);
     export_=new QPushButton(QStringLiteral("Export CSV…"));export_->setObjectName(QStringLiteral("exportRun"));actions->addWidget(export_);
+    export_report_=new QPushButton(QStringLiteral("Export report…"));export_report_->setObjectName(QStringLiteral("exportReport"));
+    export_report_->setToolTip(QStringLiteral("Save the detailed report as a web page that opens in any browser"));actions->addWidget(export_report_);
     export_review_=new QPushButton(QStringLiteral("Export review…"));export_review_->setObjectName(QStringLiteral("exportReview"));actions->addWidget(export_review_);
     compare_=new QPushButton(QStringLiteral("Compare models"));compare_->setObjectName(QStringLiteral("compareModels"));
     compare_->setToolTip(QStringLiteral("Compare the reviewed analyses of this video made with different models"));actions->addWidget(compare_);actions->addStretch();
-    settings_toggle_=new QToolButton;settings_toggle_->setText(QStringLiteral("Settings"));settings_toggle_->setCheckable(true);actions->addWidget(settings_toggle_);layout->addLayout(actions);
+    settings_toggle_=new QToolButton;settings_toggle_->setObjectName(QStringLiteral("analysisSettings"));settings_toggle_->setText(QStringLiteral("Settings"));settings_toggle_->setCheckable(true);actions->addWidget(settings_toggle_);layout->addLayout(actions);
     settings_panel_=new QWidget;auto* options=new QHBoxLayout(settings_panel_);options->setContentsMargins(0,0,0,0);
     const auto nano=configuration_ && configuration_->detector.variant==frametrail::DetectorModel::nano && !configuration_->detector.model.empty() ?
         text(configuration_->detector.model) : QCoreApplication::applicationDirPath()+QStringLiteral("/models/yolox_nano.onnx");
-    model_=model_selector(nano,this);
+    model_=model_selector(nano,this,true);
     if(configuration_) {
-        const auto index=int(configuration_->detector.variant);
+        const auto index=configuration_->detector.companion.empty() ? int(configuration_->detector.variant) : combined_index;
         if(!configuration_->detector.model.empty())model_->setItemData(index,text(configuration_->detector.model));
         model_->setCurrentIndex(index);
     } else if(QFileInfo::exists(model_->itemData(1).toString()))model_->setCurrentIndex(1);
@@ -160,9 +165,18 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
         "the analysed frames, and appearance times are accurate to a few frames."));
     if(configuration_)frame_step_->setCurrentIndex(std::max(0,frame_step_->findData(int(configuration_->tracking.frame_step))));
     options->addWidget(frame_step_);
-    model_->setMinimumWidth(0);model_->setMaximumWidth(300);model_->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Fixed);
+    // Wide enough to read the model's name (an Ignored size policy once squeezed it to nothing).
+    model_->setMinimumWidth(250);model_->setMaximumWidth(320);model_->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Fixed);
+    options->addWidget(new QLabel(QStringLiteral("Device")));backend_=backend_selector(this);backend_->setObjectName(QStringLiteral("analysisBackend"));
+    if(configuration_ && configuration_->detector.backend!=frametrail::DetectorBackend::cpu)backend_->setCurrentIndex(1);
+    options->addWidget(backend_);
     auto* hint=new QLabel;hint->setWordWrap(true);hint->setMinimumWidth(0);
-    const auto update_hint=[this,hint]{hint->setText(frametrail::is_rf_model(selected_model(model_)) ? QStringLiteral("Experimental RF · false alarms expected") : QStringLiteral("All %1 object categories · on this device").arg(frametrail::model_category_count(selected_model(model_))));};
+    const auto update_hint=[this,hint]{
+        const auto model=selected_model(model_);
+        hint->setText(!selected_companion(model_).isEmpty() ? QStringLiteral("Both models, boxes merged · about 1.5× slower")
+            : model==frametrail::DetectorModel::rf_openimages ? QStringLiteral("Trained on 595 Open Images object types · on this device")
+            : frametrail::is_rf_model(model) ? QStringLiteral("Experimental RF · false alarms expected")
+            : QStringLiteral("All %1 object categories · on this device").arg(frametrail::model_category_count(model)));};
     update_hint();connect(model_,&QComboBox::currentIndexChanged,this,[update_hint]{update_hint();});hint->setProperty("role","muted");options->addWidget(hint);options->addStretch();
     settings_panel_->hide();layout->addWidget(settings_panel_);
     progress_=new QProgressBar;progress_->setObjectName(QStringLiteral("analysisProgress"));progress_->setTextVisible(false);progress_->setMaximumHeight(7);progress_->hide();layout->addWidget(progress_);
@@ -183,7 +197,16 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     review_layout->addWidget(transport);
     timeline_=new AppearanceTimeline;timeline_->hide();review_layout->addWidget(timeline_);
     timeline_->activated=[this](std::uint64_t id){select_appearance(id);};
-    split->addWidget(review);
+    tabs_=new QTabWidget;tabs_->setObjectName(QStringLiteral("analysisTabs"));tabs_->setDocumentMode(true);
+    tabs_->addTab(review,QStringLiteral("Review"));
+    report_view_=new AnalysisReportView;tabs_->addTab(report_view_,QStringLiteral("Report"));
+    tabs_->setTabToolTip(1,QStringLiteral("Everything the analysis found: counts, time on screen, busy moments, doubtful detections and speed"));
+    report_view_->appearance_activated=[this](std::uint64_t id){show_report_tab(false);select_appearance(id);};
+    report_view_->time_activated=[this](double seconds){
+        show_report_tab(false);
+        if(const auto id=timeline_->appearance_at(seconds))select_appearance(*id);
+    };
+    split->addWidget(tabs_);
     auto* results=new QFrame;results->setObjectName(QStringLiteral("inspector"));results_panel_=results;auto* results_layout=new QVBoxLayout(results);results_layout->setContentsMargins(14,16,14,14);results_layout->setSpacing(10);
     results_title_=new QLabel(QStringLiteral("Object appearances"));results_title_->setProperty("role","section");results_title_->setContentsMargins(4,0,0,0);results_layout->addWidget(results_title_);
     review_progress_=new QLabel;review_progress_->setObjectName(QStringLiteral("reviewProgress"));review_progress_->setProperty("role","caption");
@@ -209,6 +232,11 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
         const auto path=save_dialog(this,QStringLiteral("Export analysis CSV"),name,QStringLiteral("CSV (*.csv)"),QStringLiteral("csv"));
         if(!path.isEmpty()){try{export_analysis_csv(path,true);}catch(const std::exception& e){show_error(e);}}
     });
+    connect(export_report_,&QPushButton::clicked,this,[this]{
+        const auto name=summary_ ? QFileInfo(text(summary_->configuration.source)).completeBaseName()+QStringLiteral("-report.html") : QStringLiteral("report.html");
+        const auto path=save_dialog(this,QStringLiteral("Export report"),name,QStringLiteral("Web page (*.html)"),QStringLiteral("html"));
+        if(!path.isEmpty()){try{export_report_html(path,true);}catch(const std::exception& e){show_error(e);}}
+    });
     connect(settings_toggle_,&QToolButton::toggled,settings_panel_,&QWidget::setVisible);
     review_folder_=QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).filePath(QStringLiteral("reviews"));
     connect(correct_,&QPushButton::clicked,this,[this]{set_verdict(events_->currentRow(),true,true);});
@@ -230,6 +258,7 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
         if(!path.isEmpty()){try{export_review_csv(path,true);}catch(const std::exception& e){show_error(e);}}
     });
     connect(events_,&QListWidget::currentRowChanged,this,[this](int row){review_event(row);});
+    connect(events_,&QListWidget::itemClicked,this,[this]{show_report_tab(false);});
     connect(previous_,&QPushButton::clicked,this,[this]{if(cursors_.size()>1){cursors_.pop_back();try{load_page(cursors_.back());}catch(const std::exception& e){show_error(e);}}});
     connect(more_,&QPushButton::clicked,this,[this]{
         if(!appearances_.empty())cursors_.push_back(appearances_.back().id);
@@ -241,7 +270,7 @@ SavedRunWindow::SavedRunWindow(std::optional<frametrail::RunConfiguration> confi
     connect(&timer_,&QTimer::timeout,this,[this]{tick();});timer_.setTimerType(Qt::PreciseTimer);timer_.start(5);
     if(configuration_ && !configuration_->source.empty())select_video(text(configuration_->source));
     studio_button(choose_,"open");studio_button(open_,"history");studio_button(analyse_,"analysis");studio_button(play_,"play");
-    studio_button(save_,"save");studio_button(export_,"export");studio_button(export_review_,"check");studio_button(compare_,"analysis");studio_button(back_,"replay");studio_button(cancel_,"dismiss");
+    studio_button(save_,"save");studio_button(export_,"export");studio_button(export_report_,"export");studio_button(export_review_,"check");studio_button(compare_,"analysis");studio_button(back_,"replay");studio_button(cancel_,"dismiss");
     settings_toggle_->setIcon(studio_icon(QStringLiteral("settings")));settings_toggle_->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     update_controls();
 }
@@ -251,7 +280,9 @@ void SavedRunWindow::update_controls() {
     choose_->setEnabled(!busy);open_->setEnabled(!busy);analyse_->setEnabled(!busy && !selected_video_.isEmpty());
     cancel_->setVisible(busy && !closing_);cancel_->setEnabled(analysing() && !cancel_requested_);
     save_->setVisible(store_.has_value());export_->setVisible(store_.has_value());save_->setEnabled(store_.has_value() && !busy);export_->setEnabled(store_.has_value() && !busy);
-    settings_toggle_->setEnabled(!busy);model_->setEnabled(!busy);confidence_->setEnabled(!busy);frame_step_->setEnabled(!busy);
+    settings_toggle_->setEnabled(!busy);model_->setEnabled(!busy);backend_->setEnabled(!busy);confidence_->setEnabled(!busy);frame_step_->setEnabled(!busy);
+    export_report_->setVisible(store_.has_value() && report_view_->report());export_report_->setEnabled(!busy);
+    tabs_->setTabVisible(1,report()!=nullptr); // Only object analyses have a report; none before the first analysis.
     results_panel_->setVisible(store_.has_value());
     play_->setVisible(store_.has_value());back_->setVisible(store_.has_value());
     const bool reviewable=store_.has_value() && summary_ && summary_->configuration.kind==frametrail::RunKind::appearances;
@@ -283,7 +314,7 @@ bool SavedRunWindow::select_video(const QString& video) {
     review_.stop();pending_review_.reset();next_.reset();playing_=false;awaiting_frame_=false;displayed_timestamp_.reset();
     store_.reset();summary_.reset();page_.clear();appearances_.clear();events_->clear();verdicts_.clear();cursors_={0};database_.clear();unsaved_=false;
     selected_video_=file.absoluteFilePath();source_->setText(file.fileName());source_->setToolTip(selected_video_);remember_file(selected_video_);
-    timeline_->set_spans({},0);timeline_->hide();chips_->hide();
+    timeline_->set_spans({},0);timeline_->hide();chips_->hide();report_view_->set_report(std::nullopt);show_report_tab(false);
     canvas_->set_image({});canvas_->set_empty_text(QStringLiteral("Ready to analyse\n%1").arg(file.fileName()));
     status_->setText(QStringLiteral("Ready. Analyse the video to find object appearances."));review_status_->setText(QStringLiteral("Click an appearance to review its timestamp."));results_title_->setText(QStringLiteral("Object appearances"));
     play_->setEnabled(false);back_->setEnabled(false);previous_->hide();more_->hide();progress_->hide();update_controls();return true;
@@ -301,7 +332,9 @@ void SavedRunWindow::analyse_video() {
     if(!confirm_discard())return;
     frametrail::RunConfiguration config;
     config.source=native(selected_video_);config.detector={native(model_->currentData().toString()),float(confidence_->value()),.45f,selected_model(model_)};
-    if(configuration_) {config.detector.backend=configuration_->detector.backend;config.detector.gpu_device=configuration_->detector.gpu_device;}
+    config.detector.backend=selected_backend(backend_);
+    if(const auto companion=selected_companion(model_);!companion.isEmpty())config.detector.companion=native(companion);
+    if(configuration_)config.detector.gpu_device=configuration_->detector.gpu_device;
     config.kind=frametrail::RunKind::appearances;config.tracking.classes=frametrail::model_classes(config.detector.variant);std::sort(config.tracking.classes.begin(),config.tracking.classes.end());
     config.tracking.classes.erase(std::unique(config.tracking.classes.begin(),config.tracking.classes.end()),config.tracking.classes.end());config.tracking.line.reset();
     config.tracking.frame_step=unsigned(frame_step_->currentData().toInt());
@@ -312,6 +345,9 @@ void SavedRunWindow::start_analysis(const QString& database,frametrail::RunConfi
     if(std::filesystem::exists(native(database)))throw std::runtime_error("Analysis destination already exists; choose a new filename");
     review_.stop();pending_review_.reset();next_.reset();playing_=false;awaiting_frame_=false;play_->setEnabled(false);back_->setEnabled(false);displayed_timestamp_.reset();preview_sequence_.reset();
     store_.reset();summary_.reset();page_.clear();appearances_.clear();events_->clear();verdicts_.clear();load_overview();canvas_->set_image({});canvas_->set_empty_text(QStringLiteral("Starting analysis…"));unsaved_=false;
+    report_view_->set_report(std::nullopt);show_report_tab(false);
+    analysing_model_=QString::fromUtf8(frametrail::detector_name(configuration.detector).c_str())+
+        (configuration.detector.backend==frametrail::DetectorBackend::cpu ? QStringLiteral(" on the CPU") : QStringLiteral(" on the GPU"));
     previous_->hide();more_->hide();source_->setText(QFileInfo(text(configuration.source)).fileName());source_->setToolTip(text(configuration.source));
     database_=database;draft_job_=QFileInfo(database).absolutePath()==scratch_.path();cancel_requested_=false;analysis_started_=std::chrono::steady_clock::now();job_.start(native(database),std::move(configuration));awaiting_job_=true;
     progress_->setRange(0,0);progress_->show();status_->setText(QStringLiteral("Starting analysis…"));review_status_->setText(QStringLiteral("Processing locally. Save the result when you’re ready."));update_controls();
@@ -345,7 +381,15 @@ void SavedRunWindow::open_run(const QString& database) {
     const bool objects=s.configuration.kind==frametrail::RunKind::appearances;
     results_title_->setText(objects ? QStringLiteral("Object appearances") : QStringLiteral("Line crossings · earlier analysis"));
     const auto outcome=s.status=="completed" ? QStringLiteral("Analysis completed") : s.status=="cancelled" ? QStringLiteral("Analysis cancelled · partial results") : QStringLiteral("Analysis incomplete");
-    status_->setText(outcome+(objects ? QStringLiteral(" · %1 appearances · %2 object types").arg(s.appearance_count).arg(s.class_count) : QStringLiteral(" · %1 crossings").arg(s.event_count)));
+    status_->setText(outcome+(objects ? QStringLiteral(" · %1 appearances · %2 object types").arg(s.appearance_count).arg(s.class_count) : QStringLiteral(" · %1 crossings").arg(s.event_count))
+        +QStringLiteral(" · %1 on %2").arg(QString::fromUtf8(frametrail::detector_name(s.configuration.detector).c_str()),
+            QString::fromStdString(s.execution.provider.empty() ? std::string("CPU") : s.execution.provider)));
+    std::optional<frametrail::AnalysisReport> report;
+    if(objects) {
+        try{report=frametrail::build_report(*store_);}
+        catch(const std::exception& e){status_->setText(status_->text()+QStringLiteral(" · Report unavailable: ")+QString::fromUtf8(e.what()));}
+    }
+    report_view_->set_report(std::move(report));
     status_->setToolTip(QString::fromStdString(s.error)); // Keep raw diagnostics available without presenting a requested cancellation as an error.
     if(!s.error.empty() && s.status!="cancelled")status_->setText(status_->text()+QStringLiteral(" · ")+QString::fromStdString(s.error));
     canvas_->set_empty_text(objects ? QStringLiteral("No object appearances found\nTry a lower confidence in Analysis settings") : QStringLiteral("No crossing events in this analysis"));
@@ -361,11 +405,18 @@ void SavedRunWindow::load_page(std::uint64_t after) {
         for(const auto& value:appearances_) {
             const auto seconds=value.first_timestamp && value.last_timestamp ? double((*value.last_timestamp-*value.first_timestamp).count())/1e6 : 0.;
             const auto found=verdicts_.find(value.id);
+            const auto concerns=frametrail::appearance_concerns(value,summary_->configuration.detector.confidence);
+            QString label=QStringLiteral("%1\n%2 – %3  ·  %4 s  ·  %5%").arg(QString::fromUtf8(frametrail::class_name(value.first_detection.class_id).data()),
+                short_time(value.first_timestamp),short_time(value.last_timestamp)).arg(seconds,0,'f',1).arg(qRound(value.peak_confidence*100));
+            if(!concerns.empty())label+=QStringLiteral("\n⚠ %1%2").arg(QString::fromStdString(concerns.front().text),
+                concerns.size()>1 ? QStringLiteral(" · +%1").arg(concerns.size()-1) : QString{});
             auto* item=new QListWidgetItem(appearance_icon(thumbnail_image(value.thumbnail),value.first_detection,summary_->media.width,summary_->media.height,
-                    found==verdicts_.end() ? std::nullopt : std::optional<bool>(found->second.correct)),
-                QStringLiteral("%1\n%2 – %3  ·  %4 s  ·  %5%").arg(QString::fromUtf8(frametrail::class_name(value.first_detection.class_id).data()),
-                    short_time(value.first_timestamp),short_time(value.last_timestamp)).arg(seconds,0,'f',1).arg(qRound(value.peak_confidence*100)),events_);
-            item->setSizeHint(QSize(300,70));item->setToolTip(QStringLiteral("Appearance #%1 · %2 observations · peak confidence %3%\nFrame span includes short detection gaps; IDs belong to this analysis.").arg(value.id).arg(value.observations).arg(value.peak_confidence*100,0,'f',1));
+                    found==verdicts_.end() ? std::nullopt : std::optional<bool>(found->second.correct)),label,events_);
+            QString tip=QStringLiteral("Appearance #%1 · %2 observations · peak confidence %3%").arg(value.id).arg(value.observations).arg(value.peak_confidence*100,0,'f',1);
+            if(value.detailed)tip+=QStringLiteral(" · average %1%").arg(value.mean_confidence()*100,0,'f',1);
+            for(const auto& concern:concerns)tip+=QStringLiteral("\n⚠ ")+QString::fromStdString(concern.text);
+            tip+=QStringLiteral("\nFrame span includes short detection gaps; IDs belong to this analysis.");
+            item->setSizeHint(QSize(300,concerns.empty() ? 70 : 88));item->setToolTip(tip);
         }
     } else {
         page_=store_->events(after);
@@ -405,7 +456,7 @@ void SavedRunWindow::load_overview() {
         QPixmap dot(QSize(10,10)*2);dot.setDevicePixelRatio(2);dot.fill(Qt::transparent);
         {QPainter painter(&dot);painter.setRenderHint(QPainter::Antialiasing);painter.setPen(Qt::NoPen);painter.setBrush(ft::ui::category_color(type));painter.drawEllipse(QRectF(1,1,8,8));}
         chip->setIcon(QIcon(dot));chip->setIconSize(QSize(10,10));
-        const auto first=info.second;connect(chip,&QPushButton::clicked,this,[this,first]{select_appearance(first);});
+        const auto first=info.second;connect(chip,&QPushButton::clicked,this,[this,first]{show_report_tab(false);select_appearance(first);});
         chips_by_type_[type]={info.first,chip};
         chips_layout_->addWidget(chip);
     }
@@ -426,6 +477,7 @@ void SavedRunWindow::review_event(int row) {
         const auto& value=appearances_.at(row);timestamp=value.first_timestamp;sequence=value.first_sequence;review_box_=value.first_detection;
         canvas_->set_image(thumbnail_image(value.thumbnail));timeline_->set_selected(value.id);
         timeline_->set_playhead(value.first_timestamp ? std::optional<double>(value.first_timestamp->count()/1e6) : std::nullopt);
+        report_view_->set_playhead(value.first_timestamp ? std::optional<double>(value.first_timestamp->count()/1e6) : std::nullopt);
     }else {
         const auto& value=page_.at(row);timestamp=value.event.timestamp;sequence=value.event.sequence;canvas_->set_image(thumbnail_image(value.thumbnail));
     }
@@ -455,7 +507,8 @@ void SavedRunWindow::tick() {
             if(cancel_requested_){status_->setText(QStringLiteral("Stopping analysis…"));return;}
             const auto elapsed=std::chrono::duration<double>(std::chrono::steady_clock::now()-analysis_started_).count();
             const auto feedback=processing_feedback(progress.frames,elapsed,progress.first_timestamp,progress.timestamp,progress.duration);
-            status_->setText(progress.frames ? QStringLiteral("Analysing · %1").arg(feedback.text) : QStringLiteral("Opening video and detector… · %1 elapsed").arg(work_duration(elapsed)));
+            status_->setText(progress.frames ? QStringLiteral("Analysing with %1 · %2").arg(analysing_model_,feedback.text)
+                                             : QStringLiteral("Opening video and %1… · %2 elapsed").arg(analysing_model_,work_duration(elapsed)));
             if(feedback.permille){progress_->setRange(0,1000);progress_->setValue(*feedback.permille);}
             if(progress.preview && preview_sequence_!=progress.preview->frame.sequence) {
                 const auto& frame=progress.preview->frame;QImage image(frame.pixels.data(),frame.width,frame.height,frame.stride,QImage::Format_RGB888);
@@ -464,7 +517,10 @@ void SavedRunWindow::tick() {
             return;
         }
         awaiting_job_=false;progress_->hide();
-        try{open_run(database_);unsaved_=draft_job_;if(unsaved_)review_status_->setText(review_status_->text()+QStringLiteral(" Save analysis to keep these results."));}
+        try{
+            open_run(database_);unsaved_=draft_job_;if(unsaved_)review_status_->setText(review_status_->text()+QStringLiteral(" Save analysis to keep these results."));
+            if(report_view_->report())show_report_tab(true); // A fresh analysis opens on its report.
+        }
         catch(const std::exception& e){show_error(e);if(!progress.error.empty())status_->setText(QString::fromStdString(progress.error));}
         update_controls();
     }
@@ -499,6 +555,20 @@ void SavedRunWindow::closeEvent(QCloseEvent* event) {
     else {review_.release();store_.reset();event->accept();if(workspace_close_decision)workspace_close_decision(true);}
 }
 
+// --- Report: the detailed overview of an object analysis --------------------------------------
+const frametrail::AnalysisReport* SavedRunWindow::report() const {return report_view_->report();}
+void SavedRunWindow::show_report_tab(bool report) {tabs_->setCurrentIndex(report && tabs_->isTabVisible(1) ? 1 : 0);}
+void SavedRunWindow::export_report_html(const QString& output,bool replace) {
+    if(!store_ || analysing() || awaiting_job_ || !report())throw std::logic_error("Wait for an object analysis to finish before exporting its report");
+    protect_inputs(*summary_,output);
+    if(QFileInfo(database_).absoluteFilePath().compare(QFileInfo(output).absoluteFilePath(),Qt::CaseInsensitive)==0)
+        throw std::runtime_error("The report must not replace the working analysis file");
+    const auto staging=scratch_.filePath(QUuid::createUuid().toString(QUuid::WithoutBraces)+QStringLiteral(".html"));
+    frametrail::write_report_html(*report(),native(staging));
+    try{atomic_copy(staging,output,replace);}catch(...){QFile::remove(staging);throw;}
+    QFile::remove(staging);status_->setText(QStringLiteral("Report exported · %1").arg(QFileInfo(output).fileName()));
+}
+
 // --- Review: correct / wrong verdicts per appearance -------------------------------------------
 void SavedRunWindow::set_review_folder(const QString& folder) {review_folder_=folder;if(store_){load_reviews();load_page(cursors_.back());update_review_summary();}}
 QString SavedRunWindow::review_file() const {
@@ -528,7 +598,7 @@ void SavedRunWindow::save_reviews() {
         {QStringLiteral("object"),QString::fromUtf8(frametrail::class_name(value.class_id).data())},{QStringLiteral("correct"),value.correct}});
     const QJsonObject root{{QStringLiteral("schema"),1},{QStringLiteral("run_id"),QString::fromStdString(summary_->id)},
         {QStringLiteral("video"),QFileInfo(text(summary_->configuration.source)).fileName()},
-        {QStringLiteral("model"),QString::fromUtf8(frametrail::model_name(summary_->configuration.detector.variant).data())},
+        {QStringLiteral("model"),QString::fromUtf8(frametrail::detector_name(summary_->configuration.detector).c_str())},
         {QStringLiteral("confidence"),summary_->configuration.detector.confidence},
         {QStringLiteral("appearances"),qint64(summary_->appearance_count)},{QStringLiteral("verdicts"),rows}};
     QSaveFile file(review_file());

@@ -50,6 +50,20 @@ CSV has one header and one row per appearance, with these columns:
 | First frame / Last frame | Original zero-based source sequences |
 | First timestamp us / Last timestamp us | Exact stored microsecond timestamps, blank when unavailable |
 | Video / Analysis status / Model / Run ID | Source filename, completion state, model profile and persistent run identity |
+| Mean confidence percent / First label / Label changes | Average confidence over all observations, the label the appearance started with, and how often it switched between related labels |
+| Movement (frame sizes) / Largest box percent of frame | Distance the box's bottom centre travelled, in frame widths and heights, and the largest box area |
+
+The last five columns are empty for analyses made before these details were recorded.
+
+## Report
+
+Every object analysis has a **Report** tab (and **Export report…**, a self-contained HTML page): plain-language findings, summary tiles, an activity chart over time (stacked by the five most frequent types; click a stretch to review it), a sortable table per object type (appearances, share of time on screen, most at once, first/last seen, longest appearance, average and peak confidence, movement, doubtful count) and a **Worth a second look** list. That list flags an appearance seen in two or fewer analysed frames or for under 0.5 s, with a peak confidence less than 10 points above the threshold (or an average less than 5 points above it), whose label changed, or whose box covered more than half the frame. These are hints for where to review first, not verdicts. Clicking a row opens that appearance in Review.
+
+The figures come from a per-frame table (`frames`: detection time, scene cut, objects visible per type) and per-appearance details (mean confidence, label changes, movement, largest box) recorded during analysis. Both are new tables/columns that older FrameTrail builds ignore, so files stay at schema 4. For older analyses the report estimates busy moments from appearance times and omits speed and scene cuts.
+
+**Combined** (last entry in the Analysis model list) runs the trained RF-DETR Open Images model and YOLOX-S on every frame and merges their boxes: among boxes of the same or related object types on one object (overlap above 0.5), the more confident one stays. It keeps YOLOX-S's strong people, vehicles, bags and umbrellas and adds the trained model's other object types, at about 1.5 times the trained model's time. The run records the second model (`run.companion_model`), and reports, CSV and reviews name the detector "RF-DETR Open Images (trained) + YOLOX-S", so Compare models keeps it apart from the single models.
+
+From the command line, `frametrail analyse <video> --detect <model> --model-type <id> --save <new.frametrail> --report <new.html>` runs the same object analysis without the window (`--backend auto` for the GPU, `--every <n>` for every nth frame, `--combine <yolox_s.onnx>` for Combined, `--zoom` for the experimental zoom: whole frame plus four enlarged quarters, about 6× slower), and `frametrail run <saved> --report <new.html>` writes the report of an existing analysis.
 
 Exports use UTF-8 with a byte-order mark, CRLF row endings, quoted text and consistent numeric formatting. This preserves Unicode and comma-containing filenames in spreadsheet apps. CSV stores structured fields; column widths and fonts are controlled by the spreadsheet app, rather than simulated with padding spaces.
 

@@ -19,6 +19,9 @@ class QDragEnterEvent;
 class QDropEvent;
 class AppearanceTimeline;
 class FlowLayout;
+class QTabWidget;
+class AnalysisReportView;
+namespace frametrail {struct AnalysisReport;}
 
 class SavedRunWindow : public QMainWindow {
 public:
@@ -41,6 +44,10 @@ public:
     [[nodiscard]] QString review_summary() const;
     void set_review_folder(const QString& folder); // Default: the per-user app data folder.
     void export_review_csv(const QString& output,bool replace=false);
+    // The detailed report of an object analysis (Report tab), and its export as a self-contained HTML page.
+    [[nodiscard]] const frametrail::AnalysisReport* report() const;
+    void export_report_html(const QString& output,bool replace=false);
+    void show_report_tab(bool report=true);
     void suspend_playback();
 protected:
     void closeEvent(QCloseEvent* event) override;
@@ -83,6 +90,11 @@ private:
     QLabel *status_{}, *source_{}, *review_status_{}, *results_title_{};
     QPushButton *choose_{}, *analyse_{}, *open_{}, *cancel_{}, *save_{}, *export_{}, *previous_{}, *more_{}, *play_{}, *back_{};
     QComboBox* model_{};
+    QComboBox* backend_{}; // CPU, or GPU with CPU fallback
+    QTabWidget* tabs_{};   // Review | Report
+    AnalysisReportView* report_view_{};
+    QPushButton* export_report_{};
+    QString analysing_model_;
     QDoubleSpinBox* confidence_{};
     QComboBox* frame_step_{}; // Analyse every Nth frame: faster on long videos with a slower model.
     QToolButton* settings_toggle_{};

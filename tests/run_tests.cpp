@@ -1,5 +1,7 @@
 #include "frametrail/analysis_job.hpp"
 #include "frametrail/preview_session.hpp"
+#include "frametrail/analysis_report.hpp"
+#include <cmath>
 #include <fstream>
 #include <sqlite3.h>
 #include <algorithm>
@@ -109,7 +111,70 @@ void appearance_relabel(const std::filesystem::path& fixtures) {
     auto truck=car;truck.detection.class_id=7;saved.record_frame(frame,{},std::vector{truck});
     const auto values=saved.appearances();
     require(values.size()==1 && values[0].first_detection.class_id==7 && values[0].observations==2,"Related class change was not relabelled");
+    require(values[0].detailed && values[0].first_class==2 && values[0].class_changes==1,"Relabel did not keep the first label and change count");
     saved.finish("completed");
+}
+void report_contract(const std::filesystem::path& fixtures) {
+    // Detailed recording (0.13) and the report built from it; older files still get a report from appearance spans.
+    const auto root=output_root(fixtures);const auto model=root/"report-model.onnx";
+    {std::ofstream file(model);file<<"report fixture";}
+    const auto source=fixtures/"variable.mkv";frametrail::MediaReader reader(source);auto frame=*reader.read();
+    const double area=double(frame.width)*frame.height;
+    frametrail::RunConfiguration config{source,{model,.35f},{},frametrail::RunKind::appearances};config.tracking.line.reset();config.tracking.classes={0,2,14};
+    const auto path=root/"report.frametrail";
+    {
+        auto saved=frametrail::RunStore::create(path,config,reader.info());
+        // Person #1 walks right over 10 frames; car #2 stays for frames 2-9; bird #3 appears once, weakly; scene cut at frame 6.
+        for(std::uint64_t i=0;i<10;++i) {
+            frame.sequence=i;frame.timestamp=std::chrono::microseconds(i*100000);
+            std::vector<frametrail::TrackedObject> objects{{1,{0,i==0 ? .5f : .9f,float(i),5,float(i)+10,30},true,{}}};
+            if(i>=2)objects.push_back({2,{2,.8f,20,10,40,40},true,{}});
+            if(i==4)objects.push_back({3,{14,.38f,0,0,float(frame.width),float(frame.height)},false,{}});
+            saved.record_frame(frame,{},objects,frametrail::FrameStats{10.+double(i),i==6});
+            saved.record_frame(frame,{},objects,frametrail::FrameStats{10.+double(i),i==6}); // Idempotent
+        }
+        saved.finish("completed");
+    }
+    const frametrail::RunStore store(path);
+    const auto items=store.appearance_details();
+    require(items.size()==3 && items[0].detailed && items[0].thumbnail.empty() && items[0].observations==10,"Appearance details lost rows or carried thumbnails");
+    require(std::abs(items[0].confidence_sum-(.5+.9*9))<1e-4 && std::abs(items[0].mean_confidence()-.86)<1e-4,"Confidence sum/mean wrong");
+    require(std::abs(items[0].path-9.0/frame.width)<1e-6 && items[0].last_detection.left==9,"Movement or last box wrong");
+    require(std::abs(items[2].max_area-1.0)<1e-6 && std::abs(items[1].max_area-600/area)<1e-6,"Largest box share wrong");
+    const auto frames=store.frames();
+    require(store.has_frame_details() && frames.size()==10 && frames[4].objects.size()==3 && frames[6].scene_cut && frames[0].objects==std::vector<std::pair<int,int>>{{0,1}},
+        "Frame statistics lost frames, counts or the scene cut");
+    const auto report=frametrail::build_report(store,10);
+    require(report.frame_details && report.appearance_details && report.analysed_frames==10 && report.types.size()==3,"Report lost its detail or types");
+    require(report.most_objects==3 && std::abs(report.most_objects_time-.4)<1e-6 && report.scene_cuts==std::vector<double>{.6},"Busiest moment or scene cut wrong");
+    require(report.types[0].appearances==1 && report.share_with_objects==1 && std::abs(report.mean_objects-(10+8+1)/10.)<1e-9,"Visibility figures wrong");
+    require(std::abs(report.detect_ms_mean-14.5)<1e-9 && report.detect_ms_max==19,"Detection timings wrong");
+    require(report.concerns.size()==1 && report.concerns[0].appearance==3 && report.brief==1 && report.uncertain==1 && report.large==1,
+        "Only the brief, weak, frame-filling bird should be doubtful");
+    const auto bin_at=[&](double time){return *std::ranges::find_if(report.activity,[&](const auto& bin){return bin.start<=time && time<bin.end;});};
+    require(report.activity.size()==10 && bin_at(.4).most_objects==3 && bin_at(.6).scene_cut && !bin_at(.05).scene_cut,"Activity bins wrong");
+    require(report.findings.size()>=5,"Report findings missing");
+    const auto html=root/"report.html";frametrail::write_report_html(report,html);
+    const auto content=bytes(html);
+    require(content.starts_with("<!doctype html>") && content.find("Worth a second look")!=std::string::npos && content.find("<svg")!=std::string::npos,"HTML report incomplete");
+    fails([&]{frametrail::write_report_html(report,html);},"Report overwrote an existing file");
+    // Older files (no detail columns, no frames table) still produce a report, estimated from appearance times.
+    const auto legacy=root/"report-legacy.frametrail";std::filesystem::copy_file(path,legacy);
+    sqlite3* db{};const auto name=legacy.u8string();require(sqlite3_open(reinterpret_cast<const char*>(name.c_str()),&db)==SQLITE_OK,"Legacy report fixture open failed");
+    const auto result=sqlite3_exec(db,"DROP TABLE frames; ALTER TABLE appearances DROP COLUMN first_class; ALTER TABLE appearances DROP COLUMN class_changes;"
+        "ALTER TABLE appearances DROP COLUMN confidence_sum; ALTER TABLE appearances DROP COLUMN last_left; ALTER TABLE appearances DROP COLUMN last_top;"
+        "ALTER TABLE appearances DROP COLUMN last_right; ALTER TABLE appearances DROP COLUMN last_bottom; ALTER TABLE appearances DROP COLUMN path;"
+        "ALTER TABLE appearances DROP COLUMN max_area;",nullptr,nullptr,nullptr);
+    sqlite3_close(db);require(result==SQLITE_OK,"Legacy report fixture conversion failed");
+    const auto before=bytes(legacy);
+    {
+        const frametrail::RunStore older(legacy);
+        require(!older.has_frame_details() && older.frames().empty() && !older.appearance_details()[0].detailed,"Older file claimed detail it lacks");
+        const auto estimate=frametrail::build_report(older,10);
+        require(!estimate.frame_details && estimate.types.size()==3 && estimate.most_objects==3 && estimate.concerns.size()==1,"Older file report failed");
+        older.export_appearances_csv(root/"legacy.csv");
+    }
+    require(bytes(legacy)==before,"Building a report changed the saved file");
 }
 void appearance_storage(const std::filesystem::path& fixtures) {
     const auto root=output_root(fixtures);const auto model=root/"appearance-model.onnx";
@@ -184,6 +249,27 @@ void expanded_storage(const std::filesystem::path& fixtures,frametrail::Detector
     const auto result=sqlite3_exec(db,"UPDATE run SET vocabulary='wrong labels';",nullptr,nullptr,nullptr);sqlite3_close(db);
     require(result==SQLITE_OK,"Tamper fixture write failed");fails([&]{frametrail::RunStore bad(tampered);},"Mismatched stored vocabulary accepted");
 }
+// Combined detection (trained RF-DETR + YOLOX-S) and zoom are recorded with the run, named in reports, and absent in older files.
+void combined_storage(const std::filesystem::path& fixtures) {
+    const auto root=output_root(fixtures),source=fixtures/"variable.mkv",model=root/"rf.onnx",companion=root/"yolox_s.onnx";
+    {std::ofstream file(model);file<<"rf fixture";}{std::ofstream file(companion);file<<"yolox fixture";}
+    frametrail::MediaReader reader(source);auto frame=*reader.read();
+    frametrail::RunConfiguration config{source,{model,.4f,.45f,frametrail::DetectorModel::rf_openimages},{},frametrail::RunKind::appearances};
+    config.tracking.line.reset();config.tracking.classes={0,26,269};config.detector.companion=companion;config.detector.zoom=true;
+    const auto path=root/"combined.frametrail";
+    {auto store=frametrail::RunStore::create(path,config,reader.info());
+     store.record_frame(frame,{},std::vector{frametrail::TrackedObject{1,{26,.7f,2,3,20,25},true,{}}},frametrail::FrameStats{40,false});store.finish("completed");}
+    const frametrail::RunStore store(path);const auto detector=store.summary().configuration.detector;
+    require(detector.companion==companion && detector.zoom && frametrail::detector_name(detector)=="RF-DETR Open Images (trained) + YOLOX-S · zoom",
+        "Combined detection settings were not recorded");
+    require(frametrail::report_html(frametrail::build_report(store)).find("+ YOLOX-S")!=std::string::npos,"Report does not name the combined detector");
+    auto plain=config;plain.detector.companion.clear();plain.detector.zoom=false;
+    {auto store2=frametrail::RunStore::create(root/"plain.frametrail",plain,reader.info());store2.finish("completed");}
+    const auto read=frametrail::RunStore(root/"plain.frametrail").summary().configuration.detector;
+    require(read.companion.empty() && !read.zoom && frametrail::detector_name(read)=="RF-DETR Open Images (trained)","Plain run gained combined settings");
+    frametrail::DetectorOptions wrong;wrong.model=model;wrong.companion=companion; // YOLOX-Nano main model: refused before loading.
+    fails([&]{frametrail::Detector refused(wrong);},"Combined detection accepted a model without the full vocabulary");
+}
 void seeking(const std::filesystem::path& root) {
     for(const auto* name:{"variable.mkv","delayed.mkv"}) {
         frametrail::MediaReader reader(root/name);std::vector<frametrail::Frame> frames;
@@ -254,7 +340,7 @@ void analysis(const std::filesystem::path& source,const std::filesystem::path& m
 }
 int main(int argc,char* argv[]) {
     try {
-        if(argc==2){storage(argv[1]);expanded_storage(argv[1],frametrail::DetectorModel::world_m,80);expanded_storage(argv[1],frametrail::DetectorModel::openimages,614);appearance_storage(argv[1]);appearance_relabel(argv[1]);seeking(argv[1]);}
+        if(argc==2){storage(argv[1]);expanded_storage(argv[1],frametrail::DetectorModel::world_m,80);expanded_storage(argv[1],frametrail::DetectorModel::openimages,614);appearance_storage(argv[1]);appearance_relabel(argv[1]);report_contract(argv[1]);combined_storage(argv[1]);seeking(argv[1]);}
         else if(argc==3)analysis(argv[1],argv[2]);else throw std::runtime_error("Expected fixtures, or source/model");
         std::cout<<"Saved-run contracts passed\n";return 0;
     }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}

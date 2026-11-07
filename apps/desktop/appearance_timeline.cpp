@@ -26,6 +26,14 @@ void AppearanceTimeline::set_spans(std::vector<Span> spans,double duration) {
     for(const auto& span:spans_){duration_=std::max(duration_,span.end);if(std::find(lanes_.begin(),lanes_.end(),span.class_id)==lanes_.end())lanes_.push_back(span.class_id);}
     selected_.reset();updateGeometry();update();
 }
+std::optional<std::uint64_t> AppearanceTimeline::appearance_at(double seconds) const {
+    std::optional<std::uint64_t> visible,next;double next_start=0;
+    for(const auto& span:spans_) { // Sorted by start.
+        if(span.start<=seconds && seconds<=span.end+.25)visible=span.id;
+        else if(span.start>seconds && (!next || span.start<next_start)){next=span.id;next_start=span.start;}
+    }
+    return visible ? visible : next;
+}
 void AppearanceTimeline::set_playhead(std::optional<double> seconds) {if(playhead_!=seconds){playhead_=seconds;update();}}
 void AppearanceTimeline::set_selected(std::optional<std::uint64_t> id) {if(selected_!=id){selected_=id;update();}}
 QSize AppearanceTimeline::sizeHint() const {return {600,axis_height+padding*2+std::max<int>(1,int(lanes_.size()))*lane_height};}

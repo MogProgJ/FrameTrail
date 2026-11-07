@@ -26,8 +26,10 @@ want() { [[ " ${STAGES[*]} " == *" $1 "* ]]; }
 if [[ "${RUN_DEATH_SWITCH:-0}" == 1 ]]; then
     trap 'log "Finished or failed; powering off (RUN_DEATH_SWITCH=1)"; sync; sudo poweroff' EXIT
 fi
-command -v nvidia-smi >/dev/null || { echo "No NVIDIA GPU driver found (nvidia-smi missing)." >&2; exit 1; }
-nvidia-smi --query-gpu=name,memory.total --format=csv
+if [[ "${ALLOW_NO_GPU:-0}" != 1 ]]; then   # kaggle_round3.sh sets it for a CPU-only session (data and teacher stages only)
+    command -v nvidia-smi >/dev/null || { echo "No NVIDIA GPU driver found (nvidia-smi missing)." >&2; exit 1; }
+    nvidia-smi --query-gpu=name,memory.total --format=csv
+fi
 
 # The repository's scripts expect to run from $FT_ROOT with training/ inside it.
 REPO="$PWD"

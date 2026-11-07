@@ -4,6 +4,10 @@
 #include "frametrail/tracker.hpp"
 #include "frametrail/frame_tracker.hpp"
 #include "frametrail/run_store.hpp"
+#include "frametrail/analysis_report.hpp"
+#include "frametrail/analysis_job.hpp"
+#include <thread>
+#include <cmath>
 
 #include <charconv>
 #include <chrono>
@@ -32,6 +36,8 @@ void help() {
                  "  --backend <id>     cpu (default), auto (GPU/CPU), or directml (strict GPU)\n"
                  "  --gpu-device <n>   Optional DXGI adapter index; default selects capable GPU\n"
                  "  --confidence <n>   Confidence in (0,1], default 0.35\n"
+                 "  --zoom             Also detect on four enlarged quarters of each frame (small objects; slower)\n"
+                 "  --combine <model>  Also run this YOLOX-S model and merge boxes (with --model-type rfdetr-oi)\n"
                  "  --detections <csv> Export detections (requires --detect)\n"
                  "  --track            Track people/vehicles (requires --detect)\n"
                  "  --association <id> greedy (default), repair (experimental global repair)\n"
@@ -44,8 +50,13 @@ void help() {
                  "  --profile <csv>    Export per-frame pipeline timings and RGB bytes\n"
                  "  --help             Show this help\n\n"
                  "Use frametrail-desktop for the preview window.\n"
-                 "Usage: frametrail run <saved-run> [--export <new-csv>]\n"
-                 "Saved run inspection/export needs no model or source file.\n"
+                 "Usage: frametrail run <saved-run> [--export <new-csv> | --report <new-html>]\n"
+                 "Saved run inspection/export needs no model or source file. --report writes a detailed HTML report of an object analysis.\n"
+                 "Usage: frametrail analyse <video> --detect <model> --save <new.frametrail> [--report <new.html>]\n"
+                 "       [--model-type <id>] [--backend <id>] [--gpu-device <n>] [--confidence <n>] [--every <n>] [--zoom] [--combine <yolox_s.onnx>]\n"
+                 "Finds every object type the model knows, as the desktop Analysis section does; --every analyses every nth frame;\n"
+                 "--zoom also looks at four enlarged quarters of each frame for small objects (about 5x slower);\n"
+                 "--combine runs YOLOX-S next to the trained RF-DETR (--model-type rfdetr-oi) and merges their boxes.\n"
                  "One-frame images have detections only. Use the desktop Live camera window for a webcam.\n";
 }
 
@@ -93,16 +104,82 @@ std::filesystem::path output_key(const std::filesystem::path& path) {
     return key;
 }
 
+// Object analysis of a whole video, as the desktop Analysis section does it: every object type the model knows,
+// saved as a .frametrail file, optionally with the detailed HTML report.
+int analyse(const std::vector<std::string>& args) {
+    const auto input=path_from_utf8(args[1]);
+    frametrail::RunConfiguration config;config.source=input;config.kind=frametrail::RunKind::appearances;
+    std::optional<std::filesystem::path> model,save,report_path;std::set<std::string> seen;
+    for(std::size_t i=2;i<args.size();++i) {
+        const auto& option=args[i];
+        if(!seen.insert(option).second)throw std::runtime_error("Duplicate option: "+option);
+        if(option=="--zoom"){config.detector.zoom=true;continue;}
+        if(++i==args.size())throw std::runtime_error("Missing value for "+option);
+        const auto& value=args[i];
+        if(option=="--detect")model=path_from_utf8(value);
+        else if(option=="--model-type")config.detector.variant=frametrail::parse_model(value);
+        else if(option=="--backend")config.detector.backend=frametrail::parse_backend(value);
+        else if(option=="--gpu-device")config.detector.gpu_device=number<int>(value);
+        else if(option=="--confidence")config.detector.confidence=number<float>(value);
+        else if(option=="--every"){const auto step=number<unsigned>(value);if(step<1 || step>30)throw std::runtime_error("--every must be 1 to 30");config.tracking.frame_step=step;}
+        else if(option=="--combine")config.detector.companion=path_from_utf8(value);
+        else if(option=="--save")save=path_from_utf8(value);
+        else if(option=="--report")report_path=path_from_utf8(value);
+        else throw std::runtime_error("Unknown option: "+option);
+    }
+    if(!model || !save)throw std::runtime_error("Use analyse <video> --detect <model> --save <new.frametrail> [--report <new.html>] [model options]");
+    if(!(config.detector.confidence>0 && config.detector.confidence<=1))throw std::runtime_error("--confidence must be in (0,1]");
+    config.detector.model=*model;
+    config.tracking.classes=frametrail::model_classes(config.detector.variant);std::ranges::sort(config.tracking.classes);
+    config.tracking.classes.erase(std::unique(config.tracking.classes.begin(),config.tracking.classes.end()),config.tracking.classes.end());
+    config.tracking.line.reset();
+    check_output_path(*save,input);
+    if(report_path){check_output_path(*report_path,input);if(output_key(*report_path)==output_key(*save))throw std::runtime_error("Each output needs a different path");}
+    frametrail::AnalysisJob job;job.start(*save,config);
+    const auto started=std::chrono::steady_clock::now();std::uint64_t shown=0;
+    for(;;) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        const auto progress=job.progress();
+        if(progress.frames>=shown+250 || !progress.active) {
+            shown=progress.frames;
+            std::cerr<<"\r"<<progress.frames<<" frames";
+            if(progress.timestamp && progress.duration && progress.duration->count()>0)
+                std::cerr<<" ("<<std::lround(100.*double(progress.timestamp->count())/double(progress.duration->count()))<<"%)";
+            std::cerr<<", "<<progress.appearances<<" appearances   "<<std::flush;
+        }
+        if(!progress.active) {
+            std::cerr<<'\n';
+            if(progress.status!="completed")throw std::runtime_error("Analysis "+progress.status+(progress.error.empty() ? std::string{} : ": "+progress.error));
+            break;
+        }
+    }
+    const auto seconds=std::chrono::duration<double>(std::chrono::steady_clock::now()-started).count();
+    const frametrail::RunStore saved(*save);
+    const auto report=frametrail::build_report(saved);
+    if(report_path)frametrail::write_report_html(report,*report_path);
+    std::cout<<"Analysed in "<<std::fixed<<std::setprecision(1)<<seconds<<" s with "<<frametrail::detector_name(config.detector)
+        <<'\n'<<std::defaultfloat;
+    for(const auto& line:report.findings)std::cout<<"- "<<line<<'\n';
+    return 0;
+}
+
 int run(const std::vector<std::string>& args) {
     if (args.size() == 1 && args[0] == "--help") {
         help();
         return 0;
     }
     if(args.size()>=2 && args[0]=="run") {
-        if(args.size()!=2 && (args.size()!=4 || args[2]!="--export"))throw std::runtime_error("Use run <saved-run> [--export <new-csv>]");
+        if(args.size()==4 && args[2]=="--report") {
+            const frametrail::RunStore saved(path_from_utf8(args[1]));
+            const auto report=frametrail::build_report(saved);
+            frametrail::write_report_html(report,path_from_utf8(args[3]));
+            for(const auto& line:report.findings)std::cout<<"- "<<line<<'\n';
+            return 0;
+        }
+        if(args.size()!=2 && (args.size()!=4 || args[2]!="--export"))throw std::runtime_error("Use run <saved-run> [--export <new-csv> | --report <new-html>]");
         const frametrail::RunStore saved(path_from_utf8(args[1]));const auto summary=saved.summary();
         std::cout<<"Run status: "<<summary.status<<"\nFrames analysed: "<<summary.processed_frames
-            <<"\nModel: "<<frametrail::model_name(summary.configuration.detector.variant)<<"\nConfidence: "<<summary.configuration.detector.confidence<<'\n';
+            <<"\nModel: "<<frametrail::detector_name(summary.configuration.detector)<<"\nConfidence: "<<summary.configuration.detector.confidence<<'\n';
         if(summary.configuration.kind==frametrail::RunKind::crossings)
             std::cout<<"Events saved: "<<summary.event_count<<"\nCrossings (- to +): "<<summary.forward<<"\nCrossings (+ to -): "<<summary.reverse<<'\n';
         std::cout<<"Execution provider: "<<summary.execution.provider<<"\nRuntime: "<<summary.execution.runtime<<"\nDevice: "<<summary.execution.device<<"\nCPU fallback: "<<summary.execution.fallback<<'\n';
@@ -115,6 +192,7 @@ int run(const std::vector<std::string>& args) {
         }
         return 0;
     }
+    if(args.size()>=2 && args[0]=="analyse") return analyse(args);
     if (args.size() < 2 || args[0] != "inspect") {
         help();
         return 2;
@@ -134,8 +212,9 @@ int run(const std::vector<std::string>& args) {
         const auto& option = args[i];
         if (!seen.insert(option).second) throw std::runtime_error("Duplicate option: " + option);
         if (option == "--track") { tracking = true; continue; }
+        if (option == "--zoom") { detector_options.zoom = true; continue; }
         if (option != "--csv" && option != "--preview" && option != "--max-frames" && option != "--detect" && option != "--detections" &&
-            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run" && option != "--profile" && option != "--model-type" && option != "--confidence" && option != "--backend" && option != "--gpu-device" && option != "--association") {
+            option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run" && option != "--profile" && option != "--model-type" && option != "--confidence" && option != "--backend" && option != "--gpu-device" && option != "--association" && option != "--combine") {
             throw std::runtime_error("Unknown option: " + option);
         }
         if (++i == args.size()) {
@@ -154,6 +233,8 @@ int run(const std::vector<std::string>& args) {
             detector_options.variant=frametrail::parse_model(args[i]);
         } else if (option == "--backend") {
             detector_options.backend=frametrail::parse_backend(args[i]);
+        } else if (option == "--combine") {
+            detector_options.companion=path_from_utf8(args[i]);
         } else if (option == "--association") {
             tracking_options.association=frametrail::parse_association(args[i]);
         } else if (option == "--gpu-device") {
@@ -197,7 +278,7 @@ int run(const std::vector<std::string>& args) {
             maximum = value;
         }
     }
-    if (!model_path && (seen.contains("--model-type") || seen.contains("--confidence") || seen.contains("--backend") || seen.contains("--gpu-device")))
+    if (!model_path && (seen.contains("--zoom") || seen.contains("--combine") || seen.contains("--model-type") || seen.contains("--confidence") || seen.contains("--backend") || seen.contains("--gpu-device")))
         throw std::runtime_error("Model settings require --detect");
     if (model_path) detector_options.model=*model_path;
     if (tracking && !model_path) throw std::runtime_error("--track requires --detect <model>");
@@ -289,7 +370,7 @@ int run(const std::vector<std::string>& args) {
                 scene_boundary=temporal.scene_boundary;scene_difference=temporal.scene_difference;scene_histogram=temporal.scene_histogram_distance;
                 if(scene_boundary)++scene_boundaries;
                 tracking_ms += temporal.elapsed_ms; rules_ms=temporal.elapsed_ms;
-                if(saved.value)saved.value->record_frame(*frame,temporal.events);
+                if(saved.value)saved.value->record_frame(*frame,temporal.events,{},frametrail::FrameStats{result.elapsed_ms,scene_boundary});
                 if (frame->sequence > 0) {
                     forward = temporal.negative_to_positive; reverse = temporal.positive_to_negative;
                     for (const auto& object : temporal.objects) if (tracks_path) {

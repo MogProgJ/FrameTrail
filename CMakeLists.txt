@@ -65,6 +65,7 @@ target_compile_definitions(frametrail_sqlite PRIVATE SQLITE_THREADSAFE=1 SQLITE_
 add_library(frametrail_core
     src/live_session.cpp
     src/run_store.cpp
+    src/analysis_report.cpp
     src/playback_cache.cpp
     src/analysis_job.cpp
     src/tracker.cpp
@@ -157,7 +158,7 @@ if(FRAMETRAIL_BUILD_GUI)
                 VERBATIM)
         endif()
     endfunction()
-    add_library(frametrail_preview_ui apps/desktop/studio_assets.qrc apps/desktop/guide_workspace.cpp apps/desktop/home_workspace.cpp apps/desktop/appearance_timeline.cpp apps/desktop/model_comparison.cpp apps/desktop/workspace_chrome.cpp apps/desktop/playback_workspace.cpp apps/desktop/cached_playback_window.cpp apps/desktop/preview_layout.ui apps/desktop/preview_window.cpp apps/desktop/saved_run_window.cpp apps/desktop/live_window.cpp)
+    add_library(frametrail_preview_ui apps/desktop/studio_assets.qrc apps/desktop/guide_workspace.cpp apps/desktop/home_workspace.cpp apps/desktop/appearance_timeline.cpp apps/desktop/analysis_report_view.cpp apps/desktop/model_comparison.cpp apps/desktop/workspace_chrome.cpp apps/desktop/playback_workspace.cpp apps/desktop/cached_playback_window.cpp apps/desktop/preview_layout.ui apps/desktop/preview_window.cpp apps/desktop/saved_run_window.cpp apps/desktop/live_window.cpp)
     set_target_properties(frametrail_preview_ui PROPERTIES AUTOUIC ON AUTORCC ON)
     target_include_directories(frametrail_preview_ui PUBLIC apps/desktop)
     target_link_libraries(frametrail_preview_ui PUBLIC frametrail_core Qt6::Widgets)
@@ -319,6 +320,10 @@ if(BUILD_TESTING)
             "-DCLI=$<TARGET_FILE:frametrail>" "-DFIXTURES=${_fixtures}" "-DMODEL=${_detector_model}"
             -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/check_profile.cmake")
         set_tests_properties(cli_profile PROPERTIES FIXTURES_REQUIRED media TIMEOUT 30)
+        add_test(NAME cli_analyse COMMAND ${CMAKE_COMMAND}
+            "-DCLI=$<TARGET_FILE:frametrail>" "-DFIXTURES=${_fixtures}" "-DMODEL=${_detector_model}"
+            -P "${CMAKE_CURRENT_SOURCE_DIR}/tests/check_analyse_cli.cmake")
+        set_tests_properties(cli_analyse PROPERTIES FIXTURES_REQUIRED media TIMEOUT 60)
     endif()
     add_test(NAME cli_exports COMMAND ${CMAKE_COMMAND}
         "-DCLI=$<TARGET_FILE:frametrail>" "-DFIXTURES=${_fixtures}"

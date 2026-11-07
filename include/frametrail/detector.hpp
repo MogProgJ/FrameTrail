@@ -1,5 +1,6 @@
 #pragma once
 #include "frametrail/frame.hpp"
+#include <array>
 #include <filesystem>
 #include <memory>
 #include <span>
@@ -48,7 +49,22 @@ struct DetectorOptions {
     DetectorModel variant{DetectorModel::nano};
     DetectorBackend backend{DetectorBackend::cpu}; // Explicit baseline; GUI can opt into automatic GPU/CPU.
     int gpu_device{-1}; // DXGI index; -1 selects a capable adapter with most dedicated memory.
+    // Zoom: also run the model on four overlapping, enlarged quarters of the frame and merge the boxes, so small
+    // objects get more model pixels. About five model runs per frame instead of one.
+    bool zoom{};
+    // Combined: a YOLOX-S model run on the same frame next to the main model, boxes merged (the more confident box
+    // wins among same or related classes on one object). Empty: no companion. Only with an RF-DETR Open Images main
+    // model, whose vocabulary already contains YOLOX's 80 categories.
+    std::filesystem::path companion;
 };
+// "RF-DETR Open Images (trained)", or "... + YOLOX-S" for a combined detector: names a run's detector in reports and reviews.
+std::string detector_name(const DetectorOptions& options);
+// Zoom tiles: the four quarters, each zoom_tile of the frame's width and height, overlapping in the middle.
+inline constexpr double zoom_tile=0.55;
+// Merges whole-frame and tile detections (already in frame coordinates): drops tile boxes cut by a tile's inner
+// edge, then keeps the most confident box among same or related-class boxes on one object (IoU above `iou`).
+std::vector<Detection> merge_zoom(std::vector<Detection> whole,std::vector<std::pair<std::vector<Detection>,std::array<float,4>>> tiles,
+    int width,int height,float iou=0.5f);
 std::string_view class_name(int id);
 // Open Images nests its classes: a dog is also a carnivore, a mammal and an animal; a taxi is also a car.
 bool is_ancestor(int ancestor, int category);
@@ -109,7 +125,10 @@ public:
     DetectionResult detect(const Frame& frame, std::stop_token stop = {});
     const ExecutionInfo& execution_info() const;
 private:
+    DetectionResult detect_once(const Frame& frame, std::stop_token stop);
+    DetectionResult detect_main(const Frame& frame, std::stop_token stop);
     struct Impl;
     std::unique_ptr<Impl> impl_;
+    std::unique_ptr<Detector> companion_;
 };
 }

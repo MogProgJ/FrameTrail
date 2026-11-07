@@ -40,7 +40,8 @@ void AnalysisJob::start(const std::filesystem::path& database,RunConfiguration c
                     store->record_execution(detection.execution);
                     const auto tracking=tracker.update(detection.objects,*frame);
                     store->record_frame(*frame,tracking.events,
-                        configuration.kind==RunKind::appearances ? std::span<const TrackedObject>(tracking.objects) : std::span<const TrackedObject>{});
+                        configuration.kind==RunKind::appearances ? std::span<const TrackedObject>(tracking.objects) : std::span<const TrackedObject>{},
+                        FrameStats{detection.elapsed_ms,tracking.scene_boundary});
                     const auto now=std::chrono::steady_clock::now();
                     std::lock_guard lock(mutex_);
                     if(!progress_.frames)progress_.first_timestamp=frame->timestamp;

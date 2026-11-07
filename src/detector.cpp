@@ -53,6 +53,22 @@ std::vector<Detection> hide_parent_duplicates(std::vector<Detection> detections,
             return is_ancestor(candidate.class_id,other.class_id) && overlap(candidate,other)>iou;}))kept.push_back(candidate);
     return kept;
 }
+std::vector<Detection> merge_zoom(std::vector<Detection> whole,std::vector<std::pair<std::vector<Detection>,std::array<float,4>>> tiles,
+    int width,int height,float iou) {
+    // A box touching a tile edge that lies inside the frame shows a cut-off object; the whole frame or another tile has it whole.
+    const float mx=std::max(2.f,float(width)*.004f),my=std::max(2.f,float(height)*.004f);
+    for(auto& [boxes,tile]:tiles)for(const auto& d:boxes) {
+        const bool cut=(tile[0]>0 && d.left<=tile[0]+mx) || (tile[1]>0 && d.top<=tile[1]+my) ||
+            (tile[2]<float(width) && d.right>=tile[2]-mx) || (tile[3]<float(height) && d.bottom>=tile[3]-my);
+        if(!cut)whole.push_back(d);
+    }
+    std::stable_sort(whole.begin(),whole.end(),[](const Detection& a,const Detection& b){return a.confidence>b.confidence;});
+    std::vector<Detection> kept;
+    for(const auto& candidate:whole)
+        if(std::none_of(kept.begin(),kept.end(),[&](const Detection& k){return related_classes(k.class_id,candidate.class_id) && overlap(k,candidate)>iou;}))
+            kept.push_back(candidate);
+    return kept;
+}
 
 std::string_view model_id(DetectorModel model) {
     switch(model) {case DetectorModel::nano:return "nano";case DetectorModel::yolox_s:return "small";
@@ -241,10 +257,62 @@ struct Detector::Impl {
         output_name=session.GetOutputNameAllocated(0,allocator).get();
     }
 };
-Detector::Detector(const DetectorOptions& options):impl_(std::make_unique<Impl>(options)) {}
+std::string detector_name(const DetectorOptions& options) {
+    return std::string(model_name(options.variant))+(options.companion.empty() ? "" : " + YOLOX-S")+(options.zoom ? " · zoom" : "");
+}
+namespace {
+const DetectorOptions& checked(const DetectorOptions& options) {
+    if(!options.companion.empty() && options.variant!=DetectorModel::rf_openimages)
+        throw std::invalid_argument("Combined detection needs the RF-DETR Open Images model");
+    return options;
+}
+}
+Detector::Detector(const DetectorOptions& options):impl_(std::make_unique<Impl>(checked(options))) {
+    if(!options.companion.empty()) {
+        auto companion=options;companion.model=options.companion;companion.variant=DetectorModel::yolox_s;companion.companion.clear();companion.zoom=false;
+        companion_=std::make_unique<Detector>(companion);
+    }
+}
 Detector::~Detector()=default;
 const ExecutionInfo& Detector::execution_info() const{return impl_->execution;}
 DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
+    if(!companion_)return detect_main(frame,stop);
+    const auto started=std::chrono::steady_clock::now();
+    auto result=detect_main(frame,stop);
+    auto other=companion_->detect(frame,stop);
+    std::vector<std::pair<std::vector<Detection>,std::array<float,4>>> extra;
+    extra.push_back({std::move(other.objects),{0.f,0.f,float(frame.width),float(frame.height)}}); // Whole frame: nothing is cut.
+    result.objects=hide_parent_duplicates(merge_zoom(std::move(result.objects),std::move(extra),frame.width,frame.height,.5f));
+    result.preprocess_ms+=other.preprocess_ms;result.inference_ms+=other.inference_ms;result.postprocess_ms+=other.postprocess_ms;
+    result.elapsed_ms=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-started).count();
+    if(!other.execution.fallback.empty() && result.execution.fallback.empty())result.execution.fallback="YOLOX-S: "+other.execution.fallback;
+    return result;
+}
+DetectionResult Detector::detect_main(const Frame& frame,std::stop_token stop) {
+    if(!impl_->options.zoom || frame.width<64 || frame.height<64)return detect_once(frame,stop);
+    const auto started=std::chrono::steady_clock::now();
+    auto result=detect_once(frame,stop);
+    const int tw=int(frame.width*zoom_tile),th=int(frame.height*zoom_tile);
+    std::vector<std::pair<std::vector<Detection>,std::array<float,4>>> tiles;
+    for(const int y0:{0,frame.height-th})for(const int x0:{0,frame.width-tw}) {
+        Frame tile;tile.sequence=frame.sequence;tile.timestamp=frame.timestamp;tile.width=tw;tile.height=th;tile.stride=tw*3;
+        tile.pixels.resize(std::size_t(tile.stride)*std::size_t(th));
+        for(int row=0;row<th;++row)
+            std::copy_n(frame.pixels.data()+std::size_t(y0+row)*std::size_t(frame.stride)+std::size_t(x0)*3,std::size_t(tile.stride),
+                tile.pixels.data()+std::size_t(row)*std::size_t(tile.stride));
+        auto part=detect_once(tile,stop);
+        for(auto& d:part.objects){d.left+=float(x0);d.right+=float(x0);d.top+=float(y0);d.bottom+=float(y0);}
+        result.preprocess_ms+=part.preprocess_ms;result.inference_ms+=part.inference_ms;result.postprocess_ms+=part.postprocess_ms;
+        tiles.push_back({std::move(part.objects),{float(x0),float(y0),float(x0+tw),float(y0+th)}});
+    }
+    result.objects=merge_zoom(std::move(result.objects),std::move(tiles),frame.width,frame.height,.5f);
+    if(impl_->options.variant==DetectorModel::openimages || impl_->options.variant==DetectorModel::rf_openimages)
+        result.objects=hide_parent_duplicates(std::move(result.objects));
+    result.elapsed_ms=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-started).count();
+    result.execution=impl_->execution;
+    return result;
+}
+DetectionResult Detector::detect_once(const Frame& frame,std::stop_token stop) {
     cancelled(stop);
     const auto started=std::chrono::steady_clock::now();
     const auto size=model_input_size(impl_->options.variant);

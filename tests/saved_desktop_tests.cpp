@@ -21,6 +21,9 @@
 #include <QTimer>
 #include <QListWidget>
 #include <QPushButton>
+#include <QTabWidget>
+#include <QToolButton>
+#include "frametrail/analysis_report.hpp"
 #include <QtTest/QTest>
 #include <fstream>
 #include <iostream>
@@ -49,6 +52,14 @@ void intake(const std::filesystem::path& fixtures,const std::filesystem::path& s
     auto* list=window.findChild<QListWidget*>(QStringLiteral("savedEvents"));
     auto* status=window.findChild<QLabel*>(QStringLiteral("analysisStatus"));
     require(analyse && !analyse->isEnabled() && !save->isVisible(),"Empty analysis needs player setup or exposes result actions");
+    {   // Settings show a readable model choice and the processing device.
+        auto* toggle=window.findChild<QToolButton*>(QStringLiteral("analysisSettings"));toggle->click();QTest::qWait(30);
+        auto* model_box=window.findChild<QComboBox*>(QStringLiteral("modelSelection"));
+        require(model_box && model_box->isVisible() && model_box->width()>=200 && window.findChild<QComboBox*>(QStringLiteral("analysisBackend")),
+            "Analysis settings hide the model choice or lack the device choice");
+        require(window.grab().save(text(root/"analysis-settings.png")),"Settings screenshot failed");
+        toggle->click();
+    }
     require(window.grab().save(text(root/"analysis-empty.png")),"Empty analysis screenshot failed");
     QMimeData remote;remote.setUrls({QUrl(QStringLiteral("https://example.invalid/video.mp4"))});
     QDragEnterEvent remote_event(QPoint(150,150),Qt::CopyAction,&remote,Qt::LeftButton,Qt::NoModifier);QApplication::sendEvent(&window,&remote_event);
@@ -66,6 +77,17 @@ void intake(const std::filesystem::path& fixtures,const std::filesystem::path& s
     wait([&]{return !window.analysing() && (save->isEnabled() || window.findChild<QPushButton*>(QStringLiteral("chooseVideo"))->isEnabled());},"Unicode-source analysis finalization");
     require(save->isEnabled(),status->text().toUtf8().constData());
     require(list->count()>0 && status->text().contains(QStringLiteral("completed")),"Appearance results were not presented");
+    {   // A fresh analysis opens on its report, which can be exported as a web page.
+        auto* tabs=window.findChild<QTabWidget*>(QStringLiteral("analysisTabs"));
+        require(tabs && tabs->currentIndex()==1 && window.report() && !window.report()->findings.empty() && window.report()->frame_details,
+            "Fresh analysis did not open its detailed report");
+        require(window.findChild<QPushButton*>(QStringLiteral("exportReport"))->isVisible(),"Report export is not offered");
+        require(window.grab().save(text(root/"analysis-report.png")),"Report screenshot failed");
+        window.export_report_html(text(root/"report.html"));
+        require(bytes(root/"report.html").starts_with("<!doctype html>"),"Report export failed");
+        fails([&]{window.export_report_html(text(root/"report.html"));},"Report export replaced a file without authorization");
+        tabs->setCurrentIndex(0);
+    }
     wait([&]{return window.displayed_timestamp().has_value();},"First reviewed Unicode-source frame");
     // Review mode: verdicts, auto-advance, progress text, export, and restore after reopening (below).
     require(!window.verdict(0) && window.review_summary().contains(QStringLiteral("Not reviewed")),"Fresh analysis already had verdicts");

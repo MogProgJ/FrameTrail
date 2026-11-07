@@ -13,7 +13,9 @@ inline QString available_model_path(const QString& nano_path, const QString& fil
     return QFileInfo::exists(optional)?optional:local;
 }
 
-inline QComboBox* model_selector(const QString& nano_path, QWidget* parent = nullptr) {
+inline constexpr int combined_index=8; // "Combined" entry: the trained RF-DETR plus YOLOX-S (Analysis only).
+inline constexpr int companion_role=Qt::UserRole+1;
+inline QComboBox* model_selector(const QString& nano_path, QWidget* parent = nullptr, bool combined = false) {
     auto* box=new QComboBox(parent);
     box->setObjectName(QStringLiteral("modelSelection"));
     box->setAccessibleName(QStringLiteral("Detection model"));
@@ -29,15 +31,27 @@ inline QComboBox* model_selector(const QString& nano_path, QWidget* parent = nul
     box->setItemData(6,QStringLiteral("Local experimental model. On 130 held-out photos, detected 3 of 15 known washing-machine targets and 0 of 19 billboard targets; measured cat/dog results retained. Small assistant-reviewed evidence; 615 labels do not imply accuracy for every category."),Qt::ToolTipRole);
     box->addItem(QStringLiteral("RF-DETR · Open Images (trained)"),available_model_path(nano_path,QStringLiteral("rfdetr_openimages.onnx")));
     box->setItemData(7,QStringLiteral("RF-DETR fine-tuned on Open Images (training/export.py). Only detects the categories it was trained on; its scores are in the training run's eval-test.json. CPU or DirectML GPU; automatic mode falls back to CPU if unavailable."),Qt::ToolTipRole);
+    if(combined) {
+        box->addItem(QStringLiteral("Combined · trained RF-DETR + YOLOX-S"),box->itemData(7));
+        box->setItemData(combined_index,small,companion_role);
+        box->setItemData(combined_index,QStringLiteral("Runs both models on every frame and merges their boxes: YOLOX-S's people, vehicles, bags and umbrellas "
+            "plus the trained model's 595 object types. About 1.5 times the trained model's time."),Qt::ToolTipRole);
+    }
     box->setToolTip(QStringLiteral("YOLOX: 80 categories. YOLO-World: 100, including fox, balloon and lantern. Open Images: 601 trained labels grouped into 597 categories, explicitly trained for foxes and many more types. World is experimental. All processing stays on this device. World M needs more compute. Broader vocabulary does not guarantee correct labels."));
     auto* items=qobject_cast<QStandardItemModel*>(box->model());
-    for(int index=0;index<box->count();++index)if(!QFileInfo::exists(box->itemData(index).toString())) {
+    for(int index=0;index<box->count();++index)if(!QFileInfo::exists(box->itemData(index).toString()) ||
+        (index==combined_index && !QFileInfo::exists(box->itemData(index,companion_role).toString()))) {
         items->item(index)->setEnabled(false);box->setItemText(index,box->itemText(index)+QStringLiteral(" · not installed"));
     }
     return box;
 }
 inline frametrail::DetectorModel selected_model(const QComboBox* box) {
+    if(box->currentIndex()==combined_index)return frametrail::DetectorModel::rf_openimages;
     return static_cast<frametrail::DetectorModel>(box->currentIndex());
+}
+// The YOLOX-S model run next to the main one, or empty.
+inline QString selected_companion(const QComboBox* box) {
+    return box->currentIndex()==combined_index ? box->currentData(companion_role).toString() : QString{};
 }
 inline QComboBox* backend_selector(QWidget* parent=nullptr) {
     auto* box=new QComboBox(parent);box->setObjectName(QStringLiteral("backendSelection"));

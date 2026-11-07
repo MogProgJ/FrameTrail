@@ -16,6 +16,8 @@ public:
     void set_playhead(std::optional<double> seconds);
     void set_selected(std::optional<std::uint64_t> id);
     [[nodiscard]] bool empty() const {return spans_.empty();}
+    // The appearance visible at that time that started last, otherwise the next one to start.
+    [[nodiscard]] std::optional<std::uint64_t> appearance_at(double seconds) const;
     std::function<void(std::uint64_t)> activated;
     QSize sizeHint() const override;
     QSize minimumSizeHint() const override;
