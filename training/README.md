@@ -125,7 +125,10 @@ Needs about 100 GB of disk (data ~35 GB at the default cap, metadata ~6 GB, chec
 
 ## Use a trained model in the app
 
-Run `-Action fetch` from the laptop. It downloads `runs/<run>/rfdetr_openimages.onnx` (about 115 MB for RF-DETR Small) and puts it in `models\` and in `build\windows-msvc\Release\models\`, where the app looks. Later builds copy it from `models\` too. Start FrameTrail and pick **RF-DETR · Open Images (trained)**. From the command line: `--model-type rfdetr-oi`.
+**From Kaggle or a rented machine:** download the `results` folder (on Kaggle: the version's Output tab, `keep/results`, or the whole output as a zip), then from the FrameTrail folder run
+`powershell -ExecutionPolicy Bypass -File training\cloud\install-model.ps1 -From "$HOME\Downloads"` (a folder or a .zip). It installs the model only if its ONNX check passed, keeps the model installed before as `models\rfdetr_openimages-<run>.onnx` (the app loads one trained Open Images model at a time), and saves the scores in `runs\full-small\`.
+
+**From the cluster (history):** run `-Action fetch` from the laptop. It downloads `runs/<run>/rfdetr_openimages.onnx` (about 115 MB for RF-DETR Small) and puts it in `models\` and in `build\windows-msvc\Release\models\`, where the app looks. Later builds copy it from `models\` too. Start FrameTrail and pick **RF-DETR · Open Images (trained)**. From the command line: `--model-type rfdetr-oi`.
 
 The app accepts the file because of its metadata (profile `rfdetr-oi`, the 615-category vocabulary and the 512 px preprocessing), not a pinned checksum, so every retrained model drops in the same way. Classes the model was not trained on are never reported. Saved runs, tracking, appearance counting and CSV export work as with the other models, because classes keep the app's usual category IDs.
 
