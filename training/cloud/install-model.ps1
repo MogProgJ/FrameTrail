@@ -24,7 +24,7 @@ if ($source -like '*.zip') {
 $model = Get-ChildItem -Path $source -Recurse -Filter 'rfdetr_openimages.onnx' -File |
     Sort-Object @{ Expression = { $_.Directory.Name -eq 'results' }; Descending = $true }, @{ Expression = 'LastWriteTime'; Descending = $true } |
     Select-Object -First 1
-if (-not $model) { throw "No rfdetr_openimages.onnx under $source. Download keep\results from the Kaggle output first." }
+if (-not $model) { if ($unpacked) { Remove-Item -Recurse -Force $unpacked }; throw "No rfdetr_openimages.onnx under $source. Download keep\results from the Kaggle output first." }
 $folder = $model.Directory.FullName
 $summaryFile = Join-Path $folder 'rfdetr_openimages.json'
 if (-not (Test-Path $summaryFile)) { throw "rfdetr_openimages.json is missing next to $($model.FullName); download it too." }
@@ -75,5 +75,6 @@ foreach ($target in @((Join-Path $repo 'models'), (Join-Path $repo 'build\window
     Copy-Item -Force $model.FullName $installed
     Write-Output "Installed $installed"
 }
+if ($unpacked) { Remove-Item -Recurse -Force $unpacked }   # the unpacked copy of the .zip
 Write-Output 'Done. Open the app and pick the detector named RF-DETR ... Open Images (trained). Close the app before running this again.'
 Write-Output 'To go back to the old model: copy the kept rfdetr_openimages-<name>.onnx over rfdetr_openimages.onnx.'
