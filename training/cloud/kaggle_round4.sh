@@ -11,11 +11,12 @@
 # Add Input -> Your Work -> that notebook -> its output. For every later session also add THIS notebook's latest
 # version the same way (both Inputs together); every keep folder under /kaggle/input is searched.
 #
-# Stages (ROUND4_STAGES, default "data check stock train"; each skips what is already done):
+# Stages (ROUND4_STAGES, default "check data stock train"; each skips what is already done):
+#   check  the pipeline's own tests in this environment, including the loss against rfdetr: a broken loss must not
+#          cost GPU hours. It runs right after the Python environment is built, before any data is downloaded, so
+#          a failure costs minutes (in the first session it ran after the data and cost 80)
 #   data   the same 38,881 Open Images training photos as rounds 2 and 3, stored at 640 px, plus COCO train2017
 #          (about 117,000 photos, downloaded one by one: about 18 GB) with what each photo vouches for (mix_coco.py)
-#   check  the pipeline's own tests in this environment, including the loss against rfdetr: a broken loss must not
-#          cost GPU hours
 #   stock  the stock COCO-pretrained RF-DETR Small on COCO val2017 (yardstick A), once: what this architecture
 #          reaches on the 80 types. It does not stop the run if it fails
 #   train  6 epochs from the round 3 checkpoint (kit/round4.env). Training stops at the end of an epoch when the
@@ -42,7 +43,7 @@ COCO_VAL_SHA256="${COCO_VAL_SHA256:-4f7e2ccb2866ec5041993c9cf2a952bbed69647b115d
 export TRAIN_CAP="${TRAIN_CAP:-100}"            # Rounds 2 and 3's value: the same Open Images photos
 export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
 export WORKERS="${WORKERS:-4}"
-STAGES="${ROUND4_STAGES:-data check stock train}"
+STAGES="${ROUND4_STAGES:-check data stock train}"
 EPOCHS_TOTAL="${EPOCHS_TOTAL:-6}"
 SESSION_LIMIT_HOURS="${SESSION_LIMIT_HOURS:-12}"
 RESERVE_HOURS="${RESERVE_HOURS:-1.0}"
@@ -110,11 +111,23 @@ mkdir -p "$FT_ROOT/logs"
 WATCHER=
 trap '[[ -n "$WATCHER" ]] && kill $WATCHER 2>/dev/null; pkill -P $SAVER 2>/dev/null || true; kill $SAVER 2>/dev/null || true; save; log "saved to $KEEP"' EXIT
 
-log "setup and Open Images data (each skips what is done)"
+log "setup (skips what is done)"
 want train || want stock || export ALLOW_NO_GPU=1
-bash "$PHASE2" setup data
+bash "$PHASE2" setup
 source "$FT_ROOT/training/kit/env.sh"
 PY="${PY:-$FT_VENV/bin/python}"
+
+if want check; then
+    log "check: the pipeline's tests in this environment (the loss against rfdetr included)"
+    # Run from inside tests/, by file name. "python -m unittest tests.test_x" from the repository failed on Kaggle
+    # with "No module named 'tests.test_x'": tests/ has no __init__.py, and a package that does (one of the
+    # installed packages ships a top-level "tests") wins over it wherever it sits on the path.
+    ( cd "$REPO/tests" && "$PY" -m unittest test_mix_coco test_training_pipeline 2>&1 | tail -n 25 ) || {
+        echo "The tests failed here; training would run on code that does not do what it should. Nothing was trained." >&2; exit 1; }
+fi
+
+log "Open Images data (skips what is done)"
+bash "$PHASE2" data
 DATASET="$FT_ROOT/data/full"
 COCO="$FT_ROOT/data/coco"
 [[ -f "$DATASET/dataset.json" ]] || { echo "data/full was not built" >&2; exit 1; }
@@ -150,12 +163,6 @@ if want data; then
     cp -f "$DATASET/mix_coco.json" "$FT_ROOT/runs/$RUN/mix_coco.json"
     df -h "$FT_ROOT" | tail -n 1
     save
-fi
-
-if want check; then
-    log "check: the pipeline's tests in this environment (the loss against rfdetr included)"
-    ( cd "$REPO" && "$PY" -m unittest tests.test_mix_coco tests.test_training_pipeline 2>&1 | tail -n 12 ) || {
-        echo "The tests failed here; training would run on code that does not do what it should. Nothing was trained." >&2; exit 1; }
 fi
 
 if want stock && [[ ! -f "$FT_ROOT/runs/$RUN/yardstick-stock.json" ]]; then
