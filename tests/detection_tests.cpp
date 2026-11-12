@@ -34,6 +34,16 @@ void contract() {
     const auto hidden=frametrail::hide_parent_duplicates({animal,dog,far_animal,person});
     require(hidden.size()==3 && std::none_of(hidden.begin(),hidden.end(),[](const auto& d){return d.class_id==106 && d.left<100;}),
         "Parent box on a child box was not hidden, or an unrelated box was");
+    // Second labels the hierarchy does not nest: only the listed one gives way, only on the same object, and they stay unrelated for tracking.
+    const auto label=[](std::string_view name){for(int id=0;id<frametrail::recognition_classes;++id)if(frametrail::class_name(id)==name)return id;throw std::runtime_error("No such label");};
+    const int wheel_id=label("wheel"),bicycle_wheel_id=label("bicycle wheel"),tire_id=label("tire"),clothing_id=label("clothing");
+    const frametrail::Detection wheel{wheel_id,.9f,10,10,50,50},bicycle_wheel{bicycle_wheel_id,.6f,10,10,50,50},other_wheel{wheel_id,.9f,200,200,240,240},
+        tire{tire_id,.5f,10,10,50,50},wearer{0,.5f,100,100,200,300},clothing{clothing_id,.9f,100,120,200,300},lone_clothing{clothing_id,.9f,400,400,500,500};
+    const auto kept_labels=frametrail::hide_parent_duplicates({wheel,bicycle_wheel,other_wheel,tire,wearer,clothing,lone_clothing});
+    const auto kept_count=[&](int id){return std::count_if(kept_labels.begin(),kept_labels.end(),[&](const auto& d){return d.class_id==id;});};
+    require(kept_labels.size()==4 && kept_count(bicycle_wheel_id)==1 && kept_count(wheel_id)==1 && kept_count(tire_id)==0 && kept_count(0)==1 && kept_count(clothing_id)==1,
+        "A second label on one object was not hidden, or a separate object was");
+    require(!frametrail::related_classes(clothing_id,0),"Clothing and person must stay separate for tracking");
     require(frametrail::parse_model("world-m")==frametrail::DetectorModel::world_m &&
         frametrail::model_class_count(frametrail::DetectorModel::world_s)==100 && frametrail::class_name(80)=="fox" &&
         frametrail::class_name(86)=="balloon" && frametrail::class_name(99)=="shopping cart","World vocabulary/profile mapping wrong");

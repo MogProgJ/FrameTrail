@@ -45,3 +45,7 @@ Thumbs.db
 *.pth
 *.pt
 *.onnx
+
+# Local test footage (Pexels clips)
+/test-videos/
+/saved analyses/

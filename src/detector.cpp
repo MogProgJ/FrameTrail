@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <array>
 #include <cmath>
+#include <optional>
 #include <stdexcept>
 
 namespace frametrail {
@@ -46,11 +47,23 @@ bool related_classes(int a,int b) {
         [](const auto& x,const auto& y){return x.first<y.first;});
     return std::any_of(parents.first,parents.second,[&](const auto& pair){return is_ancestor(pair.second,b);});
 }
+namespace {
+// {hidden, kept}: two labels for one thing that the Open Images hierarchy does not nest. Wheel and tire give way to the
+// more exact label, clothing to the person wearing it. Not in `is_ancestor`, because the tracker lets a track change
+// between nested classes, and a person must not turn into clothing. Their boxes differ more than a parent's and child's.
+constexpr std::array<std::pair<short,short>,4> same_object_labels{{{600,131},{562,600},{562,131},{187,0}}}; // wheel<bicycle wheel, tire<wheel, tire<bicycle wheel, clothing<person
+constexpr float same_object_iou=.5f;
+bool gives_way(const Detection& candidate,const Detection& other,float iou) {
+    if(is_ancestor(candidate.class_id,other.class_id) && overlap(candidate,other)>iou)return true;
+    const std::pair<short,short> pair{short(candidate.class_id),short(other.class_id)};
+    return std::find(same_object_labels.begin(),same_object_labels.end(),pair)!=same_object_labels.end() && overlap(candidate,other)>same_object_iou;
+}
+}
 std::vector<Detection> hide_parent_duplicates(std::vector<Detection> detections,float iou) {
     std::vector<Detection> kept;
     for(const auto& candidate:detections)
-        if(std::none_of(detections.begin(),detections.end(),[&](const Detection& other){
-            return is_ancestor(candidate.class_id,other.class_id) && overlap(candidate,other)>iou;}))kept.push_back(candidate);
+        if(std::none_of(detections.begin(),detections.end(),[&](const Detection& other){return gives_way(candidate,other,iou);}))
+            kept.push_back(candidate);
     return kept;
 }
 std::vector<Detection> merge_zoom(std::vector<Detection> whole,std::vector<std::pair<std::vector<Detection>,std::array<float,4>>> tiles,
@@ -204,6 +217,7 @@ struct Detector::Impl {
     std::string input_name,output_name;
     std::unique_ptr<DmlInference> gpu;
     ExecutionInfo execution;
+    std::optional<rfdetr::Calibration> calibration;
     explicit Impl(const DetectorOptions& supplied):options(supplied) {
         thresholds(options.confidence,options.nms_iou);
         backend_id(options.backend);
@@ -211,6 +225,9 @@ struct Detector::Impl {
         if (!std::filesystem::is_regular_file(options.model))
             throw std::runtime_error("Detection model missing. Run scripts/fetch-model.ps1 and rebuild.");
         env.DisableTelemetryEvents();
+        if(options.variant==DetectorModel::rf_openimages && options.calibrate)
+            if(const auto file=rfdetr::calibration_path(options.model);std::filesystem::is_regular_file(file))
+                calibration=rfdetr::read_calibration(file);
         if(options.backend!=DetectorBackend::cpu) {
             try{gpu=std::make_unique<DmlInference>(options);execution=gpu->info();return;}
             catch(const std::exception& e){if(options.backend==DetectorBackend::directml)throw;execution.fallback=e.what();}
@@ -275,6 +292,7 @@ Detector::Detector(const DetectorOptions& options):impl_(std::make_unique<Impl>(
 }
 Detector::~Detector()=default;
 const ExecutionInfo& Detector::execution_info() const{return impl_->execution;}
+int Detector::calibrated_classes() const{return impl_->calibration ? impl_->calibration->classes:0;}
 DetectionResult Detector::detect(const Frame& frame,std::stop_token stop) {
     if(!companion_)return detect_main(frame,stop);
     const auto started=std::chrono::steady_clock::now();
@@ -351,7 +369,8 @@ DetectionResult Detector::detect_once(const Frame& frame,std::stop_token stop) {
     const auto inferred=std::chrono::steady_clock::now();
     cancelled(stop);
     DetectionResult result;
-    result.objects=rf ? rfdetr::postprocess(output,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou):
+    result.objects=rf ? rfdetr::postprocess(output,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,
+            impl_->calibration ? &*impl_->calibration:nullptr):
         world ? yolo_world::postprocess(output,world_input,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,impl_->options.variant):
         yolox::postprocess(output,legacy_input.ratio,frame.width,frame.height,impl_->options.confidence,impl_->options.nms_iou,size);
     if(impl_->options.variant==DetectorModel::openimages || impl_->options.variant==DetectorModel::rf_openimages)

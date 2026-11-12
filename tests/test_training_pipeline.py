@@ -192,6 +192,19 @@ class MissingLabelTests(unittest.TestCase):
         self.assertEqual(table[7], ([1, 2], [0]))
         self.assertEqual(table[8], ([], []))
 
+    def test_unknown_classes_are_not_pushed_even_with_boxes(self):
+        coco = {'categories': self.coco['categories'],
+                'images': [{'id': 7, 'oi_verified_positive': [2], 'oi_verified_negative': [], 'oi_unknown': [2, 3]}]}
+        self.assertEqual(missing_labels.image_table(coco)[7], ([1], [1, 2]))
+
+    def test_image_ids_must_be_the_annotation_files(self):
+        table = missing_labels.image_table(self.coco)
+        missing_labels.check_targets(table, [7, 8], [[1], []])            # Dog boxes on image 7: consistent.
+        with self.assertRaises(RuntimeError):
+            missing_labels.check_targets(table, [8], [[1]])               # Image 8 lists no Dog: the ids are off.
+        with self.assertRaises(RuntimeError):
+            missing_labels.check_targets(table, [99], [[]])
+
     @unittest.skipUnless(importlib.util.find_spec('torch'), 'needs torch')
     def test_weights(self):
         table = missing_labels.image_table(self.coco, {2: {1}, 1: set(), 3: set()})

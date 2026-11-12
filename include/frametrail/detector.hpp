@@ -56,6 +56,9 @@ struct DetectorOptions {
     // wins among same or related classes on one object). Empty: no companion. Only with an RF-DETR Open Images main
     // model, whose vocabulary already contains YOLOX's 80 categories.
     std::filesystem::path companion;
+    // RF-DETR Open Images only: apply <model>.calibration.csv when it sits next to the model (see rfdetr::Calibration).
+    // Off shows the model's raw scores, for measuring.
+    bool calibrate{true};
 };
 // "RF-DETR Open Images (trained)", or "... + YOLOX-S" for a combined detector: names a run's detector in reports and reviews.
 std::string detector_name(const DetectorOptions& options);
@@ -72,7 +75,8 @@ bool is_ancestor(int ancestor, int category);
 // a detector may flicker between them on one object, so a track may change between them.
 bool related_classes(int a, int b);
 // Drops a box whose class is a parent of another box's class on the same object (IoU above `iou`), so a dog shows
-// as Dog rather than Dog plus Animal. Applied to the Open Images models' detections.
+// as Dog rather than Dog plus Animal. Also drops a few second labels the hierarchy does not nest (wheel on a bicycle
+// wheel, tire on a wheel, clothing on a person; IoU above 0.5). Applied to the Open Images models' detections.
 std::vector<Detection> hide_parent_duplicates(std::vector<Detection> detections, float iou = 0.7f);
 
 // Explicit contracts for the publisher's Nano (416) and S (640) 0.1.1rc0 exports.
@@ -113,7 +117,21 @@ inline constexpr int input_size=512, queries=300, attributes=619;
 inline constexpr std::string_view checkpoint_sha256="1b72fc6474780a6805e919db5b1393d7e78b95209debafafce98c929c633f0d7";
 std::string_view checkpoint_for(DetectorModel model); // Empty when the profile pins no checkpoint.
 std::vector<float> preprocess(const Frame& frame);
-std::vector<Detection> postprocess(std::span<const float> output,int width,int height,float confidence,float nms_iou);
+// Per-class score calibration, fitted by training/calibrate.py on human-verified validation images:
+// score = sigmoid(slope * logit + offset), an estimate of "chance this box is right". The trained model's raw scores
+// are not comparable between classes (a correct Bowl box often scores 0.15), and one confidence setting serves all.
+// Classes without an entry keep their raw score.
+struct Calibration {
+    std::array<float,recognition_classes> slope, offset;
+    int classes{}; // Entries read from the file.
+    Calibration(){slope.fill(1.f);offset.fill(0.f);}
+};
+// File next to the model: rfdetr_openimages.onnx -> rfdetr_openimages.calibration.csv.
+std::filesystem::path calibration_path(const std::filesystem::path& model);
+// Reads "class_id,slope,offset[,...]" rows after a header line. Throws std::runtime_error on a malformed file.
+Calibration read_calibration(const std::filesystem::path& file);
+std::vector<Detection> postprocess(std::span<const float> output,int width,int height,float confidence,float nms_iou,
+    const Calibration* calibration=nullptr);
 }
 
 class Detector {
@@ -124,6 +142,7 @@ public:
     Detector& operator=(const Detector&) = delete;
     DetectionResult detect(const Frame& frame, std::stop_token stop = {});
     const ExecutionInfo& execution_info() const;
+    int calibrated_classes() const; // 0 when no score calibration is applied.
 private:
     DetectionResult detect_once(const Frame& frame, std::stop_token stop);
     DetectionResult detect_main(const Frame& frame, std::stop_token stop);

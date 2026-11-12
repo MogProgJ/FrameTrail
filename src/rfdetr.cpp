@@ -1,7 +1,10 @@
 #include "frametrail/detector.hpp"
 #include <algorithm>
 #include <cmath>
+#include <fstream>
+#include <sstream>
 #include <stdexcept>
+#include <string>
 
 namespace frametrail::rfdetr {
 std::vector<float> preprocess(const Frame& frame) {
@@ -28,7 +31,34 @@ std::vector<float> preprocess(const Frame& frame) {
     }
     return tensor;
 }
-std::vector<Detection> postprocess(std::span<const float> output,int width,int height,float confidence,float nms_iou) {
+std::filesystem::path calibration_path(const std::filesystem::path& model) {
+    auto file=model;file.replace_extension(".calibration.csv");return file;
+}
+Calibration read_calibration(const std::filesystem::path& file) {
+    std::ifstream in(file);
+    if(!in)throw std::runtime_error("Cannot read score calibration: "+file.string());
+    Calibration table;std::array<bool,recognition_classes> seen{};std::string line;
+    const auto bad=[&](int number){return std::runtime_error("Invalid score calibration, line "+std::to_string(number)+": "+file.string());};
+    if(!std::getline(in,line) || line.rfind("class_id,slope,offset",0)!=0)throw bad(1);
+    for(int number=2;std::getline(in,line);++number) {
+        if(!line.empty() && line.back()=='\r')line.pop_back();
+        if(line.empty())continue;
+        // Three numbers; anything after them (counts, the label) is for readers.
+        std::istringstream row(line);std::string id_text,slope_text,offset_text;
+        if(!std::getline(row,id_text,',') || !std::getline(row,slope_text,',') || !std::getline(row,offset_text,','))throw bad(number);
+        int id{};float slope{},offset{};
+        try{std::size_t a{},b{},c{};id=std::stoi(id_text,&a);slope=std::stof(slope_text,&b);offset=std::stof(offset_text,&c);
+            if(a!=id_text.size() || b!=slope_text.size() || c!=offset_text.size())throw bad(number);}
+        catch(const std::logic_error&){throw bad(number);}
+        if(id<0 || id>=recognition_classes || seen[id] || !std::isfinite(slope) || !std::isfinite(offset) ||
+           slope<.1f || slope>10.f || std::abs(offset)>20.f)throw bad(number);
+        seen[id]=true;table.slope[id]=slope;table.offset[id]=offset;++table.classes;
+    }
+    if(table.classes==0)throw bad(2);
+    return table;
+}
+std::vector<Detection> postprocess(std::span<const float> output,int width,int height,float confidence,float nms_iou,
+    const Calibration* calibration) {
     if(output.size()!=std::size_t(queries)*attributes || width<=0 || height<=0 ||
        !std::isfinite(confidence) || confidence<=0 || confidence>1 ||
        !std::isfinite(nms_iou) || nms_iou<=0 || nms_iou>1 ||
@@ -36,7 +66,8 @@ std::vector<Detection> postprocess(std::span<const float> output,int width,int h
         throw std::invalid_argument("Invalid RF output/geometry/threshold contract");
     struct Score{int query,cid;float value;};std::vector<Score> scores;
     for(int q=0;q<queries;++q)for(int cid=0;cid<recognition_classes;++cid) {
-        const float logit=output[std::size_t(q)*attributes+4+cid];
+        float logit=output[std::size_t(q)*attributes+4+cid];
+        if(calibration)logit=calibration->slope[cid]*logit+calibration->offset[cid];
         const float p=logit>=0 ? 1.f/(1.f+std::exp(-logit)):std::exp(logit)/(1.f+std::exp(logit));
         if(p>=confidence)scores.push_back({q,cid,p});
     }

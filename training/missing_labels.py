@@ -8,6 +8,8 @@ cups are background, and a box labelled Dog teaches it that the dog is not an An
 - classes human-verified on the image (present or absent) and classes with boxes: weight 1, as before;
 - parents of a class that is present (Dog present: Animal, Carnivore, Mammal): weight 0, because they are true
   but have no box of their own to be matched to;
+- classes an image lists as unknown (`oi_unknown`, written by mix_coco.py: Van on a COCO photo with a car, a type
+  that COCO only marks as a crowd): weight 0 as well, even when the class also has boxes on the image;
 - every other class: `unverified_weight`. 0 ignores them entirely, which removes nearly all "absent" signal on a
   595-class image and invites false detections; 1 is rfdetr's plain loss. A value in between keeps some.
 
@@ -21,6 +23,7 @@ import json
 from pathlib import Path
 
 RFDETR_VERSION = '1.11.2'
+CHECK_IMAGES = 2000
 
 
 def label_index(categories: list[dict]) -> dict[int, int]:
@@ -29,7 +32,8 @@ def label_index(categories: list[dict]) -> dict[int, int]:
 
 
 def image_table(coco: dict, ancestors: dict[int, set[int]] | None = None) -> dict[int, tuple[list[int], list[int]]]:
-    """Image id -> (labels verified on it, labels that are true by the hierarchy but have no box)."""
+    """Image id -> (labels verified on it, labels not to push towards "absent": parents of present classes that
+    have no box of their own, and the classes the image lists as unknown)."""
     labels = label_index(coco['categories'])
     table = {}
     for image in coco['images']:
@@ -38,7 +42,7 @@ def image_table(coco: dict, ancestors: dict[int, set[int]] | None = None) -> dic
         parents = set()
         for cat in positive:
             parents |= (ancestors or {}).get(cat, set())
-        parents -= verified
+        parents = (parents - verified) | set(image.get('oi_unknown', ()))
         table[int(image['id'])] = (sorted(labels[c] for c in verified if c in labels),
                                    sorted(labels[c] for c in parents if c in labels))
     return table
@@ -60,6 +64,20 @@ def class_weights(table: dict, image_ids: list[int], classes: int, columns: int,
     return weights[:, None, :]
 
 
+def check_targets(table: dict, image_ids: list[int], labels: list[list[int]]) -> None:
+    """Stop if the trainer's image ids are not the annotation file's: every box label of an image is verified on
+    that image by construction, so a label outside its entry means the weights would go to the wrong images."""
+    for image_id, image_labels in zip(image_ids, labels):
+        entry = table.get(image_id)
+        if entry is None:
+            raise RuntimeError(f'--unverified-weight: the trainer reports image id {image_id}, which the training '
+                               f'annotations do not contain')
+        stray = set(image_labels) - set(entry[0])
+        if stray:
+            raise RuntimeError(f'--unverified-weight: image id {image_id} has boxes of labels {sorted(stray)} that its '
+                               f'annotation entry does not list; the image ids do not match the annotation file')
+
+
 def install(train_annotations: Path, classes: int, unverified_weight: float,
             ancestors: dict[int, set[int]] | None = None) -> dict:
     """Patch rfdetr's classification loss for this process. Returns a summary for the run record."""
@@ -73,6 +91,7 @@ def install(train_annotations: Path, classes: int, unverified_weight: float,
     coco = json.loads(train_annotations.read_text(encoding='utf-8'))
     table = image_table(coco, ancestors)
     original = criterion.SetCriterion.loss_labels
+    checked = [0]
 
     def loss_labels(self, outputs, targets, indices, num_boxes, log=True, matched_targets=None):
         src_logits = outputs['pred_logits']
@@ -106,6 +125,9 @@ def install(train_annotations: Path, classes: int, unverified_weight: float,
             pos_weights[tuple(pos_ind)] = (t * valid_mask).to(pos_weights.dtype)
             neg_weights[tuple(pos_ind)] = torch.where(keep, (1 - t).to(neg_weights.dtype), neg_weights[tuple(pos_ind)])
         image_ids = [int(target['image_id']) for target in targets]
+        if checked[0] < CHECK_IMAGES:      # The first images of a run: are these ids the annotation file's?
+            check_targets(table, image_ids, [target['labels'].tolist() for target in targets])
+            checked[0] += len(image_ids)
         weights = class_weights(table, image_ids, classes, src_logits.shape[-1], unverified_weight)
         neg_weights = neg_weights * weights.to(device=src_logits.device, dtype=neg_weights.dtype)
         loss_ce = neg_weights * src_logits - F.logsigmoid(src_logits) * (pos_weights + neg_weights)
@@ -123,4 +145,5 @@ def install(train_annotations: Path, classes: int, unverified_weight: float,
     parents = sum(len(p) for _, p in table.values())
     return {'unverified_weight': unverified_weight, 'images': len(table),
             'verified_labels_per_image': round(verified / max(1, len(table)), 2),
-            'parent_labels_ignored_per_image': round(parents / max(1, len(table)), 2)}
+            'parent_labels_ignored_per_image': round(parents / max(1, len(table)), 2),   # Parents and unknown classes.
+            'images_listing_unknown_classes': sum(1 for i in coco['images'] if i.get('oi_unknown'))}

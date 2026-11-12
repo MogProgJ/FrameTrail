@@ -1,7 +1,9 @@
 [CmdletBinding()]
 param(
     # Video files, or a folder of them. Short clips are best (the whole video is analysed, up to -MaxFrames).
-    [Parameter(Mandatory)][string[]]$Videos,
+    [string[]]$Videos=@(),
+    # Or a text file with one video path per line (an earlier check's videos.txt), to repeat the same check.
+    [string]$VideoList,
     # More trained RF-DETR Open Images models to try, as name=path (for example round3=C:\models\rfdetr_openimages-round3.onnx).
     [string[]]$Models=@(),
     [ValidateRange(0.05,0.95)][double]$Confidence=0.35,
@@ -19,6 +21,8 @@ $modelDir=Join-Path $root 'models'
 $yolox=Join-Path $modelDir 'yolox_s.onnx'
 $trained=Join-Path $modelDir 'rfdetr_openimages.onnx'
 foreach($file in @($yolox,$trained)) { if(-not (Test-Path -LiteralPath $file)) { throw "Missing model: $file" } }
+if($VideoList) { $Videos+=@(Get-Content -LiteralPath $VideoList | Where-Object { $_.Trim() }) }
+if(-not $Videos) { throw 'Give -Videos or -VideoList.' }
 $files=@()
 foreach($item in $Videos) {
     if(Test-Path -LiteralPath $item -PathType Container) { $files+=Get-ChildItem -LiteralPath $item -File | Where-Object { $_.Extension -in '.mp4','.mkv','.mov','.avi','.webm' } }

@@ -38,6 +38,7 @@ void help() {
                  "  --confidence <n>   Confidence in (0,1], default 0.35\n"
                  "  --zoom             Also detect on four enlarged quarters of each frame (small objects; slower)\n"
                  "  --combine <model>  Also run this YOLOX-S model and merge boxes (with --model-type rfdetr-oi)\n"
+                 "  --raw-scores       Ignore <model>.calibration.csv next to an rfdetr-oi model (also on analyse)\n"
                  "  --detections <csv> Export detections (requires --detect)\n"
                  "  --track            Track people/vehicles (requires --detect)\n"
                  "  --association <id> greedy (default), repair (experimental global repair)\n"
@@ -114,6 +115,7 @@ int analyse(const std::vector<std::string>& args) {
         const auto& option=args[i];
         if(!seen.insert(option).second)throw std::runtime_error("Duplicate option: "+option);
         if(option=="--zoom"){config.detector.zoom=true;continue;}
+        if(option=="--raw-scores"){config.detector.calibrate=false;continue;}
         if(++i==args.size())throw std::runtime_error("Missing value for "+option);
         const auto& value=args[i];
         if(option=="--detect")model=path_from_utf8(value);
@@ -213,6 +215,7 @@ int run(const std::vector<std::string>& args) {
         if (!seen.insert(option).second) throw std::runtime_error("Duplicate option: " + option);
         if (option == "--track") { tracking = true; continue; }
         if (option == "--zoom") { detector_options.zoom = true; continue; }
+        if (option == "--raw-scores") { detector_options.calibrate = false; continue; }
         if (option != "--csv" && option != "--preview" && option != "--max-frames" && option != "--detect" && option != "--detections" &&
             option != "--tracks" && option != "--events" && option != "--line" && option != "--direction" && option != "--classes" && option != "--save-run" && option != "--profile" && option != "--model-type" && option != "--confidence" && option != "--backend" && option != "--gpu-device" && option != "--association" && option != "--combine") {
             throw std::runtime_error("Unknown option: " + option);
@@ -432,7 +435,7 @@ int run(const std::vector<std::string>& args) {
         detections_csv.close();
         if (!detections_csv) throw std::runtime_error("Failed to finish detection CSV");
     }
-    if (detector) std::cout << "Execution provider: " << detector->execution_info().provider << "\nRuntime: " << detector->execution_info().runtime << "\nDevice: " << detector->execution_info().device << "\nFallback: " << detector->execution_info().fallback << "\nModel: " << frametrail::model_name(detector_options.variant) << "\nDetections across frames: " << object_count
+    if (detector) std::cout << "Execution provider: " << detector->execution_info().provider << "\nRuntime: " << detector->execution_info().runtime << "\nDevice: " << detector->execution_info().device << "\nFallback: " << detector->execution_info().fallback << "\nModel: " << frametrail::model_name(detector_options.variant) << "\nScore calibration: " << (detector->calibrated_classes() ? std::to_string(detector->calibrated_classes())+" classes" : std::string("none")) << "\nDetections across frames: " << object_count
         << "\nAverage detection (ms/frame): " << detection_ms/count << '\n';
     for (auto* stream : {&tracks_csv,&events_csv}) if (stream->is_open()) {
         stream->close();

@@ -54,13 +54,17 @@ foreach ($target in @((Join-Path $repo 'models'), (Join-Path $repo 'build\window
     if ($target -like '*Release*' -and -not (Test-Path (Split-Path -Parent $target))) { continue }
     New-Item -ItemType Directory -Force $target | Out-Null
     $installed = Join-Path $target 'rfdetr_openimages.onnx'
+    # Score calibration (training\calibrate.py) belongs to one model: it travels with its model and never stays behind for another.
+    $table = Join-Path $target 'rfdetr_openimages.calibration.csv'
+    $newTable = Join-Path $folder 'rfdetr_openimages.calibration.csv'
+    $label = 'previous'
     if (Test-Path $installed) {
         if ((Get-FileHash $installed).Hash -eq (Get-FileHash $model.FullName).Hash) {
             Write-Output "Already installed: $installed"
+            if (Test-Path $newTable) { Copy-Item -Force $newTable $table; Write-Output "Installed $table" }
             continue
         }
         # Name the backup after the run it came from (the pilot's runs\pilot-small model has the same hash).
-        $label = 'previous'
         foreach ($candidate in (Get-ChildItem -Path (Join-Path $repo 'runs') -Recurse -Filter 'rfdetr_openimages.onnx' -File -ErrorAction SilentlyContinue)) {
             if ($candidate.Directory.Name -ne $Run -and (Get-FileHash $candidate.FullName).Hash -eq (Get-FileHash $installed).Hash) {
                 $label = $candidate.Directory.Name; break
@@ -72,8 +76,13 @@ foreach ($target in @((Join-Path $repo 'models'), (Join-Path $repo 'build\window
             Write-Output "Kept the model that was installed as $backup"
         }
     }
+    if (Test-Path $table) {
+        Move-Item -Force $table (Join-Path $target "rfdetr_openimages-$label.calibration.csv")
+        Write-Output "Kept the old model's score calibration as rfdetr_openimages-$label.calibration.csv"
+    }
     Copy-Item -Force $model.FullName $installed
     Write-Output "Installed $installed"
+    if (Test-Path $newTable) { Copy-Item -Force $newTable $table; Write-Output "Installed $table" }
 }
 if ($unpacked) { Remove-Item -Recurse -Force $unpacked }   # the unpacked copy of the .zip
 Write-Output 'Done. Open the app and pick the detector named RF-DETR ... Open Images (trained). Close the app before running this again.'

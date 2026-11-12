@@ -186,7 +186,17 @@ new, old = (json.load(open(p)) for p in sys.argv[1:3])
 for key, label in (('map50', 'mAP@0.5'), ('map50_people_and_vehicles', 'people and vehicles')):
     print(f'{label:22s} round3 {new[key]:.4f}   phase2 {old[key]:.4f}   change {new[key] - old[key]:+.4f}')
 PY
-        echo "DONE: download /kaggle/working/keep/results-round3 (the app model is rfdetr_openimages.onnx)."
+        # One file to download, at the top of the Output tab: everything but the checkpoint (that stays in keep/ for later runs).
+        "$PY" - "$KEEP/results-round3" "$(dirname "$KEEP")/results-round3.zip" <<'PY' || true
+import pathlib, sys, zipfile
+src, out = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
+with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
+    for f in sorted(src.rglob('*')):
+        if f.is_file() and f.suffix != '.pth':
+            z.write(f, pathlib.Path('results-round3') / f.relative_to(src))
+print(f'{out}: {out.stat().st_size / 1e6:.0f} MB')
+PY
+        echo "DONE: download results-round3.zip from the top of the Output tab (the app model is rfdetr_openimages.onnx inside)."
     else
         echo "NOT FINISHED: start another session with this version's output added as an Input."
     fi

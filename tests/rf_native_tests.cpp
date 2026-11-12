@@ -1,6 +1,7 @@
 #include "frametrail/detector.hpp"
 #include <algorithm>
 #include <cmath>
+#include <filesystem>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -31,6 +32,26 @@ void contract(){
     auto detections=rfdetr::postprocess(output,1000,500,.35f,.45f);
     require(detections.size()==2 && detections[0].class_id==600 && detections[1].class_id==0,"RF global top-k, canonical IDs or per-class NMS");
     require(std::abs(detections[0].left-400)<1e-4 && std::abs(detections[0].bottom-300)<1e-4,"RF original frame geometry");
+    // Score calibration: per-class slope and offset on the logit; classes without an entry keep their raw score.
+    const auto folder=std::filesystem::temp_directory_path()/"frametrail-calibration-test";
+    std::filesystem::create_directories(folder);
+    const auto table_file=rfdetr::calibration_path(folder/"model.onnx");
+    require(table_file.filename()=="model.calibration.csv","Calibration file name");
+    const auto write=[&](const char* text){std::ofstream(table_file,std::ios::binary)<<text;};
+    write("class_id,slope,offset,boxes,right,label\r\n0,1.0,-3.0,10,5,person\r\n45,2.0,4.5,7,3,\"bowl, deep\"\r\n");
+    const auto table=rfdetr::read_calibration(table_file);
+    require(table.classes==2 && table.slope[45]==2.f && table.offset[45]==4.5f && table.slope[600]==1.f && table.offset[600]==0.f,"Calibration table read wrongly");
+    output[2*619+4+45]=-1.5f; // Raw 0.18: hidden without calibration, 2*-1.5+4.5=1.5 -> 0.82 with it.
+    require(rfdetr::postprocess(output,1000,500,.35f,.45f).size()==2,"Raw scores changed without calibration");
+    const auto calibrated=rfdetr::postprocess(output,1000,500,.35f,.45f,&table);
+    require(calibrated.size()==2 && calibrated[0].class_id==600 && calibrated[1].class_id==45 && std::abs(calibrated[1].confidence-.8176f)<1e-3f,
+        "Calibration not applied per class (person 0.88 -> 0.27 hidden, bowl 0.18 -> 0.82 shown, others unchanged)");
+    for(const char* broken:{"id,slope,offset\n0,1,0\n","class_id,slope,offset\n","class_id,slope,offset\n0,1\n","class_id,slope,offset\n615,1,0\n",
+            "class_id,slope,offset\n0,1,0\n0,1,0\n","class_id,slope,offset\n0,0,0\n","class_id,slope,offset\n0,1,x\n","class_id,slope,offset\n0,nan,0\n"}) {
+        write(broken);fails([&]{rfdetr::read_calibration(table_file);});
+    }
+    std::filesystem::remove_all(folder);
+    fails([&]{rfdetr::read_calibration(table_file);});
     output[0]=std::numeric_limits<float>::quiet_NaN();fails([&]{rfdetr::postprocess(output,100,100,.35f,.45f);});
     fails([&]{rfdetr::postprocess({},100,100,.35f,.45f);});
     std::cout<<"RF adapter contracts passed\n";

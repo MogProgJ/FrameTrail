@@ -7,7 +7,7 @@ namespace frametrail {
 namespace {
 bool same_detector(const std::optional<DetectorOptions>& a, const std::optional<DetectorOptions>& b) {
     if (bool(a) != bool(b)) return false;
-    return !a || (a->model == b->model && a->variant == b->variant && a->backend == b->backend && a->gpu_device == b->gpu_device && a->confidence == b->confidence && a->nms_iou == b->nms_iou);
+    return !a || (a->model == b->model && a->variant == b->variant && a->backend == b->backend && a->gpu_device == b->gpu_device && a->confidence == b->confidence && a->nms_iou == b->nms_iou && a->calibrate == b->calibrate);
 }
 }
 PreviewSession::~PreviewSession() { stop(); }

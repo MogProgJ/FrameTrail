@@ -141,18 +141,56 @@ Settings: Accelerator GPU T4, Internet on. **Input:** the Phase 2 notebook's Ver
 
 To save GPU hours, a first session with **no accelerator** and `ROUND3_STAGES="data teacher"` (put `export ROUND3_STAGES="data teacher"` before the `bash` line) does the teacher work on CPU; the GPU session then adds that output as an Input and skips the teacher run (it only re-applies the labels).
 
-**Results** are in the version's output under `keep/results-round3` (scores, `compare-phase2.md`, `teacher-measure.json`, `pseudo_labels.json` with what was added per class, the audit pictures, the app model). The log ends with mAP@0.5 and people-and-vehicles against Phase 2.
+**Results:** download the single file `results-round3.zip` from the top of the version's Output tab (about 120 MB; the 136 MB checkpoint stays in `keep/` for later runs). The same files are under `keep/results-round3` (scores, `compare-phase2.md`, `teacher-measure.json`, `pseudo_labels.json` with what was added per class, the audit pictures, the app model). The log ends with mAP@0.5 and people-and-vehicles against Phase 2.
 
 **What counts as a win** (all three):
 1. Open Images test mAP@0.5 not clearly below Phase 2 (0.6877; within about 0.01), people and vehicles at least 0.76.
 2. On the user's footage, the share of YOLOX-S's confident boxes the new model also finds rises clearly for handbags, backpacks and umbrellas (Phase 2: 15%, 0%, 4%; all objects 62%), without falling for people (87%) and cars (58%). Before installing, run the same check on the same five videos (listed in `output\footage-check-before-round3\videos.txt`):
-   `powershell -ExecutionPolicy Bypass -File scripts\footage-check.ps1 -Videos (Get-Content "output\footage-check-before-round3\videos.txt") -Models round3=<path to the new onnx>`
+   `powershell -ExecutionPolicy Bypass -File scripts\footage-check.ps1 -VideoList output\footage-check-before-round3\videos.txt -Models round3=<path to the new onnx>`
    Combined scores 100% there by construction (it contains YOLOX-S); it is the ceiling, not the target.
 3. Reviewing one analysis of own footage shows no new kind of false box.
 
 Install with `training\cloud\install-model.ps1 -From <download>` as below (it keeps the Phase 2 model as a backup).
 
 Tested locally on 2026-11-07 on a small slice (1,922 images): the teacher's port gives the app's detections (27 of 27 boxes, within 0.003 px), measuring, filling (146 boxes added to 801 images) and the audit pictures work, and `kaggle_round3.sh` ran end to end with fake data and training stages, as a CPU-only session (data, teacher) followed by a GPU session that restored its teacher results and trained. Not yet run on Kaggle.
+
+## Round 4: Open Images plus COCO, partial-label loss (Kaggle)
+
+**Why.** Yardstick A (COCO val2017, every object of 80 types labelled; `coco_yardstick.py`, `runs\yardstick-a\report.md`) shows where round 3 stands on everyday objects: AP@0.5 0.497 against YOLOX-S's 0.585, and at equal strictness (77% of boxes right) it finds 44% of the objects against 56%. The gap is largest for kitchen and table objects (cup 0.17 against 0.56, bowl 0.26/0.59, bottle 0.28/0.57, dining table 0.12/0.46) and for small objects (15% found against 33%). The earlier diagnosis says why: Open Images leaves most such objects unlabelled, and training read "unlabelled" as "absent". Round 4 adds COCO train2017, where every object of the 80 types is labelled, and trains with a loss that knows what each photo vouches for.
+
+**What changes.** `mix_coco.py` puts 117,216 COCO photos (844,099 boxes; numbers from a dry run on the real annotations) next to the 38,881 Open Images photos, which are stored at 640 px (COCO's size) so both fit on Kaggle's disk. Each COCO box goes to the class that means the same thing (cow to Cattle, dining table to Table, 15 such names); cup gets a class of its own (596 classes), because Open Images only has Coffee cup and Mug. Per photo the annotations record what is verified present, verified absent and unknown; `train.py --unverified-weight 0.25` (`missing_labels.py`) then pushes a class towards "absent" fully where a photo vouches for it, not at all where it is unknown (Van on a COCO photo with a car, anything COCO marks as a crowd, Cup on an Open Images photo with a mug), and at a quarter strength everywhere else. Two COCO types do not line up with one class: "tv" lumps televisions and monitors, so its boxes are not used; our Table is wider than "dining table", so COCO never says "no Table". No teacher model is used: COCO's human labels replace round 3's YOLOX-S boxes. Training continues the round 3 checkpoint for 6 epochs at the full learning rate (`kit/round4.env`).
+
+**Success criteria, fixed before the run** (2026-11-12):
+1. **A (COCO val2017), the point of the round.** At YOLOX-S's share of boxes right (77%) the model finds clearly more objects than round 3's 44%: at least 52% counts as "the recipe works", 56% or more (YOLOX-S's level) meets the plan's A criterion. AP@0.5 is reported next to it (round 3 0.497, YOLOX-S 0.585), with the by-size shares; small objects are expected to stay the weakest and decide the model-size question.
+2. **B (Open Images test) is not paid for it:** mAP@0.5 at least 0.675 (round 3: 0.6855), people and vehicles at least 0.76.
+3. **C (video)** is not judged by agreement with YOLOX-S. The 12 practice clips are only looked at for new kinds of error; the unopened clips are used once a model meets 1 and 2.
+The stock COCO-pretrained RF-DETR Small is scored on A in the same session: it shows what this architecture reaches on the 80 types, so the result can be read as "how much of that did we recover while keeping 596 classes".
+
+**Run it.** A Kaggle notebook with one cell:
+
+```bash
+%%bash
+git clone --depth 1 --branch claude/kind-brahmagupta-4q5cdd https://github.com/MogProgJ/FrameTrail.git /kaggle/temp/FrameTrail
+bash /kaggle/temp/FrameTrail/training/cloud/kaggle_round4.sh
+```
+
+Settings: Accelerator GPU T4, Internet on. **Input:** the round 3 notebook's final version (it holds `keep/round3/checkpoint_best_total.pth`); for every later session also this notebook's latest version. Then "Save Version" -> "Save & Run All". Estimates, not measured: setup and data about 1 h per session (Open Images 16 min as before, COCO's 117,000 photos one by one perhaps 30-45 min), one epoch about 3.1 h (156,000 photos at round 3's speed), so 6 epochs are about 19 GPU hours over two or three sessions, about 22-24 hours of the weekly 30 with setup and scoring. The script measures each epoch and stops training at an epoch boundary when the next one would not fit in the 12-hour session, so no partial epoch is lost; the log then says to start the next session. Disk, also an estimate: about 21 GB environment and metadata, 7 GB Open Images validation and test photos, 3 GB shrunk training photos, 18 GB COCO, against Kaggle's 57.6 GiB; the log prints the free space after the data stage.
+
+Before any GPU time is spent, the `check` stage runs the pipeline's tests in Kaggle's environment (the loss against rfdetr itself). During training the loss also checks, on the first 2,000 images, that the trainer's image ids are the annotation file's, and stops with a clear message if not: otherwise the weights would silently go to the wrong photos.
+
+**Results:** `results-round4.zip` at the top of the final version's Output tab. On the laptop:
+
+```powershell
+# yardstick A for the new model, with the files already scored for YOLOX-S and round 3 (about 35 min on the CPU)
+python training\calibrate.py predict --model <unzipped>\rfdetr_openimages.onnx --images data\coco\val2017 --out runs\yardstick-a\round4.jsonl
+python training\coco_yardstick.py score --annotations data\coco\annotations\instances_val2017.json --model yolox-s=runs\yardstick-a\yolox-s.jsonl --model round4=runs\yardstick-a\round4.jsonl --model round3=runs\yardstick-a\round3.jsonl --model stock-rfdetr-small=<unzipped>\yardstick-stock-rfdetr-small.jsonl --out runs\yardstick-a\report-round4.md
+```
+
+(`calibrate.py predict` needs onnxruntime; the system Python here has none, the session's scratch environment does.)
+
+**Known limits of this round.** Checkpoints are still picked by rfdetr's validation score on Open Images validation photos, which counts a correctly found but unlabelled object as an error; all epochs share that bias, so it should not change which epoch wins, but it is not measured. Cup and Mug can now both fire on one mug; the app needs the same hiding rule it has for wheel and bicycle wheel before this model is installed. The 0.25 weight and the 3:1 share of COCO photos are judgment calls, to be changed only on yardstick results.
+
+Tested locally on 2026-11-12: 87 Python tests pass (mixing, the class table against the real 595-class list: all 80 COCO types map to 80 distinct classes; the loss weights with PyTorch), a dry run on the real COCO train annotations, and `kaggle_round4.sh` end to end with stand-in data and a fake trainer as two sessions (3 epochs, stop at the epoch boundary, resume, finish, results zip). Not run: anything that needs rfdetr or a GPU (the real loss, the stock model's prediction, scoring and export with 596 classes); the `check` stage covers the first of these at the start of the Kaggle session.
 
 ## Use a trained model in the app
 
@@ -180,6 +218,21 @@ python -m venv .venv && .venv/bin/pip install -r training/requirements.txt
 ```
 
 Unit tests for the pure logic, which need no packages: `python -m unittest tests.test_training_pipeline`.
+
+## Score calibration (no training)
+
+mAP ranks boxes within one class, so it cannot tell whether a class's correct boxes clear the app's confidence setting. They often do not: the trained model localises nearly every object YOLOX-S finds on the test clips (a box at the right place exists for 94% to 100% per class), but gives most household objects a score of 0.1 to 0.3. `training/calibrate.py` fits one curve per class on human-verified **validation** images, so that a score means "chance this box is right" for every class; the app applies it when the table sits next to the model (`docs/DETECTION.md`).
+
+```
+python training/calibrate.py predict --model models/rfdetr_openimages.onnx --images data/full/valid --out runs/round3/calibration-valid.jsonl
+python training/calibrate.py fit --predictions runs/round3/calibration-valid.jsonl --annotations data/full/valid/_annotations.coco.json --out models/rfdetr_openimages.calibration.csv
+```
+
+`predict` runs the app's own ONNX model with the app's preprocessing and decoding (onnxruntime, numpy, Pillow; resumable; about 1 s per image on a laptop CPU). `fit` uses the evaluator's rule (a class counts only on images where it was verified), pulls classes with little evidence towards the curve of all classes, and writes the table, a report (`.md`) with a check per class, and the numbers (`.json`). Give `--check-predictions` and `--check-annotations` to test the curves on images that were not used for the fit. Copy the table next to both copies of the model (`models\` and `build\windows-msvc\Release\models\`). Refit after every retraining: a table belongs to one model.
+
+Local trial on 2026-11-10 (round 3 model, 19 street classes, 1,121 validation photos for the fit, 966 others for the check): calibrated scores of 0.5 to 0.7 were right 75% of the time and 0.7 and above 94%, where raw scores of 0.35 to 0.5 were already right 83%. On the twelve test clips a calibrated setting of 0.5 finds 71% of YOLOX-S's confident boxes of those classes instead of 65%, and 62 of 80 randomly drawn newly shown boxes were right by eye. Numbers and tools: `output\calibration-local\`.
+
+Full fit on 2026-11-11 (556 classes, 6,584 validation photos, `output\calibration-full\`): honest on held-back photos, but on the clips it matches a lower confidence setting rather than beating it (calibrated 0.5: 72% found at 79% agreement and 34 boxes per frame; raw 0.27: 72%, 77%, 22). Not installed. Use the fit report to see which classes a model under-scores; do not expect it to replace training.
 
 ## Known limits
 
