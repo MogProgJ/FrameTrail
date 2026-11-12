@@ -244,13 +244,19 @@ class MissingLabelLossTests(unittest.TestCase):
         plain = original(owner, outputs, targets, indices, torch.tensor(3.0))
         return float(plain['loss_ce']), float(patched['loss_ce'])
 
+    IMAGES = [{'id': 1, 'oi_verified_positive': [2], 'oi_verified_negative': []},
+              {'id': 2, 'oi_verified_positive': [1, 3], 'oi_verified_negative': []}]
+
     def test_weight_one_is_rfdetrs_loss(self):
-        plain, patched = self.losses(1.0, [])
+        plain, patched = self.losses(1.0, self.IMAGES)
         self.assertAlmostEqual(plain, patched, places=6)
 
+    def test_images_missing_from_the_annotations_stop_training(self):
+        with self.assertRaises(RuntimeError):   # Until 2026-11-12 such images silently got the plain loss.
+            self.losses(1.0, [])
+
     def test_unverified_classes_count_less(self):
-        images = [{'id': 1, 'oi_verified_positive': [2], 'oi_verified_negative': []},
-                  {'id': 2, 'oi_verified_positive': [1, 3], 'oi_verified_negative': []}]
+        images = self.IMAGES
         plain, patched = self.losses(0.0, images)
         self.assertLess(patched, plain)
         self.assertGreater(patched, 0)
