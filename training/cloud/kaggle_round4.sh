@@ -22,6 +22,11 @@
 #   train  6 epochs from the round 3 checkpoint (kit/round4.env). Training stops at the end of an epoch when the
 #          next one would not fit in the session, so no partial epoch is lost; the next session resumes. When the
 #          last epoch is done: scoring on the Open Images test split, comparison with round 3, the app model
+#   interim  not in the default list: scores the saved round 4 checkpoints (the best by rfdetr's validation and the
+#          newest) on yardsticks A and B without training, and round 3 on A the same way. For a session that only
+#          measures: ROUND4_STAGES="check interim" (about 1-1.5 h). A training session that stops unfinished also
+#          scores its newest checkpoint this way when at least 100 minutes of the session are left (INTERIM_AFTER=0
+#          turns that off). Results: interim-round4.zip at the top of the Output tab
 # Yardstick A for the trained model is scored on the laptop from the downloaded app model, with the same script and
 # files as YOLOX-S and round 3.
 # Settings (environment variables): EPOCHS_TOTAL (6), SESSION_LIMIT_HOURS (12, Kaggle's limit), RESERVE_HOURS (1.0,
@@ -70,6 +75,7 @@ save() {
         [[ -f "$FT_ROOT/runs/$RUN/$file" ]] && cp -u "$FT_ROOT/runs/$RUN/$file" "$KEEP/$RUN/$file"
     done
     for file in "$FT_ROOT"/runs/$RUN/metrics-part*.csv; do [[ -f "$file" ]] && cp -u "$file" "$KEEP/$RUN/"; done
+    [[ -d "$FT_ROOT/runs/$RUN/interim" ]] && cp -ru "$FT_ROOT/runs/$RUN/interim" "$KEEP/$RUN/"
     return 0
 }
 
@@ -112,7 +118,7 @@ WATCHER=
 trap '[[ -n "$WATCHER" ]] && kill $WATCHER 2>/dev/null; pkill -P $SAVER 2>/dev/null || true; kill $SAVER 2>/dev/null || true; save; log "saved to $KEEP"' EXIT
 
 log "setup (skips what is done)"
-want train || want stock || export ALLOW_NO_GPU=1
+want train || want stock || want interim || export ALLOW_NO_GPU=1
 bash "$PHASE2" setup
 source "$FT_ROOT/training/kit/env.sh"
 PY="${PY:-$FT_VENV/bin/python}"
@@ -146,6 +152,19 @@ with zipfile.ZipFile(archive) as z:
 PY
 }
 
+coco_val() {   # COCO val2017 and its annotations (yardstick A); skips what is there
+    if [[ ! -f "$COCO/annotations/instances_val2017.json" ]]; then
+        fetch "$COCO_ANNOTATIONS_URL" "$COCO/annotations.zip" "$COCO_ANNOTATIONS_SHA256" || return 1
+        unpack "$COCO/annotations.zip" "$COCO" annotations/instances_val2017.json || return 1
+        rm -f "$COCO/annotations.zip"
+    fi
+    if [[ ! -d "$COCO/val2017" ]]; then
+        fetch "$COCO_VAL_URL" "$COCO/val2017.zip" "$COCO_VAL_SHA256" || return 1
+        unpack "$COCO/val2017.zip" "$COCO" || return 1
+        rm -f "$COCO/val2017.zip"
+    fi
+}
+
 if want data; then
     if "$PY" training/mix_coco.py status --dataset "$DATASET" > /dev/null; then
         echo "COCO is already in data/full."
@@ -168,16 +187,97 @@ fi
 if want stock && [[ ! -f "$FT_ROOT/runs/$RUN/yardstick-stock.json" ]]; then
     log "stock: the COCO-pretrained RF-DETR Small on COCO val2017 (yardstick A); a failure here does not stop the run"
     stock() {
-        if [[ ! -d "$COCO/val2017" ]]; then
-            fetch "$COCO_VAL_URL" "$COCO/val2017.zip" "$COCO_VAL_SHA256" || return 1
-            unpack "$COCO/val2017.zip" "$COCO" || return 1
-            rm -f "$COCO/val2017.zip"
-        fi
+        coco_val || return 1
         timeout 30m "$PY" training/coco_yardstick.py predict-rfdetr --images "$COCO/val2017"             --out "$FT_ROOT/runs/$RUN/yardstick-stock-rfdetr-small.jsonl" || return 1
         "$PY" training/coco_yardstick.py score --annotations "$COCO/annotations/instances_val2017.json"             --model "stock-rfdetr-small=$FT_ROOT/runs/$RUN/yardstick-stock-rfdetr-small.jsonl"             --out "$FT_ROOT/runs/$RUN/yardstick-stock.md" | head -n 16
     }
     stock || echo "The stock model was not scored (see above); carrying on."
     save
+fi
+
+# Interim scores: where a checkpoint stands on the two photo yardsticks, without waiting for the last epoch.
+INTERIM="$FT_ROOT/runs/$RUN/interim"
+score_checkpoint() {   # score_checkpoint NAME WEIGHTS [a]: yardstick A (COCO val2017) and, unless "a", B (Open Images test)
+    local name=$1 weights=$2 only=${3:-}
+    mkdir -p "$INTERIM"
+    if [[ ! -f "$INTERIM/$name-yardstick.done" ]]; then
+        echo "$name: yardstick A (COCO val2017)"
+        timeout 30m "$PY" training/coco_yardstick.py predict-rfdetr --weights "$weights" --images "$COCO/val2017" \
+            --out "$INTERIM/$name-yardstick.jsonl" | tail -n 1 || return 1
+        touch "$INTERIM/$name-yardstick.done"
+    fi
+    if [[ "$only" != a && ! -f "$INTERIM/$name-eval-test.json" ]]; then
+        echo "$name: yardstick B (Open Images test)"
+        timeout 60m "$PY" training/evaluate.py --dataset "$DATASET" --split test --backend rfdetr --model-size small \
+            --weights "$weights" --out "$INTERIM/$name-eval-test.json" --batch 16 \
+            --cache "$FT_ROOT/data/openimages-metadata" | tail -n 2 || return 1
+        rm -f "$INTERIM/$name-eval-test-predictions.jsonl"
+    fi
+}
+interim_newest() {   # The newest checkpoint (last.ckpt, written at the end of every epoch), with its averaged weights
+    local last="$FT_ROOT/runs/$RUN/last.ckpt" best="$FT_ROOT/runs/$RUN/checkpoint_best_total.pth" info epoch
+    [[ -f "$last" ]] || { echo "No round 4 checkpoint to score (runs/$RUN/last.ckpt)."; return 1; }
+    [[ -f "$best" ]] || best=
+    info=$("$PY" training/checkpoints.py averaged --checkpoint "$last" ${best:+--like "$best"} \
+        --out "$FT_ROOT/runs/$RUN/checkpoint_last.pth") || return 1
+    echo "Newest checkpoint: $info"
+    epoch=$(python3 -c "import json, sys; print(json.loads(sys.argv[1])['epoch'])" "$info") || return 1
+    score_checkpoint "last-epoch$epoch" "$FT_ROOT/runs/$RUN/checkpoint_last.pth"
+}
+interim_all() {     # Round 4's newest and best-by-validation checkpoints, then round 3 on A through the same path
+    local best="$FT_ROOT/runs/$RUN/checkpoint_best_total.pth" epoch failed=0
+    coco_val || return 1
+    interim_newest || failed=1      # Each is scored on its own: one that fails does not cost the others.
+    if [[ -f "$best" ]]; then
+        { epoch=$("$PY" training/checkpoints.py epoch "$best") && score_checkpoint "best-epoch$epoch" "$best"; } || failed=1
+    fi
+    if [[ -f "$FT_ROOT/runs/$PREVIOUS/checkpoint_best_total.pth" ]]; then
+        score_checkpoint round3 "$FT_ROOT/runs/$PREVIOUS/checkpoint_best_total.pth" a || failed=1
+    fi
+    return $failed
+}
+interim_report() {  # One table for A, a comparison with round 3 for each B score, and one zip to download
+    local models=() file name
+    for file in "$INTERIM"/*-yardstick.jsonl; do
+        [[ -f "$file" ]] || continue
+        name=$(basename "$file" -yardstick.jsonl); models+=(--model "$name=$file")
+    done
+    [[ -f "$FT_ROOT/runs/$RUN/yardstick-stock-rfdetr-small.jsonl" ]] \
+        && models+=(--model "stock-rfdetr-small=$FT_ROOT/runs/$RUN/yardstick-stock-rfdetr-small.jsonl")
+    if (( ${#models[@]} )); then
+        "$PY" training/coco_yardstick.py score --annotations "$COCO/annotations/instances_val2017.json" "${models[@]}" \
+            --out "$INTERIM/yardstick.md" > "$INTERIM/yardstick.log" 2>&1 || true
+        head -n 30 "$INTERIM/yardstick.log"; rm -f "$INTERIM/yardstick.log"
+    fi
+    for file in "$INTERIM"/*-eval-test.json; do
+        [[ -f "$file" && -f "$FT_ROOT/runs/$PREVIOUS/eval-test.json" ]] || continue
+        name=$(basename "$file" -eval-test.json)
+        "$PY" training/compare.py "$file" "$FT_ROOT/runs/$PREVIOUS/eval-test.json" --dataset "$DATASET" \
+            --names "round4-$name" round3 --out "$INTERIM/$name-compare-round3.md" > /dev/null || true
+        python3 - "$name" "$file" "$FT_ROOT/runs/$PREVIOUS/eval-test.json" <<'PY' || true
+import json, sys
+name, (new, old) = sys.argv[1], (json.load(open(p)) for p in sys.argv[2:4])
+for key, label in (('map50', 'mAP@0.5'), ('map50_people_and_vehicles', 'people and vehicles')):
+    print(f'yardstick B, {label:20s} round4 {name} {new[key]:.4f}   round3 {old[key]:.4f}   change {new[key] - old[key]:+.4f}')
+PY
+    done
+    python3 - "$INTERIM" "$(dirname "$KEEP")/interim-round4.zip" <<'PY' || true
+import pathlib, sys, zipfile
+src, out = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
+with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
+    for f in sorted(src.rglob('*')):
+        if f.is_file() and f.suffix not in ('.pth', '.done'):
+            z.write(f, pathlib.Path('interim-round4') / f.relative_to(src))
+print(f'{out}: {out.stat().st_size / 1e6:.0f} MB')
+PY
+    save
+}
+
+if want interim; then
+    log "interim: yardsticks A and B for the saved round 4 checkpoints (no training)"
+    interim_all || echo "Interim scoring stopped early (see above); what was scored is reported."
+    interim_report
+    echo "INTERIM DONE: download interim-round4.zip from the top of the Output tab."
 fi
 
 watch_epochs() {   # Stop training at the end of an epoch when another one would not fit before $1 (in $SECONDS).
@@ -253,6 +353,12 @@ print(f'{out}: {out.stat().st_size / 1e6:.0f} MB')
 PY
         echo "DONE: download results-round4.zip from the top of the Output tab (the app model is rfdetr_openimages.onnx inside)."
     else
+        left=$(python3 -c "print(int($SESSION_LIMIT_HOURS * 3600 - $SECONDS))")
+        if [[ "${INTERIM_AFTER:-1}" == 1 ]] && (( left > ${INTERIM_MIN_SECONDS:-6000} )) && [[ -f "$FT_ROOT/runs/$RUN/last.ckpt" ]]; then
+            log "interim: yardsticks A and B for the newest checkpoint ($(hours "$left / 3600") h of the session left)"
+            { coco_val && interim_newest; } || echo "Interim scoring stopped early (see above)."
+            interim_report
+        fi
         echo "NOT FINISHED: start another session with this version's output added as an Input (next to round 3's)."
     fi
 fi

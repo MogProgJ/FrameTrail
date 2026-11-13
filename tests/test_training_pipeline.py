@@ -273,6 +273,29 @@ class CheckpointTests(unittest.TestCase):
             self.assertEqual(checkpoints.head_classes(weights), 110)
             self.assertEqual(checkpoints.head_classes(archive), 595)
 
+    def test_averaged_takes_the_ema_weights_of_a_lightning_checkpoint(self):
+        import torch
+        with tempfile.TemporaryDirectory() as folder:
+            archive, like, out = (Path(folder) / name for name in ('last.ckpt', 'best.pth', 'last.pth'))
+            torch.save({'state_dict': {'model.class_embed.bias': torch.zeros(597), 'model.w': torch.zeros(2)},
+                        'callbacks': {'RFDETREMACallback': {'average_model_state_dict': {
+                            'n_averaged': torch.tensor(7), 'module.model.class_embed.bias': torch.ones(597),
+                            'module.model.w': torch.ones(2)}}},
+                        'loops': {'fit_loop': {'epoch_progress': {'current': {'completed': 2}}}},
+                        'optimizer_states': [{'state': torch.zeros(5)}]}, archive)
+            torch.save({'model': {}, 'args': {'class_names': ['a']}, 'model_name': 'RFDETRSmall'}, like)
+            self.assertEqual(checkpoints.averaged(archive, out, like), {'epoch': 2, 'weights': 'ema', 'classes': 596})
+            saved = torch.load(out, map_location='cpu', weights_only=False)
+            self.assertEqual(saved['model']['w'].tolist(), [1.0, 1.0])          # The averaged weights, not the plain ones.
+            self.assertEqual(saved['state_dict']['model.w'].tolist(), [1.0, 1.0])
+            self.assertEqual((saved['args'], saved['model_name']), ({'class_names': ['a']}, 'RFDETRSmall'))
+            self.assertNotIn('optimizer_states', saved)
+            self.assertEqual(checkpoints.head_classes(out), 596)
+            del_average = torch.load(archive, map_location='cpu', weights_only=False)
+            del_average['callbacks'] = {}
+            torch.save(del_average, archive)
+            self.assertEqual(checkpoints.averaged(archive, out)['weights'], 'regular')
+
 
 class AppExportTests(unittest.TestCase):
     vocabulary = json.loads((TRAINING.parent / 'dependencies' / 'recognition-vocabulary.json').read_text(encoding='utf-8'))

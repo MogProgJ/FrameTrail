@@ -178,6 +178,20 @@ Settings: Accelerator GPU T4, Internet on. **Input:** the round 3 notebook's fin
 
 Right after the environment is built and before any data is downloaded, the `check` stage runs the pipeline's tests in Kaggle's environment (the loss against rfdetr itself), so a failure costs about 12 minutes. The first session (2026-11-12) stopped at this stage after the data, 79 minutes in, without the tests having run: `python -m unittest tests.test_...` could not import them, because `tests/` has no `__init__.py` and Python then prefers any installed package named `tests` (reproduced locally with such a package on the path). The stage now runs them from inside `tests/` by file name. During training the loss also checks, on the first 2,000 images, that the trainer's image ids are the annotation file's, and stops with a clear message if not: otherwise the weights would silently go to the wrong photos.
 
+**Measured in the first full session (2026-11-12/13, 7.4 h).** Setup 10 min, Open Images data 8 min, COCO 15 min (the downloads were three times faster than the day before), the stock model 4 min, then two epochs of 3.35 h and 3.33 h each. With 3.7 h left the third epoch (about 3.8 h with its margin) did not fit, so a session trains two epochs and the round needs three sessions. The stock COCO-pretrained RF-DETR Small on yardstick A: AP@0.5 0.725, 69% of the objects found with 76% of its boxes right at 0.35 (YOLOX-S 56% at 77%; round 3 44% at that strictness); small 48%, medium 79%, large 89%.
+
+**Interim scores (`interim` stage).** rfdetr's validation score on the Open Images validation photos fell from round 3's 0.53 (mAP@0.5) to 0.416 after epoch 1 and 0.395 after epoch 2, and its recall ceiling (mAR@500) from 0.787 to 0.734 and 0.718. That score counts a box on an unlabelled object as wrong, so finding more everyday objects lowers it, but a lower recall ceiling is not explained by that alone. Whether yardstick B fell is unknown until it is measured, so before more epochs are trained the saved checkpoints are scored without training:
+
+```bash
+%%bash
+git clone --depth 1 --branch claude/kind-brahmagupta-4q5cdd https://github.com/MogProgJ/FrameTrail.git /kaggle/temp/FrameTrail
+ROUND4_STAGES="check interim" bash /kaggle/temp/FrameTrail/training/cloud/kaggle_round4.sh
+```
+
+Inputs: round 3's output and the round 4 version that trained. It scores round 3 on A through rfdetr (to compare like with like), then round 4's best-by-validation checkpoint (epoch 1) and its newest (`last.ckpt`, epoch 2, made scorable by `checkpoints.py averaged`, which takes the averaged weights the trainer validates with) on A and B. Estimate: 1-1.5 h with a GPU. Results: `interim-round4.zip` at the top of the Output tab (the A table, each B score with a class-by-class comparison against round 3, the A prediction files). A training session that stops unfinished now scores its newest checkpoint the same way when at least 100 minutes of the session are left.
+
+Open until those numbers exist: `train_job.sh` scores and exports `checkpoint_best_total.pth`, which rfdetr picks by its validation score. Here that is epoch 1, so as things stand the final model would not be the 6-epoch one.
+
 **Results:** `results-round4.zip` at the top of the final version's Output tab. On the laptop:
 
 ```powershell
@@ -188,7 +202,7 @@ python training\coco_yardstick.py score --annotations data\coco\annotations\inst
 
 (`calibrate.py predict` needs onnxruntime; the system Python here has none, the session's scratch environment does.)
 
-**Known limits of this round.** Checkpoints are still picked by rfdetr's validation score on Open Images validation photos, which counts a correctly found but unlabelled object as an error; all epochs share that bias, so it should not change which epoch wins, but it is not measured. Cup and Mug can now both fire on one mug; the app needs the same hiding rule it has for wheel and bicycle wheel before this model is installed. The 0.25 weight and the 3:1 share of COCO photos are judgment calls, to be changed only on yardstick results.
+**Known limits of this round.** Checkpoints are still picked by rfdetr's validation score on Open Images validation photos, which counts a correctly found but unlabelled object as an error; all epochs share that bias, so it should not change which epoch wins, but it is not measured (the first two epochs suggest it does matter: see "Interim scores"). Cup and Mug can now both fire on one mug; the app needs the same hiding rule it has for wheel and bicycle wheel before this model is installed. The 0.25 weight and the 3:1 share of COCO photos are judgment calls, to be changed only on yardstick results.
 
 Tested locally on 2026-11-12: 87 Python tests pass (mixing, the class table against the real 595-class list: all 80 COCO types map to 80 distinct classes; the loss weights with PyTorch), a dry run on the real COCO train annotations, and `kaggle_round4.sh` end to end with stand-in data and a fake trainer as two sessions (3 epochs, stop at the epoch boundary, resume, finish, results zip). Not run: anything that needs rfdetr or a GPU (the real loss, the stock model's prediction, scoring and export with 596 classes); the `check` stage covers the first of these at the start of the Kaggle session.
 
