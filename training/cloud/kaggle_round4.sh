@@ -106,6 +106,17 @@ if [[ -d "$KEEP/$RUN" ]]; then
     mkdir -p "$FT_ROOT/runs/$RUN"; cp -a "$KEEP/$RUN/." "$FT_ROOT/runs/$RUN/"
     echo "Restored $RUN: $(ls "$FT_ROOT/runs/$RUN" | tr '\n' ' ')"
 fi
+if [[ ! -f "$FT_ROOT/runs/$RUN/last.ckpt" ]]; then   # An uploaded dataset may hold the files without the keep folders
+    loose=$(find "$INPUT" -maxdepth 6 -name last.ckpt 2>/dev/null | sort | head -n 1)
+    if [[ -n "$loose" ]]; then
+        mkdir -p "$FT_ROOT/runs/$RUN" "$KEEP/$RUN"
+        for file in last.ckpt warmstart.pth warmstart.json metrics.csv; do
+            [[ -f "$(dirname "$loose")/$file" ]] && cp -u "$(dirname "$loose")/$file" "$FT_ROOT/runs/$RUN/" \
+                && cp -u "$(dirname "$loose")/$file" "$KEEP/$RUN/"
+        done
+        echo "Restored $RUN from $(dirname "$loose"): $(ls "$FT_ROOT/runs/$RUN" | tr '\n' ' ')"
+    fi
+fi
 if want interim && ! want train && [[ ! -f "$FT_ROOT/runs/$RUN/last.ckpt" ]]; then   # Fail before the setup, not after
     echo "NO ROUND 4 CHECKPOINT among the Inputs (keep/$RUN/last.ckpt). The round 4 Input is probably a version that" >&2
     echo "only measured: in the Input's version menu pick the version that trained (its Output has keep/$RUN/last.ckpt)." >&2
