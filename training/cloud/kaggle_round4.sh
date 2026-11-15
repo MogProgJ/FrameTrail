@@ -223,6 +223,7 @@ score_checkpoint() {   # score_checkpoint NAME WEIGHTS [a]: yardstick A (COCO va
 interim_newest() {   # The newest checkpoint (last.ckpt, written at the end of every epoch), with its averaged weights
     local last="$FT_ROOT/runs/$RUN/last.ckpt" best="$FT_ROOT/runs/$RUN/checkpoint_best_total.pth" info epoch
     [[ -f "$last" ]] || { echo "No round 4 checkpoint to score (runs/$RUN/last.ckpt)."; return 1; }
+    [[ -f "$best" ]] || best="$FT_ROOT/runs/$RUN/warmstart.pth"   # Same run's settings and 596 class names
     [[ -f "$best" ]] || best=
     info=$("$PY" training/checkpoints.py averaged --checkpoint "$last" ${best:+--like "$best"} \
         --out "$FT_ROOT/runs/$RUN/checkpoint_last.pth") || return 1
