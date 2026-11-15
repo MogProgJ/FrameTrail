@@ -107,7 +107,10 @@ if [[ -d "$KEEP/$RUN" ]]; then
     echo "Restored $RUN: $(ls "$FT_ROOT/runs/$RUN" | tr '\n' ' ')"
 fi
 if [[ ! -f "$FT_ROOT/runs/$RUN/last.ckpt" ]]; then   # An uploaded dataset may hold the files without the keep folders
-    loose=$(find "$INPUT" -maxdepth 6 -name last.ckpt 2>/dev/null | sort | head -n 1)
+    echo "No keep/$RUN among the Inputs; .ckpt, .pth and .zip files under $INPUT:"
+    find "$INPUT" -maxdepth 9 \( -name '*.ckpt' -o -name '*.pth' -o -name '*.zip' \) 2>/dev/null | head -n 20
+    # Round 3's own last.ckpt (595 classes) sits in its keep folder: never take that one for round 4
+    loose=$(find "$INPUT" -maxdepth 9 -name last.ckpt -not -path "*/keep/$PREVIOUS/*" 2>/dev/null | sort | head -n 1)
     if [[ -n "$loose" ]]; then
         mkdir -p "$FT_ROOT/runs/$RUN" "$KEEP/$RUN"
         for file in last.ckpt warmstart.pth warmstart.json metrics.csv; do
@@ -239,6 +242,9 @@ interim_newest() {   # The newest checkpoint (last.ckpt, written at the end of e
     info=$("$PY" training/checkpoints.py averaged --checkpoint "$last" ${best:+--like "$best"} \
         --out "$FT_ROOT/runs/$RUN/checkpoint_last.pth") || return 1
     echo "Newest checkpoint: $info"
+    if [[ "$info" != *'"classes": 596'* ]]; then   # Round 4 has Cup on top of round 3's 595 classes
+        echo "That is not a round 4 checkpoint (round 4 has 596 classes); not scored." >&2; return 1
+    fi
     epoch=$(python3 -c "import json, sys; print(json.loads(sys.argv[1])['epoch'])" "$info") || return 1
     score_checkpoint "last-epoch$epoch" "$FT_ROOT/runs/$RUN/checkpoint_last.pth"
 }
