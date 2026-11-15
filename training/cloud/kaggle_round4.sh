@@ -106,6 +106,12 @@ if [[ -d "$KEEP/$RUN" ]]; then
     mkdir -p "$FT_ROOT/runs/$RUN"; cp -a "$KEEP/$RUN/." "$FT_ROOT/runs/$RUN/"
     echo "Restored $RUN: $(ls "$FT_ROOT/runs/$RUN" | tr '\n' ' ')"
 fi
+if want interim && ! want train && [[ ! -f "$FT_ROOT/runs/$RUN/last.ckpt" ]]; then   # Fail before the setup, not after
+    echo "NO ROUND 4 CHECKPOINT among the Inputs (keep/$RUN/last.ckpt). The round 4 Input is probably a version that" >&2
+    echo "only measured: in the Input's version menu pick the version that trained (its Output has keep/$RUN/last.ckpt)." >&2
+    find "$INPUT" -maxdepth 6 -path "*keep/$RUN*" 2>/dev/null | head -n 20 >&2 || true
+    exit 1
+fi
 if [[ -f "$FT_ROOT/runs/$RUN/metrics.csv" ]]; then   # The trainer starts metrics.csv afresh when it resumes.
     part=1; while [[ -f "$FT_ROOT/runs/$RUN/metrics-part$part.csv" ]]; do part=$((part + 1)); done
     mv "$FT_ROOT/runs/$RUN/metrics.csv" "$FT_ROOT/runs/$RUN/metrics-part$part.csv"; rm -f "$KEEP/$RUN/metrics.csv"
